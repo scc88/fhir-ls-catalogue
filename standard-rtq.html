@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RTQ — Regulatory Tracking of Questions | FHIR-LS Catalogue</title>
+  <meta name="description" content="FHIR Implementation Guide for structured regulatory questions and responses — enabling end-to-end traceability across review cycles.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .profiles-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 32px; }
+    .section-block { margin-bottom: 40px; }
+    .section-block-title { font-size: 18px; font-weight: 700; color: var(--text-primary); margin-bottom: 16px; letter-spacing: -0.02em; padding-bottom: 8px; border-bottom: 2px solid var(--gray-100); }
+    .info-table { width: 100%; border-collapse: collapse; }
+    .info-table tr { border-bottom: 1px solid var(--gray-100); }
+    .info-table tr:last-child { border-bottom: none; }
+    .info-table td { padding: 10px 0; font-size: 14px; vertical-align: top; }
+    .info-table td:first-child { color: var(--gray-600); font-weight: 500; width: 180px; }
+    .info-table td:last-child { color: var(--text-primary); }
+    .resource-link { display: flex; align-items: center; gap: 10px; padding: 12px 16px; border: 1px solid var(--border); border-radius: var(--radius-md); margin-bottom: 8px; transition: all 0.2s; }
+    .resource-link:hover { background: var(--gray-50); border-color: var(--blue-300); }
+    .resource-icon { font-size: 18px; }
+    .resource-name { font-size: 14px; font-weight: 600; color: var(--text-primary); }
+    .resource-desc { font-size: 12px; color: var(--text-secondary); }
+    .resource-type { margin-left: auto; font-size: 11px; font-weight: 700; color: var(--blue-600); background: rgba(0,82,204,0.08); padding: 2px 7px; border-radius: 4px; }
+    .sidebar-card { background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; margin-bottom: 16px; }
+    .sidebar-card h4 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray-500); margin-bottom: 16px; }
+    .breadcrumb { font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 20px; }
+    .breadcrumb a { color: rgba(255,255,255,0.5); } .breadcrumb a:hover { color: white; }
+    .breadcrumb span { margin: 0 8px; }
+    .workflow-diagram { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-lg); padding: 32px; margin-top: 40px; }
+    .workflow-steps { display: flex; gap: 0; align-items: flex-start; justify-content: center; }
+    .wf-step { display: flex; flex-direction: column; align-items: center; gap: 8px; flex: 0 0 auto; max-width: 120px; }
+    .wf-icon { width: 52px; height: 52px; border-radius: var(--radius-md); background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; font-size: 22px; }
+    .wf-label { font-size: 12px; color: rgba(255,255,255,0.65); text-align: center; font-weight: 500; line-height: 1.4; }
+    .wf-num { font-size: 11px; font-weight: 700; color: var(--cyan-400); }
+    .wf-arrow { font-size: 20px; color: rgba(255,255,255,0.25); align-self: center; margin: 0 8px; padding-bottom: 20px; }
+    .highlight-box { background: rgba(0,184,217,0.08); border: 1px solid rgba(0,184,217,0.2); border-radius: var(--radius-md); padding: 16px 20px; margin-bottom: 12px; }
+    .highlight-box h5 { font-size: 13px; font-weight: 700; color: var(--cyan-400); margin-bottom: 6px; }
+    .highlight-box p { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.6; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-top">
+      <div class="container">
+        <span>The open standard for life sciences data exchange</span>
+        <div class="header-links">
+          <a href="#">About</a><a href="#">Contact</a><a href="#">Portal Login</a>
+        </div>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <div class="container nav-inner">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <rect width="32" height="32" rx="8" fill="url(#lg3)"/>
+              <path d="M8 10h16M8 16h10M8 22h13" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="24" cy="22" r="4" fill="white" fill-opacity="0.9"/>
+              <path d="M22.5 22l1 1 2.5-2" stroke="#0052CC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <defs><linearGradient id="lg3" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse"><stop stop-color="#0052CC"/><stop offset="1" stop-color="#00B8D9"/></linearGradient></defs>
+            </svg>
+          </div>
+          <div class="logo-text">
+            <span class="logo-main">FHIR-LS</span>
+            <span class="logo-sub">Life Sciences Catalogue</span>
+          </div>
+        </a>
+        <ul class="nav-menu">
+          <li><a href="catalogue.html" class="nav-link">Catalogue</a></li>
+          <li class="has-dropdown">
+            <a href="#" class="nav-link active">Standards <span class="chevron">▾</span></a>
+            <ul class="dropdown">
+              <li><a href="standard-epi.html">ePI — Drug Labeling</a></li>
+              <li><a href="standard-pqi.html">PQI — CMC Quality</a></li>
+              <li><a href="standard-apix.html">APIX — Regulatory Submissions</a></li>
+              <li><a href="standard-icsr.html">ICSR — Safety Reporting</a></li>
+              <li><a href="standard-rtq.html">RTQ — Regulatory Questions</a></li>
+            </ul>
+          </li>
+          <li><a href="data-dictionary.html" class="nav-link">Data Dictionary</a></li>
+          <li><a href="implementations.html" class="nav-link">Implementations</a></li>
+          <li><a href="governance.html" class="nav-link">Governance</a></li>
+        </ul>
+        <div class="nav-actions"><a href="catalogue.html" class="btn btn-primary">Browse Catalogue</a></div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Standard Hero -->
+    <section class="standard-hero">
+      <div class="container">
+        <div style="padding-top: 16px;">
+          <div class="breadcrumb">
+            <a href="index.html">Home</a><span>›</span>
+            <a href="catalogue.html">Catalogue</a><span>›</span>
+            <a href="catalogue.html#qa">Regulatory Q&amp;A</a><span>›</span>
+            RTQ
+          </div>
+
+          <div class="standard-hero-inner">
+            <div class="standard-hero-badge" style="background:rgba(0,141,166,0.2);border-color:rgba(0,199,230,0.3);color:var(--cyan-400);">RTQ</div>
+            <div>
+              <h1>Regulatory Tracking of Questions</h1>
+              <p>A FHIR Implementation Guide for structured question-and-answer exchange between regulatory agencies and marketing authorisation holders, enabling full traceability across assessment review cycles.</p>
+              <div class="standard-hero-meta">
+                <div class="hero-meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
+                  Standard ID: <strong>FHIR-LS.RTQ</strong>
+                </div>
+                <div class="hero-meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  Version: <strong>0.3.0-ci-build</strong>
+                </div>
+                <div class="hero-meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg>
+                  FHIR R4 / R5
+                </div>
+                <div class="hero-meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                  Domain: <strong>Regulatory Q&amp;A</strong>
+                </div>
+              </div>
+            </div>
+            <div style="margin-left:auto;display:flex;flex-direction:column;gap:8px;flex-shrink:0;">
+              <a href="#" class="btn btn-white">📖 View IG</a>
+              <a href="#" class="btn btn-ghost" style="border-color:rgba(255,255,255,0.2);">⬇ Download</a>
+            </div>
+          </div>
+
+          <!-- Workflow diagram in hero -->
+          <div class="workflow-diagram">
+            <div style="text-align:center;margin-bottom:24px;">
+              <span style="font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);">RTQ Workflow Overview</span>
+            </div>
+            <div class="workflow-steps">
+              <div class="wf-step">
+                <div class="wf-num">1</div>
+                <div class="wf-icon">📋</div>
+                <div class="wf-label">Regulator raises Question (Questionnaire)</div>
+              </div>
+              <div class="wf-arrow">→</div>
+              <div class="wf-step">
+                <div class="wf-num">2</div>
+                <div class="wf-icon">📨</div>
+                <div class="wf-label">FHIR Task notifies Sponsor</div>
+              </div>
+              <div class="wf-arrow">→</div>
+              <div class="wf-step">
+                <div class="wf-num">3</div>
+                <div class="wf-icon">✍️</div>
+                <div class="wf-label">Sponsor submits Response (QuestionnaireResponse)</div>
+              </div>
+              <div class="wf-arrow">→</div>
+              <div class="wf-step">
+                <div class="wf-num">4</div>
+                <div class="wf-icon">🔍</div>
+                <div class="wf-label">Regulator reviews and closes or follows up</div>
+              </div>
+              <div class="wf-arrow">→</div>
+              <div class="wf-step">
+                <div class="wf-num">5</div>
+                <div class="wf-icon">✅</div>
+                <div class="wf-label">Decision linked as AuditEvent / DocumentReference</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="standard-tabs">
+            <div class="standard-tab active">Overview</div>
+            <div class="standard-tab">Profiles (12)</div>
+            <div class="standard-tab">Value Sets (8)</div>
+            <div class="standard-tab">Examples</div>
+            <div class="standard-tab">IG Publisher</div>
+            <div class="standard-tab">Change Log</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <div style="background:var(--gray-50);padding:40px 0;">
+      <div class="container">
+        <div class="standard-layout" style="padding:0;">
+
+          <!-- Main content -->
+          <div style="padding-right:40px;">
+
+            <!-- Status banner -->
+            <div style="background:rgba(0,141,166,0.08);border:1px solid rgba(0,141,166,0.25);border-radius:var(--radius-md);padding:16px 20px;margin-bottom:32px;display:flex;gap:12px;align-items:flex-start;">
+              <span style="font-size:20px;">🔔</span>
+              <div>
+                <strong style="font-size:14px;color:var(--teal-500);">CI Build — Active Development</strong>
+                <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">This IG is currently in continuous integration (CI) build phase. Content is subject to change. A formal ballot is expected Q2 2026. Community feedback is welcome via the FHIR Zulip channel <code>#life-sciences-rtq</code>.</p>
+              </div>
+            </div>
+
+            <!-- Overview -->
+            <div class="section-block">
+              <h2 class="section-block-title">Overview</h2>
+              <p style="color:var(--text-secondary);line-height:1.8;margin-bottom:16px;">The Regulatory Tracking of Questions (RTQ) FHIR Implementation Guide defines a structured, machine-readable format for the exchange of questions from regulatory bodies to applicants (and vice versa) during the assessment of marketing authorisation applications.</p>
+              <p style="color:var(--text-secondary);line-height:1.8;margin-bottom:16px;">Today, regulatory questions and responses are exchanged as unstructured PDF documents or in proprietary e-submission portals. RTQ replaces this with FHIR <code>Questionnaire</code> and <code>QuestionnaireResponse</code> resources, enabling automated case management, real-time tracking, and full audit traceability.</p>
+              <p style="color:var(--text-secondary);line-height:1.8;">The standard is being developed collaboratively by the HL7 Biomedical Research &amp; Regulation (BR&amp;R) Work Group with active participation from EMA, Health Canada, and industry partners.</p>
+            </div>
+
+            <!-- Use Cases -->
+            <div class="section-block">
+              <h2 class="section-block-title">Use Cases</h2>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                <div style="background:white;border:1px solid var(--border);border-radius:var(--radius-md);padding:18px;">
+                  <div style="font-size:20px;margin-bottom:8px;">📝</div>
+                  <h4 style="font-size:14px;font-weight:700;margin-bottom:6px;">Day 120 / Day 180 List of Questions</h4>
+                  <p style="font-size:13px;color:var(--text-secondary);line-height:1.6;">Structured delivery of assessment questions at defined milestones with machine-readable section references.</p>
+                </div>
+                <div style="background:white;border:1px solid var(--border);border-radius:var(--radius-md);padding:18px;">
+                  <div style="font-size:20px;margin-bottom:8px;">🔄</div>
+                  <h4 style="font-size:14px;font-weight:700;margin-bottom:6px;">Responses to Outstanding Issues</h4>
+                  <p style="font-size:13px;color:var(--text-secondary);line-height:1.6;">Applicant responses linked back to original questions with references to supporting documents.</p>
+                </div>
+                <div style="background:white;border:1px solid var(--border);border-radius:var(--radius-md);padding:18px;">
+                  <div style="font-size:20px;margin-bottom:8px;">📊</div>
+                  <h4 style="font-size:14px;font-weight:700;margin-bottom:6px;">Assessment Tracking &amp; Metrics</h4>
+                  <p style="font-size:13px;color:var(--text-secondary);line-height:1.6;">Real-time dashboards on question-response cycles, time-to-response, and outstanding items.</p>
+                </div>
+                <div style="background:white;border:1px solid var(--border);border-radius:var(--radius-md);padding:18px;">
+                  <div style="font-size:20px;margin-bottom:8px;">🏛️</div>
+                  <h4 style="font-size:14px;font-weight:700;margin-bottom:6px;">Multi-Agency Coordination</h4>
+                  <p style="font-size:13px;color:var(--text-secondary);line-height:1.6;">Harmonised Q&amp;A format across multiple regulatory agencies reduces applicant burden.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Profiles -->
+            <div class="section-block">
+              <h2 class="section-block-title">FHIR Profiles (12)</h2>
+              <div class="profiles-grid">
+                <div class="profile-card">
+                  <div class="profile-card-icon">📋</div>
+                  <div class="profile-card-content">
+                    <h4>RTQ-Questionnaire</h4>
+                    <p>Regulatory question list with section references, deadlines, and applicant context</p>
+                    <div class="profile-card-meta">
+                      <span class="profile-meta-tag">Questionnaire</span>
+                      <span class="profile-meta-tag">SHALL</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="profile-card">
+                  <div class="profile-card-icon">✍️</div>
+                  <div class="profile-card-content">
+                    <h4>RTQ-QuestionnaireResponse</h4>
+                    <p>Applicant response mapped to original questions with referenced supporting documents</p>
+                    <div class="profile-card-meta">
+                      <span class="profile-meta-tag">QuestionnaireResponse</span>
+                      <span class="profile-meta-tag">SHALL</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="profile-card">
+                  <div class="profile-card-icon">⚙️</div>
+                  <div class="profile-card-content">
+                    <h4>RTQ-Task</h4>
+                    <p>Workflow task representing an assigned Q&amp;A cycle with status tracking and deadlines</p>
+                    <div class="profile-card-meta">
+                      <span class="profile-meta-tag">Task</span>
+                      <span class="profile-meta-tag">SHALL</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="profile-card">
+                  <div class="profile-card-icon">📎</div>
+                  <div class="profile-card-content">
+                    <h4>RTQ-DocumentReference</h4>
+                    <p>References to supporting documents (CTD sections, data packages) cited in responses</p>
+                    <div class="profile-card-meta">
+                      <span class="profile-meta-tag">DocumentReference</span>
+                      <span class="profile-meta-tag">SHOULD</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="profile-card">
+                  <div class="profile-card-icon">🏢</div>
+                  <div class="profile-card-content">
+                    <h4>RTQ-Organization</h4>
+                    <p>Regulatory agency and applicant/MAH organisation profiles</p>
+                    <div class="profile-card-meta">
+                      <span class="profile-meta-tag">Organization</span>
+                      <span class="profile-meta-tag">SHALL</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="profile-card">
+                  <div class="profile-card-icon">🔔</div>
+                  <div class="profile-card-content">
+                    <h4>RTQ-Subscription</h4>
+                    <p>Real-time push notification when new questions are issued or responses are received</p>
+                    <div class="profile-card-meta">
+                      <span class="profile-meta-tag">Subscription</span>
+                      <span class="profile-meta-tag">SHOULD</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="profile-card">
+                  <div class="profile-card-icon">📦</div>
+                  <div class="profile-card-content">
+                    <h4>RTQ-Bundle-Question</h4>
+                    <p>Transaction bundle packaging a complete question list for delivery to an applicant</p>
+                    <div class="profile-card-meta">
+                      <span class="profile-meta-tag">Bundle</span>
+                      <span class="profile-meta-tag">SHALL</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="profile-card">
+                  <div class="profile-card-icon">📦</div>
+                  <div class="profile-card-content">
+                    <h4>RTQ-Bundle-Response</h4>
+                    <p>Transaction bundle packaging a complete applicant response for delivery to regulator</p>
+                    <div class="profile-card-meta">
+                      <span class="profile-meta-tag">Bundle</span>
+                      <span class="profile-meta-tag">SHALL</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="profile-card">
+                  <div class="profile-card-icon">🔍</div>
+                  <div class="profile-card-content">
+                    <h4>RTQ-AuditEvent</h4>
+                    <p>Immutable audit log of all Q&amp;A actions for regulatory accountability</p>
+                    <div class="profile-card-meta">
+                      <span class="profile-meta-tag">AuditEvent</span>
+                      <span class="profile-meta-tag">SHALL</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="profile-card">
+                  <div class="profile-card-icon">💊</div>
+                  <div class="profile-card-content">
+                    <h4>RTQ-MedicinalProduct</h4>
+                    <p>The medicinal product application to which the question set applies</p>
+                    <div class="profile-card-meta">
+                      <span class="profile-meta-tag">MedicinalProductDefinition</span>
+                      <span class="profile-meta-tag">SHALL</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="profile-card">
+                  <div class="profile-card-icon">🗂️</div>
+                  <div class="profile-card-content">
+                    <h4>RTQ-Procedure</h4>
+                    <p>The regulatory procedure (MAA, variation, extension) that the Q&amp;A concerns</p>
+                    <div class="profile-card-meta">
+                      <span class="profile-meta-tag">ResearchStudy</span>
+                      <span class="profile-meta-tag">MAY</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="profile-card">
+                  <div class="profile-card-icon">👤</div>
+                  <div class="profile-card-content">
+                    <h4>RTQ-Practitioner</h4>
+                    <p>Regulatory assessor or applicant contact person profile</p>
+                    <div class="profile-card-meta">
+                      <span class="profile-meta-tag">Practitioner</span>
+                      <span class="profile-meta-tag">SHOULD</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Value Sets -->
+            <div class="section-block">
+              <h2 class="section-block-title">Value Sets (8)</h2>
+              <table class="info-table" style="border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;background:white;">
+                <thead>
+                  <tr style="background:var(--gray-50);">
+                    <td style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--gray-600);padding:10px 16px;">Value Set</td>
+                    <td style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--gray-600);padding:10px 16px;">Description</td>
+                    <td style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--gray-600);padding:10px 16px;">Binding</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-top:1px solid var(--border);"><td style="padding:10px 16px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--blue-600);">RTQ-QuestionType</td><td style="padding:10px 16px;font-size:13px;color:var(--text-secondary);">Category of regulatory question (safety, quality, efficacy, procedural)</td><td style="padding:10px 16px;"><span class="profile-meta-tag" style="font-size:11px;">Required</span></td></tr>
+                  <tr style="border-top:1px solid var(--border);"><td style="padding:10px 16px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--blue-600);">RTQ-TaskStatus</td><td style="padding:10px 16px;font-size:13px;color:var(--text-secondary);">Lifecycle status of a regulatory Q&amp;A task</td><td style="padding:10px 16px;"><span class="profile-meta-tag" style="font-size:11px;">Required</span></td></tr>
+                  <tr style="border-top:1px solid var(--border);"><td style="padding:10px 16px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--blue-600);">RTQ-ProcedureType</td><td style="padding:10px 16px;font-size:13px;color:var(--text-secondary);">Regulatory procedure type (MAA, Type II Variation, Article 61(3), etc.)</td><td style="padding:10px 16px;"><span class="profile-meta-tag" style="font-size:11px;">Extensible</span></td></tr>
+                  <tr style="border-top:1px solid var(--border);"><td style="padding:10px 16px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--blue-600);">RTQ-AssessmentPhase</td><td style="padding:10px 16px;font-size:13px;color:var(--text-secondary);">Phase in assessment cycle (Day 120, Day 150, Day 180, Clock Stop)</td><td style="padding:10px 16px;"><span class="profile-meta-tag" style="font-size:11px;">Preferred</span></td></tr>
+                  <tr style="border-top:1px solid var(--border);"><td style="padding:10px 16px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--blue-600);">RTQ-CTDSection</td><td style="padding:10px 16px;font-size:13px;color:var(--text-secondary);">CTD module and section codes relevant to the question</td><td style="padding:10px 16px;"><span class="profile-meta-tag" style="font-size:11px;">Extensible</span></td></tr>
+                  <tr style="border-top:1px solid var(--border);"><td style="padding:10px 16px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--blue-600);">RTQ-Priority</td><td style="padding:10px 16px;font-size:13px;color:var(--text-secondary);">Question priority (Major Outstanding Issue, Other Concern, Recommendation)</td><td style="padding:10px 16px;"><span class="profile-meta-tag" style="font-size:11px;">Required</span></td></tr>
+                  <tr style="border-top:1px solid var(--border);"><td style="padding:10px 16px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--blue-600);">RTQ-ResolutionStatus</td><td style="padding:10px 16px;font-size:13px;color:var(--text-secondary);">Question resolution outcome (resolved, partially resolved, withdrawn, outstanding)</td><td style="padding:10px 16px;"><span class="profile-meta-tag" style="font-size:11px;">Required</span></td></tr>
+                  <tr style="border-top:1px solid var(--border);"><td style="padding:10px 16px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--blue-600);">RTQ-AgencyCode</td><td style="padding:10px 16px;font-size:13px;color:var(--text-secondary);">Regulatory agency identifier codes (EMA, FDA, HC, PMDA, MHRA, etc.)</td><td style="padding:10px 16px;"><span class="profile-meta-tag" style="font-size:11px;">Extensible</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Downloads -->
+            <div class="section-block">
+              <h2 class="section-block-title">Resources &amp; Downloads</h2>
+              <a href="#" class="resource-link">
+                <span class="resource-icon">📖</span>
+                <div>
+                  <div class="resource-name">Implementation Guide (HTML)</div>
+                  <div class="resource-desc">Full narrative IG with all profiles, value sets, and examples</div>
+                </div>
+                <span class="resource-type">HTML</span>
+              </a>
+              <a href="#" class="resource-link">
+                <span class="resource-icon">📦</span>
+                <div>
+                  <div class="resource-name">FHIR NPM Package</div>
+                  <div class="resource-desc">hl7.fhir.uv.rtq#0.3.0 — for use with FHIR tooling</div>
+                </div>
+                <span class="resource-type">.tgz</span>
+              </a>
+              <a href="#" class="resource-link">
+                <span class="resource-icon">🗂️</span>
+                <div>
+                  <div class="resource-name">StructureDefinitions (JSON)</div>
+                  <div class="resource-desc">All 12 profiles as FHIR JSON StructureDefinition resources</div>
+                </div>
+                <span class="resource-type">JSON</span>
+              </a>
+              <a href="#" class="resource-link">
+                <span class="resource-icon">🧪</span>
+                <div>
+                  <div class="resource-name">Example Instances</div>
+                  <div class="resource-desc">Sample Q&amp;A bundles, Questionnaire, and QuestionnaireResponse examples</div>
+                </div>
+                <span class="resource-type">JSON</span>
+              </a>
+              <a href="#" class="resource-link">
+                <span class="resource-icon">✅</span>
+                <div>
+                  <div class="resource-name">QA Report</div>
+                  <div class="resource-desc">Latest IG Publisher QA report — last built March 25, 2026</div>
+                </div>
+                <span class="resource-type">HTML</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <div>
+            <div class="sidebar-card">
+              <h4>Quick Facts</h4>
+              <table style="width:100%;border-collapse:collapse;">
+                <tr style="border-bottom:1px solid var(--gray-100);"><td style="padding:8px 0;font-size:13px;color:var(--gray-600);font-weight:500;width:100px;">Status</td><td style="padding:8px 0;"><span class="status-badge status-ci">CI Build</span></td></tr>
+                <tr style="border-bottom:1px solid var(--gray-100);"><td style="padding:8px 0;font-size:13px;color:var(--gray-600);font-weight:500;">Version</td><td style="padding:8px 0;font-size:13px;font-family:'JetBrains Mono',monospace;">0.3.0-ci</td></tr>
+                <tr style="border-bottom:1px solid var(--gray-100);"><td style="padding:8px 0;font-size:13px;color:var(--gray-600);font-weight:500;">FHIR</td><td style="padding:8px 0;font-size:13px;">R4 / R5</td></tr>
+                <tr style="border-bottom:1px solid var(--gray-100);"><td style="padding:8px 0;font-size:13px;color:var(--gray-600);font-weight:500;">Profiles</td><td style="padding:8px 0;font-size:13px;">12</td></tr>
+                <tr style="border-bottom:1px solid var(--gray-100);"><td style="padding:8px 0;font-size:13px;color:var(--gray-600);font-weight:500;">Value Sets</td><td style="padding:8px 0;font-size:13px;">8</td></tr>
+                <tr style="border-bottom:1px solid var(--gray-100);"><td style="padding:8px 0;font-size:13px;color:var(--gray-600);font-weight:500;">Examples</td><td style="padding:8px 0;font-size:13px;">6 instances</td></tr>
+                <tr style="border-bottom:1px solid var(--gray-100);"><td style="padding:8px 0;font-size:13px;color:var(--gray-600);font-weight:500;">HL7 WG</td><td style="padding:8px 0;font-size:13px;">BR&amp;R</td></tr>
+                <tr><td style="padding:8px 0;font-size:13px;color:var(--gray-600);font-weight:500;">Last Build</td><td style="padding:8px 0;font-size:13px;">March 25, 2026</td></tr>
+              </table>
+            </div>
+
+            <div class="sidebar-card">
+              <h4>Alignments</h4>
+              <div style="display:flex;flex-direction:column;gap:8px;">
+                <div style="display:flex;align-items:center;gap:8px;font-size:13px;">
+                  <span style="width:8px;height:8px;border-radius:50%;background:var(--green-400);flex-shrink:0;"></span>
+                  EMA Electronic Submission Portal
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;font-size:13px;">
+                  <span style="width:8px;height:8px;border-radius:50%;background:var(--green-400);flex-shrink:0;"></span>
+                  Health Canada RIMS Platform
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;font-size:13px;">
+                  <span style="width:8px;height:8px;border-radius:50%;background:var(--orange-400);flex-shrink:0;"></span>
+                  FDA ESG / CDER Portal (proposed)
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;font-size:13px;">
+                  <span style="width:8px;height:8px;border-radius:50%;background:var(--orange-400);flex-shrink:0;"></span>
+                  ICH M8 / eCTD (proposed)
+                </div>
+              </div>
+            </div>
+
+            <div class="sidebar-card">
+              <h4>Related Standards</h4>
+              <div style="display:flex;flex-direction:column;gap:6px;">
+                <a href="standard-apix.html" style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-secondary);padding:6px 0;border-bottom:1px solid var(--gray-100);">
+                  <span class="card-badge" style="font-size:10px;">APIX</span>
+                  Submission Workflow
+                </a>
+                <a href="standard-epi.html" style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-secondary);padding:6px 0;border-bottom:1px solid var(--gray-100);">
+                  <span class="card-badge" style="font-size:10px;">ePI</span>
+                  Drug Labeling
+                </a>
+                <a href="standard-pqi.html" style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-secondary);padding:6px 0;">
+                  <span class="card-badge" style="font-size:10px;">PQI</span>
+                  CMC / Quality
+                </a>
+              </div>
+            </div>
+
+            <div class="sidebar-card">
+              <h4>Get Involved</h4>
+              <div style="display:flex;flex-direction:column;gap:8px;">
+                <a href="#" class="btn btn-primary" style="width:100%;justify-content:center;">💬 Join Zulip Channel</a>
+                <a href="#" class="btn btn-outline" style="width:100%;justify-content:center;">📝 Submit Feedback</a>
+                <a href="#" class="btn btn-outline" style="width:100%;justify-content:center;">🐙 GitHub Repository</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 FHIR Life Sciences Catalogue | Published under Creative Commons Attribution 4.0 | HL7®, FHIR® are registered trademarks of HL7 International.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
