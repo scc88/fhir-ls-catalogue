@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RTQ — Response to Regulatory Questions | FHIR-LS Catalogue</title>
-  <meta name="description" content="The FHIR standard for structured regulatory Q&A exchange — enabling real-time, traceable question-and-response workflows between regulators and sponsors.">
+  <title>ICSR — Individual Case Safety Report | FHIR-LS Catalogue</title>
+  <meta name="description" content="The FHIR standard for adverse event reporting — replacing E2B(R3) XML with structured, real-time pharmacovigilance data exchange.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
@@ -13,14 +13,14 @@
       --blue-600: #0052CC; --blue-500: #0065FF; --blue-400: #2684FF; --blue-200: #B3D4FF; --blue-100: #DEEBFF; --blue-50: #F0F5FF;
       --gray-50: #F7F8FA; --gray-100: #EBECF0; --gray-200: #DFE1E6; --gray-300: #C1C7D0; --gray-400: #97A0AF; --gray-500: #7A869A; --gray-600: #6B778C; --gray-700: #505F79; --gray-800: #344563; --gray-900: #172B4D;
       --white: #ffffff; --text-primary: #172B4D; --text-secondary: #505F79; --text-muted: #7A869A; --border: #DFE1E6; --border-light: #EBECF0;
-      --accent: #0094A8; --accent-bg: rgba(0,148,168,0.06);
+      --accent: #FF8B00; --accent-bg: rgba(255,139,0,0.06);
       --shadow-sm: 0 1px 3px rgba(9,30,66,0.08), 0 0 0 1px rgba(9,30,66,0.04); --shadow-md: 0 4px 16px rgba(9,30,66,0.1), 0 1px 4px rgba(9,30,66,0.06); --shadow-lg: 0 12px 40px rgba(9,30,66,0.12), 0 2px 8px rgba(9,30,66,0.08);
       --radius-sm: 6px; --radius-md: 10px; --radius-lg: 16px; --radius-xl: 24px; --transition: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
     html { scroll-behavior: smooth; } body { font-family: 'Inter', -apple-system, sans-serif; color: var(--text-primary); background: var(--white); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
-    a { color: var(--accent); text-decoration: none; } a:hover { color: #00B5CC; } .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+    a { color: var(--accent); text-decoration: none; } a:hover { color: #FFA333; } .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
     .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; border-radius: var(--radius-sm); font-weight: 600; font-size: 14px; transition: all var(--transition); cursor: pointer; border: 2px solid transparent; white-space: nowrap; }
-    .btn-primary { background: var(--accent); color: var(--white); border-color: var(--accent); } .btn-primary:hover { background: #00B5CC; border-color: #00B5CC; color: var(--white); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,148,168,0.3); }
+    .btn-primary { background: var(--accent); color: var(--white); border-color: var(--accent); } .btn-primary:hover { background: #FFA333; border-color: #FFA333; color: var(--white); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(255,139,0,0.3); }
     .btn-lg { padding: 14px 28px; font-size: 15px; border-radius: var(--radius-md); } .btn-outline { background: transparent; color: var(--accent); border-color: var(--accent); } .btn-outline:hover { background: var(--accent); color: var(--white); }
     .btn-subtle { background: var(--gray-50); color: var(--text-secondary); border-color: var(--border); } .btn-subtle:hover { background: var(--white); border-color: var(--accent); color: var(--accent); }
     .site-header { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--border); } .site-header.scrolled { box-shadow: var(--shadow-md); }
@@ -30,22 +30,22 @@
     .logo-main { display: block; font-size: 18px; font-weight: 800; color: #0a3069; letter-spacing: -0.03em; } .logo-sub { display: block; font-size: 10.5px; color: var(--gray-500); font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; }
     .nav-menu { display: flex; list-style: none; gap: 2px; flex: 1; } .nav-link { padding: 8px 14px; border-radius: var(--radius-sm); color: var(--text-secondary); font-weight: 500; font-size: 14px; transition: all var(--transition); } .nav-link:hover, .nav-link.active { color: var(--blue-600); background: var(--blue-50); } .nav-actions { margin-left: auto; }
     .breadcrumb { padding: 16px 0; font-size: 13px; color: var(--text-muted); border-bottom: 1px solid var(--border-light); } .breadcrumb a { color: var(--text-muted); font-weight: 500; } .breadcrumb a:hover { color: var(--accent); } .breadcrumb .sep { margin: 0 8px; opacity: 0.5; } .breadcrumb .current { color: var(--text-primary); font-weight: 600; }
-    .sub-hero { padding: 64px 0 56px; border-bottom: 1px solid var(--border-light); position: relative; overflow: hidden; } .sub-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(0,148,168,0.04) 0%, transparent 60%); } .sub-hero .container { position: relative; }
+    .sub-hero { padding: 64px 0 56px; border-bottom: 1px solid var(--border-light); position: relative; overflow: hidden; } .sub-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(255,139,0,0.04) 0%, transparent 60%); } .sub-hero .container { position: relative; }
     .hero-layout { display: grid; grid-template-columns: 1fr 320px; gap: 64px; align-items: center; } .hero-badge-row { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
-    .hero-icon { width: 56px; height: 56px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 28px; background: var(--accent-bg); border: 1px solid rgba(0,148,168,0.12); }
+    .hero-icon { width: 56px; height: 56px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 28px; background: var(--accent-bg); border: 1px solid rgba(255,139,0,0.12); }
     .hero-badge { font-size: 11px; font-weight: 800; letter-spacing: 0.08em; padding: 4px 10px; border-radius: 4px; color: var(--accent); background: var(--accent-bg); } .hero-version { font-size: 12px; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; }
     .sub-hero h1 { font-size: 42px; font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 16px; } .sub-hero .hero-desc { font-size: 17px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 28px; } .hero-actions { display: flex; gap: 12px; }
     .hero-meta-card { background: var(--gray-50); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; } .meta-grid { display: flex; flex-direction: column; gap: 16px; } .meta-row { display: flex; justify-content: space-between; align-items: center; }
     .meta-label { font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; } .meta-value { font-size: 14px; font-weight: 600; color: var(--text-primary); } .meta-divider { height: 1px; background: var(--border-light); }
-    .status-pill { font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.06em; } .status-draft { background: rgba(255,139,0,0.1); color: #FF8B00; }
-    .section-tag { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); background: rgba(0,148,168,0.08); padding: 4px 14px; border-radius: 100px; margin-bottom: 12px; }
+    .status-pill { font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.06em; } .status-active { background: rgba(0,135,90,0.1); color: #00875A; }
+    .section-tag { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); background: rgba(255,139,0,0.08); padding: 4px 14px; border-radius: 100px; margin-bottom: 12px; }
     .vp-section { padding: 80px 0; } .vp-header { margin-bottom: 48px; } .vp-header h2 { font-size: 32px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 12px; } .vp-header p { font-size: 16px; color: var(--text-secondary); max-width: 600px; line-height: 1.7; }
     .vp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; } .vp-card { background: var(--gray-50); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 28px; transition: all var(--transition); } .vp-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: transparent; }
     .vp-icon { width: 44px; height: 44px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 14px; background: var(--white); border: 1px solid var(--border); } .vp-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; } .vp-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
     .benefits-section { padding: 80px 0; background: var(--gray-50); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); } .benefits-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; } .benefits-content h2 { font-size: 32px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 12px; } .benefits-content > p { font-size: 15px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 28px; }
     .benefit-items { display: flex; flex-direction: column; gap: 16px; } .benefit-item { display: flex; gap: 14px; } .benefit-check { width: 24px; height: 24px; border-radius: 50%; background: rgba(0,135,90,0.1); color: #00875A; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; margin-top: 2px; } .benefit-item strong { display: block; font-size: 14px; font-weight: 700; margin-bottom: 2px; } .benefit-item p { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
     .benefits-visual { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; } .visual-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--border-light); } .visual-icon { font-size: 20px; } .visual-title { font-size: 14px; font-weight: 700; } .visual-subtitle { font-size: 12px; color: var(--text-muted); }
-    .visual-items { display: flex; flex-direction: column; gap: 10px; } .visual-item { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 8px; background: var(--gray-50); border: 1px solid var(--border-light); font-size: 13px; color: var(--text-secondary); transition: all var(--transition); } .visual-item:hover { background: var(--accent-bg); border-color: rgba(0,148,168,0.15); } .visual-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; } .visual-item-label { font-weight: 600; color: var(--text-primary); }
+    .visual-items { display: flex; flex-direction: column; gap: 10px; } .visual-item { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 8px; background: var(--gray-50); border: 1px solid var(--border-light); font-size: 13px; color: var(--text-secondary); transition: all var(--transition); } .visual-item:hover { background: var(--accent-bg); border-color: rgba(255,139,0,0.15); } .visual-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; } .visual-item-label { font-weight: 600; color: var(--text-primary); }
     .resources-section { padding: 80px 0; } .resources-header { margin-bottom: 48px; } .resources-header h2 { font-size: 32px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 12px; } .resources-header p { font-size: 16px; color: var(--text-secondary); }
     .resources-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; } .resource-card { display: flex; align-items: center; gap: 16px; padding: 20px 24px; background: var(--gray-50); border: 1px solid var(--border); border-radius: var(--radius-md); transition: all var(--transition); color: inherit; } .resource-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--accent); color: inherit; background: var(--white); }
     .resource-icon { width: 44px; height: 44px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; background: var(--white); border: 1px solid var(--border); } .resource-text h4 { font-size: 15px; font-weight: 700; margin-bottom: 3px; } .resource-text p { font-size: 12px; color: var(--text-muted); } .resource-arrow { margin-left: auto; color: var(--gray-300); font-size: 16px; transition: all var(--transition); } .resource-card:hover .resource-arrow { color: var(--accent); transform: translateX(4px); }
@@ -55,66 +55,67 @@
 </head>
 <body>
   <header class="site-header" id="site-header"><div class="header-top"><div class="container"><span>The open FHIR standard for end-to-end life sciences regulatory workflows</span><div class="header-links"><a href="#">About</a><a href="#">Contact</a><a href="#">GitHub</a></div></div></div><nav><div class="container nav-inner"><a href="design-option-b.html" class="logo"><div class="logo-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h10M4 18h13" stroke="white" stroke-width="2.5" stroke-linecap="round"/><circle cx="20" cy="18" r="3.5" fill="white" fill-opacity="0.9"/></svg></div><div><span class="logo-main">FHIR-LS</span><span class="logo-sub">Life Sciences Catalogue</span></div></a><ul class="nav-menu"><li><a href="design-option-b.html" class="nav-link">Home</a></li><li><a href="design-option-b.html#standards" class="nav-link active">Catalogue</a></li><li><a href="#" class="nav-link">Data Dictionary</a></li><li><a href="#" class="nav-link">Governance</a></li></ul><div class="nav-actions"><a href="design-option-b.html#standards" class="btn btn-primary">Browse Catalogue</a></div></div></nav></header>
-  <div class="breadcrumb"><div class="container"><a href="design-option-b.html">Home</a><span class="sep">›</span><a href="design-option-b.html#standards">Catalogue</a><span class="sep">›</span><span class="current">RTQ — Response to Regulatory Questions</span></div></div>
+  <div class="breadcrumb"><div class="container"><a href="design-option-b.html">Home</a><span class="sep">›</span><a href="design-option-b.html#standards">Catalogue</a><span class="sep">›</span><span class="current">ICSR — Individual Case Safety Report</span></div></div>
 
   <main>
     <section class="sub-hero"><div class="container"><div class="hero-layout"><div>
-      <div class="hero-badge-row"><div class="hero-icon">❓</div><span class="hero-badge">RTQ</span><span class="hero-version">v0.3.0-draft</span></div>
-      <h1>Response to Regulatory Questions</h1>
-      <p class="hero-desc">The FHIR standard for structured regulatory Q&A. RTQ replaces unstructured email and portal-based question workflows with traceable, machine-readable exchanges between regulators and sponsors — accelerating the review and assessment process.</p>
+      <div class="hero-badge-row"><div class="hero-icon">⚕️</div><span class="hero-badge">ICSR</span><span class="hero-version">v1.3.0</span></div>
+      <h1>Individual Case Safety Report</h1>
+      <p class="hero-desc">The FHIR standard for pharmacovigilance and adverse event reporting. ICSR replaces E2B(R3) XML with structured, real-time safety data that flows seamlessly between sponsors, regulators, and healthcare providers — ensuring patient safety signals are detected and acted on faster.</p>
       <div class="hero-actions"><a href="#" class="btn btn-primary btn-lg">View Implementation Guide →</a><a href="#" class="btn btn-outline btn-lg">GitHub Project</a></div>
     </div><div class="hero-meta-card"><div class="meta-grid">
-      <div class="meta-row"><span class="meta-label">Status</span><span class="status-pill status-draft">Draft</span></div><div class="meta-divider"></div>
+      <div class="meta-row"><span class="meta-label">Status</span><span class="status-pill status-active">Active</span></div><div class="meta-divider"></div>
       <div class="meta-row"><span class="meta-label">FHIR Version</span><span class="meta-value">R5</span></div><div class="meta-divider"></div>
-      <div class="meta-row"><span class="meta-label">Profiles</span><span class="meta-value">12</span></div><div class="meta-divider"></div>
+      <div class="meta-row"><span class="meta-label">Profiles</span><span class="meta-value">22</span></div><div class="meta-divider"></div>
       <div class="meta-row"><span class="meta-label">Realm</span><span class="meta-value">Universal</span></div><div class="meta-divider"></div>
       <div class="meta-row"><span class="meta-label">Publisher</span><span class="meta-value">Vulcan HL7</span></div><div class="meta-divider"></div>
-      <div class="meta-row"><span class="meta-label">Integrates</span><span class="meta-value">APIX · ePI · PQI</span></div>
+      <div class="meta-row"><span class="meta-label">Replaces</span><span class="meta-value">ICH E2B(R3)</span></div>
     </div></div></div></div></section>
 
     <section class="vp-section"><div class="container">
-      <div class="vp-header"><span class="section-tag">What is RTQ?</span><h2>Regulatory Q&A, Structured</h2><p>RTQ digitizes the question-and-response process that occurs during regulatory assessment — replacing untracked email threads with structured, auditable FHIR-based exchanges.</p></div>
+      <div class="vp-header"><span class="section-tag">What is ICSR?</span><h2>Safety Reporting, Modernized</h2><p>FHIR ICSR transforms adverse event reporting from batch-uploaded XML files to real-time, structured safety data that integrates with clinical and regulatory systems natively.</p></div>
       <div class="vp-grid">
-        <div class="vp-card"><div class="vp-icon">📬</div><h3>Structured Questions</h3><p>Regulators issue questions as coded FHIR resources — linked to specific dossier sections, ePI content, or CMC data points.</p></div>
-        <div class="vp-card"><div class="vp-icon">📝</div><h3>Linked Responses</h3><p>Sponsor responses reference the exact data elements under question, with attached evidence and updated FHIR resources.</p></div>
-        <div class="vp-card"><div class="vp-icon">⏱️</div><h3>Deadline Tracking</h3><p>Built-in due dates, priority levels, and clock-stop management aligned with regulatory procedure timelines.</p></div>
-        <div class="vp-card"><div class="vp-icon">🔗</div><h3>Cross-Domain References</h3><p>Questions can reference ePI sections, PQI data, ICSR cases, or any FHIR resource in the regulatory dossier.</p></div>
-        <div class="vp-card"><div class="vp-icon">📊</div><h3>Assessment Workflows</h3><p>Support for rapporteur/co-rapporteur workflows, consolidated question lists, and multi-agency procedures.</p></div>
-        <div class="vp-card"><div class="vp-icon">🔍</div><h3>Full Audit Trail</h3><p>Every question, response, and follow-up is versioned and auditable — complete transparency for all parties.</p></div>
+        <div class="vp-card"><div class="vp-icon">🚨</div><h3>Real-Time Signal Detection</h3><p>Safety reports flow in real time — enabling faster signal detection and reducing the risk of delayed adverse event awareness.</p></div>
+        <div class="vp-card"><div class="vp-icon">🏥</div><h3>EHR Integration</h3><p>Adverse events reported directly from clinical systems, pre-populated with patient and medication data from the EHR.</p></div>
+        <div class="vp-card"><div class="vp-icon">🌐</div><h3>E2B(R3) Compatibility</h3><p>Full mapping to ICH E2B(R3) data elements ensures backward compatibility while enabling FHIR-native workflows.</p></div>
+        <div class="vp-card"><div class="vp-icon">📊</div><h3>Aggregate Reporting</h3><p>Support for PSURs, DSURs, and aggregate safety summaries alongside individual case reports.</p></div>
+        <div class="vp-card"><div class="vp-icon">🔗</div><h3>Linked to ePI</h3><p>Safety data cross-referenced to product labelling — enabling automated SmPC updates when safety signals emerge.</p></div>
+        <div class="vp-card"><div class="vp-icon">🤖</div><h3>Automated Triage</h3><p>Machine-readable data enables automated seriousness assessment, duplicate detection, and causality evaluation.</p></div>
       </div>
     </div></section>
 
     <section class="benefits-section"><div class="container"><div class="benefits-layout"><div class="benefits-content">
-      <span class="section-tag">Why Implement RTQ?</span><h2>Faster Assessments, Better Outcomes</h2>
-      <p>RTQ eliminates the communication gaps that delay regulatory reviews — ensuring questions reach the right experts and responses address exactly what was asked.</p>
+      <span class="section-tag">Why Implement ICSR?</span><h2>Protect Patients, Faster</h2>
+      <p>FHIR ICSR eliminates the lag in safety reporting — getting critical adverse event data to the right people, at the right time.</p>
       <div class="benefit-items">
-        <div class="benefit-item"><div class="benefit-check">✓</div><div><strong>50% Shorter Q&A Cycles</strong><p>Structured questions with linked references eliminate ambiguity and reduce back-and-forth.</p></div></div>
-        <div class="benefit-item"><div class="benefit-check">✓</div><div><strong>No Lost Questions</strong><p>Every question is tracked, assigned, and has a clear response deadline — nothing falls through the cracks.</p></div></div>
-        <div class="benefit-item"><div class="benefit-check">✓</div><div><strong>Connected to the Dossier</strong><p>Questions link directly to submission data — reviewers and sponsors see the same source of truth.</p></div></div>
-        <div class="benefit-item"><div class="benefit-check">✓</div><div><strong>Multi-Agency Ready</strong><p>Support for reliance and work-sharing procedures across multiple regulatory bodies.</p></div></div>
+        <div class="benefit-item"><div class="benefit-check">✓</div><div><strong>Days to Minutes</strong><p>Reduce initial case report submission time from days to minutes with structured, real-time exchange.</p></div></div>
+        <div class="benefit-item"><div class="benefit-check">✓</div><div><strong>Eliminate Re-Keying</strong><p>EHR-populated reports eliminate manual data entry — reducing errors and improving data quality.</p></div></div>
+        <div class="benefit-item"><div class="benefit-check">✓</div><div><strong>Global Compliance</strong><p>Meet ICH E2B(R3) requirements while future-proofing for FHIR-native regulatory exchange.</p></div></div>
+        <div class="benefit-item"><div class="benefit-check">✓</div><div><strong>Signal-to-Action</strong><p>Structured data powers automated aggregate analysis — detect, confirm, and act on safety signals faster.</p></div></div>
       </div>
     </div><div class="benefits-visual">
-      <div class="visual-header"><span class="visual-icon">❓</span><div><div class="visual-title">RTQ FHIR Resources</div><div class="visual-subtitle">Key profiles in this IG</div></div></div>
+      <div class="visual-header"><span class="visual-icon">⚕️</span><div><div class="visual-title">ICSR FHIR Resources</div><div class="visual-subtitle">Key profiles in this IG</div></div></div>
       <div class="visual-items">
-        <div class="visual-item"><div class="visual-dot" style="background:#0094A8;"></div><span class="visual-item-label">Communication</span> — Question/response container</div>
-        <div class="visual-item"><div class="visual-dot" style="background:#00B5CC;"></div><span class="visual-item-label">CommunicationRequest</span> — Question issuance</div>
-        <div class="visual-item"><div class="visual-dot" style="background:#0052CC;"></div><span class="visual-item-label">Task</span> — Response tracking & deadlines</div>
-        <div class="visual-item"><div class="visual-dot" style="background:#00875A;"></div><span class="visual-item-label">DocumentReference</span> — Attached evidence</div>
-        <div class="visual-item"><div class="visual-dot" style="background:#6554C0;"></div><span class="visual-item-label">Provenance</span> — Audit trail</div>
+        <div class="visual-item"><div class="visual-dot" style="background:#FF8B00;"></div><span class="visual-item-label">AdverseEvent</span> — Core safety report</div>
+        <div class="visual-item"><div class="visual-dot" style="background:#FFA333;"></div><span class="visual-item-label">Patient</span> — Case subject demographics</div>
+        <div class="visual-item"><div class="visual-dot" style="background:#0052CC;"></div><span class="visual-item-label">MedicationStatement</span> — Suspect drugs</div>
+        <div class="visual-item"><div class="visual-dot" style="background:#00875A;"></div><span class="visual-item-label">Condition</span> — Reported reactions</div>
+        <div class="visual-item"><div class="visual-dot" style="background:#6554C0;"></div><span class="visual-item-label">Observation</span> — Lab results & outcomes</div>
+        <div class="visual-item"><div class="visual-dot" style="background:#5243AA;"></div><span class="visual-item-label">MessageHeader</span> — Transmission metadata</div>
       </div>
     </div></div></div></section>
 
     <section class="resources-section"><div class="container">
-      <div class="resources-header"><span class="section-tag">Get Started</span><h2>Resources & Links</h2><p>Everything you need to begin implementing RTQ in your regulatory Q&A workflows.</p></div>
+      <div class="resources-header"><span class="section-tag">Get Started</span><h2>Resources & Links</h2><p>Everything you need to begin implementing FHIR ICSR in your pharmacovigilance systems.</p></div>
       <div class="resources-grid">
-        <a href="#" class="resource-card"><div class="resource-icon">📘</div><div class="resource-text"><h4>Implementation Guide</h4><p>Full IG with profiles, workflows, and conformance</p></div><div class="resource-arrow">→</div></a>
+        <a href="#" class="resource-card"><div class="resource-icon">📘</div><div class="resource-text"><h4>Implementation Guide</h4><p>Full IG with profiles, examples, and E2B mapping</p></div><div class="resource-arrow">→</div></a>
         <a href="#" class="resource-card"><div class="resource-icon">💻</div><div class="resource-text"><h4>GitHub Repository</h4><p>Source code, issues, and contribution guidelines</p></div><div class="resource-arrow">→</div></a>
-        <a href="#" class="resource-card"><div class="resource-icon">🔌</div><div class="resource-text"><h4>API Reference</h4><p>RESTful operations for Q&A workflow management</p></div><div class="resource-arrow">→</div></a>
-        <a href="#" class="resource-card"><div class="resource-icon">🧪</div><div class="resource-text"><h4>Example Exchanges</h4><p>Sample RTQ bundles for common assessment scenarios</p></div><div class="resource-arrow">→</div></a>
+        <a href="#" class="resource-card"><div class="resource-icon">🗺️</div><div class="resource-text"><h4>E2B(R3) ↔ FHIR Mapping</h4><p>Detailed crosswalk between E2B elements and FHIR profiles</p></div><div class="resource-arrow">→</div></a>
+        <a href="#" class="resource-card"><div class="resource-icon">🧪</div><div class="resource-text"><h4>Example Cases</h4><p>Sample ICSR bundles covering common adverse event scenarios</p></div><div class="resource-arrow">→</div></a>
       </div>
     </div></section>
 
-    <section class="cta-section"><div class="container"><div class="cta-card"><div><h2>Explore the Full Catalogue</h2><p>See how RTQ connects with ePI, PQI, APIX, ICSR, and HTA across the regulatory lifecycle.</p></div><div class="cta-buttons"><a href="design-option-b.html#standards" class="btn btn-primary btn-lg">Back to Catalogue</a><a href="standard-epi.html" class="btn btn-subtle btn-lg">First: ePI →</a></div></div></div></section>
+    <section class="cta-section"><div class="container"><div class="cta-card"><div><h2>Explore the Full Catalogue</h2><p>See how ICSR connects with ePI, PQI, APIX, HTA, and RTQ across the regulatory lifecycle.</p></div><div class="cta-buttons"><a href="design-option-b.html#standards" class="btn btn-primary btn-lg">Back to Catalogue</a><a href="standard-hta.html" class="btn btn-subtle btn-lg">Next: HTA →</a></div></div></div></section>
   </main>
 
   <footer class="site-footer"><div class="container"><div class="footer-inner"><div class="footer-logo">FHIR-LS <span>Life Sciences Catalogue</span></div><div class="footer-links"><a href="design-option-b.html">Home</a><a href="design-option-b.html#standards">Catalogue</a><a href="#">GitHub</a></div></div><div class="footer-bottom"><p>© 2026 FHIR Life Sciences Catalogue | CC BY 4.0</p></div></div></footer>
