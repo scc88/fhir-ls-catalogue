@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Dictionary | FHIR Life Sciences Catalogue</title>
+  <meta name="description" content="The FHIR-LS shared data dictionary — reusable business concepts, data types, and terminology across all life sciences standards.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .dict-main { padding: 40px; }
+    .dict-search-bar { display:flex;align-items:center;gap:10px;background:white;border:1px solid var(--border);border-radius:var(--radius-md);padding:12px 18px;margin-bottom:28px;box-shadow:var(--shadow-sm); }
+    .dict-search-bar input { border:none;outline:none;font-family:inherit;font-size:15px;flex:1;color:var(--text-primary); }
+    .dict-section { margin-bottom: 40px; }
+    .dict-section-title { font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--gray-500);padding:8px 0;border-bottom:1px solid var(--border);margin-bottom:16px; }
+    .concept-grid { display:flex;flex-direction:column;gap:10px; }
+    .concept-card { background:white;border:1px solid var(--border);border-radius:var(--radius-md);padding:18px 20px;display:flex;align-items:flex-start;gap:16px;transition:all 0.2s;cursor:pointer; }
+    .concept-card:hover { box-shadow:var(--shadow-md);border-color:var(--blue-300); }
+    .concept-color { width:4px;border-radius:2px;align-self:stretch;flex-shrink:0; }
+    .concept-body { flex:1; }
+    .concept-name { font-size:15px;font-weight:700;color:var(--text-primary);font-family:'JetBrains Mono',monospace;margin-bottom:4px; }
+    .concept-desc { font-size:13px;color:var(--text-secondary);line-height:1.5;margin-bottom:10px; }
+    .concept-tags { display:flex;gap:6px;flex-wrap:wrap; }
+    .concept-right { display:flex;flex-direction:column;align-items:flex-end;gap:8px;flex-shrink:0; }
+    .concept-used { font-size:11px;color:var(--gray-500);font-weight:500; }
+    .concept-standards { display:flex;gap:4px; }
+    .cs-badge { font-size:10px;font-weight:700;padding:2px 6px;border-radius:3px;letter-spacing:0.05em; }
+    .cs-epi { background:rgba(0,82,204,0.1);color:var(--blue-600); }
+    .cs-pqi { background:rgba(0,135,90,0.1);color:var(--green-500); }
+    .cs-apix { background:rgba(101,84,192,0.1);color:var(--purple-500); }
+    .cs-icsr { background:rgba(255,139,0,0.1);color:var(--orange-500); }
+    .cs-rtq { background:rgba(0,141,166,0.1);color:var(--teal-500); }
+    .term-section { background:white;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:24px; }
+    .term-section-head { background:var(--gray-50);padding:14px 20px;border-bottom:1px solid var(--border);font-size:13px;font-weight:700;color:var(--gray-700); }
+    .term-row { display:flex;gap:0;border-bottom:1px solid var(--gray-100); }
+    .term-row:last-child { border-bottom:none; }
+    .term-col { padding:12px 16px;font-size:13px; }
+    .term-col:first-child { width:200px;flex-shrink:0;font-family:'JetBrains Mono',monospace;color:var(--blue-600);font-size:12px;border-right:1px solid var(--gray-100); }
+    .term-col:nth-child(2) { flex:1;color:var(--text-secondary); }
+    .term-col:last-child { width:130px;flex-shrink:0;border-left:1px solid var(--gray-100); }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-top">
+      <div class="container">
+        <span>The open standard for life sciences data exchange</span>
+        <div class="header-links"><a href="#">About</a><a href="#">Contact</a><a href="#">Portal Login</a></div>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <div class="container nav-inner">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="url(#lg4)"/><path d="M8 10h16M8 16h10M8 22h13" stroke="white" stroke-width="2.5" stroke-linecap="round"/><circle cx="24" cy="22" r="4" fill="white" fill-opacity="0.9"/><path d="M22.5 22l1 1 2.5-2" stroke="#0052CC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="lg4" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse"><stop stop-color="#0052CC"/><stop offset="1" stop-color="#00B8D9"/></linearGradient></defs></svg>
+          </div>
+          <div class="logo-text"><span class="logo-main">FHIR-LS</span><span class="logo-sub">Life Sciences Catalogue</span></div>
+        </a>
+        <ul class="nav-menu">
+          <li><a href="catalogue.html" class="nav-link">Catalogue</a></li>
+          <li class="has-dropdown"><a href="#" class="nav-link">Standards <span class="chevron">▾</span></a><ul class="dropdown"><li><a href="standard-epi.html">ePI — Drug Labeling</a></li><li><a href="standard-pqi.html">PQI — CMC Quality</a></li><li><a href="standard-apix.html">APIX — Regulatory Submissions</a></li><li><a href="standard-icsr.html">ICSR — Safety Reporting</a></li><li><a href="standard-rtq.html">RTQ — Regulatory Questions</a></li></ul></li>
+          <li><a href="data-dictionary.html" class="nav-link active">Data Dictionary</a></li>
+          <li><a href="implementations.html" class="nav-link">Implementations</a></li>
+          <li><a href="governance.html" class="nav-link">Governance</a></li>
+        </ul>
+        <div class="nav-actions"><a href="catalogue.html" class="btn btn-primary">Browse Catalogue</a></div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero-content">
+          <h1>FHIR-LS Data Dictionary</h1>
+          <p>Reusable business concepts, common data types, and shared terminology across all FHIR life sciences standards. The dictionary ensures consistency and enables cross-standard data exchange.</p>
+        </div>
+        <div style="display:flex;gap:12px;flex-shrink:0;">
+          <a href="#" class="btn btn-ghost-white">Download as CSV</a>
+          <a href="#" class="btn btn-white">FHIR ValueSet API</a>
+        </div>
+      </div>
+    </section>
+
+    <div style="background:var(--gray-50);padding:48px 0;">
+      <div class="container">
+        <div style="display:grid;grid-template-columns:260px 1fr;gap:0;">
+
+          <!-- Sidebar -->
+          <div style="background:white;border:1px solid var(--border);border-radius:var(--radius-lg);height:fit-content;overflow:hidden;position:sticky;top:90px;">
+            <div style="padding:16px 20px;border-bottom:1px solid var(--border);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--gray-500);">Browse by Category</div>
+            <div class="sidebar-item active">Business Concepts <span class="sidebar-count">24</span></div>
+            <div class="sidebar-item">Data Types <span class="sidebar-count">18</span></div>
+            <div class="sidebar-item">Value Sets <span class="sidebar-count">41</span></div>
+            <div class="sidebar-item">Code Systems <span class="sidebar-count">12</span></div>
+            <div class="sidebar-item">Identifiers <span class="sidebar-count">8</span></div>
+            <div style="padding:12px 20px;border-top:1px solid var(--border);margin-top:8px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--gray-400);">Filter by Standard</div>
+            <div class="sidebar-item">All Standards <span class="sidebar-count">103</span></div>
+            <div class="sidebar-item"><span class="cs-badge cs-epi">ePI</span> Drug Labeling <span class="sidebar-count">28</span></div>
+            <div class="sidebar-item"><span class="cs-badge cs-pqi">PQI</span> CMC Quality <span class="sidebar-count">34</span></div>
+            <div class="sidebar-item"><span class="cs-badge cs-apix">APIX</span> Submissions <span class="sidebar-count">18</span></div>
+            <div class="sidebar-item"><span class="cs-badge cs-icsr">ICSR</span> Safety <span class="sidebar-count">22</span></div>
+            <div class="sidebar-item"><span class="cs-badge cs-rtq">RTQ</span> Q&amp;A <span class="sidebar-count">12</span></div>
+          </div>
+
+          <!-- Main content -->
+          <div style="padding-left:32px;">
+            <div class="dict-search-bar">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gray-400)" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              <input type="text" placeholder="Search concepts, types, or terminology...">
+              <span style="font-size:12px;color:var(--gray-400);font-family:'JetBrains Mono',monospace;background:var(--gray-50);padding:3px 8px;border-radius:4px;border:1px solid var(--border);">⌘K</span>
+            </div>
+
+            <!-- Business Concepts -->
+            <div class="dict-section">
+              <div class="dict-section-title">Business Concepts — Shared across standards</div>
+              <div class="concept-grid">
+
+                <div class="concept-card">
+                  <div class="concept-color" style="background:var(--blue-500);"></div>
+                  <div class="concept-body">
+                    <div class="concept-name">MedicinalProduct</div>
+                    <div class="concept-desc">A pharmaceutical product intended for administration to humans or animals, identified by an MPID (ISO IDMP). Core entity referenced across ePI, PQI, ICSR, and APIX.</div>
+                    <div class="concept-tags">
+                      <span class="dict-type-tag type-reference">Reference</span>
+                      <span class="dict-type-tag type-identifier">IDMP</span>
+                    </div>
+                  </div>
+                  <div class="concept-right">
+                    <div class="concept-standards">
+                      <span class="cs-badge cs-epi">ePI</span>
+                      <span class="cs-badge cs-pqi">PQI</span>
+                      <span class="cs-badge cs-icsr">ICSR</span>
+                      <span class="cs-badge cs-apix">APIX</span>
+                      <span class="cs-badge cs-rtq">RTQ</span>
+                    </div>
+                    <div class="concept-used">Used in all 5 standards</div>
+                  </div>
+                </div>
+
+                <div class="concept-card">
+                  <div class="concept-color" style="background:var(--blue-500);"></div>
+                  <div class="concept-body">
+                    <div class="concept-name">RegulatoryAuthority</div>
+                    <div class="concept-desc">A national or supranational medicines regulatory agency, identified by a standardised code. Mapped to EMA OMS Organisation codes and FDA establishment identifiers.</div>
+                    <div class="concept-tags">
+                      <span class="dict-type-tag type-code">CodeableConcept</span>
+                      <span class="dict-type-tag type-reference">Organization</span>
+                    </div>
+                  </div>
+                  <div class="concept-right">
+                    <div class="concept-standards">
+                      <span class="cs-badge cs-epi">ePI</span>
+                      <span class="cs-badge cs-apix">APIX</span>
+                      <span class="cs-badge cs-rtq">RTQ</span>
+                    </div>
+                    <div class="concept-used">Used in 3 standards</div>
+                  </div>
+                </div>
+
+                <div class="concept-card">
+                  <div class="concept-color" style="background:var(--green-500);"></div>
+                  <div class="concept-body">
+                    <div class="concept-name">SubstanceDefinition</div>
+                    <div class="concept-desc">The active or inactive substance (API or excipient) in a medicinal product, linked to ISO IDMP PAFID identifier and chemical structure representation.</div>
+                    <div class="concept-tags">
+                      <span class="dict-type-tag type-reference">SubstanceDefinition</span>
+                      <span class="dict-type-tag type-identifier">PAFID</span>
+                      <span class="dict-type-tag type-string">INN</span>
+                    </div>
+                  </div>
+                  <div class="concept-right">
+                    <div class="concept-standards">
+                      <span class="cs-badge cs-epi">ePI</span>
+                      <span class="cs-badge cs-pqi">PQI</span>
+                    </div>
+                    <div class="concept-used">Used in 2 standards</div>
+                  </div>
+                </div>
+
+                <div class="concept-card">
+                  <div class="concept-color" style="background:var(--orange-500);"></div>
+                  <div class="concept-body">
+                    <div class="concept-name">AdverseEvent</div>
+                    <div class="concept-desc">An undesirable clinical event associated with medicine exposure. Coded using MedDRA preferred terms and linked to patient demographics and drug exposure data.</div>
+                    <div class="concept-tags">
+                      <span class="dict-type-tag type-reference">AdverseEvent</span>
+                      <span class="dict-type-tag type-code">MedDRA</span>
+                    </div>
+                  </div>
+                  <div class="concept-right">
+                    <div class="concept-standards">
+                      <span class="cs-badge cs-icsr">ICSR</span>
+                    </div>
+                    <div class="concept-used">Used in 1 standard</div>
+                  </div>
+                </div>
+
+                <div class="concept-card">
+                  <div class="concept-color" style="background:var(--teal-500);"></div>
+                  <div class="concept-body">
+                    <div class="concept-name">RegulatoryQuestion</div>
+                    <div class="concept-desc">A structured question from a regulatory authority to an applicant during an assessment procedure, categorised by type, priority, and CTD section reference.</div>
+                    <div class="concept-tags">
+                      <span class="dict-type-tag type-reference">Questionnaire.item</span>
+                      <span class="dict-type-tag type-code">RTQ-QuestionType</span>
+                    </div>
+                  </div>
+                  <div class="concept-right">
+                    <div class="concept-standards">
+                      <span class="cs-badge cs-rtq">RTQ</span>
+                    </div>
+                    <div class="concept-used">Used in 1 standard</div>
+                  </div>
+                </div>
+
+                <div class="concept-card">
+                  <div class="concept-color" style="background:var(--purple-500);"></div>
+                  <div class="concept-body">
+                    <div class="concept-name">RegulatorySubmission</div>
+                    <div class="concept-desc">A formal dossier submission to a regulatory authority (MAA, variation, renewal), identified by procedure number and tracked through its lifecycle states.</div>
+                    <div class="concept-tags">
+                      <span class="dict-type-tag type-backbone">BackboneElement</span>
+                      <span class="dict-type-tag type-date">dateTime</span>
+                    </div>
+                  </div>
+                  <div class="concept-right">
+                    <div class="concept-standards">
+                      <span class="cs-badge cs-apix">APIX</span>
+                      <span class="cs-badge cs-rtq">RTQ</span>
+                    </div>
+                    <div class="concept-used">Used in 2 standards</div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Shared Terminologies -->
+            <div class="dict-section">
+              <div class="dict-section-title">Key Shared Terminologies</div>
+              <div class="term-section">
+                <div class="term-section-head">External Code Systems used across FHIR-LS Standards</div>
+                <div class="term-row"><div class="term-col">MedDRA</div><div class="term-col">Medical Dictionary for Regulatory Activities — adverse events, reactions, indications. Required in ICSR; used in ePI.</div><div class="term-col"><span class="cs-badge cs-epi">ePI</span> <span class="cs-badge cs-icsr">ICSR</span></div></div>
+                <div class="term-row"><div class="term-col">SNOMED CT</div><div class="term-col">Clinical terminology for diagnoses, findings, procedures. Used for indication and condition coding in ePI and ICSR.</div><div class="term-col"><span class="cs-badge cs-epi">ePI</span> <span class="cs-badge cs-icsr">ICSR</span></div></div>
+                <div class="term-row"><div class="term-col">ICD-10 / ICD-11</div><div class="term-col">WHO International Classification of Diseases for diagnoses and indications.</div><div class="term-col"><span class="cs-badge cs-icsr">ICSR</span></div></div>
+                <div class="term-row"><div class="term-col">EDQM / SPOR</div><div class="term-col">EMA Standard Terms — dose forms, routes of administration, units of measurement and container types.</div><div class="term-col"><span class="cs-badge cs-epi">ePI</span> <span class="cs-badge cs-pqi">PQI</span></div></div>
+                <div class="term-row"><div class="term-col">UCUM</div><div class="term-col">Unified Codes for Units of Measure. Used for all quantitative data across CMC, dosing, and lab values.</div><div class="term-col"><span class="cs-badge cs-epi">ePI</span> <span class="cs-badge cs-pqi">PQI</span> <span class="cs-badge cs-icsr">ICSR</span></div></div>
+                <div class="term-row"><div class="term-col">ISO IDMP</div><div class="term-col">ISO 11615–11616: Medicinal Product and Substance identification standards. Core product identity.</div><div class="term-col"><span class="cs-badge cs-epi">ePI</span> <span class="cs-badge cs-pqi">PQI</span> <span class="cs-badge cs-apix">APIX</span> <span class="cs-badge cs-rtq">RTQ</span></div></div>
+                <div class="term-row"><div class="term-col">NCI Thesaurus</div><div class="term-col">NCI terminology used for study phase, drug class, and administrative data in ICSR and APIX.</div><div class="term-col"><span class="cs-badge cs-icsr">ICSR</span> <span class="cs-badge cs-apix">APIX</span></div></div>
+                <div class="term-row"><div class="term-col">eCTD v4.0</div><div class="term-col">Electronic Common Technical Document versioning and section taxonomy referenced in RTQ question linking.</div><div class="term-col"><span class="cs-badge cs-apix">APIX</span> <span class="cs-badge cs-rtq">RTQ</span></div></div>
+              </div>
+            </div>
+
+            <!-- Common Data Types -->
+            <div class="dict-section">
+              <div class="dict-section-title">Common Data Types</div>
+              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;">
+                <div style="background:white;border:1px solid var(--border);border-radius:var(--radius-md);padding:16px;">
+                  <div class="dict-type-tag type-string" style="margin-bottom:8px;">string</div>
+                  <div style="font-size:13px;font-weight:600;font-family:'JetBrains Mono',monospace;margin-bottom:4px;">ProductName</div>
+                  <div style="font-size:12px;color:var(--text-secondary);">Trade name or INN of the medicinal product</div>
+                </div>
+                <div style="background:white;border:1px solid var(--border);border-radius:var(--radius-md);padding:16px;">
+                  <div class="dict-type-tag type-code" style="margin-bottom:8px;">code</div>
+                  <div style="font-size:13px;font-weight:600;font-family:'JetBrains Mono',monospace;margin-bottom:4px;">DoseFormCode</div>
+                  <div style="font-size:12px;color:var(--text-secondary);">EDQM standard terms for pharmaceutical dose form</div>
+                </div>
+                <div style="background:white;border:1px solid var(--border);border-radius:var(--radius-md);padding:16px;">
+                  <div class="dict-type-tag type-reference" style="margin-bottom:8px;">Reference</div>
+                  <div style="font-size:13px;font-weight:600;font-family:'JetBrains Mono',monospace;margin-bottom:4px;">ProductReference</div>
+                  <div style="font-size:12px;color:var(--text-secondary);">FHIR reference to MedicinalProductDefinition</div>
+                </div>
+                <div style="background:white;border:1px solid var(--border);border-radius:var(--radius-md);padding:16px;">
+                  <div class="dict-type-tag type-date" style="margin-bottom:8px;">dateTime</div>
+                  <div style="font-size:13px;font-weight:600;font-family:'JetBrains Mono',monospace;margin-bottom:4px;">AuthorisationDate</div>
+                  <div style="font-size:12px;color:var(--text-secondary);">Date of regulatory authorisation or approval</div>
+                </div>
+                <div style="background:white;border:1px solid var(--border);border-radius:var(--radius-md);padding:16px;">
+                  <div class="dict-type-tag type-identifier" style="margin-bottom:8px;">Identifier</div>
+                  <div style="font-size:13px;font-weight:600;font-family:'JetBrains Mono',monospace;margin-bottom:4px;">MPID</div>
+                  <div style="font-size:12px;color:var(--text-secondary);">ISO IDMP Medicinal Product Identifier</div>
+                </div>
+                <div style="background:white;border:1px solid var(--border);border-radius:var(--radius-md);padding:16px;">
+                  <div class="dict-type-tag type-backbone" style="margin-bottom:8px;">BackboneElement</div>
+                  <div style="font-size:13px;font-weight:600;font-family:'JetBrains Mono',monospace;margin-bottom:4px;">IngredientStrength</div>
+                  <div style="font-size:12px;color:var(--text-secondary);">Quantity, basis, and reference strength of an ingredient</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 FHIR Life Sciences Catalogue | Published under Creative Commons Attribution 4.0 | HL7®, FHIR® are registered trademarks of HL7 International.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
