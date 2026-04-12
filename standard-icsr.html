@@ -51,6 +51,22 @@
     .resource-icon { width: 44px; height: 44px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; background: var(--white); border: 1px solid var(--border); } .resource-text h4 { font-size: 15px; font-weight: 700; margin-bottom: 3px; } .resource-text p { font-size: 12px; color: var(--text-muted); } .resource-arrow { margin-left: auto; color: var(--gray-300); font-size: 16px; transition: all var(--transition); } .resource-card:hover .resource-arrow { color: var(--accent); transform: translateX(4px); }
     .cta-section { padding: 72px 0; } .cta-card { background: var(--gray-50); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 48px; display: flex; justify-content: space-between; align-items: center; gap: 48px; } .cta-card h2 { font-size: 28px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 8px; } .cta-card p { font-size: 15px; color: var(--text-secondary); } .cta-buttons { display: flex; gap: 12px; flex-shrink: 0; }
     .site-footer { background: var(--gray-900); padding: 48px 0 24px; } .footer-inner { display: flex; justify-content: space-between; align-items: center; } .footer-logo { font-size: 16px; font-weight: 800; color: white; } .footer-logo span { color: rgba(255,255,255,0.4); font-weight: 500; font-size: 13px; margin-left: 8px; } .footer-links { display: flex; gap: 24px; } .footer-links a { font-size: 13px; color: rgba(255,255,255,0.45); } .footer-links a:hover { color: white; } .footer-bottom { margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); } .footer-bottom p { font-size: 11px; color: rgba(255,255,255,0.2); text-align: center; }
+  
+    .has-dropdown { position: relative; cursor: pointer; }
+    .dropdown {
+      position: absolute; top: calc(100% + 8px); left: 0;
+      background: var(--white, white); border-radius: var(--radius-md, 10px);
+      box-shadow: var(--shadow-lg, 0 12px 40px rgba(9,30,66,0.12)); border: 1px solid var(--border, #DFE1E6);
+      min-width: 240px; list-style: none; padding: 8px;
+      opacity: 0; visibility: hidden; transform: translateY(-8px);
+      transition: all var(--transition, 0.2s);
+      z-index: 999;
+    }
+    .has-dropdown:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+    .dropdown li a { display: block; padding: 10px 14px; border-radius: 6px; color: var(--text-secondary, #505F79); font-size: 14px; font-weight: 500; }
+    .dropdown li a:hover { background: var(--gray-50, #F7F8FA); color: var(--blue-600, #0052CC); }
+    .chevron { font-size: 10px; opacity: 0.6; }
+
   </style>
 </head>
 <body>

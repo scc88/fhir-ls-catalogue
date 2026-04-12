@@ -312,6 +312,22 @@
     .domain-desc { font-size: 13px; color: var(--text-secondary); }
     .domain-count { margin-left: auto; font-size: 12px; color: var(--gray-500); font-weight: 600; white-space: nowrap; background: var(--gray-50); padding: 4px 10px; border-radius: 100px; border: 1px solid var(--border); }
     .catalogue-table { border-radius: 0 0 var(--radius-md) var(--radius-md); border-top: none; }
+  
+    .has-dropdown { position: relative; cursor: pointer; }
+    .dropdown {
+      position: absolute; top: calc(100% + 8px); left: 0;
+      background: var(--white, white); border-radius: var(--radius-md, 10px);
+      box-shadow: var(--shadow-lg, 0 12px 40px rgba(9,30,66,0.12)); border: 1px solid var(--border, #DFE1E6);
+      min-width: 240px; list-style: none; padding: 8px;
+      opacity: 0; visibility: hidden; transform: translateY(-8px);
+      transition: all var(--transition, 0.2s);
+      z-index: 999;
+    }
+    .has-dropdown:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+    .dropdown li a { display: block; padding: 10px 14px; border-radius: 6px; color: var(--text-secondary, #505F79); font-size: 14px; font-weight: 500; }
+    .dropdown li a:hover { background: var(--gray-50, #F7F8FA); color: var(--blue-600, #0052CC); }
+    .chevron { font-size: 10px; opacity: 0.6; }
+
   </style>
 
   <script>
