@@ -55,6 +55,12 @@
     .dropdown li a:hover { background: var(--gray-50, #F7F8FA); color: var(--blue-600, #0052CC); }
     .chevron { font-size: 10px; opacity: 0.6; }
 
+  
+    /* Fixes for header alignment and button mashing */
+    .nav-menu { align-items: center; }
+    .nav-link { display: flex; align-items: center; gap: 4px; }
+    .nav-actions { flex-shrink: 0; }
+
   </style>
 </head>
 <body>
@@ -84,10 +90,11 @@
               <li><a href="standard-icsr.html">AER — Adverse Event Reporting</a></li>
               <li><a href="standard-hta.html">HTA — Health Technology Assessment</a></li>
               <li><a href="standard-rtq.html">RTQ — Regulatory Questions</a></li>
-            </ul></li>
-          <li><a href="data-dictionary.html" class="nav-link active">Data Dictionary</a></li>
-          <li><a href="implementations.html" class="nav-link">Implementations</a></li>
-          <li><a href="governance.html" class="nav-link">Governance</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#standards" class="nav-link">Catalogue</a></li>
+          <li><a href="#" class="nav-link">Data Dictionary</a></li>
+          <li><a href="adoption.html" class="nav-link">Adoption</a></li>
         </ul>
         <div class="nav-actions"><a href="catalogue.html" class="btn btn-primary">Browse Catalogue</a></div>
       </div>

@@ -176,6 +176,12 @@
     .dropdown li a:hover { background: var(--gray-50, #F7F8FA); color: var(--blue-600, #0052CC); }
     .chevron { font-size: 10px; opacity: 0.6; }
 
+  
+    /* Fixes for header alignment and button mashing */
+    .nav-menu { align-items: center; }
+    .nav-link { display: flex; align-items: center; gap: 4px; }
+    .nav-actions { flex-shrink: 0; }
+
   </style>
 </head>
 <body>
@@ -205,6 +211,11 @@
               <li><a href="standard-hta.html">HTA — Health Technology Assessment</a></li>
               <li><a href="standard-rtq.html">RTQ — Regulatory Questions</a></li>
             </ul>
+          </li>
+          <li><a href="index.html#standards" class="nav-link active">Catalogue</a></li>
+          <li><a href="#" class="nav-link">Data Dictionary</a></li>
+          <li><a href="adoption.html" class="nav-link">Adoption</a></li>
+        </ul>
         <div class="nav-actions"><a href="index.html#standards" class="btn btn-primary">Browse Catalogue</a></div>
       </div>
     </nav>
