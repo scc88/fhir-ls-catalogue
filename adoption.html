@@ -100,6 +100,13 @@
     .nav-link { display: flex; align-items: center; gap: 4px; }
     .nav-actions { flex-shrink: 0; }
 
+  
+    /* Header CTA Button styling */
+    .nav-actions { margin-left: auto; flex-shrink: 0; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 8px 18px; border-radius: 6px; font-weight: 600; font-size: 14px; transition: all 0.2s; cursor: pointer; }
+    .btn-primary { background: #0052CC; color: white; border: 2px solid #0052CC; }
+    .btn-primary:hover { background: #0065FF; border-color: #0065FF; box-shadow: 0 4px 14px rgba(0,82,204,0.3); transform: translateY(-1px); }
+
   </style>
 </head>
 <body>
@@ -122,6 +129,14 @@
               <li><a href="standard-hta.html">HTA — Health Technology Assessment</a></li>
               <li><a href="standard-rtq.html">RTQ — Regulatory Questions</a></li>
             </ul>
+          </li>
+          <li><a href="index.html#standards" class="nav-link">Catalogue</a></li>
+          <li><a href="#" class="nav-link">Data Dictionary</a></li>
+          <li><a href="adoption.html" class="nav-link active">Adoption</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="index.html#standards" class="btn btn-primary">Browse Catalogue</a>
+        </div>
       </div>
     </nav>
   </header>
