@@ -186,41 +186,7 @@
 </head>
 <body>
 
-  <header class="site-header" id="site-header">
-    <div class="header-top">
-      <div class="container">
-        <span>The open FHIR standard for end-to-end life sciences regulatory workflows</span>
-        <div class="header-links"><a href="#">About</a><a href="#">Contact</a><a href="#">GitHub</a></div>
-      </div>
-    </div>
-    <nav>
-      <div class="container nav-inner">
-        <a href="index.html" class="logo">
-          <div class="logo-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h10M4 18h13" stroke="white" stroke-width="2.5" stroke-linecap="round"/><circle cx="20" cy="18" r="3.5" fill="white" fill-opacity="0.9"/></svg></div>
-          <div><span class="logo-main">FHIR-LS</span><span class="logo-sub">Life Sciences Catalogue</span></div>
-        </a>
-        <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li class="has-dropdown">
-            <a href="#" class="nav-link">Standards <span class="chevron">▾</span></a>
-            <ul class="dropdown">
-              <li><a href="standard-epi.html">ePI — Labelling</a></li>
-              <li><a href="standard-idmp.html">IDMP — Product Identity</a></li>
-              <li><a href="standard-pqi.html">PQI — CMC Quality</a></li>
-              <li><a href="standard-apix.html">APIX — Information Exchange</a></li>
-              <li><a href="standard-icsr.html">AER — Adverse Event Reporting</a></li>
-              <li><a href="standard-hta.html">HTA — Health Technology Assessment</a></li>
-              <li><a href="standard-rtq.html">RTQ — Regulatory Questions</a></li>
-            </ul>
-          </li>
-          <li><a href="index.html#standards" class="nav-link active">Catalogue</a></li>
-          <li><a href="#" class="nav-link">Data Dictionary</a></li>
-          <li><a href="adoption.html" class="nav-link">Adoption</a></li>
-        </ul>
-        <div class="nav-actions"><a href="index.html#standards" class="btn btn-primary">Browse Catalogue</a></div>
-      </div>
-    </nav>
-  </header>
+  <script src="header.js"></script>
 
   <div class="breadcrumb">
     <div class="container">
@@ -316,36 +282,36 @@
       <div class="container">
         <div class="benefits-layout">
           <div class="benefits-content">
-            <span class="section-tag">Why Implement ePI?</span>
-            <h2>Transform Your Labelling Workflow</h2>
-            <p>Organizations implementing ePI report faster regulatory submissions, reduced errors, and seamless global label management.</p>
+            <span class="section-tag">Why Implement IDMP?</span>
+            <h2>Transform Your Regulatory Master Data</h2>
+            <p>Organizations implementing IDMP report streamlined regulatory submissions, globally consistent product tracking, and seamless cross-border data exchange.</p>
             <div class="benefit-items">
               <div class="benefit-item">
                 <div class="benefit-check">✓</div>
                 <div>
-                  <strong>80% Faster Label Updates</strong>
-                  <p>Push structured changes directly to regulators — no more reformatting PDFs for each jurisdiction.</p>
+                  <strong>Global Interoperability</strong>
+                  <p>Exchange structured substance, product, and organization data seamlessly across regulatory jurisdictions.</p>
                 </div>
               </div>
               <div class="benefit-item">
                 <div class="benefit-check">✓</div>
                 <div>
                   <strong>Single Source of Truth</strong>
-                  <p>Maintain one authoritative ePI document per product. Regional variations inherit from the core.</p>
+                  <p>Maintain one authoritative IDMP graph per product. National catalogs inherit from the global core.</p>
                 </div>
               </div>
               <div class="benefit-item">
                 <div class="benefit-check">✓</div>
                 <div>
-                  <strong>Automated Compliance</strong>
-                  <p>FHIR validation ensures structural and terminological conformance before submission.</p>
+                  <strong>Automated Submissions</strong>
+                  <p>Generate target SPOR or SPL XML payloads automatically from a unified FHIR master data layer.</p>
                 </div>
               </div>
               <div class="benefit-item">
                 <div class="benefit-check">✓</div>
                 <div>
-                  <strong>Real-Time Patient Safety</strong>
-                  <p>Safety-critical label changes reach healthcare providers and patients the moment they're approved.</p>
+                  <strong>Enhanced Signal Detection</strong>
+                  <p>Standardized substance and product identifiers enable precise pharmacovigilance and recall management.</p>
                 </div>
               </div>
             </div>
@@ -354,17 +320,17 @@
             <div class="visual-header">
               <span class="visual-icon">💊</span>
               <div>
-                <div class="visual-title">ePI FHIR Resources</div>
+                <div class="visual-title">IDMP FHIR Resources</div>
                 <div class="visual-subtitle">Key profiles in this IG</div>
               </div>
             </div>
             <div class="visual-items">
-              <div class="visual-item"><div class="visual-dot" style="background:#0052CC;"></div><span class="visual-item-label">Bundle</span> — ePI document container</div>
-              <div class="visual-item"><div class="visual-dot" style="background:#2684FF;"></div><span class="visual-item-label">Composition</span> — SmPC/PIL section structure</div>
-              <div class="visual-item"><div class="visual-dot" style="background:#00875A;"></div><span class="visual-item-label">MedicinalProductDefinition</span> — Product identity</div>
-              <div class="visual-item"><div class="visual-dot" style="background:#36B37E;"></div><span class="visual-item-label">Organization</span> — MAH and manufacturer</div>
-              <div class="visual-item"><div class="visual-dot" style="background:#6554C0;"></div><span class="visual-item-label">RegulatedAuthorization</span> — MA details</div>
-              <div class="visual-item"><div class="visual-dot" style="background:#FF8B00;"></div><span class="visual-item-label">ClinicalUseDefinition</span> — Interactions & contraindications</div>
+              <div class="visual-item"><div class="visual-dot" style="background:#0052CC;"></div><span class="visual-item-label">MedicinalProductDefinition</span> — Product identity</div>
+              <div class="visual-item"><div class="visual-dot" style="background:#2684FF;"></div><span class="visual-item-label">ManufacturedItemDefinition</span> — Manufactured form</div>
+              <div class="visual-item"><div class="visual-dot" style="background:#00875A;"></div><span class="visual-item-label">Ingredient</span> — Active/inactive ingredients</div>
+              <div class="visual-item"><div class="visual-dot" style="background:#36B37E;"></div><span class="visual-item-label">SubstanceDefinition</span> — Core chemical/biologic identity</div>
+              <div class="visual-item"><div class="visual-dot" style="background:#6554C0;"></div><span class="visual-item-label">PackagedProductDefinition</span> — Packaging hierarchy</div>
+              <div class="visual-item"><div class="visual-dot" style="background:#FF8B00;"></div><span class="visual-item-label">Organization</span> — Marketing Authorization Holder</div>
             </div>
           </div>
         </div>
@@ -377,7 +343,7 @@
         <div class="resources-header">
           <span class="section-tag">Get Started</span>
           <h2>Resources & Links</h2>
-          <p>Everything you need to begin implementing ePI in your organization.</p>
+          <p>Everything you need to begin implementing IDMP in your organization.</p>
         </div>
         <div class="resources-grid">
           <a href="#" class="resource-card">
@@ -392,17 +358,17 @@
           </a>
           <a href="#" class="resource-card">
             <div class="resource-icon">📋</div>
-            <div class="resource-text"><h4>FHIR Profile Registry</h4><p>Browse all 28 profiles, value sets, and extensions</p></div>
+            <div class="resource-text"><h4>FHIR Profile Registry</h4><p>Browse all ISO IDMP aligned profiles and extensions</p></div>
             <div class="resource-arrow">→</div>
           </a>
           <a href="#" class="resource-card">
             <div class="resource-icon">🧪</div>
-            <div class="resource-text"><h4>Example Instances</h4><p>Sample ePI documents for testing and reference</p></div>
+            <div class="resource-text"><h4>Example Instances</h4><p>Sample IDMP bundles for generic and biologic products</p></div>
             <div class="resource-arrow">→</div>
           </a>
           <a href="#" class="resource-card">
             <div class="resource-icon">📄</div>
-            <div class="resource-text"><h4>XML/JSON Templates</h4><p>Annotated templates for ePI Types 1, 2, and 3</p></div>
+            <div class="resource-text"><h4>XML/JSON Templates</h4><p>Annotated templates for IDMP Levels 1, 2, and 3</p></div>
             <div class="resource-arrow">→</div>
           </a>
           <a href="#" class="resource-card">
@@ -425,18 +391,18 @@
         <div class="vp-grid">
           <a href="#" class="vp-card" style="display: block; text-decoration: none; color: inherit; background: var(--white);">
             <div class="vp-icon" style="font-size: 24px;">🇪🇺</div>
-            <h3 style="color: var(--blue-600); margin-bottom: 4px;">EMA ePI</h3>
-            <p>European Medicines Agency Electronic Product Information (ePI) implementation guide (FHIR based).</p>
+            <h3 style="color: var(--blue-600); margin-bottom: 4px;">EMA SPOR</h3>
+            <p>Substances, Products, Organisations and Referentials (SPOR) specific IDMP profiles.</p>
           </a>
           <a href="#" class="vp-card" style="display: block; text-decoration: none; color: inherit; background: var(--white);">
-            <div class="vp-icon" style="font-size: 24px;">🇯🇵</div>
-            <h3 style="color: var(--blue-600); margin-bottom: 4px;">PMDA ePI</h3>
-            <p>Pharmaceuticals and Medical Devices Agency (PMDA) Electronic Product Information integration.</p>
+            <div class="vp-icon" style="font-size: 24px;">🌐</div>
+            <h3 style="color: var(--blue-600); margin-bottom: 4px;">WHO UMC</h3>
+            <p>Uppsala Monitoring Centre global pharmacovigilance IDMP definitions.</p>
           </a>
           <a href="#" class="vp-card" style="display: block; text-decoration: none; color: inherit; background: var(--white);">
             <div class="vp-icon" style="font-size: 24px;">🇺🇸</div>
-            <h3 style="color: var(--blue-600); margin-bottom: 4px;">US FDA SPL</h3>
-            <p>FDA Structured Product Labeling (SPL) mapping and data exchange standard.</p>
+            <h3 style="color: var(--blue-600); margin-bottom: 4px;">US FDA GSRS</h3>
+            <p>FDA Global Substance Registration System (GSRS) IDMP mappings.</p>
           </a>
         </div>
       </div>
