@@ -12,7 +12,7 @@ document.write(`
     </div>
     <nav class="main-nav">
       <div class="container nav-inner">
-        <a href="#" class="logo">
+        <a href="index.html" class="logo">
           <div class="logo-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
               <path d="M4 6h16M4 12h10M4 18h13" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
@@ -26,7 +26,7 @@ document.write(`
           </div>
         </a>
         <ul class="nav-menu">
-          <li><a href="#" class="nav-link active">Home</a></li>
+          <li><a href="index.html" class="nav-link">Home</a></li>
           <li class="has-dropdown">
             <a href="#" class="nav-link">Standards <span class="chevron">▾</span></a>
             <ul class="dropdown">
@@ -39,12 +39,12 @@ document.write(`
               <li><a href="standard-rtq.html">RTQ — Regulatory Questions</a></li>
             </ul>
           </li>
-          <li><a href="#standards" class="nav-link">Catalogue</a></li>
+          <li><a href="index.html#standards" class="nav-link">Catalogue</a></li>
           <li><a href="#" class="nav-link">Data Dictionary</a></li>
           <li><a href="adoption.html" class="nav-link">Adoption</a></li>
         </ul>
         <div class="nav-actions">
-          <a href="#standards" class="btn btn-primary">Browse Catalogue</a>
+          <a href="index.html#standards" class="btn btn-primary">Browse Catalogue</a>
         </div>
       </div>
     </nav>
