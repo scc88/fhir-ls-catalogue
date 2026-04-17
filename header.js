@@ -1,5 +1,9 @@
 document.write(`
 <header class="site-header" id="site-header">
+    <style>
+      .site-header { position: relative; z-index: 9999 !important; }
+      .dropdown { z-index: 10000 !important; }
+    </style>
     <div class="header-top">
       <div class="container">
         <span>The open FHIR standard for end-to-end life sciences regulatory workflows</span>
