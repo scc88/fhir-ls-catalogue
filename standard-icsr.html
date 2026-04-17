@@ -76,7 +76,58 @@
   </style>
 </head>
 <body>
-  <script src="header.js"></script>
+  <!-- HEADER:BEGIN -->
+  <header class="site-header" id="site-header">
+    <div class="header-top">
+      <div class="container">
+        <span>The open FHIR standard for end-to-end life sciences regulatory workflows</span>
+        <div class="header-links">
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          <a href="#">GitHub</a>
+        </div>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <div class="container nav-inner">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M4 6h16M4 12h10M4 18h13" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="20" cy="18" r="3.5" fill="white" fill-opacity="0.9"/>
+              <path d="M18.5 18l1 1 2.5-2" stroke="#0052CC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="logo-text">
+            <span class="logo-main">FHIR-LS</span>
+            <span class="logo-sub">Life Sciences Catalogue</span>
+          </div>
+        </a>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li class="has-dropdown">
+            <a href="#" class="nav-link">Standards <span class="chevron">▾</span></a>
+            <ul class="dropdown">
+              <li><a href="standard-epi.html">ePI — Labelling</a></li>
+              <li><a href="standard-idmp.html">IDMP — Product Identity</a></li>
+              <li><a href="standard-pqi.html">PQI — CMC Quality</a></li>
+              <li><a href="standard-apix.html">APIX — Information Exchange</a></li>
+              <li><a href="standard-icsr.html">AER — Adverse Event Reporting</a></li>
+              <li><a href="standard-hta.html">HTA — Health Technology Assessment</a></li>
+              <li><a href="standard-rtq.html">RTQ — Regulatory Questions</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#standards" class="nav-link">Catalogue</a></li>
+          <li><a href="#" class="nav-link">Data Dictionary</a></li>
+          <li><a href="adoption.html" class="nav-link">Adoption</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="index.html#standards" class="btn btn-primary">Browse Catalogue</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+<!-- HEADER:END -->
   <div class="breadcrumb"><div class="container"><a href="index.html">Home</a><span class="sep">›</span><a href="index.html#standards">Catalogue</a><span class="sep">›</span><span class="current">ICSR — Individual Case Safety Report</span></div></div>
 
   <main>
@@ -84,7 +135,7 @@
       <div class="hero-badge-row"><div class="hero-icon">⚕️</div><span class="hero-badge">ICSR</span><span class="hero-version">v1.3.0</span></div>
       <h1>Individual Case Safety Report</h1>
       <p class="hero-desc">The FHIR standard for pharmacovigilance and adverse event reporting. ICSR replaces E2B(R3) XML with structured, real-time safety data that flows seamlessly between sponsors, regulators, and healthcare providers — ensuring patient safety signals are detected and acted on faster.</p>
-      <div class="hero-actions"><a href=\"https://build.fhir.org/ig/scc88/aer/\" class=\"btn btn-primary btn-lg\" target=\"_blank\" rel=\"noopener noreferrer\">View Implementation Guide →</a><a href=\"https://github.com/scc88/aer\" class=\"btn btn-outline btn-lg\" target=\"_blank\" rel=\"noopener noreferrer\">GitHub Project</a></div>
+      <div class="hero-actions"><a href="https://build.fhir.org/ig/scc88/aer/" class="btn btn-primary btn-lg">View Implementation Guide →</a><a href="https://github.com/scc88/aer" class="btn btn-outline btn-lg">GitHub Project</a></div>
     </div><div class="hero-meta-card"><div class="meta-grid">
       <div class="meta-row"><span class="meta-label">Status</span><span class="status-pill status-active">Active</span></div><div class="meta-divider"></div>
       <div class="meta-row"><span class="meta-label">FHIR Version</span><span class="meta-value">R5</span></div><div class="meta-divider"></div>
@@ -130,8 +181,8 @@
     <section class="resources-section"><div class="container">
       <div class="resources-header"><span class="section-tag">Get Started</span><h2>Resources & Links</h2><p>Everything you need to begin implementing FHIR ICSR in your pharmacovigilance systems.</p></div>
       <div class="resources-grid">
-        <a href=\"../aer/output/index.html\" class=\"resource-card\" target=\"_blank\" rel=\"noopener noreferrer\"><div class="resource-icon">📘</div><div class="resource-text"><h4>Implementation Guide</h4><p>Full IG with profiles, examples, and E2B mapping</p></div><div class="resource-arrow">→</div></a>
-        <a href=\"https://github.com/HL7/aer\" class=\"resource-card\" target=\"_blank\" rel=\"noopener noreferrer\"><div class="resource-icon">💻</div><div class="resource-text"><h4>GitHub Repository</h4><p>Source code, issues, and contribution guidelines</p></div><div class="resource-arrow">→</div></a>
+        <a href="../aer/output/index.html" class="resource-card"><div class="resource-icon">📘</div><div class="resource-text"><h4>Implementation Guide</h4><p>Full IG with profiles, examples, and E2B mapping</p></div><div class="resource-arrow">→</div></a>
+        <a href="https://github.com/HL7/aer" class="resource-card"><div class="resource-icon">💻</div><div class="resource-text"><h4>GitHub Repository</h4><p>Source code, issues, and contribution guidelines</p></div><div class="resource-arrow">→</div></a>
         <a href="#" class="resource-card"><div class="resource-icon">🗺️</div><div class="resource-text"><h4>E2B(R3) ↔ FHIR Mapping</h4><p>Detailed crosswalk between E2B elements and FHIR profiles</p></div><div class="resource-arrow">→</div></a>
         <a href="#" class="resource-card"><div class="resource-icon">🧪</div><div class="resource-text"><h4>Example Cases</h4><p>Sample ICSR bundles covering common adverse event scenarios</p></div><div class="resource-arrow">→</div></a>
       </div>
