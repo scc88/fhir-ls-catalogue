@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PQI Use Cases — Structured CMC Review | FHIR-LS Catalogue</title>
+  <meta name="description" content="What regulators can do when CTD Module 2.3 and 3.2 arrive as HL7 FHIR PQI resources: eight use cases demonstrated live on the ICH M4Q(R2) SakuraBloom R2 mock-up.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue-600: #0052CC; --blue-500: #0065FF; --blue-400: #2684FF;
+      --blue-200: #B3D4FF; --blue-100: #DEEBFF; --blue-50: #F0F5FF;
+      --gray-50: #F7F8FA; --gray-100: #EBECF0; --gray-200: #DFE1E6;
+      --gray-300: #C1C7D0; --gray-400: #97A0AF; --gray-500: #7A869A;
+      --gray-600: #6B778C; --gray-700: #505F79; --gray-800: #344563; --gray-900: #172B4D;
+      --white: #ffffff; --text-primary: #172B4D; --text-secondary: #505F79;
+      --text-muted: #7A869A; --border: #DFE1E6; --border-light: #EBECF0;
+      --accent: #00875A; --accent-bg: rgba(0,135,90,0.06);
+      --accent-gradient: linear-gradient(135deg, #00875A, #36B37E);
+      --shadow-sm: 0 1px 3px rgba(9,30,66,0.08), 0 0 0 1px rgba(9,30,66,0.04);
+      --shadow-md: 0 4px 16px rgba(9,30,66,0.1), 0 1px 4px rgba(9,30,66,0.06);
+      --shadow-lg: 0 12px 40px rgba(9,30,66,0.12), 0 2px 8px rgba(9,30,66,0.08);
+      --radius-sm: 6px; --radius-md: 10px; --radius-lg: 16px; --radius-xl: 24px;
+      --transition: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, sans-serif; color: var(--text-primary); background: var(--white); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: var(--accent); text-decoration: none; transition: color var(--transition); }
+    a:hover { color: #36B37E; }
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; border-radius: var(--radius-sm); font-weight: 600; font-size: 14px; transition: all var(--transition); cursor: pointer; border: 2px solid transparent; white-space: nowrap; }
+    .btn-primary { background: var(--accent); color: var(--white); border-color: var(--accent); }
+    .btn-primary:hover { background: #36B37E; border-color: #36B37E; color: var(--white); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,135,90,0.3); }
+    .btn-lg { padding: 14px 28px; font-size: 15px; border-radius: var(--radius-md); }
+    .btn-outline { background: transparent; color: var(--accent); border-color: var(--accent); }
+    .btn-outline:hover { background: var(--accent); color: var(--white); }
+    .btn-subtle { background: var(--gray-50); color: var(--text-secondary); border-color: var(--border); }
+    .btn-subtle:hover { background: var(--white); border-color: var(--accent); color: var(--accent); }
+    .site-header { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--border); }
+    .site-header.scrolled { box-shadow: var(--shadow-md); }
+    .header-top { background: var(--gray-50); color: var(--gray-600); font-size: 12px; padding: 6px 0; border-bottom: 1px solid var(--border-light); }
+    .header-top .container { display: flex; justify-content: space-between; align-items: center; }
+    .header-links { display: flex; gap: 20px; }
+    .header-top a { color: var(--gray-500); font-size: 12px; font-weight: 500; }
+    .nav-inner { display: flex; align-items: center; gap: 32px; height: 64px; }
+    .logo { display: flex; align-items: center; gap: 12px; color: inherit; flex-shrink: 0; }
+    .logo:hover { color: inherit; }
+    .logo-icon { width: 36px; height: 36px; background: linear-gradient(135deg, #0052CC, #00B8D9); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .logo-main { display: block; font-size: 18px; font-weight: 800; color: #0a3069; letter-spacing: -0.03em; }
+    .logo-sub { display: block; font-size: 10.5px; color: var(--gray-500); font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; }
+    .nav-menu { display: flex; list-style: none; gap: 2px; flex: 1; }
+    .nav-link { padding: 8px 14px; border-radius: var(--radius-sm); color: var(--text-secondary); font-weight: 500; font-size: 14px; transition: all var(--transition); }
+    .nav-link:hover, .nav-link.active { color: var(--blue-600); background: var(--blue-50); }
+    .nav-actions { margin-left: auto; }
+    .breadcrumb { padding: 16px 0; font-size: 13px; color: var(--text-muted); border-bottom: 1px solid var(--border-light); }
+    .breadcrumb a { color: var(--text-muted); font-weight: 500; } .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb .sep { margin: 0 8px; opacity: 0.5; } .breadcrumb .current { color: var(--text-primary); font-weight: 600; }
+    .sub-hero { padding: 64px 0 56px; border-bottom: 1px solid var(--border-light); position: relative; overflow: hidden; }
+    .sub-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(0,135,90,0.04) 0%, transparent 60%); }
+    .sub-hero .container { position: relative; }
+    .hero-layout { display: grid; grid-template-columns: 1fr 320px; gap: 64px; align-items: center; }
+    .hero-badge-row { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+    .hero-icon { width: 56px; height: 56px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 28px; background: var(--accent-bg); border: 1px solid rgba(0,135,90,0.12); }
+    .hero-badge { font-size: 11px; font-weight: 800; letter-spacing: 0.08em; padding: 4px 10px; border-radius: 4px; color: var(--accent); background: var(--accent-bg); }
+    .hero-version { font-size: 12px; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; }
+    .sub-hero h1 { font-size: 42px; font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 16px; }
+    .sub-hero .hero-desc { font-size: 17px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 28px; }
+    .hero-actions { display: flex; gap: 12px; }
+    .hero-meta-card { background: var(--gray-50); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; }
+    .meta-grid { display: flex; flex-direction: column; gap: 16px; }
+    .meta-row { display: flex; justify-content: space-between; align-items: center; }
+    .meta-label { font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+    .meta-value { font-size: 14px; font-weight: 600; color: var(--text-primary); }
+    .meta-divider { height: 1px; background: var(--border-light); }
+    .status-pill { font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.06em; }
+    .status-ballot { background: rgba(101,84,192,0.1); color: #6554C0; }
+    .section-tag { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); background: rgba(0,135,90,0.08); padding: 4px 14px; border-radius: 100px; margin-bottom: 12px; }
+    .vp-section { padding: 80px 0; } .vp-header { margin-bottom: 48px; }
+    .vp-header h2 { font-size: 32px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 12px; }
+    .vp-header p { font-size: 16px; color: var(--text-secondary); max-width: 600px; line-height: 1.7; }
+    .vp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .vp-card { background: var(--gray-50); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 28px; transition: all var(--transition); }
+    .vp-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: transparent; }
+    .vp-icon { width: 44px; height: 44px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 14px; background: var(--white); border: 1px solid var(--border); }
+    .vp-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; } .vp-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+    .benefits-section { padding: 80px 0; background: var(--gray-50); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); }
+    .benefits-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .benefits-content h2 { font-size: 32px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 12px; }
+    .benefits-content > p { font-size: 15px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 28px; }
+    .benefit-items { display: flex; flex-direction: column; gap: 16px; }
+    .benefit-item { display: flex; gap: 14px; } .benefit-check { width: 24px; height: 24px; border-radius: 50%; background: rgba(0,135,90,0.1); color: #00875A; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+    .benefit-item strong { display: block; font-size: 14px; font-weight: 700; margin-bottom: 2px; }
+    .benefit-item p { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+    .benefits-visual { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; }
+    .visual-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--border-light); }
+    .visual-icon { font-size: 20px; } .visual-title { font-size: 14px; font-weight: 700; } .visual-subtitle { font-size: 12px; color: var(--text-muted); }
+    .visual-items { display: flex; flex-direction: column; gap: 10px; }
+    .visual-item { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 8px; background: var(--gray-50); border: 1px solid var(--border-light); font-size: 13px; color: var(--text-secondary); transition: all var(--transition); }
+    .visual-item:hover { background: var(--accent-bg); border-color: rgba(0,135,90,0.15); }
+    .visual-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; } .visual-item-label { font-weight: 600; color: var(--text-primary); }
+    .resources-section { padding: 80px 0; } .resources-header { margin-bottom: 48px; }
+    .resources-header h2 { font-size: 32px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 12px; }
+    .resources-header p { font-size: 16px; color: var(--text-secondary); }
+    .resources-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .resource-card { display: flex; align-items: center; gap: 16px; padding: 20px 24px; background: var(--gray-50); border: 1px solid var(--border); border-radius: var(--radius-md); transition: all var(--transition); color: inherit; }
+    .resource-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--accent); color: inherit; background: var(--white); }
+    .resource-icon { width: 44px; height: 44px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; background: var(--white); border: 1px solid var(--border); }
+    .resource-text h4 { font-size: 15px; font-weight: 700; margin-bottom: 3px; } .resource-text p { font-size: 12px; color: var(--text-muted); }
+    .resource-arrow { margin-left: auto; color: var(--gray-300); font-size: 16px; transition: all var(--transition); }
+    .resource-card:hover .resource-arrow { color: var(--accent); transform: translateX(4px); }
+    .cta-section { padding: 72px 0; }
+    .cta-card { background: var(--gray-50); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 48px; display: flex; justify-content: space-between; align-items: center; gap: 48px; }
+    .cta-card h2 { font-size: 28px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 8px; } .cta-card p { font-size: 15px; color: var(--text-secondary); }
+    .cta-buttons { display: flex; gap: 12px; flex-shrink: 0; }
+    .site-footer { background: var(--gray-900); padding: 48px 0 24px; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; }
+    .footer-logo { font-size: 16px; font-weight: 800; color: white; } .footer-logo span { color: rgba(255,255,255,0.4); font-weight: 500; font-size: 13px; margin-left: 8px; }
+    .footer-links { display: flex; gap: 24px; } .footer-links a { font-size: 13px; color: rgba(255,255,255,0.45); } .footer-links a:hover { color: white; }
+    .footer-bottom { margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .footer-bottom p { font-size: 11px; color: rgba(255,255,255,0.2); text-align: center; }
+  
+    .has-dropdown { position: relative; cursor: pointer; }
+    .dropdown {
+      position: absolute; top: calc(100% + 8px); left: 0;
+      background: var(--white, white); border-radius: var(--radius-md, 10px);
+      box-shadow: var(--shadow-lg, 0 12px 40px rgba(9,30,66,0.12)); border: 1px solid var(--border, #DFE1E6);
+      min-width: 240px; list-style: none; padding: 8px;
+      opacity: 0; visibility: hidden; transform: translateY(-8px);
+      transition: all var(--transition, 0.2s);
+      z-index: 999;
+    }
+    .has-dropdown:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+    .dropdown li a { display: block; padding: 10px 14px; border-radius: 6px; color: var(--text-secondary, #505F79); font-size: 14px; font-weight: 500; }
+    .dropdown li a:hover { background: var(--gray-50, #F7F8FA); color: var(--blue-600, #0052CC); }
+    .chevron { font-size: 10px; opacity: 0.6; }
+
+  
+    /* Fixes for header alignment and button mashing */
+    .nav-menu { align-items: center; }
+    .nav-link { display: flex; align-items: center; gap: 4px; }
+    .nav-actions { flex-shrink: 0; }
+
+    /* PQI use-cases page */
+    code { font-family: 'JetBrains Mono', monospace; font-size: 12.5px; background: var(--gray-100); padding: 1px 5px; border-radius: 4px; }
+    .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .compare-card { border-radius: var(--radius-lg); padding: 28px; border: 1px solid var(--border); }
+    .compare-pdf { background: var(--gray-50); }
+    .compare-fhir { background: var(--white); border-color: rgba(0,135,90,0.35); box-shadow: var(--shadow-md); }
+    .compare-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 10px; }
+    .compare-fhir .compare-label { color: var(--accent); }
+    .compare-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 14px; line-height: 1.35; }
+    .compare-steps { padding-left: 20px; display: grid; gap: 8px; font-size: 14px; color: var(--text-secondary); }
+    .compare-fhir p { font-size: 14px; color: var(--text-secondary); margin-bottom: 18px; }
+    .compare-stats { display: flex; flex-wrap: wrap; gap: 16px 32px; margin-bottom: 16px; }
+    .cs-num { display: block; font-size: 30px; font-weight: 800; letter-spacing: -0.02em; color: var(--text-primary); font-variant-numeric: tabular-nums; }
+    .cs-lbl { display: block; font-size: 12px; color: var(--text-muted); max-width: 200px; }
+    .uc-section { padding: 80px 0; background: var(--gray-50); border-top: 1px solid var(--border-light); }
+    .uc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; }
+    .uc-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; display: flex; flex-direction: column; gap: 10px; transition: all var(--transition); }
+    .uc-card:hover { box-shadow: var(--shadow-md); border-color: rgba(0,135,90,0.35); }
+    .uc-wide { grid-column: 1 / -1; }
+    .uc-top { display: flex; justify-content: space-between; align-items: center; }
+    .uc-num { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; color: var(--accent); }
+    .uc-tag { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); background: var(--gray-50); border: 1px solid var(--border-light); padding: 2px 8px; border-radius: 100px; }
+    .uc-card h3 { font-size: 17px; font-weight: 700; line-height: 1.35; }
+    .uc-card p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; }
+    .uc-q { font-size: 13px; font-style: italic; color: var(--text-primary); border-left: 3px solid var(--accent); padding: 4px 10px; background: var(--accent-bg); border-radius: 0 6px 6px 0; }
+    .uc-res { display: flex; flex-wrap: wrap; gap: 6px; }
+    .uc-res span { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gray-700); background: var(--gray-100); padding: 2px 7px; border-radius: 4px; }
+    .uc-link { margin-top: auto; font-weight: 600; font-size: 14px; }
+    .benefit-check.open { background: var(--gray-100); color: var(--gray-500); }
+    .uc-note { margin-top: 24px; font-size: 12px; color: var(--text-muted); }
+    @media (max-width: 900px) { .compare-grid, .hero-layout, .benefits-layout { grid-template-columns: 1fr; } .resources-grid { grid-template-columns: 1fr; } .vp-grid { grid-template-columns: 1fr; } .cta-card { flex-direction: column; align-items: flex-start; } }
+  </style>
+</head>
+<body>
+  <!-- HEADER:BEGIN -->
+  <header class="site-header" id="site-header">
+    <div class="header-top">
+      <div class="container">
+        <span>The open FHIR standard for end-to-end life sciences regulatory workflows</span>
+        <div class="header-links">
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          <a href="#">GitHub</a>
+        </div>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <div class="container nav-inner">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M4 6h16M4 12h10M4 18h13" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="20" cy="18" r="3.5" fill="white" fill-opacity="0.9"/>
+              <path d="M18.5 18l1 1 2.5-2" stroke="#0052CC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="logo-text">
+            <span class="logo-main">FHIR-LS</span>
+            <span class="logo-sub">Life Sciences Catalogue</span>
+          </div>
+        </a>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li class="has-dropdown">
+            <a href="#" class="nav-link">Standards <span class="chevron">▾</span></a>
+            <ul class="dropdown">
+              <li><a href="standard-epi.html">ePI — Labelling</a></li>
+              <li><a href="standard-idmp.html">IDMP — Product Identity</a></li>
+              <li><a href="standard-pqi.html">PQI — CMC Quality</a></li>
+              <li><a href="standard-apix.html">APIX — Information Exchange</a></li>
+              <li><a href="standard-icsr.html">AER — Adverse Event Reporting</a></li>
+              <li><a href="standard-hta.html">HTA — Health Technology Assessment</a></li>
+              <li><a href="standard-rtq.html">RTQ — Regulatory Questions</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#standards" class="nav-link">Catalogue</a></li>
+          <li class="has-dropdown">
+            <a href="#" class="nav-link">Showcases <span class="chevron">▾</span></a>
+            <ul class="dropdown">
+              <li><a href="pqi-use-cases.html">PQI — Use cases</a></li>
+              <li><a href="showcases/pqi-structured-cmc-review.html">PQI — Structured CMC review (demo)</a></li>
+            </ul>
+          </li>
+          <li><a href="#" class="nav-link">Data Dictionary</a></li>
+          <li><a href="adoption.html" class="nav-link">Adoption</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="index.html#standards" class="btn btn-primary">Browse Catalogue</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+<!-- HEADER:END -->
+  <div class="breadcrumb"><div class="container"><a href="index.html">Home</a><span class="sep">›</span><a href="standard-pqi.html">PQI — Pharmaceutical Quality Information</a><span class="sep">›</span><span class="current">Use cases</span></div></div>
+
+  <main>
+    <section class="sub-hero"><div class="container"><div class="hero-layout"><div>
+      <div class="hero-badge-row"><div class="hero-icon">🔬</div><span class="hero-badge">PQI</span><span class="hero-version">Use cases &amp; showcase</span></div>
+      <h1>What structured CMC makes possible</h1>
+      <p class="hero-desc">Eight things a quality assessor can do when CTD Module 2.3 and 3.2 arrive as linked HL7 FHIR PQI resources instead of static PDF leaf documents. Each one runs live in the interactive showcase, which is built from a full PQI dataset of the ICH M4Q(R2) SakuraBloom R2 mock-up.</p>
+      <div class="hero-actions"><a href="showcases/pqi-structured-cmc-review.html" class="btn btn-primary btn-lg">Open the showcase →</a><a href="#use-cases" class="btn btn-outline btn-lg">Browse use cases</a></div>
+    </div><div class="hero-meta-card"><div class="meta-grid">
+      <div class="meta-row"><span class="meta-label">Source content</span><span class="meta-value">ICH M4Q(R2) mock-up</span></div><div class="meta-divider"></div>
+      <div class="meta-row"><span class="meta-label">Product</span><span class="meta-value">Sakura Bloom 20 mg FCT</span></div><div class="meta-divider"></div>
+      <div class="meta-row"><span class="meta-label">FHIR resources</span><span class="meta-value">2,121</span></div><div class="meta-divider"></div>
+      <div class="meta-row"><span class="meta-label">Test results</span><span class="meta-value">1,443</span></div><div class="meta-divider"></div>
+      <div class="meta-row"><span class="meta-label">Specifications</span><span class="meta-value">32</span></div><div class="meta-divider"></div>
+      <div class="meta-row"><span class="meta-label">FHIR / IG</span><span class="meta-value">R5 · PQI 1.0.0</span></div>
+    </div></div></div></div></section>
+
+    <section class="vp-section"><div class="container">
+      <div class="vp-header"><span class="section-tag">The shift</span><h2>From opening documents to asking questions</h2><p>One review question, answered both ways with the same dossier content.</p></div>
+      <div class="compare-grid">
+        <div class="compare-card compare-pdf">
+          <div class="compare-label">Today · PDF leaf documents</div>
+          <h3>“Has any drug-product CP-9-1 result come close to its shelf-life limit?”</h3>
+          <ol class="compare-steps">
+            <li>Open <b>2.3.3.DP.C</b> to find the limit (NMT 0.5 % shelf-life, NMT 0.3 % release).</li>
+            <li>Open the <b>Assay/Degradation</b> procedure to confirm the method.</li>
+            <li>Open <b>3.2.DP.C.1 Batch Analysis</b> and copy the release results.</li>
+            <li>Open the <b>HDPE bottle</b> stability report and copy every CP-9-1 value.</li>
+            <li>Open the <b>blister</b> stability report and do the same.</li>
+            <li>Compare 110 values to the limit by hand.</li>
+          </ol>
+        </div>
+        <div class="compare-card compare-fhir">
+          <div class="compare-label">With FHIR PQI · one query</div>
+          <h3>Every result already points to its acceptance criterion</h3>
+          <div class="compare-stats">
+            <div><span class="cs-num">110</span><span class="cs-lbl">CP-9-1 results found</span></div>
+            <div><span class="cs-num">0.3 %</span><span class="cs-lbl">highest (ABC123, 25 °C/60 % RH, 36 months)</span></div>
+            <div><span class="cs-num">≤ 0.5 %</span><span class="cs-lbl">shelf-life limit</span></div>
+          </div>
+          <p>Each <code>Observation</code> carries <code>instantiatesCanonical</code> to its <code>ObservationDefinition</code>, which holds machine-readable release and shelf-life ranges and links to its analytical procedure.</p>
+          <a href="showcases/pqi-structured-cmc-review.html#trace" class="btn btn-primary">Trace CP-9-1 in the showcase →</a>
+        </div>
+      </div>
+    </div></section>
+
+    <section class="uc-section" id="use-cases"><div class="container">
+      <div class="vp-header"><span class="section-tag">Use cases</span><h2>Demonstrated in the showcase</h2><p>Each card names the question, the PQI resources that answer it, and links straight to the matching view.</p></div>
+      <div class="uc-grid">
+
+        <article class="uc-card">
+          <div class="uc-top"><span class="uc-num">01</span><span class="uc-tag">Navigation</span></div>
+          <h3>Navigate the CTD as one connected document</h3>
+          <p>Browse Module 2.3 and 3.2 as a single searchable tree. Every section shows the structured data behind its narrative, and any datum opens in place with its FHIR source.</p>
+          <div class="uc-q">“Show me the data behind 2.3.3.DP.C.”</div>
+          <div class="uc-res"><span>Composition</span><span>section.entry</span><span>meta.source</span></div>
+          <a href="showcases/pqi-structured-cmc-review.html#ctd" class="uc-link">Open CTD navigator →</a>
+        </article>
+
+        <article class="uc-card">
+          <div class="uc-top"><span class="uc-num">02</span><span class="uc-tag">Conformance</span></div>
+          <h3>Check every result against its limit automatically</h3>
+          <p>All 1,443 results are evaluated against the acceptance range of the test they instantiate, with release and shelf-life contexts applied correctly. Results nearest a limit surface first.</p>
+          <div class="uc-q">“Is anything out of specification or trending towards a limit?”</div>
+          <div class="uc-res"><span>Observation</span><span>ObservationDefinition</span><span>qualifiedValue</span></div>
+          <a href="showcases/pqi-structured-cmc-review.html#overview" class="uc-link">See the conformance summary →</a>
+        </article>
+
+        <article class="uc-card">
+          <div class="uc-top"><span class="uc-num">03</span><span class="uc-tag">Specifications</span></div>
+          <h3>Review specifications as data</h3>
+          <p>32 specifications (drug substance, drug product, starting materials, intermediates, raw materials, excipients, reference standards, container closure), each test linked to its analytical procedure and the spread of results it produced.</p>
+          <div class="uc-q">“Which procedure supports this limit, and what did batches actually show?”</div>
+          <div class="uc-res"><span>PlanDefinition</span><span>ObservationDefinition</span><span>documentation</span></div>
+          <a href="showcases/pqi-structured-cmc-review.html#specifications" class="uc-link">Open specifications →</a>
+        </article>
+
+        <article class="uc-card">
+          <div class="uc-top"><span class="uc-num">04</span><span class="uc-tag">Stability</span></div>
+          <h3>Trend stability data against the shelf-life limit</h3>
+          <p>Plot any attribute by batch, pack and storage condition from the registration studies, with the limit drawn and a simple trend line to 36 months. No retyping of stability tables.</p>
+          <div class="uc-q">“Does the 36-month shelf life hold in both the bottle and the blister?”</div>
+          <div class="uc-res"><span>Specimen</span><span>DiagnosticReport</span><span>SpecimenDefinition</span></div>
+          <a href="showcases/pqi-structured-cmc-review.html#stability" class="uc-link">Open stability trends →</a>
+        </article>
+
+        <article class="uc-card">
+          <div class="uc-top"><span class="uc-num">05</span><span class="uc-tag">Traceability</span></div>
+          <h3>Follow batch genealogy from tablet to API lot</h3>
+          <p>Each drug-product batch links to the drug-substance batches it consumed, and to their own analyses. Move from a tablet result to its API lot in one step.</p>
+          <div class="uc-q">“Which drug-substance batches went into ABC456?”</div>
+          <div class="uc-res"><span>Medication</span><span>Substance</span><span>batch-substance-batch</span></div>
+          <a href="showcases/pqi-structured-cmc-review.html#batches" class="uc-link">Open batches &amp; genealogy →</a>
+        </article>
+
+        <article class="uc-card">
+          <div class="uc-top"><span class="uc-num">06</span><span class="uc-tag">Control strategy</span></div>
+          <h3>See which controls assure each CQA</h3>
+          <p>The overall control strategy table becomes a matrix of critical quality attributes against control types: material attributes, CPPs, IPCs and specifications, each with its acceptance range.</p>
+          <div class="uc-q">“How is dissolution controlled, end to end?”</div>
+          <div class="uc-res"><span>ObservationDefinition</span><span>qualified-value-criticality</span><span>PlanDefinition</span></div>
+          <a href="showcases/pqi-structured-cmc-review.html#control-strategy" class="uc-link">Open control strategy →</a>
+        </article>
+
+        <article class="uc-card">
+          <div class="uc-top"><span class="uc-num">07</span><span class="uc-tag">Process</span></div>
+          <h3>Review the manufacturing process step by step</h3>
+          <p>Drug-substance synthesis and drug-product manufacture as ordered steps carrying materials, quantities, equipment, critical process parameters and in-process controls with ranges.</p>
+          <div class="uc-q">“What are the critical steps and their proven ranges?”</div>
+          <div class="uc-res"><span>PlanDefinition.action</span><span>DeviceDefinition</span><span>process-parameters</span></div>
+          <a href="showcases/pqi-structured-cmc-review.html#process" class="uc-link">Open manufacturing process →</a>
+        </article>
+
+        <article class="uc-card">
+          <div class="uc-top"><span class="uc-num">08</span><span class="uc-tag">Lifecycle</span></div>
+          <h3>Assess the impact of a proposed change</h3>
+          <p>Propose a new acceptance range and see immediately which existing results and batches would no longer conform, and which specifications, protocols and narrative sections would need updating.</p>
+          <div class="uc-q">“What breaks if the shelf-life assay limit is tightened to 97.0–103.0 %?”</div>
+          <div class="uc-res"><span>backreferences</span><span>ObservationDefinition</span><span>Composition</span></div>
+          <a href="showcases/pqi-structured-cmc-review.html#change-impact" class="uc-link">Open change impact →</a>
+        </article>
+
+        <article class="uc-card uc-wide">
+          <div class="uc-top"><span class="uc-num">+</span><span class="uc-tag">Across the dossier</span></div>
+          <h3>Trace one attribute everywhere it appears</h3>
+          <p>Pick an impurity or attribute (CP-9-1, CP-8, the mutagenic impurity CP-6, assay, dissolution, total impurities, microbiology) and see every limit, procedure, result and narrative mention across drug substance and drug product, together with the list of PDF leaf documents a reviewer would otherwise have to open.</p>
+          <a href="showcases/pqi-structured-cmc-review.html#trace" class="uc-link">Open trace view →</a>
+        </article>
+
+      </div>
+    </div></section>
+
+    <section class="benefits-section"><div class="container"><div class="benefits-layout"><div class="benefits-content">
+      <span class="section-tag">Next use cases</span><h2>Not yet in the showcase</h2>
+      <p>The same dataset could support further scenarios that the PQI community is exploring. These are not demonstrated yet.</p>
+      <div class="benefit-items">
+        <div class="benefit-item"><div class="benefit-check open">○</div><div><strong>Established conditions &amp; ICH Q12 PLCM</strong><p>Flag which elements are established conditions and route a proposed change to its reporting category.</p></div></div>
+        <div class="benefit-item"><div class="benefit-check open">○</div><div><strong>Reliance and work-sharing</strong><p>Exchange the same structured assessment basis between regulators, with region-specific addenda kept separate.</p></div></div>
+        <div class="benefit-item"><div class="benefit-check open">○</div><div><strong>Automated submission validation</strong><p>Validate completeness and internal consistency (limits vs results, links vs sections) before review begins.</p></div></div>
+        <div class="benefit-item"><div class="benefit-check open">○</div><div><strong>Linking to IDMP and ePI</strong><p>Reuse the product, ingredient and pack definitions across product identification and electronic labelling.</p></div></div>
+      </div>
+    </div><div class="benefits-visual">
+      <div class="visual-header"><span class="visual-icon">📦</span><div><div class="visual-title">The showcase dataset</div><div class="visual-subtitle">FHIR R5 resources conforming to PQI profiles</div></div></div>
+      <div class="visual-items">
+        <div class="visual-item"><div class="visual-dot" style="background:#00875A;"></div><span class="visual-item-label">1,443 Observation</span> — batch, stability, characterisation results</div>
+        <div class="visual-item"><div class="visual-dot" style="background:#36B37E;"></div><span class="visual-item-label">186 ObservationDefinition</span> — tests, criteria, CPPs, IPCs</div>
+        <div class="visual-item"><div class="visual-dot" style="background:#0052CC;"></div><span class="visual-item-label">162 Specimen</span> — stability pulls by pack and condition</div>
+        <div class="visual-item"><div class="visual-dot" style="background:#6554C0;"></div><span class="visual-item-label">78 DiagnosticReport</span> — batch, stability, impurity reports</div>
+        <div class="visual-item"><div class="visual-dot" style="background:#FF8B00;"></div><span class="visual-item-label">70 PlanDefinition</span> — specifications, procedures, processes, protocols</div>
+        <div class="visual-item"><div class="visual-dot" style="background:#5243AA;"></div><span class="visual-item-label">2 Composition</span> — Module 2.3 and 3.2 narrative, linked to data</div>
+      </div>
+    </div></div></div></section>
+
+    <section class="resources-section"><div class="container">
+      <div class="resources-header"><span class="section-tag">Resources</span><h2>Showcase &amp; sources</h2><p>The showcase runs entirely in the browser; all views are computed from the embedded FHIR resources.</p></div>
+      <div class="resources-grid">
+        <a href="showcases/pqi-structured-cmc-review.html" class="resource-card"><div class="resource-icon">🧭</div><div class="resource-text"><h4>Structured CMC Review showcase</h4><p>Interactive reviewer workbench for Sakura Bloom 20 mg</p></div><div class="resource-arrow">→</div></a>
+        <a href="https://ich.org/page/ich-m4qr2-mock-ups" class="resource-card"><div class="resource-icon">📄</div><div class="resource-text"><h4>ICH M4Q(R2) SakuraBloom R2 mock-up</h4><p>Source content: Module 2.3 and 3.2 for a fictitious small molecule</p></div><div class="resource-arrow">→</div></a>
+        <a href="https://build.fhir.org/ig/HL7/uv-dx-pq/" class="resource-card"><div class="resource-icon">📘</div><div class="resource-text"><h4>PQI Implementation Guide</h4><p>Profiles the dataset conforms to</p></div><div class="resource-arrow">→</div></a>
+        <a href="https://github.com/HL7/uv-dx-pq" class="resource-card"><div class="resource-icon">💻</div><div class="resource-text"><h4>PQI GitHub project</h4><p>IG source and the Sakura Bloom dataset generator</p></div><div class="resource-arrow">→</div></a>
+      </div>
+      <p class="uc-note">Illustrative only. The mock-up describes a fictitious product, and ICH notes its content is not scientifically complete. Matching of control-strategy narrative to test definitions in the showcase is heuristic.</p>
+    </div></section>
+
+    <section class="cta-section"><div class="container"><div class="cta-card"><div><h2>See it for yourself</h2><p>Open the showcase and start from any of the eight questions above.</p></div><div class="cta-buttons"><a href="showcases/pqi-structured-cmc-review.html" class="btn btn-primary btn-lg">Open the showcase</a><a href="standard-pqi.html" class="btn btn-subtle btn-lg">Back to PQI</a></div></div></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="container"><div class="footer-inner"><div class="footer-logo">FHIR-LS <span>Life Sciences Catalogue</span></div><div class="footer-links"><a href="index.html">Home</a><a href="index.html#standards">Catalogue</a><a href="#">GitHub</a></div></div><div class="footer-bottom"><p>© 2026 FHIR Life Sciences Catalogue | CC BY 4.0</p></div></div></footer>
+  <script>const h=document.getElementById('site-header');window.addEventListener('scroll',()=>h.classList.toggle('scrolled',window.scrollY>10));</script>
+</body></html>
