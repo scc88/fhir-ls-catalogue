@@ -6,171 +6,198 @@
 <title>Structured CMC Review – Sakura Bloom</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-/* Layout idea: a reviewer's workbench – fixed dossier header, view tabs, a working canvas, and a
-   right-hand FHIR inspector drawer that opens on any datum. Petrol accent on cool slate neutrals. */
+/* One light design language merging three directions:
+   Keynote (editorial overview), Cards (grouped working views), Pro (sidebar + inspector layout).
+   Light only by design: no dark theme. */
 :root {
-  --bg: #f3f5f6;
+  --bg: #f5f5f7;
   --surface: #ffffff;
-  --ink: #17232b;
-  --muted: #5b6b75;
-  --line: #d8dfe3;
-  --accent: #0b6e78;
-  --accent-soft: #e2f1f2;
-  --ok: #2e7d4f; --ok-soft: #e3f3e9;
-  --warn: #a86400; --warn-soft: #fbf0dc;
-  --bad: #b3261e; --bad-soft: #fbe4e2;
-  --info-soft: #eceff1;
-  --c1: #0b6e78; --c2: #c2571a; --c3: #5a4fb0; --c4: #6b8e23;
-  --font-display: "IBM Plex Sans Condensed", "Arial Narrow", system-ui, sans-serif;
-  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
-  --radius: 6px;
+  --ink: #1d1d1f;
+  --muted: #6e6e73;
+  --line: #d2d2d7;
+  --sep: #e5e5ea;
+  --fill: #f2f2f7;
+  --accent: #0071e3;
+  --accent-soft: #eaf3fe;
+  --ok: #248a3d; --ok-soft: #e8f7ec;
+  --warn: #b25000; --warn-soft: #fff3e0;
+  --bad: #d70015; --bad-soft: #ffeceb;
+  --info-soft: #f2f2f7;
+  --c1: #0071e3; --c2: #ff9500; --c3: #5e5ce6; --c4: #34c759;
+  --font-display: "Inter", -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Inter", -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --radius: 12px;
+  --radius-card: 20px;
   color-scheme: light;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0f1619; --surface: #172126; --ink: #e3eaee; --muted: #93a4ad; --line: #2a3a42;
-    --accent: #4fb8c1; --accent-soft: #163338;
-    --ok: #6cc893; --ok-soft: #173326; --warn: #e8a94a; --warn-soft: #3a2c14; --bad: #f08a80; --bad-soft: #3d1c1a; --info-soft: #202d33;
-    --c1: #4fb8c1; --c2: #f0935a; --c3: #a49cf0; --c4: #a8c75a;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #0f1619; --surface: #172126; --ink: #e3eaee; --muted: #93a4ad; --line: #2a3a42;
-  --accent: #4fb8c1; --accent-soft: #163338;
-  --ok: #6cc893; --ok-soft: #173326; --warn: #e8a94a; --warn-soft: #3a2c14; --bad: #f08a80; --bad-soft: #3d1c1a; --info-soft: #202d33;
-  --c1: #4fb8c1; --c2: #f0935a; --c3: #a49cf0; --c4: #a8c75a;
-  color-scheme: dark;
 }
 * { box-sizing: border-box; }
 html, body { height: 100%; margin: 0; }
-body { background: var(--bg); color: var(--ink); font: 14px/1.5 var(--font-body); }
-a { color: var(--accent); }
-h1, h2, h3 { font-family: var(--font-display); font-weight: 600; text-wrap: balance; margin: 0; }
-h1 { font-size: 22px; } h2 { font-size: 19px; } h3 { font-size: 15px; }
+body { background: var(--bg); color: var(--ink); font: 15px/1.5 var(--font-body); -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+h1 { font-size: 21px; } h2 { font-size: 28px; } h3 { font-size: 17px; font-weight: 600; letter-spacing: 0; }
 button, select, input { font: inherit; color: inherit; }
-:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+:focus-visible { outline: 3px solid rgba(0,113,227,.45); outline-offset: 2px; border-radius: 6px; }
 .mono { font-family: var(--font-mono); font-size: 12.5px; }
 .num { font-variant-numeric: tabular-nums; }
 .muted { color: var(--muted); }
 .app { display: grid; grid-template-rows: auto auto 1fr; height: 100%; }
-header.top { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; padding: 12px 20px; background: var(--surface); border-bottom: 1px solid var(--line); }
+
+/* top bar: translucent, Keynote style */
+header.top { display: flex; flex-wrap: wrap; gap: 10px 28px; align-items: center; padding: 12px 24px; background: rgba(255,255,255,.82); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid var(--sep); }
 .brand { display: flex; flex-direction: column; gap: 2px; min-width: 260px; }
 .brand small { color: var(--muted); font-size: 12px; }
-.facts { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 12.5px; color: var(--muted); }
-.facts b { color: var(--ink); font-weight: 500; }
-.search { margin-left: auto; position: relative; min-width: 240px; flex: 0 1 320px; }
-.search input { width: 100%; padding: 7px 10px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg); }
-.search ul { position: absolute; right: 0; left: 0; top: 100%; z-index: 30; margin: 4px 0 0; padding: 4px; list-style: none; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); max-height: 360px; overflow: auto; box-shadow: 0 8px 24px rgba(0,0,0,.15); }
-.search li button { width: 100%; text-align: left; background: none; border: 0; padding: 6px 8px; border-radius: 4px; cursor: pointer; }
+.facts { display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 13px; color: var(--muted); }
+.facts b { color: var(--ink); font-weight: 600; }
+.search { margin-left: auto; position: relative; min-width: 240px; flex: 0 1 340px; }
+.search input { width: 100%; padding: 8px 14px; border: 0; border-radius: 10px; background: var(--fill); }
+.search ul { position: absolute; right: 0; left: 0; top: calc(100% + 6px); z-index: 30; margin: 0; padding: 6px; list-style: none; background: var(--surface); border-radius: 14px; max-height: 380px; overflow: auto; box-shadow: 0 12px 40px rgba(0,0,0,.14), 0 0 0 1px rgba(0,0,0,.04); }
+.search li button { width: 100%; text-align: left; background: none; border: 0; padding: 8px 10px; border-radius: 8px; cursor: pointer; }
 .search li button:hover, .search li button:focus-visible { background: var(--accent-soft); }
-nav.tabs { display: flex; gap: 2px; padding: 0 16px; background: var(--surface); border-bottom: 1px solid var(--line); overflow-x: auto; }
-nav.tabs a { padding: 10px 12px; text-decoration: none; color: var(--muted); border-bottom: 2px solid transparent; white-space: nowrap; font-weight: 500; }
-nav.tabs a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
-nav.tabs a:hover { color: var(--ink); }
+nav.tabs { display: flex; gap: 4px; padding: 8px 20px; background: rgba(255,255,255,.82); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--sep); overflow-x: auto; }
+nav.tabs a { padding: 6px 14px; color: var(--ink); border-radius: 980px; white-space: nowrap; font-size: 14px; text-decoration: none; }
+nav.tabs a[aria-current="page"] { background: var(--ink); color: #ffffff; }
+nav.tabs a:hover { background: var(--fill); text-decoration: none; }
+nav.tabs a[aria-current="page"]:hover { background: var(--ink); }
 .workspace { display: grid; grid-template-columns: 1fr auto; min-height: 0; }
-main { overflow: auto; padding: 20px; min-width: 0; }
-.view-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; margin-bottom: 14px; }
-.view-head p { margin: 0; color: var(--muted); max-width: 75ch; }
-.grid { display: grid; gap: 14px; }
-.g2 { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
-.g3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; min-width: 0; }
-.card h3 { margin-bottom: 8px; }
-.card.accent { border-left: 3px solid var(--accent); }
-.kv { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; margin: 0; }
+main { overflow: auto; padding: 28px 32px 48px; min-width: 0; }
+main > * { max-width: 1280px; margin-left: auto; margin-right: auto; }
+.view-head { display: flex; flex-direction: column; gap: 6px; margin-bottom: 22px; }
+.view-head h2 { font-size: 34px; font-weight: 800; }
+.view-head p { margin: 0; color: var(--muted); max-width: 72ch; font-size: 17px; }
+
+/* cards: grouped, Cards style */
+.grid { display: grid; gap: 16px; }
+.g2 { grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); }
+.g3 { grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); }
+.card { background: var(--surface); border-radius: var(--radius-card); padding: 20px 22px; min-width: 0; }
+.card h3 { margin-bottom: 10px; }
+.card.accent { box-shadow: inset 0 0 0 2px var(--accent-soft); }
+.kv { display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; margin: 0; }
 .kv dt { color: var(--muted); } .kv dd { margin: 0; }
-.chip { display: inline-flex; align-items: center; gap: 4px; padding: 1px 8px; border-radius: 999px; font-size: 12px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); white-space: nowrap; }
+.chip { display: inline-flex; align-items: center; gap: 4px; padding: 3px 11px; border-radius: 980px; font-size: 13px; border: 0; background: var(--fill); color: var(--ink); white-space: nowrap; font-weight: 500; }
 button.chip, a.chip { cursor: pointer; text-decoration: none; }
-button.chip:hover { border-color: var(--accent); color: var(--accent); }
-.chip.ok { background: var(--ok-soft); border-color: transparent; color: var(--ok); }
-.chip.near { background: var(--warn-soft); border-color: transparent; color: var(--warn); }
-.chip.fail { background: var(--bad-soft); border-color: transparent; color: var(--bad); }
-.chip.info { background: var(--info-soft); border-color: transparent; color: var(--muted); }
-.chip.type { font-family: var(--font-mono); font-size: 11px; background: var(--accent-soft); color: var(--accent); border-color: transparent; }
+button.chip:hover { background: var(--accent-soft); color: var(--accent); }
+.chip.ok { background: var(--ok-soft); color: var(--ok); font-weight: 600; }
+.chip.near { background: var(--warn-soft); color: var(--warn); font-weight: 600; }
+.chip.fail { background: var(--bad-soft); color: var(--bad); font-weight: 600; }
+.chip.info { background: var(--fill); color: var(--muted); }
+.chip.type { font-family: var(--font-mono); font-size: 11px; background: var(--accent-soft); color: var(--accent); }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
-table.t { width: 100%; border-collapse: collapse; font-size: 13px; }
-table.t th { text-align: left; font-weight: 600; color: var(--muted); font-size: 12px; border-bottom: 1px solid var(--line); padding: 6px 8px; position: sticky; top: 0; background: var(--surface); }
-table.t td { border-bottom: 1px solid var(--line); padding: 6px 8px; vertical-align: top; }
+table.t { width: 100%; border-collapse: collapse; font-size: 14px; }
+table.t th { text-align: left; font-weight: 600; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .03em; border-bottom: 1px solid var(--sep); padding: 8px 10px; position: sticky; top: 0; background: var(--surface); }
+table.t td { border-bottom: 1px solid var(--sep); padding: 10px; vertical-align: top; }
+table.t tr:last-child td { border-bottom: 0; }
 table.t tr.click { cursor: pointer; } table.t tr.click:hover td { background: var(--accent-soft); }
 .scroll { overflow-x: auto; }
-.btn { border: 1px solid var(--line); background: var(--surface); padding: 6px 12px; border-radius: var(--radius); cursor: pointer; }
-.btn:hover { border-color: var(--accent); }
-.btn.primary { background: var(--accent); color: var(--surface); border-color: var(--accent); }
-.seg { display: inline-flex; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
-.seg button { border: 0; background: var(--surface); padding: 5px 12px; cursor: pointer; }
-.seg button[aria-pressed="true"] { background: var(--accent); color: var(--surface); }
-.controls { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; margin-bottom: 12px; }
-.controls label { display: inline-flex; gap: 6px; align-items: center; color: var(--muted); }
-.controls select, .controls input[type=number] { padding: 5px 8px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); color: var(--ink); max-width: 420px; }
-.big { font-family: var(--font-display); font-size: 28px; font-weight: 600; line-height: 1.1; }
-.statrow { display: flex; flex-wrap: wrap; gap: 10px 28px; }
-.stat small { display: block; color: var(--muted); font-size: 12px; }
-/* PDF vs structured */
-.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--surface); }
-.compare > div { padding: 14px 16px; min-width: 0; }
-.compare .pdf { background: var(--info-soft); border-right: 1px solid var(--line); }
-.doclist { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 3px; font-size: 12.5px; }
-.doclist li { display: flex; gap: 8px; align-items: baseline; }
-.doclist li::before { content: "PDF"; font-family: var(--font-mono); font-size: 10px; color: var(--bad); border: 1px solid currentColor; border-radius: 3px; padding: 0 3px; flex: none; }
+.btn { border: 0; background: var(--fill); padding: 9px 18px; border-radius: 980px; cursor: pointer; font-size: 15px; color: var(--ink); }
+.btn:hover { background: var(--accent-soft); color: var(--accent); }
+.btn.primary { background: var(--accent); color: #ffffff; }
+.btn.primary:hover { background: #0077ed; color: #ffffff; }
+.seg { display: inline-flex; background: #e3e3e8; border-radius: 10px; padding: 2px; }
+.seg button { border: 0; background: transparent; padding: 6px 14px; cursor: pointer; border-radius: 8px; font-size: 14px; }
+.seg button[aria-pressed="true"] { background: var(--surface); font-weight: 600; box-shadow: 0 1px 3px rgba(0,0,0,.12); }
+.controls { display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: center; margin-bottom: 16px; }
+.controls label { display: inline-flex; gap: 6px; align-items: center; color: var(--muted); font-size: 14px; }
+.controls select, .controls input[type=number] { padding: 8px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); color: var(--ink); max-width: 440px; }
+.big { font-family: var(--font-display); font-size: 34px; font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; }
+.statrow { display: flex; flex-wrap: wrap; gap: 12px 32px; }
+.stat small { display: block; color: var(--muted); font-size: 13px; }
+.note { font-size: 13px; color: var(--muted); }
+
+/* overview: Keynote style */
+.hero { text-align: center; padding: 56px 16px 40px; }
+.hero .eyebrow { margin: 0 0 12px; font-size: 19px; font-weight: 600; color: var(--accent); }
+.hero h2 { font-size: clamp(40px, 6vw, 72px); line-height: 1.05; font-weight: 800; letter-spacing: -0.02em; }
+.hero p.lede { margin: 20px auto 0; max-width: 640px; font-size: 21px; line-height: 1.45; color: var(--muted); }
+.hero .ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 28px; }
+.bignums { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; text-align: center; padding: 8px 0 40px; }
+.bignums .n { font-size: 52px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.05; font-variant-numeric: tabular-nums; }
+.bignums .l { color: var(--muted); font-size: 15px; }
+.section-title { font-size: 40px; font-weight: 800; text-align: center; margin: 24px 0 6px; }
+.section-sub { text-align: center; color: var(--muted); font-size: 19px; margin: 0 auto 24px; max-width: 640px; }
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 40px; }
+.compare > div { padding: 32px; min-width: 0; border-radius: 28px; }
+.compare .pdf { background: #e8e8ed; }
+.compare .fhir { background: var(--surface); box-shadow: 0 0 0 2px var(--accent) inset; }
+.compare h3 { font-size: 26px; font-weight: 800; line-height: 1.15; margin: 4px 0 16px; }
+.compare .label { font-size: 13px; font-weight: 600; color: var(--muted); }
+.compare .fhir .label { color: var(--accent); }
+.doclist { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 6px; font-size: 14px; }
+.doclist li { display: flex; gap: 10px; align-items: baseline; }
+.doclist li::before { content: "PDF"; font-family: var(--font-mono); font-size: 10px; font-weight: 500; color: var(--bad); background: var(--bad-soft); border-radius: 4px; padding: 1px 5px; flex: none; }
 .q { font-weight: 600; margin: 0 0 6px; }
-/* CTD navigator */
-.ctd { display: grid; grid-template-columns: minmax(240px, 320px) 1fr; gap: 14px; align-items: start; }
-.tree { position: sticky; top: 0; max-height: calc(100vh - 170px); overflow: auto; padding: 8px; }
-.tree ul { list-style: none; margin: 0; padding-left: 12px; }
-.tree > ul { padding-left: 0; }
-.tree button { display: block; width: 100%; text-align: left; border: 0; background: none; padding: 3px 6px; border-radius: 4px; cursor: pointer; font-size: 12.5px; color: var(--ink); }
-.tree button[aria-current="true"] { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
-.tree button:hover { background: var(--info-soft); }
-.tree .n { color: var(--muted); font-family: var(--font-mono); font-size: 10.5px; margin-left: 4px; }
+.asklist { background: var(--surface); border-radius: var(--radius-card); overflow: hidden; }
+.asklist button { display: flex; width: 100%; align-items: center; gap: 14px; padding: 15px 20px; background: none; border: 0; border-bottom: 1px solid var(--sep); text-align: left; cursor: pointer; font-size: 15px; }
+.asklist button:last-child { border-bottom: 0; }
+.asklist button:hover { background: var(--accent-soft); }
+.asklist .hint { color: var(--muted); font-size: 14px; margin-left: auto; }
+.asklist .chev { color: #c7c7cc; font-size: 20px; }
+
+/* CTD navigator: Pro layout, light */
+.ctd { display: grid; grid-template-columns: minmax(240px, 300px) 1fr; gap: 16px; align-items: start; }
+.tree { position: sticky; top: 0; max-height: calc(100vh - 190px); overflow: auto; padding: 10px; }
+.tree ul { list-style: none; margin: 0; padding-left: 0; }
+.tree button { display: flex; justify-content: space-between; gap: 6px; width: 100%; text-align: left; border: 0; background: none; padding: 5px 8px; border-radius: 8px; cursor: pointer; font-size: 13px; color: var(--ink); }
+.tree button[aria-current="true"] { background: var(--accent); color: #ffffff; font-weight: 600; }
+.tree button[aria-current="true"] .n { color: #ffffff; opacity: .85; }
+.tree button:hover { background: var(--fill); }
+.tree button[aria-current="true"]:hover { background: var(--accent); }
+.tree .n { color: var(--muted); font-family: var(--font-mono); font-size: 10.5px; }
 .narr { max-width: 100ch; }
-.narr table { border-collapse: collapse; font-size: 12.5px; margin: 8px 0 14px; display: block; overflow-x: auto; }
-.narr td { border: 1px solid var(--line); padding: 4px 6px; vertical-align: top; }
-.narr tr:first-child td { background: var(--info-soft); font-weight: 600; }
-.narr h3, .narr h4, .narr h5, .narr h6 { font-family: var(--font-display); margin: 14px 0 6px; font-size: 15px; }
-.narr p { margin: 4px 0; max-width: 85ch; }
-.linked { background: var(--accent-soft); border: 1px solid transparent; border-radius: var(--radius); padding: 10px 12px; margin-bottom: 12px; }
+.narr table { border-collapse: collapse; font-size: 13px; margin: 10px 0 16px; display: block; overflow-x: auto; }
+.narr table { border: 0; }
+.narr td { border: 0; border-bottom: 1px solid var(--sep); padding: 6px 8px; vertical-align: top; }
+.narr tr:first-child td { background: var(--fill); font-weight: 600; }
+.narr h3, .narr h4, .narr h5, .narr h6 { margin: 18px 0 6px; font-size: 17px; }
+.narr p { margin: 6px 0; max-width: 80ch; line-height: 1.6; }
+.linked { background: var(--accent-soft); border-radius: 14px; padding: 12px 14px; margin-bottom: 16px; }
+
 /* control strategy */
 .cs td.cqa { font-weight: 600; }
-.cs .chip { white-space: normal; text-align: left; border-radius: 10px; max-width: 260px; }
+.cs .chip { white-space: normal; text-align: left; border-radius: 12px; max-width: 260px; }
 .cs td { min-width: 120px; }
 .ctype { font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+
 /* charts */
-svg text { fill: var(--muted); font-family: var(--font-body); font-size: 11px; }
-svg .grid line { stroke: var(--line); }
-svg .limit { stroke: var(--bad); stroke-dasharray: 5 4; stroke-width: 1.5; }
-svg .limittext { fill: var(--bad); font-weight: 600; }
-.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12px; color: var(--muted); }
-.legend i { display: inline-block; width: 14px; height: 3px; margin-right: 6px; vertical-align: middle; border-radius: 2px; }
+svg text { fill: var(--muted); font-family: var(--font-body); font-size: 12px; }
+svg .grid line { stroke: var(--sep); }
+svg .limit { stroke: var(--warn); stroke-dasharray: 6 5; stroke-width: 2; }
+svg .limittext { fill: var(--warn); font-weight: 600; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--muted); margin-top: 8px; }
+.legend i { display: inline-block; width: 18px; height: 3px; margin-right: 6px; vertical-align: middle; border-radius: 2px; }
+
 /* process */
-.steps { display: grid; gap: 10px; counter-reset: s; }
-.step { display: grid; grid-template-columns: 34px 1fr; gap: 12px; }
-.step .dot { width: 30px; height: 30px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; font-weight: 600; font-family: var(--font-display); }
+.steps { display: grid; gap: 12px; }
+.step { display: grid; grid-template-columns: 36px 1fr; gap: 12px; }
+.step .dot { width: 32px; height: 32px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; font-weight: 700; }
 .step.crit .dot { background: var(--warn-soft); color: var(--warn); }
-.ctl { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 8px; margin-top: 8px; }
-.ctl button { text-align: left; border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg); padding: 6px 9px; cursor: pointer; }
-.ctl button:hover { border-color: var(--accent); }
-.ctl .k { font-family: var(--font-mono); font-size: 10.5px; color: var(--muted); }
-.ctl .cpp { border-left: 3px solid var(--warn); }
-.ctl .ipc { border-left: 3px solid var(--accent); }
-/* inspector */
-aside.insp { width: 0; overflow: hidden; border-left: 1px solid var(--line); background: var(--surface); transition: width .2s ease; }
-aside.insp.open { width: min(520px, 92vw); overflow: auto; }
+.ctl { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 8px; margin-top: 10px; }
+.ctl button { text-align: left; border: 0; border-radius: 14px; background: var(--fill); padding: 10px 12px; cursor: pointer; }
+.ctl button:hover { background: var(--accent-soft); }
+.ctl .k { font-family: var(--font-mono); font-size: 10.5px; font-weight: 500; }
+.ctl .cpp .k { color: var(--warn); }
+.ctl .ipc .k { color: var(--accent); }
+
+/* inspector: Pro style, light */
+aside.insp { width: 0; overflow: hidden; border-left: 1px solid var(--sep); background: var(--surface); transition: width .2s ease; }
+aside.insp.open { width: min(460px, 92vw); overflow: auto; }
 @media (prefers-reduced-motion: reduce) { aside.insp { transition: none; } }
-.insp-in { padding: 16px; display: grid; gap: 12px; }
+.insp-in { padding: 20px; display: grid; gap: 14px; }
 .insp-head { display: flex; gap: 8px; align-items: flex-start; justify-content: space-between; }
-.insp pre { background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px; overflow: auto; max-height: 420px; font-size: 11.5px; margin: 0; }
-details summary { cursor: pointer; color: var(--accent); font-weight: 500; }
-.bar { height: 6px; background: var(--info-soft); border-radius: 3px; position: relative; min-width: 80px; }
-.bar span { position: absolute; top: -2px; width: 3px; height: 10px; border-radius: 1px; background: var(--accent); }
-.note { font-size: 12px; color: var(--muted); }
-.banner { font-size: 12px; color: var(--muted); padding: 6px 20px; background: var(--bg); border-bottom: 1px solid var(--line); }
+.insp pre { background: #f7f7f9; border-radius: 12px; padding: 12px; overflow: auto; max-height: 420px; font-size: 11.5px; margin: 0; color: #3a3a3c; }
+details summary { cursor: pointer; color: var(--accent); font-weight: 600; }
+.bar { height: 8px; background: var(--sep); border-radius: 4px; position: relative; min-width: 80px; }
+.bar span { position: absolute; top: 0; bottom: 0; border-radius: 4px; background: var(--ok); }
+.backlink { color: var(--accent); }
 @media (max-width: 860px) {
+  main { padding: 20px 16px 40px; }
   .ctd { grid-template-columns: 1fr; } .tree { position: static; max-height: 260px; }
-  .compare { grid-template-columns: 1fr; } .compare .pdf { border-right: 0; border-bottom: 1px solid var(--line); }
+  .compare { grid-template-columns: 1fr; }
   aside.insp.open { position: fixed; inset: 0 0 0 auto; z-index: 40; width: 100vw; }
 }
 </style>
@@ -181,7 +208,7 @@ details summary { cursor: pointer; color: var(--accent); font-weight: 500; }
     <div class="brand">
       <h1>Structured CMC Review</h1>
       <small>Sakura Bloom 20 mg film-coated tablets · ICH M4Q(R2) Module 2.3 &amp; 3.2 as HL7 FHIR PQI</small>
-      <a class="backlink" href="../pqi-use-cases.html" style="font-size:12px;text-decoration:none">← FHIR-LS Catalogue · PQI use cases</a>
+      <a class="backlink" href="../pqi-use-cases.html" style="font-size:12px">← FHIR-LS Catalogue · PQI use cases</a>
     </div>
     <div class="facts" id="facts"></div>
     <div class="search">
@@ -507,8 +534,7 @@ function viewOverview(el) {
   const obs = all("Observation");
   const counts = { pass: 0, near: 0, fail: 0, info: 0 };
   obs.forEach((o) => counts[ev(o).status]++);
-  const ranked = obs.map((o) => ({ o, e: ev(o) })).filter((x) => x.e.margin != null && x.o.valueQuantity && !x.o.valueQuantity.comparator).sort((a, b) => a.e.margin - b.e.margin).slice(0, 6);
-  // Worked example: CP-9-1 in the drug product vs shelf-life limit
+  const ranked = obs.map((o) => ({ o, e: ev(o) })).filter((x) => x.e.margin != null && x.o.valueQuantity && !x.o.valueQuantity.comparator).sort((a, b) => a.e.margin - b.e.margin).slice(0, 5);
   const od = get("ObservationDefinition/od-dp-degradation-cp-9-1");
   const rs = PQI.resultsFor(db, od.id);
   const maxR = rs.filter((r) => r.obs.valueQuantity).sort((a, b) => b.obs.valueQuantity.value - a.obs.valueQuantity.value)[0];
@@ -518,37 +544,51 @@ function viewOverview(el) {
   const docs = [...PQI.sourcesOf(db, involved)].map(srcTitle);
   const sd = get("SubstanceDefinition/sakuramil");
   const mpd = all("MedicinalProductDefinition")[0];
+  const specs = all("PlanDefinition").filter((p) => p.id.startsWith("spec-")).length;
   const sections = countSections();
+  const ctx = (x) => { const si = PQI.specimenInfo(db, x.o); return subjLabel(get(x.o.subject.reference)) + (si ? " · " + si.condition.replace(/ \(.*\)/, "") + " · " + si.months + " mo" : ""); };
   el.innerHTML = `
-  <div class="view-head"><h2>What changes for the reviewer</h2>
-    <p>The same Sakura Bloom dossier (the ICH M4Q(R2) SakuraBloom R2 mock-up), delivered as ${RES.length.toLocaleString()} linked HL7 FHIR PQI resources instead of a stack of PDF leaf documents. Every number on this page is computed in your browser from those resources.</p></div>
-  <div class="compare" style="margin-bottom:14px">
-    <div class="pdf"><p class="q">Question: has any drug-product CP-9-1 result come close to its shelf-life limit?</p>
-      <p class="muted" style="margin:0">With PDFs, the reviewer opens and cross-reads these leaf documents, finds the limit in one, the method in another and transcribes ${rs.length} results from tables across batch-analysis and stability reports for two packs:</p>
+  <section class="hero">
+    <p class="eyebrow">For quality assessors at FDA, Health Canada, PMDA, HSA, EMA and TGA</p>
+    <h2>Review the dossier.<br>Not the documents.</h2>
+    <p class="lede">CTD Module 2.3 and 3.2 for Sakura Bloom 20 mg, delivered as ${RES.length.toLocaleString()} linked HL7 FHIR PQI resources. Every limit knows its method. Every result knows its limit.</p>
+    <div class="ctas"><button class="btn primary" data-go="ctd">Start reviewing</button><button class="btn" data-go="trace|CP-9-1">See how it compares to PDF</button></div>
+  </section>
+  <div class="bignums">
+    <div><div class="n">${RES.length.toLocaleString()}</div><div class="l">linked FHIR resources</div></div>
+    <div><div class="n">${obs.length.toLocaleString()}</div><div class="l">results checked against their limit</div></div>
+    <div><div class="n" style="color:${counts.fail ? "var(--bad)" : "var(--ok)"}">${counts.fail}</div><div class="l">out of limit</div></div>
+    <div><div class="n">${specs}</div><div class="l">specifications, as data</div></div>
+  </div>
+  <h2 class="section-title">One question. Two ways.</h2>
+  <p class="section-sub">Has any drug-product CP-9-1 result come close to its shelf-life limit?</p>
+  <div class="compare">
+    <div class="pdf"><span class="label">Today · PDF and DOCX</span><h3>Open ${docs.length} documents.<br>Copy ${rs.length} numbers.</h3>
+      <p class="muted" style="margin:0">Find the limit in one, the method in another, then transcribe results from batch-analysis and stability tables for two packs:</p>
       <ul class="doclist">${docs.map((d) => `<li>${esc(d)}</li>`).join("")}</ul></div>
-    <div><p class="q">With structured PQI content: one query.</p>
-      <div class="statrow" style="margin:6px 0 10px">
-        <div class="stat"><span class="big num">${rs.length}</span><small>CP-9-1 results found</small></div>
-        <div class="stat"><span class="big num">${esc(PQI.valueText(maxR.obs))}</span><small>highest result (${esc(subjLabel(maxR.subject))}${maxR.si ? ", " + esc(maxR.si.condition) + ", " + maxR.si.months + " mo" : ""})</small></div>
-        <div class="stat"><span class="big num">${esc(critText(od, "Shelf-life").replace("Not more than", "≤"))}</span><small>shelf-life limit</small></div>
+    <div class="fhir"><span class="label">With FHIR PQI</span><h3>Ask once.<br>Get the answer with its sources.</h3>
+      <div class="statrow" style="margin:6px 0 14px">
+        <div class="stat"><span class="big num">${rs.length}</span><small>results found</small></div>
+        <div class="stat"><span class="big num">${esc(PQI.valueText(maxR.obs))}</span><small>highest · ${esc(subjLabel(maxR.subject))}${maxR.si ? ", " + maxR.si.months + " mo" : ""}</small></div>
+        <div class="stat"><span class="big num">${esc(critText(od, "Shelf-life").replace("Not more than", "≤ "))}</span><small>shelf-life limit</small></div>
       </div>
-      <p style="margin:0 0 10px">All results are below the limit. The limit, its procedure (${esc(ap ? ap.title : "")}) and every result are linked, so the answer is traceable to source.</p>
+      <p class="muted" style="margin:0 0 16px">The limit, its procedure (${esc(ap ? ap.title.replace("Analytical Procedures ", "") : "")}) and every result are linked, so the answer traces back to source.</p>
       <div class="chips"><button class="btn primary" data-go="trace|CP-9-1">Trace CP-9-1 everywhere</button><button class="btn" data-go="stability|DP:od-dp-degradation-cp-9-1">See the stability trend</button></div></div>
   </div>
-  <div class="grid g3" style="margin-bottom:14px">
-    <div class="card accent"><h3>Every result checked against its limit</h3>
-      <div class="statrow"><div class="stat"><span class="big num">${obs.length.toLocaleString()}</span><small>results</small></div>
-      <div class="stat"><span class="big num" style="color:var(--ok)">${counts.pass + counts.near}</span><small>within limit</small></div>
-      <div class="stat"><span class="big num" style="color:var(--bad)">${counts.fail}</span><small>out of limit</small></div>
-      <div class="stat"><span class="big num" style="color:var(--muted)">${counts.info}</span><small>reported only</small></div></div>
-      <p class="note">Each Observation carries <span class="mono">instantiatesCanonical</span> to its ObservationDefinition, which holds release and shelf-life acceptance ranges.</p></div>
-    <div class="card"><h3>Closest to a limit</h3><table class="t"><tbody>${ranked.map((x) => `<tr class="click" data-open="Observation/${x.o.id}"><td>${esc(odShort(PQI.odOf(db, x.o)))}<div class="ctype">${esc(subjLabel(get(x.o.subject.reference)))}${(() => { const si = PQI.specimenInfo(db, x.o); return si ? " · " + esc(si.condition.replace(/ \(.*\)/, "")) + " · " + si.months + " mo" : ""; })()}</div></td><td class="num">${esc(PQI.valueText(x.o))}</td><td>${chipStatus(x.e.status)}</td></tr>`).join("")}</tbody></table></div>
-    <div class="card"><h3>Navigate by question</h3><div class="chips" style="flex-direction:column;align-items:flex-start;gap:8px">
-      <button class="btn" data-go="control-strategy">Which controls assure each CQA?</button>
-      <button class="btn" data-go="batches">Which DS batches went into DP batch ABC456?</button>
-      <button class="btn" data-go="stability">Does the 36-month shelf life hold in both packs?</button>
-      <button class="btn" data-go="change-impact|od-dp-assay-hplc">What breaks if the assay limit is tightened?</button>
-      <button class="btn" data-go="ctd">Read the narrative with its data attached</button></div></div>
+  <div class="grid g2" style="margin-bottom:16px;align-items:start">
+    <div><h3 style="font-size:22px;margin:0 0 10px">Ask the dossier</h3><div class="asklist">
+      <button type="button" data-go="control-strategy"><span>Which controls assure each critical quality attribute?</span><span class="hint">Control strategy</span><span class="chev" aria-hidden="true">›</span></button>
+      <button type="button" data-go="batches"><span>Which drug-substance batches went into ABC456?</span><span class="hint">Genealogy</span><span class="chev" aria-hidden="true">›</span></button>
+      <button type="button" data-go="stability"><span>Does the 36-month shelf life hold in both packs?</span><span class="hint">Stability</span><span class="chev" aria-hidden="true">›</span></button>
+      <button type="button" data-go="trace|CP-6"><span>Where does CP-6, the mutagenic impurity, appear?</span><span class="hint">Trace</span><span class="chev" aria-hidden="true">›</span></button>
+      <button type="button" data-go="change-impact|od-dp-assay-hplc"><span>What breaks if the assay limit is tightened?</span><span class="hint">Change impact</span><span class="chev" aria-hidden="true">›</span></button>
+      <button type="button" data-go="ctd"><span>Read the narrative with its data attached</span><span class="hint">CTD navigator</span><span class="chev" aria-hidden="true">›</span></button>
+    </div></div>
+    <div><h3 style="font-size:22px;margin:0 0 10px">Every result, checked</h3><div class="card">
+      <div class="statrow"><div class="stat"><span class="big num" style="color:var(--ok)">${(counts.pass + counts.near).toLocaleString()}</span><small>within limit</small></div><div class="stat"><span class="big num" style="color:${counts.fail ? "var(--bad)" : "var(--ink)"}">${counts.fail}</span><small>out of limit</small></div><div class="stat"><span class="big num" style="color:var(--muted)">${counts.info}</span><small>reported only</small></div></div>
+      <div aria-hidden="true" style="display:flex;height:8px;border-radius:4px;overflow:hidden;margin:12px 0 16px"><span style="flex:${counts.pass + counts.near};background:#34c759"></span><span style="flex:${counts.fail};background:var(--bad)"></span><span style="flex:${counts.info};background:#c7c7cc"></span></div>
+      <p class="note" style="margin:0 0 6px">Closest to a limit</p>
+      <table class="t"><tbody>${ranked.map((x) => `<tr class="click" data-open="Observation/${x.o.id}"><td>${esc(odShort(PQI.odOf(db, x.o)))}<div class="ctype">${esc(ctx(x))}</div></td><td class="num">${esc(PQI.valueText(x.o))}</td><td>${chipStatus(x.e.status)}</td></tr>`).join("")}</tbody></table></div></div>
   </div>
   <div class="grid g2">
     <div class="card"><h3>Product</h3><dl class="kv">
@@ -561,7 +601,7 @@ function viewOverview(el) {
       ${[["ObservationDefinition", "tests and acceptance criteria"], ["PlanDefinition", "specifications, procedures, processes, protocols"], ["Observation", "results"], ["DiagnosticReport", "batch, stability and characterisation reports"], ["Specimen", "stability pulls"], ["SubstanceDefinition", "substances, impurities, excipients, reagents"], ["Medication", "drug-product batches"], ["Substance", "drug-substance batches and reference standards"]].map(([t, d]) => `<tr><td><span class="chip type">${t}</span></td><td class="num">${all(t).length}</td><td class="muted">${d}</td></tr>`).join("")}
       <tr><td><span class="chip type">Composition</span></td><td class="num">${sections}</td><td class="muted">narrative sections (2.3 and 3.2), each linked to its data</td></tr></tbody></table></div>
   </div>
-  <p class="note" style="margin-top:14px">Illustrative only: the SakuraBloom R2 mock-up describes a fictitious product (ICH, V1.0 Sep 2025). Source pages are linked from every resource via <span class="mono">meta.source</span>.</p>`;
+  <p class="note" style="margin-top:16px;text-align:center">Illustrative only: the ICH M4Q(R2) SakuraBloom R2 mock-up describes a fictitious product. Every resource links to its source page via <span class="mono">meta.source</span>.</p>`;
 }
 function countSections() { let n = 0; const w = (s) => (s || []).forEach((x) => { n++; w(x.section); }); all("Composition").forEach((c) => w(c.section)); return n; }
 
