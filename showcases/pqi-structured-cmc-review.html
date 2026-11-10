@@ -250,9 +250,9 @@ details summary { cursor: pointer; color: var(--accent); font-weight: 600; }
 .mini { flex: 1; height: 6px; border-radius: 3px; background: var(--sep); position: relative; overflow: hidden; }
 .mini span { position: absolute; inset: 0 auto 0 0; background: linear-gradient(90deg, #34c759, #ffcc00, #ff9500, #ff3b30); background-size: 340px 100%; border-radius: 3px; }
 .view-head.full p { max-width: none; }
-.crumbs { display: flex; gap: 14px; align-items: baseline; margin-bottom: 14px; font-size: 14px; }
+.crumbs { display: flex; gap: 14px; align-items: baseline; margin: -28px 0 6px; padding: 30px 0 10px; font-size: 14px; position: sticky; top: -28px; z-index: 6; background: var(--bg); box-shadow: 0 1px 0 var(--line, #d2d2d7); }
 .crumbs a { color: var(--accent); text-decoration: none; font-weight: 600; }
-.inbox { max-height: calc(100vh - 140px); overflow-y: auto; padding: 2px; }
+.inbox { max-height: calc(100vh - 170px); overflow-y: auto; padding: 2px; top: 28px !important; }
 .queue tr.qrow { cursor: pointer; }
 .queue tr.qrow:hover td { background: var(--accent-soft); }
 .queue td.go { color: var(--accent); font-weight: 600; white-space: nowrap; text-align: right; }
