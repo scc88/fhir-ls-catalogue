@@ -1,0 +1,104 @@
+{
+ "resourceType": "PlanDefinition",
+ "id": "spec-ex-coating-premix-red",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8101bbdfeab0c7f1d2ed"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-ex-coating-premix-red",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> spec-ex-coating-premix-red</p></div>"
+ },
+ "title": "Specification of non-compendial excipient Basic coating premix, red",
+ "type": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+    "code": "1244577",
+    "display": "Specification Protocol"
+   }
+  ],
+  "text": "Specification Protocol"
+ },
+ "status": "active",
+ "subjectReference": {
+  "reference": "SubstanceDefinition/coating-premix-red"
+ },
+ "action": [
+  {
+   "title": "Release and re-test",
+   "code": {
+    "text": "Timing Group"
+   },
+   "action": [
+    {
+     "title": "Appearance by visual examination",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-coating-premix-red-appearance-by-visual-examination",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-premix-visual"
+      }
+     ]
+    },
+    {
+     "title": "Identity by IR (ATR)",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-coating-premix-red-identity-by-ir-atr",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-premix-identity-ir"
+      }
+     ]
+    },
+    {
+     "title": "Identity of colourants",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-coating-premix-red-identity-of-colourants",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-premix-identity-colorants"
+      }
+     ]
+    },
+    {
+     "title": "Identity of iron",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-coating-premix-red-identity-of-iron",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-premix-identity-iron"
+      }
+     ]
+    },
+    {
+     "title": "Total ash",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-coating-premix-red-total-ash",
+     "description": "Method: Ph. Eur."
+    }
+   ]
+  }
+ ]
+}

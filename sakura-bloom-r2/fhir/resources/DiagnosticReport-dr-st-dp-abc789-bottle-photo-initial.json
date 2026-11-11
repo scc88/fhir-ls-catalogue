@@ -1,0 +1,78 @@
+{
+ "resourceType": "DiagnosticReport",
+ "id": "dr-st-dp-abc789-bottle-photo-initial",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DiagnosticReport-analysis-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc819bbcddf4d1fef7e769"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DiagnosticReport</b> Stability Study Report</p></div>"
+ },
+ "extension": [
+  {
+   "url": "http://hl7.org/fhir/StructureDefinition/workflow-triggeredBy",
+   "valueReference": {
+    "reference": "PlanDefinition/stability-protocol-dp-registration"
+   }
+  }
+ ],
+ "identifier": [
+  {
+   "system": "http://example.org/sakura-bloom-r2/fhir/report-id",
+   "value": "dr-st-dp-abc789-bottle-photo-initial"
+  }
+ ],
+ "status": "final",
+ "category": [
+  {
+   "text": "Initial analysis (photostability study)"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-report-type",
+    "code": "Stability Study Report",
+    "display": "Stability Study Report"
+   }
+  ],
+  "text": "Stability Study Report"
+ },
+ "subject": {
+  "reference": "Medication/dp-abc789-bottle"
+ },
+ "performer": [
+  {
+   "reference": "Organization/aparna-pharm"
+  }
+ ],
+ "specimen": [
+  {
+   "reference": "Specimen/spc-abc789-bottle-photo-initial-0m"
+  }
+ ],
+ "result": [
+  {
+   "reference": "Observation/obs-st-abc789-bottle-photo-initial-0-assay-hplc"
+  },
+  {
+   "reference": "Observation/obs-st-abc789-bottle-photo-initial-0-degradation-cp-9-1"
+  },
+  {
+   "reference": "Observation/obs-st-abc789-bottle-photo-initial-0-degradation-unspecified"
+  },
+  {
+   "reference": "Observation/obs-st-abc789-bottle-photo-initial-0-degradation-total"
+  },
+  {
+   "reference": "Observation/obs-st-abc789-bottle-photo-initial-0-description"
+  },
+  {
+   "reference": "Observation/obs-st-abc789-bottle-photo-initial-0-dissolution-uv"
+  }
+ ],
+ "conclusion": "Registration stability report RSR1234 Data-1G (36-month update)."
+}

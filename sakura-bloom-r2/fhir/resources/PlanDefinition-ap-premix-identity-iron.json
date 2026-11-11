@@ -1,0 +1,59 @@
+{
+ "resourceType": "PlanDefinition",
+ "id": "ap-premix-identity-iron",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81508718c0be371f6bad"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-premix-identity-iron",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> Core quality information (2.3.3.AP) for Analytical Procedures (Identity of iron) [Identification] [Basic Coating Premix Red].</p></div>"
+ },
+ "extension": [
+  {
+   "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-plan-document-reference-pq",
+   "valueReference": {
+    "reference": "DocumentReference/doc-premix-identity-iron-3-2-ap"
+   }
+  },
+  {
+   "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-plan-document-reference-pq",
+   "valueReference": {
+    "reference": "DocumentReference/doc-premix-identity-iron-2-3-4"
+   }
+  }
+ ],
+ "title": "Analytical Procedures (Identity of iron) [Identification] [Basic Coating Premix Red]",
+ "type": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+    "code": "analytical-procedure",
+    "display": "Analytical Procedure"
+   }
+  ],
+  "text": "Analytical Procedure"
+ },
+ "status": "active",
+ "subjectReference": {
+  "reference": "SubstanceDefinition/coating-premix-red"
+ },
+ "description": "Core quality information (2.3.3.AP) for Analytical Procedures (Identity of iron) [Identification] [Basic Coating Premix Red].",
+ "action": [
+  {
+   "title": "Principle",
+   "description": "Colour reaction"
+  },
+  {
+   "title": "Procedure",
+   "description": "According to USP/NF – Monograph “Ferric oxide”    Test: Identification Test A Instead of the solution of ferric oxide described in USP/NF, use a solution with the same concentration of basic coating premix red and compare the results with a solution of Red KIRSCH2358 (international reference)"
+  },
+  {
+   "title": "Substance required",
+   "description": "0.5 g"
+  }
+ ]
+}

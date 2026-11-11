@@ -1,0 +1,64 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-carryover-benzene",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81ed9b44d575d38b54cb"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-carryover-benzene",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Residual solvents - Residual solvent Benzene (ICH Q3C class 1): NMT 2 ppm</p></div>"
+ },
+ "title": "Residual solvent Benzene (ICH Q3C class 1)",
+ "status": "active",
+ "category": [
+  {
+   "text": "Residual solvents"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "SOL",
+    "display": "Residual solvents"
+   }
+  ],
+  "text": "Residual solvents - Residual solvent Benzene (ICH Q3C class 1)"
+ },
+ "permittedDataType": [
+  "Quantity"
+ ],
+ "method": {
+  "text": "GC"
+ },
+ "permittedUnit": [
+  {
+   "system": "http://unitsofmeasure.org",
+   "code": "[ppm]",
+   "display": "ppm"
+  }
+ ],
+ "description": "LOQ 0.2 ppm",
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "NMT 2 ppm"
+    }
+   ],
+   "range": {
+    "high": {
+     "value": 2,
+     "unit": "ppm",
+     "system": "http://unitsofmeasure.org",
+     "code": "[ppm]"
+    }
+   }
+  }
+ ]
+}

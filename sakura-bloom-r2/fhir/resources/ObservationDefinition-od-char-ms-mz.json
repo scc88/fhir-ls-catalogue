@@ -1,0 +1,40 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-char-ms-mz",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ]
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-ms-mz",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Elucidation of structure - Mass spectrometry (ESI) m/z: Observed m/z consistent with predicted value</p></div>"
+ },
+ "title": "Mass spectrometry (ESI) m/z",
+ "status": "active",
+ "category": [
+  {
+   "text": "Elucidation of structure"
+  }
+ ],
+ "code": {
+  "text": "Elucidation of structure - Mass spectrometry (ESI) m/z"
+ },
+ "permittedDataType": [
+  "string"
+ ],
+ "method": {
+  "text": "LC-IT-TOF MS, ESI"
+ },
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "Observed m/z consistent with predicted value"
+    }
+   ]
+  }
+ ]
+}

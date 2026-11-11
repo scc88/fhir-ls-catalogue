@@ -1,0 +1,48 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-cc-bulk-bag-identity-by-ir-atr",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81889b04e8dc076f8f8f"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-cc-bulk-bag-identity-by-ir-atr",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Identification - Identity by IR - ATR: Corresponds qualitatively to the reference spectrum</p></div>"
+ },
+ "title": "Identity by IR - ATR",
+ "status": "active",
+ "category": [
+  {
+   "text": "Identification"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "IDT",
+    "display": "Identification"
+   }
+  ],
+  "text": "Identification - Identity by IR - ATR"
+ },
+ "permittedDataType": [
+  "string"
+ ],
+ "method": {
+  "text": "IR-ATR"
+ },
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "Corresponds qualitatively to the reference spectrum"
+    }
+   ]
+  }
+ ]
+}

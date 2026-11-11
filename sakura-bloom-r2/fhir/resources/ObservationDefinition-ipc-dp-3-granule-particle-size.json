@@ -1,0 +1,64 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "ipc-dp-3-granule-particle-size",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc817e8d67fb0358c483c8"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-3-granule-particle-size",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> In-process control - Granule particle size: Target: 150 µm; Range: 90-210 µm</p></div>"
+ },
+ "title": "Granule particle size",
+ "status": "active",
+ "category": [
+  {
+   "text": "In-process control"
+  }
+ ],
+ "code": {
+  "text": "In-process control - Granule particle size"
+ },
+ "permittedDataType": [
+  "Quantity"
+ ],
+ "method": {
+  "text": "Laser diffraction particle size distribution analyzer"
+ },
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "Target: 150 µm; Range: 90-210 µm"
+    },
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-target-pq",
+     "valueQuantity": {
+      "value": 150,
+      "unit": "µm",
+      "system": "http://unitsofmeasure.org",
+      "code": "um"
+     }
+    }
+   ],
+   "range": {
+    "low": {
+     "value": 90,
+     "unit": "µm",
+     "system": "http://unitsofmeasure.org",
+     "code": "um"
+    },
+    "high": {
+     "value": 210,
+     "unit": "µm",
+     "system": "http://unitsofmeasure.org",
+     "code": "um"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,1606 @@
+{
+ "resourceType": "Bundle",
+ "id": "bundle-dp-microbiology",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-product-microbiological-attributes-pq"
+  ]
+ },
+ "identifier": {
+  "system": "http://example.org/sakura-bloom-r2/fhir/bundle-id",
+  "value": "bundle-dp-microbiology"
+ },
+ "type": "collection",
+ "timestamp": "2026-11-08T00:00:00Z",
+ "entry": [
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc123-met-tamc",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc123-met-tamc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Microbiological Quality - Microbial enumeration - TAMC: &lt;110 CFU/g (Medication/dp-abc123)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-tamc",
+    "category": [
+     {
+      "text": "Microbiological Quality"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "Microbiological Quality",
+       "display": "Microbiological Quality"
+      }
+     ],
+     "text": "Microbiological Quality - Microbial enumeration - TAMC"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc123"
+    },
+    "performer": [
+     {
+      "reference": "Organization/kunchen-sa"
+     }
+    ],
+    "valueQuantity": {
+     "comparator": "<",
+     "value": 110,
+     "unit": "CFU/g",
+     "system": "http://unitsofmeasure.org",
+     "code": "{CFU}/g"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc123-met-tymc",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc123-met-tymc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Microbiological Quality - Microbial enumeration - TYMC: &lt;60 CFU/g (Medication/dp-abc123)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-tymc",
+    "category": [
+     {
+      "text": "Microbiological Quality"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "Microbiological Quality",
+       "display": "Microbiological Quality"
+      }
+     ],
+     "text": "Microbiological Quality - Microbial enumeration - TYMC"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc123"
+    },
+    "performer": [
+     {
+      "reference": "Organization/kunchen-sa"
+     }
+    ],
+    "valueQuantity": {
+     "comparator": "<",
+     "value": 60,
+     "unit": "CFU/g",
+     "system": "http://unitsofmeasure.org",
+     "code": "{CFU}/g"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc123-met-e-coli",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc123-met-e-coli",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Microbiological Quality - Specified micro-organism - Escherichia coli: Complies (Medication/dp-abc123)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-e-coli",
+    "category": [
+     {
+      "text": "Microbiological Quality"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "Microbiological Quality",
+       "display": "Microbiological Quality"
+      }
+     ],
+     "text": "Microbiological Quality - Specified micro-organism - Escherichia coli"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc123"
+    },
+    "performer": [
+     {
+      "reference": "Organization/kunchen-sa"
+     }
+    ],
+    "valueString": "Complies",
+    "interpretation": [
+     {
+      "text": "Complies"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/DiagnosticReport/dr-ba-dp-abc123",
+   "resource": {
+    "resourceType": "DiagnosticReport",
+    "id": "dr-ba-dp-abc123",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DiagnosticReport-analysis-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81f194b3e3a46699a278"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DiagnosticReport</b> Batch Analysis Report</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/workflow-triggeredBy",
+      "valueReference": {
+       "reference": "PlanDefinition/spec-dp"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/report-id",
+      "value": "dr-ba-dp-abc123"
+     }
+    ],
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-report-type",
+       "code": "Batch Analysis Report",
+       "display": "Batch Analysis Report"
+      }
+     ],
+     "text": "Batch Analysis Report"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc123"
+    },
+    "performer": [
+     {
+      "reference": "Organization/aparna-pharm"
+     }
+    ],
+    "result": [
+     {
+      "reference": "Observation/obs-ba-abc123-description"
+     },
+     {
+      "reference": "Observation/obs-ba-abc123-identification-nir"
+     },
+     {
+      "reference": "Observation/obs-ba-abc123-identification-hplc"
+     },
+     {
+      "reference": "Observation/obs-ba-abc123-identification-uv"
+     },
+     {
+      "reference": "Observation/obs-ba-abc123-udu-nir"
+     },
+     {
+      "reference": "Observation/obs-ba-abc123-udu-hplc"
+     },
+     {
+      "reference": "Observation/obs-ba-abc123-dissolution-rtrt"
+     },
+     {
+      "reference": "Observation/obs-ba-abc123-dissolution-uv"
+     },
+     {
+      "reference": "Observation/obs-ba-abc123-assay-nir"
+     },
+     {
+      "reference": "Observation/obs-ba-abc123-assay-hplc"
+     },
+     {
+      "reference": "Observation/obs-ba-abc123-degradation-cp-9-1"
+     },
+     {
+      "reference": "Observation/obs-ba-abc123-degradation-unspecified"
+     },
+     {
+      "reference": "Observation/obs-ba-abc123-degradation-total"
+     },
+     {
+      "reference": "Observation/obs-ba-abc123-met-tamc"
+     },
+     {
+      "reference": "Observation/obs-ba-abc123-met-tymc"
+     },
+     {
+      "reference": "Observation/obs-ba-abc123-met-e-coli"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Medication/dp-abc123",
+   "resource": {
+    "resourceType": "Medication",
+    "id": "dp-abc123",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81f194b3e3a46699a278"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Medication</b> Sakura Bloom 20 mg film-coated tablets - lot ABC123</p></div>"
+    },
+    "code": {
+     "extension": [
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-medication-definition-pq",
+       "valueReference": {
+        "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+       }
+      }
+     ],
+     "text": "Sakura Bloom 20 mg film-coated tablets"
+    },
+    "status": "active",
+    "doseForm": {
+     "coding": [
+      {
+       "system": "http://standardterms.edqm.eu",
+       "code": "10221000",
+       "display": "Film-coated tablet"
+      }
+     ],
+     "text": "Film-coated tablet"
+    },
+    "batch": {
+     "extension": [
+      {
+       "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+       "extension": [
+        {
+         "url": "manufacturingDate",
+         "valueDateTime": "2022-04"
+        },
+        {
+         "url": "batchQuantity",
+         "valueQuantity": {
+          "value": 2600000,
+          "unit": "tablets",
+          "system": "http://unitsofmeasure.org",
+          "code": "{tablets}"
+         }
+        },
+        {
+         "url": "batchUtilization",
+         "valueCodeableConcept": {
+          "text": "Production-scale and commercial batch"
+         }
+        },
+        {
+         "url": "assignedManufacturer",
+         "valueReference": {
+          "reference": "Organization/aparna-pharm"
+         }
+        }
+       ]
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-number-of-items-pq",
+       "valueQuantity": {
+        "value": 2600000,
+        "unit": "tablets",
+        "system": "http://unitsofmeasure.org",
+        "code": "{tablets}"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+       "valueReference": {
+        "reference": "PlanDefinition/dp-manufacturing-process"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+       "valueReference": {
+        "reference": "Substance/ds-b221215"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+       "valueReference": {
+        "reference": "Substance/ds-b221216"
+       }
+      }
+     ],
+     "lotNumber": "ABC123"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc456-met-tamc",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc456-met-tamc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Microbiological Quality - Microbial enumeration - TAMC: &lt;100 CFU/g (Medication/dp-abc456)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-tamc",
+    "category": [
+     {
+      "text": "Microbiological Quality"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "Microbiological Quality",
+       "display": "Microbiological Quality"
+      }
+     ],
+     "text": "Microbiological Quality - Microbial enumeration - TAMC"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc456"
+    },
+    "performer": [
+     {
+      "reference": "Organization/kunchen-sa"
+     }
+    ],
+    "valueQuantity": {
+     "comparator": "<",
+     "value": 100,
+     "unit": "CFU/g",
+     "system": "http://unitsofmeasure.org",
+     "code": "{CFU}/g"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc456-met-tymc",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc456-met-tymc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Microbiological Quality - Microbial enumeration - TYMC: &lt;65 CFU/g (Medication/dp-abc456)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-tymc",
+    "category": [
+     {
+      "text": "Microbiological Quality"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "Microbiological Quality",
+       "display": "Microbiological Quality"
+      }
+     ],
+     "text": "Microbiological Quality - Microbial enumeration - TYMC"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc456"
+    },
+    "performer": [
+     {
+      "reference": "Organization/kunchen-sa"
+     }
+    ],
+    "valueQuantity": {
+     "comparator": "<",
+     "value": 65,
+     "unit": "CFU/g",
+     "system": "http://unitsofmeasure.org",
+     "code": "{CFU}/g"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc456-met-e-coli",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc456-met-e-coli",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Microbiological Quality - Specified micro-organism - Escherichia coli: Complies (Medication/dp-abc456)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-e-coli",
+    "category": [
+     {
+      "text": "Microbiological Quality"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "Microbiological Quality",
+       "display": "Microbiological Quality"
+      }
+     ],
+     "text": "Microbiological Quality - Specified micro-organism - Escherichia coli"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc456"
+    },
+    "performer": [
+     {
+      "reference": "Organization/kunchen-sa"
+     }
+    ],
+    "valueString": "Complies",
+    "interpretation": [
+     {
+      "text": "Complies"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/DiagnosticReport/dr-ba-dp-abc456",
+   "resource": {
+    "resourceType": "DiagnosticReport",
+    "id": "dr-ba-dp-abc456",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DiagnosticReport-analysis-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81f194b3e3a46699a278"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DiagnosticReport</b> Batch Analysis Report</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/workflow-triggeredBy",
+      "valueReference": {
+       "reference": "PlanDefinition/spec-dp"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/report-id",
+      "value": "dr-ba-dp-abc456"
+     }
+    ],
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-report-type",
+       "code": "Batch Analysis Report",
+       "display": "Batch Analysis Report"
+      }
+     ],
+     "text": "Batch Analysis Report"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc456"
+    },
+    "performer": [
+     {
+      "reference": "Organization/aparna-pharm"
+     }
+    ],
+    "result": [
+     {
+      "reference": "Observation/obs-ba-abc456-description"
+     },
+     {
+      "reference": "Observation/obs-ba-abc456-identification-nir"
+     },
+     {
+      "reference": "Observation/obs-ba-abc456-identification-hplc"
+     },
+     {
+      "reference": "Observation/obs-ba-abc456-identification-uv"
+     },
+     {
+      "reference": "Observation/obs-ba-abc456-udu-nir"
+     },
+     {
+      "reference": "Observation/obs-ba-abc456-udu-hplc"
+     },
+     {
+      "reference": "Observation/obs-ba-abc456-dissolution-rtrt"
+     },
+     {
+      "reference": "Observation/obs-ba-abc456-dissolution-uv"
+     },
+     {
+      "reference": "Observation/obs-ba-abc456-assay-nir"
+     },
+     {
+      "reference": "Observation/obs-ba-abc456-assay-hplc"
+     },
+     {
+      "reference": "Observation/obs-ba-abc456-degradation-cp-9-1"
+     },
+     {
+      "reference": "Observation/obs-ba-abc456-degradation-unspecified"
+     },
+     {
+      "reference": "Observation/obs-ba-abc456-degradation-total"
+     },
+     {
+      "reference": "Observation/obs-ba-abc456-met-tamc"
+     },
+     {
+      "reference": "Observation/obs-ba-abc456-met-tymc"
+     },
+     {
+      "reference": "Observation/obs-ba-abc456-met-e-coli"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Medication/dp-abc456",
+   "resource": {
+    "resourceType": "Medication",
+    "id": "dp-abc456",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81f194b3e3a46699a278"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Medication</b> Sakura Bloom 20 mg film-coated tablets - lot ABC456</p></div>"
+    },
+    "code": {
+     "extension": [
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-medication-definition-pq",
+       "valueReference": {
+        "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+       }
+      }
+     ],
+     "text": "Sakura Bloom 20 mg film-coated tablets"
+    },
+    "status": "active",
+    "doseForm": {
+     "coding": [
+      {
+       "system": "http://standardterms.edqm.eu",
+       "code": "10221000",
+       "display": "Film-coated tablet"
+      }
+     ],
+     "text": "Film-coated tablet"
+    },
+    "batch": {
+     "extension": [
+      {
+       "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+       "extension": [
+        {
+         "url": "manufacturingDate",
+         "valueDateTime": "2022-05"
+        },
+        {
+         "url": "batchQuantity",
+         "valueQuantity": {
+          "value": 2600000,
+          "unit": "tablets",
+          "system": "http://unitsofmeasure.org",
+          "code": "{tablets}"
+         }
+        },
+        {
+         "url": "batchUtilization",
+         "valueCodeableConcept": {
+          "text": "Production-scale and commercial batch"
+         }
+        },
+        {
+         "url": "assignedManufacturer",
+         "valueReference": {
+          "reference": "Organization/aparna-pharm"
+         }
+        }
+       ]
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-number-of-items-pq",
+       "valueQuantity": {
+        "value": 2600000,
+        "unit": "tablets",
+        "system": "http://unitsofmeasure.org",
+        "code": "{tablets}"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+       "valueReference": {
+        "reference": "PlanDefinition/dp-manufacturing-process"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+       "valueReference": {
+        "reference": "Substance/ds-b221217"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+       "valueReference": {
+        "reference": "Substance/ds-b221218"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+       "valueReference": {
+        "reference": "Substance/ds-b221219"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+       "valueReference": {
+        "reference": "Substance/ds-b221220"
+       }
+      }
+     ],
+     "lotNumber": "ABC456"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc789-met-tamc",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc789-met-tamc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Microbiological Quality - Microbial enumeration - TAMC: &lt;110 CFU/g (Medication/dp-abc789)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-tamc",
+    "category": [
+     {
+      "text": "Microbiological Quality"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "Microbiological Quality",
+       "display": "Microbiological Quality"
+      }
+     ],
+     "text": "Microbiological Quality - Microbial enumeration - TAMC"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc789"
+    },
+    "performer": [
+     {
+      "reference": "Organization/kunchen-sa"
+     }
+    ],
+    "valueQuantity": {
+     "comparator": "<",
+     "value": 110,
+     "unit": "CFU/g",
+     "system": "http://unitsofmeasure.org",
+     "code": "{CFU}/g"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc789-met-tymc",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc789-met-tymc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Microbiological Quality - Microbial enumeration - TYMC: &lt;60 CFU/g (Medication/dp-abc789)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-tymc",
+    "category": [
+     {
+      "text": "Microbiological Quality"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "Microbiological Quality",
+       "display": "Microbiological Quality"
+      }
+     ],
+     "text": "Microbiological Quality - Microbial enumeration - TYMC"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc789"
+    },
+    "performer": [
+     {
+      "reference": "Organization/kunchen-sa"
+     }
+    ],
+    "valueQuantity": {
+     "comparator": "<",
+     "value": 60,
+     "unit": "CFU/g",
+     "system": "http://unitsofmeasure.org",
+     "code": "{CFU}/g"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc789-met-e-coli",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc789-met-e-coli",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Microbiological Quality - Specified micro-organism - Escherichia coli: Complies (Medication/dp-abc789)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-e-coli",
+    "category": [
+     {
+      "text": "Microbiological Quality"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "Microbiological Quality",
+       "display": "Microbiological Quality"
+      }
+     ],
+     "text": "Microbiological Quality - Specified micro-organism - Escherichia coli"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc789"
+    },
+    "performer": [
+     {
+      "reference": "Organization/kunchen-sa"
+     }
+    ],
+    "valueString": "Complies",
+    "interpretation": [
+     {
+      "text": "Complies"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/DiagnosticReport/dr-ba-dp-abc789",
+   "resource": {
+    "resourceType": "DiagnosticReport",
+    "id": "dr-ba-dp-abc789",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DiagnosticReport-analysis-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81f194b3e3a46699a278"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DiagnosticReport</b> Batch Analysis Report</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/workflow-triggeredBy",
+      "valueReference": {
+       "reference": "PlanDefinition/spec-dp"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/report-id",
+      "value": "dr-ba-dp-abc789"
+     }
+    ],
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-report-type",
+       "code": "Batch Analysis Report",
+       "display": "Batch Analysis Report"
+      }
+     ],
+     "text": "Batch Analysis Report"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc789"
+    },
+    "performer": [
+     {
+      "reference": "Organization/aparna-pharm"
+     }
+    ],
+    "result": [
+     {
+      "reference": "Observation/obs-ba-abc789-description"
+     },
+     {
+      "reference": "Observation/obs-ba-abc789-identification-nir"
+     },
+     {
+      "reference": "Observation/obs-ba-abc789-identification-hplc"
+     },
+     {
+      "reference": "Observation/obs-ba-abc789-identification-uv"
+     },
+     {
+      "reference": "Observation/obs-ba-abc789-udu-nir"
+     },
+     {
+      "reference": "Observation/obs-ba-abc789-udu-hplc"
+     },
+     {
+      "reference": "Observation/obs-ba-abc789-dissolution-rtrt"
+     },
+     {
+      "reference": "Observation/obs-ba-abc789-dissolution-uv"
+     },
+     {
+      "reference": "Observation/obs-ba-abc789-assay-nir"
+     },
+     {
+      "reference": "Observation/obs-ba-abc789-assay-hplc"
+     },
+     {
+      "reference": "Observation/obs-ba-abc789-degradation-cp-9-1"
+     },
+     {
+      "reference": "Observation/obs-ba-abc789-degradation-unspecified"
+     },
+     {
+      "reference": "Observation/obs-ba-abc789-degradation-total"
+     },
+     {
+      "reference": "Observation/obs-ba-abc789-met-tamc"
+     },
+     {
+      "reference": "Observation/obs-ba-abc789-met-tymc"
+     },
+     {
+      "reference": "Observation/obs-ba-abc789-met-e-coli"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Medication/dp-abc789",
+   "resource": {
+    "resourceType": "Medication",
+    "id": "dp-abc789",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81f194b3e3a46699a278"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Medication</b> Sakura Bloom 20 mg film-coated tablets - lot ABC789</p></div>"
+    },
+    "code": {
+     "extension": [
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-medication-definition-pq",
+       "valueReference": {
+        "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+       }
+      }
+     ],
+     "text": "Sakura Bloom 20 mg film-coated tablets"
+    },
+    "status": "active",
+    "doseForm": {
+     "coding": [
+      {
+       "system": "http://standardterms.edqm.eu",
+       "code": "10221000",
+       "display": "Film-coated tablet"
+      }
+     ],
+     "text": "Film-coated tablet"
+    },
+    "batch": {
+     "extension": [
+      {
+       "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+       "extension": [
+        {
+         "url": "manufacturingDate",
+         "valueDateTime": "2022-06"
+        },
+        {
+         "url": "batchQuantity",
+         "valueQuantity": {
+          "value": 2600000,
+          "unit": "tablets",
+          "system": "http://unitsofmeasure.org",
+          "code": "{tablets}"
+         }
+        },
+        {
+         "url": "batchUtilization",
+         "valueCodeableConcept": {
+          "text": "Production-scale and commercial batch"
+         }
+        },
+        {
+         "url": "assignedManufacturer",
+         "valueReference": {
+          "reference": "Organization/aparna-pharm"
+         }
+        }
+       ]
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-number-of-items-pq",
+       "valueQuantity": {
+        "value": 2600000,
+        "unit": "tablets",
+        "system": "http://unitsofmeasure.org",
+        "code": "{tablets}"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+       "valueReference": {
+        "reference": "PlanDefinition/dp-manufacturing-process"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+       "valueReference": {
+        "reference": "Substance/ds-b221221"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+       "valueReference": {
+        "reference": "Substance/ds-b221222"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+       "valueReference": {
+        "reference": "Substance/ds-b221223"
+       }
+      }
+     ],
+     "lotNumber": "ABC789"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/MedicinalProductDefinition/sakura-bloom-20mg",
+   "resource": {
+    "resourceType": "MedicinalProductDefinition",
+    "id": "sakura-bloom-20mg",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8139acafcbef7ae81c6f"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>MedicinalProductDefinition</b> Sakura Bloom 20 mg film-coated tablets</p></div>"
+    },
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/product-id",
+      "value": "SB-20MG-FCT"
+     }
+    ],
+    "type": {
+     "text": "Medicinal product (small molecule)"
+    },
+    "domain": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/medicinal-product-domain",
+       "code": "Human",
+       "display": "Human use"
+      }
+     ],
+     "text": "Human use"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "description": "Sakura Bloom 20 mg film-coated tablet: immediate-release film-coated tablet for oral administration, to be swallowed whole. Strength expressed as Sakuramil neutral, anhydrous base. Fictitious ICH M4Q(R2) mock-up product 'SakuraBloom R2'.",
+    "combinedPharmaceuticalDoseForm": {
+     "coding": [
+      {
+       "system": "http://standardterms.edqm.eu",
+       "code": "10221000",
+       "display": "Film-coated tablet"
+      }
+     ],
+     "text": "Film-coated tablet"
+    },
+    "route": [
+     {
+      "coding": [
+       {
+        "system": "http://standardterms.edqm.eu",
+        "code": "20053000",
+        "display": "Oral use"
+       }
+      ],
+      "text": "Oral use"
+     }
+    ],
+    "name": [
+     {
+      "productName": "Sakura Bloom 20 mg film-coated tablets",
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-productNameType-pq-example",
+         "code": "Proprietary",
+         "display": "Proprietary"
+        }
+       ],
+       "text": "Proprietary"
+      },
+      "part": [
+       {
+        "part": "Sakura Bloom",
+        "type": {
+         "text": "Invented name part"
+        }
+       },
+       {
+        "part": "20 mg",
+        "type": {
+         "text": "Strength part"
+        }
+       },
+       {
+        "part": "film-coated tablets",
+        "type": {
+         "text": "Pharmaceutical dose form part"
+        }
+       }
+      ]
+     }
+    ],
+    "operation": [
+     {
+      "type": {
+       "concept": {
+        "text": "Drug substance manufacture"
+       }
+      },
+      "organization": [
+       {
+        "reference": "Organization/iroha-corp"
+       }
+      ]
+     },
+     {
+      "type": {
+       "reference": {
+        "reference": "PlanDefinition/dp-manufacturing-process"
+       }
+      },
+      "organization": [
+       {
+        "reference": "Organization/aparna-pharm"
+       }
+      ]
+     },
+     {
+      "type": {
+       "concept": {
+        "text": "Quality control testing (release)"
+       }
+      },
+      "organization": [
+       {
+        "reference": "Organization/aparna-pharm"
+       },
+       {
+        "reference": "Organization/dakina-analytica"
+       },
+       {
+        "reference": "Organization/kunchen-sa"
+       }
+      ]
+     },
+     {
+      "type": {
+       "concept": {
+        "text": "Primary packaging"
+       }
+      },
+      "organization": [
+       {
+        "reference": "Organization/aparna-pharm"
+       },
+       {
+        "reference": "Organization/pack-alpha"
+       },
+       {
+        "reference": "Organization/cocopharma"
+       }
+      ]
+     },
+     {
+      "type": {
+       "concept": {
+        "text": "Secondary packaging"
+       }
+      },
+      "organization": [
+       {
+        "reference": "Organization/aparna-pharm"
+       },
+       {
+        "reference": "Organization/pack-alpha"
+       }
+      ]
+     },
+     {
+      "type": {
+       "concept": {
+        "text": "Stability testing"
+       }
+      },
+      "organization": [
+       {
+        "reference": "Organization/aparna-pharm"
+       },
+       {
+        "reference": "Organization/pack-alpha"
+       }
+      ]
+     }
+    ],
+    "characteristic": [
+     {
+      "type": {
+       "text": "Drug release profile"
+      },
+      "valueCodeableConcept": {
+       "text": "Immediate release"
+      }
+     },
+     {
+      "type": {
+       "text": "Maximum daily dose"
+      },
+      "valueQuantity": {
+       "value": 40,
+       "unit": "mg",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg"
+      }
+     },
+     {
+      "type": {
+       "text": "Medical device(s) or co-packaged item(s)"
+      },
+      "valueCodeableConcept": {
+       "text": "Not applicable"
+      }
+     },
+     {
+      "type": {
+       "text": "Method of administration"
+      },
+      "valueCodeableConcept": {
+       "text": "To be swallowed whole"
+      }
+     },
+     {
+      "type": {
+       "text": "Shelf life (QTPP target)"
+      },
+      "valueCodeableConcept": {
+       "text": "36 months at room temperature across all climatic zones"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Organization/kunchen-sa",
+   "resource": {
+    "resourceType": "Organization",
+    "id": "kunchen-sa",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8199b90deb4c0456477b"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Organization</b> Kunchen SA</p></div>"
+    },
+    "identifier": [
+     {
+      "system": "urn:oid:1.3.6.1.4.1.519.1",
+      "value": "415714629"
+     },
+     {
+      "system": "urn:oid:2.16.840.1.113883.4.82",
+      "value": "415714629"
+     }
+    ],
+    "active": true,
+    "type": [
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+        "code": "analytical-testing-release",
+        "display": "Analytical Testing - Release"
+       }
+      ],
+      "text": "Analytical Testing - Release"
+     }
+    ],
+    "name": "Kunchen SA",
+    "description": "Analytical testing of the drug product (microbiological testing only).",
+    "contact": [
+     {
+      "address": {
+       "use": "work",
+       "type": "physical",
+       "line": [
+        "Mangelsfeld"
+       ],
+       "city": "Bad Bocklet-Großenbach",
+       "country": "DE",
+       "postalCode": "97708"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-tamc",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-dp-met-tamc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8196bde0c1ce7d54832e"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-tamc",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Microbiological Quality - Microbial enumeration - TAMC: Batch release Not more than 1000 CFU/g; Shelf-life Not more than 1000 CFU/g</p></div>"
+    },
+    "title": "Microbial enumeration - TAMC",
+    "status": "active",
+    "category": [
+     {
+      "text": "Microbiological Quality"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "Microbiological Quality",
+       "display": "Microbiological Quality"
+      }
+     ],
+     "text": "Microbiological Quality - Microbial enumeration - TAMC"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "Microbial enumeration tests (plate-count method)"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "{CFU}/g",
+      "display": "CFU/g"
+     }
+    ],
+    "description": "Lot-wise on five consecutive production batches; may be reduced to every tenth batch (at least one batch per calendar year).",
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Not more than 1000 CFU/g"
+       }
+      ],
+      "context": {
+       "text": "Batch release"
+      },
+      "range": {
+       "high": {
+        "value": 1000,
+        "unit": "CFU/g",
+        "system": "http://unitsofmeasure.org",
+        "code": "{CFU}/g"
+       }
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Not more than 1000 CFU/g"
+       }
+      ],
+      "context": {
+       "text": "Shelf-life"
+      },
+      "range": {
+       "high": {
+        "value": 1000,
+        "unit": "CFU/g",
+        "system": "http://unitsofmeasure.org",
+        "code": "{CFU}/g"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-tymc",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-dp-met-tymc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8196bde0c1ce7d54832e"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-tymc",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Microbiological Quality - Microbial enumeration - TYMC: Batch release Not more than 100 CFU/g; Shelf-life Not more than 100 CFU/g</p></div>"
+    },
+    "title": "Microbial enumeration - TYMC",
+    "status": "active",
+    "category": [
+     {
+      "text": "Microbiological Quality"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "Microbiological Quality",
+       "display": "Microbiological Quality"
+      }
+     ],
+     "text": "Microbiological Quality - Microbial enumeration - TYMC"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "Microbial enumeration tests (plate-count method)"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "{CFU}/g",
+      "display": "CFU/g"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Not more than 100 CFU/g"
+       }
+      ],
+      "context": {
+       "text": "Batch release"
+      },
+      "range": {
+       "high": {
+        "value": 100,
+        "unit": "CFU/g",
+        "system": "http://unitsofmeasure.org",
+        "code": "{CFU}/g"
+       }
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Not more than 100 CFU/g"
+       }
+      ],
+      "context": {
+       "text": "Shelf-life"
+      },
+      "range": {
+       "high": {
+        "value": 100,
+        "unit": "CFU/g",
+        "system": "http://unitsofmeasure.org",
+        "code": "{CFU}/g"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-e-coli",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-dp-met-e-coli",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8196bde0c1ce7d54832e"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-e-coli",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Microbiological Quality - Specified micro-organism - Escherichia coli: Batch release Absence of Escherichia coli in 1 g; Shelf-life Absence of Escherichia coli in 1 g</p></div>"
+    },
+    "title": "Specified micro-organism - Escherichia coli",
+    "status": "active",
+    "category": [
+     {
+      "text": "Microbiological Quality"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "Microbiological Quality",
+       "display": "Microbiological Quality"
+      }
+     ],
+     "text": "Microbiological Quality - Specified micro-organism - Escherichia coli"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Test for specified micro-organisms"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Absence of Escherichia coli in 1 g"
+       }
+      ],
+      "context": {
+       "text": "Batch release"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Absence of Escherichia coli in 1 g"
+       }
+      ],
+      "context": {
+       "text": "Shelf-life"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,6621 @@
+{
+ "resourceType": "Bundle",
+ "id": "bundle-materials-specifications",
+ "identifier": {
+  "system": "http://example.org/sakura-bloom-r2/fhir/bundle-id",
+  "value": "bundle-materials-specifications"
+ },
+ "type": "collection",
+ "timestamp": "2026-11-08T00:00:00Z",
+ "entry": [
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-4-description",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-sm-cp-4-description",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8158b7e7df2db5a8b4ee"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-4-description",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Description: White to pale yellow crystals or crystalline powder</p></div>"
+    },
+    "title": "Description",
+    "status": "active",
+    "category": [
+     {
+      "text": "Description"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DESC",
+       "display": "Description"
+      }
+     ],
+     "text": "Description"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Visual"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "White to pale yellow crystals or crystalline powder"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-4-identity-ir",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-sm-cp-4-identity-ir",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8158b7e7df2db5a8b4ee"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-4-identity-ir",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Identification - Identity - IR: The IR spectrum of the sample is comparable to that of the reference standard (IR)</p></div>"
+    },
+    "title": "Identity - IR",
+    "status": "active",
+    "category": [
+     {
+      "text": "Identification"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "IDT",
+       "display": "Identification"
+      }
+     ],
+     "text": "Identification - Identity - IR"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "USP <197A>"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "The IR spectrum of the sample is comparable to that of the reference standard (IR)"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-4-cp-3",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-sm-cp-4-cp-3",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8158b7e7df2db5a8b4ee"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-4-cp-3",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Related substances - CP-3: NMT 0.3 %</p></div>"
+    },
+    "title": "CP-3",
+    "status": "active",
+    "category": [
+     {
+      "text": "Related substances"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DGP-s",
+       "display": "Drug Substance Related Organic impurities"
+      }
+     ],
+     "text": "Related substances - CP-3"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC In-house"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "NMT 0.3 %"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 0.3,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-4-individual-unspecified-impurity",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-sm-cp-4-individual-unspecified-impurity",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8158b7e7df2db5a8b4ee"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-4-individual-unspecified-impurity",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Related substances - Individual unspecified impurity: NMT 0.1 %</p></div>"
+    },
+    "title": "Individual unspecified impurity",
+    "status": "active",
+    "category": [
+     {
+      "text": "Related substances"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DGP-s",
+       "display": "Drug Substance Related Organic impurities"
+      }
+     ],
+     "text": "Related substances - Individual unspecified impurity"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC In-house"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "NMT 0.1 %"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 0.1,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-4-total-impurities",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-sm-cp-4-total-impurities",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8158b7e7df2db5a8b4ee"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-4-total-impurities",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Related substances - Total impurities: NMT 0.5 %</p></div>"
+    },
+    "title": "Total impurities",
+    "status": "active",
+    "category": [
+     {
+      "text": "Related substances"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DGP-s",
+       "display": "Drug Substance Related Organic impurities"
+      }
+     ],
+     "text": "Related substances - Total impurities"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC In-house"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "NMT 0.5 %"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 0.5,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-4-enantiomeric-purity",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-sm-cp-4-enantiomeric-purity",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8158b7e7df2db5a8b4ee"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-4-enantiomeric-purity",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Enantiomeric purity: NMT 1.5 %</p></div>"
+    },
+    "title": "Enantiomeric purity",
+    "status": "active",
+    "category": [
+     {
+      "text": "Enantiomeric purity"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "enantiomeric-purity",
+       "display": "Enantiomeric purity"
+      }
+     ],
+     "text": "Enantiomeric purity"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC In-house"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "NMT 1.5 %"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 1.5,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-4-residual-solvents-toluene",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-sm-cp-4-residual-solvents-toluene",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8158b7e7df2db5a8b4ee"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-4-residual-solvents-toluene",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Residual solvents - Residual solvents - Toluene: NMT 890 ppm</p></div>"
+    },
+    "title": "Residual solvents - Toluene",
+    "status": "active",
+    "category": [
+     {
+      "text": "Residual solvents"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "SOL",
+       "display": "Residual solvents"
+      }
+     ],
+     "text": "Residual solvents - Residual solvents - Toluene"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "GC USP <467>"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "[ppm]",
+      "display": "ppm"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "NMT 890 ppm"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 890,
+        "unit": "ppm",
+        "system": "http://unitsofmeasure.org",
+        "code": "[ppm]"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-4-palladium-pd",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-sm-cp-4-palladium-pd",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8158b7e7df2db5a8b4ee"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-4-palladium-pd",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Elemental impurities - Palladium (Pd): NMT 10 ppm</p></div>"
+    },
+    "title": "Palladium (Pd)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Elemental impurities"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "ELE",
+       "display": "Elemental impurities"
+      }
+     ],
+     "text": "Elemental impurities - Palladium (Pd)"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "ICP-MS USP <233>"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "[ppm]",
+      "display": "ppm"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "NMT 10 ppm"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 10,
+        "unit": "ppm",
+        "system": "http://unitsofmeasure.org",
+        "code": "[ppm]"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-4-assay",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-sm-cp-4-assay",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8158b7e7df2db5a8b4ee"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-4-assay",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Assay: 98.0 - 102.0 %</p></div>"
+    },
+    "title": "Assay",
+    "status": "active",
+    "category": [
+     {
+      "text": "Assay"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "ASSAY",
+       "display": "Assay"
+      }
+     ],
+     "text": "Assay"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC In-house"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "98.0 - 102.0 %"
+       }
+      ],
+      "range": {
+       "low": {
+        "value": 98.0,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       },
+       "high": {
+        "value": 102.0,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-sm-cp-4",
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "spec-sm-cp-4",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8158b7e7df2db5a8b4ee"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-sm-cp-4",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> spec-sm-cp-4</p></div>"
+    },
+    "title": "Specification of starting material CP-4",
+    "type": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+       "code": "1244577",
+       "display": "Specification Protocol"
+      }
+     ],
+     "text": "Specification Protocol"
+    },
+    "status": "active",
+    "subjectReference": {
+     "reference": "SubstanceDefinition/cp-4"
+    },
+    "action": [
+     {
+      "title": "Release and re-test",
+      "code": {
+       "text": "Timing Group"
+      },
+      "action": [
+       {
+        "title": "Description",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-4-description",
+        "description": "Method: Visual"
+       },
+       {
+        "title": "Identity - IR",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-4-identity-ir",
+        "description": "Method: USP <197A>"
+       },
+       {
+        "title": "CP-3",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-4-cp-3",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-cp-4-related-substances"
+         }
+        ]
+       },
+       {
+        "title": "Individual unspecified impurity",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-4-individual-unspecified-impurity",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-cp-4-related-substances"
+         }
+        ]
+       },
+       {
+        "title": "Total impurities",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-4-total-impurities",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-cp-4-related-substances"
+         }
+        ]
+       },
+       {
+        "title": "Enantiomeric purity",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-4-enantiomeric-purity",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-cp-4-enantiomeric-purity"
+         }
+        ]
+       },
+       {
+        "title": "Residual solvents - Toluene",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-4-residual-solvents-toluene",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-residual-solvents"
+         }
+        ]
+       },
+       {
+        "title": "Palladium (Pd)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-4-palladium-pd",
+        "description": "Method: ICP-MS USP <233>"
+       },
+       {
+        "title": "Assay",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-4-assay",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-cp-4-assay"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/cp-4",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "cp-4",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc815fba60f328a2f5fc27"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> CP-4</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Starting material (SM1); potentially mutagenic"
+     }
+    ],
+    "description": "Starting material (SM1); potentially mutagenic",
+    "molecularWeight": [
+     {
+      "amount": {
+       "value": 274.28,
+       "unit": "g/mol",
+       "system": "http://unitsofmeasure.org",
+       "code": "g/mol"
+      }
+     }
+    ],
+    "structure": {
+     "molecularFormula": "C13H17F3N2O",
+     "representation": [
+      {
+       "type": {
+        "text": "IUPAC name"
+       },
+       "representation": "(3R)-3-{[4-(Trifluoromethyl)phenyl]amino}hexanamide"
+      }
+     ]
+    },
+    "name": [
+     {
+      "name": "CP-4",
+      "type": {
+       "text": "Company code"
+      },
+      "preferred": true
+     },
+     {
+      "name": "(3R)-3-{[4-(Trifluoromethyl)phenyl]amino}hexanamide",
+      "type": {
+       "text": "IUPAC chemical name"
+      }
+     }
+    ],
+    "property": [
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+         "code": "1233444",
+         "display": "Rule-based (Q)Sar"
+        }
+       ],
+       "text": "Rule-based (Q)Sar"
+      },
+      "valueCodeableConcept": {
+       "text": "Positive (DEREK Nexus)"
+      }
+     },
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+         "code": "123555",
+         "display": "Statistical (Q)Sar"
+        }
+       ],
+       "text": "Statistical (Q)Sar"
+      },
+      "valueCodeableConcept": {
+       "text": "Positive (SARAH Nexus)"
+      }
+     },
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+         "code": "123557",
+         "display": "Mutagenicity Comment"
+        }
+       ],
+       "text": "Mutagenicity Comment"
+      },
+      "valueCodeableConcept": {
+       "text": "Aniline functionality eliminated in Step 3; purged by Step 3/4 crystallizations; controlled with CP-3/CP-4/CP-5 to a total of ≤ 37.5 ppm (TTC 1.5 µg/day / MDD 40 mg)"
+      }
+     }
+    ],
+    "manufacturer": [
+     {
+      "reference": "Organization/iroha-corp"
+     },
+     {
+      "reference": "Organization/heto-corp"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-8-description",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-sm-cp-8-description",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81dc8f03fa647c7dbb89"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-8-description",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Description: White to pale yellow crystal or crystalline powder (visual observation)</p></div>"
+    },
+    "title": "Description",
+    "status": "active",
+    "category": [
+     {
+      "text": "Description"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DESC",
+       "display": "Description"
+      }
+     ],
+     "text": "Description"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Visual"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "White to pale yellow crystal or crystalline powder (visual observation)"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-8-identification-ir",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-sm-cp-8-identification-ir",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81dc8f03fa647c7dbb89"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-8-identification-ir",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Identification - Identification - IR: The IR spectrum of the sample is comparable to that of the reference standard (IR)</p></div>"
+    },
+    "title": "Identification - IR",
+    "status": "active",
+    "category": [
+     {
+      "text": "Identification"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "IDT",
+       "display": "Identification"
+      }
+     ],
+     "text": "Identification - Identification - IR"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "USP <197A>"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "The IR spectrum of the sample is comparable to that of the reference standard (IR)"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-8-cp-8-25i",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-sm-cp-8-cp-8-25i",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81dc8f03fa647c7dbb89"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-8-cp-8-25i",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Related substances - CP-8-25I: NMT 0.05 %</p></div>"
+    },
+    "title": "CP-8-25I",
+    "status": "active",
+    "category": [
+     {
+      "text": "Related substances"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DGP-s",
+       "display": "Drug Substance Related Organic impurities"
+      }
+     ],
+     "text": "Related substances - CP-8-25I"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC In-house"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "NMT 0.05 %"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 0.05,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-8-cp-8-24i",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-sm-cp-8-cp-8-24i",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81dc8f03fa647c7dbb89"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-8-cp-8-24i",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Related substances - CP-8-24I: NMT 0.05 %</p></div>"
+    },
+    "title": "CP-8-24I",
+    "status": "active",
+    "category": [
+     {
+      "text": "Related substances"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DGP-s",
+       "display": "Drug Substance Related Organic impurities"
+      }
+     ],
+     "text": "Related substances - CP-8-24I"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC In-house"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "NMT 0.05 %"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 0.05,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-8-individual-unspecified-impurities",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-sm-cp-8-individual-unspecified-impurities",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81dc8f03fa647c7dbb89"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-8-individual-unspecified-impurities",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Related substances - Individual unspecified impurities: NMT 0.1 %</p></div>"
+    },
+    "title": "Individual unspecified impurities",
+    "status": "active",
+    "category": [
+     {
+      "text": "Related substances"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DGP-s",
+       "display": "Drug Substance Related Organic impurities"
+      }
+     ],
+     "text": "Related substances - Individual unspecified impurities"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC In-house"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "NMT 0.1 %"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 0.1,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-8-total-impurities",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-sm-cp-8-total-impurities",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81dc8f03fa647c7dbb89"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-8-total-impurities",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Related substances - Total impurities: NMT 1.0 %</p></div>"
+    },
+    "title": "Total impurities",
+    "status": "active",
+    "category": [
+     {
+      "text": "Related substances"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DGP-s",
+       "display": "Drug Substance Related Organic impurities"
+      }
+     ],
+     "text": "Related substances - Total impurities"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC In-house"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "NMT 1.0 %"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 1.0,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-8-assay",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-sm-cp-8-assay",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81dc8f03fa647c7dbb89"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-8-assay",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Assay: ≥ 97 %</p></div>"
+    },
+    "title": "Assay",
+    "status": "active",
+    "category": [
+     {
+      "text": "Assay"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "ASSAY",
+       "display": "Assay"
+      }
+     ],
+     "text": "Assay"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC In-house"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "≥ 97 %"
+       }
+      ],
+      "range": {
+       "low": {
+        "value": 97,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-sm-cp-8",
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "spec-sm-cp-8",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81dc8f03fa647c7dbb89"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-sm-cp-8",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> spec-sm-cp-8</p></div>"
+    },
+    "title": "Specification of starting material CP-8",
+    "type": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+       "code": "1244577",
+       "display": "Specification Protocol"
+      }
+     ],
+     "text": "Specification Protocol"
+    },
+    "status": "active",
+    "subjectReference": {
+     "reference": "SubstanceDefinition/cp-8"
+    },
+    "action": [
+     {
+      "title": "Release and re-test",
+      "code": {
+       "text": "Timing Group"
+      },
+      "action": [
+       {
+        "title": "Description",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-8-description",
+        "description": "Method: Visual"
+       },
+       {
+        "title": "Identification - IR",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-8-identification-ir",
+        "description": "Method: USP <197A>"
+       },
+       {
+        "title": "CP-8-25I",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-8-cp-8-25i",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-cp-8-related-substances"
+         }
+        ]
+       },
+       {
+        "title": "CP-8-24I",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-8-cp-8-24i",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-cp-8-related-substances"
+         }
+        ]
+       },
+       {
+        "title": "Individual unspecified impurities",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-8-individual-unspecified-impurities",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-cp-8-related-substances"
+         }
+        ]
+       },
+       {
+        "title": "Total impurities",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-8-total-impurities",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-cp-8-related-substances"
+         }
+        ]
+       },
+       {
+        "title": "Assay",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-8-assay",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-cp-8-assay"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/cp-8",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "cp-8",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc815fba60f328a2f5fc27"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> CP-8</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Starting material (SM2); specified impurity in drug substance"
+     }
+    ],
+    "description": "Starting material (SM2); specified impurity in drug substance",
+    "molecularWeight": [
+     {
+      "amount": {
+       "value": 307.03,
+       "unit": "g/mol",
+       "system": "http://unitsofmeasure.org",
+       "code": "g/mol"
+      }
+     }
+    ],
+    "structure": {
+     "molecularFormula": "C9H3BrF6",
+     "representation": [
+      {
+       "type": {
+        "text": "IUPAC name"
+       },
+       "representation": "3,5-bis(trifluoromethyl)benzyl bromide"
+      }
+     ]
+    },
+    "code": [
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://cas.org",
+         "code": "32247-96-4"
+        }
+       ],
+       "text": "32247-96-4"
+      }
+     }
+    ],
+    "name": [
+     {
+      "name": "CP-8",
+      "type": {
+       "text": "Company code"
+      },
+      "preferred": true
+     },
+     {
+      "name": "3,5-bis(trifluoromethyl)benzyl bromide",
+      "type": {
+       "text": "IUPAC chemical name"
+      }
+     },
+     {
+      "name": "1-bromo-3,5-bis(trifluoromethyl)benzene",
+      "type": {
+       "text": "Name used in impurity tables (inconsistent in source)"
+      }
+     }
+    ],
+    "manufacturer": [
+     {
+      "reference": "Organization/iroha-corp"
+     },
+     {
+      "reference": "Organization/abcr-gmbh"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-6-description",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-si-cp-6-description",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc813d8ebfcf0f96d70b67"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-6-description",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Description: White to pale yellow crystals or crystalline powder</p></div>"
+    },
+    "title": "Description",
+    "status": "active",
+    "category": [
+     {
+      "text": "Description"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DESC",
+       "display": "Description"
+      }
+     ],
+     "text": "Description"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Visual"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "White to pale yellow crystals or crystalline powder"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-6-identity-ir",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-si-cp-6-identity-ir",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc813d8ebfcf0f96d70b67"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-6-identity-ir",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Identification - Identity - IR: The IR spectrum of the sample is comparable to that of the reference standard (IR)</p></div>"
+    },
+    "title": "Identity - IR",
+    "status": "active",
+    "category": [
+     {
+      "text": "Identification"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "IDT",
+       "display": "Identification"
+      }
+     ],
+     "text": "Identification - Identity - IR"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "USP <197A>"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "The IR spectrum of the sample is comparable to that of the reference standard (IR)"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-6-cp-4",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-si-cp-6-cp-4",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc813d8ebfcf0f96d70b67"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-6-cp-4",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Related substances - CP-4: NMT 0.3 %</p></div>"
+    },
+    "title": "CP-4",
+    "status": "active",
+    "category": [
+     {
+      "text": "Related substances"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DGP-s",
+       "display": "Drug Substance Related Organic impurities"
+      }
+     ],
+     "text": "Related substances - CP-4"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC In-house"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "NMT 0.3 %"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 0.3,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-6-individual-unspecified-impurity",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-si-cp-6-individual-unspecified-impurity",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc813d8ebfcf0f96d70b67"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-6-individual-unspecified-impurity",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Related substances - Individual unspecified impurity: NMT 0.1 %</p></div>"
+    },
+    "title": "Individual unspecified impurity",
+    "status": "active",
+    "category": [
+     {
+      "text": "Related substances"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DGP-s",
+       "display": "Drug Substance Related Organic impurities"
+      }
+     ],
+     "text": "Related substances - Individual unspecified impurity"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC In-house"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "NMT 0.1 %"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 0.1,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-6-total-impurities",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-si-cp-6-total-impurities",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc813d8ebfcf0f96d70b67"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-6-total-impurities",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Related substances - Total impurities: NMT 0.5 %</p></div>"
+    },
+    "title": "Total impurities",
+    "status": "active",
+    "category": [
+     {
+      "text": "Related substances"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DGP-s",
+       "display": "Drug Substance Related Organic impurities"
+      }
+     ],
+     "text": "Related substances - Total impurities"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC In-house"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "NMT 0.5 %"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 0.5,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-6-palladium-pd",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-si-cp-6-palladium-pd",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc813d8ebfcf0f96d70b67"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-6-palladium-pd",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Elemental impurities - Palladium (Pd): NMT 10 ppm</p></div>"
+    },
+    "title": "Palladium (Pd)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Elemental impurities"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "ELE",
+       "display": "Elemental impurities"
+      }
+     ],
+     "text": "Elemental impurities - Palladium (Pd)"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "ICP-MS USP <233>"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "[ppm]",
+      "display": "ppm"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "NMT 10 ppm"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 10,
+        "unit": "ppm",
+        "system": "http://unitsofmeasure.org",
+        "code": "[ppm]"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-6-assay",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-si-cp-6-assay",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc813d8ebfcf0f96d70b67"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-6-assay",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Assay: 98.0 - 102.0 %</p></div>"
+    },
+    "title": "Assay",
+    "status": "active",
+    "category": [
+     {
+      "text": "Assay"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "ASSAY",
+       "display": "Assay"
+      }
+     ],
+     "text": "Assay"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC In-house"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "98.0 - 102.0 %"
+       }
+      ],
+      "range": {
+       "low": {
+        "value": 98.0,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       },
+       "high": {
+        "value": 102.0,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-si-cp-6",
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "spec-si-cp-6",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc813d8ebfcf0f96d70b67"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-si-cp-6",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> spec-si-cp-6</p></div>"
+    },
+    "title": "Specification of intermediate CP-6 (Intermediate 1)",
+    "type": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+       "code": "1244577",
+       "display": "Specification Protocol"
+      }
+     ],
+     "text": "Specification Protocol"
+    },
+    "status": "active",
+    "subjectReference": {
+     "reference": "SubstanceDefinition/cp-6"
+    },
+    "action": [
+     {
+      "title": "Release and re-test",
+      "code": {
+       "text": "Timing Group"
+      },
+      "action": [
+       {
+        "title": "Description",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-6-description",
+        "description": "Method: Visual"
+       },
+       {
+        "title": "Identity - IR",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-6-identity-ir",
+        "description": "Method: USP <197A>"
+       },
+       {
+        "title": "CP-4",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-6-cp-4",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-cp-6-related-substances"
+         }
+        ]
+       },
+       {
+        "title": "Individual unspecified impurity",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-6-individual-unspecified-impurity",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-cp-6-related-substances"
+         }
+        ]
+       },
+       {
+        "title": "Total impurities",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-6-total-impurities",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-cp-6-related-substances"
+         }
+        ]
+       },
+       {
+        "title": "Palladium (Pd)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-6-palladium-pd",
+        "description": "Method: ICP-MS USP <233>"
+       },
+       {
+        "title": "Assay",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-6-assay",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-cp-6-assay"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/cp-6",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "cp-6",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc815fba60f328a2f5fc27"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> CP-6</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Isolated intermediate (IM1); potentially mutagenic impurity"
+     }
+    ],
+    "description": "Isolated intermediate (IM1); potentially mutagenic impurity",
+    "molecularWeight": [
+     {
+      "amount": {
+       "value": 316.32,
+       "unit": "g/mol",
+       "system": "http://unitsofmeasure.org",
+       "code": "g/mol"
+      }
+     }
+    ],
+    "structure": {
+     "molecularFormula": "C15H19F3N2O2",
+     "representation": [
+      {
+       "type": {
+        "text": "IUPAC name"
+       },
+       "representation": "Methyl (2R, 4S)-2-propyl-6-(trifluoromethyl)-1,2,3,4-tetrahydroquinoline-4-ylcarbamate"
+      }
+     ]
+    },
+    "name": [
+     {
+      "name": "CP-6",
+      "type": {
+       "text": "Company code"
+      },
+      "preferred": true
+     },
+     {
+      "name": "Methyl (2R, 4S)-2-propyl-6-(trifluoromethyl)-1,2,3,4-tetrahydroquinoline-4-ylcarbamate",
+      "type": {
+       "text": "IUPAC chemical name"
+      }
+     }
+    ],
+    "property": [
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+         "code": "1233444",
+         "display": "Rule-based (Q)Sar"
+        }
+       ],
+       "text": "Rule-based (Q)Sar"
+      },
+      "valueCodeableConcept": {
+       "text": "Positive (DEREK Nexus)"
+      }
+     },
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+         "code": "123555",
+         "display": "Statistical (Q)Sar"
+        }
+       ],
+       "text": "Statistical (Q)Sar"
+      },
+      "valueCodeableConcept": {
+       "text": "Positive (SARAH Nexus)"
+      }
+     },
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+         "code": "123557",
+         "display": "Mutagenicity Comment"
+        }
+       ],
+       "text": "Mutagenicity Comment"
+      },
+      "valueCodeableConcept": {
+       "text": "Aniline functionality eliminated in Step 3; purged by Step 3/4 crystallizations; controlled with CP-3/CP-4/CP-5 to a total of ≤ 37.5 ppm (TTC 1.5 µg/day / MDD 40 mg)"
+      }
+     }
+    ],
+    "manufacturer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-7-description",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-si-cp-7-description",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc819c96c7dbf440d968d4"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-7-description",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Description: White to pale yellow crystals or crystalline powder</p></div>"
+    },
+    "title": "Description",
+    "status": "active",
+    "category": [
+     {
+      "text": "Description"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DESC",
+       "display": "Description"
+      }
+     ],
+     "text": "Description"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Visual"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "White to pale yellow crystals or crystalline powder"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-7-identity-ir",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-si-cp-7-identity-ir",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc819c96c7dbf440d968d4"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-7-identity-ir",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Identification - Identity - IR: The IR spectrum of the sample is comparable to that of the reference standard (IR)</p></div>"
+    },
+    "title": "Identity - IR",
+    "status": "active",
+    "category": [
+     {
+      "text": "Identification"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "IDT",
+       "display": "Identification"
+      }
+     ],
+     "text": "Identification - Identity - IR"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "USP <197A>"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "The IR spectrum of the sample is comparable to that of the reference standard (IR)"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-7-cp-7-1",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-si-cp-7-cp-7-1",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc819c96c7dbf440d968d4"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-7-cp-7-1",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Related substances - CP-7-1: NMT 1.0 %</p></div>"
+    },
+    "title": "CP-7-1",
+    "status": "active",
+    "category": [
+     {
+      "text": "Related substances"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DGP-s",
+       "display": "Drug Substance Related Organic impurities"
+      }
+     ],
+     "text": "Related substances - CP-7-1"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC In-house"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "NMT 1.0 %"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 1.0,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-7-individual-unspecified-impurity",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-si-cp-7-individual-unspecified-impurity",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc819c96c7dbf440d968d4"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-7-individual-unspecified-impurity",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Related substances - Individual unspecified impurity: NMT 1.0 %</p></div>"
+    },
+    "title": "Individual unspecified impurity",
+    "status": "active",
+    "category": [
+     {
+      "text": "Related substances"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DGP-s",
+       "display": "Drug Substance Related Organic impurities"
+      }
+     ],
+     "text": "Related substances - Individual unspecified impurity"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC In-house"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "NMT 1.0 %"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 1.0,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-7-total-impurities",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-si-cp-7-total-impurities",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc819c96c7dbf440d968d4"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-7-total-impurities",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Related substances - Total impurities: NMT 5 %</p></div>"
+    },
+    "title": "Total impurities",
+    "status": "active",
+    "category": [
+     {
+      "text": "Related substances"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DGP-s",
+       "display": "Drug Substance Related Organic impurities"
+      }
+     ],
+     "text": "Related substances - Total impurities"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC In-house"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "NMT 5 %"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 5,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-si-cp-7",
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "spec-si-cp-7",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc819c96c7dbf440d968d4"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-si-cp-7",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> spec-si-cp-7</p></div>"
+    },
+    "title": "Specification of intermediate CP-7 (Intermediate 2)",
+    "type": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+       "code": "1244577",
+       "display": "Specification Protocol"
+      }
+     ],
+     "text": "Specification Protocol"
+    },
+    "status": "active",
+    "subjectReference": {
+     "reference": "SubstanceDefinition/cp-7"
+    },
+    "action": [
+     {
+      "title": "Release and re-test",
+      "code": {
+       "text": "Timing Group"
+      },
+      "action": [
+       {
+        "title": "Description",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-7-description",
+        "description": "Method: Visual"
+       },
+       {
+        "title": "Identity - IR",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-7-identity-ir",
+        "description": "Method: USP <197A>"
+       },
+       {
+        "title": "CP-7-1",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-7-cp-7-1",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-cp-7-related-substances"
+         }
+        ]
+       },
+       {
+        "title": "Individual unspecified impurity",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-7-individual-unspecified-impurity",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-cp-7-related-substances"
+         }
+        ]
+       },
+       {
+        "title": "Total impurities",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-7-total-impurities",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-cp-7-related-substances"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/cp-7",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "cp-7",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc815fba60f328a2f5fc27"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> CP-7</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Isolated intermediate (IM2)"
+     }
+    ],
+    "description": "Isolated intermediate (IM2)",
+    "molecularWeight": [
+     {
+      "amount": {
+       "value": 387.38,
+       "unit": "g/mol",
+       "system": "http://unitsofmeasure.org",
+       "code": "g/mol"
+      }
+     }
+    ],
+    "structure": {
+     "molecularFormula": "C18H22F3N2O4",
+     "representation": [
+      {
+       "type": {
+        "text": "IUPAC name"
+       },
+       "representation": "Ethyl (2R,4S)-2-propyl-4-(methoxycarbonylamino)-6-(trifluoromethyl)-3,4-dihydroxyquinoline-1(2H)-Carboxylate"
+      }
+     ]
+    },
+    "name": [
+     {
+      "name": "CP-7",
+      "type": {
+       "text": "Company code"
+      },
+      "preferred": true
+     },
+     {
+      "name": "Ethyl (2R,4S)-2-propyl-4-(methoxycarbonylamino)-6-(trifluoromethyl)-3,4-dihydroxyquinoline-1(2H)-Carboxylate",
+      "type": {
+       "text": "IUPAC chemical name"
+      }
+     }
+    ],
+    "manufacturer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-tetra-n-butylammonium-bromide-description-visual",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-tetra-n-butylammonium-bromide-description-visual",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc819b85fbe0bb033f04c1"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-tetra-n-butylammonium-bromide-description-visual",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Description - Description (visual): White to pale yellowish white crystals or crystalline powder</p></div>"
+    },
+    "title": "Description (visual)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Description"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DESC",
+       "display": "Description"
+      }
+     ],
+     "text": "Description - Description (visual)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Visual"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "White to pale yellowish white crystals or crystalline powder"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-tetra-n-butylammonium-bromide-identification-qualit-057aea",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-tetra-n-butylammonium-bromide-identification-qualit-057aea",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc819b85fbe0bb033f04c1"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-tetra-n-butylammonium-bromide-identification-qualit-057aea",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Identification - Identification (qualitative test): Bromide: positive</p></div>"
+    },
+    "title": "Identification (qualitative test)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Identification"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "IDT",
+       "display": "Identification"
+      }
+     ],
+     "text": "Identification - Identification (qualitative test)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "USP <191>, technique A"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Bromide: positive"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-tetra-n-butylammonium-bromide-assay-titration",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-tetra-n-butylammonium-bromide-assay-titration",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc819b85fbe0bb033f04c1"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-tetra-n-butylammonium-bromide-assay-titration",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Assay - Assay (titration): ≥ 98.0 %</p></div>"
+    },
+    "title": "Assay (titration)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Assay"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "ASSAY",
+       "display": "Assay"
+      }
+     ],
+     "text": "Assay - Assay (titration)"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "Titration In-house"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "≥ 98.0 %"
+       }
+      ],
+      "range": {
+       "low": {
+        "value": 98.0,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-rm-tetra-n-butylammonium-bromide",
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "spec-rm-tetra-n-butylammonium-bromide",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc819b85fbe0bb033f04c1"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-rm-tetra-n-butylammonium-bromide",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> spec-rm-tetra-n-butylammonium-bromide</p></div>"
+    },
+    "title": "Specification of raw material Tetra-n-butylammonium bromide",
+    "type": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+       "code": "1244577",
+       "display": "Specification Protocol"
+      }
+     ],
+     "text": "Specification Protocol"
+    },
+    "status": "active",
+    "subjectReference": {
+     "reference": "SubstanceDefinition/rm-tetra-n-butylammonium-bromide"
+    },
+    "action": [
+     {
+      "title": "Release and re-test",
+      "code": {
+       "text": "Timing Group"
+      },
+      "action": [
+       {
+        "title": "Description (visual)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-tetra-n-butylammonium-bromide-description-visual",
+        "description": "Method: Visual"
+       },
+       {
+        "title": "Identification (qualitative test)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-tetra-n-butylammonium-bromide-identification-qualit-057aea",
+        "description": "Method: USP <191>, technique A"
+       },
+       {
+        "title": "Assay (titration)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-tetra-n-butylammonium-bromide-assay-titration",
+        "description": "Method: Titration In-house"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/rm-tetra-n-butylammonium-bromide",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "rm-tetra-n-butylammonium-bromide",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc819b85fbe0bb033f04c1"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Tetra-n-butylammonium bromide</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Raw material (reagent/solvent/catalyst) for Sakuramil synthesis"
+     }
+    ],
+    "name": [
+     {
+      "name": "Tetra-n-butylammonium bromide",
+      "preferred": true
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-ethyl-chloroformate-description-visual",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-ethyl-chloroformate-description-visual",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc811e8d43c8d7ec663804"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-ethyl-chloroformate-description-visual",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Description - Description (visual): Clear, colorless to pale yellow liquid</p></div>"
+    },
+    "title": "Description (visual)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Description"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DESC",
+       "display": "Description"
+      }
+     ],
+     "text": "Description - Description (visual)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Visual"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Clear, colorless to pale yellow liquid"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-ethyl-chloroformate-identification-gc",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-ethyl-chloroformate-identification-gc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc811e8d43c8d7ec663804"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-ethyl-chloroformate-identification-gc",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Identification - Identification (GC): Principal peak corresponds to that of the reference standard</p></div>"
+    },
+    "title": "Identification (GC)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Identification"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "IDT",
+       "display": "Identification"
+      }
+     ],
+     "text": "Identification - Identification (GC)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "GC USP <621>"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Principal peak corresponds to that of the reference standard"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-ethyl-chloroformate-phosgene-limit-test",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-ethyl-chloroformate-phosgene-limit-test",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc811e8d43c8d7ec663804"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-ethyl-chloroformate-phosgene-limit-test",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Phosgene - Phosgene (limit test): ≤ 5000 ppm</p></div>"
+    },
+    "title": "Phosgene (limit test)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Phosgene"
+     }
+    ],
+    "code": {
+     "text": "Phosgene - Phosgene (limit test)"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "Titration USP <921>"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "≤ 5000 ppm"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 5000,
+        "unit": "ppm",
+        "system": "http://unitsofmeasure.org",
+        "code": "[ppm]"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-ethyl-chloroformate-assay-gc",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-ethyl-chloroformate-assay-gc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc811e8d43c8d7ec663804"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-ethyl-chloroformate-assay-gc",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Assay - Assay (GC): ≥ 98.9 %</p></div>"
+    },
+    "title": "Assay (GC)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Assay"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "ASSAY",
+       "display": "Assay"
+      }
+     ],
+     "text": "Assay - Assay (GC)"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "GC In-house"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "≥ 98.9 %"
+       }
+      ],
+      "range": {
+       "low": {
+        "value": 98.9,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-rm-ethyl-chloroformate",
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "spec-rm-ethyl-chloroformate",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc811e8d43c8d7ec663804"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-rm-ethyl-chloroformate",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> spec-rm-ethyl-chloroformate</p></div>"
+    },
+    "title": "Specification of raw material Ethyl chloroformate",
+    "type": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+       "code": "1244577",
+       "display": "Specification Protocol"
+      }
+     ],
+     "text": "Specification Protocol"
+    },
+    "status": "active",
+    "subjectReference": {
+     "reference": "SubstanceDefinition/rm-ethyl-chloroformate"
+    },
+    "action": [
+     {
+      "title": "Release and re-test",
+      "code": {
+       "text": "Timing Group"
+      },
+      "action": [
+       {
+        "title": "Description (visual)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-ethyl-chloroformate-description-visual",
+        "description": "Method: Visual"
+       },
+       {
+        "title": "Identification (GC)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-ethyl-chloroformate-identification-gc",
+        "description": "Method: GC USP <621>"
+       },
+       {
+        "title": "Phosgene (limit test)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-ethyl-chloroformate-phosgene-limit-test",
+        "description": "Method: Titration USP <921>"
+       },
+       {
+        "title": "Assay (GC)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-ethyl-chloroformate-assay-gc",
+        "description": "Method: GC In-house"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/rm-ethyl-chloroformate",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "rm-ethyl-chloroformate",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc811e8d43c8d7ec663804"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Ethyl chloroformate</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Raw material (reagent/solvent/catalyst) for Sakuramil synthesis"
+     }
+    ],
+    "name": [
+     {
+      "name": "Ethyl chloroformate",
+      "preferred": true
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-hydrochloric-acid-description-visual",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-hydrochloric-acid-description-visual",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81b9839fc7895ddfb9ad"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-hydrochloric-acid-description-visual",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Description - Description (visual): Clear and colorless liquid</p></div>"
+    },
+    "title": "Description (visual)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Description"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DESC",
+       "display": "Description"
+      }
+     ],
+     "text": "Description - Description (visual)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Visual"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Clear and colorless liquid"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-hydrochloric-acid-identification-qualitative-test",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-hydrochloric-acid-identification-qualitative-test",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81b9839fc7895ddfb9ad"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-hydrochloric-acid-identification-qualitative-test",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Identification - Identification (qualitative test): Sodium salt: positive</p></div>"
+    },
+    "title": "Identification (qualitative test)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Identification"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "IDT",
+       "display": "Identification"
+      }
+     ],
+     "text": "Identification - Identification (qualitative test)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "USP <191>"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Sodium salt: positive"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-hydrochloric-acid-assay-titration",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-hydrochloric-acid-assay-titration",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81b9839fc7895ddfb9ad"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-hydrochloric-acid-assay-titration",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Assay - Assay (titration): 35.0 – 37.0 %</p></div>"
+    },
+    "title": "Assay (titration)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Assay"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "ASSAY",
+       "display": "Assay"
+      }
+     ],
+     "text": "Assay - Assay (titration)"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "Titration In-house"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "35.0 – 37.0 %"
+       }
+      ],
+      "range": {
+       "low": {
+        "value": 35.0,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       },
+       "high": {
+        "value": 37.0,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-rm-hydrochloric-acid",
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "spec-rm-hydrochloric-acid",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81b9839fc7895ddfb9ad"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-rm-hydrochloric-acid",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> spec-rm-hydrochloric-acid</p></div>"
+    },
+    "title": "Specification of raw material Hydrochloric Acid",
+    "type": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+       "code": "1244577",
+       "display": "Specification Protocol"
+      }
+     ],
+     "text": "Specification Protocol"
+    },
+    "status": "active",
+    "subjectReference": {
+     "reference": "SubstanceDefinition/rm-hydrochloric-acid"
+    },
+    "action": [
+     {
+      "title": "Release and re-test",
+      "code": {
+       "text": "Timing Group"
+      },
+      "action": [
+       {
+        "title": "Description (visual)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-hydrochloric-acid-description-visual",
+        "description": "Method: Visual"
+       },
+       {
+        "title": "Identification (qualitative test)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-hydrochloric-acid-identification-qualitative-test",
+        "description": "Method: USP <191>"
+       },
+       {
+        "title": "Assay (titration)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-hydrochloric-acid-assay-titration",
+        "description": "Method: Titration In-house"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/rm-hydrochloric-acid",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "rm-hydrochloric-acid",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81b9839fc7895ddfb9ad"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Hydrochloric Acid</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Raw material (reagent/solvent/catalyst) for Sakuramil synthesis"
+     }
+    ],
+    "name": [
+     {
+      "name": "Hydrochloric Acid",
+      "preferred": true
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-lithium-tert-butoxide-appearance-visual",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-lithium-tert-butoxide-appearance-visual",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81bd9f0ef864bfa61927"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-lithium-tert-butoxide-appearance-visual",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Appearance - Appearance (visual): White to pale cream, powder</p></div>"
+    },
+    "title": "Appearance (visual)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Appearance"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "Appearance",
+       "display": "Appearance"
+      }
+     ],
+     "text": "Appearance - Appearance (visual)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Visual"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "White to pale cream, powder"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-lithium-tert-butoxide-assay-hplc",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-lithium-tert-butoxide-assay-hplc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81bd9f0ef864bfa61927"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-lithium-tert-butoxide-assay-hplc",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Assay - Assay (HPLC): ≥ 99.0 %</p></div>"
+    },
+    "title": "Assay (HPLC)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Assay"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "ASSAY",
+       "display": "Assay"
+      }
+     ],
+     "text": "Assay - Assay (HPLC)"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC USP <621>"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "≥ 99.0 %"
+       }
+      ],
+      "range": {
+       "low": {
+        "value": 99.0,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-lithium-tert-butoxide-chloride-content",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-lithium-tert-butoxide-chloride-content",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81bd9f0ef864bfa61927"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-lithium-tert-butoxide-chloride-content",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Chloride content: ≤ 300 ppm</p></div>"
+    },
+    "title": "Chloride content",
+    "status": "active",
+    "category": [
+     {
+      "text": "Chloride content"
+     }
+    ],
+    "code": {
+     "text": "Chloride content"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "USP <191>"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "≤ 300 ppm"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 300,
+        "unit": "ppm",
+        "system": "http://unitsofmeasure.org",
+        "code": "[ppm]"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-lithium-tert-butoxide-trace-metal-mg",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-lithium-tert-butoxide-trace-metal-mg",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81bd9f0ef864bfa61927"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-lithium-tert-butoxide-trace-metal-mg",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Trace metal Mg: ≤ 1 ppm</p></div>"
+    },
+    "title": "Trace metal Mg",
+    "status": "active",
+    "category": [
+     {
+      "text": "Trace metal Mg"
+     }
+    ],
+    "code": {
+     "text": "Trace metal Mg"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "USP <233>"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "≤ 1 ppm"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 1,
+        "unit": "ppm",
+        "system": "http://unitsofmeasure.org",
+        "code": "[ppm]"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-rm-lithium-tert-butoxide",
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "spec-rm-lithium-tert-butoxide",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81bd9f0ef864bfa61927"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-rm-lithium-tert-butoxide",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> spec-rm-lithium-tert-butoxide</p></div>"
+    },
+    "title": "Specification of raw material Lithium-tert-butoxide",
+    "type": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+       "code": "1244577",
+       "display": "Specification Protocol"
+      }
+     ],
+     "text": "Specification Protocol"
+    },
+    "status": "active",
+    "subjectReference": {
+     "reference": "SubstanceDefinition/rm-lithium-tert-butoxide"
+    },
+    "action": [
+     {
+      "title": "Release and re-test",
+      "code": {
+       "text": "Timing Group"
+      },
+      "action": [
+       {
+        "title": "Appearance (visual)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-lithium-tert-butoxide-appearance-visual",
+        "description": "Method: Visual"
+       },
+       {
+        "title": "Assay (HPLC)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-lithium-tert-butoxide-assay-hplc",
+        "description": "Method: HPLC USP <621>"
+       },
+       {
+        "title": "Chloride content",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-lithium-tert-butoxide-chloride-content",
+        "description": "Method: USP <191>"
+       },
+       {
+        "title": "Trace metal Mg",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-lithium-tert-butoxide-trace-metal-mg",
+        "description": "Method: USP <233>"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/rm-lithium-tert-butoxide",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "rm-lithium-tert-butoxide",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81bd9f0ef864bfa61927"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Lithium-tert-butoxide</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Raw material (reagent/solvent/catalyst) for Sakuramil synthesis"
+     }
+    ],
+    "name": [
+     {
+      "name": "Lithium-tert-butoxide",
+      "preferred": true
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-magnesium-chloride-appearance-visual",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-magnesium-chloride-appearance-visual",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81a2bb9cdc715bd4522a"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-magnesium-chloride-appearance-visual",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Appearance - Appearance (visual): Colorless, crystalline solid</p></div>"
+    },
+    "title": "Appearance (visual)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Appearance"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "Appearance",
+       "display": "Appearance"
+      }
+     ],
+     "text": "Appearance - Appearance (visual)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Visual"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Colorless, crystalline solid"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-magnesium-chloride-assay-hplc",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-magnesium-chloride-assay-hplc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81a2bb9cdc715bd4522a"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-magnesium-chloride-assay-hplc",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Assay - Assay (HPLC): 99 - 101 %</p></div>"
+    },
+    "title": "Assay (HPLC)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Assay"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "ASSAY",
+       "display": "Assay"
+      }
+     ],
+     "text": "Assay - Assay (HPLC)"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC-IEX USP <621>"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "99 - 101 %"
+       }
+      ],
+      "range": {
+       "low": {
+        "value": 99,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       },
+       "high": {
+        "value": 101,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-magnesium-chloride-iron-content",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-magnesium-chloride-iron-content",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81a2bb9cdc715bd4522a"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-magnesium-chloride-iron-content",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Iron content: ≤ 5 mg/kg</p></div>"
+    },
+    "title": "Iron content",
+    "status": "active",
+    "category": [
+     {
+      "text": "Iron content"
+     }
+    ],
+    "code": {
+     "text": "Iron content"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "ICP USP <233>"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "≤ 5 mg/kg"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 5,
+        "unit": "mg",
+        "system": "http://unitsofmeasure.org",
+        "code": "mg"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-rm-magnesium-chloride",
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "spec-rm-magnesium-chloride",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81a2bb9cdc715bd4522a"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-rm-magnesium-chloride",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> spec-rm-magnesium-chloride</p></div>"
+    },
+    "title": "Specification of raw material Magnesium chloride",
+    "type": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+       "code": "1244577",
+       "display": "Specification Protocol"
+      }
+     ],
+     "text": "Specification Protocol"
+    },
+    "status": "active",
+    "subjectReference": {
+     "reference": "SubstanceDefinition/rm-magnesium-chloride"
+    },
+    "action": [
+     {
+      "title": "Release and re-test",
+      "code": {
+       "text": "Timing Group"
+      },
+      "action": [
+       {
+        "title": "Appearance (visual)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-magnesium-chloride-appearance-visual",
+        "description": "Method: Visual"
+       },
+       {
+        "title": "Assay (HPLC)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-magnesium-chloride-assay-hplc",
+        "description": "Method: HPLC-IEX USP <621>"
+       },
+       {
+        "title": "Iron content",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-magnesium-chloride-iron-content",
+        "description": "Method: ICP USP <233>"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/rm-magnesium-chloride",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "rm-magnesium-chloride",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81a2bb9cdc715bd4522a"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Magnesium chloride</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Raw material (reagent/solvent/catalyst) for Sakuramil synthesis"
+     }
+    ],
+    "name": [
+     {
+      "name": "Magnesium chloride",
+      "preferred": true
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-methanol-appearance-visual",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-methanol-appearance-visual",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8148b33fe048e5ecea49"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-methanol-appearance-visual",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Appearance - Appearance (visual): Clear, colorless liquid</p></div>"
+    },
+    "title": "Appearance (visual)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Appearance"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "Appearance",
+       "display": "Appearance"
+      }
+     ],
+     "text": "Appearance - Appearance (visual)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Visual"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Clear, colorless liquid"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-methanol-identification-ir",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-methanol-identification-ir",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8148b33fe048e5ecea49"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-methanol-identification-ir",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Identification - Identification (IR): Corresponding to the reference spectrum</p></div>"
+    },
+    "title": "Identification (IR)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Identification"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "IDT",
+       "display": "Identification"
+      }
+     ],
+     "text": "Identification - Identification (IR)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "IR USP <197>"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Corresponding to the reference spectrum"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-methanol-assay-gc",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-methanol-assay-gc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8148b33fe048e5ecea49"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-methanol-assay-gc",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Assay - Assay (GC): ≥ 99.0 %</p></div>"
+    },
+    "title": "Assay (GC)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Assay"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "ASSAY",
+       "display": "Assay"
+      }
+     ],
+     "text": "Assay - Assay (GC)"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "GC USP <621>"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "≥ 99.0 %"
+       }
+      ],
+      "range": {
+       "low": {
+        "value": 99.0,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-methanol-water-content",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-methanol-water-content",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8148b33fe048e5ecea49"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-methanol-water-content",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Water content: NMT 0.10 %</p></div>"
+    },
+    "title": "Water content",
+    "status": "active",
+    "category": [
+     {
+      "text": "Water content"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "WaterContent",
+       "display": "Water content"
+      }
+     ],
+     "text": "Water content"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "Titration USP <921>"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "NMT 0.10 %"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 0.1,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-rm-methanol",
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "spec-rm-methanol",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8148b33fe048e5ecea49"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-rm-methanol",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> spec-rm-methanol</p></div>"
+    },
+    "title": "Specification of raw material Methanol",
+    "type": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+       "code": "1244577",
+       "display": "Specification Protocol"
+      }
+     ],
+     "text": "Specification Protocol"
+    },
+    "status": "active",
+    "subjectReference": {
+     "reference": "SubstanceDefinition/rm-methanol"
+    },
+    "action": [
+     {
+      "title": "Release and re-test",
+      "code": {
+       "text": "Timing Group"
+      },
+      "action": [
+       {
+        "title": "Appearance (visual)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-methanol-appearance-visual",
+        "description": "Method: Visual"
+       },
+       {
+        "title": "Identification (IR)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-methanol-identification-ir",
+        "description": "Method: IR USP <197>"
+       },
+       {
+        "title": "Assay (GC)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-methanol-assay-gc",
+        "description": "Method: GC USP <621>"
+       },
+       {
+        "title": "Water content",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-methanol-water-content",
+        "description": "Method: Titration USP <921>"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/rm-methanol",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "rm-methanol",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8148b33fe048e5ecea49"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Methanol</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Raw material (reagent/solvent/catalyst) for Sakuramil synthesis"
+     }
+    ],
+    "name": [
+     {
+      "name": "Methanol",
+      "preferred": true
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-methyl-chloroformate-description-visual",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-methyl-chloroformate-description-visual",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81e2b2ecf108539b58ea"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-methyl-chloroformate-description-visual",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Description - Description (visual): Clear colorless to yellow</p></div>"
+    },
+    "title": "Description (visual)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Description"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DESC",
+       "display": "Description"
+      }
+     ],
+     "text": "Description - Description (visual)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Visual"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Clear colorless to yellow"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-methyl-chloroformate-identification",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-methyl-chloroformate-identification",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81e2b2ecf108539b58ea"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-methyl-chloroformate-identification",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Identification: Conforms</p></div>"
+    },
+    "title": "Identification",
+    "status": "active",
+    "category": [
+     {
+      "text": "Identification"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "IDT",
+       "display": "Identification"
+      }
+     ],
+     "text": "Identification"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Infrared spectroscopy"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Conforms"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-methyl-chloroformate-assay",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-methyl-chloroformate-assay",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81e2b2ecf108539b58ea"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-methyl-chloroformate-assay",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Assay: ≥ 98.5 %</p></div>"
+    },
+    "title": "Assay",
+    "status": "active",
+    "category": [
+     {
+      "text": "Assay"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "ASSAY",
+       "display": "Assay"
+      }
+     ],
+     "text": "Assay"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "GC In-house"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "≥ 98.5 %"
+       }
+      ],
+      "range": {
+       "low": {
+        "value": 98.5,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-rm-methyl-chloroformate",
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "spec-rm-methyl-chloroformate",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81e2b2ecf108539b58ea"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-rm-methyl-chloroformate",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> spec-rm-methyl-chloroformate</p></div>"
+    },
+    "title": "Specification of raw material Methyl Chloroformate",
+    "type": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+       "code": "1244577",
+       "display": "Specification Protocol"
+      }
+     ],
+     "text": "Specification Protocol"
+    },
+    "status": "active",
+    "subjectReference": {
+     "reference": "SubstanceDefinition/rm-methyl-chloroformate"
+    },
+    "action": [
+     {
+      "title": "Release and re-test",
+      "code": {
+       "text": "Timing Group"
+      },
+      "action": [
+       {
+        "title": "Description (visual)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-methyl-chloroformate-description-visual",
+        "description": "Method: Visual"
+       },
+       {
+        "title": "Identification",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-methyl-chloroformate-identification",
+        "description": "Method: Infrared spectroscopy"
+       },
+       {
+        "title": "Assay",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-methyl-chloroformate-assay",
+        "description": "Method: GC In-house"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/rm-methyl-chloroformate",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "rm-methyl-chloroformate",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81e2b2ecf108539b58ea"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Methyl Chloroformate</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Raw material (reagent/solvent/catalyst) for Sakuramil synthesis"
+     }
+    ],
+    "name": [
+     {
+      "name": "Methyl Chloroformate",
+      "preferred": true
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-methylene-chloride-description-visual",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-methylene-chloride-description-visual",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc818dbc23e08be8cc55e0"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-methylene-chloride-description-visual",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Description - Description (visual): Clear and colorless liquid</p></div>"
+    },
+    "title": "Description (visual)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Description"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DESC",
+       "display": "Description"
+      }
+     ],
+     "text": "Description - Description (visual)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Visual"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Clear and colorless liquid"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-methylene-chloride-identification-gc",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-methylene-chloride-identification-gc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc818dbc23e08be8cc55e0"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-methylene-chloride-identification-gc",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Identification - Identification (GC): Principal peak corresponds to that of the reference standard</p></div>"
+    },
+    "title": "Identification (GC)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Identification"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "IDT",
+       "display": "Identification"
+      }
+     ],
+     "text": "Identification - Identification (GC)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "GC USP <621>"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Principal peak corresponds to that of the reference standard"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-methylene-chloride-purity-gc",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-methylene-chloride-purity-gc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc818dbc23e08be8cc55e0"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-methylene-chloride-purity-gc",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Purity - Purity (GC): ≥ 99.5 %</p></div>"
+    },
+    "title": "Purity (GC)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Purity"
+     }
+    ],
+    "code": {
+     "text": "Purity - Purity (GC)"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "GC USP <621>"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "≥ 99.5 %"
+       }
+      ],
+      "range": {
+       "low": {
+        "value": 99.5,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-rm-methylene-chloride",
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "spec-rm-methylene-chloride",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc818dbc23e08be8cc55e0"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-rm-methylene-chloride",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> spec-rm-methylene-chloride</p></div>"
+    },
+    "title": "Specification of raw material Methylene chloride (Dichloromethane, DCM)",
+    "type": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+       "code": "1244577",
+       "display": "Specification Protocol"
+      }
+     ],
+     "text": "Specification Protocol"
+    },
+    "status": "active",
+    "subjectReference": {
+     "reference": "SubstanceDefinition/rm-methylene-chloride"
+    },
+    "action": [
+     {
+      "title": "Release and re-test",
+      "code": {
+       "text": "Timing Group"
+      },
+      "action": [
+       {
+        "title": "Description (visual)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-methylene-chloride-description-visual",
+        "description": "Method: Visual"
+       },
+       {
+        "title": "Identification (GC)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-methylene-chloride-identification-gc",
+        "description": "Method: GC USP <621>"
+       },
+       {
+        "title": "Purity (GC)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-methylene-chloride-purity-gc",
+        "description": "Method: GC USP <621>"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/rm-methylene-chloride",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "rm-methylene-chloride",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc818dbc23e08be8cc55e0"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Methylene chloride (Dichloromethane, DCM)</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Raw material (reagent/solvent/catalyst) for Sakuramil synthesis"
+     }
+    ],
+    "name": [
+     {
+      "name": "Methylene chloride (Dichloromethane, DCM)",
+      "preferred": true
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-nhexane-description-visual",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-nhexane-description-visual",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81fc91b2ea8753add232"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-nhexane-description-visual",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Description - Description (visual): Clear and colorless liquid</p></div>"
+    },
+    "title": "Description (visual)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Description"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DESC",
+       "display": "Description"
+      }
+     ],
+     "text": "Description - Description (visual)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Visual"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Clear and colorless liquid"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-nhexane-identification-ir",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-nhexane-identification-ir",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81fc91b2ea8753add232"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-nhexane-identification-ir",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Identification - Identification (IR): Sample exhibits main absorption at about 2960, 1470, 1380 and 730 cm-1</p></div>"
+    },
+    "title": "Identification (IR)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Identification"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "IDT",
+       "display": "Identification"
+      }
+     ],
+     "text": "Identification - Identification (IR)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "IR USP <197>"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Sample exhibits main absorption at about 2960, 1470, 1380 and 730 cm-1"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-nhexane-purity-gc",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-nhexane-purity-gc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81fc91b2ea8753add232"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-nhexane-purity-gc",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Purity - Purity (GC): ≥ 96.0 %</p></div>"
+    },
+    "title": "Purity (GC)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Purity"
+     }
+    ],
+    "code": {
+     "text": "Purity - Purity (GC)"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "GC USP <621>"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "≥ 96.0 %"
+       }
+      ],
+      "range": {
+       "low": {
+        "value": 96.0,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-rm-nhexane",
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "spec-rm-nhexane",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81fc91b2ea8753add232"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-rm-nhexane",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> spec-rm-nhexane</p></div>"
+    },
+    "title": "Specification of raw material nHexane",
+    "type": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+       "code": "1244577",
+       "display": "Specification Protocol"
+      }
+     ],
+     "text": "Specification Protocol"
+    },
+    "status": "active",
+    "subjectReference": {
+     "reference": "SubstanceDefinition/rm-nhexane"
+    },
+    "action": [
+     {
+      "title": "Release and re-test",
+      "code": {
+       "text": "Timing Group"
+      },
+      "action": [
+       {
+        "title": "Description (visual)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-nhexane-description-visual",
+        "description": "Method: Visual"
+       },
+       {
+        "title": "Identification (IR)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-nhexane-identification-ir",
+        "description": "Method: IR USP <197>"
+       },
+       {
+        "title": "Purity (GC)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-nhexane-purity-gc",
+        "description": "Method: GC USP <621>"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/rm-nhexane",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "rm-nhexane",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81fc91b2ea8753add232"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> n-Hexane</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Raw material (reagent/solvent/catalyst) for Sakuramil synthesis"
+     }
+    ],
+    "name": [
+     {
+      "name": "n-Hexane",
+      "preferred": true
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-sodium-borohydride-description-visual",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-sodium-borohydride-description-visual",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8177993bcf3257b14820"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-sodium-borohydride-description-visual",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Description - Description (visual): Clear and colorless liquid</p></div>"
+    },
+    "title": "Description (visual)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Description"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DESC",
+       "display": "Description"
+      }
+     ],
+     "text": "Description - Description (visual)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Visual"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Clear and colorless liquid"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-sodium-borohydride-identification-ir",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-sodium-borohydride-identification-ir",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8177993bcf3257b14820"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-sodium-borohydride-identification-ir",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Identification - Identification (IR): Corresponds to reference spectrum</p></div>"
+    },
+    "title": "Identification (IR)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Identification"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "IDT",
+       "display": "Identification"
+      }
+     ],
+     "text": "Identification - Identification (IR)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "IR USP <197>"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Corresponds to reference spectrum"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-sodium-borohydride-assay-titration",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-sodium-borohydride-assay-titration",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8177993bcf3257b14820"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-sodium-borohydride-assay-titration",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Assay - Assay (titration): ≥ 96.0 %</p></div>"
+    },
+    "title": "Assay (titration)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Assay"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "ASSAY",
+       "display": "Assay"
+      }
+     ],
+     "text": "Assay - Assay (titration)"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "Titration In-house"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "≥ 96.0 %"
+       }
+      ],
+      "range": {
+       "low": {
+        "value": 96.0,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-sodium-borohydride-chloride-content",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-sodium-borohydride-chloride-content",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8177993bcf3257b14820"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-sodium-borohydride-chloride-content",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Chloride content: ≤ 0.5 %</p></div>"
+    },
+    "title": "Chloride content",
+    "status": "active",
+    "category": [
+     {
+      "text": "Chloride content"
+     }
+    ],
+    "code": {
+     "text": "Chloride content"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "USP <191>"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "≤ 0.5 %"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 0.5,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-rm-sodium-borohydride",
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "spec-rm-sodium-borohydride",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8177993bcf3257b14820"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-rm-sodium-borohydride",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> spec-rm-sodium-borohydride</p></div>"
+    },
+    "title": "Specification of raw material Sodium borohydride",
+    "type": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+       "code": "1244577",
+       "display": "Specification Protocol"
+      }
+     ],
+     "text": "Specification Protocol"
+    },
+    "status": "active",
+    "subjectReference": {
+     "reference": "SubstanceDefinition/rm-sodium-borohydride"
+    },
+    "action": [
+     {
+      "title": "Release and re-test",
+      "code": {
+       "text": "Timing Group"
+      },
+      "action": [
+       {
+        "title": "Description (visual)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-sodium-borohydride-description-visual",
+        "description": "Method: Visual"
+       },
+       {
+        "title": "Identification (IR)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-sodium-borohydride-identification-ir",
+        "description": "Method: IR USP <197>"
+       },
+       {
+        "title": "Assay (titration)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-sodium-borohydride-assay-titration",
+        "description": "Method: Titration In-house"
+       },
+       {
+        "title": "Chloride content",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-sodium-borohydride-chloride-content",
+        "description": "Method: USP <191>"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/rm-sodium-borohydride",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "rm-sodium-borohydride",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8177993bcf3257b14820"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Sodium borohydride</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Raw material (reagent/solvent/catalyst) for Sakuramil synthesis"
+     }
+    ],
+    "name": [
+     {
+      "name": "Sodium borohydride",
+      "preferred": true
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-sodium-carbonate-description-visual",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-sodium-carbonate-description-visual",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8149b68cdcd5a47eed28"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-sodium-carbonate-description-visual",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Description - Description (visual): White powder</p></div>"
+    },
+    "title": "Description (visual)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Description"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DESC",
+       "display": "Description"
+      }
+     ],
+     "text": "Description - Description (visual)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Visual"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "White powder"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-sodium-carbonate-identification-qualitative-reaction",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-sodium-carbonate-identification-qualitative-reaction",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8149b68cdcd5a47eed28"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-sodium-carbonate-identification-qualitative-reaction",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Identification - Identification (qualitative reaction): Carbonate salt: positive Sodium salt: positive</p></div>"
+    },
+    "title": "Identification (qualitative reaction)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Identification"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "IDT",
+       "display": "Identification"
+      }
+     ],
+     "text": "Identification - Identification (qualitative reaction)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "USP <191>, technique A USP <191>"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Carbonate salt: positive Sodium salt: positive"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-sodium-carbonate-assay-titration",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-sodium-carbonate-assay-titration",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8149b68cdcd5a47eed28"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-sodium-carbonate-assay-titration",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Assay - Assay (titration): ≥ 99.0 %</p></div>"
+    },
+    "title": "Assay (titration)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Assay"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "ASSAY",
+       "display": "Assay"
+      }
+     ],
+     "text": "Assay - Assay (titration)"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "Titration In-house"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "≥ 99.0 %"
+       }
+      ],
+      "range": {
+       "low": {
+        "value": 99.0,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-rm-sodium-carbonate",
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "spec-rm-sodium-carbonate",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8149b68cdcd5a47eed28"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-rm-sodium-carbonate",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> spec-rm-sodium-carbonate</p></div>"
+    },
+    "title": "Specification of raw material Sodium carbonate",
+    "type": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+       "code": "1244577",
+       "display": "Specification Protocol"
+      }
+     ],
+     "text": "Specification Protocol"
+    },
+    "status": "active",
+    "subjectReference": {
+     "reference": "SubstanceDefinition/rm-sodium-carbonate"
+    },
+    "action": [
+     {
+      "title": "Release and re-test",
+      "code": {
+       "text": "Timing Group"
+      },
+      "action": [
+       {
+        "title": "Description (visual)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-sodium-carbonate-description-visual",
+        "description": "Method: Visual"
+       },
+       {
+        "title": "Identification (qualitative reaction)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-sodium-carbonate-identification-qualitative-reaction",
+        "description": "Method: USP <191>, technique A USP <191>"
+       },
+       {
+        "title": "Assay (titration)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-sodium-carbonate-assay-titration",
+        "description": "Method: Titration In-house"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/rm-sodium-carbonate",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "rm-sodium-carbonate",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8149b68cdcd5a47eed28"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Sodium carbonate</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Raw material (reagent/solvent/catalyst) for Sakuramil synthesis"
+     }
+    ],
+    "name": [
+     {
+      "name": "Sodium carbonate",
+      "preferred": true
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-sodium-hydroxide-description-visual",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-sodium-hydroxide-description-visual",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81158b65d882b763a759"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-sodium-hydroxide-description-visual",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Description - Description (visual): White granulated or flaked solid</p></div>"
+    },
+    "title": "Description (visual)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Description"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DESC",
+       "display": "Description"
+      }
+     ],
+     "text": "Description - Description (visual)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Visual"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "White granulated or flaked solid"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-sodium-hydroxide-identification-qualitative-reaction",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-sodium-hydroxide-identification-qualitative-reaction",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81158b65d882b763a759"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-sodium-hydroxide-identification-qualitative-reaction",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Identification - Identification (qualitative reaction): Sodium salt: positive</p></div>"
+    },
+    "title": "Identification (qualitative reaction)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Identification"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "IDT",
+       "display": "Identification"
+      }
+     ],
+     "text": "Identification - Identification (qualitative reaction)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "USP <191>"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Sodium salt: positive"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-sodium-hydroxide-assay-titration",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-sodium-hydroxide-assay-titration",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81158b65d882b763a759"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-sodium-hydroxide-assay-titration",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Assay - Assay (titration): ≥ 93 %</p></div>"
+    },
+    "title": "Assay (titration)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Assay"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "ASSAY",
+       "display": "Assay"
+      }
+     ],
+     "text": "Assay - Assay (titration)"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "Titration In-house"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "≥ 93 %"
+       }
+      ],
+      "range": {
+       "low": {
+        "value": 93,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-rm-sodium-hydroxide",
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "spec-rm-sodium-hydroxide",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81158b65d882b763a759"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-rm-sodium-hydroxide",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> spec-rm-sodium-hydroxide</p></div>"
+    },
+    "title": "Specification of raw material Sodium hydroxide",
+    "type": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+       "code": "1244577",
+       "display": "Specification Protocol"
+      }
+     ],
+     "text": "Specification Protocol"
+    },
+    "status": "active",
+    "subjectReference": {
+     "reference": "SubstanceDefinition/rm-sodium-hydroxide"
+    },
+    "action": [
+     {
+      "title": "Release and re-test",
+      "code": {
+       "text": "Timing Group"
+      },
+      "action": [
+       {
+        "title": "Description (visual)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-sodium-hydroxide-description-visual",
+        "description": "Method: Visual"
+       },
+       {
+        "title": "Identification (qualitative reaction)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-sodium-hydroxide-identification-qualitative-reaction",
+        "description": "Method: USP <191>"
+       },
+       {
+        "title": "Assay (titration)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-sodium-hydroxide-assay-titration",
+        "description": "Method: Titration In-house"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/rm-sodium-hydroxide",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "rm-sodium-hydroxide",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81158b65d882b763a759"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Sodium hydroxide</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Raw material (reagent/solvent/catalyst) for Sakuramil synthesis"
+     }
+    ],
+    "name": [
+     {
+      "name": "Sodium hydroxide",
+      "preferred": true
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-tetrahydrofuran-description-visual",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-tetrahydrofuran-description-visual",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81ec9309f5a092442eef"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-tetrahydrofuran-description-visual",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Description - Description (visual): Clear and colorless liquid</p></div>"
+    },
+    "title": "Description (visual)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Description"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DESC",
+       "display": "Description"
+      }
+     ],
+     "text": "Description - Description (visual)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Visual"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Clear and colorless liquid"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-tetrahydrofuran-identification-ir",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-tetrahydrofuran-identification-ir",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81ec9309f5a092442eef"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-tetrahydrofuran-identification-ir",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Identification - Identification (IR): Sample exhibits main absorption at about 2970, 2860, 1460, 1380, 1180, 1070, 910 and 650 cm-1</p></div>"
+    },
+    "title": "Identification (IR)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Identification"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "IDT",
+       "display": "Identification"
+      }
+     ],
+     "text": "Identification - Identification (IR)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "IR USP <197>"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Sample exhibits main absorption at about 2970, 2860, 1460, 1380, 1180, 1070, 910 and 650 cm-1"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-tetrahydrofuran-purity-gc",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-tetrahydrofuran-purity-gc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81ec9309f5a092442eef"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-tetrahydrofuran-purity-gc",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Purity - Purity (GC): ≥ 99.5 %</p></div>"
+    },
+    "title": "Purity (GC)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Purity"
+     }
+    ],
+    "code": {
+     "text": "Purity - Purity (GC)"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "GC USP <621>"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "≥ 99.5 %"
+       }
+      ],
+      "range": {
+       "low": {
+        "value": 99.5,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-rm-tetrahydrofuran",
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "spec-rm-tetrahydrofuran",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81ec9309f5a092442eef"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-rm-tetrahydrofuran",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> spec-rm-tetrahydrofuran</p></div>"
+    },
+    "title": "Specification of raw material Tetrahydrofuran",
+    "type": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+       "code": "1244577",
+       "display": "Specification Protocol"
+      }
+     ],
+     "text": "Specification Protocol"
+    },
+    "status": "active",
+    "subjectReference": {
+     "reference": "SubstanceDefinition/rm-tetrahydrofuran"
+    },
+    "action": [
+     {
+      "title": "Release and re-test",
+      "code": {
+       "text": "Timing Group"
+      },
+      "action": [
+       {
+        "title": "Description (visual)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-tetrahydrofuran-description-visual",
+        "description": "Method: Visual"
+       },
+       {
+        "title": "Identification (IR)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-tetrahydrofuran-identification-ir",
+        "description": "Method: IR USP <197>"
+       },
+       {
+        "title": "Purity (GC)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-tetrahydrofuran-purity-gc",
+        "description": "Method: GC USP <621>"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/rm-tetrahydrofuran",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "rm-tetrahydrofuran",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81ec9309f5a092442eef"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Tetrahydrofuran</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Raw material (reagent/solvent/catalyst) for Sakuramil synthesis"
+     }
+    ],
+    "name": [
+     {
+      "name": "Tetrahydrofuran",
+      "preferred": true
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-water-description-visual",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-water-description-visual",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc817d8758cc2d0c700cf9"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-water-description-visual",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Description - Description (visual): Clear and colorless liquid</p></div>"
+    },
+    "title": "Description (visual)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Description"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DESC",
+       "display": "Description"
+      }
+     ],
+     "text": "Description - Description (visual)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Visual"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Clear and colorless liquid"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-water-water-conductivity",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-water-water-conductivity",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc817d8758cc2d0c700cf9"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-water-water-conductivity",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Water conductivity: Meet requirements</p></div>"
+    },
+    "title": "Water conductivity",
+    "status": "active",
+    "category": [
+     {
+      "text": "Water conductivity"
+     }
+    ],
+    "code": {
+     "text": "Water conductivity"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "USP <645>"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Meet requirements"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-water-total-organic-carbon-toc",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rm-water-total-organic-carbon-toc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc817d8758cc2d0c700cf9"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-water-total-organic-carbon-toc",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Total organic carbon - Total organic carbon (TOC): NMT 0.50 mg/l (500 ppm)</p></div>"
+    },
+    "title": "Total organic carbon (TOC)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Total organic carbon"
+     }
+    ],
+    "code": {
+     "text": "Total organic carbon - Total organic carbon (TOC)"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "USP <643>"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "NMT 0.50 mg/l (500 ppm)"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 0.5,
+        "unit": "mg",
+        "system": "http://unitsofmeasure.org",
+        "code": "mg"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-rm-water",
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "spec-rm-water",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc817d8758cc2d0c700cf9"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-rm-water",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> spec-rm-water</p></div>"
+    },
+    "title": "Specification of raw material Water",
+    "type": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+       "code": "1244577",
+       "display": "Specification Protocol"
+      }
+     ],
+     "text": "Specification Protocol"
+    },
+    "status": "active",
+    "subjectReference": {
+     "reference": "SubstanceDefinition/rm-water"
+    },
+    "action": [
+     {
+      "title": "Release and re-test",
+      "code": {
+       "text": "Timing Group"
+      },
+      "action": [
+       {
+        "title": "Description (visual)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-water-description-visual",
+        "description": "Method: Visual"
+       },
+       {
+        "title": "Water conductivity",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-water-water-conductivity",
+        "description": "Method: USP <645>"
+       },
+       {
+        "title": "Total organic carbon (TOC)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-water-total-organic-carbon-toc",
+        "description": "Method: USP <643>"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/rm-water",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "rm-water",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc817d8758cc2d0c700cf9"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Water</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Raw material (reagent/solvent/catalyst) for Sakuramil synthesis"
+     }
+    ],
+    "name": [
+     {
+      "name": "Water",
+      "preferred": true
+     }
+    ]
+   }
+  }
+ ]
+}

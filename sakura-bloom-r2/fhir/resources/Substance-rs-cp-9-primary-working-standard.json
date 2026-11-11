@@ -1,0 +1,33 @@
+{
+ "resourceType": "Substance",
+ "id": "rs-cp-9-primary-working-standard",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81eea2dedadb29bbf31e"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> CP-9 primary (working) reference standard: laboratory-scale batch SAKU_20220114 of Sakuramil, controlled in line with the drug substance specification. - lot SAKU_20220114</p></div>"
+ },
+ "identifier": [
+  {
+   "system": "http://example.org/sakura-bloom-r2/fhir/reference-standard",
+   "value": "SAKU_20220114"
+  }
+ ],
+ "instance": true,
+ "status": "active",
+ "category": [
+  {
+   "text": "Reference standard"
+  }
+ ],
+ "code": {
+  "reference": {
+   "reference": "SubstanceDefinition/sakuramil"
+  }
+ },
+ "description": "CP-9 primary (working) reference standard: laboratory-scale batch SAKU_20220114 of Sakuramil, controlled in line with the drug substance specification."
+}

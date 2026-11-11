@@ -1,0 +1,44 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-dp-udu-hplc",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8196bde0c1ce7d54832e"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-udu-hplc",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Uniformity of dosage units - Uniformity of dosage units (content uniformity, HPLC): Batch release It meets the criteria of the Content Uniformity Test of the Ph. Eur., USP and JP.</p></div>"
+ },
+ "title": "Uniformity of dosage units (content uniformity, HPLC)",
+ "status": "active",
+ "category": [
+  {
+   "text": "Uniformity of dosage units"
+  }
+ ],
+ "code": {
+  "text": "Uniformity of dosage units - Uniformity of dosage units (content uniformity, HPLC)"
+ },
+ "permittedDataType": [
+  "string"
+ ],
+ "method": {
+  "text": "Content Uniformity HPLC method"
+ },
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "It meets the criteria of the Content Uniformity Test of the Ph. Eur., USP and JP."
+    }
+   ],
+   "context": {
+    "text": "Batch release"
+   }
+  }
+ ]
+}

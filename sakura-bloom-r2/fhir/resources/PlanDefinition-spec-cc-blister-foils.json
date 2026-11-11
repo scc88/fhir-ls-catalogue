@@ -1,0 +1,104 @@
+{
+ "resourceType": "PlanDefinition",
+ "id": "spec-cc-blister-foils",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81d18aa0cd2f24d28718"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-cc-blister-foils",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> spec-cc-blister-foils</p></div>"
+ },
+ "title": "Primary packaging specification - PA/AL/PVC forming foil and aluminium lidding foil",
+ "type": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+    "code": "container-specification",
+    "display": "Container Specification"
+   }
+  ],
+  "text": "Container Specification"
+ },
+ "status": "active",
+ "subjectReference": {
+  "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+ },
+ "action": [
+  {
+   "title": "Incoming inspection",
+   "code": {
+    "text": "Timing Group"
+   },
+   "action": [
+    {
+     "title": "PA/AL/PVC foil - Cleanliness",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-cc-blister-foils-pa-al-pvc-foil-cleanliness",
+     "description": "Method: Visual examination"
+    },
+    {
+     "title": "PA/AL/PVC foil - Appearance",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-cc-blister-foils-pa-al-pvc-foil-appearance",
+     "description": "Method: Visual examination"
+    },
+    {
+     "title": "PA/AL/PVC foil - Thickness (total)",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-cc-blister-foils-pa-al-pvc-foil-thickness-total",
+     "description": "Method: Dimension testing with suitable measuring equipment"
+    },
+    {
+     "title": "PA/AL/PVC foil - Identity IR (PA film)",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-cc-blister-foils-pa-al-pvc-foil-identity-ir-pa-film",
+     "description": "Method: Spectroscopic testing"
+    },
+    {
+     "title": "PA/AL/PVC foil - Identity IR (PVC film)",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-cc-blister-foils-pa-al-pvc-foil-identity-ir-pvc-film",
+     "description": "Method: Spectroscopic testing"
+    },
+    {
+     "title": "Aluminium foil - Cleanliness",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-cc-blister-foils-aluminium-foil-cleanliness",
+     "description": "Method: Visual examination"
+    },
+    {
+     "title": "Aluminium foil - Thickness (total)",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-cc-blister-foils-aluminium-foil-thickness-total",
+     "description": "Method: Dimension testing with suitable measuring equipment"
+    },
+    {
+     "title": "Aluminium foil - Identity IR (heat seal lacquer)",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-cc-blister-foils-aluminium-foil-identity-ir-heat-seal-lacquer",
+     "description": "Method: Spectroscopic testing"
+    }
+   ]
+  }
+ ]
+}

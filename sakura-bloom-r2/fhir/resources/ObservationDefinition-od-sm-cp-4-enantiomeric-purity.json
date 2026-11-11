@@ -1,0 +1,63 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-sm-cp-4-enantiomeric-purity",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8158b7e7df2db5a8b4ee"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-4-enantiomeric-purity",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Enantiomeric purity: NMT 1.5 %</p></div>"
+ },
+ "title": "Enantiomeric purity",
+ "status": "active",
+ "category": [
+  {
+   "text": "Enantiomeric purity"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "enantiomeric-purity",
+    "display": "Enantiomeric purity"
+   }
+  ],
+  "text": "Enantiomeric purity"
+ },
+ "permittedDataType": [
+  "Quantity"
+ ],
+ "method": {
+  "text": "HPLC In-house"
+ },
+ "permittedUnit": [
+  {
+   "system": "http://unitsofmeasure.org",
+   "code": "%",
+   "display": "%"
+  }
+ ],
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "NMT 1.5 %"
+    }
+   ],
+   "range": {
+    "high": {
+     "value": 1.5,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  }
+ ]
+}

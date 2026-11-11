@@ -1,0 +1,48 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-ex-coating-premix-red-identity-of-iron",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8101bbdfeab0c7f1d2ed"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-coating-premix-red-identity-of-iron",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Identification - Identity of iron: Positive</p></div>"
+ },
+ "title": "Identity of iron",
+ "status": "active",
+ "category": [
+  {
+   "text": "Identification"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "IDT",
+    "display": "Identification"
+   }
+  ],
+  "text": "Identification - Identity of iron"
+ },
+ "permittedDataType": [
+  "string"
+ ],
+ "method": {
+  "text": "Chemical identity reaction"
+ },
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "Positive"
+    }
+   ]
+  }
+ ]
+}

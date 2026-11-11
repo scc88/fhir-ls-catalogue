@@ -1,0 +1,48 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-rm-methylene-chloride-identification-gc",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc818dbc23e08be8cc55e0"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-methylene-chloride-identification-gc",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Identification - Identification (GC): Principal peak corresponds to that of the reference standard</p></div>"
+ },
+ "title": "Identification (GC)",
+ "status": "active",
+ "category": [
+  {
+   "text": "Identification"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "IDT",
+    "display": "Identification"
+   }
+  ],
+  "text": "Identification - Identification (GC)"
+ },
+ "permittedDataType": [
+  "string"
+ ],
+ "method": {
+  "text": "GC USP <621>"
+ },
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "Principal peak corresponds to that of the reference standard"
+    }
+   ]
+  }
+ ]
+}

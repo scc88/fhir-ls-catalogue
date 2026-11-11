@@ -1,0 +1,48 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-cc-hdpe-bottle-38-mm-child-resistant-closure-colour",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8172acd6d7e4b3f69475"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-cc-hdpe-bottle-38-mm-child-resistant-closure-colour",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Description - 38 mm child resistant closure - Colour: Screw cap: Outer: White, Inner: Colorless; Liner: Upper: white, Lower: silver</p></div>"
+ },
+ "title": "38 mm child resistant closure - Colour",
+ "status": "active",
+ "category": [
+  {
+   "text": "Description"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "DESC",
+    "display": "Description"
+   }
+  ],
+  "text": "Description - 38 mm child resistant closure - Colour"
+ },
+ "permittedDataType": [
+  "string"
+ ],
+ "method": {
+  "text": "Visual examination"
+ },
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "Screw cap: Outer: White, Inner: Colorless; Liner: Upper: white, Lower: silver"
+    }
+   ]
+  }
+ ]
+}

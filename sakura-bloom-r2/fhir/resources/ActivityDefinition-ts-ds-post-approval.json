@@ -1,0 +1,27 @@
+{
+ "resourceType": "ActivityDefinition",
+ "id": "ts-ds-post-approval",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ActivityDefinition-test-drug-pq"
+  ]
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ActivityDefinition/ts-ds-post-approval",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ActivityDefinition</b> ts-ds-post-approval</p></div>"
+ },
+ "title": "DS post-approval stability test set (description, ID IR, ID HPLC, related substances, assay)",
+ "status": "active",
+ "kind": "ServiceRequest",
+ "observationRequirement": [
+  "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-appearance",
+  "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-sakuramil-ir",
+  "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-sakuramil-hplc",
+  "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-assay-sakuramil-dried-basis",
+  "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-cp-9-1",
+  "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-cp-8",
+  "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-individual-unspecified-impurities",
+  "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-total-impurities"
+ ]
+}

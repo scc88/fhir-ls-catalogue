@@ -1,0 +1,64 @@
+{
+ "resourceType": "PlanDefinition",
+ "id": "spec-rm-tetrahydrofuran",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81ec9309f5a092442eef"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-rm-tetrahydrofuran",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> spec-rm-tetrahydrofuran</p></div>"
+ },
+ "title": "Specification of raw material Tetrahydrofuran",
+ "type": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+    "code": "1244577",
+    "display": "Specification Protocol"
+   }
+  ],
+  "text": "Specification Protocol"
+ },
+ "status": "active",
+ "subjectReference": {
+  "reference": "SubstanceDefinition/rm-tetrahydrofuran"
+ },
+ "action": [
+  {
+   "title": "Release and re-test",
+   "code": {
+    "text": "Timing Group"
+   },
+   "action": [
+    {
+     "title": "Description (visual)",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-tetrahydrofuran-description-visual",
+     "description": "Method: Visual"
+    },
+    {
+     "title": "Identification (IR)",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-tetrahydrofuran-identification-ir",
+     "description": "Method: IR USP <197>"
+    },
+    {
+     "title": "Purity (GC)",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-tetrahydrofuran-purity-gc",
+     "description": "Method: GC USP <621>"
+    }
+   ]
+  }
+ ]
+}

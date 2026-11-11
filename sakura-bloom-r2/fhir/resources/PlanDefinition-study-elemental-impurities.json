@@ -1,0 +1,82 @@
+{
+ "resourceType": "PlanDefinition",
+ "id": "study-elemental-impurities",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8146a8fdfd758f88a1d1"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/study-elemental-impurities",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> Risk assessment per ICH Q3D: Class 1, 2A, 2B (Pd), 3 (Li) and other elements (Mg, B) screened in 12 batches.</p></div>"
+ },
+ "title": "ICH Q3D elemental impurities screening of Sakuramil drug substance (ICP-MS)",
+ "type": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+    "code": "1244577",
+    "display": "Specification Protocol"
+   }
+  ],
+  "text": "Specification Protocol"
+ },
+ "status": "active",
+ "subjectReference": {
+  "reference": "SubstanceDefinition/sakuramil"
+ },
+ "description": "Risk assessment per ICH Q3D: Class 1, 2A, 2B (Pd), 3 (Li) and other elements (Mg, B) screened in 12 batches.",
+ "action": [
+  {
+   "title": "Elemental screening",
+   "action": [
+    {
+     "title": "Cd",
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-elemental-cd"
+    },
+    {
+     "title": "Pb",
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-elemental-pb"
+    },
+    {
+     "title": "As",
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-elemental-as"
+    },
+    {
+     "title": "Hg",
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-elemental-hg"
+    },
+    {
+     "title": "Co",
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-elemental-co"
+    },
+    {
+     "title": "V",
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-elemental-v"
+    },
+    {
+     "title": "Ni",
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-elemental-ni"
+    },
+    {
+     "title": "Pd",
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-elemental-pd"
+    },
+    {
+     "title": "Li",
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-elemental-li"
+    },
+    {
+     "title": "Mg",
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-elemental-mg"
+    },
+    {
+     "title": "B",
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-elemental-b"
+    }
+   ]
+  }
+ ]
+}

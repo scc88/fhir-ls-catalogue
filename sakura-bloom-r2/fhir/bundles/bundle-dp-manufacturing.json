@@ -1,0 +1,4675 @@
+{
+ "resourceType": "Bundle",
+ "id": "bundle-dp-manufacturing",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-product-manufacturing-pq"
+  ]
+ },
+ "identifier": {
+  "system": "http://example.org/sakura-bloom-r2/fhir/bundle-id",
+  "value": "bundle-dp-manufacturing"
+ },
+ "type": "collection",
+ "timestamp": "2026-11-08T00:00:00Z",
+ "entry": [
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/DocumentReference/doc-dp-process-flow-diagram",
+   "resource": {
+    "resourceType": "DocumentReference",
+    "id": "doc-dp-process-flow-diagram",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DocumentReference-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc817e8d67fb0358c483c8"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DocumentReference</b> Figure 1 Flow diagram for the manufacturing process of Sakura Bloom 20 mg film-coated tablet (2.3.3.DP.M.2)</p></div>"
+    },
+    "status": "current",
+    "type": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/diagram-type",
+       "code": "ProcessFlowDiagram",
+       "display": "Process Flow Diagram"
+      }
+     ],
+     "text": "Process Flow Diagram"
+    },
+    "description": "Figure 1 Flow diagram for the manufacturing process of Sakura Bloom 20 mg film-coated tablet (2.3.3.DP.M.2)",
+    "content": [
+     {
+      "attachment": {
+       "contentType": "text/html",
+       "url": "https://ichm4q.notion.site/2a317984c9fc817e8d67fb0358c483c8",
+       "title": "Figure 1 Flow diagram for the manufacturing process of Sakura Bloom 20 mg film-coated tablet (2.3.3.DP.M.2)"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/DeviceDefinition/eq-bin-blender",
+   "resource": {
+    "resourceType": "DeviceDefinition",
+    "id": "eq-bin-blender",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DeviceDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc817e8d67fb0358c483c8"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DeviceDefinition</b> Bin blender (diffusion mixer)</p></div>"
+    },
+    "deviceName": [
+     {
+      "name": "Bin blender (diffusion mixer)",
+      "type": "user-friendly-name"
+     }
+    ],
+    "classification": [
+     {
+      "type": {
+       "text": "SUPAC Class: diffusion mixer; Subclass: bin blender"
+      }
+     }
+    ],
+    "property": [
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/device-property",
+         "code": "Capacity",
+         "display": "Capacity"
+        }
+       ],
+       "text": "Capacity"
+      },
+      "valueQuantity": {
+       "value": 500,
+       "unit": "L",
+       "system": "http://unitsofmeasure.org",
+       "code": "L"
+      }
+     },
+     {
+      "type": {
+       "text": "Automation"
+      },
+      "valueBoolean": true
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/DeviceDefinition/eq-fluid-bed-granulator",
+   "resource": {
+    "resourceType": "DeviceDefinition",
+    "id": "eq-fluid-bed-granulator",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DeviceDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc817e8d67fb0358c483c8"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DeviceDefinition</b> Fluidized bed granulator / dryer</p></div>"
+    },
+    "deviceName": [
+     {
+      "name": "Fluidized bed granulator / dryer",
+      "type": "user-friendly-name"
+     }
+    ],
+    "classification": [
+     {
+      "type": {
+       "text": "SUPAC Class: wet granulator; Subclass: fluidized bed granulator (dryer integrated)"
+      }
+     }
+    ],
+    "property": [
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/device-property",
+         "code": "Capacity",
+         "display": "Capacity"
+        }
+       ],
+       "text": "Capacity"
+      },
+      "valueQuantity": {
+       "value": 750,
+       "unit": "L",
+       "system": "http://unitsofmeasure.org",
+       "code": "L"
+      }
+     },
+     {
+      "type": {
+       "text": "Automation"
+      },
+      "valueBoolean": true
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/DeviceDefinition/eq-screening-mill",
+   "resource": {
+    "resourceType": "DeviceDefinition",
+    "id": "eq-screening-mill",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DeviceDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc817e8d67fb0358c483c8"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DeviceDefinition</b> Screening mill (oscillating bar)</p></div>"
+    },
+    "deviceName": [
+     {
+      "name": "Screening mill (oscillating bar)",
+      "type": "user-friendly-name"
+     }
+    ],
+    "classification": [
+     {
+      "type": {
+       "text": "SUPAC Class: screening mill; Subclass: oscillating bar"
+      }
+     }
+    ],
+    "property": [
+     {
+      "type": {
+       "text": "Speed range"
+      },
+      "valueRange": {
+       "low": {
+        "value": 30,
+        "unit": "rpm",
+        "system": "http://unitsofmeasure.org",
+        "code": "/min"
+       },
+       "high": {
+        "value": 108,
+        "unit": "rpm",
+        "system": "http://unitsofmeasure.org",
+        "code": "/min"
+       }
+      }
+     },
+     {
+      "type": {
+       "text": "Automation"
+      },
+      "valueBoolean": true
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/DeviceDefinition/eq-rotary-tablet-press",
+   "resource": {
+    "resourceType": "DeviceDefinition",
+    "id": "eq-rotary-tablet-press",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DeviceDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc817e8d67fb0358c483c8"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DeviceDefinition</b> Rotary tablet press (power assisted)</p></div>"
+    },
+    "deviceName": [
+     {
+      "name": "Rotary tablet press (power assisted)",
+      "type": "user-friendly-name"
+     }
+    ],
+    "classification": [
+     {
+      "type": {
+       "text": "SUPAC Class: rotary tablet press; Subclass: power assisted"
+      }
+     }
+    ],
+    "property": [
+     {
+      "type": {
+       "text": "Speed range"
+      },
+      "valueRange": {
+       "low": {
+        "value": 10,
+        "unit": "rpm",
+        "system": "http://unitsofmeasure.org",
+        "code": "/min"
+       },
+       "high": {
+        "value": 90,
+        "unit": "rpm",
+        "system": "http://unitsofmeasure.org",
+        "code": "/min"
+       }
+      }
+     },
+     {
+      "type": {
+       "text": "Automation"
+      },
+      "valueBoolean": true
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/DeviceDefinition/eq-coating-vessel",
+   "resource": {
+    "resourceType": "DeviceDefinition",
+    "id": "eq-coating-vessel",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DeviceDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc817e8d67fb0358c483c8"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DeviceDefinition</b> Vessel with stirrer (coating suspension)</p></div>"
+    },
+    "deviceName": [
+     {
+      "name": "Vessel with stirrer (coating suspension)",
+      "type": "user-friendly-name"
+     }
+    ],
+    "classification": [
+     {
+      "type": {
+       "text": "Vessel with stirrer"
+      }
+     }
+    ],
+    "property": [
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/device-property",
+         "code": "Capacity",
+         "display": "Capacity"
+        }
+       ],
+       "text": "Capacity"
+      },
+      "valueQuantity": {
+       "value": 750,
+       "unit": "L",
+       "system": "http://unitsofmeasure.org",
+       "code": "L"
+      }
+     },
+     {
+      "type": {
+       "text": "Automation"
+      },
+      "valueBoolean": true
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/DeviceDefinition/eq-pan-coater",
+   "resource": {
+    "resourceType": "DeviceDefinition",
+    "id": "eq-pan-coater",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DeviceDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc817e8d67fb0358c483c8"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DeviceDefinition</b> Pan coater (perforated coating system)</p></div>"
+    },
+    "deviceName": [
+     {
+      "name": "Pan coater (perforated coating system)",
+      "type": "user-friendly-name"
+     }
+    ],
+    "classification": [
+     {
+      "type": {
+       "text": "SUPAC Class: pan coating; Subclass: perforated coating system"
+      }
+     }
+    ],
+    "property": [
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/device-property",
+         "code": "Capacity",
+         "display": "Capacity"
+        }
+       ],
+       "text": "Capacity"
+      },
+      "valueRange": {
+       "low": {
+        "value": 300,
+        "unit": "L",
+        "system": "http://unitsofmeasure.org",
+        "code": "L"
+       },
+       "high": {
+        "value": 390,
+        "unit": "L",
+        "system": "http://unitsofmeasure.org",
+        "code": "L"
+       }
+      }
+     },
+     {
+      "type": {
+       "text": "Automation"
+      },
+      "valueBoolean": true
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/cpp-dp-3-inlet-air-volume",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "cpp-dp-3-inlet-air-volume",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc817e8d67fb0358c483c8"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/cpp-dp-3-inlet-air-volume",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Critical process parameter - Granulation - inlet air volume: 40 - 45 m³/min</p></div>"
+    },
+    "title": "Granulation - inlet air volume",
+    "status": "active",
+    "category": [
+     {
+      "text": "Critical process parameter"
+     }
+    ],
+    "code": {
+     "text": "Critical process parameter - Granulation - inlet air volume"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "40 - 45 m³/min"
+       },
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-criticality-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/observation-qualified-value-criticality",
+           "code": "critical",
+           "display": "Critical"
+          }
+         ],
+         "text": "Critical"
+        }
+       }
+      ],
+      "range": {
+       "low": {
+        "value": 40,
+        "unit": "m³/min",
+        "system": "http://unitsofmeasure.org",
+        "code": "m3/min"
+       },
+       "high": {
+        "value": 45,
+        "unit": "m³/min",
+        "system": "http://unitsofmeasure.org",
+        "code": "m3/min"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/cpp-dp-3-inlet-air-temperature",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "cpp-dp-3-inlet-air-temperature",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc817e8d67fb0358c483c8"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/cpp-dp-3-inlet-air-temperature",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Critical process parameter - Granulation - inlet air temperature: 75 - 85 °C</p></div>"
+    },
+    "title": "Granulation - inlet air temperature",
+    "status": "active",
+    "category": [
+     {
+      "text": "Critical process parameter"
+     }
+    ],
+    "code": {
+     "text": "Critical process parameter - Granulation - inlet air temperature"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "75 - 85 °C"
+       },
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-criticality-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/observation-qualified-value-criticality",
+           "code": "critical",
+           "display": "Critical"
+          }
+         ],
+         "text": "Critical"
+        }
+       }
+      ],
+      "range": {
+       "low": {
+        "value": 75,
+        "unit": "°C",
+        "system": "http://unitsofmeasure.org",
+        "code": "Cel"
+       },
+       "high": {
+        "value": 85,
+        "unit": "°C",
+        "system": "http://unitsofmeasure.org",
+        "code": "Cel"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/cpp-dp-3-spray-rate",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "cpp-dp-3-spray-rate",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc817e8d67fb0358c483c8"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/cpp-dp-3-spray-rate",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Critical process parameter - Granulation - spray rate: 900 - 1100 g/min</p></div>"
+    },
+    "title": "Granulation - spray rate",
+    "status": "active",
+    "category": [
+     {
+      "text": "Critical process parameter"
+     }
+    ],
+    "code": {
+     "text": "Critical process parameter - Granulation - spray rate"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "900 - 1100 g/min"
+       },
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-criticality-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/observation-qualified-value-criticality",
+           "code": "critical",
+           "display": "Critical"
+          }
+         ],
+         "text": "Critical"
+        }
+       }
+      ],
+      "range": {
+       "low": {
+        "value": 900,
+        "unit": "g/min",
+        "system": "http://unitsofmeasure.org",
+        "code": "g/min"
+       },
+       "high": {
+        "value": 1100,
+        "unit": "g/min",
+        "system": "http://unitsofmeasure.org",
+        "code": "g/min"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-3-granule-particle-size",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "ipc-dp-3-granule-particle-size",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc817e8d67fb0358c483c8"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-3-granule-particle-size",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> In-process control - Granule particle size: Target: 150 µm; Range: 90-210 µm</p></div>"
+    },
+    "title": "Granule particle size",
+    "status": "active",
+    "category": [
+     {
+      "text": "In-process control"
+     }
+    ],
+    "code": {
+     "text": "In-process control - Granule particle size"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "Laser diffraction particle size distribution analyzer"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Target: 150 µm; Range: 90-210 µm"
+       },
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-target-pq",
+        "valueQuantity": {
+         "value": 150,
+         "unit": "µm",
+         "system": "http://unitsofmeasure.org",
+         "code": "um"
+        }
+       }
+      ],
+      "range": {
+       "low": {
+        "value": 90,
+        "unit": "µm",
+        "system": "http://unitsofmeasure.org",
+        "code": "um"
+       },
+       "high": {
+        "value": 210,
+        "unit": "µm",
+        "system": "http://unitsofmeasure.org",
+        "code": "um"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-4-lod",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "ipc-dp-4-lod",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc817e8d67fb0358c483c8"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-4-lod",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> In-process control - Loss on drying (granules): Target: 1 %; Range: ≤ 2 %</p></div>"
+    },
+    "title": "Loss on drying (granules)",
+    "status": "active",
+    "category": [
+     {
+      "text": "In-process control"
+     }
+    ],
+    "code": {
+     "text": "In-process control - Loss on drying (granules)"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "Weighing"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Target: 1 %; Range: ≤ 2 %"
+       },
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-target-pq",
+        "valueQuantity": {
+         "value": 1,
+         "unit": "%",
+         "system": "http://unitsofmeasure.org",
+         "code": "%"
+        }
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 2,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/cpp-dp-8-rotation-speed",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "cpp-dp-8-rotation-speed",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc817e8d67fb0358c483c8"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/cpp-dp-8-rotation-speed",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Critical process parameter - Compression - rotation speed: 20 - 30 rpm</p></div>"
+    },
+    "title": "Compression - rotation speed",
+    "status": "active",
+    "category": [
+     {
+      "text": "Critical process parameter"
+     }
+    ],
+    "code": {
+     "text": "Critical process parameter - Compression - rotation speed"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "20 - 30 rpm"
+       },
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-criticality-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/observation-qualified-value-criticality",
+           "code": "critical",
+           "display": "Critical"
+          }
+         ],
+         "text": "Critical"
+        }
+       }
+      ],
+      "range": {
+       "low": {
+        "value": 20,
+        "unit": "rpm",
+        "system": "http://unitsofmeasure.org",
+        "code": "/min"
+       },
+       "high": {
+        "value": 30,
+        "unit": "rpm",
+        "system": "http://unitsofmeasure.org",
+        "code": "/min"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/cpp-dp-8-compression-force",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "cpp-dp-8-compression-force",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc817e8d67fb0358c483c8"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/cpp-dp-8-compression-force",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Critical process parameter - Compression - compression force: 6 - 14 kN</p></div>"
+    },
+    "title": "Compression - compression force",
+    "status": "active",
+    "category": [
+     {
+      "text": "Critical process parameter"
+     }
+    ],
+    "code": {
+     "text": "Critical process parameter - Compression - compression force"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "6 - 14 kN"
+       },
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-criticality-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/observation-qualified-value-criticality",
+           "code": "critical",
+           "display": "Critical"
+          }
+         ],
+         "text": "Critical"
+        }
+       }
+      ],
+      "range": {
+       "low": {
+        "value": 6,
+        "unit": "kN",
+        "system": "http://unitsofmeasure.org",
+        "code": "kN"
+       },
+       "high": {
+        "value": 14,
+        "unit": "kN",
+        "system": "http://unitsofmeasure.org",
+        "code": "kN"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-8-tablet-weight",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "ipc-dp-8-tablet-weight",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc817e8d67fb0358c483c8"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-8-tablet-weight",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> In-process control - Uncoated tablet weight: Target: 194.0 mg; Range: 188.2–199.8 mg</p></div>"
+    },
+    "title": "Uncoated tablet weight",
+    "status": "active",
+    "category": [
+     {
+      "text": "In-process control"
+     }
+    ],
+    "code": {
+     "text": "In-process control - Uncoated tablet weight"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "Weighing"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Target: 194.0 mg; Range: 188.2–199.8 mg"
+       },
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-target-pq",
+        "valueQuantity": {
+         "value": 194.0,
+         "unit": "mg",
+         "system": "http://unitsofmeasure.org",
+         "code": "mg"
+        }
+       }
+      ],
+      "range": {
+       "low": {
+        "value": 188.2,
+        "unit": "mg",
+        "system": "http://unitsofmeasure.org",
+        "code": "mg"
+       },
+       "high": {
+        "value": 199.8,
+        "unit": "mg",
+        "system": "http://unitsofmeasure.org",
+        "code": "mg"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-8-weight-variation",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "ipc-dp-8-weight-variation",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc817e8d67fb0358c483c8"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-8-weight-variation",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> In-process control - Uncoated tablet weight variation: Target: 100.0 %; Range: 95.0 % - 105 %</p></div>"
+    },
+    "title": "Uncoated tablet weight variation",
+    "status": "active",
+    "category": [
+     {
+      "text": "In-process control"
+     }
+    ],
+    "code": {
+     "text": "In-process control - Uncoated tablet weight variation"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "Weighing"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Target: 100.0 %; Range: 95.0 % - 105 %"
+       },
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-target-pq",
+        "valueQuantity": {
+         "value": 100.0,
+         "unit": "%",
+         "system": "http://unitsofmeasure.org",
+         "code": "%"
+        }
+       }
+      ],
+      "range": {
+       "low": {
+        "value": 95.0,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       },
+       "high": {
+        "value": 105,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-8-hardness",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "ipc-dp-8-hardness",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc817e8d67fb0358c483c8"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-8-hardness",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> In-process control - Uncoated tablet hardness: Target: 7.3 kp; Range: 3–11.5 kp</p></div>"
+    },
+    "title": "Uncoated tablet hardness",
+    "status": "active",
+    "category": [
+     {
+      "text": "In-process control"
+     }
+    ],
+    "code": {
+     "text": "In-process control - Uncoated tablet hardness"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "According to compendial requirement"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Target: 7.3 kp; Range: 3–11.5 kp"
+       },
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-target-pq",
+        "valueQuantity": {
+         "value": 7.3,
+         "unit": "kp",
+         "system": "http://unitsofmeasure.org",
+         "code": "kgf"
+        }
+       }
+      ],
+      "range": {
+       "low": {
+        "value": 3,
+        "unit": "kp",
+        "system": "http://unitsofmeasure.org",
+        "code": "kgf"
+       },
+       "high": {
+        "value": 11.5,
+        "unit": "kp",
+        "system": "http://unitsofmeasure.org",
+        "code": "kgf"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-8-assay",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "ipc-dp-8-assay",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc817e8d67fb0358c483c8"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-8-assay",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> In-process control - Assay (tablet cores): 95.0 - 105.0 %</p></div>"
+    },
+    "title": "Assay (tablet cores)",
+    "status": "active",
+    "category": [
+     {
+      "text": "In-process control"
+     }
+    ],
+    "code": {
+     "text": "In-process control - Assay (tablet cores)"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "95.0 - 105.0 %"
+       }
+      ],
+      "range": {
+       "low": {
+        "value": 95.0,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       },
+       "high": {
+        "value": 105.0,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-8-udu",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "ipc-dp-8-udu",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc817e8d67fb0358c483c8"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-8-udu",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> In-process control - Uniformity of dosage units (tablet cores): Meets the requirements of Ph. Eur., USP and JP harmonized procedure</p></div>"
+    },
+    "title": "Uniformity of dosage units (tablet cores)",
+    "status": "active",
+    "category": [
+     {
+      "text": "In-process control"
+     }
+    ],
+    "code": {
+     "text": "In-process control - Uniformity of dosage units (tablet cores)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "According to compendial requirement"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Meets the requirements of Ph. Eur., USP and JP harmonized procedure"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-10-lod",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "ipc-dp-10-lod",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc817e8d67fb0358c483c8"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-10-lod",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> In-process control - Loss on drying (film-coated tablets): Target: 1 %; Range: ≤ 2 %</p></div>"
+    },
+    "title": "Loss on drying (film-coated tablets)",
+    "status": "active",
+    "category": [
+     {
+      "text": "In-process control"
+     }
+    ],
+    "code": {
+     "text": "In-process control - Loss on drying (film-coated tablets)"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "Weighing"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Target: 1 %; Range: ≤ 2 %"
+       },
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-target-pq",
+        "valueQuantity": {
+         "value": 1,
+         "unit": "%",
+         "system": "http://unitsofmeasure.org",
+         "code": "%"
+        }
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 2,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-10-coat-weight-gain",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "ipc-dp-10-coat-weight-gain",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc817e8d67fb0358c483c8"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-10-coat-weight-gain",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> In-process control - Film coat weight gain: 2 - 4 % of tablet weight</p></div>"
+    },
+    "title": "Film coat weight gain",
+    "status": "active",
+    "category": [
+     {
+      "text": "In-process control"
+     }
+    ],
+    "code": {
+     "text": "In-process control - Film coat weight gain"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "Weight check"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "2 - 4 % of tablet weight"
+       }
+      ],
+      "range": {
+       "low": {
+        "value": 2,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       },
+       "high": {
+        "value": 4,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-11-appearance",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "ipc-dp-11-appearance",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc817e8d67fb0358c483c8"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-11-appearance",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> In-process control - Appearance (inspection): Visual observation</p></div>"
+    },
+    "title": "Appearance (inspection)",
+    "status": "active",
+    "category": [
+     {
+      "text": "In-process control"
+     }
+    ],
+    "code": {
+     "text": "In-process control - Appearance (inspection)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Visual examination"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Visual observation"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-11-identification",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "ipc-dp-11-identification",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc817e8d67fb0358c483c8"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-11-identification",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> In-process control - Identification (NIR, inspection): Identification using an NIR method</p></div>"
+    },
+    "title": "Identification (NIR, inspection)",
+    "status": "active",
+    "category": [
+     {
+      "text": "In-process control"
+     }
+    ],
+    "code": {
+     "text": "In-process control - Identification (NIR, inspection)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "NIR method"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Identification using an NIR method"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/dp-manufacturing-process",
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "dp-manufacturing-process",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc817e8d67fb0358c483c8"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/dp-manufacturing-process",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> Wet (fluid-bed) granulation, blending, compression and film-coating. Commercial batch size 520.00 kg (approx. 2,600,000 tablets). No overages. Critical steps: granulation (step 3) and compression (step 8); granule particle size and uncoated tablet hardness are controlled within a design space to ensure dissolution.</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-plan-document-reference-pq",
+      "valueReference": {
+       "reference": "DocumentReference/doc-dp-process-flow-diagram"
+      }
+     }
+    ],
+    "title": "Manufacturing process of Sakura Bloom 20 mg film-coated tablets (Aparna Pharmaceutical Manufacturing)",
+    "type": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+       "code": "manufacturing-process",
+       "display": "Manufacturing Process"
+      }
+     ],
+     "text": "Manufacturing Process"
+    },
+    "status": "active",
+    "subjectReference": {
+     "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+    },
+    "description": "Wet (fluid-bed) granulation, blending, compression and film-coating. Commercial batch size 520.00 kg (approx. 2,600,000 tablets). No overages. Critical steps: granulation (step 3) and compression (step 8); granule particle size and uncoated tablet hardness are controlled within a design space to ensure dissolution.",
+    "action": [
+     {
+      "title": "Overall process",
+      "code": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step",
+         "code": "overall process",
+         "display": "Overall Process"
+        }
+       ],
+       "text": "Overall Process"
+      },
+      "action": [
+       {
+        "extension": [
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-step-scale-pq",
+          "valueCoding": {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step-scale",
+           "code": "PROD",
+           "display": "Production Scale"
+          }
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Cellulose, microcrystalline"
+            }
+           },
+           {
+            "url": "value",
+            "valueQuantity": {
+             "value": 52.0,
+             "unit": "kg",
+             "system": "http://unitsofmeasure.org",
+             "code": "kg"
+            }
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Croscarmellose sodium"
+            }
+           },
+           {
+            "url": "value",
+            "valueQuantity": {
+             "value": 26.0,
+             "unit": "kg",
+             "system": "http://unitsofmeasure.org",
+             "code": "kg"
+            }
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Lactose monohydrate"
+            }
+           },
+           {
+            "url": "value",
+            "valueQuantity": {
+             "value": 353.6,
+             "unit": "kg",
+             "system": "http://unitsofmeasure.org",
+             "code": "kg"
+            }
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Sakuramil"
+            }
+           },
+           {
+            "url": "value",
+            "valueQuantity": {
+             "value": 52.0,
+             "unit": "kg",
+             "system": "http://unitsofmeasure.org",
+             "code": "kg"
+            }
+           }
+          ]
+         }
+        ],
+        "title": "Step 1 - Pre-blending",
+        "description": "Blend 52.000 kg of cellulose, microcrystalline, 26.000 kg of croscarmellose sodium, 353.600 kg of lactose monohydrate and 52.000 kg of Sakuramil drug substance in a diffusion mixer (bin blender).",
+        "code": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step",
+           "code": "Mixing of ingredients",
+           "display": "Mixing of ingredients"
+          }
+         ],
+         "text": "Mixing of ingredients"
+        },
+        "participant": [
+         {
+          "type": "device",
+          "typeReference": {
+           "reference": "DeviceDefinition/eq-bin-blender"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/microcrystalline-cellulose"
+             }
+            }
+           ],
+           "display": "Cellulose, microcrystalline"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "StartingMaterial",
+             "display": "Starting Material"
+            }
+           ],
+           "text": "Starting Material"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/croscarmellose-sodium"
+             }
+            }
+           ],
+           "display": "Croscarmellose sodium"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "StartingMaterial",
+             "display": "Starting Material"
+            }
+           ],
+           "text": "Starting Material"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/lactose-monohydrate"
+             }
+            }
+           ],
+           "display": "Lactose monohydrate"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "StartingMaterial",
+             "display": "Starting Material"
+            }
+           ],
+           "text": "Starting Material"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/sakuramil"
+             }
+            }
+           ],
+           "display": "Sakuramil"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "StartingMaterial",
+             "display": "Starting Material"
+            }
+           ],
+           "text": "Starting Material"
+          }
+         }
+        ]
+       },
+       {
+        "extension": [
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-step-scale-pq",
+          "valueCoding": {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step-scale",
+           "code": "PROD",
+           "display": "Production Scale"
+          }
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Hydroxypropyl cellulose"
+            }
+           },
+           {
+            "url": "value",
+            "valueQuantity": {
+             "value": 15.6,
+             "unit": "kg",
+             "system": "http://unitsofmeasure.org",
+             "code": "kg"
+            }
+           }
+          ]
+         }
+        ],
+        "title": "Step 2 - Preparation of granulation liquid",
+        "description": "Dissolve 15.600 kg hydroxypropyl cellulose in purified water using a vessel with stirrer to prepare a granulation liquid free from lumps.",
+        "code": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step",
+           "code": "compounding",
+           "display": "Compounding Step"
+          }
+         ],
+         "text": "Compounding Step"
+        },
+        "participant": [
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/hydroxypropyl-cellulose"
+             }
+            }
+           ],
+           "display": "Hydroxypropyl cellulose"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "StartingMaterial",
+             "display": "Starting Material"
+            }
+           ],
+           "text": "Starting Material"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/purified-water"
+             }
+            }
+           ],
+           "display": "Purified water"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "ProcessingMaterial",
+             "display": "Processing Material"
+            }
+           ],
+           "text": "Processing Material"
+          }
+         }
+        ]
+       },
+       {
+        "extension": [
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-step-scale-pq",
+          "valueCoding": {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step-scale",
+           "code": "PROD",
+           "display": "Production Scale"
+          }
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Inlet air volume"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "40 - 45 m³/min"
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "coding": [
+              {
+               "system": "http://terminology.hl7.org/CodeSystem/process-parameter",
+               "code": "TEMP",
+               "display": "Temperature"
+              }
+             ],
+             "text": "Inlet air temperature"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "75 - 85 °C"
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Spray rate"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "900 - 1100 g/min"
+           }
+          ]
+         }
+        ],
+        "title": "Step 3 - Granulation",
+        "description": "Load the pre-blended material into a fluid bed granulator and add the granulation liquid to achieve wetting of pre-blended material and formation of granules.",
+        "code": {
+         "text": "Granulation"
+        },
+        "participant": [
+         {
+          "type": "device",
+          "typeReference": {
+           "reference": "DeviceDefinition/eq-fluid-bed-granulator"
+          }
+         }
+        ],
+        "action": [
+         {
+          "title": "Granulation - inlet air volume",
+          "code": {
+           "text": "Critical process parameter"
+          },
+          "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/cpp-dp-3-inlet-air-volume"
+         },
+         {
+          "title": "Granulation - inlet air temperature",
+          "code": {
+           "text": "Critical process parameter"
+          },
+          "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/cpp-dp-3-inlet-air-temperature"
+         },
+         {
+          "title": "Granulation - spray rate",
+          "code": {
+           "text": "Critical process parameter"
+          },
+          "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/cpp-dp-3-spray-rate"
+         },
+         {
+          "title": "Granule particle size",
+          "code": {
+           "text": "In-process control"
+          },
+          "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-3-granule-particle-size"
+         }
+        ]
+       },
+       {
+        "extension": [
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-step-scale-pq",
+          "valueCoding": {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step-scale",
+           "code": "PROD",
+           "display": "Production Scale"
+          }
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "End point: loss on drying"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "1 - 2 %"
+           }
+          ]
+         }
+        ],
+        "title": "Step 4 - Drying",
+        "description": "Dry the granules using the dryer integrated within the fluid bed granulator unit until loss on drying of 1 - 2 % is achieved.",
+        "code": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step",
+           "code": "drying",
+           "display": "Drying"
+          }
+         ],
+         "text": "Drying"
+        },
+        "participant": [
+         {
+          "type": "device",
+          "typeReference": {
+           "reference": "DeviceDefinition/eq-fluid-bed-granulator"
+          }
+         }
+        ],
+        "action": [
+         {
+          "title": "Loss on drying (granules)",
+          "code": {
+           "text": "In-process control"
+          },
+          "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-4-lod"
+         }
+        ]
+       },
+       {
+        "extension": [
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-step-scale-pq",
+          "valueCoding": {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step-scale",
+           "code": "PROD",
+           "display": "Production Scale"
+          }
+         }
+        ],
+        "title": "Step 5 - Screening",
+        "description": "Sieve the dried granules using a screening mill.",
+        "code": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step",
+           "code": "particleSizeReduction",
+           "display": "Particle Size Reduction"
+          }
+         ],
+         "text": "Particle Size Reduction"
+        },
+        "participant": [
+         {
+          "type": "device",
+          "typeReference": {
+           "reference": "DeviceDefinition/eq-screening-mill"
+          }
+         }
+        ]
+       },
+       {
+        "extension": [
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-step-scale-pq",
+          "valueCoding": {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step-scale",
+           "code": "PROD",
+           "display": "Production Scale"
+          }
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Magnesium stearate"
+            }
+           },
+           {
+            "url": "value",
+            "valueQuantity": {
+             "value": 5.2,
+             "unit": "kg",
+             "system": "http://unitsofmeasure.org",
+             "code": "kg"
+            }
+           }
+          ]
+         }
+        ],
+        "title": "Step 6 - Lubricant addition",
+        "description": "Sieve 5.200 kg of magnesium stearate through a screen and add it to the granules.",
+        "code": {
+         "text": "Lubricant addition"
+        },
+        "participant": [
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/magnesium-stearate"
+             }
+            }
+           ],
+           "display": "Magnesium stearate"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "StartingMaterial",
+             "display": "Starting Material"
+            }
+           ],
+           "text": "Starting Material"
+          }
+         }
+        ]
+       },
+       {
+        "extension": [
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-step-scale-pq",
+          "valueCoding": {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step-scale",
+           "code": "PROD",
+           "display": "Production Scale"
+          }
+         }
+        ],
+        "title": "Step 7 - Final blending",
+        "description": "Blend the mixture using a diffusion mixer (bin blender) to obtain the final blend.",
+        "code": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step",
+           "code": "Mixing of ingredients",
+           "display": "Mixing of ingredients"
+          }
+         ],
+         "text": "Mixing of ingredients"
+        },
+        "participant": [
+         {
+          "type": "device",
+          "typeReference": {
+           "reference": "DeviceDefinition/eq-bin-blender"
+          }
+         }
+        ]
+       },
+       {
+        "extension": [
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-step-scale-pq",
+          "valueCoding": {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step-scale",
+           "code": "PROD",
+           "display": "Production Scale"
+          }
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "coding": [
+              {
+               "system": "http://terminology.hl7.org/CodeSystem/process-parameter",
+               "code": "ROTATIONSPEED",
+               "display": "Rotational Speed"
+              }
+             ],
+             "text": "Rotation speed"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "20 - 30 rpm"
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Compression force"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "6 - 14 kN"
+           }
+          ]
+         }
+        ],
+        "title": "Step 8 - Tablet compression",
+        "description": "Compress the final blend using a tablet press to obtain the tablet cores.",
+        "code": {
+         "text": "Tablet compression"
+        },
+        "participant": [
+         {
+          "type": "device",
+          "typeReference": {
+           "reference": "DeviceDefinition/eq-rotary-tablet-press"
+          }
+         }
+        ],
+        "action": [
+         {
+          "title": "Compression - rotation speed",
+          "code": {
+           "text": "Critical process parameter"
+          },
+          "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/cpp-dp-8-rotation-speed"
+         },
+         {
+          "title": "Compression - compression force",
+          "code": {
+           "text": "Critical process parameter"
+          },
+          "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/cpp-dp-8-compression-force"
+         },
+         {
+          "title": "Uncoated tablet weight",
+          "code": {
+           "text": "In-process control"
+          },
+          "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-8-tablet-weight"
+         },
+         {
+          "title": "Uncoated tablet weight variation",
+          "code": {
+           "text": "In-process control"
+          },
+          "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-8-weight-variation"
+         },
+         {
+          "title": "Uncoated tablet hardness",
+          "code": {
+           "text": "In-process control"
+          },
+          "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-8-hardness"
+         },
+         {
+          "title": "Assay (tablet cores)",
+          "code": {
+           "text": "In-process control"
+          },
+          "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-8-assay",
+          "documentation": [
+           {
+            "type": "depends-on",
+            "label": "Analytical procedure",
+            "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-assay-degradation"
+           }
+          ]
+         },
+         {
+          "title": "Uniformity of dosage units (tablet cores)",
+          "code": {
+           "text": "In-process control"
+          },
+          "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-8-udu"
+         }
+        ]
+       },
+       {
+        "extension": [
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-step-scale-pq",
+          "valueCoding": {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step-scale",
+           "code": "PROD",
+           "display": "Production Scale"
+          }
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Basic coating premix, red"
+            }
+           },
+           {
+            "url": "value",
+            "valueQuantity": {
+             "value": 15.6,
+             "unit": "kg",
+             "system": "http://unitsofmeasure.org",
+             "code": "kg"
+            }
+           }
+          ]
+         }
+        ],
+        "title": "Step 9 - Preparation of the coating suspension",
+        "description": "Prepare a homogeneous suspension of the Basic coating premix, red in purified water.",
+        "code": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step",
+           "code": "compounding",
+           "display": "Compounding Step"
+          }
+         ],
+         "text": "Compounding Step"
+        },
+        "participant": [
+         {
+          "type": "device",
+          "typeReference": {
+           "reference": "DeviceDefinition/eq-coating-vessel"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/coating-premix-red"
+             }
+            }
+           ],
+           "display": "Basic coating premix, red"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "StartingMaterial",
+             "display": "Starting Material"
+            }
+           ],
+           "text": "Starting Material"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/purified-water"
+             }
+            }
+           ],
+           "display": "Purified water"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "ProcessingMaterial",
+             "display": "Processing Material"
+            }
+           ],
+           "text": "Processing Material"
+          }
+         }
+        ]
+       },
+       {
+        "extension": [
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-step-scale-pq",
+          "valueCoding": {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step-scale",
+           "code": "PROD",
+           "display": "Production Scale"
+          }
+         }
+        ],
+        "title": "Step 10 - Film-coating",
+        "description": "Film-coat the tablet cores using the film-coat suspension in a coating pan to achieve the desired film-coat weight gain, followed by drying.",
+        "code": {
+         "text": "Film-coating"
+        },
+        "participant": [
+         {
+          "type": "device",
+          "typeReference": {
+           "reference": "DeviceDefinition/eq-pan-coater"
+          }
+         }
+        ],
+        "action": [
+         {
+          "title": "Loss on drying (film-coated tablets)",
+          "code": {
+           "text": "In-process control"
+          },
+          "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-10-lod"
+         },
+         {
+          "title": "Film coat weight gain",
+          "code": {
+           "text": "In-process control"
+          },
+          "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-10-coat-weight-gain"
+         }
+        ]
+       },
+       {
+        "extension": [
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-step-scale-pq",
+          "valueCoding": {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step-scale",
+           "code": "PROD",
+           "display": "Production Scale"
+          }
+         }
+        ],
+        "title": "Step 11 - Inspection",
+        "description": "Collect 10 tablets to perform the Description test and Identification test (RTRT).",
+        "code": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step",
+           "code": "release",
+           "display": "Release Step"
+          }
+         ],
+         "text": "Release Step"
+        },
+        "action": [
+         {
+          "title": "Appearance (inspection)",
+          "code": {
+           "text": "In-process control"
+          },
+          "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-11-appearance"
+         },
+         {
+          "title": "Identification (NIR, inspection)",
+          "code": {
+           "text": "In-process control"
+          },
+          "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-11-identification",
+          "documentation": [
+           {
+            "type": "depends-on",
+            "label": "Analytical procedure",
+            "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-identity-nir"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "extension": [
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-step-scale-pq",
+          "valueCoding": {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step-scale",
+           "code": "PROD",
+           "display": "Production Scale"
+          }
+         }
+        ],
+        "title": "Step 12 - Primary packaging",
+        "description": "The film-coated tablets are primary packaged (HDPE bottle or PA/AL/PVC blister).",
+        "code": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step",
+           "code": "filling",
+           "display": "Filling Step"
+          }
+         ],
+         "text": "Filling Step"
+        }
+       },
+       {
+        "extension": [
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-step-scale-pq",
+          "valueCoding": {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step-scale",
+           "code": "PROD",
+           "display": "Production Scale"
+          }
+         }
+        ],
+        "title": "Step 13 - Secondary packaging",
+        "description": "The primary packaged product is packed in a cardboard-based secondary pack.",
+        "code": {
+         "text": "Secondary packaging"
+        }
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/sakuramil",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "sakuramil",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81f89f56d478fe7ac949"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Sakuramil</p></div>"
+    },
+    "identifier": [
+     {
+      "system": "http://cas.org",
+      "value": "262352-13-6"
+     }
+    ],
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Chemical (small molecule)"
+     }
+    ],
+    "grade": [
+     {
+      "text": "In-house"
+     }
+    ],
+    "description": "Sakuramil (company code CP-9), the drug substance of Sakura Bloom 20 mg film-coated tablets.",
+    "manufacturer": [
+     {
+      "reference": "Organization/iroha-corp",
+      "display": "IROHA-corp.",
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-site-utilization-pq",
+        "valueCoding": {
+         "system": "http://terminology.hl7.org/CodeSystem/product-site-utilization-type",
+         "code": "Primary manufacturing",
+         "display": "Primary Manufacturing"
+        }
+       }
+      ]
+     }
+    ],
+    "characterization": [
+     {
+      "technique": {
+       "text": "Mass spectrometry (ESI positive, Shimadzu LCM-IT-TOF)"
+      },
+      "description": "m/z 614.504 observed (predicted 614.505) on CP-9 primary working standard"
+     },
+     {
+      "technique": {
+       "text": "1H NMR (Bruker 500 MHz, D2O)"
+      }
+     },
+     {
+      "technique": {
+       "text": "13C NMR (Bruker 500 MHz, D2O)"
+      }
+     }
+    ],
+    "property": [
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+         "code": "appearance",
+         "display": "Appearance"
+        }
+       ],
+       "text": "Appearance"
+      },
+      "valueCodeableConcept": {
+       "text": "White solid"
+      }
+     },
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+         "code": "solubility-water",
+         "display": "Solubility purified water"
+        }
+       ],
+       "text": "Solubility purified water"
+      },
+      "valueQuantity": {
+       "value": 0.05,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      }
+     },
+     {
+      "type": {
+       "text": "Solubility in ethanol (RT)"
+      },
+      "valueQuantity": {
+       "value": 45,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      }
+     },
+     {
+      "type": {
+       "text": "Solubility in acetone (RT)"
+      },
+      "valueQuantity": {
+       "value": 71.3,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      }
+     },
+     {
+      "type": {
+       "text": "Aqueous solubility as a function of pH (RT) - Deionized water"
+      },
+      "valueQuantity": {
+       "value": 0.05,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      }
+     },
+     {
+      "type": {
+       "text": "Aqueous solubility as a function of pH (RT) - 0.1 N HCl"
+      },
+      "valueQuantity": {
+       "comparator": "<",
+       "value": 0.01,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      },
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-substance-property-parameter-pq",
+        "extension": [
+         {
+          "url": "parameter",
+          "valueCoding": {
+           "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+           "code": "pH",
+           "display": "pH"
+          }
+         },
+         {
+          "url": "value",
+          "valueQuantity": {
+           "value": 1.2,
+           "unit": "pH",
+           "system": "http://unitsofmeasure.org",
+           "code": "[pH]"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": {
+       "text": "Aqueous solubility as a function of pH (RT) - Acetate buffer"
+      },
+      "valueQuantity": {
+       "value": 5.0,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      },
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-substance-property-parameter-pq",
+        "extension": [
+         {
+          "url": "parameter",
+          "valueCoding": {
+           "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+           "code": "pH",
+           "display": "pH"
+          }
+         },
+         {
+          "url": "value",
+          "valueQuantity": {
+           "value": 4.5,
+           "unit": "pH",
+           "system": "http://unitsofmeasure.org",
+           "code": "[pH]"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": {
+       "text": "Aqueous solubility as a function of pH (RT) - Phosphate buffer"
+      },
+      "valueQuantity": {
+       "value": 3.2,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      },
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-substance-property-parameter-pq",
+        "extension": [
+         {
+          "url": "parameter",
+          "valueCoding": {
+           "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+           "code": "pH",
+           "display": "pH"
+          }
+         },
+         {
+          "url": "value",
+          "valueQuantity": {
+           "value": 6.8,
+           "unit": "pH",
+           "system": "http://unitsofmeasure.org",
+           "code": "[pH]"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": {
+       "text": "Aqueous solubility as a function of pH (RT) - 0.1 N NaOH"
+      },
+      "valueQuantity": {
+       "value": 5.1,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      },
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-substance-property-parameter-pq",
+        "extension": [
+         {
+          "url": "parameter",
+          "valueCoding": {
+           "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+           "code": "pH",
+           "display": "pH"
+          }
+         },
+         {
+          "url": "value",
+          "valueQuantity": {
+           "value": 8.0,
+           "unit": "pH",
+           "system": "http://unitsofmeasure.org",
+           "code": "[pH]"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+         "code": "pH",
+         "display": "pH"
+        }
+       ],
+       "text": "pH"
+      },
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-substance-property-range-pq",
+        "valueRange": {
+         "low": {
+          "value": 5.0,
+          "unit": "pH",
+          "system": "http://unitsofmeasure.org",
+          "code": "[pH]"
+         },
+         "high": {
+          "value": 9.0,
+          "unit": "pH",
+          "system": "http://unitsofmeasure.org",
+          "code": "[pH]"
+         }
+        }
+       }
+      ],
+      "valueCodeableConcept": {
+       "text": "5.0 - 9.0 (RT)"
+      }
+     },
+     {
+      "type": {
+       "text": "pKa (carboxylate)"
+      },
+      "valueQuantity": {
+       "value": 12.6
+      }
+     },
+     {
+      "type": {
+       "text": "pKa (phenol CF3)"
+      },
+      "valueQuantity": {
+       "value": 15.3
+      }
+     },
+     {
+      "type": {
+       "text": "pKa (carbamate)"
+      },
+      "valueQuantity": {
+       "value": 24.2
+      }
+     },
+     {
+      "type": {
+       "text": "Partition coefficient (log P, n-octanol/water)"
+      },
+      "valueQuantity": {
+       "value": 6.3
+      }
+     },
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+         "code": "hygroscopy",
+         "display": "Hygroscopy"
+        }
+       ],
+       "text": "Hygroscopy"
+      },
+      "valueCodeableConcept": {
+       "text": "Not hygroscopic"
+      }
+     },
+     {
+      "type": {
+       "text": "Melting point"
+      },
+      "valueQuantity": {
+       "value": 174,
+       "unit": "°C",
+       "system": "http://unitsofmeasure.org",
+       "code": "Cel"
+      }
+     },
+     {
+      "type": {
+       "text": "Polymorphism"
+      },
+      "valueCodeableConcept": {
+       "text": "Only one polymorph observed in synthetic manufacture and extensive polymorph screening"
+      }
+     },
+     {
+      "type": {
+       "text": "Chirality"
+      },
+      "valueCodeableConcept": {
+       "text": "Two chiral centres; no racemization observed in the manufacturing process"
+      }
+     },
+     {
+      "type": {
+       "text": "Isomerism"
+      },
+      "valueCodeableConcept": {
+       "text": "An enantiomer and two diastereomers can be formed"
+      }
+     },
+     {
+      "type": {
+       "text": "Specific optical rotation (20 °C, aqueous solution)"
+      },
+      "valueQuantity": {
+       "value": 145,
+       "unit": "deg",
+       "system": "http://unitsofmeasure.org",
+       "code": "deg"
+      }
+     },
+     {
+      "type": {
+       "text": "Particle size distribution d(0.1) (laser diffraction)"
+      },
+      "valueQuantity": {
+       "value": 26,
+       "unit": "nm",
+       "system": "http://unitsofmeasure.org",
+       "code": "nm"
+      }
+     },
+     {
+      "type": {
+       "text": "Particle size distribution d(0.5) (laser diffraction)"
+      },
+      "valueQuantity": {
+       "value": 40,
+       "unit": "nm",
+       "system": "http://unitsofmeasure.org",
+       "code": "nm"
+      }
+     },
+     {
+      "type": {
+       "text": "Particle size distribution d(0.9) (laser diffraction)"
+      },
+      "valueQuantity": {
+       "value": 66,
+       "unit": "nm",
+       "system": "http://unitsofmeasure.org",
+       "code": "nm"
+      }
+     },
+     {
+      "type": {
+       "text": "Light sensitivity"
+      },
+      "valueCodeableConcept": {
+       "text": "Not sensitive to light"
+      }
+     },
+     {
+      "type": {
+       "text": "Biopharmaceutics Classification System"
+      },
+      "valueCodeableConcept": {
+       "text": "BCS Class II (poorly soluble, highly permeable)"
+      }
+     }
+    ],
+    "molecularWeight": [
+     {
+      "type": {
+       "text": "Exact/average (free base)"
+      },
+      "amount": {
+       "value": 614.5,
+       "unit": "g/mol",
+       "system": "http://unitsofmeasure.org",
+       "code": "g/mol"
+      }
+     }
+    ],
+    "structure": {
+     "stereochemistry": {
+      "text": "(2S,4S)"
+     },
+     "molecularFormula": "C27H27F9N2O4",
+     "representation": [
+      {
+       "type": {
+        "text": "IUPAC name"
+       },
+       "representation": "Propan-2-yl (2S,4S)-4-[acetyl-[[3,5-bis(trifluoromethyl)phenyl]methyl]amino]-2-methoxy-2-methyl-6-(trifluoromethyl)-3,4-dihydroquinoline-1-carboxylate"
+      }
+     ]
+    },
+    "code": [
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://cas.org",
+         "code": "262352-13-6"
+        }
+       ],
+       "text": "262352-13-6"
+      }
+     },
+     {
+      "code": {
+       "text": "CP-9"
+      }
+     }
+    ],
+    "name": [
+     {
+      "name": "Sakuramil",
+      "type": {
+       "text": "INN"
+      },
+      "preferred": true
+     },
+     {
+      "name": "Sakuramil",
+      "type": {
+       "text": "USAN"
+      }
+     },
+     {
+      "name": "Propan-2-yl (2S,4S)-4-[acetyl-[[3,5-bis(trifluoromethyl)phenyl]methyl]amino]-2-methoxy-2-methyl-6-(trifluoromethyl)-3,4-dihydroquinoline-1-carboxylate",
+      "type": {
+       "text": "IUPAC chemical name"
+      }
+     },
+     {
+      "name": "CP-9",
+      "type": {
+       "text": "Company code"
+      }
+     }
+    ],
+    "relationship": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "process",
+           "display": "Process Impurity"
+          }
+         ],
+         "text": "Process Impurity"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-9-1",
+       "display": "CP-9-1"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "PR-IMP",
+         "display": "Process impurity"
+        }
+       ],
+       "text": "Process impurity - Specified related substance; NMT 0.15 % (DS); NMT 0.3 %/0.5 % release/shelf-life (DP)"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "starting-material",
+           "display": "Starting Material"
+          }
+         ],
+         "text": "Starting Material"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-8",
+       "display": "CP-8"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "ST-IMP",
+         "display": "Starting material, forced degradation product"
+        }
+       ],
+       "text": "Starting material, forced degradation product - Specified related substance; NMT 0.10 %"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "intermediate-material",
+           "display": "Intermediate Material"
+          }
+         ],
+         "text": "Intermediate Material"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-6",
+       "display": "CP-6"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "INT-IMP",
+         "display": "Process intermediate, forced degradation product"
+        }
+       ],
+       "text": "Process intermediate, forced degradation product - Potentially mutagenic impurity; NMT 37.5 ppm"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "starting-material",
+           "display": "Starting Material"
+          }
+         ],
+         "text": "Starting Material"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-4",
+       "display": "CP-4"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "ST-IMP",
+         "display": "Starting material, forced degradation product"
+        }
+       ],
+       "text": "Starting material, forced degradation product - Potentially mutagenic; controlled via CP-6 limit and purge"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "intermediate-material",
+           "display": "Intermediate Material"
+          }
+         ],
+         "text": "Intermediate Material"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-5",
+       "display": "CP-5"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "INT-IMP",
+         "display": "Process intermediate, forced degradation product"
+        }
+       ],
+       "text": "Process intermediate, forced degradation product - Potentially mutagenic (structural alert); purged"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "process",
+           "display": "Process Impurity"
+          }
+         ],
+         "text": "Process Impurity"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-3",
+       "display": "CP-3"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "PR-IMP",
+         "display": "Process impurity"
+        }
+       ],
+       "text": "Process impurity - Potentially mutagenic (structural alert); purged"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "intermediate-material",
+           "display": "Intermediate Material"
+          }
+         ],
+         "text": "Intermediate Material"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-7",
+       "display": "CP-7"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "INT-IMP",
+         "display": "Process intermediate, forced degradation product"
+        }
+       ],
+       "text": "Process intermediate, forced degradation product - Intermediate; purged in Step 4 crystallization"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Ingredient/ing-sakuramil",
+   "resource": {
+    "resourceType": "Ingredient",
+    "id": "ing-sakuramil",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8144b81ce7e58885d190"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Ingredient</b> ing-sakuramil</p></div>"
+    },
+    "status": "active",
+    "for": [
+     {
+      "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+     },
+     {
+      "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+     }
+    ],
+    "role": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/ingredient-role",
+       "code": "100000072072",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "function": [
+     {
+      "text": "Active ingredient"
+     }
+    ],
+    "substance": {
+     "code": {
+      "reference": {
+       "reference": "SubstanceDefinition/sakuramil"
+      }
+     },
+     "strength": [
+      {
+       "presentationRatio": {
+        "numerator": {
+         "value": 20.0,
+         "unit": "mg",
+         "system": "http://unitsofmeasure.org",
+         "code": "mg"
+        },
+        "denominator": {
+         "value": 1,
+         "unit": "tablet",
+         "system": "http://unitsofmeasure.org",
+         "code": "{tablet}"
+        }
+       },
+       "textPresentation": "20.00 mg per film-coated tablet",
+       "basis": {
+        "text": "Neutral, anhydrous base form"
+       },
+       "referenceStrength": [
+        {
+         "substance": {
+          "reference": {
+           "reference": "SubstanceDefinition/sakuramil"
+          }
+         },
+         "strengthRatio": {
+          "numerator": {
+           "value": 20,
+           "unit": "mg",
+           "system": "http://unitsofmeasure.org",
+           "code": "mg"
+          },
+          "denominator": {
+           "value": 1,
+           "unit": "tablet",
+           "system": "http://unitsofmeasure.org",
+           "code": "{tablet}"
+          }
+         }
+        }
+       ]
+      },
+      {
+       "presentationRatio": {
+        "numerator": {
+         "value": 52.0,
+         "unit": "kg",
+         "system": "http://unitsofmeasure.org",
+         "code": "kg"
+        },
+        "denominator": {
+         "value": 520.0,
+         "unit": "kg",
+         "system": "http://unitsofmeasure.org",
+         "code": "kg"
+        }
+       },
+       "textPresentation": "52.000 kg per commercial batch (520.000 kg, approx. 2,600,000 tablets)",
+       "basis": {
+        "text": "Batch formula"
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/lactose-monohydrate",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "lactose-monohydrate",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Lactose monohydrate</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Excipient (compendial)"
+     }
+    ],
+    "grade": [
+     {
+      "text": "Ph. Eur."
+     },
+     {
+      "text": "USP/NF"
+     },
+     {
+      "text": "JP"
+     }
+    ],
+    "name": [
+     {
+      "name": "Lactose monohydrate",
+      "preferred": true,
+      "synonym": [
+       {
+        "name": "Lactose hydrate"
+       }
+      ]
+     }
+    ],
+    "sourceMaterial": {
+     "type": {
+      "text": "Animal origin (milk); TSE declarations per EMA/410/01 rev.3"
+     }
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Ingredient/ing-lactose-monohydrate",
+   "resource": {
+    "resourceType": "Ingredient",
+    "id": "ing-lactose-monohydrate",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8144b81ce7e58885d190"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Ingredient</b> ing-lactose-monohydrate</p></div>"
+    },
+    "status": "active",
+    "for": [
+     {
+      "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+     },
+     {
+      "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+     }
+    ],
+    "role": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/ingredient-role",
+       "code": "100000072082",
+       "display": "Excipient"
+      }
+     ],
+     "text": "Excipient"
+    },
+    "function": [
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/ingredient-function",
+        "code": "diluent",
+        "display": "Diluent"
+       }
+      ],
+      "text": "Diluent"
+     }
+    ],
+    "substance": {
+     "code": {
+      "reference": {
+       "reference": "SubstanceDefinition/lactose-monohydrate"
+      }
+     },
+     "strength": [
+      {
+       "presentationRatio": {
+        "numerator": {
+         "value": 136.0,
+         "unit": "mg",
+         "system": "http://unitsofmeasure.org",
+         "code": "mg"
+        },
+        "denominator": {
+         "value": 1,
+         "unit": "tablet",
+         "system": "http://unitsofmeasure.org",
+         "code": "{tablet}"
+        }
+       },
+       "textPresentation": "136.00 mg per film-coated tablet"
+      },
+      {
+       "presentationRatio": {
+        "numerator": {
+         "value": 353.6,
+         "unit": "kg",
+         "system": "http://unitsofmeasure.org",
+         "code": "kg"
+        },
+        "denominator": {
+         "value": 520.0,
+         "unit": "kg",
+         "system": "http://unitsofmeasure.org",
+         "code": "kg"
+        }
+       },
+       "textPresentation": "353.600 kg per commercial batch (520.000 kg, approx. 2,600,000 tablets)",
+       "basis": {
+        "text": "Batch formula"
+       }
+      }
+     ]
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-novel-excipient-pq",
+      "valueBoolean": false
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-suitability-for-use-pq",
+      "valueString": "Complies with Ph. Eur., USP/NF, JP"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/microcrystalline-cellulose",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "microcrystalline-cellulose",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Cellulose, microcrystalline</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Excipient (compendial)"
+     }
+    ],
+    "grade": [
+     {
+      "text": "Ph. Eur."
+     },
+     {
+      "text": "USP/NF"
+     },
+     {
+      "text": "JP"
+     }
+    ],
+    "name": [
+     {
+      "name": "Cellulose, microcrystalline",
+      "preferred": true,
+      "synonym": [
+       {
+        "name": "Microcrystalline cellulose"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Ingredient/ing-microcrystalline-cellulose",
+   "resource": {
+    "resourceType": "Ingredient",
+    "id": "ing-microcrystalline-cellulose",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8144b81ce7e58885d190"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Ingredient</b> ing-microcrystalline-cellulose</p></div>"
+    },
+    "status": "active",
+    "for": [
+     {
+      "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+     },
+     {
+      "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+     }
+    ],
+    "role": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/ingredient-role",
+       "code": "100000072082",
+       "display": "Excipient"
+      }
+     ],
+     "text": "Excipient"
+    },
+    "function": [
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/ingredient-function",
+        "code": "diluent",
+        "display": "Diluent"
+       }
+      ],
+      "text": "Diluent"
+     }
+    ],
+    "substance": {
+     "code": {
+      "reference": {
+       "reference": "SubstanceDefinition/microcrystalline-cellulose"
+      }
+     },
+     "strength": [
+      {
+       "presentationRatio": {
+        "numerator": {
+         "value": 20.0,
+         "unit": "mg",
+         "system": "http://unitsofmeasure.org",
+         "code": "mg"
+        },
+        "denominator": {
+         "value": 1,
+         "unit": "tablet",
+         "system": "http://unitsofmeasure.org",
+         "code": "{tablet}"
+        }
+       },
+       "textPresentation": "20.00 mg per film-coated tablet"
+      },
+      {
+       "presentationRatio": {
+        "numerator": {
+         "value": 52.0,
+         "unit": "kg",
+         "system": "http://unitsofmeasure.org",
+         "code": "kg"
+        },
+        "denominator": {
+         "value": 520.0,
+         "unit": "kg",
+         "system": "http://unitsofmeasure.org",
+         "code": "kg"
+        }
+       },
+       "textPresentation": "52.000 kg per commercial batch (520.000 kg, approx. 2,600,000 tablets)",
+       "basis": {
+        "text": "Batch formula"
+       }
+      }
+     ]
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-novel-excipient-pq",
+      "valueBoolean": false
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-suitability-for-use-pq",
+      "valueString": "Complies with Ph. Eur., USP/NF, JP"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/croscarmellose-sodium",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "croscarmellose-sodium",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Croscarmellose sodium</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Excipient (compendial)"
+     }
+    ],
+    "grade": [
+     {
+      "text": "Ph. Eur."
+     },
+     {
+      "text": "USP/NF"
+     },
+     {
+      "text": "JP"
+     }
+    ],
+    "name": [
+     {
+      "name": "Croscarmellose sodium",
+      "preferred": true
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Ingredient/ing-croscarmellose-sodium",
+   "resource": {
+    "resourceType": "Ingredient",
+    "id": "ing-croscarmellose-sodium",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8144b81ce7e58885d190"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Ingredient</b> ing-croscarmellose-sodium</p></div>"
+    },
+    "status": "active",
+    "for": [
+     {
+      "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+     },
+     {
+      "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+     }
+    ],
+    "role": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/ingredient-role",
+       "code": "100000072082",
+       "display": "Excipient"
+      }
+     ],
+     "text": "Excipient"
+    },
+    "function": [
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/ingredient-function",
+        "code": "disintegrant",
+        "display": "Disintegrant"
+       }
+      ],
+      "text": "Disintegrant"
+     }
+    ],
+    "substance": {
+     "code": {
+      "reference": {
+       "reference": "SubstanceDefinition/croscarmellose-sodium"
+      }
+     },
+     "strength": [
+      {
+       "presentationRatio": {
+        "numerator": {
+         "value": 10.0,
+         "unit": "mg",
+         "system": "http://unitsofmeasure.org",
+         "code": "mg"
+        },
+        "denominator": {
+         "value": 1,
+         "unit": "tablet",
+         "system": "http://unitsofmeasure.org",
+         "code": "{tablet}"
+        }
+       },
+       "textPresentation": "10.00 mg per film-coated tablet"
+      },
+      {
+       "presentationRatio": {
+        "numerator": {
+         "value": 26.0,
+         "unit": "kg",
+         "system": "http://unitsofmeasure.org",
+         "code": "kg"
+        },
+        "denominator": {
+         "value": 520.0,
+         "unit": "kg",
+         "system": "http://unitsofmeasure.org",
+         "code": "kg"
+        }
+       },
+       "textPresentation": "26.000 kg per commercial batch (520.000 kg, approx. 2,600,000 tablets)",
+       "basis": {
+        "text": "Batch formula"
+       }
+      }
+     ]
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-novel-excipient-pq",
+      "valueBoolean": false
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-suitability-for-use-pq",
+      "valueString": "Complies with Ph. Eur., USP/NF, JP"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/hydroxypropyl-cellulose",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "hydroxypropyl-cellulose",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Hydroxypropyl cellulose</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Excipient (compendial)"
+     }
+    ],
+    "grade": [
+     {
+      "text": "Ph. Eur."
+     },
+     {
+      "text": "USP/NF"
+     },
+     {
+      "text": "JP"
+     }
+    ],
+    "name": [
+     {
+      "name": "Hydroxypropyl cellulose",
+      "preferred": true
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Ingredient/ing-hydroxypropyl-cellulose",
+   "resource": {
+    "resourceType": "Ingredient",
+    "id": "ing-hydroxypropyl-cellulose",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8144b81ce7e58885d190"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Ingredient</b> ing-hydroxypropyl-cellulose</p></div>"
+    },
+    "status": "active",
+    "for": [
+     {
+      "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+     },
+     {
+      "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+     }
+    ],
+    "role": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/ingredient-role",
+       "code": "100000072082",
+       "display": "Excipient"
+      }
+     ],
+     "text": "Excipient"
+    },
+    "function": [
+     {
+      "text": "Binder"
+     }
+    ],
+    "substance": {
+     "code": {
+      "reference": {
+       "reference": "SubstanceDefinition/hydroxypropyl-cellulose"
+      }
+     },
+     "strength": [
+      {
+       "presentationRatio": {
+        "numerator": {
+         "value": 6.0,
+         "unit": "mg",
+         "system": "http://unitsofmeasure.org",
+         "code": "mg"
+        },
+        "denominator": {
+         "value": 1,
+         "unit": "tablet",
+         "system": "http://unitsofmeasure.org",
+         "code": "{tablet}"
+        }
+       },
+       "textPresentation": "6.00 mg per film-coated tablet"
+      },
+      {
+       "presentationRatio": {
+        "numerator": {
+         "value": 15.6,
+         "unit": "kg",
+         "system": "http://unitsofmeasure.org",
+         "code": "kg"
+        },
+        "denominator": {
+         "value": 520.0,
+         "unit": "kg",
+         "system": "http://unitsofmeasure.org",
+         "code": "kg"
+        }
+       },
+       "textPresentation": "15.600 kg per commercial batch (520.000 kg, approx. 2,600,000 tablets)",
+       "basis": {
+        "text": "Batch formula"
+       }
+      }
+     ]
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-novel-excipient-pq",
+      "valueBoolean": false
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-suitability-for-use-pq",
+      "valueString": "Complies with Ph. Eur., USP/NF, JP"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/magnesium-stearate",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "magnesium-stearate",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Magnesium stearate</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Excipient (compendial)"
+     }
+    ],
+    "grade": [
+     {
+      "text": "Ph. Eur."
+     },
+     {
+      "text": "USP/NF"
+     },
+     {
+      "text": "JP"
+     }
+    ],
+    "name": [
+     {
+      "name": "Magnesium stearate",
+      "preferred": true
+     }
+    ],
+    "sourceMaterial": {
+     "type": {
+      "text": "Vegetable origin"
+     }
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Ingredient/ing-magnesium-stearate",
+   "resource": {
+    "resourceType": "Ingredient",
+    "id": "ing-magnesium-stearate",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8144b81ce7e58885d190"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Ingredient</b> ing-magnesium-stearate</p></div>"
+    },
+    "status": "active",
+    "for": [
+     {
+      "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+     },
+     {
+      "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+     }
+    ],
+    "role": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/ingredient-role",
+       "code": "100000072082",
+       "display": "Excipient"
+      }
+     ],
+     "text": "Excipient"
+    },
+    "function": [
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/ingredient-function",
+        "code": "lubricant",
+        "display": "Lubricant"
+       }
+      ],
+      "text": "Lubricant"
+     }
+    ],
+    "substance": {
+     "code": {
+      "reference": {
+       "reference": "SubstanceDefinition/magnesium-stearate"
+      }
+     },
+     "strength": [
+      {
+       "presentationRatio": {
+        "numerator": {
+         "value": 2.0,
+         "unit": "mg",
+         "system": "http://unitsofmeasure.org",
+         "code": "mg"
+        },
+        "denominator": {
+         "value": 1,
+         "unit": "tablet",
+         "system": "http://unitsofmeasure.org",
+         "code": "{tablet}"
+        }
+       },
+       "textPresentation": "2.00 mg per film-coated tablet"
+      },
+      {
+       "presentationRatio": {
+        "numerator": {
+         "value": 5.2,
+         "unit": "kg",
+         "system": "http://unitsofmeasure.org",
+         "code": "kg"
+        },
+        "denominator": {
+         "value": 520.0,
+         "unit": "kg",
+         "system": "http://unitsofmeasure.org",
+         "code": "kg"
+        }
+       },
+       "textPresentation": "5.200 kg per commercial batch (520.000 kg, approx. 2,600,000 tablets)",
+       "basis": {
+        "text": "Batch formula"
+       }
+      }
+     ]
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-novel-excipient-pq",
+      "valueBoolean": false
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-suitability-for-use-pq",
+      "valueString": "Complies with Ph. Eur., USP/NF, JP"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/coating-premix-red",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "coating-premix-red",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8101bbdfeab0c7f1d2ed"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Basic coating premix, red</p></div>"
+    },
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/material-code",
+      "value": "KIRSCH2358"
+     }
+    ],
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Excipient (non-compendial mixture, commercially available)"
+     }
+    ],
+    "grade": [
+     {
+      "text": "In-house"
+     }
+    ],
+    "description": "Basic coating premix, red. Commercially available film-coating premix; minor adaptations of the quantitative composition may be needed to match the colour reference. None of the components are of animal origin.",
+    "name": [
+     {
+      "name": "Basic coating premix, red",
+      "preferred": true,
+      "synonym": [
+       {
+        "name": "Coating premix red"
+       },
+       {
+        "name": "Coating Premix Red KIRSCH2358"
+       }
+      ]
+     }
+    ],
+    "relationship": [
+     {
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/hypromellose"
+      },
+      "type": {
+       "text": "Component of mixture"
+      },
+      "isDefining": true,
+      "amountQuantity": {
+       "value": 50.0,
+       "unit": "%",
+       "system": "http://unitsofmeasure.org",
+       "code": "%"
+      }
+     },
+     {
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/macrogol-6000"
+      },
+      "type": {
+       "text": "Component of mixture"
+      },
+      "isDefining": true,
+      "amountQuantity": {
+       "value": 20.0,
+       "unit": "%",
+       "system": "http://unitsofmeasure.org",
+       "code": "%"
+      }
+     },
+     {
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/titanium-dioxide"
+      },
+      "type": {
+       "text": "Component of mixture"
+      },
+      "isDefining": true,
+      "amountQuantity": {
+       "value": 25.0,
+       "unit": "%",
+       "system": "http://unitsofmeasure.org",
+       "code": "%"
+      }
+     },
+     {
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/iron-oxide-red"
+      },
+      "type": {
+       "text": "Component of mixture"
+      },
+      "isDefining": true,
+      "amountQuantity": {
+       "value": 5.0,
+       "unit": "%",
+       "system": "http://unitsofmeasure.org",
+       "code": "%"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Ingredient/ing-coating-premix-red",
+   "resource": {
+    "resourceType": "Ingredient",
+    "id": "ing-coating-premix-red",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8144b81ce7e58885d190"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Ingredient</b> ing-coating-premix-red</p></div>"
+    },
+    "status": "active",
+    "for": [
+     {
+      "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+     },
+     {
+      "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+     }
+    ],
+    "role": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/ingredient-role",
+       "code": "100000072082",
+       "display": "Excipient"
+      }
+     ],
+     "text": "Excipient"
+    },
+    "function": [
+     {
+      "text": "Coating agent"
+     }
+    ],
+    "substance": {
+     "code": {
+      "reference": {
+       "reference": "SubstanceDefinition/coating-premix-red"
+      }
+     },
+     "strength": [
+      {
+       "presentationRatio": {
+        "numerator": {
+         "value": 6.0,
+         "unit": "mg",
+         "system": "http://unitsofmeasure.org",
+         "code": "mg"
+        },
+        "denominator": {
+         "value": 1,
+         "unit": "tablet",
+         "system": "http://unitsofmeasure.org",
+         "code": "{tablet}"
+        }
+       },
+       "textPresentation": "6.00 mg per film-coated tablet"
+      },
+      {
+       "presentationRatio": {
+        "numerator": {
+         "value": 15.6,
+         "unit": "kg",
+         "system": "http://unitsofmeasure.org",
+         "code": "kg"
+        },
+        "denominator": {
+         "value": 520.0,
+         "unit": "kg",
+         "system": "http://unitsofmeasure.org",
+         "code": "kg"
+        }
+       },
+       "textPresentation": "15.600 kg per commercial batch (520.000 kg, approx. 2,600,000 tablets)",
+       "basis": {
+        "text": "Batch formula"
+       }
+      }
+     ]
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-novel-excipient-pq",
+      "valueBoolean": false
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-suitability-for-use-pq",
+      "valueString": "Complies with In-house"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/purified-water",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "purified-water",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Water, purified</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Excipient (compendial)"
+     }
+    ],
+    "grade": [
+     {
+      "text": "Ph. Eur."
+     },
+     {
+      "text": "USP/NF"
+     },
+     {
+      "text": "JP"
+     }
+    ],
+    "name": [
+     {
+      "name": "Water, purified",
+      "preferred": true,
+      "synonym": [
+       {
+        "name": "Purified water"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Ingredient/ing-purified-water",
+   "resource": {
+    "resourceType": "Ingredient",
+    "id": "ing-purified-water",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8144b81ce7e58885d190"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Ingredient</b> ing-purified-water</p></div>"
+    },
+    "status": "active",
+    "for": [
+     {
+      "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+     },
+     {
+      "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+     }
+    ],
+    "role": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/ingredient-role",
+       "code": "100000072082",
+       "display": "Excipient"
+      }
+     ],
+     "text": "Excipient"
+    },
+    "function": [
+     {
+      "text": "Solvent for coating suspension (removed during processing)"
+     }
+    ],
+    "substance": {
+     "code": {
+      "reference": {
+       "reference": "SubstanceDefinition/purified-water"
+      }
+     },
+     "strength": [
+      {
+       "textPresentation": "q.s."
+      }
+     ]
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-novel-excipient-pq",
+      "valueBoolean": false
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-suitability-for-use-pq",
+      "valueString": "Complies with Ph. Eur., USP/NF, JP"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/MedicinalProductDefinition/sakura-bloom-20mg",
+   "resource": {
+    "resourceType": "MedicinalProductDefinition",
+    "id": "sakura-bloom-20mg",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8139acafcbef7ae81c6f"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>MedicinalProductDefinition</b> Sakura Bloom 20 mg film-coated tablets</p></div>"
+    },
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/product-id",
+      "value": "SB-20MG-FCT"
+     }
+    ],
+    "type": {
+     "text": "Medicinal product (small molecule)"
+    },
+    "domain": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/medicinal-product-domain",
+       "code": "Human",
+       "display": "Human use"
+      }
+     ],
+     "text": "Human use"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "description": "Sakura Bloom 20 mg film-coated tablet: immediate-release film-coated tablet for oral administration, to be swallowed whole. Strength expressed as Sakuramil neutral, anhydrous base. Fictitious ICH M4Q(R2) mock-up product 'SakuraBloom R2'.",
+    "combinedPharmaceuticalDoseForm": {
+     "coding": [
+      {
+       "system": "http://standardterms.edqm.eu",
+       "code": "10221000",
+       "display": "Film-coated tablet"
+      }
+     ],
+     "text": "Film-coated tablet"
+    },
+    "route": [
+     {
+      "coding": [
+       {
+        "system": "http://standardterms.edqm.eu",
+        "code": "20053000",
+        "display": "Oral use"
+       }
+      ],
+      "text": "Oral use"
+     }
+    ],
+    "name": [
+     {
+      "productName": "Sakura Bloom 20 mg film-coated tablets",
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-productNameType-pq-example",
+         "code": "Proprietary",
+         "display": "Proprietary"
+        }
+       ],
+       "text": "Proprietary"
+      },
+      "part": [
+       {
+        "part": "Sakura Bloom",
+        "type": {
+         "text": "Invented name part"
+        }
+       },
+       {
+        "part": "20 mg",
+        "type": {
+         "text": "Strength part"
+        }
+       },
+       {
+        "part": "film-coated tablets",
+        "type": {
+         "text": "Pharmaceutical dose form part"
+        }
+       }
+      ]
+     }
+    ],
+    "operation": [
+     {
+      "type": {
+       "concept": {
+        "text": "Drug substance manufacture"
+       }
+      },
+      "organization": [
+       {
+        "reference": "Organization/iroha-corp"
+       }
+      ]
+     },
+     {
+      "type": {
+       "reference": {
+        "reference": "PlanDefinition/dp-manufacturing-process"
+       }
+      },
+      "organization": [
+       {
+        "reference": "Organization/aparna-pharm"
+       }
+      ]
+     },
+     {
+      "type": {
+       "concept": {
+        "text": "Quality control testing (release)"
+       }
+      },
+      "organization": [
+       {
+        "reference": "Organization/aparna-pharm"
+       },
+       {
+        "reference": "Organization/dakina-analytica"
+       },
+       {
+        "reference": "Organization/kunchen-sa"
+       }
+      ]
+     },
+     {
+      "type": {
+       "concept": {
+        "text": "Primary packaging"
+       }
+      },
+      "organization": [
+       {
+        "reference": "Organization/aparna-pharm"
+       },
+       {
+        "reference": "Organization/pack-alpha"
+       },
+       {
+        "reference": "Organization/cocopharma"
+       }
+      ]
+     },
+     {
+      "type": {
+       "concept": {
+        "text": "Secondary packaging"
+       }
+      },
+      "organization": [
+       {
+        "reference": "Organization/aparna-pharm"
+       },
+       {
+        "reference": "Organization/pack-alpha"
+       }
+      ]
+     },
+     {
+      "type": {
+       "concept": {
+        "text": "Stability testing"
+       }
+      },
+      "organization": [
+       {
+        "reference": "Organization/aparna-pharm"
+       },
+       {
+        "reference": "Organization/pack-alpha"
+       }
+      ]
+     }
+    ],
+    "characteristic": [
+     {
+      "type": {
+       "text": "Drug release profile"
+      },
+      "valueCodeableConcept": {
+       "text": "Immediate release"
+      }
+     },
+     {
+      "type": {
+       "text": "Maximum daily dose"
+      },
+      "valueQuantity": {
+       "value": 40,
+       "unit": "mg",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg"
+      }
+     },
+     {
+      "type": {
+       "text": "Medical device(s) or co-packaged item(s)"
+      },
+      "valueCodeableConcept": {
+       "text": "Not applicable"
+      }
+     },
+     {
+      "type": {
+       "text": "Method of administration"
+      },
+      "valueCodeableConcept": {
+       "text": "To be swallowed whole"
+      }
+     },
+     {
+      "type": {
+       "text": "Shelf life (QTPP target)"
+      },
+      "valueCodeableConcept": {
+       "text": "36 months at room temperature across all climatic zones"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Organization/aparna-pharm",
+   "resource": {
+    "resourceType": "Organization",
+    "id": "aparna-pharm",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8199b90deb4c0456477b"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Organization</b> Aparna Pharmaceutical Manufacturing Pte. Ltd.</p></div>"
+    },
+    "identifier": [
+     {
+      "system": "urn:oid:1.3.6.1.4.1.519.1",
+      "value": "489236805"
+     },
+     {
+      "system": "urn:oid:2.16.840.1.113883.4.82",
+      "value": "489236805"
+     }
+    ],
+    "active": true,
+    "type": [
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+        "code": "drug-product-manufacture",
+        "display": "Drug Product Manufacture"
+       }
+      ],
+      "text": "Drug Product Manufacture"
+     },
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+        "code": "analytical-testing-release",
+        "display": "Analytical Testing - Release"
+       }
+      ],
+      "text": "Analytical Testing - Release"
+     },
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+        "code": "analytical-testing-stability",
+        "display": "Analytical Testing - Stability"
+       }
+      ],
+      "text": "Analytical Testing - Stability"
+     },
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+        "code": "packaging",
+        "display": "Packaging"
+       }
+      ],
+      "text": "Packaging"
+     }
+    ],
+    "name": "Aparna Pharmaceutical Manufacturing Pte. Ltd.",
+    "description": "Manufacture of the drug product; in-process control testing; analytical testing of drug product and excipients; stability testing; primary and secondary packaging.",
+    "contact": [
+     {
+      "address": {
+       "use": "work",
+       "type": "physical",
+       "line": [
+        "10 Green Road"
+       ],
+       "city": "Gulshan",
+       "country": "BD"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}

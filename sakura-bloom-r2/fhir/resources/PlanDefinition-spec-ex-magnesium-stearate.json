@@ -1,0 +1,48 @@
+{
+ "resourceType": "PlanDefinition",
+ "id": "spec-ex-magnesium-stearate",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-ex-magnesium-stearate",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> spec-ex-magnesium-stearate</p></div>"
+ },
+ "title": "Specification of compendial excipient Magnesium stearate",
+ "type": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+    "code": "1244577",
+    "display": "Specification Protocol"
+   }
+  ],
+  "text": "Specification Protocol"
+ },
+ "status": "active",
+ "subjectReference": {
+  "reference": "SubstanceDefinition/magnesium-stearate"
+ },
+ "action": [
+  {
+   "title": "Release and re-test",
+   "code": {
+    "text": "Timing Group"
+   },
+   "action": [
+    {
+     "title": "Magnesium stearate - compliance with monograph",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-magnesium-stearate-monograph",
+     "description": "Method: Ph. Eur., USP/NF, JP"
+    }
+   ]
+  }
+ ]
+}

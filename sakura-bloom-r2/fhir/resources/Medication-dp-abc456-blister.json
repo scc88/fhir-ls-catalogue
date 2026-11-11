@@ -1,0 +1,122 @@
+{
+ "resourceType": "Medication",
+ "id": "dp-abc456-blister",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81f194b3e3a46699a278"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Medication</b> Sakura Bloom 20 mg film-coated tablets (PA/AL/PVC blister) - lot ABC456</p></div>"
+ },
+ "code": {
+  "extension": [
+   {
+    "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-medication-definition-pq",
+    "valueReference": {
+     "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+    }
+   },
+   {
+    "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-package-definition-pq",
+    "valueReference": {
+     "reference": "PackagedProductDefinition/pack-pa-al-pvc-blister"
+    }
+   }
+  ],
+  "text": "Sakura Bloom 20 mg film-coated tablets (PA/AL/PVC blister)"
+ },
+ "status": "active",
+ "doseForm": {
+  "coding": [
+   {
+    "system": "http://standardterms.edqm.eu",
+    "code": "10221000",
+    "display": "Film-coated tablet"
+   }
+  ],
+  "text": "Film-coated tablet"
+ },
+ "batch": {
+  "extension": [
+   {
+    "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+    "extension": [
+     {
+      "url": "manufacturingDate",
+      "valueDateTime": "2022-05"
+     },
+     {
+      "url": "batchQuantity",
+      "valueQuantity": {
+       "value": 2600000,
+       "unit": "tablets",
+       "system": "http://unitsofmeasure.org",
+       "code": "{tablets}"
+      }
+     },
+     {
+      "url": "batchUtilization",
+      "valueCodeableConcept": {
+       "text": "Production-scale and commercial batch"
+      }
+     },
+     {
+      "url": "assignedManufacturer",
+      "valueReference": {
+       "reference": "Organization/aparna-pharm"
+      }
+     }
+    ]
+   },
+   {
+    "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-number-of-items-pq",
+    "valueQuantity": {
+     "value": 2600000,
+     "unit": "tablets",
+     "system": "http://unitsofmeasure.org",
+     "code": "{tablets}"
+    }
+   },
+   {
+    "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+    "valueReference": {
+     "reference": "PlanDefinition/dp-manufacturing-process"
+    }
+   },
+   {
+    "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+    "valueReference": {
+     "reference": "Substance/ds-b221217"
+    }
+   },
+   {
+    "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+    "valueReference": {
+     "reference": "Substance/ds-b221218"
+    }
+   },
+   {
+    "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+    "valueReference": {
+     "reference": "Substance/ds-b221219"
+    }
+   },
+   {
+    "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+    "valueReference": {
+     "reference": "Substance/ds-b221220"
+    }
+   },
+   {
+    "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-packaging-site-pq",
+    "valueReference": {
+     "reference": "Organization/aparna-pharm"
+    }
+   }
+  ],
+  "lotNumber": "ABC456"
+ }
+}

@@ -1,0 +1,51 @@
+{
+ "resourceType": "PlanDefinition",
+ "id": "ap-dp-description",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81fc9360f53d0afea086"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-description",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> Core quality information (2.3.3.AP) for Analytical Procedures (Description)[Appearance][Sakura Bloom 20 mg].</p></div>"
+ },
+ "extension": [
+  {
+   "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-plan-document-reference-pq",
+   "valueReference": {
+    "reference": "DocumentReference/doc-dp-description-3-2-ap"
+   }
+  },
+  {
+   "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-plan-document-reference-pq",
+   "valueReference": {
+    "reference": "DocumentReference/doc-dp-description-2-3-4"
+   }
+  }
+ ],
+ "title": "Analytical Procedures (Description)[Appearance][Sakura Bloom 20 mg]",
+ "type": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+    "code": "analytical-procedure",
+    "display": "Analytical Procedure"
+   }
+  ],
+  "text": "Analytical Procedure"
+ },
+ "status": "active",
+ "subjectReference": {
+  "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+ },
+ "description": "Core quality information (2.3.3.AP) for Analytical Procedures (Description)[Appearance][Sakura Bloom 20 mg].",
+ "action": [
+  {
+   "title": "Visual examination",
+   "description": "Examine the appearance of at least 10 film-coated tablets visually on a white base in diffused light."
+  }
+ ]
+}

@@ -1,0 +1,63 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-ds-sakuramil-cp-8",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81bd95b9e9b0ef622af2"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-cp-8",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Related substances - CP-8: ≤ 0.10 %</p></div>"
+ },
+ "title": "CP-8",
+ "status": "active",
+ "category": [
+  {
+   "text": "Related substances"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "DGP-s",
+    "display": "Drug Substance Related Organic impurities"
+   }
+  ],
+  "text": "Related substances - CP-8"
+ },
+ "permittedDataType": [
+  "Quantity"
+ ],
+ "method": {
+  "text": "HPLC  In-house ]"
+ },
+ "permittedUnit": [
+  {
+   "system": "http://unitsofmeasure.org",
+   "code": "%",
+   "display": "%"
+  }
+ ],
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "≤ 0.10 %"
+    }
+   ],
+   "range": {
+    "high": {
+     "value": 0.1,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  }
+ ]
+}

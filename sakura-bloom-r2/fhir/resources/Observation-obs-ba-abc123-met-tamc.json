@@ -1,0 +1,45 @@
+{
+ "resourceType": "Observation",
+ "id": "obs-ba-abc123-met-tamc",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+  ]
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Microbiological Quality - Microbial enumeration - TAMC: &lt;110 CFU/g (Medication/dp-abc123)</p></div>"
+ },
+ "status": "final",
+ "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-tamc",
+ "category": [
+  {
+   "text": "Microbiological Quality"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "Microbiological Quality",
+    "display": "Microbiological Quality"
+   }
+  ],
+  "text": "Microbiological Quality - Microbial enumeration - TAMC"
+ },
+ "subject": {
+  "reference": "Medication/dp-abc123"
+ },
+ "performer": [
+  {
+   "reference": "Organization/kunchen-sa"
+  }
+ ],
+ "valueQuantity": {
+  "comparator": "<",
+  "value": 110,
+  "unit": "CFU/g",
+  "system": "http://unitsofmeasure.org",
+  "code": "{CFU}/g"
+ }
+}

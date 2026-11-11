@@ -1,0 +1,25 @@
+{
+ "resourceType": "ActivityDefinition",
+ "id": "ts-dp-stability-full",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ActivityDefinition-test-drug-pq"
+  ]
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ActivityDefinition/ts-dp-stability-full",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ActivityDefinition</b> ts-dp-stability-full</p></div>"
+ },
+ "title": "DP stability test set: appearance, dissolution, assay, degradation products",
+ "status": "active",
+ "kind": "ServiceRequest",
+ "observationRequirement": [
+  "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-description",
+  "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-dissolution-uv",
+  "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-assay-hplc",
+  "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-degradation-cp-9-1",
+  "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-degradation-unspecified",
+  "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-degradation-total"
+ ]
+}

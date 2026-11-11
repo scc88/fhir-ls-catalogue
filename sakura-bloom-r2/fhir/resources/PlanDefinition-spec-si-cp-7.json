@@ -1,0 +1,98 @@
+{
+ "resourceType": "PlanDefinition",
+ "id": "spec-si-cp-7",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc819c96c7dbf440d968d4"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-si-cp-7",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> spec-si-cp-7</p></div>"
+ },
+ "title": "Specification of intermediate CP-7 (Intermediate 2)",
+ "type": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+    "code": "1244577",
+    "display": "Specification Protocol"
+   }
+  ],
+  "text": "Specification Protocol"
+ },
+ "status": "active",
+ "subjectReference": {
+  "reference": "SubstanceDefinition/cp-7"
+ },
+ "action": [
+  {
+   "title": "Release and re-test",
+   "code": {
+    "text": "Timing Group"
+   },
+   "action": [
+    {
+     "title": "Description",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-7-description",
+     "description": "Method: Visual"
+    },
+    {
+     "title": "Identity - IR",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-7-identity-ir",
+     "description": "Method: USP <197A>"
+    },
+    {
+     "title": "CP-7-1",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-7-cp-7-1",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-cp-7-related-substances"
+      }
+     ]
+    },
+    {
+     "title": "Individual unspecified impurity",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-7-individual-unspecified-impurity",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-cp-7-related-substances"
+      }
+     ]
+    },
+    {
+     "title": "Total impurities",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-7-total-impurities",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-cp-7-related-substances"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

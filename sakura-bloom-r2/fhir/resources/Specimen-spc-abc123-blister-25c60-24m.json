@@ -1,0 +1,41 @@
+{
+ "resourceType": "Specimen",
+ "id": "spc-abc123-blister-25c60-24m",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Specimen-drug-pq"
+  ]
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Specimen</b> spc-abc123-blister-25c60-24m</p></div>"
+ },
+ "identifier": [
+  {
+   "system": "http://example.org/sakura-bloom-r2/fhir/stability-sample",
+   "value": "spc-abc123-blister-25c60-24m"
+  }
+ ],
+ "status": "available",
+ "type": {
+  "text": "Sakura Bloom 20 mg film-coated tablets, PA/AL/PVC blister"
+ },
+ "processing": [
+  {
+   "description": "Stored at 25 °C / 60 % RH (long-term) for 24 months",
+   "timePeriod": {
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-storage-duration-pq",
+      "valueDuration": {
+       "value": 24,
+       "unit": "months",
+       "system": "http://unitsofmeasure.org",
+       "code": "mo"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}

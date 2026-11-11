@@ -1,0 +1,125 @@
+{
+ "resourceType": "PlanDefinition",
+ "id": "ap-dp-assay-degradation",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81b4ba9adfaae218d51f"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-assay-degradation",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> Core quality information (2.3.3.AP) for Analytical Procedures (Assay/Deg.)[Assay/Purity][Sakura Bloom 20 mg].</p></div>"
+ },
+ "extension": [
+  {
+   "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-plan-document-reference-pq",
+   "valueReference": {
+    "reference": "DocumentReference/doc-dp-assay-degradation-3-2-ap"
+   }
+  }
+ ],
+ "title": "Analytical Procedures (Assay/Deg.)[Assay/Purity][Sakura Bloom 20 mg]",
+ "type": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+    "code": "analytical-procedure",
+    "display": "Analytical Procedure"
+   }
+  ],
+  "text": "Analytical Procedure"
+ },
+ "status": "active",
+ "subjectReference": {
+  "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+ },
+ "description": "Core quality information (2.3.3.AP) for Analytical Procedures (Assay/Deg.)[Assay/Purity][Sakura Bloom 20 mg].",
+ "action": [
+  {
+   "title": "Technique",
+   "description": "Gradient Reverse Phase HPLC"
+  },
+  {
+   "title": "System",
+   "description": "Gradient with UV, 210 detection"
+  },
+  {
+   "title": "Solvent",
+   "description": "Water + acetonitrile + phosphoric acid (90/10/1)"
+  },
+  {
+   "title": "Diluent",
+   "description": "Phosphate buffer solution + water + acetonitrile (40/60/25)"
+  },
+  {
+   "title": "Column",
+   "description": "dC18, 3 µm, 150 X 4.6 mm or equivalent"
+  },
+  {
+   "title": "Mobile phase A",
+   "description": "Phosphate buffer solution + water (40/60)"
+  },
+  {
+   "title": "Mobile phase B",
+   "description": "Phosphate buffer solution + acetonitrile (40/60)"
+  },
+  {
+   "title": "Column temperature",
+   "description": "35°C"
+  },
+  {
+   "title": "Flow rate",
+   "description": "1.0 mL/min"
+  },
+  {
+   "title": "Detection (for Sakuramil)",
+   "description": "UV, 210 nm"
+  },
+  {
+   "title": "Injection volume",
+   "description": "10 µl each of the test and reference solutions, equivalent to about 5 µg of Sakuramil in the reference solution."
+  },
+  {
+   "title": "System suitability test (SST)",
+   "description": "-"
+  },
+  {
+   "title": "Tailing factor                    Repeatability",
+   "description": "NMT 2                                      RSD of Sakuramil peak in replicate injections of standard solution should not be more than 0.75 %"
+  },
+  {
+   "title": "Test solution 1  (for Sakuramil: assay and degradation product)",
+   "description": "Approximate 0.5 mg Sakuramil /mL"
+  },
+  {
+   "title": "Test solution 2  (for CP-01)",
+   "description": "Approximate 1.0 mg CP-9-1 / mL"
+  },
+  {
+   "title": "Reference solution",
+   "description": "Approximate 0.5 mg Sakuramil/mL"
+  },
+  {
+   "title": "CP-9-1 stock solution",
+   "description": "Approximate 0.2 mg CP-9-1 / mL"
+  },
+  {
+   "title": "Identification",
+   "description": "Assess the peak for Sakuramil in the chromatogram of test solution 1 and assess the peak for Sakuramil in the reference solution with respect to retention time. The difference should not exceed ± 2.0 %."
+  },
+  {
+   "title": "Assay",
+   "description": "Determine the peak area for Sakuramil in the chromatogram of test solution 1. Also determine the peak area for Sakuramil in the chromatogram of the reference solution."
+  },
+  {
+   "title": "Degradation products related to Sakuramil",
+   "description": "Determine the peak area for CP-9-1 and any further unspecified degradation products individually in the chromatogram of test solution 1 and the peak area for Sakuramil in the chromatogram of the reference solution. Disregard any peaks < 0.1 %."
+  },
+  {
+   "title": "CP-9-1",
+   "description": "Determine the peak area for CP-9-1 in the chromatogram of test solution 2 and the peak area for Sakuramil in the chromatogram of the reference solution. Disregard any other peaks and CP-9-1 peaks < 0.01 %. Percent content of total degradation products, based on the declared content of Sakuramil. Total all values obtained for the individual degradation products."
+  }
+ ]
+}

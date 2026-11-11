@@ -1,0 +1,95 @@
+{
+ "resourceType": "DiagnosticReport",
+ "id": "dr-ba-ds-b221221",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DiagnosticReport-analysis-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81609b20d8199bc3bb18"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DiagnosticReport</b> Batch Analysis Report</p></div>"
+ },
+ "extension": [
+  {
+   "url": "http://hl7.org/fhir/StructureDefinition/workflow-triggeredBy",
+   "valueReference": {
+    "reference": "PlanDefinition/spec-ds-sakuramil"
+   }
+  }
+ ],
+ "identifier": [
+  {
+   "system": "http://example.org/sakura-bloom-r2/fhir/report-id",
+   "value": "dr-ba-ds-b221221"
+  }
+ ],
+ "status": "final",
+ "code": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-report-type",
+    "code": "Batch Analysis Report",
+    "display": "Batch Analysis Report"
+   }
+  ],
+  "text": "Batch Analysis Report"
+ },
+ "subject": {
+  "reference": "Substance/ds-b221221"
+ },
+ "performer": [
+  {
+   "reference": "Organization/iroha-corp"
+  }
+ ],
+ "result": [
+  {
+   "reference": "Observation/obs-ba-b221221-l-appearance"
+  },
+  {
+   "reference": "Observation/obs-ba-b221221-l-sakuramil-ir"
+  },
+  {
+   "reference": "Observation/obs-ba-b221221-l-sakuramil-hplc"
+  },
+  {
+   "reference": "Observation/obs-ba-b221221-l-assay-sakuramil-dried-basis"
+  },
+  {
+   "reference": "Observation/obs-ba-b221221-l-cp-9-1"
+  },
+  {
+   "reference": "Observation/obs-ba-b221221-l-cp-8"
+  },
+  {
+   "reference": "Observation/obs-ba-b221221-l-individual-unspecified-impurities"
+  },
+  {
+   "reference": "Observation/obs-ba-b221221-l-total-impurities"
+  },
+  {
+   "reference": "Observation/obs-ba-b221221-l-cp-6"
+  },
+  {
+   "reference": "Observation/obs-ba-b221221-l-methylene-chloride"
+  },
+  {
+   "reference": "Observation/obs-ba-b221221-l-loss-on-drying"
+  },
+  {
+   "reference": "Observation/obs-ba-b221221-l-residue-on-ignition"
+  },
+  {
+   "reference": "Observation/obs-ba-b221221-l-particle-size-distribution-d-0-1"
+  },
+  {
+   "reference": "Observation/obs-ba-b221221-l-particle-size-distribution-d-0-5"
+  },
+  {
+   "reference": "Observation/obs-ba-b221221-l-particle-size-distribution-d-0-9"
+  }
+ ],
+ "conclusion": "All tested batches met the predefined acceptance criteria. No out-of-specification results or trends were observed."
+}

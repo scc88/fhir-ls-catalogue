@@ -1,0 +1,48 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-rm-sodium-carbonate-identification-qualitative-reaction",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8149b68cdcd5a47eed28"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-sodium-carbonate-identification-qualitative-reaction",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Identification - Identification (qualitative reaction): Carbonate salt: positive Sodium salt: positive</p></div>"
+ },
+ "title": "Identification (qualitative reaction)",
+ "status": "active",
+ "category": [
+  {
+   "text": "Identification"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "IDT",
+    "display": "Identification"
+   }
+  ],
+  "text": "Identification - Identification (qualitative reaction)"
+ },
+ "permittedDataType": [
+  "string"
+ ],
+ "method": {
+  "text": "USP <191>, technique A USP <191>"
+ },
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "Carbonate salt: positive Sodium salt: positive"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,67 @@
+{
+ "resourceType": "PlanDefinition",
+ "id": "ap-premix-identity-colorants",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc813286f7fefb04479bdd"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-premix-identity-colorants",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> Core quality information (2.3.3.AP) for Analytical Procedures (Identity of colorants) [Identification] [Basic Coating Premix Red].</p></div>"
+ },
+ "extension": [
+  {
+   "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-plan-document-reference-pq",
+   "valueReference": {
+    "reference": "DocumentReference/doc-premix-identity-colorants-3-2-ap"
+   }
+  },
+  {
+   "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-plan-document-reference-pq",
+   "valueReference": {
+    "reference": "DocumentReference/doc-premix-identity-colorants-2-3-4"
+   }
+  }
+ ],
+ "title": "Analytical Procedures (Identity of colorants) [Identification] [Basic Coating Premix Red]",
+ "type": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+    "code": "analytical-procedure",
+    "display": "Analytical Procedure"
+   }
+  ],
+  "text": "Analytical Procedure"
+ },
+ "status": "active",
+ "subjectReference": {
+  "reference": "SubstanceDefinition/coating-premix-red"
+ },
+ "description": "Core quality information (2.3.3.AP) for Analytical Procedures (Identity of colorants) [Identification] [Basic Coating Premix Red].",
+ "action": [
+  {
+   "title": "Principle",
+   "description": "The visual comparison of the colour of a film made from both the test substance and in-house reference substance."
+  },
+  {
+   "title": "Equipment",
+   "description": "1.     Device for film production 2.     White cardboard 3.     Propeller-type stirrer or blender"
+  },
+  {
+   "title": "Procedure",
+   "description": "Dispersion: Disperse 20 mg of test substance in 60 ml of de-ionized water. 15 mL of the dispersion are needed to prepare a film on a UGC-2 card.  Prepare a dispersion also for the in-house reference substance in the same manner."
+  },
+  {
+   "title": "Evaluation",
+   "description": "Compare the colour of the film against a film of the in-house reference substance. The test substance is deemed acceptable if the colour of the film matches that of the authentic reference substance."
+  },
+  {
+   "title": "Alternative",
+   "description": "The dispersion may also be prepared using an “Eppendorf” reaction vessel and a Vortex with 10 mg of test substance."
+  }
+ ]
+}

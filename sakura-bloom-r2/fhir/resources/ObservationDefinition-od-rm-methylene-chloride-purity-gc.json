@@ -1,0 +1,49 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-rm-methylene-chloride-purity-gc",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc818dbc23e08be8cc55e0"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-methylene-chloride-purity-gc",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Purity - Purity (GC): ≥ 99.5 %</p></div>"
+ },
+ "title": "Purity (GC)",
+ "status": "active",
+ "category": [
+  {
+   "text": "Purity"
+  }
+ ],
+ "code": {
+  "text": "Purity - Purity (GC)"
+ },
+ "permittedDataType": [
+  "Quantity"
+ ],
+ "method": {
+  "text": "GC USP <621>"
+ },
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "≥ 99.5 %"
+    }
+   ],
+   "range": {
+    "low": {
+     "value": 99.5,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,48 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-rm-methanol-appearance-visual",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8148b33fe048e5ecea49"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-methanol-appearance-visual",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Appearance - Appearance (visual): Clear, colorless liquid</p></div>"
+ },
+ "title": "Appearance (visual)",
+ "status": "active",
+ "category": [
+  {
+   "text": "Appearance"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "Appearance",
+    "display": "Appearance"
+   }
+  ],
+  "text": "Appearance - Appearance (visual)"
+ },
+ "permittedDataType": [
+  "string"
+ ],
+ "method": {
+  "text": "Visual"
+ },
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "Clear, colorless liquid"
+    }
+   ]
+  }
+ ]
+}

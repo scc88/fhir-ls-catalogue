@@ -1,0 +1,37 @@
+{
+ "resourceType": "Observation",
+ "id": "obs-ba-abc789-udu-hplc",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+  ]
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Uniformity of dosage units - Uniformity of dosage units (content uniformity, HPLC): Complies (Medication/dp-abc789)</p></div>"
+ },
+ "status": "final",
+ "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-udu-hplc",
+ "category": [
+  {
+   "text": "Uniformity of dosage units"
+  }
+ ],
+ "code": {
+  "text": "Uniformity of dosage units - Uniformity of dosage units (content uniformity, HPLC)"
+ },
+ "subject": {
+  "reference": "Medication/dp-abc789"
+ },
+ "performer": [
+  {
+   "reference": "Organization/dakina-analytica"
+  }
+ ],
+ "valueString": "Complies",
+ "interpretation": [
+  {
+   "text": "Complies"
+  }
+ ]
+}

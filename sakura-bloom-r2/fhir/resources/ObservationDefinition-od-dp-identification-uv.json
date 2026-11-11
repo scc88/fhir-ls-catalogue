@@ -1,0 +1,62 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-dp-identification-uv",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8196bde0c1ce7d54832e"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-identification-uv",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Identification - Identification (UV-Vis): Batch release The shape of the ultraviolet absorption spectrum from the sample solution coincides with that of the standard solution / Corresponds to reference; Shelf-life The shape of the ultraviolet absorption spectrum from the sample solution coincides with that of the standard solution / Corresponds to reference</p></div>"
+ },
+ "title": "Identification (UV-Vis)",
+ "status": "active",
+ "category": [
+  {
+   "text": "Identification"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "IDT",
+    "display": "Identification"
+   }
+  ],
+  "text": "Identification - Identification (UV-Vis)"
+ },
+ "permittedDataType": [
+  "string"
+ ],
+ "method": {
+  "text": "Ultraviolet-visible spectrophotometry"
+ },
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "The shape of the ultraviolet absorption spectrum from the sample solution coincides with that of the standard solution / Corresponds to reference"
+    }
+   ],
+   "context": {
+    "text": "Batch release"
+   }
+  },
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "The shape of the ultraviolet absorption spectrum from the sample solution coincides with that of the standard solution / Corresponds to reference"
+    }
+   ],
+   "context": {
+    "text": "Shelf-life"
+   }
+  }
+ ]
+}

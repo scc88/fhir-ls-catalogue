@@ -1,0 +1,51 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-dp-description",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8196bde0c1ce7d54832e"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-description",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Description - Description (visual inspection): Batch release Pale red colored, round, biconvex film-coated tablet, debossed with ‘SB’ on one side and ‘20’ on the other side</p></div>"
+ },
+ "title": "Description (visual inspection)",
+ "status": "active",
+ "category": [
+  {
+   "text": "Description"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "DESC",
+    "display": "Description"
+   }
+  ],
+  "text": "Description - Description (visual inspection)"
+ },
+ "permittedDataType": [
+  "string"
+ ],
+ "method": {
+  "text": "Visual inspection"
+ },
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "Pale red colored, round, biconvex film-coated tablet, debossed with ‘SB’ on one side and ‘20’ on the other side"
+    }
+   ],
+   "context": {
+    "text": "Batch release"
+   }
+  }
+ ]
+}

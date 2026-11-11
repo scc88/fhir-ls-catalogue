@@ -1,0 +1,46 @@
+{
+ "resourceType": "SpecimenDefinition",
+ "id": "spd-ds-30c75",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SpecimenDefinition-drug-pq"
+  ]
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/SpecimenDefinition/spd-ds-30c75",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SpecimenDefinition</b> spd-ds-30c75</p></div>"
+ },
+ "status": "active",
+ "title": "DS stability storage condition - 30 °C ± 2 °C / 75 % RH ± 5 % RH (long-term)",
+ "typeTested": [
+  {
+   "preference": "preferred",
+   "type": {
+    "text": "Sakuramil drug substance in LDPE bags"
+   },
+   "handling": [
+    {
+     "temperatureQualifier": {
+      "text": "30 °C ± 2 °C / 75 % RH ± 5 % RH (long-term)"
+     },
+     "temperatureRange": {
+      "low": {
+       "value": 28,
+       "unit": "°C",
+       "system": "http://unitsofmeasure.org",
+       "code": "Cel"
+      },
+      "high": {
+       "value": 32,
+       "unit": "°C",
+       "system": "http://unitsofmeasure.org",
+       "code": "Cel"
+      }
+     },
+     "instruction": "Store at 30 °C ± 2 °C / 75 % RH ± 5 % RH (long-term)"
+    }
+   ]
+  }
+ ]
+}

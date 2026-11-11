@@ -1,0 +1,1976 @@
+{
+ "resourceType": "Bundle",
+ "id": "bundle-ds-specification",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-substance-specification-pq"
+  ]
+ },
+ "identifier": {
+  "system": "http://example.org/sakura-bloom-r2/fhir/bundle-id",
+  "value": "bundle-ds-specification"
+ },
+ "type": "collection",
+ "timestamp": "2026-11-08T00:00:00Z",
+ "entry": [
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-appearance",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-ds-sakuramil-appearance",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81bd95b9e9b0ef622af2"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-appearance",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Description - Appearance: White solid</p></div>"
+    },
+    "title": "Appearance",
+    "status": "active",
+    "category": [
+     {
+      "text": "Description"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DESC",
+       "display": "Description"
+      }
+     ],
+     "text": "Description - Appearance"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "visual evaluation"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "White solid"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-sakuramil-ir",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-ds-sakuramil-sakuramil-ir",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81bd95b9e9b0ef622af2"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-sakuramil-ir",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Identification - Sakuramil (IR): The IR spectrum of the sample is comparable to that of the reference standard</p></div>"
+    },
+    "title": "Sakuramil (IR)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Identification"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "IDT",
+       "display": "Identification"
+      }
+     ],
+     "text": "Identification - Sakuramil (IR)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "IR USP <197A>"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "The IR spectrum of the sample is comparable to that of the reference standard"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-sakuramil-hplc",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-ds-sakuramil-sakuramil-hplc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81bd95b9e9b0ef622af2"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-sakuramil-hplc",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Identification - Sakuramil (HPLC): The retention time of the principal peak of the sample corresponds to that of the reference standard</p></div>"
+    },
+    "title": "Sakuramil (HPLC)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Identification"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "IDT",
+       "display": "Identification"
+      }
+     ],
+     "text": "Identification - Sakuramil (HPLC)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "HPLC In-house"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "The retention time of the principal peak of the sample corresponds to that of the reference standard"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-assay-sakuramil-dried-basis",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-ds-sakuramil-assay-sakuramil-dried-basis",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81bd95b9e9b0ef622af2"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-assay-sakuramil-dried-basis",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Assay - Assay (Sakuramil, dried basis): 98.0 – 102.0 % (dried basis)</p></div>"
+    },
+    "title": "Assay (Sakuramil, dried basis)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Assay"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "ASSAY",
+       "display": "Assay"
+      }
+     ],
+     "text": "Assay - Assay (Sakuramil, dried basis)"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC  In-house ]"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "98.0 – 102.0 % (dried basis)"
+       }
+      ],
+      "range": {
+       "low": {
+        "value": 98.0,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       },
+       "high": {
+        "value": 102.0,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-cp-9-1",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-ds-sakuramil-cp-9-1",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81bd95b9e9b0ef622af2"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-cp-9-1",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Related substances - CP-9-1: ≤ 0.15 %</p></div>"
+    },
+    "title": "CP-9-1",
+    "status": "active",
+    "category": [
+     {
+      "text": "Related substances"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DGP-s",
+       "display": "Drug Substance Related Organic impurities"
+      }
+     ],
+     "text": "Related substances - CP-9-1"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC  In-house ]"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "≤ 0.15 %"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 0.15,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-cp-8",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-ds-sakuramil-cp-8",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81bd95b9e9b0ef622af2"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-cp-8",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Related substances - CP-8: ≤ 0.10 %</p></div>"
+    },
+    "title": "CP-8",
+    "status": "active",
+    "category": [
+     {
+      "text": "Related substances"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DGP-s",
+       "display": "Drug Substance Related Organic impurities"
+      }
+     ],
+     "text": "Related substances - CP-8"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC  In-house ]"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "≤ 0.10 %"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 0.1,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-individual-unspecified-impurities",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-ds-sakuramil-individual-unspecified-impurities",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81bd95b9e9b0ef622af2"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-individual-unspecified-impurities",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Related substances - Individual unspecified impurities: ≤ 0.10 %</p></div>"
+    },
+    "title": "Individual unspecified impurities",
+    "status": "active",
+    "category": [
+     {
+      "text": "Related substances"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DGP-s",
+       "display": "Drug Substance Related Organic impurities"
+      }
+     ],
+     "text": "Related substances - Individual unspecified impurities"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC  In-house ]"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "≤ 0.10 %"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 0.1,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-total-impurities",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-ds-sakuramil-total-impurities",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81bd95b9e9b0ef622af2"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-total-impurities",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Related substances - Total impurities: ≤ 1.0 %</p></div>"
+    },
+    "title": "Total impurities",
+    "status": "active",
+    "category": [
+     {
+      "text": "Related substances"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DGP-s",
+       "display": "Drug Substance Related Organic impurities"
+      }
+     ],
+     "text": "Related substances - Total impurities"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC  In-house ]"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "≤ 1.0 %"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 1.0,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-cp-6",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-ds-sakuramil-cp-6",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81bd95b9e9b0ef622af2"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-cp-6",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Potentially mutagenic impurities - CP-6: ≤ 37.5 ppm</p></div>"
+    },
+    "title": "CP-6",
+    "status": "active",
+    "category": [
+     {
+      "text": "Potentially mutagenic impurities"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "MUT",
+       "display": "Mutagenic impurities"
+      }
+     ],
+     "text": "Potentially mutagenic impurities - CP-6"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC  In-house ]"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "[ppm]",
+      "display": "ppm"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "≤ 37.5 ppm"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 37.5,
+        "unit": "ppm",
+        "system": "http://unitsofmeasure.org",
+        "code": "[ppm]"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-methylene-chloride",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-ds-sakuramil-methylene-chloride",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81bd95b9e9b0ef622af2"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-methylene-chloride",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Residual solvents - Methylene chloride: ≤ 600 ppm</p></div>"
+    },
+    "title": "Methylene chloride",
+    "status": "active",
+    "category": [
+     {
+      "text": "Residual solvents"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "SOL",
+       "display": "Residual solvents"
+      }
+     ],
+     "text": "Residual solvents - Methylene chloride"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "GC  USP <467> Procedure A"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "[ppm]",
+      "display": "ppm"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "≤ 600 ppm"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 600,
+        "unit": "ppm",
+        "system": "http://unitsofmeasure.org",
+        "code": "[ppm]"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-loss-on-drying",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-ds-sakuramil-loss-on-drying",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81bd95b9e9b0ef622af2"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-loss-on-drying",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Loss on drying: ≤ 0.5 %</p></div>"
+    },
+    "title": "Loss on drying",
+    "status": "active",
+    "category": [
+     {
+      "text": "Loss on drying"
+     }
+    ],
+    "code": {
+     "text": "Loss on drying"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "USP <731>"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "[ppm]",
+      "display": "ppm"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "≤ 0.5 %"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 0.5,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-residue-on-ignition",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-ds-sakuramil-residue-on-ignition",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81bd95b9e9b0ef622af2"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-residue-on-ignition",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Residue on ignition: ≤ 0.2 %</p></div>"
+    },
+    "title": "Residue on ignition",
+    "status": "active",
+    "category": [
+     {
+      "text": "Residue on ignition"
+     }
+    ],
+    "code": {
+     "text": "Residue on ignition"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "USP <281>"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "[ppm]",
+      "display": "ppm"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "≤ 0.2 %"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 0.2,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-particle-size-distribution-d-0-1",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-ds-sakuramil-particle-size-distribution-d-0-1",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81bd95b9e9b0ef622af2"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-particle-size-distribution-d-0-1",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Particulate matters - Particle size distribution d(0.1): d(0.1) - 26 nm</p></div>"
+    },
+    "title": "Particle size distribution d(0.1)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Particulate matters"
+     }
+    ],
+    "code": {
+     "text": "Particulate matters - Particle size distribution d(0.1)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Laser light diffraction In-house ]"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "nm",
+      "display": "nm"
+     }
+    ],
+    "description": "The specification lists a nominal value without a stated tolerance.",
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "d(0.1) - 26 nm"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-particle-size-distribution-d-0-5",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-ds-sakuramil-particle-size-distribution-d-0-5",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81bd95b9e9b0ef622af2"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-particle-size-distribution-d-0-5",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Particulate matters - Particle size distribution d(0.5): d(0.5) - 40 nm</p></div>"
+    },
+    "title": "Particle size distribution d(0.5)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Particulate matters"
+     }
+    ],
+    "code": {
+     "text": "Particulate matters - Particle size distribution d(0.5)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Laser light diffraction In-house ]"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "nm",
+      "display": "nm"
+     }
+    ],
+    "description": "The specification lists a nominal value without a stated tolerance.",
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "d(0.5) - 40 nm"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-particle-size-distribution-d-0-9",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-ds-sakuramil-particle-size-distribution-d-0-9",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81bd95b9e9b0ef622af2"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-particle-size-distribution-d-0-9",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Particulate matters - Particle size distribution d(0.9): d(0.9) - 66 nm</p></div>"
+    },
+    "title": "Particle size distribution d(0.9)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Particulate matters"
+     }
+    ],
+    "code": {
+     "text": "Particulate matters - Particle size distribution d(0.9)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Laser light diffraction In-house ]"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "nm",
+      "display": "nm"
+     }
+    ],
+    "description": "The specification lists a nominal value without a stated tolerance.",
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "d(0.9) - 66 nm"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-ds-sakuramil",
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "spec-ds-sakuramil",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81bd95b9e9b0ef622af2"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-ds-sakuramil",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> Table 1-1 Drug substance release/re-test specification of Sakuramil (2.3.3.DS.C). Re-test period 36 months, storage 15-30 °C.</p></div>"
+    },
+    "title": "Drug substance release / re-test specification - Sakuramil (IROHA-corp.)",
+    "type": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+       "code": "1244577",
+       "display": "Specification Protocol"
+      }
+     ],
+     "text": "Specification Protocol"
+    },
+    "status": "active",
+    "subjectReference": {
+     "reference": "SubstanceDefinition/sakuramil"
+    },
+    "description": "Table 1-1 Drug substance release/re-test specification of Sakuramil (2.3.3.DS.C). Re-test period 36 months, storage 15-30 °C.",
+    "action": [
+     {
+      "title": "Release and re-test",
+      "code": {
+       "text": "Timing Group"
+      },
+      "action": [
+       {
+        "title": "Appearance",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-appearance",
+        "description": "Method: visual evaluation"
+       },
+       {
+        "title": "Sakuramil (IR)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-sakuramil-ir",
+        "description": "Method: IR USP <197A>"
+       },
+       {
+        "title": "Sakuramil (HPLC)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-sakuramil-hplc",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-ds-assay-id"
+         }
+        ]
+       },
+       {
+        "title": "Assay (Sakuramil, dried basis)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-assay-sakuramil-dried-basis",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-ds-assay-id"
+         }
+        ]
+       },
+       {
+        "title": "CP-9-1",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-cp-9-1",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-ds-related-substances"
+         }
+        ]
+       },
+       {
+        "title": "CP-8",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-cp-8",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-ds-related-substances"
+         }
+        ]
+       },
+       {
+        "title": "Individual unspecified impurities",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-individual-unspecified-impurities",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-ds-related-substances"
+         }
+        ]
+       },
+       {
+        "title": "Total impurities",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-total-impurities",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-ds-related-substances"
+         }
+        ]
+       },
+       {
+        "title": "CP-6",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-cp-6",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-ds-mutagenic-impurities"
+         }
+        ]
+       },
+       {
+        "title": "Methylene chloride",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-methylene-chloride",
+        "description": "Method: GC  USP <467> Procedure A"
+       },
+       {
+        "title": "Loss on drying",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-loss-on-drying",
+        "description": "Method: USP <731>"
+       },
+       {
+        "title": "Residue on ignition",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-residue-on-ignition",
+        "description": "Method: USP <281>"
+       },
+       {
+        "title": "Particle size distribution d(0.1)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-particle-size-distribution-d-0-1",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-ds-particle-size"
+         }
+        ]
+       },
+       {
+        "title": "Particle size distribution d(0.5)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-particle-size-distribution-d-0-5",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-ds-particle-size"
+         }
+        ]
+       },
+       {
+        "title": "Particle size distribution d(0.9)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-particle-size-distribution-d-0-9",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-ds-particle-size"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/sakuramil",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "sakuramil",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81f89f56d478fe7ac949"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Sakuramil</p></div>"
+    },
+    "identifier": [
+     {
+      "system": "http://cas.org",
+      "value": "262352-13-6"
+     }
+    ],
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Chemical (small molecule)"
+     }
+    ],
+    "grade": [
+     {
+      "text": "In-house"
+     }
+    ],
+    "description": "Sakuramil (company code CP-9), the drug substance of Sakura Bloom 20 mg film-coated tablets.",
+    "manufacturer": [
+     {
+      "reference": "Organization/iroha-corp",
+      "display": "IROHA-corp.",
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-site-utilization-pq",
+        "valueCoding": {
+         "system": "http://terminology.hl7.org/CodeSystem/product-site-utilization-type",
+         "code": "Primary manufacturing",
+         "display": "Primary Manufacturing"
+        }
+       }
+      ]
+     }
+    ],
+    "characterization": [
+     {
+      "technique": {
+       "text": "Mass spectrometry (ESI positive, Shimadzu LCM-IT-TOF)"
+      },
+      "description": "m/z 614.504 observed (predicted 614.505) on CP-9 primary working standard"
+     },
+     {
+      "technique": {
+       "text": "1H NMR (Bruker 500 MHz, D2O)"
+      }
+     },
+     {
+      "technique": {
+       "text": "13C NMR (Bruker 500 MHz, D2O)"
+      }
+     }
+    ],
+    "property": [
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+         "code": "appearance",
+         "display": "Appearance"
+        }
+       ],
+       "text": "Appearance"
+      },
+      "valueCodeableConcept": {
+       "text": "White solid"
+      }
+     },
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+         "code": "solubility-water",
+         "display": "Solubility purified water"
+        }
+       ],
+       "text": "Solubility purified water"
+      },
+      "valueQuantity": {
+       "value": 0.05,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      }
+     },
+     {
+      "type": {
+       "text": "Solubility in ethanol (RT)"
+      },
+      "valueQuantity": {
+       "value": 45,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      }
+     },
+     {
+      "type": {
+       "text": "Solubility in acetone (RT)"
+      },
+      "valueQuantity": {
+       "value": 71.3,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      }
+     },
+     {
+      "type": {
+       "text": "Aqueous solubility as a function of pH (RT) - Deionized water"
+      },
+      "valueQuantity": {
+       "value": 0.05,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      }
+     },
+     {
+      "type": {
+       "text": "Aqueous solubility as a function of pH (RT) - 0.1 N HCl"
+      },
+      "valueQuantity": {
+       "comparator": "<",
+       "value": 0.01,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      },
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-substance-property-parameter-pq",
+        "extension": [
+         {
+          "url": "parameter",
+          "valueCoding": {
+           "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+           "code": "pH",
+           "display": "pH"
+          }
+         },
+         {
+          "url": "value",
+          "valueQuantity": {
+           "value": 1.2,
+           "unit": "pH",
+           "system": "http://unitsofmeasure.org",
+           "code": "[pH]"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": {
+       "text": "Aqueous solubility as a function of pH (RT) - Acetate buffer"
+      },
+      "valueQuantity": {
+       "value": 5.0,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      },
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-substance-property-parameter-pq",
+        "extension": [
+         {
+          "url": "parameter",
+          "valueCoding": {
+           "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+           "code": "pH",
+           "display": "pH"
+          }
+         },
+         {
+          "url": "value",
+          "valueQuantity": {
+           "value": 4.5,
+           "unit": "pH",
+           "system": "http://unitsofmeasure.org",
+           "code": "[pH]"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": {
+       "text": "Aqueous solubility as a function of pH (RT) - Phosphate buffer"
+      },
+      "valueQuantity": {
+       "value": 3.2,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      },
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-substance-property-parameter-pq",
+        "extension": [
+         {
+          "url": "parameter",
+          "valueCoding": {
+           "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+           "code": "pH",
+           "display": "pH"
+          }
+         },
+         {
+          "url": "value",
+          "valueQuantity": {
+           "value": 6.8,
+           "unit": "pH",
+           "system": "http://unitsofmeasure.org",
+           "code": "[pH]"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": {
+       "text": "Aqueous solubility as a function of pH (RT) - 0.1 N NaOH"
+      },
+      "valueQuantity": {
+       "value": 5.1,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      },
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-substance-property-parameter-pq",
+        "extension": [
+         {
+          "url": "parameter",
+          "valueCoding": {
+           "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+           "code": "pH",
+           "display": "pH"
+          }
+         },
+         {
+          "url": "value",
+          "valueQuantity": {
+           "value": 8.0,
+           "unit": "pH",
+           "system": "http://unitsofmeasure.org",
+           "code": "[pH]"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+         "code": "pH",
+         "display": "pH"
+        }
+       ],
+       "text": "pH"
+      },
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-substance-property-range-pq",
+        "valueRange": {
+         "low": {
+          "value": 5.0,
+          "unit": "pH",
+          "system": "http://unitsofmeasure.org",
+          "code": "[pH]"
+         },
+         "high": {
+          "value": 9.0,
+          "unit": "pH",
+          "system": "http://unitsofmeasure.org",
+          "code": "[pH]"
+         }
+        }
+       }
+      ],
+      "valueCodeableConcept": {
+       "text": "5.0 - 9.0 (RT)"
+      }
+     },
+     {
+      "type": {
+       "text": "pKa (carboxylate)"
+      },
+      "valueQuantity": {
+       "value": 12.6
+      }
+     },
+     {
+      "type": {
+       "text": "pKa (phenol CF3)"
+      },
+      "valueQuantity": {
+       "value": 15.3
+      }
+     },
+     {
+      "type": {
+       "text": "pKa (carbamate)"
+      },
+      "valueQuantity": {
+       "value": 24.2
+      }
+     },
+     {
+      "type": {
+       "text": "Partition coefficient (log P, n-octanol/water)"
+      },
+      "valueQuantity": {
+       "value": 6.3
+      }
+     },
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+         "code": "hygroscopy",
+         "display": "Hygroscopy"
+        }
+       ],
+       "text": "Hygroscopy"
+      },
+      "valueCodeableConcept": {
+       "text": "Not hygroscopic"
+      }
+     },
+     {
+      "type": {
+       "text": "Melting point"
+      },
+      "valueQuantity": {
+       "value": 174,
+       "unit": "°C",
+       "system": "http://unitsofmeasure.org",
+       "code": "Cel"
+      }
+     },
+     {
+      "type": {
+       "text": "Polymorphism"
+      },
+      "valueCodeableConcept": {
+       "text": "Only one polymorph observed in synthetic manufacture and extensive polymorph screening"
+      }
+     },
+     {
+      "type": {
+       "text": "Chirality"
+      },
+      "valueCodeableConcept": {
+       "text": "Two chiral centres; no racemization observed in the manufacturing process"
+      }
+     },
+     {
+      "type": {
+       "text": "Isomerism"
+      },
+      "valueCodeableConcept": {
+       "text": "An enantiomer and two diastereomers can be formed"
+      }
+     },
+     {
+      "type": {
+       "text": "Specific optical rotation (20 °C, aqueous solution)"
+      },
+      "valueQuantity": {
+       "value": 145,
+       "unit": "deg",
+       "system": "http://unitsofmeasure.org",
+       "code": "deg"
+      }
+     },
+     {
+      "type": {
+       "text": "Particle size distribution d(0.1) (laser diffraction)"
+      },
+      "valueQuantity": {
+       "value": 26,
+       "unit": "nm",
+       "system": "http://unitsofmeasure.org",
+       "code": "nm"
+      }
+     },
+     {
+      "type": {
+       "text": "Particle size distribution d(0.5) (laser diffraction)"
+      },
+      "valueQuantity": {
+       "value": 40,
+       "unit": "nm",
+       "system": "http://unitsofmeasure.org",
+       "code": "nm"
+      }
+     },
+     {
+      "type": {
+       "text": "Particle size distribution d(0.9) (laser diffraction)"
+      },
+      "valueQuantity": {
+       "value": 66,
+       "unit": "nm",
+       "system": "http://unitsofmeasure.org",
+       "code": "nm"
+      }
+     },
+     {
+      "type": {
+       "text": "Light sensitivity"
+      },
+      "valueCodeableConcept": {
+       "text": "Not sensitive to light"
+      }
+     },
+     {
+      "type": {
+       "text": "Biopharmaceutics Classification System"
+      },
+      "valueCodeableConcept": {
+       "text": "BCS Class II (poorly soluble, highly permeable)"
+      }
+     }
+    ],
+    "molecularWeight": [
+     {
+      "type": {
+       "text": "Exact/average (free base)"
+      },
+      "amount": {
+       "value": 614.5,
+       "unit": "g/mol",
+       "system": "http://unitsofmeasure.org",
+       "code": "g/mol"
+      }
+     }
+    ],
+    "structure": {
+     "stereochemistry": {
+      "text": "(2S,4S)"
+     },
+     "molecularFormula": "C27H27F9N2O4",
+     "representation": [
+      {
+       "type": {
+        "text": "IUPAC name"
+       },
+       "representation": "Propan-2-yl (2S,4S)-4-[acetyl-[[3,5-bis(trifluoromethyl)phenyl]methyl]amino]-2-methoxy-2-methyl-6-(trifluoromethyl)-3,4-dihydroquinoline-1-carboxylate"
+      }
+     ]
+    },
+    "code": [
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://cas.org",
+         "code": "262352-13-6"
+        }
+       ],
+       "text": "262352-13-6"
+      }
+     },
+     {
+      "code": {
+       "text": "CP-9"
+      }
+     }
+    ],
+    "name": [
+     {
+      "name": "Sakuramil",
+      "type": {
+       "text": "INN"
+      },
+      "preferred": true
+     },
+     {
+      "name": "Sakuramil",
+      "type": {
+       "text": "USAN"
+      }
+     },
+     {
+      "name": "Propan-2-yl (2S,4S)-4-[acetyl-[[3,5-bis(trifluoromethyl)phenyl]methyl]amino]-2-methoxy-2-methyl-6-(trifluoromethyl)-3,4-dihydroquinoline-1-carboxylate",
+      "type": {
+       "text": "IUPAC chemical name"
+      }
+     },
+     {
+      "name": "CP-9",
+      "type": {
+       "text": "Company code"
+      }
+     }
+    ],
+    "relationship": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "process",
+           "display": "Process Impurity"
+          }
+         ],
+         "text": "Process Impurity"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-9-1",
+       "display": "CP-9-1"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "PR-IMP",
+         "display": "Process impurity"
+        }
+       ],
+       "text": "Process impurity - Specified related substance; NMT 0.15 % (DS); NMT 0.3 %/0.5 % release/shelf-life (DP)"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "starting-material",
+           "display": "Starting Material"
+          }
+         ],
+         "text": "Starting Material"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-8",
+       "display": "CP-8"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "ST-IMP",
+         "display": "Starting material, forced degradation product"
+        }
+       ],
+       "text": "Starting material, forced degradation product - Specified related substance; NMT 0.10 %"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "intermediate-material",
+           "display": "Intermediate Material"
+          }
+         ],
+         "text": "Intermediate Material"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-6",
+       "display": "CP-6"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "INT-IMP",
+         "display": "Process intermediate, forced degradation product"
+        }
+       ],
+       "text": "Process intermediate, forced degradation product - Potentially mutagenic impurity; NMT 37.5 ppm"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "starting-material",
+           "display": "Starting Material"
+          }
+         ],
+         "text": "Starting Material"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-4",
+       "display": "CP-4"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "ST-IMP",
+         "display": "Starting material, forced degradation product"
+        }
+       ],
+       "text": "Starting material, forced degradation product - Potentially mutagenic; controlled via CP-6 limit and purge"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "intermediate-material",
+           "display": "Intermediate Material"
+          }
+         ],
+         "text": "Intermediate Material"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-5",
+       "display": "CP-5"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "INT-IMP",
+         "display": "Process intermediate, forced degradation product"
+        }
+       ],
+       "text": "Process intermediate, forced degradation product - Potentially mutagenic (structural alert); purged"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "process",
+           "display": "Process Impurity"
+          }
+         ],
+         "text": "Process Impurity"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-3",
+       "display": "CP-3"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "PR-IMP",
+         "display": "Process impurity"
+        }
+       ],
+       "text": "Process impurity - Potentially mutagenic (structural alert); purged"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "intermediate-material",
+           "display": "Intermediate Material"
+          }
+         ],
+         "text": "Intermediate Material"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-7",
+       "display": "CP-7"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "INT-IMP",
+         "display": "Process intermediate, forced degradation product"
+        }
+       ],
+       "text": "Process intermediate, forced degradation product - Intermediate; purged in Step 4 crystallization"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Organization/iroha-corp",
+   "resource": {
+    "resourceType": "Organization",
+    "id": "iroha-corp",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8199b90deb4c0456477b"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Organization</b> IROHA-corp.</p></div>"
+    },
+    "identifier": [
+     {
+      "system": "urn:oid:1.3.6.1.4.1.519.1",
+      "value": "3002363512"
+     },
+     {
+      "system": "urn:oid:2.16.840.1.113883.4.82",
+      "value": "3002867083"
+     }
+    ],
+    "active": true,
+    "type": [
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+        "code": "drug-substance-manufacture",
+        "display": "Drug Substance Manufacture"
+       }
+      ],
+      "text": "Drug Substance Manufacture"
+     },
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+        "code": "analytical-testing-release",
+        "display": "Analytical Testing - Release"
+       }
+      ],
+      "text": "Analytical Testing - Release"
+     },
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+        "code": "analytical-testing-stability",
+        "display": "Analytical Testing - Stability"
+       }
+      ],
+      "text": "Analytical Testing - Stability"
+     },
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+        "code": "storage",
+        "display": "Storage"
+       }
+      ],
+      "text": "Storage"
+     }
+    ],
+    "name": "IROHA-corp.",
+    "description": "DMF holder; manufacture of intermediates CP-6/CP-7 and drug substance Sakuramil; QC (IPC and release); stability testing; storage of packaged drug substance. Also manufacturer of starting materials CP-4 and CP-8.",
+    "contact": [
+     {
+      "address": {
+       "use": "work",
+       "type": "physical",
+       "line": [
+        "Jiangkou R&D Park, No.10867"
+       ],
+       "city": "Huangyan",
+       "country": "CN",
+       "postalCode": "250105"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}

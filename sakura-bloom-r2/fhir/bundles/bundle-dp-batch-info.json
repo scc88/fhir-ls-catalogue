@@ -1,0 +1,2710 @@
+{
+ "resourceType": "Bundle",
+ "id": "bundle-dp-batch-info",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-product-batch-info-pq"
+  ]
+ },
+ "identifier": {
+  "system": "http://example.org/sakura-bloom-r2/fhir/bundle-id",
+  "value": "bundle-dp-batch-info"
+ },
+ "type": "collection",
+ "timestamp": "2026-11-08T00:00:00Z",
+ "entry": [
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/MedicinalProductDefinition/sakura-bloom-20mg",
+   "resource": {
+    "resourceType": "MedicinalProductDefinition",
+    "id": "sakura-bloom-20mg",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8139acafcbef7ae81c6f"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>MedicinalProductDefinition</b> Sakura Bloom 20 mg film-coated tablets</p></div>"
+    },
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/product-id",
+      "value": "SB-20MG-FCT"
+     }
+    ],
+    "type": {
+     "text": "Medicinal product (small molecule)"
+    },
+    "domain": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/medicinal-product-domain",
+       "code": "Human",
+       "display": "Human use"
+      }
+     ],
+     "text": "Human use"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "description": "Sakura Bloom 20 mg film-coated tablet: immediate-release film-coated tablet for oral administration, to be swallowed whole. Strength expressed as Sakuramil neutral, anhydrous base. Fictitious ICH M4Q(R2) mock-up product 'SakuraBloom R2'.",
+    "combinedPharmaceuticalDoseForm": {
+     "coding": [
+      {
+       "system": "http://standardterms.edqm.eu",
+       "code": "10221000",
+       "display": "Film-coated tablet"
+      }
+     ],
+     "text": "Film-coated tablet"
+    },
+    "route": [
+     {
+      "coding": [
+       {
+        "system": "http://standardterms.edqm.eu",
+        "code": "20053000",
+        "display": "Oral use"
+       }
+      ],
+      "text": "Oral use"
+     }
+    ],
+    "name": [
+     {
+      "productName": "Sakura Bloom 20 mg film-coated tablets",
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-productNameType-pq-example",
+         "code": "Proprietary",
+         "display": "Proprietary"
+        }
+       ],
+       "text": "Proprietary"
+      },
+      "part": [
+       {
+        "part": "Sakura Bloom",
+        "type": {
+         "text": "Invented name part"
+        }
+       },
+       {
+        "part": "20 mg",
+        "type": {
+         "text": "Strength part"
+        }
+       },
+       {
+        "part": "film-coated tablets",
+        "type": {
+         "text": "Pharmaceutical dose form part"
+        }
+       }
+      ]
+     }
+    ],
+    "operation": [
+     {
+      "type": {
+       "concept": {
+        "text": "Drug substance manufacture"
+       }
+      },
+      "organization": [
+       {
+        "reference": "Organization/iroha-corp"
+       }
+      ]
+     },
+     {
+      "type": {
+       "reference": {
+        "reference": "PlanDefinition/dp-manufacturing-process"
+       }
+      },
+      "organization": [
+       {
+        "reference": "Organization/aparna-pharm"
+       }
+      ]
+     },
+     {
+      "type": {
+       "concept": {
+        "text": "Quality control testing (release)"
+       }
+      },
+      "organization": [
+       {
+        "reference": "Organization/aparna-pharm"
+       },
+       {
+        "reference": "Organization/dakina-analytica"
+       },
+       {
+        "reference": "Organization/kunchen-sa"
+       }
+      ]
+     },
+     {
+      "type": {
+       "concept": {
+        "text": "Primary packaging"
+       }
+      },
+      "organization": [
+       {
+        "reference": "Organization/aparna-pharm"
+       },
+       {
+        "reference": "Organization/pack-alpha"
+       },
+       {
+        "reference": "Organization/cocopharma"
+       }
+      ]
+     },
+     {
+      "type": {
+       "concept": {
+        "text": "Secondary packaging"
+       }
+      },
+      "organization": [
+       {
+        "reference": "Organization/aparna-pharm"
+       },
+       {
+        "reference": "Organization/pack-alpha"
+       }
+      ]
+     },
+     {
+      "type": {
+       "concept": {
+        "text": "Stability testing"
+       }
+      },
+      "organization": [
+       {
+        "reference": "Organization/aparna-pharm"
+       },
+       {
+        "reference": "Organization/pack-alpha"
+       }
+      ]
+     }
+    ],
+    "characteristic": [
+     {
+      "type": {
+       "text": "Drug release profile"
+      },
+      "valueCodeableConcept": {
+       "text": "Immediate release"
+      }
+     },
+     {
+      "type": {
+       "text": "Maximum daily dose"
+      },
+      "valueQuantity": {
+       "value": 40,
+       "unit": "mg",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg"
+      }
+     },
+     {
+      "type": {
+       "text": "Medical device(s) or co-packaged item(s)"
+      },
+      "valueCodeableConcept": {
+       "text": "Not applicable"
+      }
+     },
+     {
+      "type": {
+       "text": "Method of administration"
+      },
+      "valueCodeableConcept": {
+       "text": "To be swallowed whole"
+      }
+     },
+     {
+      "type": {
+       "text": "Shelf life (QTPP target)"
+      },
+      "valueCodeableConcept": {
+       "text": "36 months at room temperature across all climatic zones"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Medication/dp-abc123",
+   "resource": {
+    "resourceType": "Medication",
+    "id": "dp-abc123",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81f194b3e3a46699a278"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Medication</b> Sakura Bloom 20 mg film-coated tablets - lot ABC123</p></div>"
+    },
+    "code": {
+     "extension": [
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-medication-definition-pq",
+       "valueReference": {
+        "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+       }
+      }
+     ],
+     "text": "Sakura Bloom 20 mg film-coated tablets"
+    },
+    "status": "active",
+    "doseForm": {
+     "coding": [
+      {
+       "system": "http://standardterms.edqm.eu",
+       "code": "10221000",
+       "display": "Film-coated tablet"
+      }
+     ],
+     "text": "Film-coated tablet"
+    },
+    "batch": {
+     "extension": [
+      {
+       "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+       "extension": [
+        {
+         "url": "manufacturingDate",
+         "valueDateTime": "2022-04"
+        },
+        {
+         "url": "batchQuantity",
+         "valueQuantity": {
+          "value": 2600000,
+          "unit": "tablets",
+          "system": "http://unitsofmeasure.org",
+          "code": "{tablets}"
+         }
+        },
+        {
+         "url": "batchUtilization",
+         "valueCodeableConcept": {
+          "text": "Production-scale and commercial batch"
+         }
+        },
+        {
+         "url": "assignedManufacturer",
+         "valueReference": {
+          "reference": "Organization/aparna-pharm"
+         }
+        }
+       ]
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-number-of-items-pq",
+       "valueQuantity": {
+        "value": 2600000,
+        "unit": "tablets",
+        "system": "http://unitsofmeasure.org",
+        "code": "{tablets}"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+       "valueReference": {
+        "reference": "PlanDefinition/dp-manufacturing-process"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+       "valueReference": {
+        "reference": "Substance/ds-b221215"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+       "valueReference": {
+        "reference": "Substance/ds-b221216"
+       }
+      }
+     ],
+     "lotNumber": "ABC123"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/ds-b221215",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "ds-b221215",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> ds-b221215 - lot B221215</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+      "extension": [
+       {
+        "url": "assignedManufacturer",
+        "valueReference": {
+         "reference": "Organization/iroha-corp"
+        }
+       }
+      ]
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+      "valueReference": {
+       "reference": "PlanDefinition/ds-manufacturing-process"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/lot-number",
+      "value": "B221215"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/sakuramil",
+      "display": "Sakuramil"
+     }
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/ds-b221216",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "ds-b221216",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> ds-b221216 - lot B221216</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+      "extension": [
+       {
+        "url": "assignedManufacturer",
+        "valueReference": {
+         "reference": "Organization/iroha-corp"
+        }
+       }
+      ]
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+      "valueReference": {
+       "reference": "PlanDefinition/ds-manufacturing-process"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/lot-number",
+      "value": "B221216"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/sakuramil",
+      "display": "Sakuramil"
+     }
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Medication/dp-abc456",
+   "resource": {
+    "resourceType": "Medication",
+    "id": "dp-abc456",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81f194b3e3a46699a278"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Medication</b> Sakura Bloom 20 mg film-coated tablets - lot ABC456</p></div>"
+    },
+    "code": {
+     "extension": [
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-medication-definition-pq",
+       "valueReference": {
+        "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+       }
+      }
+     ],
+     "text": "Sakura Bloom 20 mg film-coated tablets"
+    },
+    "status": "active",
+    "doseForm": {
+     "coding": [
+      {
+       "system": "http://standardterms.edqm.eu",
+       "code": "10221000",
+       "display": "Film-coated tablet"
+      }
+     ],
+     "text": "Film-coated tablet"
+    },
+    "batch": {
+     "extension": [
+      {
+       "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+       "extension": [
+        {
+         "url": "manufacturingDate",
+         "valueDateTime": "2022-05"
+        },
+        {
+         "url": "batchQuantity",
+         "valueQuantity": {
+          "value": 2600000,
+          "unit": "tablets",
+          "system": "http://unitsofmeasure.org",
+          "code": "{tablets}"
+         }
+        },
+        {
+         "url": "batchUtilization",
+         "valueCodeableConcept": {
+          "text": "Production-scale and commercial batch"
+         }
+        },
+        {
+         "url": "assignedManufacturer",
+         "valueReference": {
+          "reference": "Organization/aparna-pharm"
+         }
+        }
+       ]
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-number-of-items-pq",
+       "valueQuantity": {
+        "value": 2600000,
+        "unit": "tablets",
+        "system": "http://unitsofmeasure.org",
+        "code": "{tablets}"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+       "valueReference": {
+        "reference": "PlanDefinition/dp-manufacturing-process"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+       "valueReference": {
+        "reference": "Substance/ds-b221217"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+       "valueReference": {
+        "reference": "Substance/ds-b221218"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+       "valueReference": {
+        "reference": "Substance/ds-b221219"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+       "valueReference": {
+        "reference": "Substance/ds-b221220"
+       }
+      }
+     ],
+     "lotNumber": "ABC456"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/ds-b221217",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "ds-b221217",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> ds-b221217 - lot B221217</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+      "extension": [
+       {
+        "url": "assignedManufacturer",
+        "valueReference": {
+         "reference": "Organization/iroha-corp"
+        }
+       }
+      ]
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+      "valueReference": {
+       "reference": "PlanDefinition/ds-manufacturing-process"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/lot-number",
+      "value": "B221217"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/sakuramil",
+      "display": "Sakuramil"
+     }
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/ds-b221218",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "ds-b221218",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> ds-b221218 - lot B221218</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+      "extension": [
+       {
+        "url": "assignedManufacturer",
+        "valueReference": {
+         "reference": "Organization/iroha-corp"
+        }
+       }
+      ]
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+      "valueReference": {
+       "reference": "PlanDefinition/ds-manufacturing-process"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/lot-number",
+      "value": "B221218"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/sakuramil",
+      "display": "Sakuramil"
+     }
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/ds-b221219",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "ds-b221219",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> ds-b221219 - lot B221219</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+      "extension": [
+       {
+        "url": "assignedManufacturer",
+        "valueReference": {
+         "reference": "Organization/iroha-corp"
+        }
+       }
+      ]
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+      "valueReference": {
+       "reference": "PlanDefinition/ds-manufacturing-process"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/lot-number",
+      "value": "B221219"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/sakuramil",
+      "display": "Sakuramil"
+     }
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/ds-b221220",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "ds-b221220",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> ds-b221220 - lot B221220</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+      "extension": [
+       {
+        "url": "manufacturingDate",
+        "valueDateTime": "2022-12-20"
+       },
+       {
+        "url": "batchQuantity",
+        "valueQuantity": {
+         "value": 350,
+         "unit": "kg",
+         "system": "http://unitsofmeasure.org",
+         "code": "kg"
+        }
+       },
+       {
+        "url": "batchUtilization",
+        "valueCodeableConcept": {
+         "text": "Production batch (commercial / stability)"
+        }
+       },
+       {
+        "url": "assignedManufacturer",
+        "valueReference": {
+         "reference": "Organization/iroha-corp"
+        }
+       }
+      ]
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+      "valueReference": {
+       "reference": "PlanDefinition/ds-manufacturing-process"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/lot-number",
+      "value": "B221220"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/sakuramil",
+      "display": "Sakuramil"
+     }
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Medication/dp-abc789",
+   "resource": {
+    "resourceType": "Medication",
+    "id": "dp-abc789",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81f194b3e3a46699a278"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Medication</b> Sakura Bloom 20 mg film-coated tablets - lot ABC789</p></div>"
+    },
+    "code": {
+     "extension": [
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-medication-definition-pq",
+       "valueReference": {
+        "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+       }
+      }
+     ],
+     "text": "Sakura Bloom 20 mg film-coated tablets"
+    },
+    "status": "active",
+    "doseForm": {
+     "coding": [
+      {
+       "system": "http://standardterms.edqm.eu",
+       "code": "10221000",
+       "display": "Film-coated tablet"
+      }
+     ],
+     "text": "Film-coated tablet"
+    },
+    "batch": {
+     "extension": [
+      {
+       "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+       "extension": [
+        {
+         "url": "manufacturingDate",
+         "valueDateTime": "2022-06"
+        },
+        {
+         "url": "batchQuantity",
+         "valueQuantity": {
+          "value": 2600000,
+          "unit": "tablets",
+          "system": "http://unitsofmeasure.org",
+          "code": "{tablets}"
+         }
+        },
+        {
+         "url": "batchUtilization",
+         "valueCodeableConcept": {
+          "text": "Production-scale and commercial batch"
+         }
+        },
+        {
+         "url": "assignedManufacturer",
+         "valueReference": {
+          "reference": "Organization/aparna-pharm"
+         }
+        }
+       ]
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-number-of-items-pq",
+       "valueQuantity": {
+        "value": 2600000,
+        "unit": "tablets",
+        "system": "http://unitsofmeasure.org",
+        "code": "{tablets}"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+       "valueReference": {
+        "reference": "PlanDefinition/dp-manufacturing-process"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+       "valueReference": {
+        "reference": "Substance/ds-b221221"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+       "valueReference": {
+        "reference": "Substance/ds-b221222"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+       "valueReference": {
+        "reference": "Substance/ds-b221223"
+       }
+      }
+     ],
+     "lotNumber": "ABC789"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/ds-b221221",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "ds-b221221",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> ds-b221221 - lot B221221</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+      "extension": [
+       {
+        "url": "manufacturingDate",
+        "valueDateTime": "2022-12-21"
+       },
+       {
+        "url": "batchQuantity",
+        "valueQuantity": {
+         "value": 350,
+         "unit": "kg",
+         "system": "http://unitsofmeasure.org",
+         "code": "kg"
+        }
+       },
+       {
+        "url": "batchUtilization",
+        "valueCodeableConcept": {
+         "text": "Production batch (commercial / stability)"
+        }
+       },
+       {
+        "url": "assignedManufacturer",
+        "valueReference": {
+         "reference": "Organization/iroha-corp"
+        }
+       }
+      ]
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+      "valueReference": {
+       "reference": "PlanDefinition/ds-manufacturing-process"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/lot-number",
+      "value": "B221221"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/sakuramil",
+      "display": "Sakuramil"
+     }
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/ds-b221222",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "ds-b221222",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> ds-b221222 - lot B221222</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+      "extension": [
+       {
+        "url": "manufacturingDate",
+        "valueDateTime": "2022-12-22"
+       },
+       {
+        "url": "batchQuantity",
+        "valueQuantity": {
+         "value": 350,
+         "unit": "kg",
+         "system": "http://unitsofmeasure.org",
+         "code": "kg"
+        }
+       },
+       {
+        "url": "batchUtilization",
+        "valueCodeableConcept": {
+         "text": "Production batch (commercial / stability)"
+        }
+       },
+       {
+        "url": "assignedManufacturer",
+        "valueReference": {
+         "reference": "Organization/iroha-corp"
+        }
+       }
+      ]
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+      "valueReference": {
+       "reference": "PlanDefinition/ds-manufacturing-process"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/lot-number",
+      "value": "B221222"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/sakuramil",
+      "display": "Sakuramil"
+     }
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/ds-b221223",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "ds-b221223",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> ds-b221223 - lot B221223</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+      "extension": [
+       {
+        "url": "assignedManufacturer",
+        "valueReference": {
+         "reference": "Organization/iroha-corp"
+        }
+       }
+      ]
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+      "valueReference": {
+       "reference": "PlanDefinition/ds-manufacturing-process"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/lot-number",
+      "value": "B221223"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/sakuramil",
+      "display": "Sakuramil"
+     }
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Medication/dp-xyz123",
+   "resource": {
+    "resourceType": "Medication",
+    "id": "dp-xyz123",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81f194b3e3a46699a278"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Medication</b> Sakura Bloom 20 mg film-coated tablets - lot xyz123</p></div>"
+    },
+    "code": {
+     "extension": [
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-medication-definition-pq",
+       "valueReference": {
+        "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+       }
+      }
+     ],
+     "text": "Sakura Bloom 20 mg film-coated tablets"
+    },
+    "status": "active",
+    "doseForm": {
+     "coding": [
+      {
+       "system": "http://standardterms.edqm.eu",
+       "code": "10221000",
+       "display": "Film-coated tablet"
+      }
+     ],
+     "text": "Film-coated tablet"
+    },
+    "batch": {
+     "extension": [
+      {
+       "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+       "extension": [
+        {
+         "url": "manufacturingDate",
+         "valueDateTime": "2021-04"
+        },
+        {
+         "url": "batchQuantity",
+         "valueQuantity": {
+          "value": 2600000,
+          "unit": "tablets",
+          "system": "http://unitsofmeasure.org",
+          "code": "{tablets}"
+         }
+        },
+        {
+         "url": "batchUtilization",
+         "valueCodeableConcept": {
+          "text": "Clinical"
+         }
+        },
+        {
+         "url": "assignedManufacturer",
+         "valueReference": {
+          "reference": "Organization/aparna-pharm"
+         }
+        }
+       ]
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-number-of-items-pq",
+       "valueQuantity": {
+        "value": 2600000,
+        "unit": "tablets",
+        "system": "http://unitsofmeasure.org",
+        "code": "{tablets}"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+       "valueReference": {
+        "reference": "PlanDefinition/dp-manufacturing-process"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+       "valueReference": {
+        "reference": "Substance/ds-a221221"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+       "valueReference": {
+        "reference": "Substance/ds-a221222"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+       "valueReference": {
+        "reference": "Substance/ds-a221223"
+       }
+      }
+     ],
+     "lotNumber": "xyz123"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/ds-a221221",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "ds-a221221",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> Drug substance batch used for clinical drug product batches (source not stated). - lot A221221</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+      "extension": [
+       {
+        "url": "assignedManufacturer",
+        "valueReference": {
+         "reference": "Organization/iroha-corp"
+        }
+       }
+      ]
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+      "valueReference": {
+       "reference": "PlanDefinition/ds-manufacturing-process"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/lot-number",
+      "value": "A221221"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/sakuramil",
+      "display": "Sakuramil"
+     }
+    },
+    "description": "Drug substance batch used for clinical drug product batches (source not stated)."
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/ds-a221222",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "ds-a221222",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> Drug substance batch used for clinical drug product batches (source not stated). - lot A221222</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+      "extension": [
+       {
+        "url": "assignedManufacturer",
+        "valueReference": {
+         "reference": "Organization/iroha-corp"
+        }
+       }
+      ]
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+      "valueReference": {
+       "reference": "PlanDefinition/ds-manufacturing-process"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/lot-number",
+      "value": "A221222"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/sakuramil",
+      "display": "Sakuramil"
+     }
+    },
+    "description": "Drug substance batch used for clinical drug product batches (source not stated)."
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/ds-a221223",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "ds-a221223",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> Drug substance batch used for clinical drug product batches (source not stated). - lot A221223</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+      "extension": [
+       {
+        "url": "assignedManufacturer",
+        "valueReference": {
+         "reference": "Organization/iroha-corp"
+        }
+       }
+      ]
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+      "valueReference": {
+       "reference": "PlanDefinition/ds-manufacturing-process"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/lot-number",
+      "value": "A221223"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/sakuramil",
+      "display": "Sakuramil"
+     }
+    },
+    "description": "Drug substance batch used for clinical drug product batches (source not stated)."
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Medication/dp-xyz456",
+   "resource": {
+    "resourceType": "Medication",
+    "id": "dp-xyz456",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81f194b3e3a46699a278"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Medication</b> Sakura Bloom 20 mg film-coated tablets - lot xyz456</p></div>"
+    },
+    "code": {
+     "extension": [
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-medication-definition-pq",
+       "valueReference": {
+        "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+       }
+      }
+     ],
+     "text": "Sakura Bloom 20 mg film-coated tablets"
+    },
+    "status": "active",
+    "doseForm": {
+     "coding": [
+      {
+       "system": "http://standardterms.edqm.eu",
+       "code": "10221000",
+       "display": "Film-coated tablet"
+      }
+     ],
+     "text": "Film-coated tablet"
+    },
+    "batch": {
+     "extension": [
+      {
+       "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+       "extension": [
+        {
+         "url": "manufacturingDate",
+         "valueDateTime": "2021-05"
+        },
+        {
+         "url": "batchQuantity",
+         "valueQuantity": {
+          "value": 2600000,
+          "unit": "tablets",
+          "system": "http://unitsofmeasure.org",
+          "code": "{tablets}"
+         }
+        },
+        {
+         "url": "batchUtilization",
+         "valueCodeableConcept": {
+          "text": "Clinical"
+         }
+        },
+        {
+         "url": "assignedManufacturer",
+         "valueReference": {
+          "reference": "Organization/aparna-pharm"
+         }
+        }
+       ]
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-number-of-items-pq",
+       "valueQuantity": {
+        "value": 2600000,
+        "unit": "tablets",
+        "system": "http://unitsofmeasure.org",
+        "code": "{tablets}"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+       "valueReference": {
+        "reference": "PlanDefinition/dp-manufacturing-process"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+       "valueReference": {
+        "reference": "Substance/ds-a221221"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+       "valueReference": {
+        "reference": "Substance/ds-a221222"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+       "valueReference": {
+        "reference": "Substance/ds-a221223"
+       }
+      }
+     ],
+     "lotNumber": "xyz456"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Medication/dp-xyz789",
+   "resource": {
+    "resourceType": "Medication",
+    "id": "dp-xyz789",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81f194b3e3a46699a278"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Medication</b> Sakura Bloom 20 mg film-coated tablets - lot xyz789</p></div>"
+    },
+    "code": {
+     "extension": [
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-medication-definition-pq",
+       "valueReference": {
+        "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+       }
+      }
+     ],
+     "text": "Sakura Bloom 20 mg film-coated tablets"
+    },
+    "status": "active",
+    "doseForm": {
+     "coding": [
+      {
+       "system": "http://standardterms.edqm.eu",
+       "code": "10221000",
+       "display": "Film-coated tablet"
+      }
+     ],
+     "text": "Film-coated tablet"
+    },
+    "batch": {
+     "extension": [
+      {
+       "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+       "extension": [
+        {
+         "url": "manufacturingDate",
+         "valueDateTime": "2021-06"
+        },
+        {
+         "url": "batchQuantity",
+         "valueQuantity": {
+          "value": 2600000,
+          "unit": "tablets",
+          "system": "http://unitsofmeasure.org",
+          "code": "{tablets}"
+         }
+        },
+        {
+         "url": "batchUtilization",
+         "valueCodeableConcept": {
+          "text": "Clinical"
+         }
+        },
+        {
+         "url": "assignedManufacturer",
+         "valueReference": {
+          "reference": "Organization/aparna-pharm"
+         }
+        }
+       ]
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-number-of-items-pq",
+       "valueQuantity": {
+        "value": 2600000,
+        "unit": "tablets",
+        "system": "http://unitsofmeasure.org",
+        "code": "{tablets}"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+       "valueReference": {
+        "reference": "PlanDefinition/dp-manufacturing-process"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+       "valueReference": {
+        "reference": "Substance/ds-a221221"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+       "valueReference": {
+        "reference": "Substance/ds-a221222"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+       "valueReference": {
+        "reference": "Substance/ds-a221223"
+       }
+      }
+     ],
+     "lotNumber": "xyz789"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Organization/aparna-pharm",
+   "resource": {
+    "resourceType": "Organization",
+    "id": "aparna-pharm",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8199b90deb4c0456477b"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Organization</b> Aparna Pharmaceutical Manufacturing Pte. Ltd.</p></div>"
+    },
+    "identifier": [
+     {
+      "system": "urn:oid:1.3.6.1.4.1.519.1",
+      "value": "489236805"
+     },
+     {
+      "system": "urn:oid:2.16.840.1.113883.4.82",
+      "value": "489236805"
+     }
+    ],
+    "active": true,
+    "type": [
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+        "code": "drug-product-manufacture",
+        "display": "Drug Product Manufacture"
+       }
+      ],
+      "text": "Drug Product Manufacture"
+     },
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+        "code": "analytical-testing-release",
+        "display": "Analytical Testing - Release"
+       }
+      ],
+      "text": "Analytical Testing - Release"
+     },
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+        "code": "analytical-testing-stability",
+        "display": "Analytical Testing - Stability"
+       }
+      ],
+      "text": "Analytical Testing - Stability"
+     },
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+        "code": "packaging",
+        "display": "Packaging"
+       }
+      ],
+      "text": "Packaging"
+     }
+    ],
+    "name": "Aparna Pharmaceutical Manufacturing Pte. Ltd.",
+    "description": "Manufacture of the drug product; in-process control testing; analytical testing of drug product and excipients; stability testing; primary and secondary packaging.",
+    "contact": [
+     {
+      "address": {
+       "use": "work",
+       "type": "physical",
+       "line": [
+        "10 Green Road"
+       ],
+       "city": "Gulshan",
+       "country": "BD"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Organization/iroha-corp",
+   "resource": {
+    "resourceType": "Organization",
+    "id": "iroha-corp",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8199b90deb4c0456477b"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Organization</b> IROHA-corp.</p></div>"
+    },
+    "identifier": [
+     {
+      "system": "urn:oid:1.3.6.1.4.1.519.1",
+      "value": "3002363512"
+     },
+     {
+      "system": "urn:oid:2.16.840.1.113883.4.82",
+      "value": "3002867083"
+     }
+    ],
+    "active": true,
+    "type": [
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+        "code": "drug-substance-manufacture",
+        "display": "Drug Substance Manufacture"
+       }
+      ],
+      "text": "Drug Substance Manufacture"
+     },
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+        "code": "analytical-testing-release",
+        "display": "Analytical Testing - Release"
+       }
+      ],
+      "text": "Analytical Testing - Release"
+     },
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+        "code": "analytical-testing-stability",
+        "display": "Analytical Testing - Stability"
+       }
+      ],
+      "text": "Analytical Testing - Stability"
+     },
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+        "code": "storage",
+        "display": "Storage"
+       }
+      ],
+      "text": "Storage"
+     }
+    ],
+    "name": "IROHA-corp.",
+    "description": "DMF holder; manufacture of intermediates CP-6/CP-7 and drug substance Sakuramil; QC (IPC and release); stability testing; storage of packaged drug substance. Also manufacturer of starting materials CP-4 and CP-8.",
+    "contact": [
+     {
+      "address": {
+       "use": "work",
+       "type": "physical",
+       "line": [
+        "Jiangkou R&D Park, No.10867"
+       ],
+       "city": "Huangyan",
+       "country": "CN",
+       "postalCode": "250105"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/dp-manufacturing-process",
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "dp-manufacturing-process",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc817e8d67fb0358c483c8"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/dp-manufacturing-process",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> Wet (fluid-bed) granulation, blending, compression and film-coating. Commercial batch size 520.00 kg (approx. 2,600,000 tablets). No overages. Critical steps: granulation (step 3) and compression (step 8); granule particle size and uncoated tablet hardness are controlled within a design space to ensure dissolution.</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-plan-document-reference-pq",
+      "valueReference": {
+       "reference": "DocumentReference/doc-dp-process-flow-diagram"
+      }
+     }
+    ],
+    "title": "Manufacturing process of Sakura Bloom 20 mg film-coated tablets (Aparna Pharmaceutical Manufacturing)",
+    "type": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+       "code": "manufacturing-process",
+       "display": "Manufacturing Process"
+      }
+     ],
+     "text": "Manufacturing Process"
+    },
+    "status": "active",
+    "subjectReference": {
+     "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+    },
+    "description": "Wet (fluid-bed) granulation, blending, compression and film-coating. Commercial batch size 520.00 kg (approx. 2,600,000 tablets). No overages. Critical steps: granulation (step 3) and compression (step 8); granule particle size and uncoated tablet hardness are controlled within a design space to ensure dissolution.",
+    "action": [
+     {
+      "title": "Overall process",
+      "code": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step",
+         "code": "overall process",
+         "display": "Overall Process"
+        }
+       ],
+       "text": "Overall Process"
+      },
+      "action": [
+       {
+        "extension": [
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-step-scale-pq",
+          "valueCoding": {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step-scale",
+           "code": "PROD",
+           "display": "Production Scale"
+          }
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Cellulose, microcrystalline"
+            }
+           },
+           {
+            "url": "value",
+            "valueQuantity": {
+             "value": 52.0,
+             "unit": "kg",
+             "system": "http://unitsofmeasure.org",
+             "code": "kg"
+            }
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Croscarmellose sodium"
+            }
+           },
+           {
+            "url": "value",
+            "valueQuantity": {
+             "value": 26.0,
+             "unit": "kg",
+             "system": "http://unitsofmeasure.org",
+             "code": "kg"
+            }
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Lactose monohydrate"
+            }
+           },
+           {
+            "url": "value",
+            "valueQuantity": {
+             "value": 353.6,
+             "unit": "kg",
+             "system": "http://unitsofmeasure.org",
+             "code": "kg"
+            }
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Sakuramil"
+            }
+           },
+           {
+            "url": "value",
+            "valueQuantity": {
+             "value": 52.0,
+             "unit": "kg",
+             "system": "http://unitsofmeasure.org",
+             "code": "kg"
+            }
+           }
+          ]
+         }
+        ],
+        "title": "Step 1 - Pre-blending",
+        "description": "Blend 52.000 kg of cellulose, microcrystalline, 26.000 kg of croscarmellose sodium, 353.600 kg of lactose monohydrate and 52.000 kg of Sakuramil drug substance in a diffusion mixer (bin blender).",
+        "code": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step",
+           "code": "Mixing of ingredients",
+           "display": "Mixing of ingredients"
+          }
+         ],
+         "text": "Mixing of ingredients"
+        },
+        "participant": [
+         {
+          "type": "device",
+          "typeReference": {
+           "reference": "DeviceDefinition/eq-bin-blender"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/microcrystalline-cellulose"
+             }
+            }
+           ],
+           "display": "Cellulose, microcrystalline"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "StartingMaterial",
+             "display": "Starting Material"
+            }
+           ],
+           "text": "Starting Material"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/croscarmellose-sodium"
+             }
+            }
+           ],
+           "display": "Croscarmellose sodium"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "StartingMaterial",
+             "display": "Starting Material"
+            }
+           ],
+           "text": "Starting Material"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/lactose-monohydrate"
+             }
+            }
+           ],
+           "display": "Lactose monohydrate"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "StartingMaterial",
+             "display": "Starting Material"
+            }
+           ],
+           "text": "Starting Material"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/sakuramil"
+             }
+            }
+           ],
+           "display": "Sakuramil"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "StartingMaterial",
+             "display": "Starting Material"
+            }
+           ],
+           "text": "Starting Material"
+          }
+         }
+        ]
+       },
+       {
+        "extension": [
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-step-scale-pq",
+          "valueCoding": {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step-scale",
+           "code": "PROD",
+           "display": "Production Scale"
+          }
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Hydroxypropyl cellulose"
+            }
+           },
+           {
+            "url": "value",
+            "valueQuantity": {
+             "value": 15.6,
+             "unit": "kg",
+             "system": "http://unitsofmeasure.org",
+             "code": "kg"
+            }
+           }
+          ]
+         }
+        ],
+        "title": "Step 2 - Preparation of granulation liquid",
+        "description": "Dissolve 15.600 kg hydroxypropyl cellulose in purified water using a vessel with stirrer to prepare a granulation liquid free from lumps.",
+        "code": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step",
+           "code": "compounding",
+           "display": "Compounding Step"
+          }
+         ],
+         "text": "Compounding Step"
+        },
+        "participant": [
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/hydroxypropyl-cellulose"
+             }
+            }
+           ],
+           "display": "Hydroxypropyl cellulose"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "StartingMaterial",
+             "display": "Starting Material"
+            }
+           ],
+           "text": "Starting Material"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/purified-water"
+             }
+            }
+           ],
+           "display": "Purified water"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "ProcessingMaterial",
+             "display": "Processing Material"
+            }
+           ],
+           "text": "Processing Material"
+          }
+         }
+        ]
+       },
+       {
+        "extension": [
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-step-scale-pq",
+          "valueCoding": {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step-scale",
+           "code": "PROD",
+           "display": "Production Scale"
+          }
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Inlet air volume"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "40 - 45 m³/min"
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "coding": [
+              {
+               "system": "http://terminology.hl7.org/CodeSystem/process-parameter",
+               "code": "TEMP",
+               "display": "Temperature"
+              }
+             ],
+             "text": "Inlet air temperature"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "75 - 85 °C"
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Spray rate"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "900 - 1100 g/min"
+           }
+          ]
+         }
+        ],
+        "title": "Step 3 - Granulation",
+        "description": "Load the pre-blended material into a fluid bed granulator and add the granulation liquid to achieve wetting of pre-blended material and formation of granules.",
+        "code": {
+         "text": "Granulation"
+        },
+        "participant": [
+         {
+          "type": "device",
+          "typeReference": {
+           "reference": "DeviceDefinition/eq-fluid-bed-granulator"
+          }
+         }
+        ],
+        "action": [
+         {
+          "title": "Granulation - inlet air volume",
+          "code": {
+           "text": "Critical process parameter"
+          },
+          "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/cpp-dp-3-inlet-air-volume"
+         },
+         {
+          "title": "Granulation - inlet air temperature",
+          "code": {
+           "text": "Critical process parameter"
+          },
+          "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/cpp-dp-3-inlet-air-temperature"
+         },
+         {
+          "title": "Granulation - spray rate",
+          "code": {
+           "text": "Critical process parameter"
+          },
+          "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/cpp-dp-3-spray-rate"
+         },
+         {
+          "title": "Granule particle size",
+          "code": {
+           "text": "In-process control"
+          },
+          "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-3-granule-particle-size"
+         }
+        ]
+       },
+       {
+        "extension": [
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-step-scale-pq",
+          "valueCoding": {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step-scale",
+           "code": "PROD",
+           "display": "Production Scale"
+          }
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "End point: loss on drying"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "1 - 2 %"
+           }
+          ]
+         }
+        ],
+        "title": "Step 4 - Drying",
+        "description": "Dry the granules using the dryer integrated within the fluid bed granulator unit until loss on drying of 1 - 2 % is achieved.",
+        "code": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step",
+           "code": "drying",
+           "display": "Drying"
+          }
+         ],
+         "text": "Drying"
+        },
+        "participant": [
+         {
+          "type": "device",
+          "typeReference": {
+           "reference": "DeviceDefinition/eq-fluid-bed-granulator"
+          }
+         }
+        ],
+        "action": [
+         {
+          "title": "Loss on drying (granules)",
+          "code": {
+           "text": "In-process control"
+          },
+          "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-4-lod"
+         }
+        ]
+       },
+       {
+        "extension": [
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-step-scale-pq",
+          "valueCoding": {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step-scale",
+           "code": "PROD",
+           "display": "Production Scale"
+          }
+         }
+        ],
+        "title": "Step 5 - Screening",
+        "description": "Sieve the dried granules using a screening mill.",
+        "code": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step",
+           "code": "particleSizeReduction",
+           "display": "Particle Size Reduction"
+          }
+         ],
+         "text": "Particle Size Reduction"
+        },
+        "participant": [
+         {
+          "type": "device",
+          "typeReference": {
+           "reference": "DeviceDefinition/eq-screening-mill"
+          }
+         }
+        ]
+       },
+       {
+        "extension": [
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-step-scale-pq",
+          "valueCoding": {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step-scale",
+           "code": "PROD",
+           "display": "Production Scale"
+          }
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Magnesium stearate"
+            }
+           },
+           {
+            "url": "value",
+            "valueQuantity": {
+             "value": 5.2,
+             "unit": "kg",
+             "system": "http://unitsofmeasure.org",
+             "code": "kg"
+            }
+           }
+          ]
+         }
+        ],
+        "title": "Step 6 - Lubricant addition",
+        "description": "Sieve 5.200 kg of magnesium stearate through a screen and add it to the granules.",
+        "code": {
+         "text": "Lubricant addition"
+        },
+        "participant": [
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/magnesium-stearate"
+             }
+            }
+           ],
+           "display": "Magnesium stearate"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "StartingMaterial",
+             "display": "Starting Material"
+            }
+           ],
+           "text": "Starting Material"
+          }
+         }
+        ]
+       },
+       {
+        "extension": [
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-step-scale-pq",
+          "valueCoding": {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step-scale",
+           "code": "PROD",
+           "display": "Production Scale"
+          }
+         }
+        ],
+        "title": "Step 7 - Final blending",
+        "description": "Blend the mixture using a diffusion mixer (bin blender) to obtain the final blend.",
+        "code": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step",
+           "code": "Mixing of ingredients",
+           "display": "Mixing of ingredients"
+          }
+         ],
+         "text": "Mixing of ingredients"
+        },
+        "participant": [
+         {
+          "type": "device",
+          "typeReference": {
+           "reference": "DeviceDefinition/eq-bin-blender"
+          }
+         }
+        ]
+       },
+       {
+        "extension": [
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-step-scale-pq",
+          "valueCoding": {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step-scale",
+           "code": "PROD",
+           "display": "Production Scale"
+          }
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "coding": [
+              {
+               "system": "http://terminology.hl7.org/CodeSystem/process-parameter",
+               "code": "ROTATIONSPEED",
+               "display": "Rotational Speed"
+              }
+             ],
+             "text": "Rotation speed"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "20 - 30 rpm"
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Compression force"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "6 - 14 kN"
+           }
+          ]
+         }
+        ],
+        "title": "Step 8 - Tablet compression",
+        "description": "Compress the final blend using a tablet press to obtain the tablet cores.",
+        "code": {
+         "text": "Tablet compression"
+        },
+        "participant": [
+         {
+          "type": "device",
+          "typeReference": {
+           "reference": "DeviceDefinition/eq-rotary-tablet-press"
+          }
+         }
+        ],
+        "action": [
+         {
+          "title": "Compression - rotation speed",
+          "code": {
+           "text": "Critical process parameter"
+          },
+          "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/cpp-dp-8-rotation-speed"
+         },
+         {
+          "title": "Compression - compression force",
+          "code": {
+           "text": "Critical process parameter"
+          },
+          "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/cpp-dp-8-compression-force"
+         },
+         {
+          "title": "Uncoated tablet weight",
+          "code": {
+           "text": "In-process control"
+          },
+          "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-8-tablet-weight"
+         },
+         {
+          "title": "Uncoated tablet weight variation",
+          "code": {
+           "text": "In-process control"
+          },
+          "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-8-weight-variation"
+         },
+         {
+          "title": "Uncoated tablet hardness",
+          "code": {
+           "text": "In-process control"
+          },
+          "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-8-hardness"
+         },
+         {
+          "title": "Assay (tablet cores)",
+          "code": {
+           "text": "In-process control"
+          },
+          "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-8-assay",
+          "documentation": [
+           {
+            "type": "depends-on",
+            "label": "Analytical procedure",
+            "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-assay-degradation"
+           }
+          ]
+         },
+         {
+          "title": "Uniformity of dosage units (tablet cores)",
+          "code": {
+           "text": "In-process control"
+          },
+          "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-8-udu"
+         }
+        ]
+       },
+       {
+        "extension": [
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-step-scale-pq",
+          "valueCoding": {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step-scale",
+           "code": "PROD",
+           "display": "Production Scale"
+          }
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Basic coating premix, red"
+            }
+           },
+           {
+            "url": "value",
+            "valueQuantity": {
+             "value": 15.6,
+             "unit": "kg",
+             "system": "http://unitsofmeasure.org",
+             "code": "kg"
+            }
+           }
+          ]
+         }
+        ],
+        "title": "Step 9 - Preparation of the coating suspension",
+        "description": "Prepare a homogeneous suspension of the Basic coating premix, red in purified water.",
+        "code": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step",
+           "code": "compounding",
+           "display": "Compounding Step"
+          }
+         ],
+         "text": "Compounding Step"
+        },
+        "participant": [
+         {
+          "type": "device",
+          "typeReference": {
+           "reference": "DeviceDefinition/eq-coating-vessel"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/coating-premix-red"
+             }
+            }
+           ],
+           "display": "Basic coating premix, red"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "StartingMaterial",
+             "display": "Starting Material"
+            }
+           ],
+           "text": "Starting Material"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/purified-water"
+             }
+            }
+           ],
+           "display": "Purified water"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "ProcessingMaterial",
+             "display": "Processing Material"
+            }
+           ],
+           "text": "Processing Material"
+          }
+         }
+        ]
+       },
+       {
+        "extension": [
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-step-scale-pq",
+          "valueCoding": {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step-scale",
+           "code": "PROD",
+           "display": "Production Scale"
+          }
+         }
+        ],
+        "title": "Step 10 - Film-coating",
+        "description": "Film-coat the tablet cores using the film-coat suspension in a coating pan to achieve the desired film-coat weight gain, followed by drying.",
+        "code": {
+         "text": "Film-coating"
+        },
+        "participant": [
+         {
+          "type": "device",
+          "typeReference": {
+           "reference": "DeviceDefinition/eq-pan-coater"
+          }
+         }
+        ],
+        "action": [
+         {
+          "title": "Loss on drying (film-coated tablets)",
+          "code": {
+           "text": "In-process control"
+          },
+          "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-10-lod"
+         },
+         {
+          "title": "Film coat weight gain",
+          "code": {
+           "text": "In-process control"
+          },
+          "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-10-coat-weight-gain"
+         }
+        ]
+       },
+       {
+        "extension": [
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-step-scale-pq",
+          "valueCoding": {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step-scale",
+           "code": "PROD",
+           "display": "Production Scale"
+          }
+         }
+        ],
+        "title": "Step 11 - Inspection",
+        "description": "Collect 10 tablets to perform the Description test and Identification test (RTRT).",
+        "code": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step",
+           "code": "release",
+           "display": "Release Step"
+          }
+         ],
+         "text": "Release Step"
+        },
+        "action": [
+         {
+          "title": "Appearance (inspection)",
+          "code": {
+           "text": "In-process control"
+          },
+          "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-11-appearance"
+         },
+         {
+          "title": "Identification (NIR, inspection)",
+          "code": {
+           "text": "In-process control"
+          },
+          "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-11-identification",
+          "documentation": [
+           {
+            "type": "depends-on",
+            "label": "Analytical procedure",
+            "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-identity-nir"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "extension": [
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-step-scale-pq",
+          "valueCoding": {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step-scale",
+           "code": "PROD",
+           "display": "Production Scale"
+          }
+         }
+        ],
+        "title": "Step 12 - Primary packaging",
+        "description": "The film-coated tablets are primary packaged (HDPE bottle or PA/AL/PVC blister).",
+        "code": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step",
+           "code": "filling",
+           "display": "Filling Step"
+          }
+         ],
+         "text": "Filling Step"
+        }
+       },
+       {
+        "extension": [
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-step-scale-pq",
+          "valueCoding": {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step-scale",
+           "code": "PROD",
+           "display": "Production Scale"
+          }
+         }
+        ],
+        "title": "Step 13 - Secondary packaging",
+        "description": "The primary packaged product is packed in a cardboard-based secondary pack.",
+        "code": {
+         "text": "Secondary packaging"
+        }
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ]
+}

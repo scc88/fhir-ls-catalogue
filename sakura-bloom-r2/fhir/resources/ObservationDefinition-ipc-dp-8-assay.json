@@ -1,0 +1,55 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "ipc-dp-8-assay",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc817e8d67fb0358c483c8"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-8-assay",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> In-process control - Assay (tablet cores): 95.0 - 105.0 %</p></div>"
+ },
+ "title": "Assay (tablet cores)",
+ "status": "active",
+ "category": [
+  {
+   "text": "In-process control"
+  }
+ ],
+ "code": {
+  "text": "In-process control - Assay (tablet cores)"
+ },
+ "permittedDataType": [
+  "Quantity"
+ ],
+ "method": {
+  "text": "HPLC"
+ },
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "95.0 - 105.0 %"
+    }
+   ],
+   "range": {
+    "low": {
+     "value": 95.0,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    },
+    "high": {
+     "value": 105.0,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  }
+ ]
+}

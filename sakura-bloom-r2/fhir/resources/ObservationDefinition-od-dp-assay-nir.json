@@ -1,0 +1,72 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-dp-assay-nir",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8196bde0c1ce7d54832e"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-assay-nir",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Assay - Assay (NIR, RTRT): Batch release The results of the uniformity of dosage units test (RTRT) show a mean of 95.0% to 105.0% of the labeled amount.</p></div>"
+ },
+ "title": "Assay (NIR, RTRT)",
+ "status": "active",
+ "category": [
+  {
+   "text": "Assay"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "ASSAY",
+    "display": "Assay"
+   }
+  ],
+  "text": "Assay - Assay (NIR, RTRT)"
+ },
+ "permittedDataType": [
+  "Quantity"
+ ],
+ "method": {
+  "text": "Near infrared absorption spectrometry (NIR method) (RTRT)"
+ },
+ "permittedUnit": [
+  {
+   "system": "http://unitsofmeasure.org",
+   "code": "%",
+   "display": "%"
+  }
+ ],
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "The results of the uniformity of dosage units test (RTRT) show a mean of 95.0% to 105.0% of the labeled amount."
+    }
+   ],
+   "context": {
+    "text": "Batch release"
+   },
+   "range": {
+    "low": {
+     "value": 95.0,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    },
+    "high": {
+     "value": 105.0,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  }
+ ]
+}

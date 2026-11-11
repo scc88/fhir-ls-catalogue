@@ -1,0 +1,48 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-sm-cp-8-description",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81dc8f03fa647c7dbb89"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-8-description",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Description: White to pale yellow crystal or crystalline powder (visual observation)</p></div>"
+ },
+ "title": "Description",
+ "status": "active",
+ "category": [
+  {
+   "text": "Description"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "DESC",
+    "display": "Description"
+   }
+  ],
+  "text": "Description"
+ },
+ "permittedDataType": [
+  "string"
+ ],
+ "method": {
+  "text": "Visual"
+ },
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "White to pale yellow crystal or crystalline powder (visual observation)"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-rm-ethyl-chloroformate-phosgene-limit-test",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc811e8d43c8d7ec663804"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-ethyl-chloroformate-phosgene-limit-test",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Phosgene - Phosgene (limit test): ≤ 5000 ppm</p></div>"
+ },
+ "title": "Phosgene (limit test)",
+ "status": "active",
+ "category": [
+  {
+   "text": "Phosgene"
+  }
+ ],
+ "code": {
+  "text": "Phosgene - Phosgene (limit test)"
+ },
+ "permittedDataType": [
+  "Quantity"
+ ],
+ "method": {
+  "text": "Titration USP <921>"
+ },
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "≤ 5000 ppm"
+    }
+   ],
+   "range": {
+    "high": {
+     "value": 5000,
+     "unit": "ppm",
+     "system": "http://unitsofmeasure.org",
+     "code": "[ppm]"
+    }
+   }
+  }
+ ]
+}

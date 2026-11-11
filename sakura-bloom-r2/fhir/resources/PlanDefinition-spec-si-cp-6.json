@@ -1,0 +1,120 @@
+{
+ "resourceType": "PlanDefinition",
+ "id": "spec-si-cp-6",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc813d8ebfcf0f96d70b67"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-si-cp-6",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> spec-si-cp-6</p></div>"
+ },
+ "title": "Specification of intermediate CP-6 (Intermediate 1)",
+ "type": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+    "code": "1244577",
+    "display": "Specification Protocol"
+   }
+  ],
+  "text": "Specification Protocol"
+ },
+ "status": "active",
+ "subjectReference": {
+  "reference": "SubstanceDefinition/cp-6"
+ },
+ "action": [
+  {
+   "title": "Release and re-test",
+   "code": {
+    "text": "Timing Group"
+   },
+   "action": [
+    {
+     "title": "Description",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-6-description",
+     "description": "Method: Visual"
+    },
+    {
+     "title": "Identity - IR",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-6-identity-ir",
+     "description": "Method: USP <197A>"
+    },
+    {
+     "title": "CP-4",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-6-cp-4",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-cp-6-related-substances"
+      }
+     ]
+    },
+    {
+     "title": "Individual unspecified impurity",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-6-individual-unspecified-impurity",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-cp-6-related-substances"
+      }
+     ]
+    },
+    {
+     "title": "Total impurities",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-6-total-impurities",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-cp-6-related-substances"
+      }
+     ]
+    },
+    {
+     "title": "Palladium (Pd)",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-6-palladium-pd",
+     "description": "Method: ICP-MS USP <233>"
+    },
+    {
+     "title": "Assay",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-6-assay",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-cp-6-assay"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

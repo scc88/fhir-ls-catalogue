@@ -1,0 +1,97 @@
+{
+ "resourceType": "DiagnosticReport",
+ "id": "dr-ba-dp-abc456",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DiagnosticReport-analysis-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81f194b3e3a46699a278"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DiagnosticReport</b> Batch Analysis Report</p></div>"
+ },
+ "extension": [
+  {
+   "url": "http://hl7.org/fhir/StructureDefinition/workflow-triggeredBy",
+   "valueReference": {
+    "reference": "PlanDefinition/spec-dp"
+   }
+  }
+ ],
+ "identifier": [
+  {
+   "system": "http://example.org/sakura-bloom-r2/fhir/report-id",
+   "value": "dr-ba-dp-abc456"
+  }
+ ],
+ "status": "final",
+ "code": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-report-type",
+    "code": "Batch Analysis Report",
+    "display": "Batch Analysis Report"
+   }
+  ],
+  "text": "Batch Analysis Report"
+ },
+ "subject": {
+  "reference": "Medication/dp-abc456"
+ },
+ "performer": [
+  {
+   "reference": "Organization/aparna-pharm"
+  }
+ ],
+ "result": [
+  {
+   "reference": "Observation/obs-ba-abc456-description"
+  },
+  {
+   "reference": "Observation/obs-ba-abc456-identification-nir"
+  },
+  {
+   "reference": "Observation/obs-ba-abc456-identification-hplc"
+  },
+  {
+   "reference": "Observation/obs-ba-abc456-identification-uv"
+  },
+  {
+   "reference": "Observation/obs-ba-abc456-udu-nir"
+  },
+  {
+   "reference": "Observation/obs-ba-abc456-udu-hplc"
+  },
+  {
+   "reference": "Observation/obs-ba-abc456-dissolution-rtrt"
+  },
+  {
+   "reference": "Observation/obs-ba-abc456-dissolution-uv"
+  },
+  {
+   "reference": "Observation/obs-ba-abc456-assay-nir"
+  },
+  {
+   "reference": "Observation/obs-ba-abc456-assay-hplc"
+  },
+  {
+   "reference": "Observation/obs-ba-abc456-degradation-cp-9-1"
+  },
+  {
+   "reference": "Observation/obs-ba-abc456-degradation-unspecified"
+  },
+  {
+   "reference": "Observation/obs-ba-abc456-degradation-total"
+  },
+  {
+   "reference": "Observation/obs-ba-abc456-met-tamc"
+  },
+  {
+   "reference": "Observation/obs-ba-abc456-met-tymc"
+  },
+  {
+   "reference": "Observation/obs-ba-abc456-met-e-coli"
+  }
+ ]
+}

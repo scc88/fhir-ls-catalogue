@@ -1,0 +1,48 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-cc-bulk-bag-appearance-colour",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81889b04e8dc076f8f8f"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-cc-bulk-bag-appearance-colour",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Description - Appearance colour: Nature</p></div>"
+ },
+ "title": "Appearance colour",
+ "status": "active",
+ "category": [
+  {
+   "text": "Description"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "DESC",
+    "display": "Description"
+   }
+  ],
+  "text": "Description - Appearance colour"
+ },
+ "permittedDataType": [
+  "string"
+ ],
+ "method": {
+  "text": "Visual"
+ },
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "Nature"
+    }
+   ]
+  }
+ ]
+}

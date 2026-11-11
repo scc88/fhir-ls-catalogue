@@ -1,0 +1,85 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-dp-met-tymc",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8196bde0c1ce7d54832e"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-tymc",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Microbiological Quality - Microbial enumeration - TYMC: Batch release Not more than 100 CFU/g; Shelf-life Not more than 100 CFU/g</p></div>"
+ },
+ "title": "Microbial enumeration - TYMC",
+ "status": "active",
+ "category": [
+  {
+   "text": "Microbiological Quality"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "Microbiological Quality",
+    "display": "Microbiological Quality"
+   }
+  ],
+  "text": "Microbiological Quality - Microbial enumeration - TYMC"
+ },
+ "permittedDataType": [
+  "Quantity"
+ ],
+ "method": {
+  "text": "Microbial enumeration tests (plate-count method)"
+ },
+ "permittedUnit": [
+  {
+   "system": "http://unitsofmeasure.org",
+   "code": "{CFU}/g",
+   "display": "CFU/g"
+  }
+ ],
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "Not more than 100 CFU/g"
+    }
+   ],
+   "context": {
+    "text": "Batch release"
+   },
+   "range": {
+    "high": {
+     "value": 100,
+     "unit": "CFU/g",
+     "system": "http://unitsofmeasure.org",
+     "code": "{CFU}/g"
+    }
+   }
+  },
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "Not more than 100 CFU/g"
+    }
+   ],
+   "context": {
+    "text": "Shelf-life"
+   },
+   "range": {
+    "high": {
+     "value": 100,
+     "unit": "CFU/g",
+     "system": "http://unitsofmeasure.org",
+     "code": "{CFU}/g"
+    }
+   }
+  }
+ ]
+}

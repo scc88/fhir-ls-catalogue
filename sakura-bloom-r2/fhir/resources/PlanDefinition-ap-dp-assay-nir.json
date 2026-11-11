@@ -1,0 +1,87 @@
+{
+ "resourceType": "PlanDefinition",
+ "id": "ap-dp-assay-nir",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8135abcbcb5197735dc5"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-assay-nir",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> Core quality information (2.3.3.AP) for Analytical Procedures (Assay/NIR)[Assay][Sakura Bloom 20 mg].</p></div>"
+ },
+ "extension": [
+  {
+   "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-plan-document-reference-pq",
+   "valueReference": {
+    "reference": "DocumentReference/doc-dp-assay-nir-3-2-ap"
+   }
+  },
+  {
+   "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-plan-document-reference-pq",
+   "valueReference": {
+    "reference": "DocumentReference/doc-dp-assay-nir-2-3-4"
+   }
+  }
+ ],
+ "title": "Analytical Procedures (Assay/NIR)[Assay][Sakura Bloom 20 mg]",
+ "type": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+    "code": "analytical-procedure",
+    "display": "Analytical Procedure"
+   }
+  ],
+  "text": "Analytical Procedure"
+ },
+ "status": "active",
+ "subjectReference": {
+  "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+ },
+ "description": "Core quality information (2.3.3.AP) for Analytical Procedures (Assay/NIR)[Assay][Sakura Bloom 20 mg].",
+ "action": [
+  {
+   "title": "Technique",
+   "description": "Analytical procedure principle: ·       Transmission NIR to determine the individual content of tablet cores containing Sakuramil."
+  },
+  {
+   "title": "Aperture setting",
+   "description": "Open (sample measurement),  Internal reference spectralon (background measurement)"
+  },
+  {
+   "title": "Detector setting",
+   "description": "RT-InGaAs (external)"
+  },
+  {
+   "title": "Scanner velocity",
+   "description": "10 kHz"
+  },
+  {
+   "title": "Spectral pre-processing",
+   "description": "17 points Savitzky-Golay 1st derivative + Standard Normal Variate (SNV) on 12500 - 4000 cm-1"
+  },
+  {
+   "title": "Concentration range",
+   "description": "75 - 125% of label claim"
+  },
+  {
+   "title": "System suitability test (SST)",
+   "description": "The system suitability test of the specific measurement channel of the NIR instrument involves the execution of the Bruker Performance Qualification (PQ) test prior to data acquisition."
+  },
+  {
+   "title": "Number of units to be tested",
+   "description": "120 tablet cores"
+  },
+  {
+   "title": "Quantification analysis",
+   "description": "The measured NIR spectra are evaluated using the NIRS model cited above and single results for each tablet with the associated statistical spectral quality test is calculated."
+  },
+  {
+   "title": "Assessment (assay)",
+   "description": "Calculate the mean of all individual tablet contents and report it as result for assay."
+  }
+ ]
+}

@@ -1,0 +1,65 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "cpp-dp-3-spray-rate",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc817e8d67fb0358c483c8"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/cpp-dp-3-spray-rate",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Critical process parameter - Granulation - spray rate: 900 - 1100 g/min</p></div>"
+ },
+ "title": "Granulation - spray rate",
+ "status": "active",
+ "category": [
+  {
+   "text": "Critical process parameter"
+  }
+ ],
+ "code": {
+  "text": "Critical process parameter - Granulation - spray rate"
+ },
+ "permittedDataType": [
+  "Quantity"
+ ],
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "900 - 1100 g/min"
+    },
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-criticality-pq",
+     "valueCodeableConcept": {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/observation-qualified-value-criticality",
+        "code": "critical",
+        "display": "Critical"
+       }
+      ],
+      "text": "Critical"
+     }
+    }
+   ],
+   "range": {
+    "low": {
+     "value": 900,
+     "unit": "g/min",
+     "system": "http://unitsofmeasure.org",
+     "code": "g/min"
+    },
+    "high": {
+     "value": 1100,
+     "unit": "g/min",
+     "system": "http://unitsofmeasure.org",
+     "code": "g/min"
+    }
+   }
+  }
+ ]
+}

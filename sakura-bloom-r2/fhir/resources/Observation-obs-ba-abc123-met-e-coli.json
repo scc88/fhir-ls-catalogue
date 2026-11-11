@@ -1,0 +1,44 @@
+{
+ "resourceType": "Observation",
+ "id": "obs-ba-abc123-met-e-coli",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+  ]
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Microbiological Quality - Specified micro-organism - Escherichia coli: Complies (Medication/dp-abc123)</p></div>"
+ },
+ "status": "final",
+ "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-e-coli",
+ "category": [
+  {
+   "text": "Microbiological Quality"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "Microbiological Quality",
+    "display": "Microbiological Quality"
+   }
+  ],
+  "text": "Microbiological Quality - Specified micro-organism - Escherichia coli"
+ },
+ "subject": {
+  "reference": "Medication/dp-abc123"
+ },
+ "performer": [
+  {
+   "reference": "Organization/kunchen-sa"
+  }
+ ],
+ "valueString": "Complies",
+ "interpretation": [
+  {
+   "text": "Complies"
+  }
+ ]
+}

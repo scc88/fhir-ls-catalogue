@@ -1,0 +1,74 @@
+{
+ "resourceType": "Ingredient",
+ "id": "ing-macrogol-6000",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8144b81ce7e58885d190"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Ingredient</b> ing-macrogol-6000</p></div>"
+ },
+ "status": "active",
+ "for": [
+  {
+   "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+  },
+  {
+   "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+  }
+ ],
+ "role": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/ingredient-role",
+    "code": "100000072082",
+    "display": "Excipient"
+   }
+  ],
+  "text": "Excipient"
+ },
+ "function": [
+  {
+   "text": "Polishing agent (component of coating premix)"
+  }
+ ],
+ "substance": {
+  "code": {
+   "reference": {
+    "reference": "SubstanceDefinition/macrogol-6000"
+   }
+  },
+  "strength": [
+   {
+    "presentationRatio": {
+     "numerator": {
+      "value": 0.6,
+      "unit": "mg",
+      "system": "http://unitsofmeasure.org",
+      "code": "mg"
+     },
+     "denominator": {
+      "value": 1,
+      "unit": "tablet",
+      "system": "http://unitsofmeasure.org",
+      "code": "{tablet}"
+     }
+    },
+    "textPresentation": "0.60 mg per film-coated tablet"
+   }
+  ]
+ },
+ "extension": [
+  {
+   "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-novel-excipient-pq",
+   "valueBoolean": false
+  },
+  {
+   "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-suitability-for-use-pq",
+   "valueString": "Complies with Ph. Eur., USP/NF, JP"
+  }
+ ]
+}

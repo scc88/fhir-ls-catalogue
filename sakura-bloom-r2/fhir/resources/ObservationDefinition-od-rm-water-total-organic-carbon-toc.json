@@ -1,0 +1,49 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-rm-water-total-organic-carbon-toc",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc817d8758cc2d0c700cf9"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-water-total-organic-carbon-toc",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Total organic carbon - Total organic carbon (TOC): NMT 0.50 mg/l (500 ppm)</p></div>"
+ },
+ "title": "Total organic carbon (TOC)",
+ "status": "active",
+ "category": [
+  {
+   "text": "Total organic carbon"
+  }
+ ],
+ "code": {
+  "text": "Total organic carbon - Total organic carbon (TOC)"
+ },
+ "permittedDataType": [
+  "Quantity"
+ ],
+ "method": {
+  "text": "USP <643>"
+ },
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "NMT 0.50 mg/l (500 ppm)"
+    }
+   ],
+   "range": {
+    "high": {
+     "value": 0.5,
+     "unit": "mg",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg"
+    }
+   }
+  }
+ ]
+}

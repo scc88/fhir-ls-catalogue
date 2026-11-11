@@ -1,0 +1,660 @@
+{
+ "resourceType": "PlanDefinition",
+ "id": "stability-protocol-dp-commitment",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8172acd6d7e4b3f69475"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/stability-protocol-dp-commitment",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> Table 5 (2.3.3.DP.S.2): three production-scale commitment batches through the proposed shelf life. MET at release, 6 months 40/75 and 12/36 months long-term.</p></div>"
+ },
+ "title": "Stability testing plan for commitment batches - Sakura Bloom 20 mg",
+ "type": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+    "code": "1244588",
+    "display": "Stability Study Protocol"
+   }
+  ],
+  "text": "Stability Study Protocol"
+ },
+ "status": "active",
+ "subjectReference": {
+  "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+ },
+ "description": "Table 5 (2.3.3.DP.S.2): three production-scale commitment batches through the proposed shelf life. MET at release, 6 months 40/75 and 12/36 months long-term.",
+ "action": [
+  {
+   "title": "25 °C / 60 % RH",
+   "action": [
+    {
+     "title": "0 months",
+     "timingTiming": {
+      "repeat": {
+       "boundsRange": {
+        "low": {
+         "value": 0,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        },
+        "high": {
+         "value": 0,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        }
+       }
+      }
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ActivityDefinition/ts-dp-stability-full"
+    },
+    {
+     "title": "3 months",
+     "timingTiming": {
+      "repeat": {
+       "boundsRange": {
+        "low": {
+         "value": 3,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        },
+        "high": {
+         "value": 3,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        }
+       }
+      }
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ActivityDefinition/ts-dp-stability-full"
+    },
+    {
+     "title": "6 months",
+     "timingTiming": {
+      "repeat": {
+       "boundsRange": {
+        "low": {
+         "value": 6,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        },
+        "high": {
+         "value": 6,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        }
+       }
+      }
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ActivityDefinition/ts-dp-stability-full"
+    },
+    {
+     "title": "9 months",
+     "timingTiming": {
+      "repeat": {
+       "boundsRange": {
+        "low": {
+         "value": 9,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        },
+        "high": {
+         "value": 9,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        }
+       }
+      }
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ActivityDefinition/ts-dp-stability-full"
+    },
+    {
+     "title": "12 months",
+     "timingTiming": {
+      "repeat": {
+       "boundsRange": {
+        "low": {
+         "value": 12,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        },
+        "high": {
+         "value": 12,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        }
+       }
+      }
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ActivityDefinition/ts-dp-stability-full"
+    },
+    {
+     "title": "18 months",
+     "timingTiming": {
+      "repeat": {
+       "boundsRange": {
+        "low": {
+         "value": 18,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        },
+        "high": {
+         "value": 18,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        }
+       }
+      }
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ActivityDefinition/ts-dp-stability-full"
+    },
+    {
+     "title": "24 months",
+     "timingTiming": {
+      "repeat": {
+       "boundsRange": {
+        "low": {
+         "value": 24,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        },
+        "high": {
+         "value": 24,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        }
+       }
+      }
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ActivityDefinition/ts-dp-stability-full"
+    },
+    {
+     "title": "36 months",
+     "timingTiming": {
+      "repeat": {
+       "boundsRange": {
+        "low": {
+         "value": 36,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        },
+        "high": {
+         "value": 36,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        }
+       }
+      }
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ActivityDefinition/ts-dp-stability-full"
+    }
+   ]
+  },
+  {
+   "title": "30 °C / 65 % RH",
+   "action": [
+    {
+     "title": "3 months (optional)",
+     "timingTiming": {
+      "repeat": {
+       "boundsRange": {
+        "low": {
+         "value": 3,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        },
+        "high": {
+         "value": 3,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        }
+       }
+      }
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ActivityDefinition/ts-dp-stability-full",
+     "description": "Optional testing if failures or significant changes occur at the next higher storage condition"
+    },
+    {
+     "title": "6 months (optional)",
+     "timingTiming": {
+      "repeat": {
+       "boundsRange": {
+        "low": {
+         "value": 6,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        },
+        "high": {
+         "value": 6,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        }
+       }
+      }
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ActivityDefinition/ts-dp-stability-full",
+     "description": "Optional testing if failures or significant changes occur at the next higher storage condition"
+    },
+    {
+     "title": "9 months (optional)",
+     "timingTiming": {
+      "repeat": {
+       "boundsRange": {
+        "low": {
+         "value": 9,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        },
+        "high": {
+         "value": 9,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        }
+       }
+      }
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ActivityDefinition/ts-dp-stability-full",
+     "description": "Optional testing if failures or significant changes occur at the next higher storage condition"
+    },
+    {
+     "title": "12 months (optional)",
+     "timingTiming": {
+      "repeat": {
+       "boundsRange": {
+        "low": {
+         "value": 12,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        },
+        "high": {
+         "value": 12,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        }
+       }
+      }
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ActivityDefinition/ts-dp-stability-full",
+     "description": "Optional testing if failures or significant changes occur at the next higher storage condition"
+    },
+    {
+     "title": "18 months (optional)",
+     "timingTiming": {
+      "repeat": {
+       "boundsRange": {
+        "low": {
+         "value": 18,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        },
+        "high": {
+         "value": 18,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        }
+       }
+      }
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ActivityDefinition/ts-dp-stability-full",
+     "description": "Optional testing if failures or significant changes occur at the next higher storage condition"
+    },
+    {
+     "title": "24 months (optional)",
+     "timingTiming": {
+      "repeat": {
+       "boundsRange": {
+        "low": {
+         "value": 24,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        },
+        "high": {
+         "value": 24,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        }
+       }
+      }
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ActivityDefinition/ts-dp-stability-full",
+     "description": "Optional testing if failures or significant changes occur at the next higher storage condition"
+    },
+    {
+     "title": "36 months (optional)",
+     "timingTiming": {
+      "repeat": {
+       "boundsRange": {
+        "low": {
+         "value": 36,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        },
+        "high": {
+         "value": 36,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        }
+       }
+      }
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ActivityDefinition/ts-dp-stability-full",
+     "description": "Optional testing if failures or significant changes occur at the next higher storage condition"
+    }
+   ]
+  },
+  {
+   "title": "30 °C / 75 % RH",
+   "action": [
+    {
+     "title": "3 months",
+     "timingTiming": {
+      "repeat": {
+       "boundsRange": {
+        "low": {
+         "value": 3,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        },
+        "high": {
+         "value": 3,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        }
+       }
+      }
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ActivityDefinition/ts-dp-stability-full"
+    },
+    {
+     "title": "6 months",
+     "timingTiming": {
+      "repeat": {
+       "boundsRange": {
+        "low": {
+         "value": 6,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        },
+        "high": {
+         "value": 6,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        }
+       }
+      }
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ActivityDefinition/ts-dp-stability-full"
+    },
+    {
+     "title": "9 months",
+     "timingTiming": {
+      "repeat": {
+       "boundsRange": {
+        "low": {
+         "value": 9,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        },
+        "high": {
+         "value": 9,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        }
+       }
+      }
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ActivityDefinition/ts-dp-stability-full"
+    },
+    {
+     "title": "12 months",
+     "timingTiming": {
+      "repeat": {
+       "boundsRange": {
+        "low": {
+         "value": 12,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        },
+        "high": {
+         "value": 12,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        }
+       }
+      }
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ActivityDefinition/ts-dp-stability-full"
+    },
+    {
+     "title": "18 months",
+     "timingTiming": {
+      "repeat": {
+       "boundsRange": {
+        "low": {
+         "value": 18,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        },
+        "high": {
+         "value": 18,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        }
+       }
+      }
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ActivityDefinition/ts-dp-stability-full"
+    },
+    {
+     "title": "24 months",
+     "timingTiming": {
+      "repeat": {
+       "boundsRange": {
+        "low": {
+         "value": 24,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        },
+        "high": {
+         "value": 24,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        }
+       }
+      }
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ActivityDefinition/ts-dp-stability-full"
+    },
+    {
+     "title": "36 months",
+     "timingTiming": {
+      "repeat": {
+       "boundsRange": {
+        "low": {
+         "value": 36,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        },
+        "high": {
+         "value": 36,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        }
+       }
+      }
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ActivityDefinition/ts-dp-stability-full"
+    }
+   ]
+  },
+  {
+   "title": "40 °C / 75 % RH",
+   "action": [
+    {
+     "title": "3 months",
+     "timingTiming": {
+      "repeat": {
+       "boundsRange": {
+        "low": {
+         "value": 3,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        },
+        "high": {
+         "value": 3,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        }
+       }
+      }
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ActivityDefinition/ts-dp-stability-full"
+    },
+    {
+     "title": "6 months",
+     "timingTiming": {
+      "repeat": {
+       "boundsRange": {
+        "low": {
+         "value": 6,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        },
+        "high": {
+         "value": 6,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        }
+       }
+      }
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ActivityDefinition/ts-dp-stability-full"
+    }
+   ]
+  },
+  {
+   "title": "Microbial enumeration",
+   "action": [
+    {
+     "title": "0 months",
+     "timingTiming": {
+      "repeat": {
+       "boundsRange": {
+        "low": {
+         "value": 0,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        },
+        "high": {
+         "value": 0,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        }
+       }
+      }
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ActivityDefinition/ts-dp-stability-met"
+    },
+    {
+     "title": "12 months",
+     "timingTiming": {
+      "repeat": {
+       "boundsRange": {
+        "low": {
+         "value": 12,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        },
+        "high": {
+         "value": 12,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        }
+       }
+      }
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ActivityDefinition/ts-dp-stability-met"
+    },
+    {
+     "title": "36 months",
+     "timingTiming": {
+      "repeat": {
+       "boundsRange": {
+        "low": {
+         "value": 36,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        },
+        "high": {
+         "value": 36,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        }
+       }
+      }
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ActivityDefinition/ts-dp-stability-met"
+    }
+   ],
+   "description": "Also after 6 months at 40 °C/75 % RH"
+  }
+ ]
+}

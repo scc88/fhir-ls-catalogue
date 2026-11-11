@@ -1,0 +1,28 @@
+{
+ "resourceType": "SpecimenDefinition",
+ "id": "spd-test-sample-ds",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SpecimenDefinition-drug-pq"
+  ]
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/SpecimenDefinition/spd-test-sample-ds",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SpecimenDefinition</b> spd-test-sample-ds</p></div>"
+ },
+ "status": "active",
+ "title": "Drug substance / material test sample",
+ "typeCollected": {
+  "text": "Drug substance, starting material, intermediate or excipient sample"
+ },
+ "typeTested": [
+  {
+   "preference": "preferred",
+   "type": {
+    "text": "Powder / crystalline solid"
+   },
+   "isDerived": false
+  }
+ ]
+}

@@ -1,0 +1,6599 @@
+{
+ "resourceType": "Bundle",
+ "id": "bundle-reference-standards",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-reference-standards-pq"
+  ]
+ },
+ "identifier": {
+  "system": "http://example.org/sakura-bloom-r2/fhir/bundle-id",
+  "value": "bundle-reference-standards"
+ },
+ "type": "collection",
+ "timestamp": "2026-11-08T00:00:00Z",
+ "entry": [
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rs-cp-9-identification-standard-appearance",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rs-cp-9-identification-standard-appearance",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81a09f43cef28b653844"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rs-cp-9-identification-standard-appearance",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Description - Appearance: White solid</p></div>"
+    },
+    "title": "Appearance",
+    "status": "active",
+    "category": [
+     {
+      "text": "Description"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DESC",
+       "display": "Description"
+      }
+     ],
+     "text": "Description - Appearance"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "visual evaluation"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "White solid"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rs-cp-9-identification-standard-sakuramil-ir",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rs-cp-9-identification-standard-sakuramil-ir",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81a09f43cef28b653844"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rs-cp-9-identification-standard-sakuramil-ir",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Identification - Sakuramil (IR): The IR spectrum of the sample is comparable to that of the reference standard</p></div>"
+    },
+    "title": "Sakuramil (IR)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Identification"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "IDT",
+       "display": "Identification"
+      }
+     ],
+     "text": "Identification - Sakuramil (IR)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "IR USP <197A>"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "The IR spectrum of the sample is comparable to that of the reference standard"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rs-cp-9-identification-standard-cp-9-1",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rs-cp-9-identification-standard-cp-9-1",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81a09f43cef28b653844"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rs-cp-9-identification-standard-cp-9-1",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Related substances - CP-9-1: ≤ 1.0 %</p></div>"
+    },
+    "title": "CP-9-1",
+    "status": "active",
+    "category": [
+     {
+      "text": "Related substances"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DGP-s",
+       "display": "Drug Substance Related Organic impurities"
+      }
+     ],
+     "text": "Related substances - CP-9-1"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC In-house"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "≤ 1.0 %"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 1.0,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rs-cp-9-identification-standard-cp-8",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rs-cp-9-identification-standard-cp-8",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81a09f43cef28b653844"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rs-cp-9-identification-standard-cp-8",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Related substances - CP-8: ≤ 1.0 %</p></div>"
+    },
+    "title": "CP-8",
+    "status": "active",
+    "category": [
+     {
+      "text": "Related substances"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DGP-s",
+       "display": "Drug Substance Related Organic impurities"
+      }
+     ],
+     "text": "Related substances - CP-8"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC In-house"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "≤ 1.0 %"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 1.0,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rs-cp-9-identification-standard-individual-unspecified-cac0fe",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rs-cp-9-identification-standard-individual-unspecified-cac0fe",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81a09f43cef28b653844"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rs-cp-9-identification-standard-individual-unspecified-cac0fe",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Related substances - Individual unspecified impurities: ≤ 0.10 %</p></div>"
+    },
+    "title": "Individual unspecified impurities",
+    "status": "active",
+    "category": [
+     {
+      "text": "Related substances"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DGP-s",
+       "display": "Drug Substance Related Organic impurities"
+      }
+     ],
+     "text": "Related substances - Individual unspecified impurities"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC In-house"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "≤ 0.10 %"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 0.1,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rs-cp-9-identification-standard-sakuramil",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-rs-cp-9-identification-standard-sakuramil",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81a09f43cef28b653844"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rs-cp-9-identification-standard-sakuramil",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Assay - Sakuramil: 98.0 – 102.0 % (dried basis)</p></div>"
+    },
+    "title": "Sakuramil",
+    "status": "active",
+    "category": [
+     {
+      "text": "Assay"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "ASSAY",
+       "display": "Assay"
+      }
+     ],
+     "text": "Assay - Sakuramil"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC In-house"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "98.0 – 102.0 % (dried basis)"
+       }
+      ],
+      "range": {
+       "low": {
+        "value": 98.0,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       },
+       "high": {
+        "value": 102.0,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-rs-cp-9-identification-standard",
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "spec-rs-cp-9-identification-standard",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81a09f43cef28b653844"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-rs-cp-9-identification-standard",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> spec-rs-cp-9-identification-standard</p></div>"
+    },
+    "title": "Control of CP-9 identification standard (Sakuramil spiked with CP-9-1 and CP-8)",
+    "type": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+       "code": "1244578",
+       "display": "Reference Standard Analysis"
+      }
+     ],
+     "text": "Reference Standard Analysis"
+    },
+    "status": "active",
+    "subjectReference": {
+     "reference": "SubstanceDefinition/sakuramil"
+    },
+    "action": [
+     {
+      "title": "Release and re-test",
+      "code": {
+       "text": "Timing Group"
+      },
+      "action": [
+       {
+        "title": "Appearance",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rs-cp-9-identification-standard-appearance",
+        "description": "Method: visual evaluation"
+       },
+       {
+        "title": "Sakuramil (IR)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rs-cp-9-identification-standard-sakuramil-ir",
+        "description": "Method: IR USP <197A>"
+       },
+       {
+        "title": "CP-9-1",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rs-cp-9-identification-standard-cp-9-1",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-ds-related-substances"
+         }
+        ]
+       },
+       {
+        "title": "CP-8",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rs-cp-9-identification-standard-cp-8",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-ds-related-substances"
+         }
+        ]
+       },
+       {
+        "title": "Individual unspecified impurities",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rs-cp-9-identification-standard-individual-unspecified-cac0fe",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-ds-related-substances"
+         }
+        ]
+       },
+       {
+        "title": "Sakuramil",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rs-cp-9-identification-standard-sakuramil",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-ds-assay-id"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/rs-cp-9-primary-working-standard",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "rs-cp-9-primary-working-standard",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81eea2dedadb29bbf31e"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> CP-9 primary (working) reference standard: laboratory-scale batch SAKU_20220114 of Sakuramil, controlled in line with the drug substance specification. - lot SAKU_20220114</p></div>"
+    },
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/reference-standard",
+      "value": "SAKU_20220114"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "category": [
+     {
+      "text": "Reference standard"
+     }
+    ],
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/sakuramil"
+     }
+    },
+    "description": "CP-9 primary (working) reference standard: laboratory-scale batch SAKU_20220114 of Sakuramil, controlled in line with the drug substance specification."
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/rs-cp-9-identification-standard",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "rs-cp-9-identification-standard",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81eea2dedadb29bbf31e"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> CP-9 identification standard: selected batch of Sakuramil spiked with impurities CP-9-1 and CP-8; prepared in-house. - lot rs-cp-9-identification-standard</p></div>"
+    },
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/reference-standard",
+      "value": "rs-cp-9-identification-standard"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "category": [
+     {
+      "text": "Reference standard"
+     }
+    ],
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/sakuramil"
+     }
+    },
+    "description": "CP-9 identification standard: selected batch of Sakuramil spiked with impurities CP-9-1 and CP-8; prepared in-house."
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/rs-cp-6-standard",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "rs-cp-6-standard",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81eea2dedadb29bbf31e"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> CP-6 standard, prepared in-house; controlled per the CP-6 intermediate specification. - lot rs-cp-6-standard</p></div>"
+    },
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/reference-standard",
+      "value": "rs-cp-6-standard"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "category": [
+     {
+      "text": "Reference standard"
+     }
+    ],
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/cp-6"
+     }
+    },
+    "description": "CP-6 standard, prepared in-house; controlled per the CP-6 intermediate specification."
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/rs-cp-7-standard",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "rs-cp-7-standard",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81eea2dedadb29bbf31e"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> CP-7 standard, prepared in-house; controlled per the CP-7 intermediate specification. - lot rs-cp-7-standard</p></div>"
+    },
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/reference-standard",
+      "value": "rs-cp-7-standard"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "category": [
+     {
+      "text": "Reference standard"
+     }
+    ],
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/cp-7"
+     }
+    },
+    "description": "CP-7 standard, prepared in-house; controlled per the CP-7 intermediate specification."
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/rs-usp-methylene-chloride",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "rs-usp-methylene-chloride",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81eea2dedadb29bbf31e"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> USP Residual Solvent Class 2 - Methylene chloride RS (pharmacopeial material) - lot rs-usp-methylene-chloride</p></div>"
+    },
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/reference-standard",
+      "value": "rs-usp-methylene-chloride"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "category": [
+     {
+      "text": "Reference standard"
+     }
+    ],
+    "code": {
+     "concept": {
+      "text": "USP Residual Solvent Class 2 - Methylene chloride RS"
+     }
+    },
+    "description": "USP Residual Solvent Class 2 - Methylene chloride RS (pharmacopeial material)"
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/rs-usp-alcohol",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "rs-usp-alcohol",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81eea2dedadb29bbf31e"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> USP Alcohol Determination - Alcohol RS (pharmacopeial material) - lot rs-usp-alcohol</p></div>"
+    },
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/reference-standard",
+      "value": "rs-usp-alcohol"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "category": [
+     {
+      "text": "Reference standard"
+     }
+    ],
+    "code": {
+     "concept": {
+      "text": "USP Alcohol Determination - Alcohol RS"
+     }
+    },
+    "description": "USP Alcohol Determination - Alcohol RS (pharmacopeial material)"
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-ms-mz",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-char-ms-mz",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ]
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-ms-mz",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Elucidation of structure - Mass spectrometry (ESI) m/z: Observed m/z consistent with predicted value</p></div>"
+    },
+    "title": "Mass spectrometry (ESI) m/z",
+    "status": "active",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "text": "Elucidation of structure - Mass spectrometry (ESI) m/z"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "LC-IT-TOF MS, ESI"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Observed m/z consistent with predicted value"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-1h-nmr-signal",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-char-1h-nmr-signal",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ]
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-1h-nmr-signal",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Elucidation of structure - 1H NMR signal assignment: Spectrum consistent with proposed structure</p></div>"
+    },
+    "title": "1H NMR signal assignment",
+    "status": "active",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-H",
+       "display": "NMR-H"
+      }
+     ],
+     "text": "Elucidation of structure - 1H NMR signal assignment"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "1H NMR 500 MHz, D2O"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Spectrum consistent with proposed structure"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-13c-nmr-signal",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-char-13c-nmr-signal",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ]
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-13c-nmr-signal",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Elucidation of structure - 13C NMR signal assignment: Spectrum consistent with proposed structure</p></div>"
+    },
+    "title": "13C NMR signal assignment",
+    "status": "active",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-C",
+       "display": "NMR-C"
+      }
+     ],
+     "text": "Elucidation of structure - 13C NMR signal assignment"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "13C NMR 500 MHz, D2O"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Spectrum consistent with proposed structure"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/char-protocol-reference-standards",
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "char-protocol-reference-standards",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+     ]
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/char-protocol-reference-standards",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> char-protocol-reference-standards</p></div>"
+    },
+    "title": "Elucidation of structure of reference standards (MS, 1H NMR, 13C NMR)",
+    "type": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+       "code": "elucidation-of-structure",
+       "display": "Elucidation of Structure"
+      }
+     ],
+     "text": "Elucidation of Structure"
+    },
+    "status": "active",
+    "subjectReference": {
+     "reference": "SubstanceDefinition/sakuramil"
+    },
+    "action": [
+     {
+      "title": "Characterization",
+      "code": {
+       "text": "Timing Group"
+      },
+      "action": [
+       {
+        "title": "Mass spectrometry (ESI) m/z",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-ms-mz",
+        "description": "Method: LC-IT-TOF MS, ESI"
+       },
+       {
+        "title": "1H NMR signal assignment",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-1h-nmr-signal",
+        "description": "Method: 1H NMR 500 MHz, D2O"
+       },
+       {
+        "title": "13C NMR signal assignment",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-13c-nmr-signal",
+        "description": "Method: 13C NMR 500 MHz, D2O"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-primary-working-standard-ms-1",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-primary-working-standard-ms-1",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - Mass spectrometry (ESI) m/z: 614.504 m/z (Substance/rs-cp-9-primary-working-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-ms-mz",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "text": "Elucidation of structure - Mass spectrometry (ESI) m/z"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-primary-working-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueQuantity": {
+     "value": 614.504,
+     "unit": "m/z",
+     "system": "http://unitsofmeasure.org",
+     "code": "{m/z}"
+    },
+    "note": [
+     {
+      "text": "Predicted m/z for Sakuramil: 614.505"
+     }
+    ],
+    "component": [
+     {
+      "code": {
+       "text": "Predicted m/z"
+      },
+      "valueQuantity": {
+       "value": 614.505,
+       "unit": "m/z",
+       "system": "http://unitsofmeasure.org",
+       "code": "{m/z}"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-primary-working-standard-t0-1h-1",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-primary-working-standard-t0-1h-1",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 1H NMR signal assignment: δ 7.79 ppm; 5H; m; H4, H6, H7, H9, H3 (Substance/rs-cp-9-primary-working-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-1h-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-H",
+       "display": "NMR-H"
+      }
+     ],
+     "text": "Elucidation of structure - 1H NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-primary-working-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 7.79 ppm; 5H; m; H4, H6, H7, H9, H3",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 7.79,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "5H"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "m"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "H4, H6, H7, H9, H3"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-primary-working-standard-t0-1h-2",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-primary-working-standard-t0-1h-2",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 1H NMR signal assignment: δ 7.25-7.02 ppm; 2H; s; H1 (Substance/rs-cp-9-primary-working-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-1h-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-H",
+       "display": "NMR-H"
+      }
+     ],
+     "text": "Elucidation of structure - 1H NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-primary-working-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 7.25-7.02 ppm; 2H; s; H1",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ, lower)"
+      },
+      "valueQuantity": {
+       "value": 7.02,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Chemical shift (δ, upper)"
+      },
+      "valueQuantity": {
+       "value": 7.25,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "2H"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "s"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "H1"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-primary-working-standard-t0-1h-3",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-primary-working-standard-t0-1h-3",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 1H NMR signal assignment: δ 4.56-4.09 ppm; 3H; m; H11 (Substance/rs-cp-9-primary-working-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-1h-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-H",
+       "display": "NMR-H"
+      }
+     ],
+     "text": "Elucidation of structure - 1H NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-primary-working-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 4.56-4.09 ppm; 3H; m; H11",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ, lower)"
+      },
+      "valueQuantity": {
+       "value": 4.09,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Chemical shift (δ, upper)"
+      },
+      "valueQuantity": {
+       "value": 4.56,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "3H"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "m"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "H11"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-primary-working-standard-t0-1h-4",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-primary-working-standard-t0-1h-4",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 1H NMR signal assignment: δ 3.79 ppm; 2H; m; H13, H14 (Substance/rs-cp-9-primary-working-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-1h-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-H",
+       "display": "NMR-H"
+      }
+     ],
+     "text": "Elucidation of structure - 1H NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-primary-working-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 3.79 ppm; 2H; m; H13, H14",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 3.79,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "2H"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "m"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "H13, H14"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-primary-working-standard-t0-1h-5",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-primary-working-standard-t0-1h-5",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 1H NMR signal assignment: δ 3.05 ppm; 1H; m; H12 (Substance/rs-cp-9-primary-working-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-1h-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-H",
+       "display": "NMR-H"
+      }
+     ],
+     "text": "Elucidation of structure - 1H NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-primary-working-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 3.05 ppm; 1H; m; H12",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 3.05,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "1H"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "m"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "H12"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-primary-working-standard-t0-1h-6",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-primary-working-standard-t0-1h-6",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 1H NMR signal assignment: δ 2.66 ppm; 1H; m; H24 (Substance/rs-cp-9-primary-working-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-1h-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-H",
+       "display": "NMR-H"
+      }
+     ],
+     "text": "Elucidation of structure - 1H NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-primary-working-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 2.66 ppm; 1H; m; H24",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 2.66,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "1H"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "m"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "H24"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-primary-working-standard-t0-1h-7",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-primary-working-standard-t0-1h-7",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 1H NMR signal assignment: δ 2.10 ppm; 5H; dd; H23, H21, H20, H19, H18 (Substance/rs-cp-9-primary-working-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-1h-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-H",
+       "display": "NMR-H"
+      }
+     ],
+     "text": "Elucidation of structure - 1H NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-primary-working-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 2.10 ppm; 5H; dd; H23, H21, H20, H19, H18",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 2.1,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "5H"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "dd"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "H23, H21, H20, H19, H18"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-primary-working-standard-t0-1h-8",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-primary-working-standard-t0-1h-8",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 1H NMR signal assignment: δ 1.88 ppm; 2H; m; H15, H16 (Substance/rs-cp-9-primary-working-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-1h-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-H",
+       "display": "NMR-H"
+      }
+     ],
+     "text": "Elucidation of structure - 1H NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-primary-working-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 1.88 ppm; 2H; m; H15, H16",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 1.88,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "2H"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "m"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "H15, H16"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-primary-working-standard-t0-1h-9",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-primary-working-standard-t0-1h-9",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 1H NMR signal assignment: δ 1.25 ppm; 2H; m; H26 (Substance/rs-cp-9-primary-working-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-1h-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-H",
+       "display": "NMR-H"
+      }
+     ],
+     "text": "Elucidation of structure - 1H NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-primary-working-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 1.25 ppm; 2H; m; H26",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 1.25,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "2H"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "m"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "H26"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-primary-working-standard-t0-1h-10",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-primary-working-standard-t0-1h-10",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 1H NMR signal assignment: δ 1.10 ppm; 3H; m; H17 (Substance/rs-cp-9-primary-working-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-1h-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-H",
+       "display": "NMR-H"
+      }
+     ],
+     "text": "Elucidation of structure - 1H NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-primary-working-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 1.10 ppm; 3H; m; H17",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 1.1,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "3H"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "m"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "H17"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-primary-working-standard-t0-1h-11",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-primary-working-standard-t0-1h-11",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 1H NMR signal assignment: δ 0.89 ppm; 3H; m; H27 (Substance/rs-cp-9-primary-working-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-1h-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-H",
+       "display": "NMR-H"
+      }
+     ],
+     "text": "Elucidation of structure - 1H NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-primary-working-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 0.89 ppm; 3H; m; H27",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 0.89,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "3H"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "m"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "H27"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-primary-working-standard-t1-13c-1",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-primary-working-standard-t1-13c-1",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 13C NMR signal assignment: δ 54.20 ppm; 5C; m; C5, C4, C6, C7, C8 (Substance/rs-cp-9-primary-working-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-13c-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-C",
+       "display": "NMR-C"
+      }
+     ],
+     "text": "Elucidation of structure - 13C NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-primary-working-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 54.20 ppm; 5C; m; C5, C4, C6, C7, C8",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 54.2,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "5C"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "m"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "C5, C4, C6, C7, C8"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-primary-working-standard-t1-13c-2",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-primary-working-standard-t1-13c-2",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 13C NMR signal assignment: δ 53.80 ppm; 3C; m; C3, C9, C2 (Substance/rs-cp-9-primary-working-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-13c-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-C",
+       "display": "NMR-C"
+      }
+     ],
+     "text": "Elucidation of structure - 13C NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-primary-working-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 53.80 ppm; 3C; m; C3, C9, C2",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 53.8,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "3C"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "m"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "C3, C9, C2"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-primary-working-standard-t1-13c-3",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-primary-working-standard-t1-13c-3",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 13C NMR signal assignment: δ 51.42 ppm; 4C; m; C1, C10, C11, C13 (Substance/rs-cp-9-primary-working-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-13c-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-C",
+       "display": "NMR-C"
+      }
+     ],
+     "text": "Elucidation of structure - 13C NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-primary-working-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 51.42 ppm; 4C; m; C1, C10, C11, C13",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 51.42,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "4C"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "m"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "C1, C10, C11, C13"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-primary-working-standard-t1-13c-4",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-primary-working-standard-t1-13c-4",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 13C NMR signal assignment: δ 47.33 ppm; 5C; m; C22, C23, C24, C12, C21 (Substance/rs-cp-9-primary-working-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-13c-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-C",
+       "display": "NMR-C"
+      }
+     ],
+     "text": "Elucidation of structure - 13C NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-primary-working-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 47.33 ppm; 5C; m; C22, C23, C24, C12, C21",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 47.33,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "5C"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "m"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "C22, C23, C24, C12, C21"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-primary-working-standard-t1-13c-5",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-primary-working-standard-t1-13c-5",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 13C NMR signal assignment: δ 43.53 ppm; 1C; m; C20 (Substance/rs-cp-9-primary-working-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-13c-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-C",
+       "display": "NMR-C"
+      }
+     ],
+     "text": "Elucidation of structure - 13C NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-primary-working-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 43.53 ppm; 1C; m; C20",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 43.53,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "1C"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "m"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "C20"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-primary-working-standard-t1-13c-6",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-primary-working-standard-t1-13c-6",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 13C NMR signal assignment: δ 16.42 ppm; 3C; m; C19, C18, C14 (Substance/rs-cp-9-primary-working-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-13c-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-C",
+       "display": "NMR-C"
+      }
+     ],
+     "text": "Elucidation of structure - 13C NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-primary-working-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 16.42 ppm; 3C; m; C19, C18, C14",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 16.42,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "3C"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "m"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "C19, C18, C14"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-primary-working-standard-t1-13c-7",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-primary-working-standard-t1-13c-7",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 13C NMR signal assignment: δ 15.80 ppm; 6C; m; C15, C16, C17, C25, C26, C27 (Substance/rs-cp-9-primary-working-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-13c-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-C",
+       "display": "NMR-C"
+      }
+     ],
+     "text": "Elucidation of structure - 13C NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-primary-working-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 15.80 ppm; 6C; m; C15, C16, C17, C25, C26, C27",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 15.8,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "6C"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "m"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "C15, C16, C17, C25, C26, C27"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/DiagnosticReport/dr-char-cp-9-primary-working-standard",
+   "resource": {
+    "resourceType": "DiagnosticReport",
+    "id": "dr-char-cp-9-primary-working-standard",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DiagnosticReport-analysis-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81b5a3abf9b18b58b742"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DiagnosticReport</b> Characterization Report</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/workflow-triggeredBy",
+      "valueReference": {
+       "reference": "PlanDefinition/char-protocol-reference-standards"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/report-id",
+      "value": "dr-char-cp-9-primary-working-standard"
+     }
+    ],
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-report-type",
+       "code": "Characterization Report",
+       "display": "Characterization Report"
+      }
+     ],
+     "text": "Characterization Report"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-primary-working-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "result": [
+     {
+      "reference": "Observation/obs-char-cp-9-primary-working-standard-ms-1"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-primary-working-standard-t0-1h-1"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-primary-working-standard-t0-1h-2"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-primary-working-standard-t0-1h-3"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-primary-working-standard-t0-1h-4"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-primary-working-standard-t0-1h-5"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-primary-working-standard-t0-1h-6"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-primary-working-standard-t0-1h-7"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-primary-working-standard-t0-1h-8"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-primary-working-standard-t0-1h-9"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-primary-working-standard-t0-1h-10"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-primary-working-standard-t0-1h-11"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-primary-working-standard-t1-13c-1"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-primary-working-standard-t1-13c-2"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-primary-working-standard-t1-13c-3"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-primary-working-standard-t1-13c-4"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-primary-working-standard-t1-13c-5"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-primary-working-standard-t1-13c-6"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-primary-working-standard-t1-13c-7"
+     }
+    ],
+    "conclusion": "Structure of CP-9 working standard confirmed by MS and NMR."
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/sakuramil",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "sakuramil",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81f89f56d478fe7ac949"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Sakuramil</p></div>"
+    },
+    "identifier": [
+     {
+      "system": "http://cas.org",
+      "value": "262352-13-6"
+     }
+    ],
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Chemical (small molecule)"
+     }
+    ],
+    "grade": [
+     {
+      "text": "In-house"
+     }
+    ],
+    "description": "Sakuramil (company code CP-9), the drug substance of Sakura Bloom 20 mg film-coated tablets.",
+    "manufacturer": [
+     {
+      "reference": "Organization/iroha-corp",
+      "display": "IROHA-corp.",
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-site-utilization-pq",
+        "valueCoding": {
+         "system": "http://terminology.hl7.org/CodeSystem/product-site-utilization-type",
+         "code": "Primary manufacturing",
+         "display": "Primary Manufacturing"
+        }
+       }
+      ]
+     }
+    ],
+    "characterization": [
+     {
+      "technique": {
+       "text": "Mass spectrometry (ESI positive, Shimadzu LCM-IT-TOF)"
+      },
+      "description": "m/z 614.504 observed (predicted 614.505) on CP-9 primary working standard"
+     },
+     {
+      "technique": {
+       "text": "1H NMR (Bruker 500 MHz, D2O)"
+      }
+     },
+     {
+      "technique": {
+       "text": "13C NMR (Bruker 500 MHz, D2O)"
+      }
+     }
+    ],
+    "property": [
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+         "code": "appearance",
+         "display": "Appearance"
+        }
+       ],
+       "text": "Appearance"
+      },
+      "valueCodeableConcept": {
+       "text": "White solid"
+      }
+     },
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+         "code": "solubility-water",
+         "display": "Solubility purified water"
+        }
+       ],
+       "text": "Solubility purified water"
+      },
+      "valueQuantity": {
+       "value": 0.05,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      }
+     },
+     {
+      "type": {
+       "text": "Solubility in ethanol (RT)"
+      },
+      "valueQuantity": {
+       "value": 45,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      }
+     },
+     {
+      "type": {
+       "text": "Solubility in acetone (RT)"
+      },
+      "valueQuantity": {
+       "value": 71.3,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      }
+     },
+     {
+      "type": {
+       "text": "Aqueous solubility as a function of pH (RT) - Deionized water"
+      },
+      "valueQuantity": {
+       "value": 0.05,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      }
+     },
+     {
+      "type": {
+       "text": "Aqueous solubility as a function of pH (RT) - 0.1 N HCl"
+      },
+      "valueQuantity": {
+       "comparator": "<",
+       "value": 0.01,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      },
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-substance-property-parameter-pq",
+        "extension": [
+         {
+          "url": "parameter",
+          "valueCoding": {
+           "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+           "code": "pH",
+           "display": "pH"
+          }
+         },
+         {
+          "url": "value",
+          "valueQuantity": {
+           "value": 1.2,
+           "unit": "pH",
+           "system": "http://unitsofmeasure.org",
+           "code": "[pH]"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": {
+       "text": "Aqueous solubility as a function of pH (RT) - Acetate buffer"
+      },
+      "valueQuantity": {
+       "value": 5.0,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      },
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-substance-property-parameter-pq",
+        "extension": [
+         {
+          "url": "parameter",
+          "valueCoding": {
+           "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+           "code": "pH",
+           "display": "pH"
+          }
+         },
+         {
+          "url": "value",
+          "valueQuantity": {
+           "value": 4.5,
+           "unit": "pH",
+           "system": "http://unitsofmeasure.org",
+           "code": "[pH]"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": {
+       "text": "Aqueous solubility as a function of pH (RT) - Phosphate buffer"
+      },
+      "valueQuantity": {
+       "value": 3.2,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      },
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-substance-property-parameter-pq",
+        "extension": [
+         {
+          "url": "parameter",
+          "valueCoding": {
+           "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+           "code": "pH",
+           "display": "pH"
+          }
+         },
+         {
+          "url": "value",
+          "valueQuantity": {
+           "value": 6.8,
+           "unit": "pH",
+           "system": "http://unitsofmeasure.org",
+           "code": "[pH]"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": {
+       "text": "Aqueous solubility as a function of pH (RT) - 0.1 N NaOH"
+      },
+      "valueQuantity": {
+       "value": 5.1,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      },
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-substance-property-parameter-pq",
+        "extension": [
+         {
+          "url": "parameter",
+          "valueCoding": {
+           "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+           "code": "pH",
+           "display": "pH"
+          }
+         },
+         {
+          "url": "value",
+          "valueQuantity": {
+           "value": 8.0,
+           "unit": "pH",
+           "system": "http://unitsofmeasure.org",
+           "code": "[pH]"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+         "code": "pH",
+         "display": "pH"
+        }
+       ],
+       "text": "pH"
+      },
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-substance-property-range-pq",
+        "valueRange": {
+         "low": {
+          "value": 5.0,
+          "unit": "pH",
+          "system": "http://unitsofmeasure.org",
+          "code": "[pH]"
+         },
+         "high": {
+          "value": 9.0,
+          "unit": "pH",
+          "system": "http://unitsofmeasure.org",
+          "code": "[pH]"
+         }
+        }
+       }
+      ],
+      "valueCodeableConcept": {
+       "text": "5.0 - 9.0 (RT)"
+      }
+     },
+     {
+      "type": {
+       "text": "pKa (carboxylate)"
+      },
+      "valueQuantity": {
+       "value": 12.6
+      }
+     },
+     {
+      "type": {
+       "text": "pKa (phenol CF3)"
+      },
+      "valueQuantity": {
+       "value": 15.3
+      }
+     },
+     {
+      "type": {
+       "text": "pKa (carbamate)"
+      },
+      "valueQuantity": {
+       "value": 24.2
+      }
+     },
+     {
+      "type": {
+       "text": "Partition coefficient (log P, n-octanol/water)"
+      },
+      "valueQuantity": {
+       "value": 6.3
+      }
+     },
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+         "code": "hygroscopy",
+         "display": "Hygroscopy"
+        }
+       ],
+       "text": "Hygroscopy"
+      },
+      "valueCodeableConcept": {
+       "text": "Not hygroscopic"
+      }
+     },
+     {
+      "type": {
+       "text": "Melting point"
+      },
+      "valueQuantity": {
+       "value": 174,
+       "unit": "°C",
+       "system": "http://unitsofmeasure.org",
+       "code": "Cel"
+      }
+     },
+     {
+      "type": {
+       "text": "Polymorphism"
+      },
+      "valueCodeableConcept": {
+       "text": "Only one polymorph observed in synthetic manufacture and extensive polymorph screening"
+      }
+     },
+     {
+      "type": {
+       "text": "Chirality"
+      },
+      "valueCodeableConcept": {
+       "text": "Two chiral centres; no racemization observed in the manufacturing process"
+      }
+     },
+     {
+      "type": {
+       "text": "Isomerism"
+      },
+      "valueCodeableConcept": {
+       "text": "An enantiomer and two diastereomers can be formed"
+      }
+     },
+     {
+      "type": {
+       "text": "Specific optical rotation (20 °C, aqueous solution)"
+      },
+      "valueQuantity": {
+       "value": 145,
+       "unit": "deg",
+       "system": "http://unitsofmeasure.org",
+       "code": "deg"
+      }
+     },
+     {
+      "type": {
+       "text": "Particle size distribution d(0.1) (laser diffraction)"
+      },
+      "valueQuantity": {
+       "value": 26,
+       "unit": "nm",
+       "system": "http://unitsofmeasure.org",
+       "code": "nm"
+      }
+     },
+     {
+      "type": {
+       "text": "Particle size distribution d(0.5) (laser diffraction)"
+      },
+      "valueQuantity": {
+       "value": 40,
+       "unit": "nm",
+       "system": "http://unitsofmeasure.org",
+       "code": "nm"
+      }
+     },
+     {
+      "type": {
+       "text": "Particle size distribution d(0.9) (laser diffraction)"
+      },
+      "valueQuantity": {
+       "value": 66,
+       "unit": "nm",
+       "system": "http://unitsofmeasure.org",
+       "code": "nm"
+      }
+     },
+     {
+      "type": {
+       "text": "Light sensitivity"
+      },
+      "valueCodeableConcept": {
+       "text": "Not sensitive to light"
+      }
+     },
+     {
+      "type": {
+       "text": "Biopharmaceutics Classification System"
+      },
+      "valueCodeableConcept": {
+       "text": "BCS Class II (poorly soluble, highly permeable)"
+      }
+     }
+    ],
+    "molecularWeight": [
+     {
+      "type": {
+       "text": "Exact/average (free base)"
+      },
+      "amount": {
+       "value": 614.5,
+       "unit": "g/mol",
+       "system": "http://unitsofmeasure.org",
+       "code": "g/mol"
+      }
+     }
+    ],
+    "structure": {
+     "stereochemistry": {
+      "text": "(2S,4S)"
+     },
+     "molecularFormula": "C27H27F9N2O4",
+     "representation": [
+      {
+       "type": {
+        "text": "IUPAC name"
+       },
+       "representation": "Propan-2-yl (2S,4S)-4-[acetyl-[[3,5-bis(trifluoromethyl)phenyl]methyl]amino]-2-methoxy-2-methyl-6-(trifluoromethyl)-3,4-dihydroquinoline-1-carboxylate"
+      }
+     ]
+    },
+    "code": [
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://cas.org",
+         "code": "262352-13-6"
+        }
+       ],
+       "text": "262352-13-6"
+      }
+     },
+     {
+      "code": {
+       "text": "CP-9"
+      }
+     }
+    ],
+    "name": [
+     {
+      "name": "Sakuramil",
+      "type": {
+       "text": "INN"
+      },
+      "preferred": true
+     },
+     {
+      "name": "Sakuramil",
+      "type": {
+       "text": "USAN"
+      }
+     },
+     {
+      "name": "Propan-2-yl (2S,4S)-4-[acetyl-[[3,5-bis(trifluoromethyl)phenyl]methyl]amino]-2-methoxy-2-methyl-6-(trifluoromethyl)-3,4-dihydroquinoline-1-carboxylate",
+      "type": {
+       "text": "IUPAC chemical name"
+      }
+     },
+     {
+      "name": "CP-9",
+      "type": {
+       "text": "Company code"
+      }
+     }
+    ],
+    "relationship": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "process",
+           "display": "Process Impurity"
+          }
+         ],
+         "text": "Process Impurity"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-9-1",
+       "display": "CP-9-1"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "PR-IMP",
+         "display": "Process impurity"
+        }
+       ],
+       "text": "Process impurity - Specified related substance; NMT 0.15 % (DS); NMT 0.3 %/0.5 % release/shelf-life (DP)"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "starting-material",
+           "display": "Starting Material"
+          }
+         ],
+         "text": "Starting Material"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-8",
+       "display": "CP-8"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "ST-IMP",
+         "display": "Starting material, forced degradation product"
+        }
+       ],
+       "text": "Starting material, forced degradation product - Specified related substance; NMT 0.10 %"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "intermediate-material",
+           "display": "Intermediate Material"
+          }
+         ],
+         "text": "Intermediate Material"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-6",
+       "display": "CP-6"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "INT-IMP",
+         "display": "Process intermediate, forced degradation product"
+        }
+       ],
+       "text": "Process intermediate, forced degradation product - Potentially mutagenic impurity; NMT 37.5 ppm"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "starting-material",
+           "display": "Starting Material"
+          }
+         ],
+         "text": "Starting Material"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-4",
+       "display": "CP-4"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "ST-IMP",
+         "display": "Starting material, forced degradation product"
+        }
+       ],
+       "text": "Starting material, forced degradation product - Potentially mutagenic; controlled via CP-6 limit and purge"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "intermediate-material",
+           "display": "Intermediate Material"
+          }
+         ],
+         "text": "Intermediate Material"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-5",
+       "display": "CP-5"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "INT-IMP",
+         "display": "Process intermediate, forced degradation product"
+        }
+       ],
+       "text": "Process intermediate, forced degradation product - Potentially mutagenic (structural alert); purged"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "process",
+           "display": "Process Impurity"
+          }
+         ],
+         "text": "Process Impurity"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-3",
+       "display": "CP-3"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "PR-IMP",
+         "display": "Process impurity"
+        }
+       ],
+       "text": "Process impurity - Potentially mutagenic (structural alert); purged"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "intermediate-material",
+           "display": "Intermediate Material"
+          }
+         ],
+         "text": "Intermediate Material"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-7",
+       "display": "CP-7"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "INT-IMP",
+         "display": "Process intermediate, forced degradation product"
+        }
+       ],
+       "text": "Process intermediate, forced degradation product - Intermediate; purged in Step 4 crystallization"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-identification-standard-ms-1",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-identification-standard-ms-1",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - Mass spectrometry (ESI) m/z: 628.527 m/z (Substance/rs-cp-9-identification-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-ms-mz",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "text": "Elucidation of structure - Mass spectrometry (ESI) m/z"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-identification-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueQuantity": {
+     "value": 628.527,
+     "unit": "m/z",
+     "system": "http://unitsofmeasure.org",
+     "code": "{m/z}"
+    },
+    "note": [
+     {
+      "text": "Predicted m/z for CP-9-1 impurity: 628.532"
+     }
+    ],
+    "component": [
+     {
+      "code": {
+       "text": "Predicted m/z"
+      },
+      "valueQuantity": {
+       "value": 628.532,
+       "unit": "m/z",
+       "system": "http://unitsofmeasure.org",
+       "code": "{m/z}"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-identification-standard-t0-1h-1",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-identification-standard-t0-1h-1",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 1H NMR signal assignment: δ 7.87 ppm; 2H; m; H1 (Substance/rs-cp-9-identification-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-1h-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-H",
+       "display": "NMR-H"
+      }
+     ],
+     "text": "Elucidation of structure - 1H NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-identification-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 7.87 ppm; 2H; m; H1",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 7.87,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "2H"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "m"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "H1"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-identification-standard-t0-1h-2",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-identification-standard-t0-1h-2",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 1H NMR signal assignment: δ 7.50-7.03 ppm; 5H; s; H4, H6, H7, H9, H3 (Substance/rs-cp-9-identification-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-1h-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-H",
+       "display": "NMR-H"
+      }
+     ],
+     "text": "Elucidation of structure - 1H NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-identification-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 7.50-7.03 ppm; 5H; s; H4, H6, H7, H9, H3",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ, lower)"
+      },
+      "valueQuantity": {
+       "value": 7.03,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Chemical shift (δ, upper)"
+      },
+      "valueQuantity": {
+       "value": 7.5,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "5H"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "s"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "H4, H6, H7, H9, H3"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-identification-standard-t0-1h-3",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-identification-standard-t0-1h-3",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 1H NMR signal assignment: δ 4.87-4.09 ppm; 3H; m; H11, H13, H14 (Substance/rs-cp-9-identification-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-1h-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-H",
+       "display": "NMR-H"
+      }
+     ],
+     "text": "Elucidation of structure - 1H NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-identification-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 4.87-4.09 ppm; 3H; m; H11, H13, H14",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ, lower)"
+      },
+      "valueQuantity": {
+       "value": 4.09,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Chemical shift (δ, upper)"
+      },
+      "valueQuantity": {
+       "value": 4.87,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "3H"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "m"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "H11, H13, H14"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-identification-standard-t0-1h-4",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-identification-standard-t0-1h-4",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 1H NMR signal assignment: δ 3.54 ppm; 3H; m; H12 (Substance/rs-cp-9-identification-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-1h-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-H",
+       "display": "NMR-H"
+      }
+     ],
+     "text": "Elucidation of structure - 1H NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-identification-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 3.54 ppm; 3H; m; H12",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 3.54,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "3H"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "m"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "H12"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-identification-standard-t0-1h-5",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-identification-standard-t0-1h-5",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 1H NMR signal assignment: δ 3.12 ppm; 1H; m; H12 (Substance/rs-cp-9-identification-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-1h-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-H",
+       "display": "NMR-H"
+      }
+     ],
+     "text": "Elucidation of structure - 1H NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-identification-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 3.12 ppm; 1H; m; H12",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 3.12,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "1H"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "m"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "H12"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-identification-standard-t0-1h-6",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-identification-standard-t0-1h-6",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 1H NMR signal assignment: δ 2.67 ppm; 1H; m; H24 (Substance/rs-cp-9-identification-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-1h-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-H",
+       "display": "NMR-H"
+      }
+     ],
+     "text": "Elucidation of structure - 1H NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-identification-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 2.67 ppm; 1H; m; H24",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 2.67,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "1H"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "m"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "H24"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-identification-standard-t0-1h-7",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-identification-standard-t0-1h-7",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 1H NMR signal assignment: δ 2.23 ppm; 5H; dd; H23, H21, H20, H19, H18 (Substance/rs-cp-9-identification-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-1h-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-H",
+       "display": "NMR-H"
+      }
+     ],
+     "text": "Elucidation of structure - 1H NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-identification-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 2.23 ppm; 5H; dd; H23, H21, H20, H19, H18",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 2.23,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "5H"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "dd"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "H23, H21, H20, H19, H18"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-identification-standard-t0-1h-8",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-identification-standard-t0-1h-8",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 1H NMR signal assignment: δ 1.78 ppm; 2H; m; H15, H16 (Substance/rs-cp-9-identification-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-1h-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-H",
+       "display": "NMR-H"
+      }
+     ],
+     "text": "Elucidation of structure - 1H NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-identification-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 1.78 ppm; 2H; m; H15, H16",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 1.78,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "2H"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "m"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "H15, H16"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-identification-standard-t0-1h-9",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-identification-standard-t0-1h-9",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 1H NMR signal assignment: δ 1.52 ppm; 2H; s; H26 (Substance/rs-cp-9-identification-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-1h-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-H",
+       "display": "NMR-H"
+      }
+     ],
+     "text": "Elucidation of structure - 1H NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-identification-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 1.52 ppm; 2H; s; H26",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 1.52,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "2H"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "s"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "H26"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-identification-standard-t0-1h-10",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-identification-standard-t0-1h-10",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 1H NMR signal assignment: δ 1.30 ppm; 3H; s; H17 (Substance/rs-cp-9-identification-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-1h-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-H",
+       "display": "NMR-H"
+      }
+     ],
+     "text": "Elucidation of structure - 1H NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-identification-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 1.30 ppm; 3H; s; H17",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 1.3,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "3H"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "s"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "H17"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-identification-standard-t0-1h-11",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-identification-standard-t0-1h-11",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 1H NMR signal assignment: δ 0.75 ppm; 3H; s; H27 (Substance/rs-cp-9-identification-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-1h-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-H",
+       "display": "NMR-H"
+      }
+     ],
+     "text": "Elucidation of structure - 1H NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-identification-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 0.75 ppm; 3H; s; H27",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 0.75,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "3H"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "s"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "H27"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-identification-standard-t1-13c-1",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-identification-standard-t1-13c-1",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 13C NMR signal assignment: δ 54.50 ppm; 2C; m; C5, C4 (Substance/rs-cp-9-identification-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-13c-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-C",
+       "display": "NMR-C"
+      }
+     ],
+     "text": "Elucidation of structure - 13C NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-identification-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 54.50 ppm; 2C; m; C5, C4",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 54.5,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "2C"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "m"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "C5, C4"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-identification-standard-t1-13c-2",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-identification-standard-t1-13c-2",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 13C NMR signal assignment: δ 53.20 ppm; 3C; s; C6, C7, C8 (Substance/rs-cp-9-identification-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-13c-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-C",
+       "display": "NMR-C"
+      }
+     ],
+     "text": "Elucidation of structure - 13C NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-identification-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 53.20 ppm; 3C; s; C6, C7, C8",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 53.2,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "3C"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "s"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "C6, C7, C8"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-identification-standard-t1-13c-3",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-identification-standard-t1-13c-3",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 13C NMR signal assignment: δ 50.85 ppm; 2C; s; C3, C9 (Substance/rs-cp-9-identification-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-13c-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-C",
+       "display": "NMR-C"
+      }
+     ],
+     "text": "Elucidation of structure - 13C NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-identification-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 50.85 ppm; 2C; s; C3, C9",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 50.85,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "2C"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "s"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "C3, C9"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-identification-standard-t1-13c-4",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-identification-standard-t1-13c-4",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 13C NMR signal assignment: δ 43.85 ppm; 3C; m; C2, C1, C10 (Substance/rs-cp-9-identification-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-13c-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-C",
+       "display": "NMR-C"
+      }
+     ],
+     "text": "Elucidation of structure - 13C NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-identification-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 43.85 ppm; 3C; m; C2, C1, C10",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 43.85,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "3C"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "m"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "C2, C1, C10"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-identification-standard-t1-13c-5",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-identification-standard-t1-13c-5",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 13C NMR signal assignment: δ 40.21 ppm; 13C; m; C11, C13, C22, C23, C24, C12, C21, C20, C19, C18, C14, C15, C16 (Substance/rs-cp-9-identification-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-13c-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-C",
+       "display": "NMR-C"
+      }
+     ],
+     "text": "Elucidation of structure - 13C NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-identification-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 40.21 ppm; 13C; m; C11, C13, C22, C23, C24, C12, C21, C20, C19, C18, C14, C15, C16",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 40.21,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "13C"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "m"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "C11, C13, C22, C23, C24, C12, C21, C20, C19, C18, C14, C15, C16"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-identification-standard-t1-13c-6",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-identification-standard-t1-13c-6",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 13C NMR signal assignment: δ 17.02 ppm; 2C; m; C17, C25 (Substance/rs-cp-9-identification-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-13c-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-C",
+       "display": "NMR-C"
+      }
+     ],
+     "text": "Elucidation of structure - 13C NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-identification-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 17.02 ppm; 2C; m; C17, C25",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 17.02,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "2C"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "m"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "C17, C25"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-identification-standard-t1-13c-7",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-identification-standard-t1-13c-7",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 13C NMR signal assignment: δ 14.80 ppm; 3C; s; C26, C27, C28 (Substance/rs-cp-9-identification-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-13c-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-C",
+       "display": "NMR-C"
+      }
+     ],
+     "text": "Elucidation of structure - 13C NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-identification-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 14.80 ppm; 3C; s; C26, C27, C28",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 14.8,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "3C"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "s"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "C26, C27, C28"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-identification-standard-t2-1h-1",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-identification-standard-t2-1h-1",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 1H NMR signal assignment: δ 8.01 ppm; 2H; s; H3, H8 (Substance/rs-cp-9-identification-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-1h-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-H",
+       "display": "NMR-H"
+      }
+     ],
+     "text": "Elucidation of structure - 1H NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-identification-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 8.01 ppm; 2H; s; H3, H8",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 8.01,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "2H"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "s"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "H3, H8"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-identification-standard-t2-1h-2",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-identification-standard-t2-1h-2",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 1H NMR signal assignment: δ 7.85 ppm; 1H; s; H6 (Substance/rs-cp-9-identification-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-1h-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-H",
+       "display": "NMR-H"
+      }
+     ],
+     "text": "Elucidation of structure - 1H NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-identification-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 7.85 ppm; 1H; s; H6",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 7.85,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "1H"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "s"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "H6"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-identification-standard-t3-13c-1",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-identification-standard-t3-13c-1",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 13C NMR signal assignment: δ 144.36 ppm; 1C; s; C2 (Substance/rs-cp-9-identification-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-13c-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-C",
+       "display": "NMR-C"
+      }
+     ],
+     "text": "Elucidation of structure - 13C NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-identification-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 144.36 ppm; 1C; s; C2",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 144.36,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "1C"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "s"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "C2"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-identification-standard-t3-13c-2",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-identification-standard-t3-13c-2",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 13C NMR signal assignment: δ 138.58 - 130.05 ppm; 2C; s; C3, C4 (Substance/rs-cp-9-identification-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-13c-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-C",
+       "display": "NMR-C"
+      }
+     ],
+     "text": "Elucidation of structure - 13C NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-identification-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 138.58 - 130.05 ppm; 2C; s; C3, C4",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 138.58,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "2C"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "s"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "C3, C4"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-identification-standard-t3-13c-3",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-identification-standard-t3-13c-3",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 13C NMR signal assignment: δ 128.26 ppm; 3C; m; C1, C5, C6 (Substance/rs-cp-9-identification-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-13c-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-C",
+       "display": "NMR-C"
+      }
+     ],
+     "text": "Elucidation of structure - 13C NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-identification-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 128.26 ppm; 3C; m; C1, C5, C6",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 128.26,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "3C"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "m"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "C1, C5, C6"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-identification-standard-t3-13c-4",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-identification-standard-t3-13c-4",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 13C NMR signal assignment: δ 118.58 ppm; 1C; m; C7 (Substance/rs-cp-9-identification-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-13c-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-C",
+       "display": "NMR-C"
+      }
+     ],
+     "text": "Elucidation of structure - 13C NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-identification-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 118.58 ppm; 1C; m; C7",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 118.58,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "1C"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "m"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "C7"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-9-identification-standard-t3-13c-5",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-9-identification-standard-t3-13c-5",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 13C NMR signal assignment: δ 151.58 ppm; 1C; s; C8 (Substance/rs-cp-9-identification-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-13c-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-C",
+       "display": "NMR-C"
+      }
+     ],
+     "text": "Elucidation of structure - 13C NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-identification-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 151.58 ppm; 1C; s; C8",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 151.58,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "1C"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "s"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "C8"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/DiagnosticReport/dr-char-cp-9-identification-standard",
+   "resource": {
+    "resourceType": "DiagnosticReport",
+    "id": "dr-char-cp-9-identification-standard",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DiagnosticReport-analysis-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc811bb6a5ffbb4de441ef"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DiagnosticReport</b> Characterization Report</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/workflow-triggeredBy",
+      "valueReference": {
+       "reference": "PlanDefinition/char-protocol-reference-standards"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/report-id",
+      "value": "dr-char-cp-9-identification-standard"
+     }
+    ],
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-report-type",
+       "code": "Characterization Report",
+       "display": "Characterization Report"
+      }
+     ],
+     "text": "Characterization Report"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-9-identification-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "result": [
+     {
+      "reference": "Observation/obs-char-cp-9-identification-standard-ms-1"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-identification-standard-t0-1h-1"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-identification-standard-t0-1h-2"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-identification-standard-t0-1h-3"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-identification-standard-t0-1h-4"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-identification-standard-t0-1h-5"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-identification-standard-t0-1h-6"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-identification-standard-t0-1h-7"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-identification-standard-t0-1h-8"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-identification-standard-t0-1h-9"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-identification-standard-t0-1h-10"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-identification-standard-t0-1h-11"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-identification-standard-t1-13c-1"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-identification-standard-t1-13c-2"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-identification-standard-t1-13c-3"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-identification-standard-t1-13c-4"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-identification-standard-t1-13c-5"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-identification-standard-t1-13c-6"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-identification-standard-t1-13c-7"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-identification-standard-t2-1h-1"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-identification-standard-t2-1h-2"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-identification-standard-t3-13c-1"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-identification-standard-t3-13c-2"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-identification-standard-t3-13c-3"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-identification-standard-t3-13c-4"
+     },
+     {
+      "reference": "Observation/obs-char-cp-9-identification-standard-t3-13c-5"
+     }
+    ],
+    "conclusion": "Structure of CP-9 identification standard confirmed by MS and NMR."
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/cp-9-1",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "cp-9-1",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc815fba60f328a2f5fc27"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> CP-9-1</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Specified impurity / degradation product (ethyl homolog of Sakuramil)"
+     }
+    ],
+    "description": "Specified impurity / degradation product (ethyl homolog of Sakuramil)",
+    "molecularWeight": [
+     {
+      "amount": {
+       "value": 628.52,
+       "unit": "g/mol",
+       "system": "http://unitsofmeasure.org",
+       "code": "g/mol"
+      }
+     }
+    ],
+    "structure": {
+     "molecularFormula": "C28H29F9N2O4",
+     "representation": [
+      {
+       "type": {
+        "text": "IUPAC name"
+       },
+       "representation": "Propan-2-yl (2S,4S)-4-[acetyl-[[3,5-bis(trifluoromethyl)phenyl]methyl]amino]-2-ethoxy-2-methyl-6-(trifluoromethyl)-3,4-dihydroquinoline-1-carboxylate"
+      }
+     ]
+    },
+    "name": [
+     {
+      "name": "CP-9-1",
+      "type": {
+       "text": "Company code"
+      },
+      "preferred": true
+     },
+     {
+      "name": "Propan-2-yl (2S,4S)-4-[acetyl-[[3,5-bis(trifluoromethyl)phenyl]methyl]amino]-2-ethoxy-2-methyl-6-(trifluoromethyl)-3,4-dihydroquinoline-1-carboxylate",
+      "type": {
+       "text": "IUPAC chemical name"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-6-standard-ms-1",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-6-standard-ms-1",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - Mass spectrometry (ESI) m/z: 316.323 m/z (Substance/rs-cp-6-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-ms-mz",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "text": "Elucidation of structure - Mass spectrometry (ESI) m/z"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-6-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueQuantity": {
+     "value": 316.323,
+     "unit": "m/z",
+     "system": "http://unitsofmeasure.org",
+     "code": "{m/z}"
+    },
+    "note": [
+     {
+      "text": "Predicted m/z for CP-6 impurity: 316.320"
+     }
+    ],
+    "component": [
+     {
+      "code": {
+       "text": "Predicted m/z"
+      },
+      "valueQuantity": {
+       "value": 316.32,
+       "unit": "m/z",
+       "system": "http://unitsofmeasure.org",
+       "code": "{m/z}"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-6-standard-t0-1h-1",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-6-standard-t0-1h-1",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 1H NMR signal assignment: δ 8.45 ppm; 6H; m; H5, H16, H1, H8 (Substance/rs-cp-6-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-1h-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-H",
+       "display": "NMR-H"
+      }
+     ],
+     "text": "Elucidation of structure - 1H NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-6-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 8.45 ppm; 6H; m; H5, H16, H1, H8",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 8.45,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "6H"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "m"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "H5, H16, H1, H8"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-6-standard-t0-1h-2",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-6-standard-t0-1h-2",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 1H NMR signal assignment: δ 8.31 ppm; 2H; s; H9, H3 (Substance/rs-cp-6-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-1h-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-H",
+       "display": "NMR-H"
+      }
+     ],
+     "text": "Elucidation of structure - 1H NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-6-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 8.31 ppm; 2H; s; H9, H3",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 8.31,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "2H"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "s"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "H9, H3"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-6-standard-t0-1h-3",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-6-standard-t0-1h-3",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 1H NMR signal assignment: δ 6.15 ppm; 2H; m; H15 (Substance/rs-cp-6-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-1h-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-H",
+       "display": "NMR-H"
+      }
+     ],
+     "text": "Elucidation of structure - 1H NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-6-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 6.15 ppm; 2H; m; H15",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 6.15,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "2H"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "m"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "H15"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-6-standard-t0-1h-4",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-6-standard-t0-1h-4",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 1H NMR signal assignment: δ 5.99 ppm; 1H; m; H17 (Substance/rs-cp-6-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-1h-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-H",
+       "display": "NMR-H"
+      }
+     ],
+     "text": "Elucidation of structure - 1H NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-6-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 5.99 ppm; 1H; m; H17",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 5.99,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "1H"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "m"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "H17"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-6-standard-t0-1h-5",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-6-standard-t0-1h-5",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 1H NMR signal assignment: δ 5.01 ppm; 3H; s; H11, H12 (Substance/rs-cp-6-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-1h-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-H",
+       "display": "NMR-H"
+      }
+     ],
+     "text": "Elucidation of structure - 1H NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-6-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 5.01 ppm; 3H; s; H11, H12",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 5.01,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "3H"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "s"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "H11, H12"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-6-standard-t0-1h-6",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-6-standard-t0-1h-6",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 1H NMR signal assignment: δ 4.82 ppm; 2H; m; H13 (Substance/rs-cp-6-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-1h-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-H",
+       "display": "NMR-H"
+      }
+     ],
+     "text": "Elucidation of structure - 1H NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-6-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 4.82 ppm; 2H; m; H13",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 4.82,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "2H"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "m"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "H13"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-6-standard-t0-1h-7",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-6-standard-t0-1h-7",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 1H NMR signal assignment: δ 4.25 ppm; 3H; s; H14 (Substance/rs-cp-6-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-1h-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-H",
+       "display": "NMR-H"
+      }
+     ],
+     "text": "Elucidation of structure - 1H NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-6-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 4.25 ppm; 3H; s; H14",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 4.25,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "3H"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "s"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "H14"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-6-standard-t1-13c-1",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-6-standard-t1-13c-1",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 13C NMR signal assignment: δ 130.25 ppm; 1C; m; C7 (Substance/rs-cp-6-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-13c-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-C",
+       "display": "NMR-C"
+      }
+     ],
+     "text": "Elucidation of structure - 13C NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-6-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 130.25 ppm; 1C; m; C7",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 130.25,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "1C"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "m"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "C7"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-6-standard-t1-13c-2",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-6-standard-t1-13c-2",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 13C NMR signal assignment: δ 128.01 ppm; 6C; s; C6, C5, C4, C3, C2, C1 (Substance/rs-cp-6-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-13c-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-C",
+       "display": "NMR-C"
+      }
+     ],
+     "text": "Elucidation of structure - 13C NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-6-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 128.01 ppm; 6C; s; C6, C5, C4, C3, C2, C1",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 128.01,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "6C"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "s"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "C6, C5, C4, C3, C2, C1"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-6-standard-t1-13c-3",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-6-standard-t1-13c-3",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 13C NMR signal assignment: δ 118.26 ppm; 2C; m; C8, C9 (Substance/rs-cp-6-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-13c-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-C",
+       "display": "NMR-C"
+      }
+     ],
+     "text": "Elucidation of structure - 13C NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-6-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 118.26 ppm; 2C; m; C8, C9",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 118.26,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "2C"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "m"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "C8, C9"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-6-standard-t1-13c-4",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-6-standard-t1-13c-4",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 13C NMR signal assignment: δ 105.85 ppm; 1C; m; C10 (Substance/rs-cp-6-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-13c-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-C",
+       "display": "NMR-C"
+      }
+     ],
+     "text": "Elucidation of structure - 13C NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-6-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 105.85 ppm; 1C; m; C10",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 105.85,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "1C"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "m"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "C10"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-char-cp-6-standard-t1-13c-5",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-char-cp-6-standard-t1-13c-5",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 13C NMR signal assignment: δ 90.25 - 97.85 ppm; 4C; s; C11, C12, C13, C14 (Substance/rs-cp-6-standard)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-13c-nmr-signal",
+    "category": [
+     {
+      "text": "Elucidation of structure"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "NMR-C",
+       "display": "NMR-C"
+      }
+     ],
+     "text": "Elucidation of structure - 13C NMR signal assignment"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-6-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "valueString": "δ 90.25 - 97.85 ppm; 4C; s; C11, C12, C13, C14",
+    "component": [
+     {
+      "code": {
+       "text": "Chemical shift (δ)"
+      },
+      "valueQuantity": {
+       "value": 90.25,
+       "unit": "ppm",
+       "system": "http://unitsofmeasure.org",
+       "code": "[ppm]"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of nuclei"
+      },
+      "valueString": "4C"
+     },
+     {
+      "code": {
+       "text": "Multiplicity"
+      },
+      "valueString": "s"
+     },
+     {
+      "code": {
+       "text": "Assignment"
+      },
+      "valueString": "C11, C12, C13, C14"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/DiagnosticReport/dr-char-cp-6-standard",
+   "resource": {
+    "resourceType": "DiagnosticReport",
+    "id": "dr-char-cp-6-standard",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DiagnosticReport-analysis-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81e4a55fd3d817bb2b1a"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DiagnosticReport</b> Characterization Report</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/workflow-triggeredBy",
+      "valueReference": {
+       "reference": "PlanDefinition/char-protocol-reference-standards"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/report-id",
+      "value": "dr-char-cp-6-standard"
+     }
+    ],
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-report-type",
+       "code": "Characterization Report",
+       "display": "Characterization Report"
+      }
+     ],
+     "text": "Characterization Report"
+    },
+    "subject": {
+     "reference": "Substance/rs-cp-6-standard"
+    },
+    "performer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ],
+    "result": [
+     {
+      "reference": "Observation/obs-char-cp-6-standard-ms-1"
+     },
+     {
+      "reference": "Observation/obs-char-cp-6-standard-t0-1h-1"
+     },
+     {
+      "reference": "Observation/obs-char-cp-6-standard-t0-1h-2"
+     },
+     {
+      "reference": "Observation/obs-char-cp-6-standard-t0-1h-3"
+     },
+     {
+      "reference": "Observation/obs-char-cp-6-standard-t0-1h-4"
+     },
+     {
+      "reference": "Observation/obs-char-cp-6-standard-t0-1h-5"
+     },
+     {
+      "reference": "Observation/obs-char-cp-6-standard-t0-1h-6"
+     },
+     {
+      "reference": "Observation/obs-char-cp-6-standard-t0-1h-7"
+     },
+     {
+      "reference": "Observation/obs-char-cp-6-standard-t1-13c-1"
+     },
+     {
+      "reference": "Observation/obs-char-cp-6-standard-t1-13c-2"
+     },
+     {
+      "reference": "Observation/obs-char-cp-6-standard-t1-13c-3"
+     },
+     {
+      "reference": "Observation/obs-char-cp-6-standard-t1-13c-4"
+     },
+     {
+      "reference": "Observation/obs-char-cp-6-standard-t1-13c-5"
+     }
+    ],
+    "conclusion": "Structure of CP-6 standard confirmed by MS and NMR."
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/cp-6",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "cp-6",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc815fba60f328a2f5fc27"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> CP-6</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Isolated intermediate (IM1); potentially mutagenic impurity"
+     }
+    ],
+    "description": "Isolated intermediate (IM1); potentially mutagenic impurity",
+    "molecularWeight": [
+     {
+      "amount": {
+       "value": 316.32,
+       "unit": "g/mol",
+       "system": "http://unitsofmeasure.org",
+       "code": "g/mol"
+      }
+     }
+    ],
+    "structure": {
+     "molecularFormula": "C15H19F3N2O2",
+     "representation": [
+      {
+       "type": {
+        "text": "IUPAC name"
+       },
+       "representation": "Methyl (2R, 4S)-2-propyl-6-(trifluoromethyl)-1,2,3,4-tetrahydroquinoline-4-ylcarbamate"
+      }
+     ]
+    },
+    "name": [
+     {
+      "name": "CP-6",
+      "type": {
+       "text": "Company code"
+      },
+      "preferred": true
+     },
+     {
+      "name": "Methyl (2R, 4S)-2-propyl-6-(trifluoromethyl)-1,2,3,4-tetrahydroquinoline-4-ylcarbamate",
+      "type": {
+       "text": "IUPAC chemical name"
+      }
+     }
+    ],
+    "property": [
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+         "code": "1233444",
+         "display": "Rule-based (Q)Sar"
+        }
+       ],
+       "text": "Rule-based (Q)Sar"
+      },
+      "valueCodeableConcept": {
+       "text": "Positive (DEREK Nexus)"
+      }
+     },
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+         "code": "123555",
+         "display": "Statistical (Q)Sar"
+        }
+       ],
+       "text": "Statistical (Q)Sar"
+      },
+      "valueCodeableConcept": {
+       "text": "Positive (SARAH Nexus)"
+      }
+     },
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+         "code": "123557",
+         "display": "Mutagenicity Comment"
+        }
+       ],
+       "text": "Mutagenicity Comment"
+      },
+      "valueCodeableConcept": {
+       "text": "Aniline functionality eliminated in Step 3; purged by Step 3/4 crystallizations; controlled with CP-3/CP-4/CP-5 to a total of ≤ 37.5 ppm (TTC 1.5 µg/day / MDD 40 mg)"
+      }
+     }
+    ],
+    "manufacturer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/cp-7",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "cp-7",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc815fba60f328a2f5fc27"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> CP-7</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Isolated intermediate (IM2)"
+     }
+    ],
+    "description": "Isolated intermediate (IM2)",
+    "molecularWeight": [
+     {
+      "amount": {
+       "value": 387.38,
+       "unit": "g/mol",
+       "system": "http://unitsofmeasure.org",
+       "code": "g/mol"
+      }
+     }
+    ],
+    "structure": {
+     "molecularFormula": "C18H22F3N2O4",
+     "representation": [
+      {
+       "type": {
+        "text": "IUPAC name"
+       },
+       "representation": "Ethyl (2R,4S)-2-propyl-4-(methoxycarbonylamino)-6-(trifluoromethyl)-3,4-dihydroxyquinoline-1(2H)-Carboxylate"
+      }
+     ]
+    },
+    "name": [
+     {
+      "name": "CP-7",
+      "type": {
+       "text": "Company code"
+      },
+      "preferred": true
+     },
+     {
+      "name": "Ethyl (2R,4S)-2-propyl-4-(methoxycarbonylamino)-6-(trifluoromethyl)-3,4-dihydroxyquinoline-1(2H)-Carboxylate",
+      "type": {
+       "text": "IUPAC chemical name"
+      }
+     }
+    ],
+    "manufacturer": [
+     {
+      "reference": "Organization/iroha-corp"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Organization/iroha-corp",
+   "resource": {
+    "resourceType": "Organization",
+    "id": "iroha-corp",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8199b90deb4c0456477b"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Organization</b> IROHA-corp.</p></div>"
+    },
+    "identifier": [
+     {
+      "system": "urn:oid:1.3.6.1.4.1.519.1",
+      "value": "3002363512"
+     },
+     {
+      "system": "urn:oid:2.16.840.1.113883.4.82",
+      "value": "3002867083"
+     }
+    ],
+    "active": true,
+    "type": [
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+        "code": "drug-substance-manufacture",
+        "display": "Drug Substance Manufacture"
+       }
+      ],
+      "text": "Drug Substance Manufacture"
+     },
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+        "code": "analytical-testing-release",
+        "display": "Analytical Testing - Release"
+       }
+      ],
+      "text": "Analytical Testing - Release"
+     },
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+        "code": "analytical-testing-stability",
+        "display": "Analytical Testing - Stability"
+       }
+      ],
+      "text": "Analytical Testing - Stability"
+     },
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+        "code": "storage",
+        "display": "Storage"
+       }
+      ],
+      "text": "Storage"
+     }
+    ],
+    "name": "IROHA-corp.",
+    "description": "DMF holder; manufacture of intermediates CP-6/CP-7 and drug substance Sakuramil; QC (IPC and release); stability testing; storage of packaged drug substance. Also manufacturer of starting materials CP-4 and CP-8.",
+    "contact": [
+     {
+      "address": {
+       "use": "work",
+       "type": "physical",
+       "line": [
+        "Jiangkou R&D Park, No.10867"
+       ],
+       "city": "Huangyan",
+       "country": "CN",
+       "postalCode": "250105"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}

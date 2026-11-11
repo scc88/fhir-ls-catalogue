@@ -1,0 +1,62 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-dp-met-e-coli",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8196bde0c1ce7d54832e"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-e-coli",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Microbiological Quality - Specified micro-organism - Escherichia coli: Batch release Absence of Escherichia coli in 1 g; Shelf-life Absence of Escherichia coli in 1 g</p></div>"
+ },
+ "title": "Specified micro-organism - Escherichia coli",
+ "status": "active",
+ "category": [
+  {
+   "text": "Microbiological Quality"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "Microbiological Quality",
+    "display": "Microbiological Quality"
+   }
+  ],
+  "text": "Microbiological Quality - Specified micro-organism - Escherichia coli"
+ },
+ "permittedDataType": [
+  "string"
+ ],
+ "method": {
+  "text": "Test for specified micro-organisms"
+ },
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "Absence of Escherichia coli in 1 g"
+    }
+   ],
+   "context": {
+    "text": "Batch release"
+   }
+  },
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "Absence of Escherichia coli in 1 g"
+    }
+   ],
+   "context": {
+    "text": "Shelf-life"
+   }
+  }
+ ]
+}

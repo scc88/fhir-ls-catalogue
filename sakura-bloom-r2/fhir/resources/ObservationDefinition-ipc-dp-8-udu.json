@@ -1,0 +1,41 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "ipc-dp-8-udu",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc817e8d67fb0358c483c8"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-8-udu",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> In-process control - Uniformity of dosage units (tablet cores): Meets the requirements of Ph. Eur., USP and JP harmonized procedure</p></div>"
+ },
+ "title": "Uniformity of dosage units (tablet cores)",
+ "status": "active",
+ "category": [
+  {
+   "text": "In-process control"
+  }
+ ],
+ "code": {
+  "text": "In-process control - Uniformity of dosage units (tablet cores)"
+ },
+ "permittedDataType": [
+  "string"
+ ],
+ "method": {
+  "text": "According to compendial requirement"
+ },
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "Meets the requirements of Ph. Eur., USP and JP harmonized procedure"
+    }
+   ]
+  }
+ ]
+}

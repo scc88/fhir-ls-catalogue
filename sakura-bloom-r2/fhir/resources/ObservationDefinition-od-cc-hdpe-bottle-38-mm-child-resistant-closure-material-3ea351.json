@@ -1,0 +1,41 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-cc-hdpe-bottle-38-mm-child-resistant-closure-material-3ea351",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8172acd6d7e4b3f69475"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-cc-hdpe-bottle-38-mm-child-resistant-closure-material-3ea351",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Material identification - 38 mm child resistant closure - Material identification: Outer cap: Polypropylene; Inner cap: Polypropylene</p></div>"
+ },
+ "title": "38 mm child resistant closure - Material identification",
+ "status": "active",
+ "category": [
+  {
+   "text": "Material identification"
+  }
+ ],
+ "code": {
+  "text": "Material identification - 38 mm child resistant closure - Material identification"
+ },
+ "permittedDataType": [
+  "string"
+ ],
+ "method": {
+  "text": "Thermal analysis"
+ },
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "Outer cap: Polypropylene; Inner cap: Polypropylene"
+    }
+   ]
+  }
+ ]
+}

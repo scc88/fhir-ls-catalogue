@@ -1,0 +1,56 @@
+{
+ "resourceType": "Observation",
+ "id": "obs-st-b20200123-30c75-24-l-methylene-chloride",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+  ]
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Residual solvents - Methylene chloride: &lt;6 ppm (Substance/ds-b20200123)</p></div>"
+ },
+ "extension": [
+  {
+   "url": "http://hl7.org/fhir/StructureDefinition/workflow-triggeredBy",
+   "valueReference": {
+    "reference": "PlanDefinition/stability-protocol-ds-registration"
+   }
+  }
+ ],
+ "status": "final",
+ "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-methylene-chloride",
+ "category": [
+  {
+   "text": "Residual solvents"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "SOL",
+    "display": "Residual solvents"
+   }
+  ],
+  "text": "Residual solvents - Methylene chloride"
+ },
+ "subject": {
+  "reference": "Substance/ds-b20200123"
+ },
+ "performer": [
+  {
+   "reference": "Organization/iroha-corp"
+  }
+ ],
+ "valueQuantity": {
+  "comparator": "<",
+  "value": 6,
+  "unit": "ppm",
+  "system": "http://unitsofmeasure.org",
+  "code": "[ppm]"
+ },
+ "specimen": {
+  "reference": "Specimen/spc-ds-b20200123-30c75-24m"
+ }
+}

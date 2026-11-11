@@ -1,0 +1,66 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-dp-dissolution-rtrt",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8196bde0c1ce7d54832e"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-dissolution-rtrt",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Dissolution - Dissolution (RTRT dissolution model): Batch release The dissolution rate calculated by the dissolution model at the time point of 30 minutes is 80% or higher.</p></div>"
+ },
+ "title": "Dissolution (RTRT dissolution model)",
+ "status": "active",
+ "category": [
+  {
+   "text": "Dissolution"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "Dissolution",
+    "display": "Dissolution"
+   }
+  ],
+  "text": "Dissolution - Dissolution (RTRT dissolution model)"
+ },
+ "permittedDataType": [
+  "Quantity"
+ ],
+ "method": {
+  "text": "Calculation by the dissolution model; inputs: DS particle size (laser diffraction), granule particle size (FBRM), uncoated tablet hardness (RTRT)"
+ },
+ "permittedUnit": [
+  {
+   "system": "http://unitsofmeasure.org",
+   "code": "%",
+   "display": "%"
+  }
+ ],
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "The dissolution rate calculated by the dissolution model at the time point of 30 minutes is 80% or higher."
+    }
+   ],
+   "context": {
+    "text": "Batch release"
+   },
+   "range": {
+    "low": {
+     "value": 80,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  }
+ ]
+}

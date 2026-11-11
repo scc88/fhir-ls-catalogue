@@ -1,0 +1,343 @@
+{
+ "resourceType": "Bundle",
+ "id": "bundle-ap-premix-visual",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-analytical-procedure-pq"
+  ]
+ },
+ "identifier": {
+  "system": "http://example.org/sakura-bloom-r2/fhir/bundle-id",
+  "value": "bundle-ap-premix-visual"
+ },
+ "type": "collection",
+ "timestamp": "2026-11-08T00:00:00Z",
+ "entry": [
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/coating-premix-red",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "coating-premix-red",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8101bbdfeab0c7f1d2ed"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Basic coating premix, red</p></div>"
+    },
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/material-code",
+      "value": "KIRSCH2358"
+     }
+    ],
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Excipient (non-compendial mixture, commercially available)"
+     }
+    ],
+    "grade": [
+     {
+      "text": "In-house"
+     }
+    ],
+    "description": "Basic coating premix, red. Commercially available film-coating premix; minor adaptations of the quantitative composition may be needed to match the colour reference. None of the components are of animal origin.",
+    "name": [
+     {
+      "name": "Basic coating premix, red",
+      "preferred": true,
+      "synonym": [
+       {
+        "name": "Coating premix red"
+       },
+       {
+        "name": "Coating Premix Red KIRSCH2358"
+       }
+      ]
+     }
+    ],
+    "relationship": [
+     {
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/hypromellose"
+      },
+      "type": {
+       "text": "Component of mixture"
+      },
+      "isDefining": true,
+      "amountQuantity": {
+       "value": 50.0,
+       "unit": "%",
+       "system": "http://unitsofmeasure.org",
+       "code": "%"
+      }
+     },
+     {
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/macrogol-6000"
+      },
+      "type": {
+       "text": "Component of mixture"
+      },
+      "isDefining": true,
+      "amountQuantity": {
+       "value": 20.0,
+       "unit": "%",
+       "system": "http://unitsofmeasure.org",
+       "code": "%"
+      }
+     },
+     {
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/titanium-dioxide"
+      },
+      "type": {
+       "text": "Component of mixture"
+      },
+      "isDefining": true,
+      "amountQuantity": {
+       "value": 25.0,
+       "unit": "%",
+       "system": "http://unitsofmeasure.org",
+       "code": "%"
+      }
+     },
+     {
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/iron-oxide-red"
+      },
+      "type": {
+       "text": "Component of mixture"
+      },
+      "isDefining": true,
+      "amountQuantity": {
+       "value": 5.0,
+       "unit": "%",
+       "system": "http://unitsofmeasure.org",
+       "code": "%"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SpecimenDefinition/spd-test-sample-ds",
+   "resource": {
+    "resourceType": "SpecimenDefinition",
+    "id": "spd-test-sample-ds",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SpecimenDefinition-drug-pq"
+     ]
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/SpecimenDefinition/spd-test-sample-ds",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SpecimenDefinition</b> spd-test-sample-ds</p></div>"
+    },
+    "status": "active",
+    "title": "Drug substance / material test sample",
+    "typeCollected": {
+     "text": "Drug substance, starting material, intermediate or excipient sample"
+    },
+    "typeTested": [
+     {
+      "preference": "preferred",
+      "type": {
+       "text": "Powder / crystalline solid"
+      },
+      "isDerived": false
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-premix-visual",
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "ap-premix-visual",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81cfa1f7d43b7064bf82"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-premix-visual",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> Core quality information (2.3.3.AP) for Analytical Procedures  (Visual examination) [Appearance][Basic Coating Premix Red].</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-plan-document-reference-pq",
+      "valueReference": {
+       "reference": "DocumentReference/doc-premix-visual-3-2-ap"
+      }
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-plan-document-reference-pq",
+      "valueReference": {
+       "reference": "DocumentReference/doc-premix-visual-2-3-4"
+      }
+     }
+    ],
+    "title": "Analytical Procedures  (Visual examination) [Appearance][Basic Coating Premix Red]",
+    "type": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+       "code": "analytical-procedure",
+       "display": "Analytical Procedure"
+      }
+     ],
+     "text": "Analytical Procedure"
+    },
+    "status": "active",
+    "subjectReference": {
+     "reference": "SubstanceDefinition/coating-premix-red"
+    },
+    "description": "Core quality information (2.3.3.AP) for Analytical Procedures  (Visual examination) [Appearance][Basic Coating Premix Red].",
+    "action": [
+     {
+      "title": "Principle",
+      "description": "Visual examination"
+     },
+     {
+      "title": "Procedure",
+      "description": "Examine the colour and form of the substance on a white base in daylight. Compare with the authentic substance."
+     },
+     {
+      "title": "Substance required",
+      "description": "Approximately 1 g"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-coating-premix-red-appearance-by-visual-examination",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-ex-coating-premix-red-appearance-by-visual-examination",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8101bbdfeab0c7f1d2ed"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-coating-premix-red-appearance-by-visual-examination",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Description - Appearance by visual examination: Red powder</p></div>"
+    },
+    "title": "Appearance by visual examination",
+    "status": "active",
+    "category": [
+     {
+      "text": "Description"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DESC",
+       "display": "Description"
+      }
+     ],
+     "text": "Description - Appearance by visual examination"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Visual examination"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Red powder"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/DocumentReference/doc-premix-visual-3-2-ap",
+   "resource": {
+    "resourceType": "DocumentReference",
+    "id": "doc-premix-visual-3-2-ap",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DocumentReference-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81dbadecedfe516f223e"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DocumentReference</b> 3.2.AP Analytical Procedures (Visual examination) [Appearance] [Basic Coating Premix Red]</p></div>"
+    },
+    "status": "current",
+    "type": {
+     "text": "Detailed analytical procedure (Module 3.2)"
+    },
+    "description": "3.2.AP Analytical Procedures (Visual examination) [Appearance] [Basic Coating Premix Red]",
+    "content": [
+     {
+      "attachment": {
+       "contentType": "text/html",
+       "url": "https://ichm4q.notion.site/2a317984c9fc81dbadecedfe516f223e",
+       "title": "3.2.AP Analytical Procedures (Visual examination) [Appearance] [Basic Coating Premix Red]"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/DocumentReference/doc-premix-visual-2-3-4",
+   "resource": {
+    "resourceType": "DocumentReference",
+    "id": "doc-premix-visual-2-3-4",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DocumentReference-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81edb98fde64bce12dc7"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DocumentReference</b> 2.3.4.AP Analytical Procedures  (Visual examination) [Appearance][Basic Coating Premix Red]</p></div>"
+    },
+    "status": "current",
+    "type": {
+     "text": "Analytical procedure development / validation summary (2.3.4 DSJ)"
+    },
+    "description": "2.3.4.AP Analytical Procedures  (Visual examination) [Appearance][Basic Coating Premix Red]",
+    "content": [
+     {
+      "attachment": {
+       "contentType": "text/html",
+       "url": "https://ichm4q.notion.site/2a317984c9fc81edb98fde64bce12dc7",
+       "title": "2.3.4.AP Analytical Procedures  (Visual examination) [Appearance][Basic Coating Premix Red]"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}

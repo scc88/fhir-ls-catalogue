@@ -1,0 +1,63 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-si-cp-6-individual-unspecified-impurity",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc813d8ebfcf0f96d70b67"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-6-individual-unspecified-impurity",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Related substances - Individual unspecified impurity: NMT 0.1 %</p></div>"
+ },
+ "title": "Individual unspecified impurity",
+ "status": "active",
+ "category": [
+  {
+   "text": "Related substances"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "DGP-s",
+    "display": "Drug Substance Related Organic impurities"
+   }
+  ],
+  "text": "Related substances - Individual unspecified impurity"
+ },
+ "permittedDataType": [
+  "Quantity"
+ ],
+ "method": {
+  "text": "HPLC In-house"
+ },
+ "permittedUnit": [
+  {
+   "system": "http://unitsofmeasure.org",
+   "code": "%",
+   "display": "%"
+  }
+ ],
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "NMT 0.1 %"
+    }
+   ],
+   "range": {
+    "high": {
+     "value": 0.1,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  }
+ ]
+}

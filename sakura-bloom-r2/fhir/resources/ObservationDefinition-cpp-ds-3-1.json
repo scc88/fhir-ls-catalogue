@@ -1,0 +1,65 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "cpp-ds-3-1",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc818da9c6d88b3abedfcf"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/cpp-ds-3-1",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Critical process parameter - CPP #3.1 Water addition in the crystallization (% by weight with respect to ethanol): 25 – 35 %</p></div>"
+ },
+ "title": "CPP #3.1 Water addition in the crystallization (% by weight with respect to ethanol)",
+ "status": "active",
+ "category": [
+  {
+   "text": "Critical process parameter"
+  }
+ ],
+ "code": {
+  "text": "Critical process parameter - CPP #3.1 Water addition in the crystallization (% by weight with respect to ethanol)"
+ },
+ "permittedDataType": [
+  "Quantity"
+ ],
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "25 – 35 %"
+    },
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-criticality-pq",
+     "valueCodeableConcept": {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/observation-qualified-value-criticality",
+        "code": "critical",
+        "display": "Critical"
+       }
+      ],
+      "text": "Critical"
+     }
+    }
+   ],
+   "range": {
+    "low": {
+     "value": 25,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    },
+    "high": {
+     "value": 35,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  }
+ ]
+}

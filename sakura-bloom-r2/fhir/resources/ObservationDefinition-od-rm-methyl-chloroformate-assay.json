@@ -1,0 +1,56 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-rm-methyl-chloroformate-assay",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81e2b2ecf108539b58ea"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-methyl-chloroformate-assay",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Assay: ≥ 98.5 %</p></div>"
+ },
+ "title": "Assay",
+ "status": "active",
+ "category": [
+  {
+   "text": "Assay"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "ASSAY",
+    "display": "Assay"
+   }
+  ],
+  "text": "Assay"
+ },
+ "permittedDataType": [
+  "Quantity"
+ ],
+ "method": {
+  "text": "GC In-house"
+ },
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "≥ 98.5 %"
+    }
+   ],
+   "range": {
+    "low": {
+     "value": 98.5,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  }
+ ]
+}

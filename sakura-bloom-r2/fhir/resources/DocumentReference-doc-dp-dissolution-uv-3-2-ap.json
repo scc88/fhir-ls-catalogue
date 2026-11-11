@@ -1,0 +1,28 @@
+{
+ "resourceType": "DocumentReference",
+ "id": "doc-dp-dissolution-uv-3-2-ap",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DocumentReference-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81b0aae1c21a89bb5303"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DocumentReference</b> 3.2.AP Analytical Procedures (Dissolution/UV)[Performance][Sakura Bloom 20 mg]</p></div>"
+ },
+ "status": "current",
+ "type": {
+  "text": "Detailed analytical procedure (Module 3.2)"
+ },
+ "description": "3.2.AP Analytical Procedures (Dissolution/UV)[Performance][Sakura Bloom 20 mg]",
+ "content": [
+  {
+   "attachment": {
+    "contentType": "text/html",
+    "url": "https://ichm4q.notion.site/2a317984c9fc81b0aae1c21a89bb5303",
+    "title": "3.2.AP Analytical Procedures (Dissolution/UV)[Performance][Sakura Bloom 20 mg]"
+   }
+  }
+ ]
+}

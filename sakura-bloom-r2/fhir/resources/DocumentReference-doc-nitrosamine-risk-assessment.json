@@ -1,0 +1,28 @@
+{
+ "resourceType": "DocumentReference",
+ "id": "doc-nitrosamine-risk-assessment",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DocumentReference-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8123a01fd5ed66ebcfd9"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DocumentReference</b> Nitrosamine risk assessment (3.2.DS.C)</p></div>"
+ },
+ "status": "current",
+ "type": {
+  "text": "Nitrosamine risk assessment (3.2.DS.C)"
+ },
+ "description": "Nitrosamine risk assessment (3.2.DS.C)",
+ "content": [
+  {
+   "attachment": {
+    "contentType": "text/html",
+    "url": "https://ichm4q.notion.site/2a317984c9fc8123a01fd5ed66ebcfd9",
+    "title": "Nitrosamine risk assessment (3.2.DS.C)"
+   }
+  }
+ ]
+}

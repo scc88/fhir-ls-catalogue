@@ -1,0 +1,3379 @@
+{
+ "resourceType": "Bundle",
+ "id": "bundle-ds-batch-info",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-substance-batch-info-pq"
+  ]
+ },
+ "identifier": {
+  "system": "http://example.org/sakura-bloom-r2/fhir/bundle-id",
+  "value": "bundle-ds-batch-info"
+ },
+ "type": "collection",
+ "timestamp": "2026-11-08T00:00:00Z",
+ "entry": [
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/ds-b221220",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "ds-b221220",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> ds-b221220 - lot B221220</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+      "extension": [
+       {
+        "url": "manufacturingDate",
+        "valueDateTime": "2022-12-20"
+       },
+       {
+        "url": "batchQuantity",
+        "valueQuantity": {
+         "value": 350,
+         "unit": "kg",
+         "system": "http://unitsofmeasure.org",
+         "code": "kg"
+        }
+       },
+       {
+        "url": "batchUtilization",
+        "valueCodeableConcept": {
+         "text": "Production batch (commercial / stability)"
+        }
+       },
+       {
+        "url": "assignedManufacturer",
+        "valueReference": {
+         "reference": "Organization/iroha-corp"
+        }
+       }
+      ]
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+      "valueReference": {
+       "reference": "PlanDefinition/ds-manufacturing-process"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/lot-number",
+      "value": "B221220"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/sakuramil",
+      "display": "Sakuramil"
+     }
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/ds-b221221",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "ds-b221221",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> ds-b221221 - lot B221221</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+      "extension": [
+       {
+        "url": "manufacturingDate",
+        "valueDateTime": "2022-12-21"
+       },
+       {
+        "url": "batchQuantity",
+        "valueQuantity": {
+         "value": 350,
+         "unit": "kg",
+         "system": "http://unitsofmeasure.org",
+         "code": "kg"
+        }
+       },
+       {
+        "url": "batchUtilization",
+        "valueCodeableConcept": {
+         "text": "Production batch (commercial / stability)"
+        }
+       },
+       {
+        "url": "assignedManufacturer",
+        "valueReference": {
+         "reference": "Organization/iroha-corp"
+        }
+       }
+      ]
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+      "valueReference": {
+       "reference": "PlanDefinition/ds-manufacturing-process"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/lot-number",
+      "value": "B221221"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/sakuramil",
+      "display": "Sakuramil"
+     }
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/ds-b221222",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "ds-b221222",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> ds-b221222 - lot B221222</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+      "extension": [
+       {
+        "url": "manufacturingDate",
+        "valueDateTime": "2022-12-22"
+       },
+       {
+        "url": "batchQuantity",
+        "valueQuantity": {
+         "value": 350,
+         "unit": "kg",
+         "system": "http://unitsofmeasure.org",
+         "code": "kg"
+        }
+       },
+       {
+        "url": "batchUtilization",
+        "valueCodeableConcept": {
+         "text": "Production batch (commercial / stability)"
+        }
+       },
+       {
+        "url": "assignedManufacturer",
+        "valueReference": {
+         "reference": "Organization/iroha-corp"
+        }
+       }
+      ]
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+      "valueReference": {
+       "reference": "PlanDefinition/ds-manufacturing-process"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/lot-number",
+      "value": "B221222"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/sakuramil",
+      "display": "Sakuramil"
+     }
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/ds-b20200117",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "ds-b20200117",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> ds-b20200117 - lot B20200117</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+      "extension": [
+       {
+        "url": "manufacturingDate",
+        "valueDateTime": "2020-11-17"
+       },
+       {
+        "url": "batchUtilization",
+        "valueCodeableConcept": {
+         "text": "Registration stability batch"
+        }
+       },
+       {
+        "url": "assignedManufacturer",
+        "valueReference": {
+         "reference": "Organization/iroha-corp"
+        }
+       }
+      ]
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+      "valueReference": {
+       "reference": "PlanDefinition/ds-manufacturing-process"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/lot-number",
+      "value": "B20200117"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/sakuramil",
+      "display": "Sakuramil"
+     }
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/ds-b20200120",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "ds-b20200120",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> ds-b20200120 - lot B20200120</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+      "extension": [
+       {
+        "url": "manufacturingDate",
+        "valueDateTime": "2020-11-20"
+       },
+       {
+        "url": "batchUtilization",
+        "valueCodeableConcept": {
+         "text": "Registration stability batch"
+        }
+       },
+       {
+        "url": "assignedManufacturer",
+        "valueReference": {
+         "reference": "Organization/iroha-corp"
+        }
+       }
+      ]
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+      "valueReference": {
+       "reference": "PlanDefinition/ds-manufacturing-process"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/lot-number",
+      "value": "B20200120"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/sakuramil",
+      "display": "Sakuramil"
+     }
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/ds-b20200123",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "ds-b20200123",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> ds-b20200123 - lot B20200123</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+      "extension": [
+       {
+        "url": "manufacturingDate",
+        "valueDateTime": "2020-11-23"
+       },
+       {
+        "url": "batchUtilization",
+        "valueCodeableConcept": {
+         "text": "Registration stability batch"
+        }
+       },
+       {
+        "url": "assignedManufacturer",
+        "valueReference": {
+         "reference": "Organization/iroha-corp"
+        }
+       }
+      ]
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+      "valueReference": {
+       "reference": "PlanDefinition/ds-manufacturing-process"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/lot-number",
+      "value": "B20200123"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/sakuramil",
+      "display": "Sakuramil"
+     }
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/ds-b221215",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "ds-b221215",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> ds-b221215 - lot B221215</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+      "extension": [
+       {
+        "url": "assignedManufacturer",
+        "valueReference": {
+         "reference": "Organization/iroha-corp"
+        }
+       }
+      ]
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+      "valueReference": {
+       "reference": "PlanDefinition/ds-manufacturing-process"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/lot-number",
+      "value": "B221215"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/sakuramil",
+      "display": "Sakuramil"
+     }
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/ds-b221216",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "ds-b221216",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> ds-b221216 - lot B221216</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+      "extension": [
+       {
+        "url": "assignedManufacturer",
+        "valueReference": {
+         "reference": "Organization/iroha-corp"
+        }
+       }
+      ]
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+      "valueReference": {
+       "reference": "PlanDefinition/ds-manufacturing-process"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/lot-number",
+      "value": "B221216"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/sakuramil",
+      "display": "Sakuramil"
+     }
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/ds-b221217",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "ds-b221217",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> ds-b221217 - lot B221217</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+      "extension": [
+       {
+        "url": "assignedManufacturer",
+        "valueReference": {
+         "reference": "Organization/iroha-corp"
+        }
+       }
+      ]
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+      "valueReference": {
+       "reference": "PlanDefinition/ds-manufacturing-process"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/lot-number",
+      "value": "B221217"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/sakuramil",
+      "display": "Sakuramil"
+     }
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/ds-b221218",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "ds-b221218",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> ds-b221218 - lot B221218</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+      "extension": [
+       {
+        "url": "assignedManufacturer",
+        "valueReference": {
+         "reference": "Organization/iroha-corp"
+        }
+       }
+      ]
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+      "valueReference": {
+       "reference": "PlanDefinition/ds-manufacturing-process"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/lot-number",
+      "value": "B221218"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/sakuramil",
+      "display": "Sakuramil"
+     }
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/ds-b221219",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "ds-b221219",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> ds-b221219 - lot B221219</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+      "extension": [
+       {
+        "url": "assignedManufacturer",
+        "valueReference": {
+         "reference": "Organization/iroha-corp"
+        }
+       }
+      ]
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+      "valueReference": {
+       "reference": "PlanDefinition/ds-manufacturing-process"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/lot-number",
+      "value": "B221219"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/sakuramil",
+      "display": "Sakuramil"
+     }
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/ds-b221223",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "ds-b221223",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> ds-b221223 - lot B221223</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+      "extension": [
+       {
+        "url": "assignedManufacturer",
+        "valueReference": {
+         "reference": "Organization/iroha-corp"
+        }
+       }
+      ]
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+      "valueReference": {
+       "reference": "PlanDefinition/ds-manufacturing-process"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/lot-number",
+      "value": "B221223"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/sakuramil",
+      "display": "Sakuramil"
+     }
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/ds-b221224",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "ds-b221224",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> ds-b221224 - lot B221224</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+      "extension": [
+       {
+        "url": "assignedManufacturer",
+        "valueReference": {
+         "reference": "Organization/iroha-corp"
+        }
+       }
+      ]
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+      "valueReference": {
+       "reference": "PlanDefinition/ds-manufacturing-process"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/lot-number",
+      "value": "B221224"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/sakuramil",
+      "display": "Sakuramil"
+     }
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/ds-b221225",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "ds-b221225",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> ds-b221225 - lot B221225</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+      "extension": [
+       {
+        "url": "assignedManufacturer",
+        "valueReference": {
+         "reference": "Organization/iroha-corp"
+        }
+       }
+      ]
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+      "valueReference": {
+       "reference": "PlanDefinition/ds-manufacturing-process"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/lot-number",
+      "value": "B221225"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/sakuramil",
+      "display": "Sakuramil"
+     }
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/ds-b221226",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "ds-b221226",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> ds-b221226 - lot B221226</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+      "extension": [
+       {
+        "url": "assignedManufacturer",
+        "valueReference": {
+         "reference": "Organization/iroha-corp"
+        }
+       }
+      ]
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+      "valueReference": {
+       "reference": "PlanDefinition/ds-manufacturing-process"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/lot-number",
+      "value": "B221226"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/sakuramil",
+      "display": "Sakuramil"
+     }
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/ds-b221227",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "ds-b221227",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> ds-b221227 - lot B221227</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+      "extension": [
+       {
+        "url": "assignedManufacturer",
+        "valueReference": {
+         "reference": "Organization/iroha-corp"
+        }
+       }
+      ]
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+      "valueReference": {
+       "reference": "PlanDefinition/ds-manufacturing-process"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/lot-number",
+      "value": "B221227"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/sakuramil",
+      "display": "Sakuramil"
+     }
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/ds-b221228",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "ds-b221228",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> ds-b221228 - lot B221228</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+      "extension": [
+       {
+        "url": "assignedManufacturer",
+        "valueReference": {
+         "reference": "Organization/iroha-corp"
+        }
+       }
+      ]
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+      "valueReference": {
+       "reference": "PlanDefinition/ds-manufacturing-process"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/lot-number",
+      "value": "B221228"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/sakuramil",
+      "display": "Sakuramil"
+     }
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/ds-b221229",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "ds-b221229",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> ds-b221229 - lot B221229</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+      "extension": [
+       {
+        "url": "assignedManufacturer",
+        "valueReference": {
+         "reference": "Organization/iroha-corp"
+        }
+       }
+      ]
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+      "valueReference": {
+       "reference": "PlanDefinition/ds-manufacturing-process"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/lot-number",
+      "value": "B221229"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/sakuramil",
+      "display": "Sakuramil"
+     }
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/ds-b221230",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "ds-b221230",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> ds-b221230 - lot B221230</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+      "extension": [
+       {
+        "url": "assignedManufacturer",
+        "valueReference": {
+         "reference": "Organization/iroha-corp"
+        }
+       }
+      ]
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+      "valueReference": {
+       "reference": "PlanDefinition/ds-manufacturing-process"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/lot-number",
+      "value": "B221230"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/sakuramil",
+      "display": "Sakuramil"
+     }
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/ds-a221221",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "ds-a221221",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> Drug substance batch used for clinical drug product batches (source not stated). - lot A221221</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+      "extension": [
+       {
+        "url": "assignedManufacturer",
+        "valueReference": {
+         "reference": "Organization/iroha-corp"
+        }
+       }
+      ]
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+      "valueReference": {
+       "reference": "PlanDefinition/ds-manufacturing-process"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/lot-number",
+      "value": "A221221"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/sakuramil",
+      "display": "Sakuramil"
+     }
+    },
+    "description": "Drug substance batch used for clinical drug product batches (source not stated)."
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/ds-a221222",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "ds-a221222",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> Drug substance batch used for clinical drug product batches (source not stated). - lot A221222</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+      "extension": [
+       {
+        "url": "assignedManufacturer",
+        "valueReference": {
+         "reference": "Organization/iroha-corp"
+        }
+       }
+      ]
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+      "valueReference": {
+       "reference": "PlanDefinition/ds-manufacturing-process"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/lot-number",
+      "value": "A221222"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/sakuramil",
+      "display": "Sakuramil"
+     }
+    },
+    "description": "Drug substance batch used for clinical drug product batches (source not stated)."
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Substance/ds-a221223",
+   "resource": {
+    "resourceType": "Substance",
+    "id": "ds-a221223",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> Drug substance batch used for clinical drug product batches (source not stated). - lot A221223</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+      "extension": [
+       {
+        "url": "assignedManufacturer",
+        "valueReference": {
+         "reference": "Organization/iroha-corp"
+        }
+       }
+      ]
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+      "valueReference": {
+       "reference": "PlanDefinition/ds-manufacturing-process"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/lot-number",
+      "value": "A221223"
+     }
+    ],
+    "instance": true,
+    "status": "active",
+    "code": {
+     "reference": {
+      "reference": "SubstanceDefinition/sakuramil",
+      "display": "Sakuramil"
+     }
+    },
+    "description": "Drug substance batch used for clinical drug product batches (source not stated)."
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/sakuramil",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "sakuramil",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81f89f56d478fe7ac949"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Sakuramil</p></div>"
+    },
+    "identifier": [
+     {
+      "system": "http://cas.org",
+      "value": "262352-13-6"
+     }
+    ],
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Chemical (small molecule)"
+     }
+    ],
+    "grade": [
+     {
+      "text": "In-house"
+     }
+    ],
+    "description": "Sakuramil (company code CP-9), the drug substance of Sakura Bloom 20 mg film-coated tablets.",
+    "manufacturer": [
+     {
+      "reference": "Organization/iroha-corp",
+      "display": "IROHA-corp.",
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-site-utilization-pq",
+        "valueCoding": {
+         "system": "http://terminology.hl7.org/CodeSystem/product-site-utilization-type",
+         "code": "Primary manufacturing",
+         "display": "Primary Manufacturing"
+        }
+       }
+      ]
+     }
+    ],
+    "characterization": [
+     {
+      "technique": {
+       "text": "Mass spectrometry (ESI positive, Shimadzu LCM-IT-TOF)"
+      },
+      "description": "m/z 614.504 observed (predicted 614.505) on CP-9 primary working standard"
+     },
+     {
+      "technique": {
+       "text": "1H NMR (Bruker 500 MHz, D2O)"
+      }
+     },
+     {
+      "technique": {
+       "text": "13C NMR (Bruker 500 MHz, D2O)"
+      }
+     }
+    ],
+    "property": [
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+         "code": "appearance",
+         "display": "Appearance"
+        }
+       ],
+       "text": "Appearance"
+      },
+      "valueCodeableConcept": {
+       "text": "White solid"
+      }
+     },
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+         "code": "solubility-water",
+         "display": "Solubility purified water"
+        }
+       ],
+       "text": "Solubility purified water"
+      },
+      "valueQuantity": {
+       "value": 0.05,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      }
+     },
+     {
+      "type": {
+       "text": "Solubility in ethanol (RT)"
+      },
+      "valueQuantity": {
+       "value": 45,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      }
+     },
+     {
+      "type": {
+       "text": "Solubility in acetone (RT)"
+      },
+      "valueQuantity": {
+       "value": 71.3,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      }
+     },
+     {
+      "type": {
+       "text": "Aqueous solubility as a function of pH (RT) - Deionized water"
+      },
+      "valueQuantity": {
+       "value": 0.05,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      }
+     },
+     {
+      "type": {
+       "text": "Aqueous solubility as a function of pH (RT) - 0.1 N HCl"
+      },
+      "valueQuantity": {
+       "comparator": "<",
+       "value": 0.01,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      },
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-substance-property-parameter-pq",
+        "extension": [
+         {
+          "url": "parameter",
+          "valueCoding": {
+           "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+           "code": "pH",
+           "display": "pH"
+          }
+         },
+         {
+          "url": "value",
+          "valueQuantity": {
+           "value": 1.2,
+           "unit": "pH",
+           "system": "http://unitsofmeasure.org",
+           "code": "[pH]"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": {
+       "text": "Aqueous solubility as a function of pH (RT) - Acetate buffer"
+      },
+      "valueQuantity": {
+       "value": 5.0,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      },
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-substance-property-parameter-pq",
+        "extension": [
+         {
+          "url": "parameter",
+          "valueCoding": {
+           "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+           "code": "pH",
+           "display": "pH"
+          }
+         },
+         {
+          "url": "value",
+          "valueQuantity": {
+           "value": 4.5,
+           "unit": "pH",
+           "system": "http://unitsofmeasure.org",
+           "code": "[pH]"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": {
+       "text": "Aqueous solubility as a function of pH (RT) - Phosphate buffer"
+      },
+      "valueQuantity": {
+       "value": 3.2,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      },
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-substance-property-parameter-pq",
+        "extension": [
+         {
+          "url": "parameter",
+          "valueCoding": {
+           "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+           "code": "pH",
+           "display": "pH"
+          }
+         },
+         {
+          "url": "value",
+          "valueQuantity": {
+           "value": 6.8,
+           "unit": "pH",
+           "system": "http://unitsofmeasure.org",
+           "code": "[pH]"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": {
+       "text": "Aqueous solubility as a function of pH (RT) - 0.1 N NaOH"
+      },
+      "valueQuantity": {
+       "value": 5.1,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      },
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-substance-property-parameter-pq",
+        "extension": [
+         {
+          "url": "parameter",
+          "valueCoding": {
+           "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+           "code": "pH",
+           "display": "pH"
+          }
+         },
+         {
+          "url": "value",
+          "valueQuantity": {
+           "value": 8.0,
+           "unit": "pH",
+           "system": "http://unitsofmeasure.org",
+           "code": "[pH]"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+         "code": "pH",
+         "display": "pH"
+        }
+       ],
+       "text": "pH"
+      },
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-substance-property-range-pq",
+        "valueRange": {
+         "low": {
+          "value": 5.0,
+          "unit": "pH",
+          "system": "http://unitsofmeasure.org",
+          "code": "[pH]"
+         },
+         "high": {
+          "value": 9.0,
+          "unit": "pH",
+          "system": "http://unitsofmeasure.org",
+          "code": "[pH]"
+         }
+        }
+       }
+      ],
+      "valueCodeableConcept": {
+       "text": "5.0 - 9.0 (RT)"
+      }
+     },
+     {
+      "type": {
+       "text": "pKa (carboxylate)"
+      },
+      "valueQuantity": {
+       "value": 12.6
+      }
+     },
+     {
+      "type": {
+       "text": "pKa (phenol CF3)"
+      },
+      "valueQuantity": {
+       "value": 15.3
+      }
+     },
+     {
+      "type": {
+       "text": "pKa (carbamate)"
+      },
+      "valueQuantity": {
+       "value": 24.2
+      }
+     },
+     {
+      "type": {
+       "text": "Partition coefficient (log P, n-octanol/water)"
+      },
+      "valueQuantity": {
+       "value": 6.3
+      }
+     },
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+         "code": "hygroscopy",
+         "display": "Hygroscopy"
+        }
+       ],
+       "text": "Hygroscopy"
+      },
+      "valueCodeableConcept": {
+       "text": "Not hygroscopic"
+      }
+     },
+     {
+      "type": {
+       "text": "Melting point"
+      },
+      "valueQuantity": {
+       "value": 174,
+       "unit": "°C",
+       "system": "http://unitsofmeasure.org",
+       "code": "Cel"
+      }
+     },
+     {
+      "type": {
+       "text": "Polymorphism"
+      },
+      "valueCodeableConcept": {
+       "text": "Only one polymorph observed in synthetic manufacture and extensive polymorph screening"
+      }
+     },
+     {
+      "type": {
+       "text": "Chirality"
+      },
+      "valueCodeableConcept": {
+       "text": "Two chiral centres; no racemization observed in the manufacturing process"
+      }
+     },
+     {
+      "type": {
+       "text": "Isomerism"
+      },
+      "valueCodeableConcept": {
+       "text": "An enantiomer and two diastereomers can be formed"
+      }
+     },
+     {
+      "type": {
+       "text": "Specific optical rotation (20 °C, aqueous solution)"
+      },
+      "valueQuantity": {
+       "value": 145,
+       "unit": "deg",
+       "system": "http://unitsofmeasure.org",
+       "code": "deg"
+      }
+     },
+     {
+      "type": {
+       "text": "Particle size distribution d(0.1) (laser diffraction)"
+      },
+      "valueQuantity": {
+       "value": 26,
+       "unit": "nm",
+       "system": "http://unitsofmeasure.org",
+       "code": "nm"
+      }
+     },
+     {
+      "type": {
+       "text": "Particle size distribution d(0.5) (laser diffraction)"
+      },
+      "valueQuantity": {
+       "value": 40,
+       "unit": "nm",
+       "system": "http://unitsofmeasure.org",
+       "code": "nm"
+      }
+     },
+     {
+      "type": {
+       "text": "Particle size distribution d(0.9) (laser diffraction)"
+      },
+      "valueQuantity": {
+       "value": 66,
+       "unit": "nm",
+       "system": "http://unitsofmeasure.org",
+       "code": "nm"
+      }
+     },
+     {
+      "type": {
+       "text": "Light sensitivity"
+      },
+      "valueCodeableConcept": {
+       "text": "Not sensitive to light"
+      }
+     },
+     {
+      "type": {
+       "text": "Biopharmaceutics Classification System"
+      },
+      "valueCodeableConcept": {
+       "text": "BCS Class II (poorly soluble, highly permeable)"
+      }
+     }
+    ],
+    "molecularWeight": [
+     {
+      "type": {
+       "text": "Exact/average (free base)"
+      },
+      "amount": {
+       "value": 614.5,
+       "unit": "g/mol",
+       "system": "http://unitsofmeasure.org",
+       "code": "g/mol"
+      }
+     }
+    ],
+    "structure": {
+     "stereochemistry": {
+      "text": "(2S,4S)"
+     },
+     "molecularFormula": "C27H27F9N2O4",
+     "representation": [
+      {
+       "type": {
+        "text": "IUPAC name"
+       },
+       "representation": "Propan-2-yl (2S,4S)-4-[acetyl-[[3,5-bis(trifluoromethyl)phenyl]methyl]amino]-2-methoxy-2-methyl-6-(trifluoromethyl)-3,4-dihydroquinoline-1-carboxylate"
+      }
+     ]
+    },
+    "code": [
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://cas.org",
+         "code": "262352-13-6"
+        }
+       ],
+       "text": "262352-13-6"
+      }
+     },
+     {
+      "code": {
+       "text": "CP-9"
+      }
+     }
+    ],
+    "name": [
+     {
+      "name": "Sakuramil",
+      "type": {
+       "text": "INN"
+      },
+      "preferred": true
+     },
+     {
+      "name": "Sakuramil",
+      "type": {
+       "text": "USAN"
+      }
+     },
+     {
+      "name": "Propan-2-yl (2S,4S)-4-[acetyl-[[3,5-bis(trifluoromethyl)phenyl]methyl]amino]-2-methoxy-2-methyl-6-(trifluoromethyl)-3,4-dihydroquinoline-1-carboxylate",
+      "type": {
+       "text": "IUPAC chemical name"
+      }
+     },
+     {
+      "name": "CP-9",
+      "type": {
+       "text": "Company code"
+      }
+     }
+    ],
+    "relationship": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "process",
+           "display": "Process Impurity"
+          }
+         ],
+         "text": "Process Impurity"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-9-1",
+       "display": "CP-9-1"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "PR-IMP",
+         "display": "Process impurity"
+        }
+       ],
+       "text": "Process impurity - Specified related substance; NMT 0.15 % (DS); NMT 0.3 %/0.5 % release/shelf-life (DP)"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "starting-material",
+           "display": "Starting Material"
+          }
+         ],
+         "text": "Starting Material"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-8",
+       "display": "CP-8"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "ST-IMP",
+         "display": "Starting material, forced degradation product"
+        }
+       ],
+       "text": "Starting material, forced degradation product - Specified related substance; NMT 0.10 %"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "intermediate-material",
+           "display": "Intermediate Material"
+          }
+         ],
+         "text": "Intermediate Material"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-6",
+       "display": "CP-6"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "INT-IMP",
+         "display": "Process intermediate, forced degradation product"
+        }
+       ],
+       "text": "Process intermediate, forced degradation product - Potentially mutagenic impurity; NMT 37.5 ppm"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "starting-material",
+           "display": "Starting Material"
+          }
+         ],
+         "text": "Starting Material"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-4",
+       "display": "CP-4"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "ST-IMP",
+         "display": "Starting material, forced degradation product"
+        }
+       ],
+       "text": "Starting material, forced degradation product - Potentially mutagenic; controlled via CP-6 limit and purge"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "intermediate-material",
+           "display": "Intermediate Material"
+          }
+         ],
+         "text": "Intermediate Material"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-5",
+       "display": "CP-5"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "INT-IMP",
+         "display": "Process intermediate, forced degradation product"
+        }
+       ],
+       "text": "Process intermediate, forced degradation product - Potentially mutagenic (structural alert); purged"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "process",
+           "display": "Process Impurity"
+          }
+         ],
+         "text": "Process Impurity"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-3",
+       "display": "CP-3"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "PR-IMP",
+         "display": "Process impurity"
+        }
+       ],
+       "text": "Process impurity - Potentially mutagenic (structural alert); purged"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "intermediate-material",
+           "display": "Intermediate Material"
+          }
+         ],
+         "text": "Intermediate Material"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-7",
+       "display": "CP-7"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "INT-IMP",
+         "display": "Process intermediate, forced degradation product"
+        }
+       ],
+       "text": "Process intermediate, forced degradation product - Intermediate; purged in Step 4 crystallization"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Organization/iroha-corp",
+   "resource": {
+    "resourceType": "Organization",
+    "id": "iroha-corp",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8199b90deb4c0456477b"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Organization</b> IROHA-corp.</p></div>"
+    },
+    "identifier": [
+     {
+      "system": "urn:oid:1.3.6.1.4.1.519.1",
+      "value": "3002363512"
+     },
+     {
+      "system": "urn:oid:2.16.840.1.113883.4.82",
+      "value": "3002867083"
+     }
+    ],
+    "active": true,
+    "type": [
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+        "code": "drug-substance-manufacture",
+        "display": "Drug Substance Manufacture"
+       }
+      ],
+      "text": "Drug Substance Manufacture"
+     },
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+        "code": "analytical-testing-release",
+        "display": "Analytical Testing - Release"
+       }
+      ],
+      "text": "Analytical Testing - Release"
+     },
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+        "code": "analytical-testing-stability",
+        "display": "Analytical Testing - Stability"
+       }
+      ],
+      "text": "Analytical Testing - Stability"
+     },
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+        "code": "storage",
+        "display": "Storage"
+       }
+      ],
+      "text": "Storage"
+     }
+    ],
+    "name": "IROHA-corp.",
+    "description": "DMF holder; manufacture of intermediates CP-6/CP-7 and drug substance Sakuramil; QC (IPC and release); stability testing; storage of packaged drug substance. Also manufacturer of starting materials CP-4 and CP-8.",
+    "contact": [
+     {
+      "address": {
+       "use": "work",
+       "type": "physical",
+       "line": [
+        "Jiangkou R&D Park, No.10867"
+       ],
+       "city": "Huangyan",
+       "country": "CN",
+       "postalCode": "250105"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ds-manufacturing-process",
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "ds-manufacturing-process",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc818da9c6d88b3abedfcf"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ds-manufacturing-process",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> Four-step synthesis CP-4 -&gt; CP-5 (in situ) -&gt; CP-6 -&gt; CP-7 -&gt; CP-9 (Sakuramil). Typical commercial batch size 350 kg.</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-plan-document-reference-pq",
+      "valueReference": {
+       "reference": "DocumentReference/doc-ds-synthetic-scheme"
+      }
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-plan-document-reference-pq",
+      "valueReference": {
+       "reference": "DocumentReference/doc-ds-block-flow-diagram"
+      }
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-history-of-process-pq",
+      "valueMarkdown": "No routine reprocessing is carried out."
+     }
+    ],
+    "title": "Manufacturing process of Sakuramil drug substance (IROHA-corp.)",
+    "type": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+       "code": "manufacturing-process",
+       "display": "Manufacturing Process"
+      }
+     ],
+     "text": "Manufacturing Process"
+    },
+    "status": "active",
+    "subjectReference": {
+     "reference": "SubstanceDefinition/sakuramil"
+    },
+    "description": "Four-step synthesis CP-4 -> CP-5 (in situ) -> CP-6 -> CP-7 -> CP-9 (Sakuramil). Typical commercial batch size 350 kg.",
+    "action": [
+     {
+      "title": "Overall process",
+      "code": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step",
+         "code": "overall process",
+         "display": "Overall Process"
+        }
+       ],
+       "text": "Overall Process"
+      },
+      "action": [
+       {
+        "extension": [
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-step-scale-pq",
+          "valueCoding": {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step-scale",
+           "code": "PROD",
+           "display": "Production Scale"
+          }
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Starting Material CP-4"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "175-185 kg"
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Methyl chloroformate"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "55-120 L"
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Lithium-tert-butoxide"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "22-85 kg"
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Tetrahydrofuran"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "750-920 L"
+           }
+          ]
+         }
+        ],
+        "title": "Step 1",
+        "description": "CP-4 is combined with methyl chloroformate, lithium-tert-butoxide, and tetrahydrofuran, then stirred. Layers are settled and separated. Precipitates are filtered, rinsed with tetrahydrofuran and dried to yield CP-5.",
+        "code": {
+         "text": "Chemical synthesis step"
+        },
+        "participant": [
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/cp-4"
+             }
+            }
+           ],
+           "display": "Starting Material CP-4"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "StartingMaterial",
+             "display": "Starting Material"
+            }
+           ],
+           "text": "Starting Material"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/rm-methyl-chloroformate"
+             }
+            }
+           ],
+           "display": "Methyl chloroformate"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "ProcessingMaterial",
+             "display": "Processing Material"
+            }
+           ],
+           "text": "Processing Material"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/rm-lithium-tert-butoxide"
+             }
+            }
+           ],
+           "display": "Lithium-tert-butoxide"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "ProcessingMaterial",
+             "display": "Processing Material"
+            }
+           ],
+           "text": "Processing Material"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/rm-tetrahydrofuran"
+             }
+            }
+           ],
+           "display": "Tetrahydrofuran"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "ProcessingMaterial",
+             "display": "Processing Material"
+            }
+           ],
+           "text": "Processing Material"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/cp-5"
+             }
+            }
+           ],
+           "display": "In situ intermediate CP-5"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "ResultingMaterial",
+             "display": "Resulting Material"
+            }
+           ],
+           "text": "Resulting Material"
+          }
+         }
+        ]
+       },
+       {
+        "extension": [
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-step-scale-pq",
+          "valueCoding": {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step-scale",
+           "code": "PROD",
+           "display": "Production Scale"
+          }
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: In situ Intermediate CP-5"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "195-210 kg"
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Sodium borohydride"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "480-2120 kg"
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Magnesium chloride"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "22-35 kg"
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Methanol"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "105-320 L"
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Hydrochloric acid"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "54-59 L"
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Ethanol"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "final concentration 1000 L"
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Water"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "25 to 35% w/w of ethanol"
+           }
+          ]
+         }
+        ],
+        "title": "Step 2",
+        "description": "CP-5 is combined with sodium borohydride, magnesium chloride, and methanol, then filtered after the reaction completes. Hydrochloric acid is added to the filtrate, layers are settled and separated. Organic layer is distilled with ethanol, and the mixture is stirred with water. Resulting precipitate is filtered, rinsed and dried to yield CP-6.",
+        "code": {
+         "text": "Chemical synthesis step"
+        },
+        "participant": [
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/cp-5"
+             }
+            }
+           ],
+           "display": "In situ Intermediate CP-5"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "IntermediateMaterial",
+             "display": "Intermediate Material"
+            }
+           ],
+           "text": "Intermediate Material"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/rm-sodium-borohydride"
+             }
+            }
+           ],
+           "display": "Sodium borohydride"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "ProcessingMaterial",
+             "display": "Processing Material"
+            }
+           ],
+           "text": "Processing Material"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/rm-magnesium-chloride"
+             }
+            }
+           ],
+           "display": "Magnesium chloride"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "ProcessingMaterial",
+             "display": "Processing Material"
+            }
+           ],
+           "text": "Processing Material"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/rm-methanol"
+             }
+            }
+           ],
+           "display": "Methanol"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "ProcessingMaterial",
+             "display": "Processing Material"
+            }
+           ],
+           "text": "Processing Material"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/rm-hydrochloric-acid"
+             }
+            }
+           ],
+           "display": "Hydrochloric acid"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "ProcessingMaterial",
+             "display": "Processing Material"
+            }
+           ],
+           "text": "Processing Material"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/rm-ethanol"
+             }
+            }
+           ],
+           "display": "Ethanol"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "ProcessingMaterial",
+             "display": "Processing Material"
+            }
+           ],
+           "text": "Processing Material"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/rm-water"
+             }
+            }
+           ],
+           "display": "Water"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "ProcessingMaterial",
+             "display": "Processing Material"
+            }
+           ],
+           "text": "Processing Material"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/cp-6"
+             }
+            }
+           ],
+           "display": "Intermediate CP-6"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "ResultingMaterial",
+             "display": "Resulting Material"
+            }
+           ],
+           "text": "Resulting Material"
+          }
+         }
+        ]
+       },
+       {
+        "extension": [
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-step-scale-pq",
+          "valueCoding": {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step-scale",
+           "code": "PROD",
+           "display": "Production Scale"
+          }
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Intermediate CP-6"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "220-240 kg"
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Tetrahydrofuran"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "598-3059 L"
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Sodium carbonate"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "41.8-43.1 kg"
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Ethyl chloroformate"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "159-592 L"
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Sodium hydroxide"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "112-119 L"
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: n-Hexane"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "52-55 L"
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Ethanol"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "final concentration 1400 L"
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Water"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "25 to 35% w/w of ethanol"
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "CPP #3.1 Water addition in the crystallization (% by weight with respect to ethanol)"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "25 – 35 %"
+           }
+          ]
+         }
+        ],
+        "title": "Step 3",
+        "description": "CP-6 is combined with tetrahydrofuran, sodium carbonate, and ethyl chloroformate, then heated to reflux. Upon reaction completion, the mixture is filtered and quenched with sodium hydroxide, n-hexane is added, the layers are separated, and the organic layer is distilled with ethanol and stirred with water (CPP #3.1). After filtering and drying it results in CP-7.",
+        "code": {
+         "text": "Chemical synthesis step"
+        },
+        "participant": [
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/cp-6"
+             }
+            }
+           ],
+           "display": "Intermediate CP-6"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "IntermediateMaterial",
+             "display": "Intermediate Material"
+            }
+           ],
+           "text": "Intermediate Material"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/rm-tetrahydrofuran"
+             }
+            }
+           ],
+           "display": "Tetrahydrofuran"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "ProcessingMaterial",
+             "display": "Processing Material"
+            }
+           ],
+           "text": "Processing Material"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/rm-sodium-carbonate"
+             }
+            }
+           ],
+           "display": "Sodium carbonate"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "ProcessingMaterial",
+             "display": "Processing Material"
+            }
+           ],
+           "text": "Processing Material"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/rm-ethyl-chloroformate"
+             }
+            }
+           ],
+           "display": "Ethyl chloroformate"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "ProcessingMaterial",
+             "display": "Processing Material"
+            }
+           ],
+           "text": "Processing Material"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/rm-sodium-hydroxide"
+             }
+            }
+           ],
+           "display": "Sodium hydroxide"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "ProcessingMaterial",
+             "display": "Processing Material"
+            }
+           ],
+           "text": "Processing Material"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/rm-nhexane"
+             }
+            }
+           ],
+           "display": "n-Hexane"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "ProcessingMaterial",
+             "display": "Processing Material"
+            }
+           ],
+           "text": "Processing Material"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/rm-ethanol"
+             }
+            }
+           ],
+           "display": "Ethanol"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "ProcessingMaterial",
+             "display": "Processing Material"
+            }
+           ],
+           "text": "Processing Material"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/rm-water"
+             }
+            }
+           ],
+           "display": "Water"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "ProcessingMaterial",
+             "display": "Processing Material"
+            }
+           ],
+           "text": "Processing Material"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/cp-7"
+             }
+            }
+           ],
+           "display": "Intermediate CP-7"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "ResultingMaterial",
+             "display": "Resulting Material"
+            }
+           ],
+           "text": "Resulting Material"
+          }
+         }
+        ],
+        "action": [
+         {
+          "title": "CPP #3.1 Water addition in the crystallization (% by weight with respect to ethanol)",
+          "code": {
+           "text": "Critical process parameter"
+          },
+          "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/cpp-ds-3-1"
+         }
+        ]
+       },
+       {
+        "extension": [
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-step-scale-pq",
+          "valueCoding": {
+           "system": "http://terminology.hl7.org/CodeSystem/manufacturing-step-scale",
+           "code": "PROD",
+           "display": "Production Scale"
+          }
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Intermediate CP-7"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "240-260 kg"
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Starting Material CP-8"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "200-220 kg"
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Methylene chloride"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "720-760 L, then 805-815 L"
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Tetra-n-butylammonium bromide"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "49-52 kg"
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Sodium hydroxide"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "720-760 L"
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Water"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "98-105 L; then 20 to 35% w/w of ethanol"
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Hydrochloric acid"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "quantity not stated"
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "Charge: Ethanol"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "final concentration 1800 L"
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "CPP #4.1 Water addition in the crystallization (% by weight with respect to ethanol)"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "25 – 35 %"
+           }
+          ]
+         },
+         {
+          "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+          "extension": [
+           {
+            "url": "parameter",
+            "valueCodeableConcept": {
+             "text": "CPP #4.2 Cooling rate (°C/min)"
+            }
+           },
+           {
+            "url": "valueText",
+            "valueString": "0.15 – 0.5 °C/min"
+           }
+          ]
+         }
+        ],
+        "title": "Step 4",
+        "description": "CP-7 and CP-8 are combined in methylene chloride followed by the addition of tetra-n-butylammonium bromide and aqueous sodium hydroxide solution while mixing. Upon reaction completion, methylene chloride and water are added (CPP #4.1); ethanol content is monitored by IPC #1. The mixture is separated, washed, cooled (CPP #4.2, IPC #2) and concentrated with ethanol. After filtering and drying it results in CP-9 (Sakuramil).",
+        "code": {
+         "text": "Chemical synthesis step"
+        },
+        "participant": [
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/cp-7"
+             }
+            }
+           ],
+           "display": "Intermediate CP-7"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "IntermediateMaterial",
+             "display": "Intermediate Material"
+            }
+           ],
+           "text": "Intermediate Material"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/cp-8"
+             }
+            }
+           ],
+           "display": "Starting Material CP-8"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "StartingMaterial",
+             "display": "Starting Material"
+            }
+           ],
+           "text": "Starting Material"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/rm-methylene-chloride"
+             }
+            }
+           ],
+           "display": "Methylene chloride"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "ProcessingMaterial",
+             "display": "Processing Material"
+            }
+           ],
+           "text": "Processing Material"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/rm-tetra-n-butylammonium-bromide"
+             }
+            }
+           ],
+           "display": "Tetra-n-butylammonium bromide"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "ProcessingMaterial",
+             "display": "Processing Material"
+            }
+           ],
+           "text": "Processing Material"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/rm-sodium-hydroxide"
+             }
+            }
+           ],
+           "display": "Sodium hydroxide"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "ProcessingMaterial",
+             "display": "Processing Material"
+            }
+           ],
+           "text": "Processing Material"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/rm-water"
+             }
+            }
+           ],
+           "display": "Water"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "ProcessingMaterial",
+             "display": "Processing Material"
+            }
+           ],
+           "text": "Processing Material"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/rm-hydrochloric-acid"
+             }
+            }
+           ],
+           "display": "Hydrochloric acid"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "ProcessingMaterial",
+             "display": "Processing Material"
+            }
+           ],
+           "text": "Processing Material"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/rm-ethanol"
+             }
+            }
+           ],
+           "display": "Ethanol"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "ProcessingMaterial",
+             "display": "Processing Material"
+            }
+           ],
+           "text": "Processing Material"
+          }
+         },
+         {
+          "typeReference": {
+           "extension": [
+            {
+             "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+             "valueReference": {
+              "reference": "SubstanceDefinition/sakuramil"
+             }
+            }
+           ],
+           "display": "CP-9 (Sakuramil)"
+          },
+          "role": {
+           "coding": [
+            {
+             "system": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role",
+             "code": "ResultingMaterial",
+             "display": "Resulting Material"
+            }
+           ],
+           "text": "Resulting Material"
+          }
+         }
+        ],
+        "action": [
+         {
+          "title": "CPP #4.1 Water addition in the crystallization (% by weight with respect to ethanol)",
+          "code": {
+           "text": "Critical process parameter"
+          },
+          "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/cpp-ds-4-1"
+         },
+         {
+          "title": "CPP #4.2 Cooling rate (°C/min)",
+          "code": {
+           "text": "Critical process parameter"
+          },
+          "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/cpp-ds-4-2"
+         },
+         {
+          "title": "IPC #1 Ethanol",
+          "code": {
+           "text": "In-process control"
+          },
+          "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-ds-1-ethanol",
+          "documentation": [
+           {
+            "type": "depends-on",
+            "label": "Analytical procedure",
+            "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-residual-solvents"
+           }
+          ]
+         },
+         {
+          "title": "IPC #2 Cooling rate",
+          "code": {
+           "text": "In-process control"
+          },
+          "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-ds-2-cooling-rate"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ]
+}

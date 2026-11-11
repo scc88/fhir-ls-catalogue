@@ -1,0 +1,41 @@
+{
+ "resourceType": "Specimen",
+ "id": "spc-abc456-bottle-40c75-3m",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Specimen-drug-pq"
+  ]
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Specimen</b> spc-abc456-bottle-40c75-3m</p></div>"
+ },
+ "identifier": [
+  {
+   "system": "http://example.org/sakura-bloom-r2/fhir/stability-sample",
+   "value": "spc-abc456-bottle-40c75-3m"
+  }
+ ],
+ "status": "available",
+ "type": {
+  "text": "Sakura Bloom 20 mg film-coated tablets, HDPE bottle"
+ },
+ "processing": [
+  {
+   "description": "Stored at 40 °C / 75 % RH (accelerated) for 3 months",
+   "timePeriod": {
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-storage-duration-pq",
+      "valueDuration": {
+       "value": 3,
+       "unit": "months",
+       "system": "http://unitsofmeasure.org",
+       "code": "mo"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}

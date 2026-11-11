@@ -1,0 +1,48 @@
+{
+ "resourceType": "PlanDefinition",
+ "id": "spec-ex-lactose-monohydrate",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-ex-lactose-monohydrate",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> spec-ex-lactose-monohydrate</p></div>"
+ },
+ "title": "Specification of compendial excipient Lactose monohydrate",
+ "type": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+    "code": "1244577",
+    "display": "Specification Protocol"
+   }
+  ],
+  "text": "Specification Protocol"
+ },
+ "status": "active",
+ "subjectReference": {
+  "reference": "SubstanceDefinition/lactose-monohydrate"
+ },
+ "action": [
+  {
+   "title": "Release and re-test",
+   "code": {
+    "text": "Timing Group"
+   },
+   "action": [
+    {
+     "title": "Lactose monohydrate - compliance with monograph",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-lactose-monohydrate-monograph",
+     "description": "Method: Ph. Eur., USP/NF, JP"
+    }
+   ]
+  }
+ ]
+}

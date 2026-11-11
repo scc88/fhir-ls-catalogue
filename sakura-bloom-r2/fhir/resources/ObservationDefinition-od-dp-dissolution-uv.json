@@ -1,0 +1,85 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-dp-dissolution-uv",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8196bde0c1ce7d54832e"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-dissolution-uv",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Dissolution - Dissolution (paddle, UV, Q in 30 min): Batch release Not Less Than 80% (Q in 30 minutes) of the declared content according to acceptance table 1 of harmonized Ph. Eur., USP and JP; Shelf-life Not Less Than 80% (Q in 30 minutes) of the declared content according to acceptance table 1 of harmonized Ph. Eur., USP and JP</p></div>"
+ },
+ "title": "Dissolution (paddle, UV, Q in 30 min)",
+ "status": "active",
+ "category": [
+  {
+   "text": "Dissolution"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "Dissolution",
+    "display": "Dissolution"
+   }
+  ],
+  "text": "Dissolution - Dissolution (paddle, UV, Q in 30 min)"
+ },
+ "permittedDataType": [
+  "Quantity"
+ ],
+ "method": {
+  "text": "Dissolution test (paddle method), UV-Vis spectrophotometry"
+ },
+ "permittedUnit": [
+  {
+   "system": "http://unitsofmeasure.org",
+   "code": "%",
+   "display": "%"
+  }
+ ],
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "Not Less Than 80% (Q in 30 minutes) of the declared content according to acceptance table 1 of harmonized Ph. Eur., USP and JP"
+    }
+   ],
+   "context": {
+    "text": "Batch release"
+   },
+   "range": {
+    "low": {
+     "value": 80,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  },
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "Not Less Than 80% (Q in 30 minutes) of the declared content according to acceptance table 1 of harmonized Ph. Eur., USP and JP"
+    }
+   ],
+   "context": {
+    "text": "Shelf-life"
+   },
+   "range": {
+    "low": {
+     "value": 80,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  }
+ ]
+}

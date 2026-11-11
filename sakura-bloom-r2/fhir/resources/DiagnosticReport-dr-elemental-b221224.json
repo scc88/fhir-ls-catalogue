@@ -1,0 +1,83 @@
+{
+ "resourceType": "DiagnosticReport",
+ "id": "dr-elemental-b221224",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DiagnosticReport-analysis-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8146a8fdfd758f88a1d1"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DiagnosticReport</b> Impurities Report</p></div>"
+ },
+ "extension": [
+  {
+   "url": "http://hl7.org/fhir/StructureDefinition/workflow-triggeredBy",
+   "valueReference": {
+    "reference": "PlanDefinition/study-elemental-impurities"
+   }
+  }
+ ],
+ "identifier": [
+  {
+   "system": "http://example.org/sakura-bloom-r2/fhir/report-id",
+   "value": "dr-elemental-b221224"
+  }
+ ],
+ "status": "final",
+ "code": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-report-type",
+    "code": "Impurities Report",
+    "display": "Impurities Report"
+   }
+  ],
+  "text": "Impurities Report"
+ },
+ "subject": {
+  "reference": "Substance/ds-b221224"
+ },
+ "performer": [
+  {
+   "reference": "Organization/iroha-corp"
+  }
+ ],
+ "result": [
+  {
+   "reference": "Observation/obs-el-b221224-cd"
+  },
+  {
+   "reference": "Observation/obs-el-b221224-pb"
+  },
+  {
+   "reference": "Observation/obs-el-b221224-as"
+  },
+  {
+   "reference": "Observation/obs-el-b221224-hg"
+  },
+  {
+   "reference": "Observation/obs-el-b221224-co"
+  },
+  {
+   "reference": "Observation/obs-el-b221224-v"
+  },
+  {
+   "reference": "Observation/obs-el-b221224-ni"
+  },
+  {
+   "reference": "Observation/obs-el-b221224-pd"
+  },
+  {
+   "reference": "Observation/obs-el-b221224-li"
+  },
+  {
+   "reference": "Observation/obs-el-b221224-mg"
+  },
+  {
+   "reference": "Observation/obs-el-b221224-b"
+  }
+ ],
+ "conclusion": "All elemental impurities below LOQ."
+}

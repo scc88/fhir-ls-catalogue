@@ -1,0 +1,42 @@
+{
+ "resourceType": "Organization",
+ "id": "heto-corp",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8199b90deb4c0456477b"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Organization</b> HETO-corp.</p></div>"
+ },
+ "identifier": [
+  {
+   "system": "http://example.org/sakura-bloom-r2/fhir/organization-id",
+   "value": "heto-corp"
+  }
+ ],
+ "active": true,
+ "type": [
+  {
+   "text": "Starting material manufacturer"
+  }
+ ],
+ "name": "HETO-corp.",
+ "description": "Manufacturer of starting material CP-4.",
+ "contact": [
+  {
+   "address": {
+    "use": "work",
+    "type": "physical",
+    "line": [
+     "Wilfand-Straße 56"
+    ],
+    "city": "Hilfing",
+    "country": "DE",
+    "postalCode": "36865"
+   }
+  }
+ ]
+}

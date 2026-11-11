@@ -1,0 +1,49 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-ds-sakuramil-particle-size-distribution-d-0-1",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81bd95b9e9b0ef622af2"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-particle-size-distribution-d-0-1",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Particulate matters - Particle size distribution d(0.1): d(0.1) - 26 nm</p></div>"
+ },
+ "title": "Particle size distribution d(0.1)",
+ "status": "active",
+ "category": [
+  {
+   "text": "Particulate matters"
+  }
+ ],
+ "code": {
+  "text": "Particulate matters - Particle size distribution d(0.1)"
+ },
+ "permittedDataType": [
+  "string"
+ ],
+ "method": {
+  "text": "Laser light diffraction In-house ]"
+ },
+ "permittedUnit": [
+  {
+   "system": "http://unitsofmeasure.org",
+   "code": "nm",
+   "display": "nm"
+  }
+ ],
+ "description": "The specification lists a nominal value without a stated tolerance.",
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "d(0.1) - 26 nm"
+    }
+   ]
+  }
+ ]
+}

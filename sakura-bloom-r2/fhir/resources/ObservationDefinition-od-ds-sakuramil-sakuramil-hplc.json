@@ -1,0 +1,48 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-ds-sakuramil-sakuramil-hplc",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81bd95b9e9b0ef622af2"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-sakuramil-hplc",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Identification - Sakuramil (HPLC): The retention time of the principal peak of the sample corresponds to that of the reference standard</p></div>"
+ },
+ "title": "Sakuramil (HPLC)",
+ "status": "active",
+ "category": [
+  {
+   "text": "Identification"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "IDT",
+    "display": "Identification"
+   }
+  ],
+  "text": "Identification - Sakuramil (HPLC)"
+ },
+ "permittedDataType": [
+  "string"
+ ],
+ "method": {
+  "text": "HPLC In-house"
+ },
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "The retention time of the principal peak of the sample corresponds to that of the reference standard"
+    }
+   ]
+  }
+ ]
+}

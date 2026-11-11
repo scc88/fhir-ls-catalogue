@@ -1,0 +1,39 @@
+{
+ "resourceType": "SubstanceDefinition",
+ "id": "cp-8-25i",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc815fba60f328a2f5fc27"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> CP-8-25I</p></div>"
+ },
+ "status": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/publication-status",
+    "code": "active",
+    "display": "Active"
+   }
+  ],
+  "text": "Active"
+ },
+ "classification": [
+  {
+   "text": "Specified impurity of starting material CP-8"
+  }
+ ],
+ "description": "Specified impurity of starting material CP-8",
+ "name": [
+  {
+   "name": "CP-8-25I",
+   "type": {
+    "text": "Company code"
+   },
+   "preferred": true
+  }
+ ]
+}

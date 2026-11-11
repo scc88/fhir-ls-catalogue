@@ -1,0 +1,91 @@
+{
+ "resourceType": "PlanDefinition",
+ "id": "ap-dp-dissolution-uv",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc818ca063dbf74f3dbc18"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-dissolution-uv",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> Core quality information (2.3.3.AP) for Analytical Procedures (Dissolution/UV)[Performance][Sakura Bloom 20 mg].</p></div>"
+ },
+ "extension": [
+  {
+   "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-plan-document-reference-pq",
+   "valueReference": {
+    "reference": "DocumentReference/doc-dp-dissolution-uv-3-2-ap"
+   }
+  },
+  {
+   "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-plan-document-reference-pq",
+   "valueReference": {
+    "reference": "DocumentReference/doc-dp-dissolution-uv-2-3-4"
+   }
+  }
+ ],
+ "title": "Analytical Procedures (Dissolution/UV)[Performance][Sakura Bloom 20 mg]",
+ "type": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+    "code": "analytical-procedure",
+    "display": "Analytical Procedure"
+   }
+  ],
+  "text": "Analytical Procedure"
+ },
+ "status": "active",
+ "subjectReference": {
+  "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+ },
+ "description": "Core quality information (2.3.3.AP) for Analytical Procedures (Dissolution/UV)[Performance][Sakura Bloom 20 mg].",
+ "action": [
+  {
+   "title": "Technique",
+   "description": "Analytical procedure principle: ·       Ultraviolet absorption spectroscopy"
+  },
+  {
+   "title": "Dissolution",
+   "description": "Measurement of the amount of drug substance dissolved in a dissolution apparatus 2 (paddle) according to Ph. Eur. 2.9.3, “Dissolution for Solid Dosage Forms” or USP <711>, “Dissolution” or JP 6.10, “Dissolution Test”."
+  },
+  {
+   "title": "Detection",
+   "description": "UV detection"
+  },
+  {
+   "title": "Speed of rotation",
+   "description": "50 ± 2 rpm"
+  },
+  {
+   "title": "Test medium",
+   "description": "McIlvaine buffer  Add sodium phosphate dibasic dihydrate and citric acid to 800 mL demineralized water. Adjust solution to pH 5.0 using HCl or NaOH and add distilled water until the volume is 1L."
+  },
+  {
+   "title": "Volume of test medium",
+   "description": "900 mL"
+  },
+  {
+   "title": "Temperature",
+   "description": "37 ± 0.5°C"
+  },
+  {
+   "title": "Number of units tested",
+   "description": "Examine the prescribed number of units according to the Acceptance Table 1 of Ph. Eur. and USP or Acceptance Table 6.10-1 of JP (minimum of 6, 1 per vessel)"
+  },
+  {
+   "title": "(continued)",
+   "description": "Follow as per Ph. Eur. / USP / JP requirements."
+  },
+  {
+   "title": "Reference solution",
+   "description": "Approximate Sakuramil is 0.25 mg/mL"
+  },
+  {
+   "title": "Evaluation",
+   "description": "Determine the absorbance of the test solutions using a suitable spectrophotometer. If the results are calculated with the reference solution, additionally determine the absorbance of the reference solution."
+  }
+ ]
+}

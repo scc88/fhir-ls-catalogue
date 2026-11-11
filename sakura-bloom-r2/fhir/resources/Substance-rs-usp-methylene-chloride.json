@@ -1,0 +1,33 @@
+{
+ "resourceType": "Substance",
+ "id": "rs-usp-methylene-chloride",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81eea2dedadb29bbf31e"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> USP Residual Solvent Class 2 - Methylene chloride RS (pharmacopeial material) - lot rs-usp-methylene-chloride</p></div>"
+ },
+ "identifier": [
+  {
+   "system": "http://example.org/sakura-bloom-r2/fhir/reference-standard",
+   "value": "rs-usp-methylene-chloride"
+  }
+ ],
+ "instance": true,
+ "status": "active",
+ "category": [
+  {
+   "text": "Reference standard"
+  }
+ ],
+ "code": {
+  "concept": {
+   "text": "USP Residual Solvent Class 2 - Methylene chloride RS"
+  }
+ },
+ "description": "USP Residual Solvent Class 2 - Methylene chloride RS (pharmacopeial material)"
+}

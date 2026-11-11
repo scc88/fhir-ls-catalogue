@@ -1,0 +1,29 @@
+{
+ "resourceType": "SpecimenDefinition",
+ "id": "spd-dp-xenon-unexposed",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SpecimenDefinition-drug-pq"
+  ]
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/SpecimenDefinition/spd-dp-xenon-unexposed",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SpecimenDefinition</b> spd-dp-xenon-unexposed</p></div>"
+ },
+ "status": "active",
+ "title": "DP stability storage condition - Photostability - xenon, unexposed (dark control)",
+ "typeTested": [
+  {
+   "preference": "preferred",
+   "type": {
+    "text": "Sakura Bloom 20 mg film-coated tablets in commercial primary packaging"
+   },
+   "handling": [
+    {
+     "instruction": "Photostability - xenon, unexposed (dark control)"
+    }
+   ]
+  }
+ ]
+}

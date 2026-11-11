@@ -1,0 +1,32 @@
+{
+ "resourceType": "SpecimenDefinition",
+ "id": "spd-dp-40c75",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SpecimenDefinition-drug-pq"
+  ]
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/SpecimenDefinition/spd-dp-40c75",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SpecimenDefinition</b> spd-dp-40c75</p></div>"
+ },
+ "status": "active",
+ "title": "DP stability storage condition - 40 °C / 75 % RH (accelerated)",
+ "typeTested": [
+  {
+   "preference": "preferred",
+   "type": {
+    "text": "Sakura Bloom 20 mg film-coated tablets in commercial primary packaging"
+   },
+   "handling": [
+    {
+     "temperatureQualifier": {
+      "text": "40 °C / 75 % RH (accelerated)"
+     },
+     "instruction": "Store at 40 °C / 75 % RH (accelerated)"
+    }
+   ]
+  }
+ ]
+}

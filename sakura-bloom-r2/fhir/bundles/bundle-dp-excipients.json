@@ -1,0 +1,3672 @@
+{
+ "resourceType": "Bundle",
+ "id": "bundle-dp-excipients",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-product-excipients-pq"
+  ]
+ },
+ "identifier": {
+  "system": "http://example.org/sakura-bloom-r2/fhir/bundle-id",
+  "value": "bundle-dp-excipients"
+ },
+ "type": "collection",
+ "timestamp": "2026-11-08T00:00:00Z",
+ "entry": [
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/MedicinalProductDefinition/sakura-bloom-20mg",
+   "resource": {
+    "resourceType": "MedicinalProductDefinition",
+    "id": "sakura-bloom-20mg",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8139acafcbef7ae81c6f"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>MedicinalProductDefinition</b> Sakura Bloom 20 mg film-coated tablets</p></div>"
+    },
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/product-id",
+      "value": "SB-20MG-FCT"
+     }
+    ],
+    "type": {
+     "text": "Medicinal product (small molecule)"
+    },
+    "domain": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/medicinal-product-domain",
+       "code": "Human",
+       "display": "Human use"
+      }
+     ],
+     "text": "Human use"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "description": "Sakura Bloom 20 mg film-coated tablet: immediate-release film-coated tablet for oral administration, to be swallowed whole. Strength expressed as Sakuramil neutral, anhydrous base. Fictitious ICH M4Q(R2) mock-up product 'SakuraBloom R2'.",
+    "combinedPharmaceuticalDoseForm": {
+     "coding": [
+      {
+       "system": "http://standardterms.edqm.eu",
+       "code": "10221000",
+       "display": "Film-coated tablet"
+      }
+     ],
+     "text": "Film-coated tablet"
+    },
+    "route": [
+     {
+      "coding": [
+       {
+        "system": "http://standardterms.edqm.eu",
+        "code": "20053000",
+        "display": "Oral use"
+       }
+      ],
+      "text": "Oral use"
+     }
+    ],
+    "name": [
+     {
+      "productName": "Sakura Bloom 20 mg film-coated tablets",
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-productNameType-pq-example",
+         "code": "Proprietary",
+         "display": "Proprietary"
+        }
+       ],
+       "text": "Proprietary"
+      },
+      "part": [
+       {
+        "part": "Sakura Bloom",
+        "type": {
+         "text": "Invented name part"
+        }
+       },
+       {
+        "part": "20 mg",
+        "type": {
+         "text": "Strength part"
+        }
+       },
+       {
+        "part": "film-coated tablets",
+        "type": {
+         "text": "Pharmaceutical dose form part"
+        }
+       }
+      ]
+     }
+    ],
+    "operation": [
+     {
+      "type": {
+       "concept": {
+        "text": "Drug substance manufacture"
+       }
+      },
+      "organization": [
+       {
+        "reference": "Organization/iroha-corp"
+       }
+      ]
+     },
+     {
+      "type": {
+       "reference": {
+        "reference": "PlanDefinition/dp-manufacturing-process"
+       }
+      },
+      "organization": [
+       {
+        "reference": "Organization/aparna-pharm"
+       }
+      ]
+     },
+     {
+      "type": {
+       "concept": {
+        "text": "Quality control testing (release)"
+       }
+      },
+      "organization": [
+       {
+        "reference": "Organization/aparna-pharm"
+       },
+       {
+        "reference": "Organization/dakina-analytica"
+       },
+       {
+        "reference": "Organization/kunchen-sa"
+       }
+      ]
+     },
+     {
+      "type": {
+       "concept": {
+        "text": "Primary packaging"
+       }
+      },
+      "organization": [
+       {
+        "reference": "Organization/aparna-pharm"
+       },
+       {
+        "reference": "Organization/pack-alpha"
+       },
+       {
+        "reference": "Organization/cocopharma"
+       }
+      ]
+     },
+     {
+      "type": {
+       "concept": {
+        "text": "Secondary packaging"
+       }
+      },
+      "organization": [
+       {
+        "reference": "Organization/aparna-pharm"
+       },
+       {
+        "reference": "Organization/pack-alpha"
+       }
+      ]
+     },
+     {
+      "type": {
+       "concept": {
+        "text": "Stability testing"
+       }
+      },
+      "organization": [
+       {
+        "reference": "Organization/aparna-pharm"
+       },
+       {
+        "reference": "Organization/pack-alpha"
+       }
+      ]
+     }
+    ],
+    "characteristic": [
+     {
+      "type": {
+       "text": "Drug release profile"
+      },
+      "valueCodeableConcept": {
+       "text": "Immediate release"
+      }
+     },
+     {
+      "type": {
+       "text": "Maximum daily dose"
+      },
+      "valueQuantity": {
+       "value": 40,
+       "unit": "mg",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg"
+      }
+     },
+     {
+      "type": {
+       "text": "Medical device(s) or co-packaged item(s)"
+      },
+      "valueCodeableConcept": {
+       "text": "Not applicable"
+      }
+     },
+     {
+      "type": {
+       "text": "Method of administration"
+      },
+      "valueCodeableConcept": {
+       "text": "To be swallowed whole"
+      }
+     },
+     {
+      "type": {
+       "text": "Shelf life (QTPP target)"
+      },
+      "valueCodeableConcept": {
+       "text": "36 months at room temperature across all climatic zones"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/sakuramil",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "sakuramil",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81f89f56d478fe7ac949"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Sakuramil</p></div>"
+    },
+    "identifier": [
+     {
+      "system": "http://cas.org",
+      "value": "262352-13-6"
+     }
+    ],
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Chemical (small molecule)"
+     }
+    ],
+    "grade": [
+     {
+      "text": "In-house"
+     }
+    ],
+    "description": "Sakuramil (company code CP-9), the drug substance of Sakura Bloom 20 mg film-coated tablets.",
+    "manufacturer": [
+     {
+      "reference": "Organization/iroha-corp",
+      "display": "IROHA-corp.",
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-site-utilization-pq",
+        "valueCoding": {
+         "system": "http://terminology.hl7.org/CodeSystem/product-site-utilization-type",
+         "code": "Primary manufacturing",
+         "display": "Primary Manufacturing"
+        }
+       }
+      ]
+     }
+    ],
+    "characterization": [
+     {
+      "technique": {
+       "text": "Mass spectrometry (ESI positive, Shimadzu LCM-IT-TOF)"
+      },
+      "description": "m/z 614.504 observed (predicted 614.505) on CP-9 primary working standard"
+     },
+     {
+      "technique": {
+       "text": "1H NMR (Bruker 500 MHz, D2O)"
+      }
+     },
+     {
+      "technique": {
+       "text": "13C NMR (Bruker 500 MHz, D2O)"
+      }
+     }
+    ],
+    "property": [
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+         "code": "appearance",
+         "display": "Appearance"
+        }
+       ],
+       "text": "Appearance"
+      },
+      "valueCodeableConcept": {
+       "text": "White solid"
+      }
+     },
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+         "code": "solubility-water",
+         "display": "Solubility purified water"
+        }
+       ],
+       "text": "Solubility purified water"
+      },
+      "valueQuantity": {
+       "value": 0.05,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      }
+     },
+     {
+      "type": {
+       "text": "Solubility in ethanol (RT)"
+      },
+      "valueQuantity": {
+       "value": 45,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      }
+     },
+     {
+      "type": {
+       "text": "Solubility in acetone (RT)"
+      },
+      "valueQuantity": {
+       "value": 71.3,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      }
+     },
+     {
+      "type": {
+       "text": "Aqueous solubility as a function of pH (RT) - Deionized water"
+      },
+      "valueQuantity": {
+       "value": 0.05,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      }
+     },
+     {
+      "type": {
+       "text": "Aqueous solubility as a function of pH (RT) - 0.1 N HCl"
+      },
+      "valueQuantity": {
+       "comparator": "<",
+       "value": 0.01,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      },
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-substance-property-parameter-pq",
+        "extension": [
+         {
+          "url": "parameter",
+          "valueCoding": {
+           "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+           "code": "pH",
+           "display": "pH"
+          }
+         },
+         {
+          "url": "value",
+          "valueQuantity": {
+           "value": 1.2,
+           "unit": "pH",
+           "system": "http://unitsofmeasure.org",
+           "code": "[pH]"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": {
+       "text": "Aqueous solubility as a function of pH (RT) - Acetate buffer"
+      },
+      "valueQuantity": {
+       "value": 5.0,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      },
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-substance-property-parameter-pq",
+        "extension": [
+         {
+          "url": "parameter",
+          "valueCoding": {
+           "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+           "code": "pH",
+           "display": "pH"
+          }
+         },
+         {
+          "url": "value",
+          "valueQuantity": {
+           "value": 4.5,
+           "unit": "pH",
+           "system": "http://unitsofmeasure.org",
+           "code": "[pH]"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": {
+       "text": "Aqueous solubility as a function of pH (RT) - Phosphate buffer"
+      },
+      "valueQuantity": {
+       "value": 3.2,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      },
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-substance-property-parameter-pq",
+        "extension": [
+         {
+          "url": "parameter",
+          "valueCoding": {
+           "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+           "code": "pH",
+           "display": "pH"
+          }
+         },
+         {
+          "url": "value",
+          "valueQuantity": {
+           "value": 6.8,
+           "unit": "pH",
+           "system": "http://unitsofmeasure.org",
+           "code": "[pH]"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": {
+       "text": "Aqueous solubility as a function of pH (RT) - 0.1 N NaOH"
+      },
+      "valueQuantity": {
+       "value": 5.1,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      },
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-substance-property-parameter-pq",
+        "extension": [
+         {
+          "url": "parameter",
+          "valueCoding": {
+           "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+           "code": "pH",
+           "display": "pH"
+          }
+         },
+         {
+          "url": "value",
+          "valueQuantity": {
+           "value": 8.0,
+           "unit": "pH",
+           "system": "http://unitsofmeasure.org",
+           "code": "[pH]"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+         "code": "pH",
+         "display": "pH"
+        }
+       ],
+       "text": "pH"
+      },
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-substance-property-range-pq",
+        "valueRange": {
+         "low": {
+          "value": 5.0,
+          "unit": "pH",
+          "system": "http://unitsofmeasure.org",
+          "code": "[pH]"
+         },
+         "high": {
+          "value": 9.0,
+          "unit": "pH",
+          "system": "http://unitsofmeasure.org",
+          "code": "[pH]"
+         }
+        }
+       }
+      ],
+      "valueCodeableConcept": {
+       "text": "5.0 - 9.0 (RT)"
+      }
+     },
+     {
+      "type": {
+       "text": "pKa (carboxylate)"
+      },
+      "valueQuantity": {
+       "value": 12.6
+      }
+     },
+     {
+      "type": {
+       "text": "pKa (phenol CF3)"
+      },
+      "valueQuantity": {
+       "value": 15.3
+      }
+     },
+     {
+      "type": {
+       "text": "pKa (carbamate)"
+      },
+      "valueQuantity": {
+       "value": 24.2
+      }
+     },
+     {
+      "type": {
+       "text": "Partition coefficient (log P, n-octanol/water)"
+      },
+      "valueQuantity": {
+       "value": 6.3
+      }
+     },
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+         "code": "hygroscopy",
+         "display": "Hygroscopy"
+        }
+       ],
+       "text": "Hygroscopy"
+      },
+      "valueCodeableConcept": {
+       "text": "Not hygroscopic"
+      }
+     },
+     {
+      "type": {
+       "text": "Melting point"
+      },
+      "valueQuantity": {
+       "value": 174,
+       "unit": "°C",
+       "system": "http://unitsofmeasure.org",
+       "code": "Cel"
+      }
+     },
+     {
+      "type": {
+       "text": "Polymorphism"
+      },
+      "valueCodeableConcept": {
+       "text": "Only one polymorph observed in synthetic manufacture and extensive polymorph screening"
+      }
+     },
+     {
+      "type": {
+       "text": "Chirality"
+      },
+      "valueCodeableConcept": {
+       "text": "Two chiral centres; no racemization observed in the manufacturing process"
+      }
+     },
+     {
+      "type": {
+       "text": "Isomerism"
+      },
+      "valueCodeableConcept": {
+       "text": "An enantiomer and two diastereomers can be formed"
+      }
+     },
+     {
+      "type": {
+       "text": "Specific optical rotation (20 °C, aqueous solution)"
+      },
+      "valueQuantity": {
+       "value": 145,
+       "unit": "deg",
+       "system": "http://unitsofmeasure.org",
+       "code": "deg"
+      }
+     },
+     {
+      "type": {
+       "text": "Particle size distribution d(0.1) (laser diffraction)"
+      },
+      "valueQuantity": {
+       "value": 26,
+       "unit": "nm",
+       "system": "http://unitsofmeasure.org",
+       "code": "nm"
+      }
+     },
+     {
+      "type": {
+       "text": "Particle size distribution d(0.5) (laser diffraction)"
+      },
+      "valueQuantity": {
+       "value": 40,
+       "unit": "nm",
+       "system": "http://unitsofmeasure.org",
+       "code": "nm"
+      }
+     },
+     {
+      "type": {
+       "text": "Particle size distribution d(0.9) (laser diffraction)"
+      },
+      "valueQuantity": {
+       "value": 66,
+       "unit": "nm",
+       "system": "http://unitsofmeasure.org",
+       "code": "nm"
+      }
+     },
+     {
+      "type": {
+       "text": "Light sensitivity"
+      },
+      "valueCodeableConcept": {
+       "text": "Not sensitive to light"
+      }
+     },
+     {
+      "type": {
+       "text": "Biopharmaceutics Classification System"
+      },
+      "valueCodeableConcept": {
+       "text": "BCS Class II (poorly soluble, highly permeable)"
+      }
+     }
+    ],
+    "molecularWeight": [
+     {
+      "type": {
+       "text": "Exact/average (free base)"
+      },
+      "amount": {
+       "value": 614.5,
+       "unit": "g/mol",
+       "system": "http://unitsofmeasure.org",
+       "code": "g/mol"
+      }
+     }
+    ],
+    "structure": {
+     "stereochemistry": {
+      "text": "(2S,4S)"
+     },
+     "molecularFormula": "C27H27F9N2O4",
+     "representation": [
+      {
+       "type": {
+        "text": "IUPAC name"
+       },
+       "representation": "Propan-2-yl (2S,4S)-4-[acetyl-[[3,5-bis(trifluoromethyl)phenyl]methyl]amino]-2-methoxy-2-methyl-6-(trifluoromethyl)-3,4-dihydroquinoline-1-carboxylate"
+      }
+     ]
+    },
+    "code": [
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://cas.org",
+         "code": "262352-13-6"
+        }
+       ],
+       "text": "262352-13-6"
+      }
+     },
+     {
+      "code": {
+       "text": "CP-9"
+      }
+     }
+    ],
+    "name": [
+     {
+      "name": "Sakuramil",
+      "type": {
+       "text": "INN"
+      },
+      "preferred": true
+     },
+     {
+      "name": "Sakuramil",
+      "type": {
+       "text": "USAN"
+      }
+     },
+     {
+      "name": "Propan-2-yl (2S,4S)-4-[acetyl-[[3,5-bis(trifluoromethyl)phenyl]methyl]amino]-2-methoxy-2-methyl-6-(trifluoromethyl)-3,4-dihydroquinoline-1-carboxylate",
+      "type": {
+       "text": "IUPAC chemical name"
+      }
+     },
+     {
+      "name": "CP-9",
+      "type": {
+       "text": "Company code"
+      }
+     }
+    ],
+    "relationship": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "process",
+           "display": "Process Impurity"
+          }
+         ],
+         "text": "Process Impurity"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-9-1",
+       "display": "CP-9-1"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "PR-IMP",
+         "display": "Process impurity"
+        }
+       ],
+       "text": "Process impurity - Specified related substance; NMT 0.15 % (DS); NMT 0.3 %/0.5 % release/shelf-life (DP)"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "starting-material",
+           "display": "Starting Material"
+          }
+         ],
+         "text": "Starting Material"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-8",
+       "display": "CP-8"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "ST-IMP",
+         "display": "Starting material, forced degradation product"
+        }
+       ],
+       "text": "Starting material, forced degradation product - Specified related substance; NMT 0.10 %"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "intermediate-material",
+           "display": "Intermediate Material"
+          }
+         ],
+         "text": "Intermediate Material"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-6",
+       "display": "CP-6"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "INT-IMP",
+         "display": "Process intermediate, forced degradation product"
+        }
+       ],
+       "text": "Process intermediate, forced degradation product - Potentially mutagenic impurity; NMT 37.5 ppm"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "starting-material",
+           "display": "Starting Material"
+          }
+         ],
+         "text": "Starting Material"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-4",
+       "display": "CP-4"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "ST-IMP",
+         "display": "Starting material, forced degradation product"
+        }
+       ],
+       "text": "Starting material, forced degradation product - Potentially mutagenic; controlled via CP-6 limit and purge"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "intermediate-material",
+           "display": "Intermediate Material"
+          }
+         ],
+         "text": "Intermediate Material"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-5",
+       "display": "CP-5"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "INT-IMP",
+         "display": "Process intermediate, forced degradation product"
+        }
+       ],
+       "text": "Process intermediate, forced degradation product - Potentially mutagenic (structural alert); purged"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "process",
+           "display": "Process Impurity"
+          }
+         ],
+         "text": "Process Impurity"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-3",
+       "display": "CP-3"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "PR-IMP",
+         "display": "Process impurity"
+        }
+       ],
+       "text": "Process impurity - Potentially mutagenic (structural alert); purged"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "intermediate-material",
+           "display": "Intermediate Material"
+          }
+         ],
+         "text": "Intermediate Material"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-7",
+       "display": "CP-7"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "INT-IMP",
+         "display": "Process intermediate, forced degradation product"
+        }
+       ],
+       "text": "Process intermediate, forced degradation product - Intermediate; purged in Step 4 crystallization"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Ingredient/ing-lactose-monohydrate",
+   "resource": {
+    "resourceType": "Ingredient",
+    "id": "ing-lactose-monohydrate",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8144b81ce7e58885d190"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Ingredient</b> ing-lactose-monohydrate</p></div>"
+    },
+    "status": "active",
+    "for": [
+     {
+      "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+     },
+     {
+      "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+     }
+    ],
+    "role": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/ingredient-role",
+       "code": "100000072082",
+       "display": "Excipient"
+      }
+     ],
+     "text": "Excipient"
+    },
+    "function": [
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/ingredient-function",
+        "code": "diluent",
+        "display": "Diluent"
+       }
+      ],
+      "text": "Diluent"
+     }
+    ],
+    "substance": {
+     "code": {
+      "reference": {
+       "reference": "SubstanceDefinition/lactose-monohydrate"
+      }
+     },
+     "strength": [
+      {
+       "presentationRatio": {
+        "numerator": {
+         "value": 136.0,
+         "unit": "mg",
+         "system": "http://unitsofmeasure.org",
+         "code": "mg"
+        },
+        "denominator": {
+         "value": 1,
+         "unit": "tablet",
+         "system": "http://unitsofmeasure.org",
+         "code": "{tablet}"
+        }
+       },
+       "textPresentation": "136.00 mg per film-coated tablet"
+      },
+      {
+       "presentationRatio": {
+        "numerator": {
+         "value": 353.6,
+         "unit": "kg",
+         "system": "http://unitsofmeasure.org",
+         "code": "kg"
+        },
+        "denominator": {
+         "value": 520.0,
+         "unit": "kg",
+         "system": "http://unitsofmeasure.org",
+         "code": "kg"
+        }
+       },
+       "textPresentation": "353.600 kg per commercial batch (520.000 kg, approx. 2,600,000 tablets)",
+       "basis": {
+        "text": "Batch formula"
+       }
+      }
+     ]
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-novel-excipient-pq",
+      "valueBoolean": false
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-suitability-for-use-pq",
+      "valueString": "Complies with Ph. Eur., USP/NF, JP"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/lactose-monohydrate",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "lactose-monohydrate",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Lactose monohydrate</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Excipient (compendial)"
+     }
+    ],
+    "grade": [
+     {
+      "text": "Ph. Eur."
+     },
+     {
+      "text": "USP/NF"
+     },
+     {
+      "text": "JP"
+     }
+    ],
+    "name": [
+     {
+      "name": "Lactose monohydrate",
+      "preferred": true,
+      "synonym": [
+       {
+        "name": "Lactose hydrate"
+       }
+      ]
+     }
+    ],
+    "sourceMaterial": {
+     "type": {
+      "text": "Animal origin (milk); TSE declarations per EMA/410/01 rev.3"
+     }
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Ingredient/ing-microcrystalline-cellulose",
+   "resource": {
+    "resourceType": "Ingredient",
+    "id": "ing-microcrystalline-cellulose",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8144b81ce7e58885d190"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Ingredient</b> ing-microcrystalline-cellulose</p></div>"
+    },
+    "status": "active",
+    "for": [
+     {
+      "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+     },
+     {
+      "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+     }
+    ],
+    "role": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/ingredient-role",
+       "code": "100000072082",
+       "display": "Excipient"
+      }
+     ],
+     "text": "Excipient"
+    },
+    "function": [
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/ingredient-function",
+        "code": "diluent",
+        "display": "Diluent"
+       }
+      ],
+      "text": "Diluent"
+     }
+    ],
+    "substance": {
+     "code": {
+      "reference": {
+       "reference": "SubstanceDefinition/microcrystalline-cellulose"
+      }
+     },
+     "strength": [
+      {
+       "presentationRatio": {
+        "numerator": {
+         "value": 20.0,
+         "unit": "mg",
+         "system": "http://unitsofmeasure.org",
+         "code": "mg"
+        },
+        "denominator": {
+         "value": 1,
+         "unit": "tablet",
+         "system": "http://unitsofmeasure.org",
+         "code": "{tablet}"
+        }
+       },
+       "textPresentation": "20.00 mg per film-coated tablet"
+      },
+      {
+       "presentationRatio": {
+        "numerator": {
+         "value": 52.0,
+         "unit": "kg",
+         "system": "http://unitsofmeasure.org",
+         "code": "kg"
+        },
+        "denominator": {
+         "value": 520.0,
+         "unit": "kg",
+         "system": "http://unitsofmeasure.org",
+         "code": "kg"
+        }
+       },
+       "textPresentation": "52.000 kg per commercial batch (520.000 kg, approx. 2,600,000 tablets)",
+       "basis": {
+        "text": "Batch formula"
+       }
+      }
+     ]
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-novel-excipient-pq",
+      "valueBoolean": false
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-suitability-for-use-pq",
+      "valueString": "Complies with Ph. Eur., USP/NF, JP"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/microcrystalline-cellulose",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "microcrystalline-cellulose",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Cellulose, microcrystalline</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Excipient (compendial)"
+     }
+    ],
+    "grade": [
+     {
+      "text": "Ph. Eur."
+     },
+     {
+      "text": "USP/NF"
+     },
+     {
+      "text": "JP"
+     }
+    ],
+    "name": [
+     {
+      "name": "Cellulose, microcrystalline",
+      "preferred": true,
+      "synonym": [
+       {
+        "name": "Microcrystalline cellulose"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Ingredient/ing-croscarmellose-sodium",
+   "resource": {
+    "resourceType": "Ingredient",
+    "id": "ing-croscarmellose-sodium",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8144b81ce7e58885d190"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Ingredient</b> ing-croscarmellose-sodium</p></div>"
+    },
+    "status": "active",
+    "for": [
+     {
+      "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+     },
+     {
+      "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+     }
+    ],
+    "role": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/ingredient-role",
+       "code": "100000072082",
+       "display": "Excipient"
+      }
+     ],
+     "text": "Excipient"
+    },
+    "function": [
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/ingredient-function",
+        "code": "disintegrant",
+        "display": "Disintegrant"
+       }
+      ],
+      "text": "Disintegrant"
+     }
+    ],
+    "substance": {
+     "code": {
+      "reference": {
+       "reference": "SubstanceDefinition/croscarmellose-sodium"
+      }
+     },
+     "strength": [
+      {
+       "presentationRatio": {
+        "numerator": {
+         "value": 10.0,
+         "unit": "mg",
+         "system": "http://unitsofmeasure.org",
+         "code": "mg"
+        },
+        "denominator": {
+         "value": 1,
+         "unit": "tablet",
+         "system": "http://unitsofmeasure.org",
+         "code": "{tablet}"
+        }
+       },
+       "textPresentation": "10.00 mg per film-coated tablet"
+      },
+      {
+       "presentationRatio": {
+        "numerator": {
+         "value": 26.0,
+         "unit": "kg",
+         "system": "http://unitsofmeasure.org",
+         "code": "kg"
+        },
+        "denominator": {
+         "value": 520.0,
+         "unit": "kg",
+         "system": "http://unitsofmeasure.org",
+         "code": "kg"
+        }
+       },
+       "textPresentation": "26.000 kg per commercial batch (520.000 kg, approx. 2,600,000 tablets)",
+       "basis": {
+        "text": "Batch formula"
+       }
+      }
+     ]
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-novel-excipient-pq",
+      "valueBoolean": false
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-suitability-for-use-pq",
+      "valueString": "Complies with Ph. Eur., USP/NF, JP"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/croscarmellose-sodium",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "croscarmellose-sodium",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Croscarmellose sodium</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Excipient (compendial)"
+     }
+    ],
+    "grade": [
+     {
+      "text": "Ph. Eur."
+     },
+     {
+      "text": "USP/NF"
+     },
+     {
+      "text": "JP"
+     }
+    ],
+    "name": [
+     {
+      "name": "Croscarmellose sodium",
+      "preferred": true
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Ingredient/ing-hydroxypropyl-cellulose",
+   "resource": {
+    "resourceType": "Ingredient",
+    "id": "ing-hydroxypropyl-cellulose",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8144b81ce7e58885d190"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Ingredient</b> ing-hydroxypropyl-cellulose</p></div>"
+    },
+    "status": "active",
+    "for": [
+     {
+      "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+     },
+     {
+      "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+     }
+    ],
+    "role": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/ingredient-role",
+       "code": "100000072082",
+       "display": "Excipient"
+      }
+     ],
+     "text": "Excipient"
+    },
+    "function": [
+     {
+      "text": "Binder"
+     }
+    ],
+    "substance": {
+     "code": {
+      "reference": {
+       "reference": "SubstanceDefinition/hydroxypropyl-cellulose"
+      }
+     },
+     "strength": [
+      {
+       "presentationRatio": {
+        "numerator": {
+         "value": 6.0,
+         "unit": "mg",
+         "system": "http://unitsofmeasure.org",
+         "code": "mg"
+        },
+        "denominator": {
+         "value": 1,
+         "unit": "tablet",
+         "system": "http://unitsofmeasure.org",
+         "code": "{tablet}"
+        }
+       },
+       "textPresentation": "6.00 mg per film-coated tablet"
+      },
+      {
+       "presentationRatio": {
+        "numerator": {
+         "value": 15.6,
+         "unit": "kg",
+         "system": "http://unitsofmeasure.org",
+         "code": "kg"
+        },
+        "denominator": {
+         "value": 520.0,
+         "unit": "kg",
+         "system": "http://unitsofmeasure.org",
+         "code": "kg"
+        }
+       },
+       "textPresentation": "15.600 kg per commercial batch (520.000 kg, approx. 2,600,000 tablets)",
+       "basis": {
+        "text": "Batch formula"
+       }
+      }
+     ]
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-novel-excipient-pq",
+      "valueBoolean": false
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-suitability-for-use-pq",
+      "valueString": "Complies with Ph. Eur., USP/NF, JP"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/hydroxypropyl-cellulose",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "hydroxypropyl-cellulose",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Hydroxypropyl cellulose</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Excipient (compendial)"
+     }
+    ],
+    "grade": [
+     {
+      "text": "Ph. Eur."
+     },
+     {
+      "text": "USP/NF"
+     },
+     {
+      "text": "JP"
+     }
+    ],
+    "name": [
+     {
+      "name": "Hydroxypropyl cellulose",
+      "preferred": true
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Ingredient/ing-magnesium-stearate",
+   "resource": {
+    "resourceType": "Ingredient",
+    "id": "ing-magnesium-stearate",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8144b81ce7e58885d190"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Ingredient</b> ing-magnesium-stearate</p></div>"
+    },
+    "status": "active",
+    "for": [
+     {
+      "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+     },
+     {
+      "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+     }
+    ],
+    "role": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/ingredient-role",
+       "code": "100000072082",
+       "display": "Excipient"
+      }
+     ],
+     "text": "Excipient"
+    },
+    "function": [
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/ingredient-function",
+        "code": "lubricant",
+        "display": "Lubricant"
+       }
+      ],
+      "text": "Lubricant"
+     }
+    ],
+    "substance": {
+     "code": {
+      "reference": {
+       "reference": "SubstanceDefinition/magnesium-stearate"
+      }
+     },
+     "strength": [
+      {
+       "presentationRatio": {
+        "numerator": {
+         "value": 2.0,
+         "unit": "mg",
+         "system": "http://unitsofmeasure.org",
+         "code": "mg"
+        },
+        "denominator": {
+         "value": 1,
+         "unit": "tablet",
+         "system": "http://unitsofmeasure.org",
+         "code": "{tablet}"
+        }
+       },
+       "textPresentation": "2.00 mg per film-coated tablet"
+      },
+      {
+       "presentationRatio": {
+        "numerator": {
+         "value": 5.2,
+         "unit": "kg",
+         "system": "http://unitsofmeasure.org",
+         "code": "kg"
+        },
+        "denominator": {
+         "value": 520.0,
+         "unit": "kg",
+         "system": "http://unitsofmeasure.org",
+         "code": "kg"
+        }
+       },
+       "textPresentation": "5.200 kg per commercial batch (520.000 kg, approx. 2,600,000 tablets)",
+       "basis": {
+        "text": "Batch formula"
+       }
+      }
+     ]
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-novel-excipient-pq",
+      "valueBoolean": false
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-suitability-for-use-pq",
+      "valueString": "Complies with Ph. Eur., USP/NF, JP"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/magnesium-stearate",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "magnesium-stearate",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Magnesium stearate</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Excipient (compendial)"
+     }
+    ],
+    "grade": [
+     {
+      "text": "Ph. Eur."
+     },
+     {
+      "text": "USP/NF"
+     },
+     {
+      "text": "JP"
+     }
+    ],
+    "name": [
+     {
+      "name": "Magnesium stearate",
+      "preferred": true
+     }
+    ],
+    "sourceMaterial": {
+     "type": {
+      "text": "Vegetable origin"
+     }
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Ingredient/ing-coating-premix-red",
+   "resource": {
+    "resourceType": "Ingredient",
+    "id": "ing-coating-premix-red",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8144b81ce7e58885d190"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Ingredient</b> ing-coating-premix-red</p></div>"
+    },
+    "status": "active",
+    "for": [
+     {
+      "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+     },
+     {
+      "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+     }
+    ],
+    "role": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/ingredient-role",
+       "code": "100000072082",
+       "display": "Excipient"
+      }
+     ],
+     "text": "Excipient"
+    },
+    "function": [
+     {
+      "text": "Coating agent"
+     }
+    ],
+    "substance": {
+     "code": {
+      "reference": {
+       "reference": "SubstanceDefinition/coating-premix-red"
+      }
+     },
+     "strength": [
+      {
+       "presentationRatio": {
+        "numerator": {
+         "value": 6.0,
+         "unit": "mg",
+         "system": "http://unitsofmeasure.org",
+         "code": "mg"
+        },
+        "denominator": {
+         "value": 1,
+         "unit": "tablet",
+         "system": "http://unitsofmeasure.org",
+         "code": "{tablet}"
+        }
+       },
+       "textPresentation": "6.00 mg per film-coated tablet"
+      },
+      {
+       "presentationRatio": {
+        "numerator": {
+         "value": 15.6,
+         "unit": "kg",
+         "system": "http://unitsofmeasure.org",
+         "code": "kg"
+        },
+        "denominator": {
+         "value": 520.0,
+         "unit": "kg",
+         "system": "http://unitsofmeasure.org",
+         "code": "kg"
+        }
+       },
+       "textPresentation": "15.600 kg per commercial batch (520.000 kg, approx. 2,600,000 tablets)",
+       "basis": {
+        "text": "Batch formula"
+       }
+      }
+     ]
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-novel-excipient-pq",
+      "valueBoolean": false
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-suitability-for-use-pq",
+      "valueString": "Complies with In-house"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/coating-premix-red",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "coating-premix-red",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8101bbdfeab0c7f1d2ed"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Basic coating premix, red</p></div>"
+    },
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/material-code",
+      "value": "KIRSCH2358"
+     }
+    ],
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Excipient (non-compendial mixture, commercially available)"
+     }
+    ],
+    "grade": [
+     {
+      "text": "In-house"
+     }
+    ],
+    "description": "Basic coating premix, red. Commercially available film-coating premix; minor adaptations of the quantitative composition may be needed to match the colour reference. None of the components are of animal origin.",
+    "name": [
+     {
+      "name": "Basic coating premix, red",
+      "preferred": true,
+      "synonym": [
+       {
+        "name": "Coating premix red"
+       },
+       {
+        "name": "Coating Premix Red KIRSCH2358"
+       }
+      ]
+     }
+    ],
+    "relationship": [
+     {
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/hypromellose"
+      },
+      "type": {
+       "text": "Component of mixture"
+      },
+      "isDefining": true,
+      "amountQuantity": {
+       "value": 50.0,
+       "unit": "%",
+       "system": "http://unitsofmeasure.org",
+       "code": "%"
+      }
+     },
+     {
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/macrogol-6000"
+      },
+      "type": {
+       "text": "Component of mixture"
+      },
+      "isDefining": true,
+      "amountQuantity": {
+       "value": 20.0,
+       "unit": "%",
+       "system": "http://unitsofmeasure.org",
+       "code": "%"
+      }
+     },
+     {
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/titanium-dioxide"
+      },
+      "type": {
+       "text": "Component of mixture"
+      },
+      "isDefining": true,
+      "amountQuantity": {
+       "value": 25.0,
+       "unit": "%",
+       "system": "http://unitsofmeasure.org",
+       "code": "%"
+      }
+     },
+     {
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/iron-oxide-red"
+      },
+      "type": {
+       "text": "Component of mixture"
+      },
+      "isDefining": true,
+      "amountQuantity": {
+       "value": 5.0,
+       "unit": "%",
+       "system": "http://unitsofmeasure.org",
+       "code": "%"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Ingredient/ing-purified-water",
+   "resource": {
+    "resourceType": "Ingredient",
+    "id": "ing-purified-water",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8144b81ce7e58885d190"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Ingredient</b> ing-purified-water</p></div>"
+    },
+    "status": "active",
+    "for": [
+     {
+      "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+     },
+     {
+      "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+     }
+    ],
+    "role": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/ingredient-role",
+       "code": "100000072082",
+       "display": "Excipient"
+      }
+     ],
+     "text": "Excipient"
+    },
+    "function": [
+     {
+      "text": "Solvent for coating suspension (removed during processing)"
+     }
+    ],
+    "substance": {
+     "code": {
+      "reference": {
+       "reference": "SubstanceDefinition/purified-water"
+      }
+     },
+     "strength": [
+      {
+       "textPresentation": "q.s."
+      }
+     ]
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-novel-excipient-pq",
+      "valueBoolean": false
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-suitability-for-use-pq",
+      "valueString": "Complies with Ph. Eur., USP/NF, JP"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/purified-water",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "purified-water",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Water, purified</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Excipient (compendial)"
+     }
+    ],
+    "grade": [
+     {
+      "text": "Ph. Eur."
+     },
+     {
+      "text": "USP/NF"
+     },
+     {
+      "text": "JP"
+     }
+    ],
+    "name": [
+     {
+      "name": "Water, purified",
+      "preferred": true,
+      "synonym": [
+       {
+        "name": "Purified water"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Ingredient/ing-hypromellose",
+   "resource": {
+    "resourceType": "Ingredient",
+    "id": "ing-hypromellose",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8144b81ce7e58885d190"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Ingredient</b> ing-hypromellose</p></div>"
+    },
+    "status": "active",
+    "for": [
+     {
+      "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+     },
+     {
+      "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+     }
+    ],
+    "role": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/ingredient-role",
+       "code": "100000072082",
+       "display": "Excipient"
+      }
+     ],
+     "text": "Excipient"
+    },
+    "function": [
+     {
+      "text": "Film-forming agent (component of coating premix)"
+     }
+    ],
+    "substance": {
+     "code": {
+      "reference": {
+       "reference": "SubstanceDefinition/hypromellose"
+      }
+     },
+     "strength": [
+      {
+       "presentationRatio": {
+        "numerator": {
+         "value": 4.8,
+         "unit": "mg",
+         "system": "http://unitsofmeasure.org",
+         "code": "mg"
+        },
+        "denominator": {
+         "value": 1,
+         "unit": "tablet",
+         "system": "http://unitsofmeasure.org",
+         "code": "{tablet}"
+        }
+       },
+       "textPresentation": "4.80 mg per film-coated tablet"
+      }
+     ]
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-novel-excipient-pq",
+      "valueBoolean": false
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-suitability-for-use-pq",
+      "valueString": "Complies with Ph. Eur., USP, JP"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/hypromellose",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "hypromellose",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Hypromellose</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Excipient (compendial)"
+     }
+    ],
+    "grade": [
+     {
+      "text": "Ph. Eur."
+     },
+     {
+      "text": "USP"
+     },
+     {
+      "text": "JP"
+     }
+    ],
+    "name": [
+     {
+      "name": "Hypromellose",
+      "preferred": true
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Ingredient/ing-macrogol-6000",
+   "resource": {
+    "resourceType": "Ingredient",
+    "id": "ing-macrogol-6000",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8144b81ce7e58885d190"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Ingredient</b> ing-macrogol-6000</p></div>"
+    },
+    "status": "active",
+    "for": [
+     {
+      "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+     },
+     {
+      "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+     }
+    ],
+    "role": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/ingredient-role",
+       "code": "100000072082",
+       "display": "Excipient"
+      }
+     ],
+     "text": "Excipient"
+    },
+    "function": [
+     {
+      "text": "Polishing agent (component of coating premix)"
+     }
+    ],
+    "substance": {
+     "code": {
+      "reference": {
+       "reference": "SubstanceDefinition/macrogol-6000"
+      }
+     },
+     "strength": [
+      {
+       "presentationRatio": {
+        "numerator": {
+         "value": 0.6,
+         "unit": "mg",
+         "system": "http://unitsofmeasure.org",
+         "code": "mg"
+        },
+        "denominator": {
+         "value": 1,
+         "unit": "tablet",
+         "system": "http://unitsofmeasure.org",
+         "code": "{tablet}"
+        }
+       },
+       "textPresentation": "0.60 mg per film-coated tablet"
+      }
+     ]
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-novel-excipient-pq",
+      "valueBoolean": false
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-suitability-for-use-pq",
+      "valueString": "Complies with Ph. Eur., USP/NF, JP"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/macrogol-6000",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "macrogol-6000",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Macrogol (type 6000)</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Excipient (compendial)"
+     }
+    ],
+    "grade": [
+     {
+      "text": "Ph. Eur."
+     },
+     {
+      "text": "USP/NF"
+     },
+     {
+      "text": "JP"
+     }
+    ],
+    "name": [
+     {
+      "name": "Macrogol (type 6000)",
+      "preferred": true,
+      "synonym": [
+       {
+        "name": "Polyethylene glycol (6000)"
+       },
+       {
+        "name": "Macrogol 6000"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Ingredient/ing-titanium-dioxide",
+   "resource": {
+    "resourceType": "Ingredient",
+    "id": "ing-titanium-dioxide",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8144b81ce7e58885d190"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Ingredient</b> ing-titanium-dioxide</p></div>"
+    },
+    "status": "active",
+    "for": [
+     {
+      "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+     },
+     {
+      "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+     }
+    ],
+    "role": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/ingredient-role",
+       "code": "100000072082",
+       "display": "Excipient"
+      }
+     ],
+     "text": "Excipient"
+    },
+    "function": [
+     {
+      "text": "Opacifier (component of coating premix)"
+     }
+    ],
+    "substance": {
+     "code": {
+      "reference": {
+       "reference": "SubstanceDefinition/titanium-dioxide"
+      }
+     },
+     "strength": [
+      {
+       "presentationRatio": {
+        "numerator": {
+         "value": 0.6,
+         "unit": "mg",
+         "system": "http://unitsofmeasure.org",
+         "code": "mg"
+        },
+        "denominator": {
+         "value": 1,
+         "unit": "tablet",
+         "system": "http://unitsofmeasure.org",
+         "code": "{tablet}"
+        }
+       },
+       "textPresentation": "0.60 mg per film-coated tablet"
+      }
+     ]
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-novel-excipient-pq",
+      "valueBoolean": false
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-suitability-for-use-pq",
+      "valueString": "Complies with Ph. Eur., Regulation (EU) 231/2012, USP/NF, JP"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/titanium-dioxide",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "titanium-dioxide",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Titanium dioxide (E 171)</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Excipient (compendial)"
+     }
+    ],
+    "grade": [
+     {
+      "text": "Ph. Eur."
+     },
+     {
+      "text": "Regulation (EU) 231/2012"
+     },
+     {
+      "text": "USP/NF"
+     },
+     {
+      "text": "JP"
+     }
+    ],
+    "name": [
+     {
+      "name": "Titanium dioxide (E 171)",
+      "preferred": true,
+      "synonym": [
+       {
+        "name": "Titanium oxide"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Ingredient/ing-iron-oxide-red",
+   "resource": {
+    "resourceType": "Ingredient",
+    "id": "ing-iron-oxide-red",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8144b81ce7e58885d190"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Ingredient</b> ing-iron-oxide-red</p></div>"
+    },
+    "status": "active",
+    "for": [
+     {
+      "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+     },
+     {
+      "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+     }
+    ],
+    "role": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/ingredient-role",
+       "code": "100000072082",
+       "display": "Excipient"
+      }
+     ],
+     "text": "Excipient"
+    },
+    "function": [
+     {
+      "text": "Colorant (component of coating premix)"
+     }
+    ],
+    "substance": {
+     "code": {
+      "reference": {
+       "reference": "SubstanceDefinition/iron-oxide-red"
+      }
+     },
+     "strength": [
+      {
+       "textPresentation": "q.s."
+      }
+     ]
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-novel-excipient-pq",
+      "valueBoolean": false
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-suitability-for-use-pq",
+      "valueString": "Complies with Ph. Eur., Regulation (EU) 231/2012, USP/NF, JP"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/iron-oxide-red",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "iron-oxide-red",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Iron oxide, red (E 172)</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Excipient (compendial)"
+     }
+    ],
+    "grade": [
+     {
+      "text": "Ph. Eur."
+     },
+     {
+      "text": "Regulation (EU) 231/2012"
+     },
+     {
+      "text": "USP/NF"
+     },
+     {
+      "text": "JP"
+     }
+    ],
+    "name": [
+     {
+      "name": "Iron oxide, red (E 172)",
+      "preferred": true,
+      "synonym": [
+       {
+        "name": "Ferric oxide"
+       },
+       {
+        "name": "Red Ferric oxide"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Organization/aparna-pharm",
+   "resource": {
+    "resourceType": "Organization",
+    "id": "aparna-pharm",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8199b90deb4c0456477b"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Organization</b> Aparna Pharmaceutical Manufacturing Pte. Ltd.</p></div>"
+    },
+    "identifier": [
+     {
+      "system": "urn:oid:1.3.6.1.4.1.519.1",
+      "value": "489236805"
+     },
+     {
+      "system": "urn:oid:2.16.840.1.113883.4.82",
+      "value": "489236805"
+     }
+    ],
+    "active": true,
+    "type": [
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+        "code": "drug-product-manufacture",
+        "display": "Drug Product Manufacture"
+       }
+      ],
+      "text": "Drug Product Manufacture"
+     },
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+        "code": "analytical-testing-release",
+        "display": "Analytical Testing - Release"
+       }
+      ],
+      "text": "Analytical Testing - Release"
+     },
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+        "code": "analytical-testing-stability",
+        "display": "Analytical Testing - Stability"
+       }
+      ],
+      "text": "Analytical Testing - Stability"
+     },
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+        "code": "packaging",
+        "display": "Packaging"
+       }
+      ],
+      "text": "Packaging"
+     }
+    ],
+    "name": "Aparna Pharmaceutical Manufacturing Pte. Ltd.",
+    "description": "Manufacture of the drug product; in-process control testing; analytical testing of drug product and excipients; stability testing; primary and secondary packaging.",
+    "contact": [
+     {
+      "address": {
+       "use": "work",
+       "type": "physical",
+       "line": [
+        "10 Green Road"
+       ],
+       "city": "Gulshan",
+       "country": "BD"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-lactose-monohydrate-monograph",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-ex-lactose-monohydrate-monograph",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-lactose-monohydrate-monograph",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Compendial compliance - Lactose monohydrate - compliance with monograph: Complies with Ph. Eur., USP/NF and JP monographs</p></div>"
+    },
+    "title": "Lactose monohydrate - compliance with monograph",
+    "status": "active",
+    "category": [
+     {
+      "text": "Compendial compliance"
+     }
+    ],
+    "code": {
+     "text": "Compendial compliance - Lactose monohydrate - compliance with monograph"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Ph. Eur., USP/NF, JP"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Complies with Ph. Eur., USP/NF and JP monographs"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-ex-lactose-monohydrate",
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "spec-ex-lactose-monohydrate",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-ex-lactose-monohydrate",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> spec-ex-lactose-monohydrate</p></div>"
+    },
+    "title": "Specification of compendial excipient Lactose monohydrate",
+    "type": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+       "code": "1244577",
+       "display": "Specification Protocol"
+      }
+     ],
+     "text": "Specification Protocol"
+    },
+    "status": "active",
+    "subjectReference": {
+     "reference": "SubstanceDefinition/lactose-monohydrate"
+    },
+    "action": [
+     {
+      "title": "Release and re-test",
+      "code": {
+       "text": "Timing Group"
+      },
+      "action": [
+       {
+        "title": "Lactose monohydrate - compliance with monograph",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-lactose-monohydrate-monograph",
+        "description": "Method: Ph. Eur., USP/NF, JP"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-microcrystalline-cellulose-monograph",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-ex-microcrystalline-cellulose-monograph",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-microcrystalline-cellulose-monograph",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Compendial compliance - Cellulose, microcrystalline - compliance with monograph: Complies with Ph. Eur., USP/NF and JP monographs</p></div>"
+    },
+    "title": "Cellulose, microcrystalline - compliance with monograph",
+    "status": "active",
+    "category": [
+     {
+      "text": "Compendial compliance"
+     }
+    ],
+    "code": {
+     "text": "Compendial compliance - Cellulose, microcrystalline - compliance with monograph"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Ph. Eur., USP/NF, JP"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Complies with Ph. Eur., USP/NF and JP monographs"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-ex-microcrystalline-cellulose",
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "spec-ex-microcrystalline-cellulose",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-ex-microcrystalline-cellulose",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> spec-ex-microcrystalline-cellulose</p></div>"
+    },
+    "title": "Specification of compendial excipient Cellulose, microcrystalline",
+    "type": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+       "code": "1244577",
+       "display": "Specification Protocol"
+      }
+     ],
+     "text": "Specification Protocol"
+    },
+    "status": "active",
+    "subjectReference": {
+     "reference": "SubstanceDefinition/microcrystalline-cellulose"
+    },
+    "action": [
+     {
+      "title": "Release and re-test",
+      "code": {
+       "text": "Timing Group"
+      },
+      "action": [
+       {
+        "title": "Cellulose, microcrystalline - compliance with monograph",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-microcrystalline-cellulose-monograph",
+        "description": "Method: Ph. Eur., USP/NF, JP"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-croscarmellose-sodium-monograph",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-ex-croscarmellose-sodium-monograph",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-croscarmellose-sodium-monograph",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Compendial compliance - Croscarmellose sodium - compliance with monograph: Complies with Ph. Eur., USP/NF and JP monographs</p></div>"
+    },
+    "title": "Croscarmellose sodium - compliance with monograph",
+    "status": "active",
+    "category": [
+     {
+      "text": "Compendial compliance"
+     }
+    ],
+    "code": {
+     "text": "Compendial compliance - Croscarmellose sodium - compliance with monograph"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Ph. Eur., USP/NF, JP"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Complies with Ph. Eur., USP/NF and JP monographs"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-ex-croscarmellose-sodium",
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "spec-ex-croscarmellose-sodium",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-ex-croscarmellose-sodium",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> spec-ex-croscarmellose-sodium</p></div>"
+    },
+    "title": "Specification of compendial excipient Croscarmellose sodium",
+    "type": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+       "code": "1244577",
+       "display": "Specification Protocol"
+      }
+     ],
+     "text": "Specification Protocol"
+    },
+    "status": "active",
+    "subjectReference": {
+     "reference": "SubstanceDefinition/croscarmellose-sodium"
+    },
+    "action": [
+     {
+      "title": "Release and re-test",
+      "code": {
+       "text": "Timing Group"
+      },
+      "action": [
+       {
+        "title": "Croscarmellose sodium - compliance with monograph",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-croscarmellose-sodium-monograph",
+        "description": "Method: Ph. Eur., USP/NF, JP"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-hydroxypropyl-cellulose-monograph",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-ex-hydroxypropyl-cellulose-monograph",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-hydroxypropyl-cellulose-monograph",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Compendial compliance - Hydroxypropyl cellulose - compliance with monograph: Complies with Ph. Eur., USP/NF and JP monographs</p></div>"
+    },
+    "title": "Hydroxypropyl cellulose - compliance with monograph",
+    "status": "active",
+    "category": [
+     {
+      "text": "Compendial compliance"
+     }
+    ],
+    "code": {
+     "text": "Compendial compliance - Hydroxypropyl cellulose - compliance with monograph"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Ph. Eur., USP/NF, JP"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Complies with Ph. Eur., USP/NF and JP monographs"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-ex-hydroxypropyl-cellulose",
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "spec-ex-hydroxypropyl-cellulose",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-ex-hydroxypropyl-cellulose",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> spec-ex-hydroxypropyl-cellulose</p></div>"
+    },
+    "title": "Specification of compendial excipient Hydroxypropyl cellulose",
+    "type": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+       "code": "1244577",
+       "display": "Specification Protocol"
+      }
+     ],
+     "text": "Specification Protocol"
+    },
+    "status": "active",
+    "subjectReference": {
+     "reference": "SubstanceDefinition/hydroxypropyl-cellulose"
+    },
+    "action": [
+     {
+      "title": "Release and re-test",
+      "code": {
+       "text": "Timing Group"
+      },
+      "action": [
+       {
+        "title": "Hydroxypropyl cellulose - compliance with monograph",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-hydroxypropyl-cellulose-monograph",
+        "description": "Method: Ph. Eur., USP/NF, JP"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-magnesium-stearate-monograph",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-ex-magnesium-stearate-monograph",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-magnesium-stearate-monograph",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Compendial compliance - Magnesium stearate - compliance with monograph: Complies with Ph. Eur., USP/NF and JP monographs</p></div>"
+    },
+    "title": "Magnesium stearate - compliance with monograph",
+    "status": "active",
+    "category": [
+     {
+      "text": "Compendial compliance"
+     }
+    ],
+    "code": {
+     "text": "Compendial compliance - Magnesium stearate - compliance with monograph"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Ph. Eur., USP/NF, JP"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Complies with Ph. Eur., USP/NF and JP monographs"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-ex-magnesium-stearate",
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "spec-ex-magnesium-stearate",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-ex-magnesium-stearate",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> spec-ex-magnesium-stearate</p></div>"
+    },
+    "title": "Specification of compendial excipient Magnesium stearate",
+    "type": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+       "code": "1244577",
+       "display": "Specification Protocol"
+      }
+     ],
+     "text": "Specification Protocol"
+    },
+    "status": "active",
+    "subjectReference": {
+     "reference": "SubstanceDefinition/magnesium-stearate"
+    },
+    "action": [
+     {
+      "title": "Release and re-test",
+      "code": {
+       "text": "Timing Group"
+      },
+      "action": [
+       {
+        "title": "Magnesium stearate - compliance with monograph",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-magnesium-stearate-monograph",
+        "description": "Method: Ph. Eur., USP/NF, JP"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-purified-water-monograph",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-ex-purified-water-monograph",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-purified-water-monograph",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Compendial compliance - Water, purified - compliance with monograph: Complies with Ph. Eur., USP/NF and JP monographs</p></div>"
+    },
+    "title": "Water, purified - compliance with monograph",
+    "status": "active",
+    "category": [
+     {
+      "text": "Compendial compliance"
+     }
+    ],
+    "code": {
+     "text": "Compendial compliance - Water, purified - compliance with monograph"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Ph. Eur., USP/NF, JP"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Complies with Ph. Eur., USP/NF and JP monographs"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-ex-purified-water",
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "spec-ex-purified-water",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-ex-purified-water",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> spec-ex-purified-water</p></div>"
+    },
+    "title": "Specification of compendial excipient Water, purified",
+    "type": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+       "code": "1244577",
+       "display": "Specification Protocol"
+      }
+     ],
+     "text": "Specification Protocol"
+    },
+    "status": "active",
+    "subjectReference": {
+     "reference": "SubstanceDefinition/purified-water"
+    },
+    "action": [
+     {
+      "title": "Release and re-test",
+      "code": {
+       "text": "Timing Group"
+      },
+      "action": [
+       {
+        "title": "Water, purified - compliance with monograph",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-purified-water-monograph",
+        "description": "Method: Ph. Eur., USP/NF, JP"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-coating-premix-red-appearance-by-visual-examination",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-ex-coating-premix-red-appearance-by-visual-examination",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8101bbdfeab0c7f1d2ed"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-coating-premix-red-appearance-by-visual-examination",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Description - Appearance by visual examination: Red powder</p></div>"
+    },
+    "title": "Appearance by visual examination",
+    "status": "active",
+    "category": [
+     {
+      "text": "Description"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DESC",
+       "display": "Description"
+      }
+     ],
+     "text": "Description - Appearance by visual examination"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Visual examination"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Red powder"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-coating-premix-red-identity-by-ir-atr",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-ex-coating-premix-red-identity-by-ir-atr",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8101bbdfeab0c7f1d2ed"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-coating-premix-red-identity-by-ir-atr",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Identification - Identity by IR (ATR): Complies with a reference spectrum from a reference material provided by the manufacturer</p></div>"
+    },
+    "title": "Identity by IR (ATR)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Identification"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "IDT",
+       "display": "Identification"
+      }
+     ],
+     "text": "Identification - Identity by IR (ATR)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "IR (ATR)"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Complies with a reference spectrum from a reference material provided by the manufacturer"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-coating-premix-red-identity-of-colourants",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-ex-coating-premix-red-identity-of-colourants",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8101bbdfeab0c7f1d2ed"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-coating-premix-red-identity-of-colourants",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Identification - Identity of colourants: Complies favorably to reference material provided by the manufacturer</p></div>"
+    },
+    "title": "Identity of colourants",
+    "status": "active",
+    "category": [
+     {
+      "text": "Identification"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "IDT",
+       "display": "Identification"
+      }
+     ],
+     "text": "Identification - Identity of colourants"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "TLC / colourant identity"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Complies favorably to reference material provided by the manufacturer"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-coating-premix-red-identity-of-iron",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-ex-coating-premix-red-identity-of-iron",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8101bbdfeab0c7f1d2ed"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-coating-premix-red-identity-of-iron",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Identification - Identity of iron: Positive</p></div>"
+    },
+    "title": "Identity of iron",
+    "status": "active",
+    "category": [
+     {
+      "text": "Identification"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "IDT",
+       "display": "Identification"
+      }
+     ],
+     "text": "Identification - Identity of iron"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Chemical identity reaction"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Positive"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-coating-premix-red-total-ash",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-ex-coating-premix-red-total-ash",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8101bbdfeab0c7f1d2ed"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-coating-premix-red-total-ash",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Purity - Total ash: 47.05 – 56.15%</p></div>"
+    },
+    "title": "Total ash",
+    "status": "active",
+    "category": [
+     {
+      "text": "Purity"
+     }
+    ],
+    "code": {
+     "text": "Purity - Total ash"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "Ph. Eur."
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "47.05 – 56.15%"
+       }
+      ],
+      "range": {
+       "low": {
+        "value": 47.05,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       },
+       "high": {
+        "value": 56.15,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-ex-coating-premix-red",
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "spec-ex-coating-premix-red",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8101bbdfeab0c7f1d2ed"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-ex-coating-premix-red",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> spec-ex-coating-premix-red</p></div>"
+    },
+    "title": "Specification of non-compendial excipient Basic coating premix, red",
+    "type": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+       "code": "1244577",
+       "display": "Specification Protocol"
+      }
+     ],
+     "text": "Specification Protocol"
+    },
+    "status": "active",
+    "subjectReference": {
+     "reference": "SubstanceDefinition/coating-premix-red"
+    },
+    "action": [
+     {
+      "title": "Release and re-test",
+      "code": {
+       "text": "Timing Group"
+      },
+      "action": [
+       {
+        "title": "Appearance by visual examination",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-coating-premix-red-appearance-by-visual-examination",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-premix-visual"
+         }
+        ]
+       },
+       {
+        "title": "Identity by IR (ATR)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-coating-premix-red-identity-by-ir-atr",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-premix-identity-ir"
+         }
+        ]
+       },
+       {
+        "title": "Identity of colourants",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-coating-premix-red-identity-of-colourants",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-premix-identity-colorants"
+         }
+        ]
+       },
+       {
+        "title": "Identity of iron",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-coating-premix-red-identity-of-iron",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-premix-identity-iron"
+         }
+        ]
+       },
+       {
+        "title": "Total ash",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-coating-premix-red-total-ash",
+        "description": "Method: Ph. Eur."
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ]
+}

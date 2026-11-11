@@ -1,0 +1,72 @@
+{
+ "resourceType": "PlanDefinition",
+ "id": "spec-rm-sodium-borohydride",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8177993bcf3257b14820"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-rm-sodium-borohydride",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> spec-rm-sodium-borohydride</p></div>"
+ },
+ "title": "Specification of raw material Sodium borohydride",
+ "type": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+    "code": "1244577",
+    "display": "Specification Protocol"
+   }
+  ],
+  "text": "Specification Protocol"
+ },
+ "status": "active",
+ "subjectReference": {
+  "reference": "SubstanceDefinition/rm-sodium-borohydride"
+ },
+ "action": [
+  {
+   "title": "Release and re-test",
+   "code": {
+    "text": "Timing Group"
+   },
+   "action": [
+    {
+     "title": "Description (visual)",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-sodium-borohydride-description-visual",
+     "description": "Method: Visual"
+    },
+    {
+     "title": "Identification (IR)",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-sodium-borohydride-identification-ir",
+     "description": "Method: IR USP <197>"
+    },
+    {
+     "title": "Assay (titration)",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-sodium-borohydride-assay-titration",
+     "description": "Method: Titration In-house"
+    },
+    {
+     "title": "Chloride content",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-sodium-borohydride-chloride-content",
+     "description": "Method: USP <191>"
+    }
+   ]
+  }
+ ]
+}

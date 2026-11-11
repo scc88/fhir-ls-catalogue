@@ -1,0 +1,33 @@
+{
+ "resourceType": "Substance",
+ "id": "rs-cp-6-standard",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81eea2dedadb29bbf31e"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> CP-6 standard, prepared in-house; controlled per the CP-6 intermediate specification. - lot rs-cp-6-standard</p></div>"
+ },
+ "identifier": [
+  {
+   "system": "http://example.org/sakura-bloom-r2/fhir/reference-standard",
+   "value": "rs-cp-6-standard"
+  }
+ ],
+ "instance": true,
+ "status": "active",
+ "category": [
+  {
+   "text": "Reference standard"
+  }
+ ],
+ "code": {
+  "reference": {
+   "reference": "SubstanceDefinition/cp-6"
+  }
+ },
+ "description": "CP-6 standard, prepared in-house; controlled per the CP-6 intermediate specification."
+}

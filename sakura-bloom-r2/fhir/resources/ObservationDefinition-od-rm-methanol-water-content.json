@@ -1,0 +1,56 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-rm-methanol-water-content",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8148b33fe048e5ecea49"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-methanol-water-content",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Water content: NMT 0.10 %</p></div>"
+ },
+ "title": "Water content",
+ "status": "active",
+ "category": [
+  {
+   "text": "Water content"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "WaterContent",
+    "display": "Water content"
+   }
+  ],
+  "text": "Water content"
+ },
+ "permittedDataType": [
+  "Quantity"
+ ],
+ "method": {
+  "text": "Titration USP <921>"
+ },
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "NMT 0.10 %"
+    }
+   ],
+   "range": {
+    "high": {
+     "value": 0.1,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  }
+ ]
+}

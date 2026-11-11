@@ -1,0 +1,45 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-dp-udu-nir",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8196bde0c1ce7d54832e"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-udu-nir",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Uniformity of dosage units - Uniformity of dosage units (NIR, RTRT): Batch release When 200 uncoated tablets, sampled to represent the whole batch during the tableting process, are tested for Assay, the number of tablets exceeding 85.0%-115.0% is 6 or less and exceeding 75.0%-125% is 1 or less.</p></div>"
+ },
+ "title": "Uniformity of dosage units (NIR, RTRT)",
+ "status": "active",
+ "category": [
+  {
+   "text": "Uniformity of dosage units"
+  }
+ ],
+ "code": {
+  "text": "Uniformity of dosage units - Uniformity of dosage units (NIR, RTRT)"
+ },
+ "permittedDataType": [
+  "string"
+ ],
+ "method": {
+  "text": "Near infrared absorption spectrometry (NIR method) (RTRT)"
+ },
+ "description": "Performed at release only (RTRT).",
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "When 200 uncoated tablets, sampled to represent the whole batch during the tableting process, are tested for Assay, the number of tablets exceeding 85.0%-115.0% is 6 or less and exceeding 75.0%-125% is 1 or less."
+    }
+   ],
+   "context": {
+    "text": "Batch release"
+   }
+  }
+ ]
+}

@@ -1,0 +1,57 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-elemental-li",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8146a8fdfd758f88a1d1"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-elemental-li",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Elemental impurities - Elemental impurity Li (ICP-MS): ICH Q3D oral limit 55 µg/g</p></div>"
+ },
+ "title": "Elemental impurity Li (ICP-MS)",
+ "status": "active",
+ "category": [
+  {
+   "text": "Elemental impurities"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "ELE",
+    "display": "Elemental impurities"
+   }
+  ],
+  "text": "Elemental impurities - Elemental impurity Li (ICP-MS)"
+ },
+ "permittedDataType": [
+  "Quantity"
+ ],
+ "method": {
+  "text": "ICP-MS"
+ },
+ "description": "ICH Q3D Class 3 elemental impurities and other elements; LOQ 0.020 µg/g",
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "ICH Q3D oral limit 55 µg/g"
+    }
+   ],
+   "range": {
+    "high": {
+     "value": 55.0,
+     "unit": "µg/g",
+     "system": "http://unitsofmeasure.org",
+     "code": "ug/g"
+    }
+   }
+  }
+ ]
+}

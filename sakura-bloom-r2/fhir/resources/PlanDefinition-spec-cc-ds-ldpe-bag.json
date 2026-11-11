@@ -1,0 +1,80 @@
+{
+ "resourceType": "PlanDefinition",
+ "id": "spec-cc-ds-ldpe-bag",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81039108f5376ab1096c"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-cc-ds-ldpe-bag",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> spec-cc-ds-ldpe-bag</p></div>"
+ },
+ "title": "Primary packaging specification - LDPE bag (drug substance)",
+ "type": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+    "code": "container-specification",
+    "display": "Container Specification"
+   }
+  ],
+  "text": "Container Specification"
+ },
+ "status": "active",
+ "subjectReference": {
+  "reference": "SubstanceDefinition/sakuramil"
+ },
+ "action": [
+  {
+   "title": "Incoming inspection",
+   "code": {
+    "text": "Timing Group"
+   },
+   "action": [
+    {
+     "title": "Appearance",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-cc-ds-ldpe-bag-appearance",
+     "description": "Method: Visual"
+    },
+    {
+     "title": "Colour",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-cc-ds-ldpe-bag-colour",
+     "description": "Method: Visual"
+    },
+    {
+     "title": "Identification of the plastic by IR",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-cc-ds-ldpe-bag-identification-of-the-plastic-by-ir",
+     "description": "Method: IR"
+    },
+    {
+     "title": "Leakage",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-cc-ds-ldpe-bag-leakage",
+     "description": "Method: Leak test"
+    },
+    {
+     "title": "Thickness",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-cc-ds-ldpe-bag-thickness",
+     "description": "Method: Thickness gauge"
+    }
+   ]
+  }
+ ]
+}

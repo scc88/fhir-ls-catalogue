@@ -1,0 +1,88 @@
+{
+ "resourceType": "PlanDefinition",
+ "id": "spec-cc-hdpe-bottle",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8172acd6d7e4b3f69475"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-cc-hdpe-bottle",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> spec-cc-hdpe-bottle</p></div>"
+ },
+ "title": "Primary packaging specification - 90 cc HDPE bottle and 38 mm child-resistant closure",
+ "type": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+    "code": "container-specification",
+    "display": "Container Specification"
+   }
+  ],
+  "text": "Container Specification"
+ },
+ "status": "active",
+ "subjectReference": {
+  "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+ },
+ "action": [
+  {
+   "title": "Incoming inspection",
+   "code": {
+    "text": "Timing Group"
+   },
+   "action": [
+    {
+     "title": "90 cc HDPE bottle - Appearance",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-cc-hdpe-bottle-90-cc-hdpe-bottle-appearance",
+     "description": "Method: Visual examination"
+    },
+    {
+     "title": "90 cc HDPE bottle - Light transmission",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-cc-hdpe-bottle-90-cc-hdpe-bottle-light-transmission",
+     "description": "Method: UV Spectroscopy"
+    },
+    {
+     "title": "90 cc HDPE bottle - Material",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-cc-hdpe-bottle-90-cc-hdpe-bottle-material",
+     "description": "Method: Thermal analysis"
+    },
+    {
+     "title": "38 mm child resistant closure - Appearance",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-cc-hdpe-bottle-38-mm-child-resistant-closure-appearance",
+     "description": "Method: Visual examination"
+    },
+    {
+     "title": "38 mm child resistant closure - Colour",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-cc-hdpe-bottle-38-mm-child-resistant-closure-colour",
+     "description": "Method: Visual examination"
+    },
+    {
+     "title": "38 mm child resistant closure - Material identification",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-cc-hdpe-bottle-38-mm-child-resistant-closure-material-3ea351",
+     "description": "Method: Thermal analysis"
+    }
+   ]
+  }
+ ]
+}

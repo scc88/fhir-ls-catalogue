@@ -1,0 +1,69 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-si-cp-6-assay",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc813d8ebfcf0f96d70b67"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-6-assay",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Assay: 98.0 - 102.0 %</p></div>"
+ },
+ "title": "Assay",
+ "status": "active",
+ "category": [
+  {
+   "text": "Assay"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "ASSAY",
+    "display": "Assay"
+   }
+  ],
+  "text": "Assay"
+ },
+ "permittedDataType": [
+  "Quantity"
+ ],
+ "method": {
+  "text": "HPLC In-house"
+ },
+ "permittedUnit": [
+  {
+   "system": "http://unitsofmeasure.org",
+   "code": "%",
+   "display": "%"
+  }
+ ],
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "98.0 - 102.0 %"
+    }
+   ],
+   "range": {
+    "low": {
+     "value": 98.0,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    },
+    "high": {
+     "value": 102.0,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "resourceType": "DocumentReference",
+ "id": "doc-residual-solvents-2-3-4",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DocumentReference-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81e28683f919a11a5d64"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DocumentReference</b> 2.3.4.AP Analytical Procedures (Residual Solvents) [Residual Solvents][Sakuramil][CP-4]</p></div>"
+ },
+ "status": "current",
+ "type": {
+  "text": "Analytical procedure development / validation summary (2.3.4 DSJ)"
+ },
+ "description": "2.3.4.AP Analytical Procedures (Residual Solvents) [Residual Solvents][Sakuramil][CP-4]",
+ "content": [
+  {
+   "attachment": {
+    "contentType": "text/html",
+    "url": "https://ichm4q.notion.site/2a317984c9fc81e28683f919a11a5d64",
+    "title": "2.3.4.AP Analytical Procedures (Residual Solvents) [Residual Solvents][Sakuramil][CP-4]"
+   }
+  }
+ ]
+}

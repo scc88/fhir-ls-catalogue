@@ -1,0 +1,102 @@
+{
+ "resourceType": "PackagedProductDefinition",
+ "id": "pack-bulk-alu-bag",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PackagedProductDefinition-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81889b04e8dc076f8f8f"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PackagedProductDefinition</b> Sakura Bloom 20 mg film-coated tablets - bulk (PETP/AL/PE bag in tinplate can)</p></div>"
+ },
+ "name": "Sakura Bloom 20 mg film-coated tablets - bulk (PETP/AL/PE bag in tinplate can)",
+ "type": {
+  "text": "Bulk drug product pack"
+ },
+ "packageFor": [
+  {
+   "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+  }
+ ],
+ "status": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/publication-status",
+    "code": "active",
+    "display": "Active"
+   }
+  ],
+  "text": "Active"
+ },
+ "description": "Tightly sealed PETP/AL/PE aluminium composite bag placed in a tinplate can with hooded lid. Transport and intermediate storage not above +30 °C; excursions up to 40 °C permitted.",
+ "packaging": {
+  "type": {
+   "text": "Tinplate can with hooded lid (secondary container)"
+  },
+  "packaging": [
+   {
+    "type": {
+     "coding": [
+      {
+       "system": "http://standardterms.edqm.eu",
+       "code": "30001000",
+       "display": "Bag"
+      }
+     ],
+     "text": "Bag"
+    },
+    "material": [
+     {
+      "text": "PETP/AL/PE aluminium composite"
+     }
+    ],
+    "property": [
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/package-property",
+         "code": "Quality Standard",
+         "display": "Quality Standard"
+        }
+       ],
+       "text": "Quality Standard"
+      },
+      "valueCodeableConcept": {
+       "text": "Complies with European and US regulation"
+      }
+     }
+    ],
+    "shelfLifeStorage": [
+     {
+      "type": {
+       "text": "Holding time of packaged bulk drug product"
+      },
+      "periodDuration": {
+       "value": 18,
+       "unit": "months",
+       "system": "http://unitsofmeasure.org",
+       "code": "mo"
+      },
+      "specialPrecautionsForStorage": [
+       {
+        "text": "Do not store above 30°C"
+       }
+      ]
+     }
+    ],
+    "containedItem": [
+     {
+      "item": {
+       "reference": {
+        "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+       }
+      }
+     }
+    ]
+   }
+  ]
+ }
+}

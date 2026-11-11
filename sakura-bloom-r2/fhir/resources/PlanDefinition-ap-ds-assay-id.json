@@ -1,0 +1,87 @@
+{
+ "resourceType": "PlanDefinition",
+ "id": "ap-ds-assay-id",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8185b3e7f86c8f2b46e5"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-ds-assay-id",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> Core quality information (2.3.3.AP) for Analytical Procedures (Assay/ID) [Assay/Identification][Sakuramil].</p></div>"
+ },
+ "extension": [
+  {
+   "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-plan-document-reference-pq",
+   "valueReference": {
+    "reference": "DocumentReference/doc-ds-assay-id-3-2-ap"
+   }
+  },
+  {
+   "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-plan-document-reference-pq",
+   "valueReference": {
+    "reference": "DocumentReference/doc-ds-assay-id-2-3-4"
+   }
+  }
+ ],
+ "title": "Analytical Procedures (Assay/ID) [Assay/Identification][Sakuramil]",
+ "type": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+    "code": "analytical-procedure",
+    "display": "Analytical Procedure"
+   }
+  ],
+  "text": "Analytical Procedure"
+ },
+ "status": "active",
+ "subjectReference": {
+  "reference": "SubstanceDefinition/sakuramil"
+ },
+ "description": "Core quality information (2.3.3.AP) for Analytical Procedures (Assay/ID) [Assay/Identification][Sakuramil].",
+ "action": [
+  {
+   "title": "Technique",
+   "description": "High performance liquid chromatography"
+  },
+  {
+   "title": "Column",
+   "description": "Silica C18 3,5 µm 250x4.6 mm or equivalent"
+  },
+  {
+   "title": "System",
+   "description": "Isocratic with UV  detection"
+  },
+  {
+   "title": "Mobile phase",
+   "description": "Acetonitrile/buffer pH 5.0 (40/60)"
+  },
+  {
+   "title": "Flow rate",
+   "description": "1.0 ml/min"
+  },
+  {
+   "title": "Injection volume",
+   "description": "10 µl"
+  },
+  {
+   "title": "Detection",
+   "description": "251 nm"
+  },
+  {
+   "title": "Test solution",
+   "description": "0.1 mg/ml in acetonitrile/buffer pH 5.0 (40/60)"
+  },
+  {
+   "title": "Reference solution",
+   "description": "0.1 mg/ml CP-9 standard in acetonitrile/buffer pH 5.0 (40/60)"
+  },
+  {
+   "title": "System Suitability Criteria",
+   "description": "Theoretical plates > 3200 Precision (n=5) < 0.73 %"
+  }
+ ]
+}

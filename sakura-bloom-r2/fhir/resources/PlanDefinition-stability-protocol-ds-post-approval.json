@@ -1,0 +1,148 @@
+{
+ "resourceType": "PlanDefinition",
+ "id": "stability-protocol-ds-post-approval",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81039108f5376ab1096c"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/stability-protocol-ds-post-approval",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> At least one production batch per year placed on long-term stability; quality characteristics No.1-5.</p></div>"
+ },
+ "title": "Post-approval stability protocol - Sakuramil drug substance",
+ "type": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+    "code": "1244588",
+    "display": "Stability Study Protocol"
+   }
+  ],
+  "text": "Stability Study Protocol"
+ },
+ "status": "active",
+ "subjectReference": {
+  "reference": "SubstanceDefinition/sakuramil"
+ },
+ "description": "At least one production batch per year placed on long-term stability; quality characteristics No.1-5.",
+ "action": [
+  {
+   "title": "30 °C ± 2 °C / 75 % RH ± 5 % RH (long-term)",
+   "action": [
+    {
+     "title": "0 months",
+     "timingTiming": {
+      "repeat": {
+       "boundsRange": {
+        "low": {
+         "value": 0,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        },
+        "high": {
+         "value": 0,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        }
+       }
+      }
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ActivityDefinition/ts-ds-post-approval"
+    },
+    {
+     "title": "6 months",
+     "timingTiming": {
+      "repeat": {
+       "boundsRange": {
+        "low": {
+         "value": 6,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        },
+        "high": {
+         "value": 6,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        }
+       }
+      }
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ActivityDefinition/ts-ds-post-approval"
+    },
+    {
+     "title": "12 months",
+     "timingTiming": {
+      "repeat": {
+       "boundsRange": {
+        "low": {
+         "value": 12,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        },
+        "high": {
+         "value": 12,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        }
+       }
+      }
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ActivityDefinition/ts-ds-post-approval"
+    },
+    {
+     "title": "24 months",
+     "timingTiming": {
+      "repeat": {
+       "boundsRange": {
+        "low": {
+         "value": 24,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        },
+        "high": {
+         "value": 24,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        }
+       }
+      }
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ActivityDefinition/ts-ds-post-approval"
+    },
+    {
+     "title": "36 months",
+     "timingTiming": {
+      "repeat": {
+       "boundsRange": {
+        "low": {
+         "value": 36,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        },
+        "high": {
+         "value": 36,
+         "unit": "months",
+         "system": "http://unitsofmeasure.org",
+         "code": "mo"
+        }
+       }
+      }
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ActivityDefinition/ts-ds-post-approval"
+    }
+   ]
+  }
+ ]
+}

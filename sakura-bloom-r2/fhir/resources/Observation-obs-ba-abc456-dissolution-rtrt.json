@@ -1,0 +1,73 @@
+{
+ "resourceType": "Observation",
+ "id": "obs-ba-abc456-dissolution-rtrt",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+  ]
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Dissolution - Dissolution (RTRT dissolution model): 96 % (Medication/dp-abc456)</p></div>"
+ },
+ "status": "final",
+ "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-dissolution-rtrt",
+ "category": [
+  {
+   "text": "Dissolution"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "Dissolution",
+    "display": "Dissolution"
+   }
+  ],
+  "text": "Dissolution - Dissolution (RTRT dissolution model)"
+ },
+ "subject": {
+  "reference": "Medication/dp-abc456"
+ },
+ "performer": [
+  {
+   "reference": "Organization/dakina-analytica"
+  }
+ ],
+ "valueQuantity": {
+  "value": 96,
+  "unit": "%",
+  "system": "http://unitsofmeasure.org",
+  "code": "%"
+ },
+ "interpretation": [
+  {
+   "text": "Complies"
+  }
+ ],
+ "component": [
+  {
+   "code": {
+    "text": "Minimum"
+   },
+   "valueQuantity": {
+    "value": 94,
+    "unit": "%",
+    "system": "http://unitsofmeasure.org",
+    "code": "%"
+   }
+  },
+  {
+   "code": {
+    "text": "Maximum"
+   },
+   "valueQuantity": {
+    "value": 100,
+    "unit": "%",
+    "system": "http://unitsofmeasure.org",
+    "code": "%"
+   }
+  }
+ ]
+}

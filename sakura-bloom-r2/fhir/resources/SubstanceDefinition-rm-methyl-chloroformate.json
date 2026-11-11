@@ -1,0 +1,35 @@
+{
+ "resourceType": "SubstanceDefinition",
+ "id": "rm-methyl-chloroformate",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81e2b2ecf108539b58ea"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Methyl Chloroformate</p></div>"
+ },
+ "status": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/publication-status",
+    "code": "active",
+    "display": "Active"
+   }
+  ],
+  "text": "Active"
+ },
+ "classification": [
+  {
+   "text": "Raw material (reagent/solvent/catalyst) for Sakuramil synthesis"
+  }
+ ],
+ "name": [
+  {
+   "name": "Methyl Chloroformate",
+   "preferred": true
+  }
+ ]
+}

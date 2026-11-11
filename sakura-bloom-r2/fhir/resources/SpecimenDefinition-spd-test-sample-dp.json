@@ -1,0 +1,28 @@
+{
+ "resourceType": "SpecimenDefinition",
+ "id": "spd-test-sample-dp",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SpecimenDefinition-drug-pq"
+  ]
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/SpecimenDefinition/spd-test-sample-dp",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SpecimenDefinition</b> spd-test-sample-dp</p></div>"
+ },
+ "status": "active",
+ "title": "Drug product test sample",
+ "typeCollected": {
+  "text": "Sakura Bloom 20 mg film-coated tablets (or uncoated tablet cores for RTRT)"
+ },
+ "typeTested": [
+  {
+   "preference": "preferred",
+   "type": {
+    "text": "Film-coated tablets"
+   },
+   "isDerived": false
+  }
+ ]
+}

@@ -1,0 +1,64 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-cc-ds-ldpe-bag-thickness",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81039108f5376ab1096c"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-cc-ds-ldpe-bag-thickness",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Dimensions - Thickness: 100 µm ± 13 %</p></div>"
+ },
+ "title": "Thickness",
+ "status": "active",
+ "category": [
+  {
+   "text": "Dimensions"
+  }
+ ],
+ "code": {
+  "text": "Dimensions - Thickness"
+ },
+ "permittedDataType": [
+  "Quantity"
+ ],
+ "method": {
+  "text": "Thickness gauge"
+ },
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "100 µm ± 13 %"
+    },
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-target-pq",
+     "valueQuantity": {
+      "value": 100,
+      "unit": "µm",
+      "system": "http://unitsofmeasure.org",
+      "code": "um"
+     }
+    }
+   ],
+   "range": {
+    "low": {
+     "value": 87,
+     "unit": "µm",
+     "system": "http://unitsofmeasure.org",
+     "code": "um"
+    },
+    "high": {
+     "value": 113,
+     "unit": "µm",
+     "system": "http://unitsofmeasure.org",
+     "code": "um"
+    }
+   }
+  }
+ ]
+}

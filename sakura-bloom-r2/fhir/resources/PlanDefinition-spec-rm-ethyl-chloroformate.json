@@ -1,0 +1,72 @@
+{
+ "resourceType": "PlanDefinition",
+ "id": "spec-rm-ethyl-chloroformate",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc811e8d43c8d7ec663804"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-rm-ethyl-chloroformate",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> spec-rm-ethyl-chloroformate</p></div>"
+ },
+ "title": "Specification of raw material Ethyl chloroformate",
+ "type": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+    "code": "1244577",
+    "display": "Specification Protocol"
+   }
+  ],
+  "text": "Specification Protocol"
+ },
+ "status": "active",
+ "subjectReference": {
+  "reference": "SubstanceDefinition/rm-ethyl-chloroformate"
+ },
+ "action": [
+  {
+   "title": "Release and re-test",
+   "code": {
+    "text": "Timing Group"
+   },
+   "action": [
+    {
+     "title": "Description (visual)",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-ethyl-chloroformate-description-visual",
+     "description": "Method: Visual"
+    },
+    {
+     "title": "Identification (GC)",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-ethyl-chloroformate-identification-gc",
+     "description": "Method: GC USP <621>"
+    },
+    {
+     "title": "Phosgene (limit test)",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-ethyl-chloroformate-phosgene-limit-test",
+     "description": "Method: Titration USP <921>"
+    },
+    {
+     "title": "Assay (GC)",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-ethyl-chloroformate-assay-gc",
+     "description": "Method: GC In-house"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,48 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-rs-cp-9-identification-standard-appearance",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81a09f43cef28b653844"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rs-cp-9-identification-standard-appearance",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Description - Appearance: White solid</p></div>"
+ },
+ "title": "Appearance",
+ "status": "active",
+ "category": [
+  {
+   "text": "Description"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "DESC",
+    "display": "Description"
+   }
+  ],
+  "text": "Description - Appearance"
+ },
+ "permittedDataType": [
+  "string"
+ ],
+ "method": {
+  "text": "visual evaluation"
+ },
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "White solid"
+    }
+   ]
+  }
+ ]
+}

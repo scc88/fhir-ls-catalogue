@@ -1,0 +1,66 @@
+{
+ "resourceType": "SubstanceDefinition",
+ "id": "cp-9-1",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc815fba60f328a2f5fc27"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> CP-9-1</p></div>"
+ },
+ "status": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/publication-status",
+    "code": "active",
+    "display": "Active"
+   }
+  ],
+  "text": "Active"
+ },
+ "classification": [
+  {
+   "text": "Specified impurity / degradation product (ethyl homolog of Sakuramil)"
+  }
+ ],
+ "description": "Specified impurity / degradation product (ethyl homolog of Sakuramil)",
+ "molecularWeight": [
+  {
+   "amount": {
+    "value": 628.52,
+    "unit": "g/mol",
+    "system": "http://unitsofmeasure.org",
+    "code": "g/mol"
+   }
+  }
+ ],
+ "structure": {
+  "molecularFormula": "C28H29F9N2O4",
+  "representation": [
+   {
+    "type": {
+     "text": "IUPAC name"
+    },
+    "representation": "Propan-2-yl (2S,4S)-4-[acetyl-[[3,5-bis(trifluoromethyl)phenyl]methyl]amino]-2-ethoxy-2-methyl-6-(trifluoromethyl)-3,4-dihydroquinoline-1-carboxylate"
+   }
+  ]
+ },
+ "name": [
+  {
+   "name": "CP-9-1",
+   "type": {
+    "text": "Company code"
+   },
+   "preferred": true
+  },
+  {
+   "name": "Propan-2-yl (2S,4S)-4-[acetyl-[[3,5-bis(trifluoromethyl)phenyl]methyl]amino]-2-ethoxy-2-methyl-6-(trifluoromethyl)-3,4-dihydroquinoline-1-carboxylate",
+   "type": {
+    "text": "IUPAC chemical name"
+   }
+  }
+ ]
+}

@@ -1,0 +1,77 @@
+{
+ "resourceType": "PlanDefinition",
+ "id": "ap-cp-8-assay",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81ada898cd76599debe0"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-cp-8-assay",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> Core quality information (2.3.3.AP) for Analytical Procedures (Assay SM2) [Assay][CP-8].</p></div>"
+ },
+ "title": "Analytical Procedures (Assay SM2) [Assay][CP-8]",
+ "type": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+    "code": "analytical-procedure",
+    "display": "Analytical Procedure"
+   }
+  ],
+  "text": "Analytical Procedure"
+ },
+ "status": "active",
+ "subjectReference": {
+  "reference": "SubstanceDefinition/cp-8"
+ },
+ "description": "Core quality information (2.3.3.AP) for Analytical Procedures (Assay SM2) [Assay][CP-8].",
+ "action": [
+  {
+   "title": "Technique",
+   "description": "High performance liquid chromatography"
+  },
+  {
+   "title": "Column",
+   "description": "Silica C18 3,5 µm 250x4.6 mm or equivalent"
+  },
+  {
+   "title": "System",
+   "description": "isocratic with UV detection"
+  },
+  {
+   "title": "Mobile phase",
+   "description": "Acetonitrile/phosphate buffer (40:60)"
+  },
+  {
+   "title": "Flow rate",
+   "description": "1.0 ml/min"
+  },
+  {
+   "title": "Injection volume",
+   "description": "10 µl"
+  },
+  {
+   "title": "Detection",
+   "description": "UV, 230 nm"
+  },
+  {
+   "title": "Test solution",
+   "description": "Approximately 1.0 mg/ml of sample to be examined in diluent (acentonitrile:phosphate buffer(1:4))"
+  },
+  {
+   "title": "Reference solution",
+   "description": "Approximately 1.0 mg/mg of CP-8 standard in diluent."
+  },
+  {
+   "title": "System Suitability Criteria",
+   "description": "Theoretical plates > 3200 Reproducibility (n=5) < 0.73 %                                        RSD <1.0%"
+  },
+  {
+   "title": "Calculation",
+   "description": "The content of CP-8 is calculated according to the following formula: (Am*Cs/As*Cm)*V Am =   Peak area value of CP-8 in the test solution As =   Peak area value of CP-8 in the reference solution Cs =   Weight of CP-8 (mg) in the reference solution Cm =   Weight of CP-8 (mg) in the test solution V =     Assay of CP-8 standard, in % Report the result “as is”."
+  }
+ ]
+}

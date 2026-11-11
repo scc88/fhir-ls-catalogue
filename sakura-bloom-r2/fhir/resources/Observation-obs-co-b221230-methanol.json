@@ -1,0 +1,39 @@
+{
+ "resourceType": "Observation",
+ "id": "obs-co-b221230-methanol",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+  ]
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Residual solvents - Residual solvent Methanol (ICH Q3C class 2): &lt; LOQ (Substance/ds-b221230)</p></div>"
+ },
+ "status": "final",
+ "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-carryover-methanol",
+ "category": [
+  {
+   "text": "Residual solvents"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "SOL",
+    "display": "Residual solvents"
+   }
+  ],
+  "text": "Residual solvents - Residual solvent Methanol (ICH Q3C class 2)"
+ },
+ "subject": {
+  "reference": "Substance/ds-b221230"
+ },
+ "performer": [
+  {
+   "reference": "Organization/iroha-corp"
+  }
+ ],
+ "valueString": "< LOQ"
+}

@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Structured CMC Review – Sakura Bloom</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* One light design language merging three directions:
+   Keynote (editorial overview), Cards (grouped working views), Pro (sidebar + inspector layout).
+   Light only by design: no dark theme. */
+:root {
+  --bg: #f5f5f7;
+  --surface: #ffffff;
+  --ink: #1d1d1f;
+  --muted: #6e6e73;
+  --line: #d2d2d7;
+  --sep: #e5e5ea;
+  --fill: #f2f2f7;
+  --accent: #0071e3;
+  --accent-soft: #eaf3fe;
+  --ok: #248a3d; --ok-soft: #e8f7ec;
+  --warn: #b25000; --warn-soft: #fff3e0;
+  --bad: #d70015; --bad-soft: #ffeceb;
+  --info-soft: #f2f2f7;
+  --c1: #0071e3; --c2: #ff9500; --c3: #5e5ce6; --c4: #34c759;
+  --font-display: "Inter", -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Inter", -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --radius: 12px;
+  --radius-card: 20px;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body { background: var(--bg); color: var(--ink); font: 15px/1.5 var(--font-body); -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+h1 { font-size: 21px; } h2 { font-size: 28px; } h3 { font-size: 17px; font-weight: 600; letter-spacing: 0; }
+button, select, input { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid rgba(0,113,227,.45); outline-offset: 2px; border-radius: 6px; }
+.mono { font-family: var(--font-mono); font-size: 12.5px; }
+.num { font-variant-numeric: tabular-nums; }
+.muted { color: var(--muted); }
+.app { display: grid; grid-template-rows: auto 1fr; height: 100%; }
+
+/* top bar: one slim row */
+header.top { display: flex; align-items: center; gap: 14px; height: 52px; padding: 0 16px; background: rgba(255,255,255,.85); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid var(--sep); position: relative; z-index: 20; }
+.pane-toggle { width: 36px; height: 36px; display: grid; place-items: center; border: 0; background: none; border-radius: 9px; cursor: pointer; color: var(--muted); }
+.pane-toggle:hover { background: var(--fill); color: var(--ink); }
+.brand { display: flex; align-items: center; gap: 10px; }
+.logo { display: inline-flex; align-items: center; padding-right: 12px; border-right: 1px solid var(--line, #d2d2d7); }
+.logo img { height: 26px; width: auto; display: block; }
+.brand-text { display: flex; flex-direction: column; line-height: 1.15; }
+.brand-text b { font-size: 16px; font-weight: 700; letter-spacing: -0.01em; }
+.brand-text small { font-size: 11.5px; color: var(--muted); }
+.backlink { font-size: 12px; margin-left: 8px; }
+.vh { position: absolute; left: -9999px; }
+.search { margin-left: auto; position: relative; flex: 0 1 360px; min-width: 180px; }
+.search input { width: 100%; padding: 8px 14px; border: 0; border-radius: 10px; background: var(--fill); }
+.search ul { position: absolute; right: 0; left: 0; top: calc(100% + 6px); z-index: 30; margin: 0; padding: 6px; list-style: none; background: var(--surface); border-radius: 14px; max-height: 380px; overflow: auto; box-shadow: 0 12px 40px rgba(0,0,0,.14), 0 0 0 1px rgba(0,0,0,.04); }
+.search li button { width: 100%; text-align: left; background: none; border: 0; padding: 8px 10px; border-radius: 8px; cursor: pointer; }
+.search li button:hover, .search li button:focus-visible { background: var(--accent-soft); }
+/* left pane: product + views, collapsible */
+.pane { width: 252px; overflow: auto; background: rgba(246,246,248,.92); border-right: 1px solid var(--sep); padding: 14px 10px 16px; display: flex; flex-direction: column; gap: 6px; transition: width .2s ease, padding .2s ease; }
+.app.pane-closed .pane { width: 0; padding-left: 0; padding-right: 0; border-right: 0; overflow: hidden; }
+@media (prefers-reduced-motion: reduce) { .pane { transition: none; } }
+.pane-label { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; padding: 8px 10px 4px; }
+.product { background: var(--surface); border-radius: 14px; padding: 4px 4px 10px; margin-bottom: 6px; }
+.prod-name { display: block; width: 100%; text-align: left; border: 0; background: none; padding: 2px 10px 8px; font-size: 15px; font-weight: 700; line-height: 1.3; cursor: pointer; color: var(--ink); border-radius: 8px; }
+.prod-name:hover { color: var(--accent); }
+.product dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 10px; margin: 0; padding: 0 10px; font-size: 12.5px; }
+.product dt { color: var(--muted); } .product dd { margin: 0; font-weight: 500; }
+.tabs { display: flex; flex-direction: column; gap: 2px; }
+.tabs a { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 9px; color: var(--ink); font-size: 14px; text-decoration: none; white-space: nowrap; }
+.tabs a svg { color: var(--accent); flex: none; }
+.tabs a:hover { background: rgba(0,0,0,.05); text-decoration: none; }
+.tabs a[aria-current="page"] { background: var(--accent); color: #ffffff; font-weight: 600; }
+.tabs a[aria-current="page"] svg { color: #ffffff; }
+.pane-foot { margin: auto 10px 0; padding-top: 14px; font-size: 11.5px; color: var(--muted); line-height: 1.45; }
+.workspace { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; min-height: 0; }
+main { overflow: auto; padding: 28px 32px 48px; min-width: 0; }
+main > * { max-width: 1600px; margin-left: auto; margin-right: auto; }
+.view-head { display: flex; flex-direction: column; gap: 6px; margin-bottom: 22px; }
+.view-head h2 { font-size: 34px; font-weight: 800; }
+.view-head p { margin: 0; color: var(--muted); max-width: 72ch; font-size: 17px; }
+
+/* cards: grouped, Cards style */
+.grid { display: grid; gap: 16px; }
+.g2 { grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); }
+.g3 { grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); }
+.card { background: var(--surface); border-radius: var(--radius-card); padding: 20px 22px; min-width: 0; }
+.card h3 { margin-bottom: 10px; }
+.card.accent { box-shadow: inset 0 0 0 2px var(--accent-soft); }
+.kv { display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; margin: 0; }
+.kv dt { color: var(--muted); } .kv dd { margin: 0; }
+.chip { display: inline-flex; align-items: center; gap: 4px; padding: 3px 11px; border-radius: 980px; font-size: 13px; border: 0; background: var(--fill); color: var(--ink); white-space: nowrap; font-weight: 500; }
+button.chip, a.chip { cursor: pointer; text-decoration: none; }
+button.chip:hover { background: var(--accent-soft); color: var(--accent); }
+.chip.ok { background: var(--ok-soft); color: var(--ok); font-weight: 600; }
+.chip.near { background: var(--warn-soft); color: var(--warn); font-weight: 600; }
+.chip.fail { background: var(--bad-soft); color: var(--bad); font-weight: 600; }
+.chip.info { background: var(--fill); color: var(--muted); }
+.chip.type { font-family: var(--font-mono); font-size: 11px; background: var(--accent-soft); color: var(--accent); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+table.t { width: 100%; border-collapse: collapse; font-size: 14px; }
+table.t th { text-align: left; font-weight: 600; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .03em; border-bottom: 1px solid var(--sep); padding: 8px 10px; position: sticky; top: 0; background: var(--surface); }
+table.t td { border-bottom: 1px solid var(--sep); padding: 10px; vertical-align: top; }
+table.t tr:last-child td { border-bottom: 0; }
+table.t tr.click { cursor: pointer; } table.t tr.click:hover td { background: var(--accent-soft); }
+.scroll { overflow-x: auto; }
+.btn { border: 0; background: var(--fill); padding: 9px 18px; border-radius: 980px; cursor: pointer; font-size: 15px; color: var(--ink); }
+.btn:hover { background: var(--accent-soft); color: var(--accent); }
+.btn.primary { background: var(--accent); color: #ffffff; }
+.btn.primary:hover { background: #0077ed; color: #ffffff; }
+.seg { display: inline-flex; background: #e3e3e8; border-radius: 10px; padding: 2px; }
+.seg button { border: 0; background: transparent; padding: 6px 14px; cursor: pointer; border-radius: 8px; font-size: 14px; }
+.seg button[aria-pressed="true"] { background: var(--surface); font-weight: 600; box-shadow: 0 1px 3px rgba(0,0,0,.12); }
+.controls { display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: center; margin-bottom: 16px; }
+.controls label { display: inline-flex; gap: 6px; align-items: center; color: var(--muted); font-size: 14px; }
+.controls select, .controls input[type=number] { padding: 8px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); color: var(--ink); max-width: 440px; }
+.big { font-family: var(--font-display); font-size: 34px; font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; }
+.statrow { display: flex; flex-wrap: wrap; gap: 12px 32px; }
+.stat small { display: block; color: var(--muted); font-size: 13px; }
+.note { font-size: 13px; color: var(--muted); }
+
+/* overview: Keynote style */
+.hero { text-align: center; padding: 56px 16px 40px; }
+.hero .eyebrow { margin: 0 0 12px; font-size: 19px; font-weight: 600; color: var(--accent); }
+.hero h2 { font-size: clamp(40px, 6vw, 72px); line-height: 1.05; font-weight: 800; letter-spacing: -0.02em; }
+.hero p.lede { margin: 20px auto 0; max-width: 640px; font-size: 21px; line-height: 1.45; color: var(--muted); }
+.hero .ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 28px; }
+.bignums { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; text-align: center; padding: 8px 0 40px; }
+.bignums .n { font-size: 52px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.05; font-variant-numeric: tabular-nums; }
+.bignums .l { color: var(--muted); font-size: 15px; }
+.section-title { font-size: 40px; font-weight: 800; text-align: center; margin: 24px 0 6px; }
+.section-sub { text-align: center; color: var(--muted); font-size: 19px; margin: 0 auto 24px; max-width: 640px; }
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 40px; }
+.compare > div { padding: 32px; min-width: 0; border-radius: 28px; }
+.compare .pdf { background: #e8e8ed; }
+.compare .fhir { background: var(--surface); box-shadow: 0 0 0 2px var(--accent) inset; }
+.compare h3 { font-size: 26px; font-weight: 800; line-height: 1.15; margin: 4px 0 16px; }
+.compare .label { font-size: 13px; font-weight: 600; color: var(--muted); }
+.compare .fhir .label { color: var(--accent); }
+.doclist { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 6px; font-size: 14px; }
+.doclist li { display: flex; gap: 10px; align-items: baseline; }
+.doclist li::before { content: "PDF"; font-family: var(--font-mono); font-size: 10px; font-weight: 500; color: var(--bad); background: var(--bad-soft); border-radius: 4px; padding: 1px 5px; flex: none; }
+.q { font-weight: 600; margin: 0 0 6px; }
+.asklist { background: var(--surface); border-radius: var(--radius-card); overflow: hidden; }
+.asklist button { display: flex; width: 100%; align-items: center; gap: 14px; padding: 15px 20px; background: none; border: 0; border-bottom: 1px solid var(--sep); text-align: left; cursor: pointer; font-size: 15px; }
+.asklist button:last-child { border-bottom: 0; }
+.asklist button:hover { background: var(--accent-soft); }
+.asklist .hint { color: var(--muted); font-size: 14px; margin-left: auto; }
+.asklist .chev { color: #c7c7cc; font-size: 20px; }
+
+/* CTD navigator: Pro layout, light */
+.ctd { display: grid; grid-template-columns: minmax(240px, 300px) 1fr; gap: 16px; align-items: start; }
+.tree { position: sticky; top: 0; max-height: calc(100vh - 110px); overflow: auto; padding: 10px; }
+.tree ul { list-style: none; margin: 0; padding-left: 0; }
+.tree button { display: flex; justify-content: space-between; gap: 6px; width: 100%; text-align: left; border: 0; background: none; padding: 5px 8px; border-radius: 8px; cursor: pointer; font-size: 13px; color: var(--ink); }
+.tree button[aria-current="true"] { background: var(--accent); color: #ffffff; font-weight: 600; }
+.tree button[aria-current="true"] .n { color: #ffffff; opacity: .85; }
+.tree button:hover { background: var(--fill); }
+.tree button[aria-current="true"]:hover { background: var(--accent); }
+.tree .n { color: var(--muted); font-family: var(--font-mono); font-size: 10.5px; }
+.narr { max-width: 100ch; }
+.narr table { border-collapse: collapse; font-size: 13px; margin: 10px 0 16px; display: block; overflow-x: auto; }
+.narr table { border: 0; }
+.narr td { border: 0; border-bottom: 1px solid var(--sep); padding: 6px 8px; vertical-align: top; }
+.narr tr:first-child td { background: var(--fill); font-weight: 600; }
+.narr h3, .narr h4, .narr h5, .narr h6 { margin: 18px 0 6px; font-size: 17px; }
+.narr p { margin: 6px 0; max-width: 80ch; line-height: 1.6; }
+.linked { background: var(--accent-soft); border-radius: 14px; padding: 12px 14px; margin-bottom: 16px; }
+
+/* control strategy */
+.cs td.cqa { font-weight: 600; }
+.cs .chip { white-space: normal; text-align: left; border-radius: 12px; max-width: 260px; }
+.cs td { min-width: 120px; }
+.ctype { font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+
+/* charts */
+svg text { fill: var(--muted); font-family: var(--font-body); font-size: 12px; }
+svg .grid line { stroke: var(--sep); }
+svg .limit { stroke: var(--warn); stroke-dasharray: 6 5; stroke-width: 2; }
+svg .limittext { fill: var(--warn); font-weight: 600; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--muted); margin-top: 8px; }
+.legend i { display: inline-block; width: 18px; height: 3px; margin-right: 6px; vertical-align: middle; border-radius: 2px; }
+
+/* process */
+.steps { display: grid; gap: 12px; }
+.step { display: grid; grid-template-columns: 36px 1fr; gap: 12px; }
+.step .dot { width: 32px; height: 32px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; font-weight: 700; }
+.step.crit .dot { background: var(--warn-soft); color: var(--warn); }
+.ctl { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 8px; margin-top: 10px; }
+.ctl button { text-align: left; border: 0; border-radius: 14px; background: var(--fill); padding: 10px 12px; cursor: pointer; }
+.ctl button:hover { background: var(--accent-soft); }
+.ctl .k { font-family: var(--font-mono); font-size: 10.5px; font-weight: 500; }
+.ctl .cpp .k { color: var(--warn); }
+.ctl .ipc .k { color: var(--accent); }
+
+/* inspector: Pro style, light */
+aside.insp { width: 0; overflow: hidden; border-left: 1px solid var(--sep); background: var(--surface); transition: width .2s ease; }
+aside.insp.open { width: min(460px, 92vw); overflow: auto; }
+@media (prefers-reduced-motion: reduce) { aside.insp { transition: none; } }
+.insp-in { padding: 20px; display: grid; gap: 14px; }
+.insp-head { display: flex; gap: 8px; align-items: flex-start; justify-content: space-between; }
+.insp pre { background: #f7f7f9; border-radius: 12px; padding: 12px; overflow: auto; max-height: 420px; font-size: 11.5px; margin: 0; color: #3a3a3c; }
+details summary { cursor: pointer; color: var(--accent); font-weight: 600; }
+.bar { height: 8px; background: var(--sep); border-radius: 4px; position: relative; min-width: 80px; }
+.bar span { position: absolute; top: 0; bottom: 0; border-radius: 4px; background: var(--ok); }
+.backlink { color: var(--accent); }
+@media (max-width: 860px) {
+  main { padding: 20px 16px 40px; }
+  .ctd { grid-template-columns: 1fr; } .tree { position: static; max-height: 260px; }
+  .compare { grid-template-columns: 1fr; }
+  aside.insp.open { position: fixed; inset: 0 0 0 auto; z-index: 40; width: 100vw; }
+  .pane { position: fixed; top: 52px; bottom: 0; left: 0; z-index: 35; box-shadow: 8px 0 30px rgba(0,0,0,.12); }
+  .brand-text small, .backlink { display: none; }
+}
+
+/* post-NOC intake */
+.chip.lvl4 { background: #e8f7ec; color: #1d7a36; font-weight: 600; }
+.chip.lvl3 { background: #eaf3fe; color: #0060c0; font-weight: 600; }
+.chip.lvl2 { background: var(--fill); color: var(--muted); }
+.chip.lvl1 { background: #ffeceb; color: #c4000f; font-weight: 600; }
+.pipeline { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; padding: 0; margin: 0 0 16px; counter-reset: p; }
+.pipeline li { background: var(--surface); border-radius: 14px; padding: 10px 14px; display: flex; flex-direction: column; position: relative; counter-increment: p; }
+.pipeline li::before { content: counter(p); position: absolute; top: 10px; right: 12px; font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+.pipeline b { font-size: 14px; } .pipeline span { font-size: 12.5px; color: var(--muted); }
+.pipeline li b::before { content: "✓ "; color: var(--ok); }
+.grad-wrap { position: relative; padding-top: 4px; }
+.grad { position: relative; height: 12px; border-radius: 6px; background: linear-gradient(90deg, #34c759 0%, #a8d84e 18%, #ffcc00 42%, #ff9500 66%, #ff3b30 100%); }
+.grad-wrap.big .grad { height: 16px; border-radius: 8px; }
+.grad-mark { position: absolute; top: 50%; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; background: var(--surface); box-shadow: 0 0 0 2px var(--ink); opacity: .55; }
+.grad-mark.sel { width: 20px; height: 20px; margin: -10px 0 0 -10px; opacity: 1; box-shadow: 0 0 0 3px var(--ink), 0 2px 8px rgba(0,0,0,.25); }
+.grad-zones { display: flex; margin-top: 8px; font-size: 12px; font-weight: 600; }
+.grad-zones span { border-left: 1px solid var(--line); padding-left: 6px; line-height: 1.25; }
+.grad-zones small { font-weight: 400; color: var(--muted); }
+.grad-ends { display: flex; justify-content: space-between; font-size: 11.5px; color: var(--muted); margin-top: 4px; }
+.intake { display: grid; grid-template-columns: minmax(260px, 340px) minmax(0, 1fr); gap: 16px; align-items: start; }
+.inbox { display: flex; flex-direction: column; gap: 8px; position: sticky; top: 0; }
+.inbox-item { display: flex; flex-direction: column; gap: 6px; text-align: left; border: 0; background: var(--surface); border-radius: 16px; padding: 12px 14px; cursor: pointer; }
+.inbox-item:hover { box-shadow: 0 0 0 2px var(--accent-soft) inset; }
+.inbox-item.sel { box-shadow: 0 0 0 2px var(--accent) inset; }
+.ib-top, .ib-bot { display: flex; align-items: center; gap: 8px; font-size: 12px; }
+.ib-top { justify-content: space-between; }
+.mini { flex: 1; height: 6px; border-radius: 3px; background: var(--sep); position: relative; overflow: hidden; }
+.mini span { position: absolute; inset: 0 auto 0 0; background: linear-gradient(90deg, #34c759, #ffcc00, #ff9500, #ff3b30); background-size: 340px 100%; border-radius: 3px; }
+.view-head.full p { max-width: none; }
+.crumbs { display: flex; gap: 14px; align-items: baseline; margin: -28px 0 6px; padding: 30px 0 10px; font-size: 14px; position: sticky; top: -28px; z-index: 6; background: var(--bg); box-shadow: 0 1px 0 var(--line, #d2d2d7); }
+.crumbs a { color: var(--accent); text-decoration: none; font-weight: 600; }
+.inbox { max-height: calc(100vh - 170px); overflow-y: auto; padding: 2px; top: 28px !important; }
+.queue tr.qrow { cursor: pointer; }
+.queue tr.qrow:hover td { background: var(--accent-soft); }
+.queue td.go { color: var(--accent); font-weight: 600; white-space: nowrap; text-align: right; }
+button.grad-mark { padding: 0; cursor: pointer; }
+button.grad-mark { border: 0; } button.grad-mark:hover, button.grad-mark:focus-visible { transform: scale(1.3); opacity: 1; }
+.detail { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.cat-card { box-shadow: inset 0 0 0 2px var(--sep); }
+.cat-card.lvl1 { box-shadow: inset 0 0 0 2px #ffb3ad; } .cat-card.lvl3 { box-shadow: inset 0 0 0 2px #b8d6fb; } .cat-card.lvl4 { box-shadow: inset 0 0 0 2px #b4e5c1; }
+.cat-level { font-size: 26px; font-weight: 800; letter-spacing: -0.01em; margin: 2px 0 6px; }
+.esc { background: var(--warn-soft); color: #7a3800; border-radius: 10px; padding: 8px 10px; font-size: 13.5px; margin: 0 0 10px; }
+.conds { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.conds li { display: grid; grid-template-columns: 150px 1fr; gap: 10px; align-items: start; font-size: 14px; }
+.conds .chip { justify-self: start; }
+@media (max-width: 860px) { .intake { grid-template-columns: 1fr; } .inbox { position: static; } .conds li { grid-template-columns: 1fr; } }
+.pn-diff{table-layout:fixed;width:100%}.pn-diff th:nth-child(1){width:34%}.pn-diff th:nth-child(2){width:36%}.pn-diff td{overflow-wrap:anywhere}.pn-diff td.mono{font-size:12px}.pn-diff td>*{white-space:normal;max-width:100%;text-align:left;height:auto}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <button type="button" class="pane-toggle" id="paneToggle" aria-controls="pane" aria-expanded="true" aria-label="Hide navigation pane">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16"/></svg>
+    </button>
+    <div class="brand">
+      <span class="logo" id="logo"><img src="data:image/png;base64,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" alt="HL7 FHIR" height="26"></span>
+      <span class="brand-text"><b>PQI</b><small>Structured CMC Review</small></span>
+    </div>
+    <!--BACKLINK-->
+    <div class="search">
+      <label for="q" class="vh">Search the dossier</label>
+      <input id="q" type="search" placeholder="Search tests, batches, materials, sections…" autocomplete="off">
+      <ul id="qres" hidden></ul>
+    </div>
+  </header>
+  <div class="workspace">
+    <nav class="pane" id="pane" aria-label="Dossier and views">
+      <div class="product" id="facts"></div>
+      <div class="pane-label">Review</div>
+      <div class="tabs" id="tabs"></div>
+      <p class="pane-foot">ICH M4Q(R2) Module 2.3 &amp; 3.2 as HL7 FHIR R5 PQI resources. Illustrative mock-up.</p>
+    </nav>
+    <main id="view" tabindex="-1"></main>
+    <aside class="insp" id="insp" aria-label="FHIR inspector"></aside>
+  </div>
+</div>
+<script type="application/json" id="fhir">__DATA__</script>
+<script type="application/json" id="sources">__SOURCES__</script>
+<script>__LOGIC__</script>
+<script>__POSTNOC__</script>
+<script>
+"use strict";
+const RES = JSON.parse(document.getElementById("fhir").textContent);
+const SRC = JSON.parse(document.getElementById("sources").textContent);
+const db = PQI.load(RES);
+const $ = (s, el = document) => el.querySelector(s);
+const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const get = (k) => db.byKey.get(k);
+const all = (t) => db.byType.get(t) || [];
+const T = PQI.ccText;
+const COLORS = ["var(--c1)", "var(--c2)", "var(--c3)", "var(--c4)"];
+
+// ---------- evaluation helpers
+const evalCache = new Map();
+function ev(o) { if (!evalCache.has(o.id)) evalCache.set(o.id, PQI.evaluate(db, o)); return evalCache.get(o.id); }
+const STATUS_LABEL = { pass: "Within limit", near: "Near limit", fail: "Out of limit", info: "Reported" };
+function chipStatus(s, text) { return `<span class="chip ${s}">${esc(text || STATUS_LABEL[s])}</span>`; }
+function refBtn(k, text, cls = "chip") { return `<button type="button" class="${cls}" data-open="${esc(k)}">${esc(text || PQI.label(get(k)))}</button>`; }
+function srcTitle(u) { return SRC[u] || u; }
+function critText(od, ctx) { const c = PQI.criterion(od, ctx); return c ? c.text : ""; }
+function odShort(od) { return od.title; }
+function subjLabel(r) { return r.resourceType === "Medication" ? PQI.label(r) : "DS batch " + PQI.label(r); }
+
+// ---------- header facts
+(function facts() {
+  const mpd = all("MedicinalProductDefinition")[0];
+  const sd = get("SubstanceDefinition/sakuramil");
+  const ch = (t) => (mpd.characteristic || []).find((c) => T(c.type) === t);
+  $("#facts").innerHTML = `<div class="pane-label">Product under review</div>
+    <button type="button" class="prod-name" data-open="MedicinalProductDefinition/${esc(mpd.id)}">${esc(mpd.name[0].productName)}</button>
+    <dl>${[
+    ["Dose form", T(mpd.combinedPharmaceuticalDoseForm)],
+    ["Strength", "20 mg Sakuramil (base)"],
+    ["Route", T(mpd.route[0])],
+    ["Max daily dose", ch("Maximum daily dose").valueQuantity.value + " mg"],
+    ["Packs", all("PackagedProductDefinition").length],
+    ["FHIR resources", RES.length.toLocaleString()],
+  ].map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("")}</dl>`;
+})();
+
+// ---------- routing
+const VIEWS = [
+  ["overview", "Overview", viewOverview],
+  ["ctd", "CTD navigator", viewCtd],
+  ["control-strategy", "Control strategy", viewControl],
+  ["specifications", "Specifications", viewSpecs],
+  ["batches", "Batches & genealogy", viewBatches],
+  ["stability", "Stability", viewStability],
+  ["process", "Manufacturing process", viewProcess],
+  ["trace", "Trace an attribute", viewTrace],
+  ["change-impact", "Change impact", viewImpact],
+  ["post-noc-intake", "Post-NOC intake", viewIntake],
+];
+const ICONS = {"post-noc-intake": "<path d=\"M4 13l2.5-8h11L20 13v6H4z\"/><path d=\"M4 13h5l1 2h4l1-2h5\"/>", "overview": "<path d=\"M4 13h6V4H4zM14 20h6V4h-6zM4 20h6v-4H4z\"/>", "ctd": "<path d=\"M6 3h9l4 4v14H6z\"/><path d=\"M9 12h7M9 16h5\"/>", "control-strategy": "<path d=\"M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z\"/><path d=\"M9 12l2 2 4-4\"/>", "specifications": "<path d=\"M9 6h11M9 12h11M9 18h11\"/><path d=\"M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2\"/>", "batches": "<circle cx=\"6\" cy=\"6\" r=\"2.5\"/><circle cx=\"18\" cy=\"6\" r=\"2.5\"/><circle cx=\"12\" cy=\"18\" r=\"2.5\"/><path d=\"M6 8.5v2l6 5M18 8.5v2l-6 5\"/>", "stability": "<path d=\"M4 19l5-6 4 3 7-9\"/><path d=\"M4 4v15h16\"/>", "process": "<path d=\"M4 6h16M4 12h10M4 18h7\"/>", "trace": "<circle cx=\"11\" cy=\"11\" r=\"6\"/><path d=\"M20 20l-4.5-4.5\"/>", "change-impact": "<path d=\"M12 4l9 16H3z\"/><path d=\"M12 10v4M12 17v.5\"/>"};
+$("#tabs").innerHTML = VIEWS.map(([id, t]) => `<a href="#${id}" data-v="${id}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[id] || ""}</svg><span>${esc(t)}</span></a>`).join("");
+(function pane() {
+  const btn = $("#paneToggle"), app = document.querySelector(".app");
+  const narrow = () => window.matchMedia("(max-width: 860px)").matches;
+  let open = !narrow();
+  try { const s = localStorage.getItem("pqi-pane"); if (s && !narrow()) open = s === "open"; } catch (e) {}
+  const apply = () => { app.classList.toggle("pane-closed", !open); btn.setAttribute("aria-expanded", String(open)); btn.setAttribute("aria-label", open ? "Hide navigation pane" : "Show navigation pane"); };
+  btn.addEventListener("click", () => { open = !open; apply(); try { localStorage.setItem("pqi-pane", open ? "open" : "closed"); } catch (e) {} });
+  $("#tabs").addEventListener("click", () => { if (narrow()) { open = false; apply(); } });
+  apply();
+})();
+const STATE = { ctdSection: null, spec: "spec-dp", stab: { prod: "DP", od: "od-dp-assay-hplc", pack: "all", cond: "25 °C / 60 % RH (long-term)" }, proc: "dp", trace: "CP-9-1", impact: null, batch: "ABC123" };
+function route() {
+  const [h, sub] = decodeURIComponent((location.hash || "#overview").slice(1)).split("/");
+  const v = VIEWS.find((x) => x[0] === h) || VIEWS[0];
+  document.querySelectorAll("#tabs a").forEach((a) => a.setAttribute("aria-current", a.dataset.v === v[0] ? "page" : "false"));
+  const main = $("#view");
+  main.innerHTML = "";
+  v[2](main, sub);
+  main.scrollTop = 0;
+}
+window.addEventListener("hashchange", route);
+function go(v) { if (location.hash === "#" + v) route(); else location.hash = v; }
+
+// ---------- global click delegation
+document.addEventListener("click", (e) => {
+  const o = e.target.closest("[data-open]");
+  if (o) { e.preventDefault(); openInspector(o.dataset.open); return; }
+  const g = e.target.closest("[data-go]");
+  if (g) {
+    e.preventDefault();
+    const [v, arg] = g.dataset.go.split("|");
+    if (v === "ctd" && arg) STATE.ctdSection = arg;
+    if (v === "specifications" && arg) STATE.spec = arg;
+    if (v === "trace" && arg) STATE.trace = arg;
+    if (v === "stability" && arg) { const [prod, od] = arg.split(":"); STATE.stab.prod = prod; STATE.stab.od = od; STATE.stab.cond = prod === "DP" ? "25 °C / 60 % RH (long-term)" : "30 ± 2 °C / 75 ± 5 % RH"; }
+    if (v === "change-impact" && arg) STATE.impact = arg;
+    go(v);
+  }
+});
+
+// =====================================================================================
+// Overview
+function viewOverview(el) {
+  const obs = all("Observation");
+  const counts = { pass: 0, near: 0, fail: 0, info: 0 };
+  obs.forEach((o) => counts[ev(o).status]++);
+  const ranked = obs.map((o) => ({ o, e: ev(o) })).filter((x) => x.e.margin != null && x.o.valueQuantity && !x.o.valueQuantity.comparator).sort((a, b) => a.e.margin - b.e.margin).slice(0, 5);
+  const od = get("ObservationDefinition/od-dp-degradation-cp-9-1");
+  const rs = PQI.resultsFor(db, od.id);
+  const maxR = rs.filter((r) => r.obs.valueQuantity).sort((a, b) => b.obs.valueQuantity.value - a.obs.valueQuantity.value)[0];
+  const involved = new Set(["ObservationDefinition/" + od.id]);
+  rs.forEach((r) => { if (r.report) involved.add("DiagnosticReport/" + r.report.id); });
+  const ap = db.apOf.get(od.id); if (ap) involved.add("PlanDefinition/" + ap.id);
+  const docs = [...PQI.sourcesOf(db, involved)].map(srcTitle);
+  const sd = get("SubstanceDefinition/sakuramil");
+  const mpd = all("MedicinalProductDefinition")[0];
+  const specs = all("PlanDefinition").filter((p) => p.id.startsWith("spec-")).length;
+  const sections = countSections();
+  const ctx = (x) => { const si = PQI.specimenInfo(db, x.o); return subjLabel(get(x.o.subject.reference)) + (si ? " · " + si.condition.replace(/ \(.*\)/, "") + " · " + si.months + " mo" : ""); };
+  el.innerHTML = `
+  <section class="hero">
+    <p class="eyebrow">For quality assessors at FDA, Health Canada, PMDA, HSA, EMA and TGA</p>
+    <h2>Review the dossier.<br>Not the documents.</h2>
+    <p class="lede">CTD Module 2.3 and 3.2 for Sakura Bloom 20 mg, delivered as ${RES.length.toLocaleString()} linked HL7 FHIR PQI resources. Every limit knows its method. Every result knows its limit.</p>
+    <div class="ctas"><button class="btn primary" data-go="ctd">Start reviewing</button><button class="btn" data-go="trace|CP-9-1">See how it compares to PDF</button></div>
+  </section>
+  <div class="bignums">
+    <div><div class="n">${RES.length.toLocaleString()}</div><div class="l">linked FHIR resources</div></div>
+    <div><div class="n">${obs.length.toLocaleString()}</div><div class="l">results checked against their limit</div></div>
+    <div><div class="n" style="color:${counts.fail ? "var(--bad)" : "var(--ok)"}">${counts.fail}</div><div class="l">out of limit</div></div>
+    <div><div class="n">${specs}</div><div class="l">specifications, as data</div></div>
+  </div>
+  <h2 class="section-title">One question. Two ways.</h2>
+  <p class="section-sub">Has any drug-product CP-9-1 result come close to its shelf-life limit?</p>
+  <div class="compare">
+    <div class="pdf"><span class="label">Today · PDF and DOCX</span><h3>Open ${docs.length} documents.<br>Copy ${rs.length} numbers.</h3>
+      <p class="muted" style="margin:0">Find the limit in one, the method in another, then transcribe results from batch-analysis and stability tables for two packs:</p>
+      <ul class="doclist">${docs.map((d) => `<li>${esc(d)}</li>`).join("")}</ul></div>
+    <div class="fhir"><span class="label">With FHIR PQI</span><h3>Ask once.<br>Get the answer with its sources.</h3>
+      <div class="statrow" style="margin:6px 0 14px">
+        <div class="stat"><span class="big num">${rs.length}</span><small>results found</small></div>
+        <div class="stat"><span class="big num">${esc(PQI.valueText(maxR.obs))}</span><small>highest · ${esc(subjLabel(maxR.subject))}${maxR.si ? ", " + maxR.si.months + " mo" : ""}</small></div>
+        <div class="stat"><span class="big num">${esc(critText(od, "Shelf-life").replace("Not more than", "≤ "))}</span><small>shelf-life limit</small></div>
+      </div>
+      <p class="muted" style="margin:0 0 16px">The limit, its procedure (${esc(ap ? ap.title.replace("Analytical Procedures ", "") : "")}) and every result are linked, so the answer traces back to source.</p>
+      <div class="chips"><button class="btn primary" data-go="trace|CP-9-1">Trace CP-9-1 everywhere</button><button class="btn" data-go="stability|DP:od-dp-degradation-cp-9-1">See the stability trend</button></div></div>
+  </div>
+  <div class="grid g2" style="margin-bottom:16px;align-items:start">
+    <div><h3 style="font-size:22px;margin:0 0 10px">Ask the dossier</h3><div class="asklist">
+      <button type="button" data-go="control-strategy"><span>Which controls assure each critical quality attribute?</span><span class="hint">Control strategy</span><span class="chev" aria-hidden="true">›</span></button>
+      <button type="button" data-go="batches"><span>Which drug-substance batches went into ABC456?</span><span class="hint">Genealogy</span><span class="chev" aria-hidden="true">›</span></button>
+      <button type="button" data-go="stability"><span>Does the 36-month shelf life hold in both packs?</span><span class="hint">Stability</span><span class="chev" aria-hidden="true">›</span></button>
+      <button type="button" data-go="trace|CP-6"><span>Where does CP-6, the mutagenic impurity, appear?</span><span class="hint">Trace</span><span class="chev" aria-hidden="true">›</span></button>
+      <button type="button" data-go="change-impact|od-dp-assay-hplc"><span>What breaks if the assay limit is tightened?</span><span class="hint">Change impact</span><span class="chev" aria-hidden="true">›</span></button>
+      <button type="button" data-go="post-noc-intake"><span>How would a post-NOC change be triaged on arrival?</span><span class="hint">Post-NOC intake</span><span class="chev" aria-hidden="true">›</span></button>
+      <button type="button" data-go="ctd"><span>Read the narrative with its data attached</span><span class="hint">CTD navigator</span><span class="chev" aria-hidden="true">›</span></button>
+    </div></div>
+    <div><h3 style="font-size:22px;margin:0 0 10px">Every result, checked</h3><div class="card">
+      <div class="statrow"><div class="stat"><span class="big num" style="color:var(--ok)">${(counts.pass + counts.near).toLocaleString()}</span><small>within limit</small></div><div class="stat"><span class="big num" style="color:${counts.fail ? "var(--bad)" : "var(--ink)"}">${counts.fail}</span><small>out of limit</small></div><div class="stat"><span class="big num" style="color:var(--muted)">${counts.info}</span><small>reported only</small></div></div>
+      <div aria-hidden="true" style="display:flex;height:8px;border-radius:4px;overflow:hidden;margin:12px 0 16px"><span style="flex:${counts.pass + counts.near};background:#34c759"></span><span style="flex:${counts.fail};background:var(--bad)"></span><span style="flex:${counts.info};background:#c7c7cc"></span></div>
+      <p class="note" style="margin:0 0 6px">Closest to a limit</p>
+      <table class="t"><tbody>${ranked.map((x) => `<tr class="click" data-open="Observation/${x.o.id}"><td>${esc(odShort(PQI.odOf(db, x.o)))}<div class="ctype">${esc(ctx(x))}</div></td><td class="num">${esc(PQI.valueText(x.o))}</td><td>${chipStatus(x.e.status)}</td></tr>`).join("")}</tbody></table></div></div>
+  </div>
+  <div class="grid g2">
+    <div class="card"><h3>Product</h3><dl class="kv">
+      <dt>Name</dt><dd>${refBtn("MedicinalProductDefinition/" + mpd.id, mpd.name[0].productName)}</dd>
+      <dt>Description</dt><dd>${esc(mpd.description)}</dd>
+      <dt>Drug substance</dt><dd>${refBtn("SubstanceDefinition/sakuramil", "Sakuramil (CP-9)")} <span class="mono">${esc(sd.structure.molecularFormula)}</span> · CAS ${esc(sd.identifier[0].value)}</dd>
+      <dt>Packs</dt><dd class="chips">${all("PackagedProductDefinition").map((p) => refBtn("PackagedProductDefinition/" + p.id, p.name.split(" - ")[1])).join("")}</dd>
+      <dt>Sites</dt><dd class="chips">${all("Organization").map((o) => refBtn("Organization/" + o.id, o.name)).join("")}</dd></dl></div>
+    <div class="card"><h3>What is in the structured dossier</h3><table class="t"><tbody>
+      ${[["ObservationDefinition", "tests and acceptance criteria"], ["PlanDefinition", "specifications, procedures, processes, protocols"], ["Observation", "results"], ["DiagnosticReport", "batch, stability and characterisation reports"], ["Specimen", "stability pulls"], ["SubstanceDefinition", "substances, impurities, excipients, reagents"], ["Medication", "drug-product batches"], ["Substance", "drug-substance batches and reference standards"]].map(([t, d]) => `<tr><td><span class="chip type">${t}</span></td><td class="num">${all(t).length}</td><td class="muted">${d}</td></tr>`).join("")}
+      <tr><td><span class="chip type">Composition</span></td><td class="num">${sections}</td><td class="muted">narrative sections (2.3 and 3.2), each linked to its data</td></tr></tbody></table></div>
+  </div>
+  <p class="note" style="margin-top:16px;text-align:center">Illustrative only: the ICH M4Q(R2) SakuraBloom R2 mock-up describes a fictitious product. Every resource links to its source page via <span class="mono">meta.source</span>.</p>`;
+}
+function countSections() { let n = 0; const w = (s) => (s || []).forEach((x) => { n++; w(x.section); }); all("Composition").forEach((c) => w(c.section)); return n; }
+
+// =====================================================================================
+// CTD navigator
+function flatSections() {
+  const out = [];
+  all("Composition").sort((a, b) => a.id.localeCompare(b.id)).forEach((c) => {
+    const w = (secs, depth, path) => (secs || []).forEach((s, i) => { const id = path + "." + i; out.push({ id, s, depth, comp: c }); w(s.section, depth + 1, id); });
+    out.push({ id: c.id, s: { title: c.id.startsWith("module-2") ? "Module 2.3 Quality Overview" : "Module 3.2 Body of Data", text: c.text, section: c.section }, depth: 0, comp: c, root: true });
+    w(c.section, 1, c.id);
+  });
+  return out;
+}
+let FLAT = null;
+function viewCtd(el) {
+  FLAT = FLAT || flatSections();
+  if (!STATE.ctdSection) STATE.ctdSection = (FLAT.find((x) => /2\.3\.3\.DP\.C Control/.test(x.s.title)) || FLAT[0]).id;
+  const cur = FLAT.find((x) => x.id === STATE.ctdSection) || FLAT[0];
+  el.innerHTML = `<div class="view-head"><h2>CTD navigator</h2><p>The M4Q(R2) table of contents as one continuous, searchable document. Each section shows the structured resources it is represented by; open any of them without leaving the page.</p></div>
+  <div class="ctd"><div class="card tree"><label for="tf" class="muted" style="font-size:12px">Filter sections</label><input id="tf" type="search" style="width:100%;margin:4px 0 8px;padding:5px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg)" placeholder="e.g. stability, CP-6, dissolution"><ul id="tree"></ul></div><div id="sec"></div></div>`;
+  const tree = $("#tree", el);
+  const render = (f) => {
+    const fl = (f || "").toLowerCase();
+    tree.innerHTML = FLAT.filter((x) => !fl || x.s.title.toLowerCase().includes(fl) || (x.s.text && x.s.text.div.toLowerCase().includes(fl))).map((x) =>
+      `<li style="padding-left:${(x.depth) * 10}px"><button type="button" data-sec="${esc(x.id)}" aria-current="${x.id === STATE.ctdSection}">${esc(x.s.title)}${x.s.entry ? `<span class="n">${x.s.entry.length}</span>` : ""}</button></li>`).join("");
+  };
+  render("");
+  $("#tf", el).addEventListener("input", (e) => render(e.target.value));
+  tree.addEventListener("click", (e) => { const b = e.target.closest("[data-sec]"); if (b) { STATE.ctdSection = b.dataset.sec; showSec(); tree.querySelectorAll("button").forEach((x) => x.setAttribute("aria-current", x.dataset.sec === STATE.ctdSection)); } });
+  const showSec = () => {
+    const x = FLAT.find((y) => y.id === STATE.ctdSection);
+    const ents = (x.s.entry || []).map((e) => e.reference);
+    const byType = {};
+    ents.forEach((k) => (byType[k.split("/")[0]] = byType[k.split("/")[0]] || []).push(k));
+    const crumbs = [];
+    let id = x.id; while (id) { const y = FLAT.find((z) => z.id === id); if (y) crumbs.unshift(y.s.title); id = id.includes(".") ? id.slice(0, id.lastIndexOf(".")) : null; }
+    $("#sec", el).innerHTML = `<div class="card"><div class="muted" style="font-size:12px;margin-bottom:6px">${crumbs.map(esc).join(" › ")}</div><h2 style="margin-bottom:10px">${esc(x.s.title)}</h2>
+      ${ents.length ? `<div class="linked"><b>Structured data for this section</b> <span class="muted">(${ents.length} linked resources)</span>${Object.entries(byType).map(([t, ks]) => `<div style="margin-top:6px"><span class="chip type">${t}</span> <span class="chips" style="display:inline-flex">${ks.slice(0, 40).map((k) => refBtn(k)).join("")}${ks.length > 40 ? `<span class="muted">+${ks.length - 40} more</span>` : ""}</span></div>`).join("")}</div>` : `<p class="note">No structured resources are mapped to this section; its content is narrative.</p>`}
+      <div class="narr">${x.s.text ? x.s.text.div : ""}</div>
+      ${x.s.section ? `<h3 style="margin-top:12px">Subsections</h3><div class="chips">${x.s.section.map((s, i) => `<button class="chip" type="button" data-sec2="${esc(x.id + "." + i)}">${esc(s.title)}</button>`).join("")}</div>` : ""}</div>`;
+    $("#sec", el).querySelectorAll("[data-sec2]").forEach((b) => b.addEventListener("click", () => { STATE.ctdSection = b.dataset.sec2; route(); }));
+  };
+  showSec();
+}
+
+// =====================================================================================
+// Control strategy (parsed from 2.3.2 Table 3 in the Composition narrative + linked controls)
+function controlRows() {
+  const c = get("Composition/module-2-3-quality-overview");
+  const sec = c.section.find((s) => s.title.startsWith("2.3.2"));
+  const doc = new DOMParser().parseFromString(sec.text.div, "text/html");
+  const tbl = [...doc.querySelectorAll("table")].find((t) => /Product Attribute/.test(t.rows[0].textContent));
+  const rows = []; let pa = "", cqa = "", fr = "";
+  [...tbl.rows].slice(1).forEach((r) => {
+    const c = [...r.cells].map((x) => x.textContent.trim());
+    if (c[0]) pa = c[0]; if (c[1]) cqa = c[1]; if (c[2]) fr = c[2];
+    rows.push({ pa, cqa, rel: c[2] || "", type: c[3], desc: c[4], loc: (c[5] || "").replace(/\[\[|\]\]/g, "").trim() });
+  });
+  return rows;
+}
+function matchControl(r) {
+  if (/starting material|reagent|intermediate|excipient|Pd criteria|,/i.test(r.desc)) return null;
+  const words = (r.desc + " " + r.cqa).toLowerCase().replace(/[()]/g, " ").split(/[^a-z0-9-]+/).filter((w) => w.length > 2 && !["criterion", "criteria", "the", "and", "for", "product", "drug", "specification"].includes(w));
+  let best = null, bs = 0;
+  for (const od of all("ObservationDefinition")) {
+    const isDP = /^(od-dp|ipc-dp|cpp-dp)/.test(od.id), isDS = /^(od-ds|ipc-ds|cpp-ds)/.test(od.id);
+    if (/^DS /.test(r.desc) && !isDS) continue;
+    if (/^DP /.test(r.desc) && !isDP) continue;
+    if (r.type === "CPP" && !od.id.startsWith("cpp")) continue;
+    if (r.type === "IPC" && !od.id.startsWith("ipc") && !od.id.startsWith("od-")) continue;
+    if (/Specification/.test(r.type) && !od.id.startsWith("od-")) continue;
+    if (!isDP && !isDS) continue;
+    const t = (od.title + " " + T(od.code)).toLowerCase();
+    let s = 0; words.forEach((w) => { if (t.includes(w)) s += ["nir", "hplc", "rtrt", "uv"].includes(w) ? 2 : 1; });
+    if (s > bs) { bs = s; best = od; }
+  }
+  return bs >= 2 || (bs >= 1 && r.type === "CPP") ? best : null;
+}
+function viewControl(el) {
+  const rows = controlRows();
+  const byCqa = []; rows.forEach((r) => { let g = byCqa.find((x) => x.cqa === r.cqa); if (!g) byCqa.push(g = { cqa: r.cqa, pa: r.pa, rows: [] }); g.rows.push(r); });
+  const types = ["CMA", "Process Design", "CPP", "IPC", "DP Specification", "Equipment"];
+  const tclass = { CPP: "near", IPC: "info", "DP Specification": "ok" };
+  el.innerHTML = `<div class="view-head"><h2>Overall control strategy</h2><p>Table 3 of 2.3.2, rebuilt as a CQA × control-type matrix. Controls that resolve to a structured test definition are clickable and show their acceptance range; the rest link to the CTD section that holds them.</p></div>
+  <div class="card scroll"><table class="t cs"><thead><tr><th>Product attribute</th><th>CQA</th>${types.map((t) => `<th>${esc(t)}</th>`).join("")}</tr></thead><tbody>
+  ${byCqa.map((g) => `<tr><td class="muted">${esc(g.pa)}</td><td class="cqa">${esc(g.cqa)}</td>${types.map((t) => `<td><div class="chips" style="flex-direction:column;align-items:flex-start">${g.rows.filter((r) => r.type === t || (t === "Process Design" && /Process Design/i.test(r.type))).map((r) => {
+    const od = matchControl(r);
+    if (od) return `<button type="button" class="chip ${tclass[t] || ""}" data-open="ObservationDefinition/${od.id}" title="${esc(r.rel)}">${esc(r.desc)} → ${esc(critText(od, t === "DP Specification" ? "Batch release" : null).slice(0, 38))}</button>`;
+    const s = FLAT_find(r.loc);
+    return s ? `<button type="button" class="chip" data-go="ctd|${esc(s.id)}" title="${esc(r.rel)}">${esc(r.desc)} ↗</button>` : `<span class="chip info" title="${esc(r.rel)}">${esc(r.desc)}</span>`;
+  }).join("")}</div></td>`).join("")}</tr>`).join("")}</tbody></table></div>
+  <p class="note" style="margin-top:10px">${rows.length} controls across ${byCqa.length} CQAs. Hover a control for its functional relationship. Matching of narrative control descriptions to ObservationDefinitions is heuristic in this demo; in a production dossier the link would be authored explicitly.</p>`;
+}
+function FLAT_find(loc) { FLAT = FLAT || flatSections(); if (!loc || /Not Applicable/i.test(loc)) return null; const key = loc.split(" ")[0]; return FLAT.find((x) => x.s.title.startsWith(loc.slice(0, 30))) || FLAT.find((x) => x.s.title.startsWith(key)); }
+
+// =====================================================================================
+// Specifications
+function specGroups() {
+  const specs = all("PlanDefinition").filter((p) => /^(spec-|study-|char-)/.test(p.id));
+  const grp = (p) => p.id === "spec-dp" ? "Drug product" : p.id === "spec-ds-sakuramil" ? "Drug substance" : /spec-(sm|si)-/.test(p.id) ? "Starting materials & intermediates" : /spec-rm-/.test(p.id) ? "Raw materials" : /spec-ex-/.test(p.id) ? "Excipients" : /spec-rs|char-/.test(p.id) ? "Reference standards" : /spec-cc-/.test(p.id) ? "Container closure" : "Impurity studies";
+  const g = {}; specs.forEach((p) => (g[grp(p)] = g[grp(p)] || []).push(p));
+  return g;
+}
+function testsOf(pd) { const ids = []; const w = (a) => (a || []).forEach((x) => { if (x.definitionCanonical) { const od = db.byUrl.get(x.definitionCanonical); if (od && !ids.includes(od)) ids.push(od); } w(x.action); }); w(pd.action); return ids; }
+function viewSpecs(el) {
+  const g = specGroups();
+  const order = ["Drug product", "Drug substance", "Starting materials & intermediates", "Raw materials", "Excipients", "Reference standards", "Container closure", "Impurity studies"];
+  el.innerHTML = `<div class="view-head"><h2>Specifications</h2><p>Every specification as data: release and shelf-life criteria side by side, the analytical procedure behind each test, and the spread of every reported result against its limit.</p></div>
+  <div class="controls"><label for="specsel">Specification</label><select id="specsel">${order.filter((k) => g[k]).map((k) => `<optgroup label="${esc(k)}">${g[k].map((p) => `<option value="${p.id}" ${p.id === STATE.spec ? "selected" : ""}>${esc(p.title)}</option>`).join("")}</optgroup>`).join("")}</select></div><div id="spectbl"></div>`;
+  const draw = () => {
+    const pd = get("PlanDefinition/" + STATE.spec);
+    const tests = testsOf(pd);
+    const hasSL = tests.some((od) => (od.qualifiedValue || []).some((q) => q.context && q.context.text === "Shelf-life"));
+    $("#spectbl", el).innerHTML = `<div class="card"><div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:8px"><div><h3>${esc(pd.title)}</h3><div class="note">${esc(pd.description || "")}</div></div><div class="chips">${refBtn("PlanDefinition/" + pd.id, "Open PlanDefinition")}${pd.subjectReference ? refBtn(pd.subjectReference.reference) : ""}</div></div>
+    <div class="scroll"><table class="t"><thead><tr><th>Test</th><th>${hasSL ? "Batch release" : "Acceptance criterion"}</th>${hasSL ? "<th>Shelf-life</th>" : ""}<th>Procedure</th><th class="num">Results</th><th>Observed</th><th>Status</th></tr></thead><tbody>
+    ${tests.map((od) => {
+      const rs = PQI.resultsFor(db, od.id);
+      const vals = rs.map((r) => r.obs.valueQuantity).filter((q) => q && typeof q.value === "number").map((q) => q.value);
+      const worst = rs.reduce((w, r) => (["fail", "near", "pass", "info"].indexOf(ev(r.obs).status) < ["fail", "near", "pass", "info"].indexOf(w) ? ev(r.obs).status : w), "info");
+      const ap = db.apOf.get(od.id);
+      const qv = od.qualifiedValue || [];
+      const rel = hasSL ? (qv.find((q) => q.context && q.context.text === "Batch release") ? critText(od, "Batch release") : "–") : critText(od);
+      const sl = hasSL ? (qv.find((q) => q.context && q.context.text === "Shelf-life") ? critText(od, "Shelf-life") : "–") : null;
+      return `<tr class="click" data-open="ObservationDefinition/${od.id}"><td><b>${esc(od.title)}</b><div class="ctype">${esc(T(od.category && od.category[0]))}</div></td><td>${esc(rel)}</td>${hasSL ? `<td>${esc(sl)}</td>` : ""}<td>${ap ? refBtn("PlanDefinition/" + ap.id, ap.title.replace("Analytical Procedures ", "")) : `<span class="muted">${esc(T(od.method))}</span>`}</td><td class="num">${rs.length || "–"}</td><td class="num">${vals.length ? (Math.min(...vals) === Math.max(...vals) ? Math.min(...vals) : Math.min(...vals) + " – " + Math.max(...vals)) : "–"}</td><td>${rs.length ? chipStatus(worst, worst === "info" ? "Reported" : null) : '<span class="muted">no data</span>'}</td></tr>`;
+    }).join("")}</tbody></table></div></div>`;
+  };
+  $("#specsel", el).addEventListener("change", (e) => { STATE.spec = e.target.value; draw(); });
+  draw();
+}
+
+// =====================================================================================
+// Batches & genealogy
+function viewBatches(el) {
+  const gen = PQI.genealogy(db);
+  const dsSet = []; gen.forEach((g) => g.ds.forEach((d) => { if (d && !dsSet.includes(d)) dsSet.push(d); }));
+  const H = Math.max(gen.length, dsSet.length) * 30 + 30, W = 640;
+  const ys = (i, n) => 24 + i * ((H - 44) / Math.max(1, n - 1));
+  const svg = `<svg viewBox="0 0 ${W} ${H}" width="100%" style="max-width:${W}px" role="img" aria-label="Drug product to drug substance batch genealogy">
+    <text x="10" y="12">Drug-product batches (Aparna)</text><text x="${W - 10}" y="12" text-anchor="end">Drug-substance batches (IROHA-corp.)</text>
+    ${gen.map((g, i) => g.ds.map((d) => `<path d="M170 ${ys(i, gen.length)} C ${W / 2} ${ys(i, gen.length)}, ${W / 2} ${ys(dsSet.indexOf(d), dsSet.length)}, ${W - 170} ${ys(dsSet.indexOf(d), dsSet.length)}" fill="none" stroke="${g.use === "Clinical" ? "var(--muted)" : "var(--accent)"}" stroke-opacity="${g.lot === STATE.batch ? 1 : .35}" stroke-width="${g.lot === STATE.batch ? 2.5 : 1.2}"/>`).join("")).join("")}
+    ${gen.map((g, i) => `<g class="gb" data-batch="${g.lot}" style="cursor:pointer"><rect x="10" y="${ys(i, gen.length) - 11}" width="160" height="22" rx="4" fill="${g.lot === STATE.batch ? "var(--accent)" : "var(--surface)"}" stroke="var(--line)"/><text x="18" y="${ys(i, gen.length) + 4}" style="fill:${g.lot === STATE.batch ? "var(--surface)" : "var(--ink)"};font-weight:600">${esc(g.lot)}</text><text x="160" y="${ys(i, gen.length) + 4}" text-anchor="end" style="fill:${g.lot === STATE.batch ? "var(--surface)" : "var(--muted)"}">${esc(g.date)} · ${g.use === "Clinical" ? "clinical" : "commercial"}</text></g>`).join("")}
+    ${dsSet.map((d, i) => `<g data-open="Substance/${d.id}" style="cursor:pointer"><rect x="${W - 170}" y="${ys(i, dsSet.length) - 9}" width="160" height="18" rx="4" fill="var(--surface)" stroke="var(--line)"/><text x="${W - 162}" y="${ys(i, dsSet.length) + 4}" style="fill:var(--ink)">${esc(PQI.label(d))}</text></g>`).join("")}
+  </svg>`;
+  const sel = gen.find((g) => g.lot === STATE.batch) || gen[0];
+  const dr = all("DiagnosticReport").find((r) => r.subject.reference === "Medication/" + sel.med.id && /Batch Analysis/.test(T(r.code)));
+  const dsRep = all("DiagnosticReport").filter((r) => /Batch Analysis/.test(T(r.code)) && r.subject.reference.startsWith("Substance/"));
+  const stabCount = all("Observation").filter((o) => /Medication\/dp-/.test(o.subject.reference) && o.subject.reference.includes(sel.lot.toLowerCase() + "-")).length;
+  el.innerHTML = `<div class="view-head"><h2>Batches &amp; genealogy</h2><p>Drug-product batches are linked to the drug-substance batches they consumed (<span class="mono">batch-substance-batch</span>), so a reviewer can move from a tablet result to the API lot and its own analysis in one step. Select a batch.</p></div>
+  <div class="grid g2" style="align-items:start"><div class="card">${svg}</div>
+  <div class="card"><h3>Batch ${esc(sel.lot)}</h3><dl class="kv"><dt>Manufactured</dt><dd>${esc(sel.date)} · ${refBtn("Organization/aparna-pharm")}</dd><dt>Use</dt><dd>${esc(sel.use)}</dd><dt>Batch size</dt><dd class="num">2,600,000 tablets</dd>
+  <dt>DS batches</dt><dd class="chips">${sel.ds.map((d) => refBtn("Substance/" + d.id)).join("")}</dd><dt>Process</dt><dd>${refBtn("PlanDefinition/dp-manufacturing-process", "DP manufacturing process")}</dd>
+  <dt>Stability</dt><dd>${stabCount ? `${stabCount} stability results across bottle and blister <button class="chip" data-go="stability">View trends</button>` : '<span class="muted">not on stability</span>'}</dd></dl>
+  ${dr ? "" : '<p class="note">No batch-analysis report for this batch in the dossier (clinical batch).</p>'}</div></div>
+  ${batchMatrix("Drug-product batch analysis (3.2.DP.C.1)", all("DiagnosticReport").filter((r) => /Batch Analysis/.test(T(r.code)) && r.subject.reference.startsWith("Medication/")), "Batch release")}
+  ${batchMatrix("Drug-substance batch analysis (3.2.DS.C)", dsRep, null)}`;
+  el.querySelectorAll("[data-batch]").forEach((g) => g.addEventListener("click", () => { STATE.batch = g.dataset.batch; route(); }));
+}
+function batchMatrix(title, reports, ctx) {
+  if (!reports.length) return "";
+  const cols = reports.map((r) => get(r.subject.reference));
+  const tests = []; const cell = {};
+  reports.forEach((r, ci) => r.result.forEach((x) => { const o = get(x.reference); const od = PQI.odOf(db, o); if (!tests.includes(od)) tests.push(od); cell[od.id + "|" + ci] = o; }));
+  return `<div class="card scroll" style="margin-top:14px"><h3>${esc(title)}</h3><table class="t"><thead><tr><th>Test</th><th>Acceptance criterion</th>${cols.map((c) => `<th class="num">${esc(PQI.label(c).replace("Batch ", ""))}</th>`).join("")}</tr></thead><tbody>
+  ${tests.map((od) => `<tr><td>${refBtn("ObservationDefinition/" + od.id, od.title, "chip")}</td><td class="muted" style="max-width:340px">${esc(critText(od, ctx))}</td>${cols.map((c, ci) => { const o = cell[od.id + "|" + ci]; if (!o) return "<td>–</td>"; const e = ev(o); return `<td class="num"><button type="button" class="chip ${e.status}" data-open="Observation/${o.id}">${esc(PQI.valueText(o))}</button></td>`; }).join("")}</tr>`).join("")}</tbody></table></div>`;
+}
+
+// =====================================================================================
+// Stability
+function stabilityOds(prod) {
+  const ids = new Set();
+  for (const o of all("Observation")) {
+    if (!o.specimen) continue;
+    const isDP = o.subject.reference.startsWith("Medication/");
+    if ((prod === "DP") !== isDP) continue;
+    if (!o.valueQuantity || typeof o.valueQuantity.value !== "number") continue;
+    ids.add(o.instantiatesCanonical.split("/").pop());
+  }
+  return [...ids].map((id) => get("ObservationDefinition/" + id)).filter(Boolean);
+}
+function viewStability(el) {
+  const st = STATE.stab;
+  const ods = stabilityOds(st.prod);
+  if (!ods.find((o) => o.id === st.od)) st.od = ods[0].id;
+  const series = PQI.stabilitySeries(db, st.od);
+  const conds = [...new Set(series.map((s) => s.condition))];
+  if (!conds.includes(st.cond)) st.cond = conds[0];
+  const packs = [...new Set(series.map((s) => s.pack))];
+  const shown = series.filter((s) => s.condition === st.cond && (st.pack === "all" || s.pack === st.pack));
+  const od = get("ObservationDefinition/" + st.od);
+  const crit = PQI.criterion(od, st.prod === "DP" ? "Shelf-life" : null);
+  const lots = [...new Set(series.map((s) => s.lot))];
+  el.innerHTML = `<div class="view-head"><h2>Stability</h2><p>Results from the registration stability studies, plotted from the Observations against the shelf-life criterion in their ObservationDefinition. Pack and condition come from each Specimen; time on station from its storage-duration extension.</p></div>
+  <div class="controls">
+    <div class="seg" role="group" aria-label="Material"><button type="button" data-prod="DP" aria-pressed="${st.prod === "DP"}">Drug product</button><button type="button" data-prod="DS" aria-pressed="${st.prod === "DS"}">Drug substance</button></div>
+    <label for="sod">Attribute</label><select id="sod">${ods.map((o) => `<option value="${o.id}" ${o.id === st.od ? "selected" : ""}>${esc(o.title)}</option>`).join("")}</select>
+    <label for="scond">Condition</label><select id="scond">${conds.map((c) => `<option ${c === st.cond ? "selected" : ""}>${esc(c)}</option>`).join("")}</select>
+    ${packs.length > 1 ? `<label for="spack">Pack</label><select id="spack"><option value="all">Both packs</option>${packs.map((p) => `<option ${p === st.pack ? "selected" : ""}>${esc(p)}</option>`).join("")}</select>` : ""}
+  </div>
+  <div class="grid g2" style="grid-template-columns:minmax(0,2fr) minmax(260px,1fr);align-items:start">
+    <div class="card"><h3>${esc(od.title)} · ${esc(st.cond)}</h3>${chart(shown, crit, lots)}
+      <div class="legend">${shown.map((s) => `<span><i style="background:${COLORS[lots.indexOf(s.lot) % 4]};${s.pack.includes("blister") ? "opacity:.6" : ""}"></i>${esc(s.lot)} · ${esc(s.pack)}</span>`).join("")}<span><i style="background:var(--bad)"></i>shelf-life limit</span><span><i style="background:var(--muted)"></i>linear trend to 36 months</span></div></div>
+    <div class="card"><h3>Summary</h3><p class="muted" style="margin-top:0">Criterion: <b style="color:var(--ink)">${esc(crit ? crit.text : "–")}</b></p>
+      <table class="t"><thead><tr><th>Batch / pack</th><th class="num">Last</th><th class="num">36 mo trend</th><th></th></tr></thead><tbody>
+      ${shown.map((s) => { const last = s.points[s.points.length - 1]; const f = PQI.linearFit(s.points); const p36 = f ? f.at(36) : null; const r = crit && crit.range; const breach = p36 != null && r && ((r.high && p36 > r.high.value) || (r.low && p36 < r.low.value)); return `<tr><td>${esc(s.lot)}<div class="ctype">${esc(s.pack)}</div></td><td class="num"><button type="button" class="chip ${ev(last.obs).status}" data-open="Observation/${last.obs.id}">${last.cmp || ""}${last.v} @ ${last.t} mo</button></td><td class="num">${p36 == null ? "–" : p36.toFixed(2)}</td><td>${p36 == null ? "" : chipStatus(breach ? "fail" : "pass", breach ? "Trend crosses limit" : "Trend within")}</td></tr>`; }).join("")}</tbody></table>
+      <p class="note">Least-squares line per batch, for orientation only. It is not an ICH Q1E statistical evaluation. Values reported as “&lt; x” are plotted at x.</p>
+      <div class="chips" style="margin-top:8px">${refBtn("PlanDefinition/" + (st.prod === "DP" ? "stability-protocol-dp-registration" : "stability-protocol-ds-registration"), "Open stability protocol")}</div></div>
+  </div>`;
+  el.querySelectorAll("[data-prod]").forEach((b) => b.addEventListener("click", () => { st.prod = b.dataset.prod; st.od = st.prod === "DP" ? "od-dp-assay-hplc" : "od-ds-sakuramil-assay-sakuramil-dried-basis"; st.cond = st.prod === "DP" ? "25 °C / 60 % RH (long-term)" : "30 ± 2 °C / 75 ± 5 % RH"; st.pack = "all"; route(); }));
+  $("#sod", el).addEventListener("change", (e) => { st.od = e.target.value; route(); });
+  $("#scond", el).addEventListener("change", (e) => { st.cond = e.target.value; route(); });
+  const sp = $("#spack", el); if (sp) sp.addEventListener("change", (e) => { st.pack = e.target.value; route(); });
+}
+function chart(series, crit, lots) {
+  const W = 640, H = 300, L = 48, R = 16, Tp = 14, B = 34;
+  const vals = series.flatMap((s) => s.points.map((p) => p.v));
+  const r = crit && crit.range;
+  if (r && r.high) vals.push(r.high.value); if (r && r.low) vals.push(r.low.value);
+  if (!vals.length) return '<p class="muted">No numeric results for this selection.</p>';
+  let lo = Math.min(...vals), hi = Math.max(...vals); const pad = (hi - lo || 1) * 0.12; lo -= pad; hi += pad; if (lo < 0 && Math.min(...vals) >= 0) lo = 0;
+  const x = (t) => L + (t / 36) * (W - L - R), y = (v) => Tp + (1 - (v - lo) / (hi - lo)) * (H - Tp - B);
+  const ticks = []; const step = niceStep((hi - lo) / 5); for (let v = Math.ceil(lo / step) * step; v <= hi; v += step) ticks.push(+v.toFixed(6));
+  const months = [0, 3, 6, 9, 12, 18, 24, 36];
+  let out = `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Stability trend chart"><g class="grid">${ticks.map((v) => `<line x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}"/>`).join("")}</g>
+  ${ticks.map((v) => `<text x="${L - 6}" y="${y(v) + 4}" text-anchor="end" class="num">${v}</text>`).join("")}
+  ${months.map((m) => `<text x="${x(m)}" y="${H - B + 16}" text-anchor="middle">${m}</text>`).join("")}<text x="${(W + L) / 2}" y="${H - 4}" text-anchor="middle">months on station</text>`;
+  if (r && r.high) out += `<line class="limit" x1="${L}" x2="${W - R}" y1="${y(r.high.value)}" y2="${y(r.high.value)}"/><text class="limittext" x="${W - R}" y="${y(r.high.value) - 5}" text-anchor="end">NMT ${r.high.value}</text>`;
+  if (r && r.low) out += `<line class="limit" x1="${L}" x2="${W - R}" y1="${y(r.low.value)}" y2="${y(r.low.value)}"/><text class="limittext" x="${W - R}" y="${y(r.low.value) + 14}" text-anchor="end">NLT ${r.low.value}</text>`;
+  series.forEach((s) => {
+    const col = COLORS[lots.indexOf(s.lot) % 4]; const dash = s.pack.includes("blister") ? ' stroke-dasharray="2 3"' : "";
+    const f = PQI.linearFit(s.points);
+    if (f) out += `<line x1="${x(0)}" y1="${y(f.at(0))}" x2="${x(36)}" y2="${y(f.at(36))}" stroke="var(--muted)" stroke-width="1" stroke-dasharray="6 4" opacity=".7"/>`;
+    out += `<polyline fill="none" stroke="${col}" stroke-width="2"${dash} points="${s.points.map((p) => x(p.t) + "," + y(p.v)).join(" ")}"/>`;
+    out += s.points.map((p, i) => `<circle cx="${x(p.t)}" cy="${y(p.v)}" r="${i === s.points.length - 1 ? 4.5 : 3.2}" fill="${p.cmp ? "var(--surface)" : col}" stroke="${col}" stroke-width="1.5" data-open="Observation/${p.obs.id}" style="cursor:pointer"><title>${esc(s.lot)} ${esc(s.pack)} ${p.t} mo: ${p.cmp || ""}${p.v}</title></circle>`).join("");
+  });
+  return out + "</svg>";
+}
+function niceStep(raw) { const p = Math.pow(10, Math.floor(Math.log10(raw || 1))); const n = raw / p; return (n < 1.5 ? 1 : n < 3 ? 2 : n < 7 ? 5 : 10) * p; }
+
+// =====================================================================================
+// Manufacturing process
+function viewProcess(el) {
+  const pd = get("PlanDefinition/" + (STATE.proc === "dp" ? "dp-manufacturing-process" : "ds-manufacturing-process"));
+  const steps = pd.action[0].action;
+  const params = (a) => (a.extension || []).filter((e) => /process-parameters/.test(e.url)).map((e) => { const p = e.extension.find((x) => x.url === "parameter"); const v = e.extension.find((x) => x.url === "value"); const t = e.extension.find((x) => x.url === "valueText"); return { name: T(p.valueCodeableConcept), val: v ? v.valueQuantity.value + " " + v.valueQuantity.unit : t ? t.valueString : "" }; });
+  el.innerHTML = `<div class="view-head"><h2>Manufacturing process</h2><p>The process as a sequence of steps, each carrying its materials, equipment, critical process parameters and in-process controls with machine-readable ranges.</p></div>
+  <div class="controls"><div class="seg" role="group" aria-label="Process"><button type="button" data-p="dp" aria-pressed="${STATE.proc === "dp"}">Drug product (Aparna)</button><button type="button" data-p="ds" aria-pressed="${STATE.proc === "ds"}">Drug substance (IROHA-corp.)</button></div>${refBtn("PlanDefinition/" + pd.id, "Open PlanDefinition")}</div>
+  <div class="card" style="margin-bottom:12px"><b>${esc(pd.title)}</b><div class="muted">${esc(pd.description)}</div></div>
+  <div class="steps">${steps.map((a, i) => {
+    const subs = (a.action || []).map((s) => ({ s, od: db.byUrl.get(s.definitionCanonical) })).filter((x) => x.od);
+    const crit = subs.some((x) => x.od.id.startsWith("cpp"));
+    const mats = (a.participant || []).filter((p) => p.typeReference && p.typeReference.extension);
+    const devs = (a.participant || []).filter((p) => p.type === "device");
+    const charges = params(a).filter((p) => /^Charge/.test(p.name));
+    return `<div class="step ${crit ? "crit" : ""}"><div class="dot">${i + 1}</div><div class="card"><div style="display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap"><h3>${esc(a.title)}</h3>${crit ? '<span class="chip near">Critical step</span>' : ""}</div><p style="margin:4px 0 8px">${esc(a.description)}</p>
+      ${mats.length ? `<div class="chips" style="margin-bottom:6px">${mats.map((m) => { const k = m.typeReference.extension[0].valueReference.reference; const ch = charges.find((c) => c.name.includes(m.typeReference.display)) ; return `<button class="chip" type="button" data-open="${esc(k)}">${esc(m.typeReference.display)}${ch ? " · " + esc(ch.val) : ""} <span class="ctype">${esc(T(m.role))}</span></button>`; }).join("")}</div>` : ""}
+      ${devs.length ? `<div class="chips">${devs.map((d) => refBtn(d.typeReference.reference)).join("")}</div>` : ""}
+      ${subs.length ? `<div class="ctl">${subs.map((x) => { const c = PQI.criterion(x.od); const isCpp = x.od.id.startsWith("cpp"); return `<button type="button" class="${isCpp ? "cpp" : "ipc"}" data-open="ObservationDefinition/${x.od.id}"><div class="k">${isCpp ? "CPP" : "IPC"}</div><b>${esc(x.od.title)}</b><div class="num">${esc(c ? c.text : "")}</div></button>`; }).join("")}</div>` : ""}</div></div>`;
+  }).join("")}</div>`;
+  el.querySelectorAll("[data-p]").forEach((b) => b.addEventListener("click", () => { STATE.proc = b.dataset.p; route(); }));
+}
+
+// =====================================================================================
+// Trace an attribute
+const TOPICS = {
+  "CP-9-1": { re: /CP-9-1/, sd: "cp-9-1", term: "CP-9-1", note: "Ethyl homolog of Sakuramil; specified impurity in DS and specified degradation product in DP." },
+  "CP-8": { re: /\bCP-8\b(?!-)/, sd: "cp-8", term: "CP-8", note: "Starting material SM2; specified impurity in the drug substance." },
+  "CP-6": { re: /CP-6/, sd: "cp-6", term: "CP-6", note: "Intermediate IM1; potentially mutagenic impurity (ICH M7), limit 37.5 ppm." },
+  "Assay": { re: /^Assay|Assay \(/i, term: "assay", note: "Content of Sakuramil in drug substance and drug product." },
+  "Dissolution": { re: /Dissolution/i, term: "dissolution", note: "In-vitro release; RTRT model at release, paddle/UV on stability." },
+  "Total impurities": { re: /total (impurities|degradation)/i, term: "total", note: "Total related substances (DS) and total degradation products (DP)." },
+  "Microbiology": { re: /Microbial|micro-organism/i, term: "microbial", note: "TAMC, TYMC and E. coli." },
+};
+function viewTrace(el) {
+  const tp = TOPICS[STATE.trace];
+  const ods = all("ObservationDefinition").filter((o) => tp.re.test(o.title) && !/^cpp|^ipc/.test(o.id));
+  const rows = []; ods.forEach((od) => (od.qualifiedValue || []).forEach((q) => rows.push({ od, ctx: q.context ? q.context.text : "", text: (q.extension || [])[0].valueString })));
+  const results = ods.flatMap((od) => PQI.resultsFor(db, od.id).map((r) => Object.assign(r, { od })));
+  const stage = (r) => (r.subject.resourceType === "Medication" ? "Drug product" : "Drug substance") + (r.report && /Stability/.test(T(r.report.code)) ? " · stability" : r.report && /Batch/.test(T(r.report.code)) ? " · batch analysis" : " · other studies");
+  const stages = [...new Set(results.map(stage))];
+  const aps = [...new Set(ods.map((o) => db.apOf.get(o.id)).filter(Boolean))];
+  FLAT = FLAT || flatSections();
+  const term = tp.term.toLowerCase();
+  const mentions = FLAT.filter((x) => !x.root && x.s.text && x.s.text.div.toLowerCase().includes(term));
+  const keys = new Set([...ods.map((o) => "ObservationDefinition/" + o.id), ...results.map((r) => r.report && "DiagnosticReport/" + r.report.id).filter(Boolean), ...aps.map((a) => "PlanDefinition/" + a.id)]);
+  if (tp.sd) keys.add("SubstanceDefinition/" + tp.sd);
+  const docs = [...PQI.sourcesOf(db, keys)];
+  el.innerHTML = `<div class="view-head"><h2>Trace an attribute</h2><p>Follow one quality attribute through every material, specification, procedure, result and narrative section in the dossier.</p></div>
+  <div class="controls"><div class="seg" role="group" aria-label="Attribute">${Object.keys(TOPICS).map((k) => `<button type="button" data-t="${esc(k)}" aria-pressed="${k === STATE.trace}">${esc(k)}</button>`).join("")}</div></div>
+  <div class="grid g3" style="margin-bottom:14px">
+    <div class="card accent"><h3>${esc(STATE.trace)}</h3><p style="margin-top:0">${esc(tp.note)}</p>${tp.sd ? refBtn("SubstanceDefinition/" + tp.sd, "Substance definition") : ""}
+      <div class="statrow" style="margin-top:10px"><div class="stat"><span class="big num">${ods.length}</span><small>test definitions</small></div><div class="stat"><span class="big num">${results.length}</span><small>results</small></div><div class="stat"><span class="big num">${mentions.length}</span><small>narrative sections</small></div></div></div>
+    <div class="card"><h3>Analytical procedures</h3><div class="chips">${aps.map((a) => refBtn("PlanDefinition/" + a.id, a.title.replace("Analytical Procedures ", ""))).join("") || '<span class="muted">Compendial / not linked</span>'}</div></div>
+    <div class="card" style="background:var(--info-soft)"><h3>The PDF route</h3><p style="margin-top:0" class="muted">The same answer is spread over <b style="color:var(--ink)">${docs.length}</b> leaf documents plus ${mentions.length} narrative sections:</p><ul class="doclist">${docs.slice(0, 10).map((u) => `<li><a href="${esc(u)}" target="_blank" rel="noopener">${esc(srcTitle(u))}</a></li>`).join("")}${docs.length > 10 ? `<li>…and ${docs.length - 10} more</li>` : ""}</ul></div>
+  </div>
+  <div class="card scroll" style="margin-bottom:14px"><h3>Every limit for ${esc(STATE.trace)}</h3><table class="t"><thead><tr><th>Specification</th><th>Test</th><th>Context</th><th>Criterion</th></tr></thead><tbody>
+    ${rows.map((r) => `<tr class="click" data-open="ObservationDefinition/${r.od.id}"><td>${[...(db.specOf.get(r.od.id) || [])].map((p) => esc(get("PlanDefinition/" + p).title)).join("<br>")}</td><td>${esc(r.od.title)}</td><td>${esc(r.ctx || "Release / re-test")}</td><td><b>${esc(r.text)}</b></td></tr>`).join("")}</tbody></table></div>
+  <div class="card"><h3>Results by stage</h3>${stages.map((sg) => { const rs = results.filter((r) => stage(r) === sg); const c = { pass: 0, near: 0, fail: 0, info: 0 }; rs.forEach((r) => c[ev(r.obs).status]++); const nums = rs.filter((r) => r.obs.valueQuantity); const mx = nums.sort((a, b) => b.obs.valueQuantity.value - a.obs.valueQuantity.value)[0]; return `<div style="display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)"><b style="min-width:220px">${esc(sg)}</b><span class="num">${rs.length} results</span>${c.pass + c.near ? chipStatus("ok", c.pass + c.near + " within limit") : ""}${c.fail ? chipStatus("fail", c.fail + " out of limit") : ""}${c.info ? chipStatus("info", c.info + " reported") : ""}${mx ? `<span class="muted">highest</span> <button class="chip" type="button" data-open="Observation/${mx.obs.id}">${esc(PQI.valueText(mx.obs))} · ${esc(subjLabel(mx.subject))}${mx.si ? " · " + mx.si.months + " mo" : ""}</button>` : ""}</div>`; }).join("")}</div>
+  <div class="card" style="margin-top:14px"><h3>Narrative sections that mention it</h3><div class="chips">${mentions.slice(0, 60).map((m) => `<button class="chip" type="button" data-go="ctd|${esc(m.id)}">${esc(m.s.title)}</button>`).join("")}</div></div>`;
+  el.querySelectorAll("[data-t]").forEach((b) => b.addEventListener("click", () => { STATE.trace = b.dataset.t; route(); }));
+}
+
+// =====================================================================================
+// Change impact
+const PRESETS = [
+  ["od-dp-assay-hplc", "Shelf-life", 97.0, 103.0, "Tighten DP assay (shelf-life) to 97.0–103.0 %"],
+  ["od-dp-degradation-cp-9-1", "Shelf-life", null, 0.3, "Tighten DP CP-9-1 shelf-life limit to NMT 0.3 %"],
+  ["od-ds-sakuramil-total-impurities", null, null, 0.3, "Tighten DS total impurities to NMT 0.3 %"],
+  ["od-dp-dissolution-uv", "Shelf-life", 90, null, "Raise DP dissolution (shelf-life) to Q = 90 %"],
+];
+function viewImpact(el) {
+  const numeric = all("ObservationDefinition").filter((o) => (o.qualifiedValue || []).some((q) => q.range) && PQI.resultsFor(db, o.id).length);
+  if (!STATE.impact || !numeric.find((o) => o.id === STATE.impact.od)) {
+    const p = PRESETS.find((x) => x[0] === STATE.impact) || PRESETS[0];
+    STATE.impact = { od: p[0], ctx: p[1], lo: p[2], hi: p[3] };
+  }
+  const im = STATE.impact;
+  const od = get("ObservationDefinition/" + im.od);
+  const ctxs = (od.qualifiedValue || []).filter((q) => q.range).map((q) => q.context ? q.context.text : null);
+  if (!ctxs.includes(im.ctx)) im.ctx = ctxs[0];
+  const cur = PQI.criterion(od, im.ctx);
+  el.innerHTML = `<div class="view-head"><h2>Change impact</h2><p>Propose a new acceptance range and see at once which existing results, batches and stability time points would no longer conform, and which dossier elements reference the test and would need updating.</p></div>
+  <div class="card" style="margin-bottom:14px"><div class="controls" style="margin:0">
+    <label for="ipreset">Scenario</label><select id="ipreset"><option value="">Custom…</option>${PRESETS.map((p, i) => `<option value="${i}" ${p[0] === im.od && p[1] === im.ctx && p[2] === im.lo && p[3] === im.hi ? "selected" : ""}>${esc(p[4])}</option>`).join("")}</select>
+    <label for="iod">Test</label><select id="iod">${numeric.map((o) => `<option value="${o.id}" ${o.id === im.od ? "selected" : ""}>${esc(o.title)}</option>`).join("")}</select>
+    ${ctxs.length > 1 ? `<label for="ictx">Context</label><select id="ictx">${ctxs.map((c) => `<option ${c === im.ctx ? "selected" : ""}>${esc(c)}</option>`).join("")}</select>` : ""}
+    <label for="ilo">Low</label><input id="ilo" type="number" step="any" value="${im.lo ?? ""}" style="width:90px">
+    <label for="ihi">High</label><input id="ihi" type="number" step="any" value="${im.hi ?? ""}" style="width:90px">
+  </div><p class="note" style="margin:8px 0 0">Current criterion${im.ctx ? " (" + esc(im.ctx) + ")" : ""}: <b>${esc(cur ? cur.text : "")}</b></p></div><div id="iout"></div>`;
+  const assess = () => {
+    const unit = (cur.range.high || cur.range.low).unit;
+    const nr = {}; if (im.lo != null && im.lo !== "") nr.low = { value: +im.lo, unit }; if (im.hi != null && im.hi !== "") nr.high = { value: +im.hi, unit };
+    const rs = PQI.resultsFor(db, od.id).filter((r) => ctxs.length < 2 || PQI.contextFor(db, r.obs) === im.ctx);
+    const now = rs.map((r) => ({ r, before: ev(r.obs).status, after: PQI.evaluate(db, r.obs, nr).status }));
+    const newFail = now.filter((x) => x.after === "fail" && x.before !== "fail");
+    const batches = [...new Set(newFail.map((x) => PQI.label(x.r.subject)))];
+    const back = [...(db.backrefs.get("ObservationDefinition/" + od.id) || [])].filter((k) => !k.startsWith("Observation/"));
+    const specs = [...(db.specOf.get(od.id) || [])];
+    FLAT = FLAT || flatSections();
+    const secs = FLAT.filter((x) => (x.s.entry || []).some((e) => specs.some((p) => e.reference === "PlanDefinition/" + p) || e.reference === "ObservationDefinition/" + od.id));
+    $("#iout", el).innerHTML = `<div class="grid g3" style="margin-bottom:14px">
+      <div class="card accent"><h3>Conformance under the proposed range</h3><div class="statrow"><div class="stat"><span class="big num">${rs.length}</span><small>results in scope</small></div><div class="stat"><span class="big num" style="color:${newFail.length ? "var(--bad)" : "var(--ok)"}">${newFail.length}</span><small>would newly fail</small></div><div class="stat"><span class="big num">${batches.length}</span><small>batches affected</small></div></div></div>
+      <div class="card"><h3>Dossier elements to update</h3><div class="chips">${specs.map((p) => refBtn("PlanDefinition/" + p)).join("")}${back.filter((k) => !specs.some((p) => k === "PlanDefinition/" + p)).map((k) => refBtn(k)).join("")}</div>
+        <p class="note">Plus ${secs.length} narrative section(s): ${secs.map((s) => `<button class="chip" data-go="ctd|${esc(s.id)}">${esc(s.s.title)}</button>`).join(" ")}</p></div>
+      <div class="card"><h3>Affected batches</h3><div class="chips">${batches.map((b) => `<span class="chip fail">${esc(b)}</span>`).join("") || '<span class="chip ok">None – all existing results still conform</span>'}</div></div></div>
+    <div class="card scroll"><h3>Results that would no longer conform</h3>${newFail.length ? `<table class="t"><thead><tr><th>Batch</th><th>Study</th><th>Condition / time</th><th class="num">Result</th><th>Now</th><th>Proposed</th></tr></thead><tbody>${newFail.map((x) => `<tr class="click" data-open="Observation/${x.r.obs.id}"><td>${esc(PQI.label(x.r.subject))}</td><td>${esc(x.r.report ? T(x.r.report.code) : "")}</td><td>${x.r.si ? esc(x.r.si.condition) + " · " + x.r.si.months + " mo" : "release"}</td><td class="num">${esc(PQI.valueText(x.r.obs))}</td><td>${chipStatus(x.before)}</td><td>${chipStatus("fail")}</td></tr>`).join("")}</tbody></table>` : '<p class="muted">No existing result would fall outside the proposed range.</p>'}</div>`;
+  };
+  assess();
+  $("#ipreset", el).addEventListener("change", (e) => { if (e.target.value === "") return; const p = PRESETS[+e.target.value]; STATE.impact = { od: p[0], ctx: p[1], lo: p[2], hi: p[3] }; route(); });
+  $("#iod", el).addEventListener("change", (e) => { const o = get("ObservationDefinition/" + e.target.value); const q = (o.qualifiedValue || []).find((x) => x.range); STATE.impact = { od: o.id, ctx: q.context ? q.context.text : null, lo: q.range.low ? q.range.low.value : null, hi: q.range.high ? q.range.high.value : null }; route(); });
+  const ic = $("#ictx", el); if (ic) ic.addEventListener("change", (e) => { im.ctx = e.target.value; const c = PQI.criterion(od, im.ctx); im.lo = c.range.low ? c.range.low.value : null; im.hi = c.range.high ? c.range.high.value : null; route(); });
+  $("#ilo", el).addEventListener("input", (e) => { im.lo = e.target.value === "" ? null : e.target.value; assess(); });
+  $("#ihi", el).addEventListener("input", (e) => { im.hi = e.target.value === "" ? null : e.target.value; assess(); });
+}
+
+// =====================================================================================
+// Post-NOC intake (Health Canada) – simulated API intake, categorisation and risk rating
+let PNC = null;
+const LVL_CLASS = { IV: "lvl4", III: "lvl3", II: "lvl2", I: "lvl1" };
+function lvlChip(l, text) { return `<span class="chip ${LVL_CLASS[l]}">${esc(text || "Level " + l)}</span>`; }
+function gradient(points, big) {
+  return `<div class="grad-wrap${big ? " big" : ""}"><div class="grad" role="img" aria-label="Risk gradient from low to high${points.length === 1 ? ", score " + points[0].score + " of 100" : ""}">
+    ${points.map((p) => p.id ? `<button type="button" class="grad-mark" data-pnc="${p.id}" style="left:${p.score}%" title="${esc(p.label)}: ${p.score}" aria-label="${esc(p.label)}, risk ${p.score}"></button>` : `<span class="grad-mark${p.sel ? " sel" : ""}" style="left:${p.score}%" title="${esc(p.label)}: ${p.score}"></span>`).join("")}</div>
+    <div class="grad-zones"><span style="width:15%">Level IV<br><small>Record of change</small></span><span style="width:45%">Level III<br><small>Annual notification</small></span><span style="width:40%">Level I<br><small>Supplement</small></span></div>
+    <div class="grad-ends"><span>Lower risk</span><span>Higher risk</span></div></div>`;
+}
+function fmtVal(v) { if (v === undefined) return "—"; if (v && typeof v === "object") return JSON.stringify(v).slice(0, 80); return String(v); }
+function queueTable() {
+  return `<table class="t queue" style="margin-top:18px"><thead><tr><th>Submission</th><th>Change</th><th>Proposed category</th><th style="width:28%">Risk</th><th></th></tr></thead><tbody>
+    ${PNC.slice().sort((a, b) => b.score - a.score).map((x) => `<tr class="qrow" data-pnc="${x.id}" tabindex="0"><td class="mono" style="white-space:nowrap">${esc(x.id)}<br><span class="muted">${esc(x.received.slice(0, 10))}</span></td><td><b>${esc(x.title)}</b></td>
+      <td>${lvlChip(x.level, POSTNOC.LEVELS[x.level].short)}${x.escalated ? ' <span class="chip near">Escalated</span>' : ""}</td>
+      <td><span class="ib-bot"><span class="mini"><span style="width:${x.score}%"></span></span><span class="num">${x.score}</span></span></td><td class="go">Review ›</td></tr>`).join("")}</tbody></table>`;
+}
+function wirePnc(el) {
+  const ib = el.querySelector(".inbox"), sel = ib && ib.querySelector(".sel");
+  if (sel) { const k = STATE.pncScroll || 0, top = sel.getBoundingClientRect().top - ib.getBoundingClientRect().top; ib.scrollTop = top >= k && top + sel.offsetHeight <= k + ib.clientHeight ? k : Math.max(0, top - 8); }
+  if (ib) ib.addEventListener("scroll", () => { STATE.pncScroll = ib.scrollTop; });
+  el.querySelectorAll("[data-pnc]").forEach((b) => {
+    const open = () => { location.hash = "post-noc-intake/" + b.dataset.pnc; };
+    b.addEventListener("click", open);
+    b.addEventListener("keydown", (e) => { if (e.key === "Enter") open(); });
+  });
+}
+function viewIntake(el, sub) {
+  PNC = PNC || POSTNOC.build(PQI, db);
+  if (sub && PNC.find((x) => x.id === sub)) { STATE.pnc = sub; viewIntakeDetail(el); } else viewIntakeDashboard(el);
+}
+function viewIntakeDashboard(el) {
+  PNC = PNC || POSTNOC.build(PQI, db);
+  const byLvl = (l) => PNC.filter((x) => x.level === l).length;
+  el.innerHTML = `<div class="view-head full"><h2>Post-NOC change intake</h2><p>What a health authority could see when post-approval quality changes arrive as FHIR PQI bundles over an API: each change is compared with the approved dossier, proposed a reporting category under Health Canada’s <a href="https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/applications-submissions/guidance-documents/post-notice-compliance-changes/quality-document/guidance.html" target="_blank" rel="noopener">Post-NOC Changes: Quality Document</a>, and placed on a risk gradient for triage.</p></div>
+  <ol class="pipeline" aria-label="Automated intake steps">
+    <li><b>Received</b><span>POST /fhir · transaction Bundle</span></li>
+    <li><b>Validated</b><span>PQI profiles</span></li>
+    <li><b>Compared</b><span>with the approved baseline</span></li>
+    <li><b>Categorised</b><span>Appendix 1 &amp; 7 rules</span></li>
+    <li><b>Risk-rated</b><span>0–100 gradient</span></li>
+    <li><b>Routed</b><span>FHIR Task to assessor</span></li>
+  </ol>
+  <div class="card" style="margin-bottom:16px">
+    <div style="display:flex;flex-wrap:wrap;gap:10px 28px;align-items:baseline;margin-bottom:12px"><h3 style="margin:0">Intake queue · risk map</h3>
+      <div class="chips">${lvlChip("I", byLvl("I") + " Supplement")}${lvlChip("III", byLvl("III") + " Annual notification")}${lvlChip("IV", byLvl("IV") + " Record of change")}<span class="chip lvl2">Level II not applicable to human pharmaceuticals</span></div></div>
+    ${gradient(PNC.map((x) => ({ score: x.score, label: x.id + " " + x.title, id: x.id })), false)}
+    ${queueTable()}
+  </div>`;
+  wirePnc(el);
+}
+function viewIntakeDetail(el) {
+  PNC = PNC || POSTNOC.build(PQI, db);
+  if (!STATE.pnc || !PNC.find((s) => s.id === STATE.pnc)) STATE.pnc = PNC[PNC.length - 1].id;
+  const s = PNC.find((x) => x.id === STATE.pnc);
+  const byLvl = (l) => PNC.filter((x) => x.level === l).length;
+  const L = POSTNOC.LEVELS[s.level];
+  const icon = { met: "✓", not_met: "✕", review: "!", attested: "✎" };
+  const ilabel = { met: "Met", not_met: "Not met", review: "Assessor review", attested: "Sponsor attested" };
+  const icls = { met: "ok", not_met: "fail", review: "near", attested: "info" };
+  el.innerHTML = `<div class="crumbs"><a href="#post-noc-intake">← Intake dashboard</a><span class="muted">Post-NOC intake · ${esc(s.id)}</span></div>
+  <div class="intake">
+    <div class="inbox" role="list" aria-label="Received submissions">${PNC.slice().reverse().map((x) => `<button type="button" role="listitem" class="inbox-item${x.id === s.id ? " sel" : ""}" data-pnc="${x.id}">
+        <span class="ib-top"><span class="mono">${esc(x.id)}</span><span class="muted">${esc(x.received.slice(0, 10))}</span></span>
+        <b>${esc(x.title)}</b>
+        <span class="ib-bot">${lvlChip(x.level, POSTNOC.LEVELS[x.level].short)}${x.escalated ? '<span class="chip near">Escalated</span>' : ""}<span class="mini"><span style="width:${x.score}%"></span></span><span class="num muted">${x.score}</span></span>
+      </button>`).join("")}</div>
+    <div class="detail">
+      <div class="card">
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 16px"><div><span class="mono muted">${esc(s.id)} · received ${esc(s.received.replace("T", " ").slice(0, 16))} · Sakura Pharmaceuticals Company, LTD</span><h2 style="font-size:26px;margin-top:4px">${esc(s.title)}</h2></div>
+          <span class="chip ok" style="align-self:flex-start">201 Created · validated</span></div>
+        <p style="margin:8px 0 0;max-width:80ch">${esc(s.summary)}</p>
+      </div>
+      <div class="grid g2">
+        <div class="card cat-card ${LVL_CLASS[s.level]}"><span class="note">Proposed reporting category</span>
+          <div class="cat-level">${esc(L.name)}</div>
+          <p style="margin:4px 0 10px"><b>Change ${esc(String(s.item.n))}</b> · ${esc(s.item.title)}<br><span class="muted">${esc(s.sub)} · ${esc(s.item.app)}</span></p>
+          ${s.escalated ? `<p class="esc">Moved up from ${esc(POSTNOC.LEVELS[s.initial].name)}: ${s.conditions.filter((c) => c.status === "not_met").map((c) => "condition " + c.n).join(", ")} not met. Under the guidance an unmet condition moves the change to the next higher level, and Level II does not apply to human pharmaceuticals.</p>` : ""}
+          <dl class="kv"><dt>Filing</dt><dd>${esc(L.filing)}</dd><dt>Implementation</dt><dd>${esc(L.timing)}</dd></dl></div>
+        <div class="card"><span class="note">Risk rating</span><div class="statrow" style="align-items:baseline;margin:2px 0 6px"><span class="big num">${s.score}</span><span class="muted">of 100</span></div>
+          ${gradient([{ score: s.score, label: s.id, sel: true }], true)}
+          <details style="margin-top:10px"><summary>Why this score</summary><table class="t" style="margin-top:6px"><tbody>${s.factors.map((f) => `<tr><td>${esc(f.why)}</td><td class="num" style="text-align:right">${f.pts > 0 ? "+" : ""}${f.pts}</td></tr>`).join("")}</tbody></table><p class="note">Transparent additive model for triage; it does not replace the assessor’s judgement.</p></details></div>
+      </div>
+      <div class="card scroll"><h3>Detected changes against the approved dossier</h3>
+        <table class="t pn-diff"><thead><tr><th>Resource</th><th>Element</th><th>Approved</th><th>Proposed</th></tr></thead><tbody>
+        ${s.changes.map((c) => (c.kind === "create" && !c.diffs.length ? [{ path: "(new resource)", before: undefined, after: PQI.label(c.resource) }] : c.diffs).slice(0, 12).map((d, i) => `<tr><td>${i === 0 ? (c.base ? refBtn(c.resource.resourceType + "/" + c.resource.id, c.resource.resourceType + " · " + PQI.label(c.base).slice(0, 40)) : `<span class="chip type">${esc(c.resource.resourceType)}</span> <span class="chip near">new</span>`) : ""}</td><td class="mono">${esc(d.path)}</td><td class="num">${esc(fmtVal(d.before))}</td><td class="num"><b>${esc(fmtVal(d.after))}</b></td></tr>`).join("")).join("")}
+        </tbody></table>${s.changes.some((c) => c.diffs.length > 12) ? '<p class="note">Further element-level differences are in the request bundle below.</p>' : ""}</div>
+      <div class="grid g2">
+        <div class="card"><h3>Conditions to be fulfilled</h3>${s.conditions.length ? `<ul class="conds">${s.conditions.map((c) => `<li><span class="chip ${icls[c.status]}" title="${ilabel[c.status]}">${icon[c.status]} ${ilabel[c.status]}</span><div><b>${esc(String(c.n))}.</b> ${esc(c.text)}<div class="note">${esc(c.evidence)}</div></div></li>`).join("")}</ul>` : '<p class="muted" style="margin:0">The guidance lists no conditions for this change.</p>'}</div>
+        <div class="card"><h3>Supporting data in the bundle</h3>${s.support.length ? `<ul class="conds">${s.support.map((x) => `<li><span class="chip ${x.present ? "ok" : "fail"}">${x.present ? "✓ Present" : "✕ Missing"}</span><div><span class="mono">${esc(x.ctd)}</span> ${esc(x.text)}</div></li>`).join("")}</ul>` : '<p class="muted" style="margin:0">No filing to Health Canada: kept in the product record under GMP.</p>'}
+          ${s.affected ? `<p class="note" style="margin-top:12px">Existing results re-checked against the proposed criterion: ${s.affected.n} in scope, ${s.affected.fails.length} would fail.</p>` : ""}</div>
+      </div>
+      <div class="card"><h3>API exchange</h3><p class="note" style="margin-top:0">Request from the sponsor’s system and the routing Task the agency’s system returns. Endpoint and identifiers are illustrative.</p>
+        <details><summary>Request · POST https://api.example-regulator.ca/fhir (Bundle, ${POSTNOC.bundleOf(s).entry.length} entries)</summary><pre class="mono">${esc(JSON.stringify(POSTNOC.bundleOf(s), null, 2).slice(0, 6000))}</pre></details>
+        <details style="margin-top:8px"><summary>Response · Task routed for assessment</summary><pre class="mono">${esc(JSON.stringify(POSTNOC.responseOf(s), null, 2))}</pre></details></div>
+      <p class="note">Illustrative automation of Health Canada’s Post-NOC Changes: Quality Document (revision 2019-06-26). Health Canada notes a future version will align with the Agile Licensing regulations published 18 December 2024. Categories are proposals for assessor confirmation; this is not a Health Canada tool.</p>
+    </div>
+  </div>`;
+  wirePnc(el);
+}
+
+// =====================================================================================
+// FHIR inspector
+function openInspector(k) {
+  const r = get(k);
+  const box = $("#insp");
+  if (!r) return;
+  const prof = r.meta && r.meta.profile ? r.meta.profile[0].split("/").pop() : "core " + r.resourceType;
+  const outs = new Set(); PQI.walk(r, (v, key) => { if (key === "reference" && typeof v === "string" && db.byKey.has(v) && v !== k) outs.add(v); if (typeof v === "string" && db.byUrl.has(v) && v !== r.url) { const t = db.byUrl.get(v); outs.add(t.resourceType + "/" + t.id); } });
+  const ins = [...(db.backrefs.get(k) || [])];
+  let body = "";
+  if (r.resourceType === "ObservationDefinition") {
+    const ap = db.apOf.get(r.id); const rs = PQI.resultsFor(db, r.id);
+    body = `<dl class="kv"><dt>Category</dt><dd>${esc(T(r.category && r.category[0]))}</dd><dt>Method</dt><dd>${esc(T(r.method))}</dd>${(r.qualifiedValue || []).map((q) => `<dt>${esc(q.context ? q.context.text : "Criterion")}</dt><dd><b>${esc((q.extension || [])[0].valueString)}</b>${q.range ? ` <span class="mono muted">[${q.range.low ? q.range.low.value : "–"} … ${q.range.high ? q.range.high.value : "–"}] ${esc((q.range.high || q.range.low).unit || "")}</span>` : ""}</dd>`).join("")}
+      ${ap ? `<dt>Procedure</dt><dd>${refBtn("PlanDefinition/" + ap.id)}</dd>` : ""}<dt>Results</dt><dd>${rs.length}${rs.length ? " · " + ["pass", "near", "fail", "info"].map((s) => { const n = rs.filter((x) => ev(x.obs).status === s).length; return n ? chipStatus(s, n + " " + STATUS_LABEL[s].toLowerCase()) : ""; }).join(" ") : ""}</dd></dl>`;
+  } else if (r.resourceType === "Observation") {
+    const e = ev(r); const si = PQI.specimenInfo(db, r); const od = PQI.odOf(db, r);
+    body = `<div class="statrow"><div class="stat"><span class="big num">${esc(PQI.valueText(r))}</span><small>${esc(T(r.code))}</small></div><div class="stat">${chipStatus(e.status)}<small>${esc(e.crit ? (e.crit.ctx ? e.crit.ctx + ": " : "") + e.crit.text : "")}</small></div></div>
+      <dl class="kv" style="margin-top:8px"><dt>Subject</dt><dd>${refBtn(r.subject.reference)}</dd>${si ? `<dt>Specimen</dt><dd>${esc(si.condition)} · ${si.months} months</dd>` : ""}${r.component ? `<dt>Components</dt><dd>${r.component.map((c) => esc(T(c.code)) + ": " + esc(c.valueQuantity ? c.valueQuantity.value + (c.valueQuantity.unit ? " " + c.valueQuantity.unit : "") : c.valueString)).join("<br>")}</dd>` : ""}<dt>Defined by</dt><dd>${od ? refBtn("ObservationDefinition/" + od.id) : ""}</dd></dl>`;
+  } else if (r.resourceType === "PlanDefinition") {
+    const tree = (acts, d) => `<ul style="margin:4px 0;padding-left:${d ? 14 : 0}px;list-style:${d ? "disc" : "none"}">${(acts || []).map((a) => { const od = a.definitionCanonical && db.byUrl.get(a.definitionCanonical); return `<li><b>${esc(a.title || T(a.code))}</b>${a.description ? ` <span class="muted">${esc(a.description.length > 180 ? a.description.slice(0, 180) + "…" : a.description)}</span>` : ""}${od ? " " + refBtn(od.resourceType + "/" + od.id, od.resourceType === "ObservationDefinition" ? critText(od).slice(0, 50) || "definition" : od.title || od.id) : ""}${tree(a.action, d + 1)}</li>`; }).join("")}</ul>`;
+    body = `<dl class="kv"><dt>Type</dt><dd>${esc(T(r.type))}</dd>${r.subjectReference ? `<dt>Subject</dt><dd>${refBtn(r.subjectReference.reference)}</dd>` : ""}</dl>${r.description ? `<p class="muted">${esc(r.description)}</p>` : ""}<div style="max-height:360px;overflow:auto">${tree(r.action, 0)}</div>`;
+  } else {
+    const simple = Object.entries(r).filter(([key, v]) => !["resourceType", "id", "meta", "text", "url"].includes(key) && (typeof v === "string" || typeof v === "number" || typeof v === "boolean" || (v && typeof v === "object" && !Array.isArray(v) && (v.text || v.reference))));
+    body = `<dl class="kv">${simple.slice(0, 12).map(([key, v]) => `<dt>${esc(key)}</dt><dd>${typeof v === "object" ? (v.reference ? refBtn(v.reference) : esc(v.text)) : esc(v)}</dd>`).join("")}</dl>${r.text && r.resourceType !== "Composition" ? "" : ""}`;
+  }
+  box.innerHTML = `<div class="insp-in"><div class="insp-head"><div><span class="chip type">${esc(r.resourceType)}</span> <span class="mono muted">${esc(prof)}</span><h3 style="margin-top:6px">${esc(PQI.label(r))}</h3></div><button type="button" class="btn" id="iclose" aria-label="Close inspector">Close</button></div>
+    ${body}
+    ${r.meta && r.meta.source ? `<p class="note" style="margin:0">Source in mock-up: <a href="${esc(r.meta.source)}" target="_blank" rel="noopener">${esc(srcTitle(r.meta.source))}</a></p>` : ""}
+    ${outs.size ? `<div><b>References</b><div class="chips" style="margin-top:4px">${[...outs].slice(0, 30).map((x) => refBtn(x)).join("")}</div></div>` : ""}
+    ${ins.length ? `<div><b>Referenced by</b> <span class="muted">(${ins.length})</span><div class="chips" style="margin-top:4px">${ins.slice(0, 30).map((x) => refBtn(x)).join("")}${ins.length > 30 ? `<span class="muted">+${ins.length - 30}</span>` : ""}</div></div>` : ""}
+    <details><summary>FHIR JSON</summary><div style="display:flex;justify-content:flex-end;margin:6px 0"><button type="button" class="btn" id="icopy">Copy JSON</button></div><pre class="mono">${esc(JSON.stringify(r, null, 2))}</pre></details></div>`;
+  box.classList.add("open");
+  $("#iclose").addEventListener("click", () => box.classList.remove("open"));
+  $("#icopy").addEventListener("click", async (e) => { try { await navigator.clipboard.writeText(JSON.stringify(r, null, 2)); e.target.textContent = "Copied"; } catch (err) { e.target.textContent = "Copy not allowed here"; } });
+  box.scrollTop = 0;
+}
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") $("#insp").classList.remove("open"); });
+
+// =====================================================================================
+// Search
+(function search() {
+  const inp = $("#q"), ul = $("#qres");
+  const idx = [];
+  ["SubstanceDefinition", "ObservationDefinition", "PlanDefinition", "Medication", "Substance", "Organization", "DeviceDefinition", "PackagedProductDefinition", "Ingredient", "DiagnosticReport"].forEach((t) => all(t).forEach((r) => idx.push({ k: t + "/" + r.id, t, s: PQI.label(r) })));
+  inp.addEventListener("input", () => {
+    const v = inp.value.trim().toLowerCase();
+    if (v.length < 2) { ul.hidden = true; return; }
+    FLAT = FLAT || flatSections();
+    const secs = FLAT.filter((x) => x.s.title.toLowerCase().includes(v)).slice(0, 6).map((x) => `<li><button type="button" data-go="ctd|${esc(x.id)}"><span class="chip type">Section</span> ${esc(x.s.title)}</button></li>`);
+    const hits = idx.filter((x) => x.s.toLowerCase().includes(v)).slice(0, 18).map((x) => `<li><button type="button" data-open="${esc(x.k)}"><span class="chip type">${esc(x.t)}</span> ${esc(x.s)}</button></li>`);
+    ul.innerHTML = secs.concat(hits).join("") || '<li class="muted" style="padding:6px 8px">No matches</li>';
+    ul.hidden = false;
+  });
+  document.addEventListener("click", (e) => { if (!e.target.closest(".search")) ul.hidden = true; else if (e.target.closest("#qres button")) ul.hidden = true; });
+})();
+
+route();
+</script>
+</body>
+</html>

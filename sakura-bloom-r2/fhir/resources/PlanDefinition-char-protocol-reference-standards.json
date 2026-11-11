@@ -1,0 +1,63 @@
+{
+ "resourceType": "PlanDefinition",
+ "id": "char-protocol-reference-standards",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+  ]
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/char-protocol-reference-standards",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> char-protocol-reference-standards</p></div>"
+ },
+ "title": "Elucidation of structure of reference standards (MS, 1H NMR, 13C NMR)",
+ "type": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+    "code": "elucidation-of-structure",
+    "display": "Elucidation of Structure"
+   }
+  ],
+  "text": "Elucidation of Structure"
+ },
+ "status": "active",
+ "subjectReference": {
+  "reference": "SubstanceDefinition/sakuramil"
+ },
+ "action": [
+  {
+   "title": "Characterization",
+   "code": {
+    "text": "Timing Group"
+   },
+   "action": [
+    {
+     "title": "Mass spectrometry (ESI) m/z",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-ms-mz",
+     "description": "Method: LC-IT-TOF MS, ESI"
+    },
+    {
+     "title": "1H NMR signal assignment",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-1h-nmr-signal",
+     "description": "Method: 1H NMR 500 MHz, D2O"
+    },
+    {
+     "title": "13C NMR signal assignment",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-13c-nmr-signal",
+     "description": "Method: 13C NMR 500 MHz, D2O"
+    }
+   ]
+  }
+ ]
+}

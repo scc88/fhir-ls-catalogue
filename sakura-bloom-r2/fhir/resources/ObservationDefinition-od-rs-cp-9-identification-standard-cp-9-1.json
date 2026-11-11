@@ -1,0 +1,63 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-rs-cp-9-identification-standard-cp-9-1",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81a09f43cef28b653844"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rs-cp-9-identification-standard-cp-9-1",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Related substances - CP-9-1: ≤ 1.0 %</p></div>"
+ },
+ "title": "CP-9-1",
+ "status": "active",
+ "category": [
+  {
+   "text": "Related substances"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "DGP-s",
+    "display": "Drug Substance Related Organic impurities"
+   }
+  ],
+  "text": "Related substances - CP-9-1"
+ },
+ "permittedDataType": [
+  "Quantity"
+ ],
+ "method": {
+  "text": "HPLC In-house"
+ },
+ "permittedUnit": [
+  {
+   "system": "http://unitsofmeasure.org",
+   "code": "%",
+   "display": "%"
+  }
+ ],
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "≤ 1.0 %"
+    }
+   ],
+   "range": {
+    "high": {
+     "value": 1.0,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  }
+ ]
+}

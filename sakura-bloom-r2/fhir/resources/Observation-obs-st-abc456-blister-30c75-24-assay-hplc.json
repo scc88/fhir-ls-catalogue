@@ -1,0 +1,55 @@
+{
+ "resourceType": "Observation",
+ "id": "obs-st-abc456-blister-30c75-24-assay-hplc",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+  ]
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Assay - Assay (HPLC): 97.4 % (Medication/dp-abc456-blister)</p></div>"
+ },
+ "extension": [
+  {
+   "url": "http://hl7.org/fhir/StructureDefinition/workflow-triggeredBy",
+   "valueReference": {
+    "reference": "PlanDefinition/stability-protocol-dp-registration"
+   }
+  }
+ ],
+ "status": "final",
+ "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-assay-hplc",
+ "category": [
+  {
+   "text": "Assay"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "ASSAY",
+    "display": "Assay"
+   }
+  ],
+  "text": "Assay - Assay (HPLC)"
+ },
+ "subject": {
+  "reference": "Medication/dp-abc456-blister"
+ },
+ "performer": [
+  {
+   "reference": "Organization/aparna-pharm"
+  }
+ ],
+ "valueQuantity": {
+  "value": 97.4,
+  "unit": "%",
+  "system": "http://unitsofmeasure.org",
+  "code": "%"
+ },
+ "specimen": {
+  "reference": "Specimen/spc-abc456-blister-30c75-24m"
+ }
+}

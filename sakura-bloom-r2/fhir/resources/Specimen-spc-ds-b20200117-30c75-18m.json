@@ -1,0 +1,44 @@
+{
+ "resourceType": "Specimen",
+ "id": "spc-ds-b20200117-30c75-18m",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Specimen-drug-pq"
+  ]
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Specimen</b> spc-ds-b20200117-30c75-18m</p></div>"
+ },
+ "identifier": [
+  {
+   "system": "http://example.org/sakura-bloom-r2/fhir/stability-sample",
+   "value": "spc-ds-b20200117-30c75-18m"
+  }
+ ],
+ "status": "available",
+ "type": {
+  "text": "Sakuramil drug substance (LDPE bag)"
+ },
+ "subject": {
+  "reference": "Substance/ds-b20200117"
+ },
+ "processing": [
+  {
+   "description": "Stored at 30 ± 2 °C / 75 ± 5 % RH for 18 months",
+   "timePeriod": {
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-storage-duration-pq",
+      "valueDuration": {
+       "value": 18,
+       "unit": "months",
+       "system": "http://unitsofmeasure.org",
+       "code": "mo"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}

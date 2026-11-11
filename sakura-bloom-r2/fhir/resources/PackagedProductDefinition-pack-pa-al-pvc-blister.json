@@ -1,0 +1,240 @@
+{
+ "resourceType": "PackagedProductDefinition",
+ "id": "pack-pa-al-pvc-blister",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PackagedProductDefinition-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81d18aa0cd2f24d28718"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PackagedProductDefinition</b> Sakura Bloom 20 mg film-coated tablets - PA/AL/PVC blister</p></div>"
+ },
+ "name": "Sakura Bloom 20 mg film-coated tablets - PA/AL/PVC blister",
+ "type": {
+  "text": "Blister pack"
+ },
+ "packageFor": [
+  {
+   "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+  }
+ ],
+ "status": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/publication-status",
+    "code": "active",
+    "display": "Active"
+   }
+  ],
+  "text": "Active"
+ },
+ "description": "PA/AL/PVC cold-form blister (forming foil: polyamide / aluminium / PVC product-contact layer; lidding: 20 µm aluminium foil with heat-seal lacquer and nitrocellulose-free printing primer) in a non-functional cardboard box.",
+ "packaging": {
+  "type": {
+   "coding": [
+    {
+     "system": "http://standardterms.edqm.eu",
+     "code": "30009000",
+     "display": "Box"
+    }
+   ],
+   "text": "Box (secondary, non-functional)"
+  },
+  "packaging": [
+   {
+    "type": {
+     "coding": [
+      {
+       "system": "http://standardterms.edqm.eu",
+       "code": "30007000",
+       "display": "Blister"
+      }
+     ],
+     "text": "Blister"
+    },
+    "material": [
+     {
+      "text": "Polyamide (PA)"
+     },
+     {
+      "text": "Aluminium"
+     },
+     {
+      "text": "Polyvinyl chloride (PVC)"
+     }
+    ],
+    "shelfLifeStorage": [
+     {
+      "type": {
+       "text": "Shelf life of the medicinal product as packaged for sale - Climatic zones I & II (EU)"
+      },
+      "periodDuration": {
+       "value": 36,
+       "unit": "months",
+       "system": "http://unitsofmeasure.org",
+       "code": "mo"
+      },
+      "specialPrecautionsForStorage": [
+       {
+        "text": "This medicinal product does not require any special storage requirement."
+       }
+      ]
+     },
+     {
+      "type": {
+       "text": "Shelf life of the medicinal product as packaged for sale - Climatic zones I & II (non-EU)"
+      },
+      "periodDuration": {
+       "value": 36,
+       "unit": "months",
+       "system": "http://unitsofmeasure.org",
+       "code": "mo"
+      },
+      "specialPrecautionsForStorage": [
+       {
+        "text": "Do not store above 30°C"
+       }
+      ]
+     },
+     {
+      "type": {
+       "text": "Shelf life of the medicinal product as packaged for sale - Climatic zones III & IVA"
+      },
+      "periodDuration": {
+       "value": 36,
+       "unit": "months",
+       "system": "http://unitsofmeasure.org",
+       "code": "mo"
+      },
+      "specialPrecautionsForStorage": [
+       {
+        "text": "Do not store above 30°C"
+       }
+      ]
+     },
+     {
+      "type": {
+       "text": "Shelf life of the medicinal product as packaged for sale - Climatic zone IVB"
+      },
+      "periodDuration": {
+       "value": 36,
+       "unit": "months",
+       "system": "http://unitsofmeasure.org",
+       "code": "mo"
+      },
+      "specialPrecautionsForStorage": [
+       {
+        "text": "Do not store above 30°C"
+       }
+      ]
+     }
+    ],
+    "manufacturer": [
+     {
+      "reference": "Organization/pack-alpha"
+     },
+     {
+      "reference": "Organization/cocopharma"
+     },
+     {
+      "reference": "Organization/aparna-pharm"
+     }
+    ],
+    "containedItem": [
+     {
+      "item": {
+       "reference": {
+        "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+       }
+      }
+     }
+    ],
+    "packaging": [
+     {
+      "type": {
+       "text": "Forming component: PA/AL/PVC foil"
+      },
+      "material": [
+       {
+        "text": "Polyamide (PA) film (not in contact with product)"
+       },
+       {
+        "text": "Aluminium foil (not in contact with product)"
+       },
+       {
+        "text": "PVC film (product contact layer)"
+       }
+      ],
+      "property": [
+       {
+        "type": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/package-property",
+           "code": "Thickness",
+           "display": "Thickness"
+          }
+         ],
+         "text": "Thickness"
+        },
+        "valueCodeableConcept": {
+         "text": "≥ 150 µm (total)"
+        }
+       },
+       {
+        "type": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/package-property",
+           "code": "Quality Standard",
+           "display": "Quality Standard"
+          }
+         ],
+         "text": "Quality Standard"
+        },
+        "valueCodeableConcept": {
+         "text": "Complies with foodstuff legislation"
+        }
+       }
+      ]
+     },
+     {
+      "type": {
+       "text": "Backing component: aluminium lidding foil"
+      },
+      "material": [
+       {
+        "text": "Heat seal lacquer (vinyl acryl resin) (product contact layer)"
+       },
+       {
+        "text": "Aluminium foil 20 µm"
+       },
+       {
+        "text": "Nitrocellulose-free printing primer"
+       }
+      ],
+      "property": [
+       {
+        "type": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/package-property",
+           "code": "Thickness",
+           "display": "Thickness"
+          }
+         ],
+         "text": "Thickness"
+        },
+        "valueCodeableConcept": {
+         "text": "≥ 20 µm (total)"
+        }
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

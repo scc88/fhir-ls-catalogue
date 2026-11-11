@@ -1,0 +1,238 @@
+{
+ "resourceType": "MedicinalProductDefinition",
+ "id": "sakura-bloom-20mg",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8139acafcbef7ae81c6f"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>MedicinalProductDefinition</b> Sakura Bloom 20 mg film-coated tablets</p></div>"
+ },
+ "identifier": [
+  {
+   "system": "http://example.org/sakura-bloom-r2/fhir/product-id",
+   "value": "SB-20MG-FCT"
+  }
+ ],
+ "type": {
+  "text": "Medicinal product (small molecule)"
+ },
+ "domain": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/medicinal-product-domain",
+    "code": "Human",
+    "display": "Human use"
+   }
+  ],
+  "text": "Human use"
+ },
+ "status": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/publication-status",
+    "code": "active",
+    "display": "Active"
+   }
+  ],
+  "text": "Active"
+ },
+ "description": "Sakura Bloom 20 mg film-coated tablet: immediate-release film-coated tablet for oral administration, to be swallowed whole. Strength expressed as Sakuramil neutral, anhydrous base. Fictitious ICH M4Q(R2) mock-up product 'SakuraBloom R2'.",
+ "combinedPharmaceuticalDoseForm": {
+  "coding": [
+   {
+    "system": "http://standardterms.edqm.eu",
+    "code": "10221000",
+    "display": "Film-coated tablet"
+   }
+  ],
+  "text": "Film-coated tablet"
+ },
+ "route": [
+  {
+   "coding": [
+    {
+     "system": "http://standardterms.edqm.eu",
+     "code": "20053000",
+     "display": "Oral use"
+    }
+   ],
+   "text": "Oral use"
+  }
+ ],
+ "name": [
+  {
+   "productName": "Sakura Bloom 20 mg film-coated tablets",
+   "type": {
+    "coding": [
+     {
+      "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-productNameType-pq-example",
+      "code": "Proprietary",
+      "display": "Proprietary"
+     }
+    ],
+    "text": "Proprietary"
+   },
+   "part": [
+    {
+     "part": "Sakura Bloom",
+     "type": {
+      "text": "Invented name part"
+     }
+    },
+    {
+     "part": "20 mg",
+     "type": {
+      "text": "Strength part"
+     }
+    },
+    {
+     "part": "film-coated tablets",
+     "type": {
+      "text": "Pharmaceutical dose form part"
+     }
+    }
+   ]
+  }
+ ],
+ "operation": [
+  {
+   "type": {
+    "concept": {
+     "text": "Drug substance manufacture"
+    }
+   },
+   "organization": [
+    {
+     "reference": "Organization/iroha-corp"
+    }
+   ]
+  },
+  {
+   "type": {
+    "reference": {
+     "reference": "PlanDefinition/dp-manufacturing-process"
+    }
+   },
+   "organization": [
+    {
+     "reference": "Organization/aparna-pharm"
+    }
+   ]
+  },
+  {
+   "type": {
+    "concept": {
+     "text": "Quality control testing (release)"
+    }
+   },
+   "organization": [
+    {
+     "reference": "Organization/aparna-pharm"
+    },
+    {
+     "reference": "Organization/dakina-analytica"
+    },
+    {
+     "reference": "Organization/kunchen-sa"
+    }
+   ]
+  },
+  {
+   "type": {
+    "concept": {
+     "text": "Primary packaging"
+    }
+   },
+   "organization": [
+    {
+     "reference": "Organization/aparna-pharm"
+    },
+    {
+     "reference": "Organization/pack-alpha"
+    },
+    {
+     "reference": "Organization/cocopharma"
+    }
+   ]
+  },
+  {
+   "type": {
+    "concept": {
+     "text": "Secondary packaging"
+    }
+   },
+   "organization": [
+    {
+     "reference": "Organization/aparna-pharm"
+    },
+    {
+     "reference": "Organization/pack-alpha"
+    }
+   ]
+  },
+  {
+   "type": {
+    "concept": {
+     "text": "Stability testing"
+    }
+   },
+   "organization": [
+    {
+     "reference": "Organization/aparna-pharm"
+    },
+    {
+     "reference": "Organization/pack-alpha"
+    }
+   ]
+  }
+ ],
+ "characteristic": [
+  {
+   "type": {
+    "text": "Drug release profile"
+   },
+   "valueCodeableConcept": {
+    "text": "Immediate release"
+   }
+  },
+  {
+   "type": {
+    "text": "Maximum daily dose"
+   },
+   "valueQuantity": {
+    "value": 40,
+    "unit": "mg",
+    "system": "http://unitsofmeasure.org",
+    "code": "mg"
+   }
+  },
+  {
+   "type": {
+    "text": "Medical device(s) or co-packaged item(s)"
+   },
+   "valueCodeableConcept": {
+    "text": "Not applicable"
+   }
+  },
+  {
+   "type": {
+    "text": "Method of administration"
+   },
+   "valueCodeableConcept": {
+    "text": "To be swallowed whole"
+   }
+  },
+  {
+   "type": {
+    "text": "Shelf life (QTPP target)"
+   },
+   "valueCodeableConcept": {
+    "text": "36 months at room temperature across all climatic zones"
+   }
+  }
+ ]
+}

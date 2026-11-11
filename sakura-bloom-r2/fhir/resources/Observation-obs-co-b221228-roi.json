@@ -1,0 +1,38 @@
+{
+ "resourceType": "Observation",
+ "id": "obs-co-b221228-roi",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+  ]
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Residue on ignition: &lt;0.01 % (Substance/ds-b221228)</p></div>"
+ },
+ "status": "final",
+ "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-carryover-residue-on-ignition",
+ "category": [
+  {
+   "text": "Residue on ignition"
+  }
+ ],
+ "code": {
+  "text": "Residue on ignition"
+ },
+ "subject": {
+  "reference": "Substance/ds-b221228"
+ },
+ "performer": [
+  {
+   "reference": "Organization/iroha-corp"
+  }
+ ],
+ "valueQuantity": {
+  "comparator": "<",
+  "value": 0.01,
+  "unit": "%",
+  "system": "http://unitsofmeasure.org",
+  "code": "%"
+ }
+}

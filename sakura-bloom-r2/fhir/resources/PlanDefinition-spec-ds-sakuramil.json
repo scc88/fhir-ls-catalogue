@@ -1,0 +1,221 @@
+{
+ "resourceType": "PlanDefinition",
+ "id": "spec-ds-sakuramil",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81bd95b9e9b0ef622af2"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-ds-sakuramil",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> Table 1-1 Drug substance release/re-test specification of Sakuramil (2.3.3.DS.C). Re-test period 36 months, storage 15-30 °C.</p></div>"
+ },
+ "title": "Drug substance release / re-test specification - Sakuramil (IROHA-corp.)",
+ "type": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+    "code": "1244577",
+    "display": "Specification Protocol"
+   }
+  ],
+  "text": "Specification Protocol"
+ },
+ "status": "active",
+ "subjectReference": {
+  "reference": "SubstanceDefinition/sakuramil"
+ },
+ "description": "Table 1-1 Drug substance release/re-test specification of Sakuramil (2.3.3.DS.C). Re-test period 36 months, storage 15-30 °C.",
+ "action": [
+  {
+   "title": "Release and re-test",
+   "code": {
+    "text": "Timing Group"
+   },
+   "action": [
+    {
+     "title": "Appearance",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-appearance",
+     "description": "Method: visual evaluation"
+    },
+    {
+     "title": "Sakuramil (IR)",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-sakuramil-ir",
+     "description": "Method: IR USP <197A>"
+    },
+    {
+     "title": "Sakuramil (HPLC)",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-sakuramil-hplc",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-ds-assay-id"
+      }
+     ]
+    },
+    {
+     "title": "Assay (Sakuramil, dried basis)",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-assay-sakuramil-dried-basis",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-ds-assay-id"
+      }
+     ]
+    },
+    {
+     "title": "CP-9-1",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-cp-9-1",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-ds-related-substances"
+      }
+     ]
+    },
+    {
+     "title": "CP-8",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-cp-8",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-ds-related-substances"
+      }
+     ]
+    },
+    {
+     "title": "Individual unspecified impurities",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-individual-unspecified-impurities",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-ds-related-substances"
+      }
+     ]
+    },
+    {
+     "title": "Total impurities",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-total-impurities",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-ds-related-substances"
+      }
+     ]
+    },
+    {
+     "title": "CP-6",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-cp-6",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-ds-mutagenic-impurities"
+      }
+     ]
+    },
+    {
+     "title": "Methylene chloride",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-methylene-chloride",
+     "description": "Method: GC  USP <467> Procedure A"
+    },
+    {
+     "title": "Loss on drying",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-loss-on-drying",
+     "description": "Method: USP <731>"
+    },
+    {
+     "title": "Residue on ignition",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-residue-on-ignition",
+     "description": "Method: USP <281>"
+    },
+    {
+     "title": "Particle size distribution d(0.1)",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-particle-size-distribution-d-0-1",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-ds-particle-size"
+      }
+     ]
+    },
+    {
+     "title": "Particle size distribution d(0.5)",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-particle-size-distribution-d-0-5",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-ds-particle-size"
+      }
+     ]
+    },
+    {
+     "title": "Particle size distribution d(0.9)",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-particle-size-distribution-d-0-9",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-ds-particle-size"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

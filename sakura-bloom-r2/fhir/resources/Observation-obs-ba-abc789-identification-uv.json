@@ -1,0 +1,44 @@
+{
+ "resourceType": "Observation",
+ "id": "obs-ba-abc789-identification-uv",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+  ]
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Identification - Identification (UV-Vis): Complies (Medication/dp-abc789)</p></div>"
+ },
+ "status": "final",
+ "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-identification-uv",
+ "category": [
+  {
+   "text": "Identification"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "IDT",
+    "display": "Identification"
+   }
+  ],
+  "text": "Identification - Identification (UV-Vis)"
+ },
+ "subject": {
+  "reference": "Medication/dp-abc789"
+ },
+ "performer": [
+  {
+   "reference": "Organization/dakina-analytica"
+  }
+ ],
+ "valueString": "Complies",
+ "interpretation": [
+  {
+   "text": "Complies"
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "resourceType": "Organization",
+ "id": "sakura-pharma",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8199b90deb4c0456477b"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Organization</b> Sakura Pharmaceuticals Company, LTD</p></div>"
+ },
+ "identifier": [
+  {
+   "system": "http://example.org/sakura-bloom-r2/fhir/organization-id",
+   "value": "sakura-pharma"
+  }
+ ],
+ "active": true,
+ "type": [
+  {
+   "text": "Applicant / owner of the drug substance technology (from 2.3.2.2)"
+  }
+ ],
+ "name": "Sakura Pharmaceuticals Company, LTD"
+}

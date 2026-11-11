@@ -1,0 +1,62 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-rm-hydrochloric-acid-assay-titration",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81b9839fc7895ddfb9ad"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-hydrochloric-acid-assay-titration",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Assay - Assay (titration): 35.0 – 37.0 %</p></div>"
+ },
+ "title": "Assay (titration)",
+ "status": "active",
+ "category": [
+  {
+   "text": "Assay"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "ASSAY",
+    "display": "Assay"
+   }
+  ],
+  "text": "Assay - Assay (titration)"
+ },
+ "permittedDataType": [
+  "Quantity"
+ ],
+ "method": {
+  "text": "Titration In-house"
+ },
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "35.0 – 37.0 %"
+    }
+   ],
+   "range": {
+    "low": {
+     "value": 35.0,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    },
+    "high": {
+     "value": 37.0,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  }
+ ]
+}

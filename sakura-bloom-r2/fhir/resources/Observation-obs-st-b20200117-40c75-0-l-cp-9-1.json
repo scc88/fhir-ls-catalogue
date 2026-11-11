@@ -1,0 +1,55 @@
+{
+ "resourceType": "Observation",
+ "id": "obs-st-b20200117-40c75-0-l-cp-9-1",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+  ]
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Related substances - CP-9-1: 0.05 % (Substance/ds-b20200117)</p></div>"
+ },
+ "extension": [
+  {
+   "url": "http://hl7.org/fhir/StructureDefinition/workflow-triggeredBy",
+   "valueReference": {
+    "reference": "PlanDefinition/stability-protocol-ds-registration"
+   }
+  }
+ ],
+ "status": "final",
+ "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-cp-9-1",
+ "category": [
+  {
+   "text": "Related substances"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "DGP-s",
+    "display": "Drug Substance Related Organic impurities"
+   }
+  ],
+  "text": "Related substances - CP-9-1"
+ },
+ "subject": {
+  "reference": "Substance/ds-b20200117"
+ },
+ "performer": [
+  {
+   "reference": "Organization/iroha-corp"
+  }
+ ],
+ "valueQuantity": {
+  "value": 0.05,
+  "unit": "%",
+  "system": "http://unitsofmeasure.org",
+  "code": "%"
+ },
+ "specimen": {
+  "reference": "Specimen/spc-ds-b20200117-40c75-0m"
+ }
+}

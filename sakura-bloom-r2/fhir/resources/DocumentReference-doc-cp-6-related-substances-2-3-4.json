@@ -1,0 +1,28 @@
+{
+ "resourceType": "DocumentReference",
+ "id": "doc-cp-6-related-substances-2-3-4",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DocumentReference-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81e990fbc77e31e3a665"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DocumentReference</b> 2.3.4.AP Analytical Procedures (Related Substances IM1)[Purity][CP-6]</p></div>"
+ },
+ "status": "current",
+ "type": {
+  "text": "Analytical procedure development / validation summary (2.3.4 DSJ)"
+ },
+ "description": "2.3.4.AP Analytical Procedures (Related Substances IM1)[Purity][CP-6]",
+ "content": [
+  {
+   "attachment": {
+    "contentType": "text/html",
+    "url": "https://ichm4q.notion.site/2a317984c9fc81e990fbc77e31e3a665",
+    "title": "2.3.4.AP Analytical Procedures (Related Substances IM1)[Purity][CP-6]"
+   }
+  }
+ ]
+}

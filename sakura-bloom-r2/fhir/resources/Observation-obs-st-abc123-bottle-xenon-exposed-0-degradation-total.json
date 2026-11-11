@@ -1,0 +1,55 @@
+{
+ "resourceType": "Observation",
+ "id": "obs-st-abc123-bottle-xenon-exposed-0-degradation-total",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+  ]
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Degradation Products - Degradation products - total: 0.3 % (Medication/dp-abc123-bottle)</p></div>"
+ },
+ "extension": [
+  {
+   "url": "http://hl7.org/fhir/StructureDefinition/workflow-triggeredBy",
+   "valueReference": {
+    "reference": "PlanDefinition/stability-protocol-dp-registration"
+   }
+  }
+ ],
+ "status": "final",
+ "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-degradation-total",
+ "category": [
+  {
+   "text": "Degradation Products"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "DGP",
+    "display": "Degradation Products"
+   }
+  ],
+  "text": "Degradation Products - Degradation products - total"
+ },
+ "subject": {
+  "reference": "Medication/dp-abc123-bottle"
+ },
+ "performer": [
+  {
+   "reference": "Organization/aparna-pharm"
+  }
+ ],
+ "valueQuantity": {
+  "value": 0.3,
+  "unit": "%",
+  "system": "http://unitsofmeasure.org",
+  "code": "%"
+ },
+ "specimen": {
+  "reference": "Specimen/spc-abc123-bottle-xenon-exposed-0m"
+ }
+}

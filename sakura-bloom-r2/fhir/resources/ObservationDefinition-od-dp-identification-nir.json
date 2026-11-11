@@ -1,0 +1,52 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-dp-identification-nir",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8196bde0c1ce7d54832e"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-identification-nir",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Identification - Identification (NIR, RTRT, PLSR model): Batch release Identified as Sakura Bloom 20 mg Film-coated tablet / Corresponds to reference</p></div>"
+ },
+ "title": "Identification (NIR, RTRT, PLSR model)",
+ "status": "active",
+ "category": [
+  {
+   "text": "Identification"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "IDT",
+    "display": "Identification"
+   }
+  ],
+  "text": "Identification - Identification (NIR, RTRT, PLSR model)"
+ },
+ "permittedDataType": [
+  "string"
+ ],
+ "method": {
+  "text": "Near infrared absorption spectrometry (NIR method) (RTRT) (Model: PLSR)"
+ },
+ "description": "Performed at release only (RTRT).",
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "Identified as Sakura Bloom 20 mg Film-coated tablet / Corresponds to reference"
+    }
+   ],
+   "context": {
+    "text": "Batch release"
+   }
+  }
+ ]
+}

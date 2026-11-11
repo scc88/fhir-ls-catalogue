@@ -1,0 +1,54 @@
+{
+ "resourceType": "DeviceDefinition",
+ "id": "eq-rotary-tablet-press",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DeviceDefinition-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc817e8d67fb0358c483c8"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DeviceDefinition</b> Rotary tablet press (power assisted)</p></div>"
+ },
+ "deviceName": [
+  {
+   "name": "Rotary tablet press (power assisted)",
+   "type": "user-friendly-name"
+  }
+ ],
+ "classification": [
+  {
+   "type": {
+    "text": "SUPAC Class: rotary tablet press; Subclass: power assisted"
+   }
+  }
+ ],
+ "property": [
+  {
+   "type": {
+    "text": "Speed range"
+   },
+   "valueRange": {
+    "low": {
+     "value": 10,
+     "unit": "rpm",
+     "system": "http://unitsofmeasure.org",
+     "code": "/min"
+    },
+    "high": {
+     "value": 90,
+     "unit": "rpm",
+     "system": "http://unitsofmeasure.org",
+     "code": "/min"
+    }
+   }
+  },
+  {
+   "type": {
+    "text": "Automation"
+   },
+   "valueBoolean": true
+  }
+ ]
+}

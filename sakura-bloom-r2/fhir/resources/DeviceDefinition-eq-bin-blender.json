@@ -1,0 +1,53 @@
+{
+ "resourceType": "DeviceDefinition",
+ "id": "eq-bin-blender",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DeviceDefinition-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc817e8d67fb0358c483c8"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DeviceDefinition</b> Bin blender (diffusion mixer)</p></div>"
+ },
+ "deviceName": [
+  {
+   "name": "Bin blender (diffusion mixer)",
+   "type": "user-friendly-name"
+  }
+ ],
+ "classification": [
+  {
+   "type": {
+    "text": "SUPAC Class: diffusion mixer; Subclass: bin blender"
+   }
+  }
+ ],
+ "property": [
+  {
+   "type": {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/device-property",
+      "code": "Capacity",
+      "display": "Capacity"
+     }
+    ],
+    "text": "Capacity"
+   },
+   "valueQuantity": {
+    "value": 500,
+    "unit": "L",
+    "system": "http://unitsofmeasure.org",
+    "code": "L"
+   }
+  },
+  {
+   "type": {
+    "text": "Automation"
+   },
+   "valueBoolean": true
+  }
+ ]
+}

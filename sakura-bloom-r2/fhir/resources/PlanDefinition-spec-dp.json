@@ -1,0 +1,413 @@
+{
+ "resourceType": "PlanDefinition",
+ "id": "spec-dp",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8196bde0c1ce7d54832e"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-dp",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> Table 1 of 2.3.3.DP.C. RTRT is employed for identification, uniformity of dosage units, dissolution and assay at release; conventional end-product tests are specified for stability (shelf-life).</p></div>"
+ },
+ "title": "Specifications and test methods for Sakura Bloom 20 mg film-coated tablet (release and shelf-life)",
+ "type": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+    "code": "1244577",
+    "display": "Specification Protocol"
+   }
+  ],
+  "text": "Specification Protocol"
+ },
+ "status": "active",
+ "subjectReference": {
+  "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+ },
+ "description": "Table 1 of 2.3.3.DP.C. RTRT is employed for identification, uniformity of dosage units, dissolution and assay at release; conventional end-product tests are specified for stability (shelf-life).",
+ "action": [
+  {
+   "title": "Batch release",
+   "code": {
+    "text": "Timing Group"
+   },
+   "action": [
+    {
+     "title": "Description (visual inspection)",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-description",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-description"
+      }
+     ]
+    },
+    {
+     "title": "Identification (NIR, RTRT, PLSR model)",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-identification-nir",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-identity-nir"
+      }
+     ]
+    },
+    {
+     "title": "Identification (HPLC)",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-identification-hplc",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-identity-hplc"
+      }
+     ]
+    },
+    {
+     "title": "Identification (UV-Vis)",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-identification-uv",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-identity-uv"
+      }
+     ]
+    },
+    {
+     "title": "Uniformity of dosage units (NIR, RTRT)",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-udu-nir",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-udu-nir"
+      }
+     ]
+    },
+    {
+     "title": "Uniformity of dosage units (content uniformity, HPLC)",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-udu-hplc",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-udu-hplc"
+      }
+     ]
+    },
+    {
+     "title": "Dissolution (RTRT dissolution model)",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-dissolution-rtrt",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-dissolution-rtrt"
+      }
+     ]
+    },
+    {
+     "title": "Dissolution (paddle, UV, Q in 30 min)",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-dissolution-uv",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-dissolution-uv"
+      }
+     ]
+    },
+    {
+     "title": "Assay (NIR, RTRT)",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-assay-nir",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-assay-nir"
+      }
+     ]
+    },
+    {
+     "title": "Assay (HPLC)",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-assay-hplc",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-assay-degradation"
+      }
+     ]
+    },
+    {
+     "title": "Degradation products - specified CP-9-1",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-degradation-cp-9-1",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-assay-degradation"
+      }
+     ]
+    },
+    {
+     "title": "Degradation products - any unspecified",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-degradation-unspecified",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-assay-degradation"
+      }
+     ]
+    },
+    {
+     "title": "Degradation products - total",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-degradation-total",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-assay-degradation"
+      }
+     ]
+    },
+    {
+     "title": "Microbial enumeration - TAMC",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-tamc",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-microbial-enumeration"
+      }
+     ]
+    },
+    {
+     "title": "Microbial enumeration - TYMC",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-tymc",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-microbial-enumeration"
+      }
+     ]
+    },
+    {
+     "title": "Specified micro-organism - Escherichia coli",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-e-coli",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-microbial-enumeration"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Shelf-life",
+   "code": {
+    "text": "Timing Group"
+   },
+   "action": [
+    {
+     "title": "Identification (HPLC)",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-identification-hplc",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-identity-hplc"
+      }
+     ]
+    },
+    {
+     "title": "Identification (UV-Vis)",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-identification-uv",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-identity-uv"
+      }
+     ]
+    },
+    {
+     "title": "Dissolution (paddle, UV, Q in 30 min)",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-dissolution-uv",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-dissolution-uv"
+      }
+     ]
+    },
+    {
+     "title": "Assay (HPLC)",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-assay-hplc",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-assay-degradation"
+      }
+     ]
+    },
+    {
+     "title": "Degradation products - specified CP-9-1",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-degradation-cp-9-1",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-assay-degradation"
+      }
+     ]
+    },
+    {
+     "title": "Degradation products - any unspecified",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-degradation-unspecified",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-assay-degradation"
+      }
+     ]
+    },
+    {
+     "title": "Degradation products - total",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-degradation-total",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-assay-degradation"
+      }
+     ]
+    },
+    {
+     "title": "Microbial enumeration - TAMC",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-tamc",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-microbial-enumeration"
+      }
+     ]
+    },
+    {
+     "title": "Microbial enumeration - TYMC",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-tymc",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-microbial-enumeration"
+      }
+     ]
+    },
+    {
+     "title": "Specified micro-organism - Escherichia coli",
+     "code": {
+      "text": "Test"
+     },
+     "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-e-coli",
+     "documentation": [
+      {
+       "type": "depends-on",
+       "label": "Analytical procedure",
+       "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-microbial-enumeration"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

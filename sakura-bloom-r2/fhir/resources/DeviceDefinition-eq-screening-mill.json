@@ -1,0 +1,54 @@
+{
+ "resourceType": "DeviceDefinition",
+ "id": "eq-screening-mill",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DeviceDefinition-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc817e8d67fb0358c483c8"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DeviceDefinition</b> Screening mill (oscillating bar)</p></div>"
+ },
+ "deviceName": [
+  {
+   "name": "Screening mill (oscillating bar)",
+   "type": "user-friendly-name"
+  }
+ ],
+ "classification": [
+  {
+   "type": {
+    "text": "SUPAC Class: screening mill; Subclass: oscillating bar"
+   }
+  }
+ ],
+ "property": [
+  {
+   "type": {
+    "text": "Speed range"
+   },
+   "valueRange": {
+    "low": {
+     "value": 30,
+     "unit": "rpm",
+     "system": "http://unitsofmeasure.org",
+     "code": "/min"
+    },
+    "high": {
+     "value": 108,
+     "unit": "rpm",
+     "system": "http://unitsofmeasure.org",
+     "code": "/min"
+    }
+   }
+  },
+  {
+   "type": {
+    "text": "Automation"
+   },
+   "valueBoolean": true
+  }
+ ]
+}

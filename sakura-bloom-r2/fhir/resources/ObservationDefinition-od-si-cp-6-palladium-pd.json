@@ -1,0 +1,63 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-si-cp-6-palladium-pd",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc813d8ebfcf0f96d70b67"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-si-cp-6-palladium-pd",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Elemental impurities - Palladium (Pd): NMT 10 ppm</p></div>"
+ },
+ "title": "Palladium (Pd)",
+ "status": "active",
+ "category": [
+  {
+   "text": "Elemental impurities"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "ELE",
+    "display": "Elemental impurities"
+   }
+  ],
+  "text": "Elemental impurities - Palladium (Pd)"
+ },
+ "permittedDataType": [
+  "Quantity"
+ ],
+ "method": {
+  "text": "ICP-MS USP <233>"
+ },
+ "permittedUnit": [
+  {
+   "system": "http://unitsofmeasure.org",
+   "code": "[ppm]",
+   "display": "ppm"
+  }
+ ],
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "NMT 10 ppm"
+    }
+   ],
+   "range": {
+    "high": {
+     "value": 10,
+     "unit": "ppm",
+     "system": "http://unitsofmeasure.org",
+     "code": "[ppm]"
+    }
+   }
+  }
+ ]
+}

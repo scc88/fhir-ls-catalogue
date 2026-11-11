@@ -1,0 +1,55 @@
+{
+ "resourceType": "Observation",
+ "id": "obs-st-abc789-bottle-lt-unspecified-12-met-e-coli",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+  ]
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Microbiological Quality - Specified micro-organism - Escherichia coli: absent (Medication/dp-abc789-bottle)</p></div>"
+ },
+ "extension": [
+  {
+   "url": "http://hl7.org/fhir/StructureDefinition/workflow-triggeredBy",
+   "valueReference": {
+    "reference": "PlanDefinition/stability-protocol-dp-registration"
+   }
+  }
+ ],
+ "status": "final",
+ "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-e-coli",
+ "category": [
+  {
+   "text": "Microbiological Quality"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "Microbiological Quality",
+    "display": "Microbiological Quality"
+   }
+  ],
+  "text": "Microbiological Quality - Specified micro-organism - Escherichia coli"
+ },
+ "subject": {
+  "reference": "Medication/dp-abc789-bottle"
+ },
+ "performer": [
+  {
+   "reference": "Organization/aparna-pharm"
+  }
+ ],
+ "valueString": "absent",
+ "interpretation": [
+  {
+   "text": "Absent"
+  }
+ ],
+ "specimen": {
+  "reference": "Specimen/spc-abc789-bottle-lt-unspecified-12m"
+ }
+}

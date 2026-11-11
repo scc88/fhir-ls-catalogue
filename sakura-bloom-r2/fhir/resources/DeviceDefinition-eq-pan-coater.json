@@ -1,0 +1,61 @@
+{
+ "resourceType": "DeviceDefinition",
+ "id": "eq-pan-coater",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DeviceDefinition-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc817e8d67fb0358c483c8"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DeviceDefinition</b> Pan coater (perforated coating system)</p></div>"
+ },
+ "deviceName": [
+  {
+   "name": "Pan coater (perforated coating system)",
+   "type": "user-friendly-name"
+  }
+ ],
+ "classification": [
+  {
+   "type": {
+    "text": "SUPAC Class: pan coating; Subclass: perforated coating system"
+   }
+  }
+ ],
+ "property": [
+  {
+   "type": {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/device-property",
+      "code": "Capacity",
+      "display": "Capacity"
+     }
+    ],
+    "text": "Capacity"
+   },
+   "valueRange": {
+    "low": {
+     "value": 300,
+     "unit": "L",
+     "system": "http://unitsofmeasure.org",
+     "code": "L"
+    },
+    "high": {
+     "value": 390,
+     "unit": "L",
+     "system": "http://unitsofmeasure.org",
+     "code": "L"
+    }
+   }
+  },
+  {
+   "type": {
+    "text": "Automation"
+   },
+   "valueBoolean": true
+  }
+ ]
+}

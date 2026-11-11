@@ -1,0 +1,56 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-cc-hdpe-bottle-90-cc-hdpe-bottle-light-transmission",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8172acd6d7e4b3f69475"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-cc-hdpe-bottle-90-cc-hdpe-bottle-light-transmission",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Light transmission - 90 cc HDPE bottle - Light transmission: Not more than 10 %</p></div>"
+ },
+ "title": "90 cc HDPE bottle - Light transmission",
+ "status": "active",
+ "category": [
+  {
+   "text": "Light transmission"
+  }
+ ],
+ "code": {
+  "text": "Light transmission - 90 cc HDPE bottle - Light transmission"
+ },
+ "permittedDataType": [
+  "Quantity"
+ ],
+ "method": {
+  "text": "UV Spectroscopy"
+ },
+ "permittedUnit": [
+  {
+   "system": "http://unitsofmeasure.org",
+   "code": "%",
+   "display": "%"
+  }
+ ],
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "Not more than 10 %"
+    }
+   ],
+   "range": {
+    "high": {
+     "value": 10,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,568 @@
+{
+ "resourceType": "Bundle",
+ "id": "bundle-ap-cp-8-related-substances",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-analytical-procedure-pq"
+  ]
+ },
+ "identifier": {
+  "system": "http://example.org/sakura-bloom-r2/fhir/bundle-id",
+  "value": "bundle-ap-cp-8-related-substances"
+ },
+ "type": "collection",
+ "timestamp": "2026-11-08T00:00:00Z",
+ "entry": [
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/cp-8",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "cp-8",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc815fba60f328a2f5fc27"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> CP-8</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Starting material (SM2); specified impurity in drug substance"
+     }
+    ],
+    "description": "Starting material (SM2); specified impurity in drug substance",
+    "molecularWeight": [
+     {
+      "amount": {
+       "value": 307.03,
+       "unit": "g/mol",
+       "system": "http://unitsofmeasure.org",
+       "code": "g/mol"
+      }
+     }
+    ],
+    "structure": {
+     "molecularFormula": "C9H3BrF6",
+     "representation": [
+      {
+       "type": {
+        "text": "IUPAC name"
+       },
+       "representation": "3,5-bis(trifluoromethyl)benzyl bromide"
+      }
+     ]
+    },
+    "code": [
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://cas.org",
+         "code": "32247-96-4"
+        }
+       ],
+       "text": "32247-96-4"
+      }
+     }
+    ],
+    "name": [
+     {
+      "name": "CP-8",
+      "type": {
+       "text": "Company code"
+      },
+      "preferred": true
+     },
+     {
+      "name": "3,5-bis(trifluoromethyl)benzyl bromide",
+      "type": {
+       "text": "IUPAC chemical name"
+      }
+     },
+     {
+      "name": "1-bromo-3,5-bis(trifluoromethyl)benzene",
+      "type": {
+       "text": "Name used in impurity tables (inconsistent in source)"
+      }
+     }
+    ],
+    "manufacturer": [
+     {
+      "reference": "Organization/iroha-corp"
+     },
+     {
+      "reference": "Organization/abcr-gmbh"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SpecimenDefinition/spd-test-sample-ds",
+   "resource": {
+    "resourceType": "SpecimenDefinition",
+    "id": "spd-test-sample-ds",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SpecimenDefinition-drug-pq"
+     ]
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/SpecimenDefinition/spd-test-sample-ds",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SpecimenDefinition</b> spd-test-sample-ds</p></div>"
+    },
+    "status": "active",
+    "title": "Drug substance / material test sample",
+    "typeCollected": {
+     "text": "Drug substance, starting material, intermediate or excipient sample"
+    },
+    "typeTested": [
+     {
+      "preference": "preferred",
+      "type": {
+       "text": "Powder / crystalline solid"
+      },
+      "isDerived": false
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-cp-8-related-substances",
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "ap-cp-8-related-substances",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81c5a820d603fd2edd9d"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-cp-8-related-substances",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> Core quality information (2.3.3.AP) for Analytical Procedures (Related Substances SM2)[Purity][CP-8].</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-plan-document-reference-pq",
+      "valueReference": {
+       "reference": "DocumentReference/doc-cp-8-related-substances-3-2-ap"
+      }
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-plan-document-reference-pq",
+      "valueReference": {
+       "reference": "DocumentReference/doc-cp-8-related-substances-2-3-4"
+      }
+     }
+    ],
+    "title": "Analytical Procedures (Related Substances SM2)[Purity][CP-8]",
+    "type": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+       "code": "analytical-procedure",
+       "display": "Analytical Procedure"
+      }
+     ],
+     "text": "Analytical Procedure"
+    },
+    "status": "active",
+    "subjectReference": {
+     "reference": "SubstanceDefinition/cp-8"
+    },
+    "description": "Core quality information (2.3.3.AP) for Analytical Procedures (Related Substances SM2)[Purity][CP-8].",
+    "action": [
+     {
+      "title": "Technique",
+      "description": "High performance liquid chromatography"
+     },
+     {
+      "title": "Column",
+      "description": "Silica C18 3,5 µm 250 x 4.6 mm or equivalent"
+     },
+     {
+      "title": "System",
+      "description": "gradient with UV  detection"
+     },
+     {
+      "title": "Mobile phase",
+      "description": "Acetonitrile/phosphate buffer pH6.5 (40:60)"
+     },
+     {
+      "title": "Flow rate",
+      "description": "1.0 ml/min"
+     },
+     {
+      "title": "Injection volume",
+      "description": "10 µl"
+     },
+     {
+      "title": "Detection",
+      "description": "UV, 230 nm"
+     },
+     {
+      "title": "Test solution",
+      "description": "Approximately 1.0 mg/ml of sample to be examined in diluent."
+     },
+     {
+      "title": "Reference solution",
+      "description": "Approximately 0.001 mg/ml of CP-8 standard in diluent."
+     },
+     {
+      "title": "System Suitability Criteria",
+      "description": "Resolution > 1.5  Reproducibility (n=6) < 10 %                                                                                          RSD of  ≤ 1% for n≥ 5 is desirable."
+     },
+     {
+      "title": "Calculation",
+      "description": "The specified and unspecified degradation products are calculated against CP-8 in the reference solution with the corresponding Response correction factor (RF). IWP =  integration value of the by-product or degradation product in the test solution IWR =  integration value of the by-product or degradation product in the reference solution PR =   initial concentration of the reference substance [mg/mL] PP =   initial concentration of the substance [mg/mL] C =     content of the reference substance, in % 50*     exemplary dilution factor"
+     },
+     {
+      "title": "Table 1‑2 Gradient Programme",
+      "description": "Time [min] | % A | % B; 0 | 90 | 10; 7,5 | 30 | 70; 10 | 30 | 70; 12,5 | 10 | 90; 15 | 10 | 90; 17.5 | 90 | 10; 20 | 90 | 10"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-8-cp-8-24i",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-sm-cp-8-cp-8-24i",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81dc8f03fa647c7dbb89"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-8-cp-8-24i",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Related substances - CP-8-24I: NMT 0.05 %</p></div>"
+    },
+    "title": "CP-8-24I",
+    "status": "active",
+    "category": [
+     {
+      "text": "Related substances"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DGP-s",
+       "display": "Drug Substance Related Organic impurities"
+      }
+     ],
+     "text": "Related substances - CP-8-24I"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC In-house"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "NMT 0.05 %"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 0.05,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-8-cp-8-25i",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-sm-cp-8-cp-8-25i",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81dc8f03fa647c7dbb89"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-8-cp-8-25i",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Related substances - CP-8-25I: NMT 0.05 %</p></div>"
+    },
+    "title": "CP-8-25I",
+    "status": "active",
+    "category": [
+     {
+      "text": "Related substances"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DGP-s",
+       "display": "Drug Substance Related Organic impurities"
+      }
+     ],
+     "text": "Related substances - CP-8-25I"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC In-house"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "NMT 0.05 %"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 0.05,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-8-individual-unspecified-impurities",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-sm-cp-8-individual-unspecified-impurities",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81dc8f03fa647c7dbb89"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-8-individual-unspecified-impurities",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Related substances - Individual unspecified impurities: NMT 0.1 %</p></div>"
+    },
+    "title": "Individual unspecified impurities",
+    "status": "active",
+    "category": [
+     {
+      "text": "Related substances"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DGP-s",
+       "display": "Drug Substance Related Organic impurities"
+      }
+     ],
+     "text": "Related substances - Individual unspecified impurities"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC In-house"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "NMT 0.1 %"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 0.1,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-8-total-impurities",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-sm-cp-8-total-impurities",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81dc8f03fa647c7dbb89"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-8-total-impurities",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Related substances - Total impurities: NMT 1.0 %</p></div>"
+    },
+    "title": "Total impurities",
+    "status": "active",
+    "category": [
+     {
+      "text": "Related substances"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DGP-s",
+       "display": "Drug Substance Related Organic impurities"
+      }
+     ],
+     "text": "Related substances - Total impurities"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC In-house"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "NMT 1.0 %"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 1.0,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/DocumentReference/doc-cp-8-related-substances-3-2-ap",
+   "resource": {
+    "resourceType": "DocumentReference",
+    "id": "doc-cp-8-related-substances-3-2-ap",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DocumentReference-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc814c9674e33a3b3189dd"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DocumentReference</b> 3.2.AP Analytical Procedures (Related Substances SM2)[Purity][CP-8]</p></div>"
+    },
+    "status": "current",
+    "type": {
+     "text": "Detailed analytical procedure (Module 3.2)"
+    },
+    "description": "3.2.AP Analytical Procedures (Related Substances SM2)[Purity][CP-8]",
+    "content": [
+     {
+      "attachment": {
+       "contentType": "text/html",
+       "url": "https://ichm4q.notion.site/2a317984c9fc814c9674e33a3b3189dd",
+       "title": "3.2.AP Analytical Procedures (Related Substances SM2)[Purity][CP-8]"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/DocumentReference/doc-cp-8-related-substances-2-3-4",
+   "resource": {
+    "resourceType": "DocumentReference",
+    "id": "doc-cp-8-related-substances-2-3-4",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DocumentReference-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81a68a5fc9e5baddd8c6"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DocumentReference</b> 2.3.4.AP Analytical Procedures (Related Substances SM2)[Purity][CP-8]</p></div>"
+    },
+    "status": "current",
+    "type": {
+     "text": "Analytical procedure development / validation summary (2.3.4 DSJ)"
+    },
+    "description": "2.3.4.AP Analytical Procedures (Related Substances SM2)[Purity][CP-8]",
+    "content": [
+     {
+      "attachment": {
+       "contentType": "text/html",
+       "url": "https://ichm4q.notion.site/2a317984c9fc81a68a5fc9e5baddd8c6",
+       "title": "2.3.4.AP Analytical Procedures (Related Substances SM2)[Purity][CP-8]"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}

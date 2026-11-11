@@ -1,0 +1,55 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "ipc-ds-2-cooling-rate",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc818da9c6d88b3abedfcf"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-ds-2-cooling-rate",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> In-process control - IPC #2 Cooling rate: 0.15 – 0.5 °C/min</p></div>"
+ },
+ "title": "IPC #2 Cooling rate",
+ "status": "active",
+ "category": [
+  {
+   "text": "In-process control"
+  }
+ ],
+ "code": {
+  "text": "In-process control - IPC #2 Cooling rate"
+ },
+ "permittedDataType": [
+  "Quantity"
+ ],
+ "method": {
+  "text": "Temperature measurement with temperature measurement device"
+ },
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "0.15 – 0.5 °C/min"
+    }
+   ],
+   "range": {
+    "low": {
+     "value": 0.15,
+     "unit": "°C/min",
+     "system": "http://unitsofmeasure.org",
+     "code": "Cel/min"
+    },
+    "high": {
+     "value": 0.5,
+     "unit": "°C/min",
+     "system": "http://unitsofmeasure.org",
+     "code": "Cel/min"
+    }
+   }
+  }
+ ]
+}

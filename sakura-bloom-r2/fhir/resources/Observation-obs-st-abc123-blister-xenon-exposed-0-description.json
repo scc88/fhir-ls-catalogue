@@ -1,0 +1,55 @@
+{
+ "resourceType": "Observation",
+ "id": "obs-st-abc123-blister-xenon-exposed-0-description",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+  ]
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Description - Description (visual inspection): complies (Medication/dp-abc123-blister)</p></div>"
+ },
+ "extension": [
+  {
+   "url": "http://hl7.org/fhir/StructureDefinition/workflow-triggeredBy",
+   "valueReference": {
+    "reference": "PlanDefinition/stability-protocol-dp-registration"
+   }
+  }
+ ],
+ "status": "final",
+ "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-description",
+ "category": [
+  {
+   "text": "Description"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "DESC",
+    "display": "Description"
+   }
+  ],
+  "text": "Description - Description (visual inspection)"
+ },
+ "subject": {
+  "reference": "Medication/dp-abc123-blister"
+ },
+ "performer": [
+  {
+   "reference": "Organization/aparna-pharm"
+  }
+ ],
+ "valueString": "complies",
+ "interpretation": [
+  {
+   "text": "Complies"
+  }
+ ],
+ "specimen": {
+  "reference": "Specimen/spc-abc123-blister-xenon-exposed-0m"
+ }
+}

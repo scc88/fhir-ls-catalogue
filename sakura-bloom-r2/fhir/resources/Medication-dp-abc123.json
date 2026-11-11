@@ -1,0 +1,98 @@
+{
+ "resourceType": "Medication",
+ "id": "dp-abc123",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81f194b3e3a46699a278"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Medication</b> Sakura Bloom 20 mg film-coated tablets - lot ABC123</p></div>"
+ },
+ "code": {
+  "extension": [
+   {
+    "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-medication-definition-pq",
+    "valueReference": {
+     "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+    }
+   }
+  ],
+  "text": "Sakura Bloom 20 mg film-coated tablets"
+ },
+ "status": "active",
+ "doseForm": {
+  "coding": [
+   {
+    "system": "http://standardterms.edqm.eu",
+    "code": "10221000",
+    "display": "Film-coated tablet"
+   }
+  ],
+  "text": "Film-coated tablet"
+ },
+ "batch": {
+  "extension": [
+   {
+    "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+    "extension": [
+     {
+      "url": "manufacturingDate",
+      "valueDateTime": "2022-04"
+     },
+     {
+      "url": "batchQuantity",
+      "valueQuantity": {
+       "value": 2600000,
+       "unit": "tablets",
+       "system": "http://unitsofmeasure.org",
+       "code": "{tablets}"
+      }
+     },
+     {
+      "url": "batchUtilization",
+      "valueCodeableConcept": {
+       "text": "Production-scale and commercial batch"
+      }
+     },
+     {
+      "url": "assignedManufacturer",
+      "valueReference": {
+       "reference": "Organization/aparna-pharm"
+      }
+     }
+    ]
+   },
+   {
+    "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-number-of-items-pq",
+    "valueQuantity": {
+     "value": 2600000,
+     "unit": "tablets",
+     "system": "http://unitsofmeasure.org",
+     "code": "{tablets}"
+    }
+   },
+   {
+    "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+    "valueReference": {
+     "reference": "PlanDefinition/dp-manufacturing-process"
+    }
+   },
+   {
+    "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+    "valueReference": {
+     "reference": "Substance/ds-b221215"
+    }
+   },
+   {
+    "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+    "valueReference": {
+     "reference": "Substance/ds-b221216"
+    }
+   }
+  ],
+  "lotNumber": "ABC123"
+ }
+}

@@ -1,0 +1,371 @@
+{
+ "resourceType": "ManufacturedItemDefinition",
+ "id": "sakura-bloom-20mg-tablet",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ManufacturedItemDefinition-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8144b81ce7e58885d190"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ManufacturedItemDefinition</b> Sakura Bloom 20 mg film-coated tablet</p></div>"
+ },
+ "status": "active",
+ "name": "Sakura Bloom 20 mg film-coated tablet",
+ "manufacturedDoseForm": {
+  "coding": [
+   {
+    "system": "http://standardterms.edqm.eu",
+    "code": "10221000",
+    "display": "Film-coated tablet"
+   }
+  ],
+  "text": "Film-coated tablet"
+ },
+ "unitOfPresentation": {
+  "coding": [
+   {
+    "system": "http://standardterms.edqm.eu",
+    "code": "15054000",
+    "display": "Tablet"
+   }
+  ],
+  "text": "Tablet"
+ },
+ "manufacturer": [
+  {
+   "reference": "Organization/aparna-pharm"
+  }
+ ],
+ "property": [
+  {
+   "type": {
+    "text": "Colour"
+   },
+   "valueCodeableConcept": {
+    "text": "Pale red"
+   }
+  },
+  {
+   "type": {
+    "text": "Shape"
+   },
+   "valueCodeableConcept": {
+    "text": "Round, biconvex"
+   }
+  },
+  {
+   "type": {
+    "text": "Imprint / debossing"
+   },
+   "valueCodeableConcept": {
+    "text": "'SB' on one side and '20' on the other side"
+   }
+  },
+  {
+   "type": {
+    "text": "Total weight of film-coated tablet"
+   },
+   "valueQuantity": {
+    "value": 200.0,
+    "unit": "mg",
+    "system": "http://unitsofmeasure.org",
+    "code": "mg"
+   }
+  },
+  {
+   "type": {
+    "coding": [
+     {
+      "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-manufactured-item-property-pq-example",
+      "code": "overage-by-mass",
+      "display": "Overage by mass (%)"
+     }
+    ],
+    "text": "Overage by mass (%)"
+   },
+   "valueQuantity": {
+    "value": 0,
+    "unit": "%",
+    "system": "http://unitsofmeasure.org",
+    "code": "%"
+   }
+  }
+ ],
+ "component": [
+  {
+   "type": {
+    "text": "Tablet core"
+   },
+   "amount": [
+    {
+     "value": 194.0,
+     "unit": "mg",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg"
+    }
+   ],
+   "constituent": [
+    {
+     "amount": [
+      {
+       "value": 20.0,
+       "unit": "mg",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg"
+      }
+     ],
+     "function": [
+      {
+       "text": "Active ingredient"
+      }
+     ],
+     "hasIngredient": [
+      {
+       "reference": {
+        "reference": "Ingredient/ing-sakuramil"
+       }
+      }
+     ]
+    },
+    {
+     "amount": [
+      {
+       "value": 136.0,
+       "unit": "mg",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg"
+      }
+     ],
+     "function": [
+      {
+       "text": "Diluent"
+      }
+     ],
+     "hasIngredient": [
+      {
+       "reference": {
+        "reference": "Ingredient/ing-lactose-monohydrate"
+       }
+      }
+     ]
+    },
+    {
+     "amount": [
+      {
+       "value": 20.0,
+       "unit": "mg",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg"
+      }
+     ],
+     "function": [
+      {
+       "text": "Diluent"
+      }
+     ],
+     "hasIngredient": [
+      {
+       "reference": {
+        "reference": "Ingredient/ing-microcrystalline-cellulose"
+       }
+      }
+     ]
+    },
+    {
+     "amount": [
+      {
+       "value": 10.0,
+       "unit": "mg",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg"
+      }
+     ],
+     "function": [
+      {
+       "text": "Disintegrant"
+      }
+     ],
+     "hasIngredient": [
+      {
+       "reference": {
+        "reference": "Ingredient/ing-croscarmellose-sodium"
+       }
+      }
+     ]
+    },
+    {
+     "amount": [
+      {
+       "value": 6.0,
+       "unit": "mg",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg"
+      }
+     ],
+     "function": [
+      {
+       "text": "Binder"
+      }
+     ],
+     "hasIngredient": [
+      {
+       "reference": {
+        "reference": "Ingredient/ing-hydroxypropyl-cellulose"
+       }
+      }
+     ]
+    },
+    {
+     "amount": [
+      {
+       "value": 2.0,
+       "unit": "mg",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg"
+      }
+     ],
+     "function": [
+      {
+       "text": "Lubricant"
+      }
+     ],
+     "hasIngredient": [
+      {
+       "reference": {
+        "reference": "Ingredient/ing-magnesium-stearate"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": {
+    "text": "Film-coating"
+   },
+   "amount": [
+    {
+     "value": 6.0,
+     "unit": "mg",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg"
+    }
+   ],
+   "constituent": [
+    {
+     "amount": [
+      {
+       "value": 6.0,
+       "unit": "mg",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg"
+      }
+     ],
+     "function": [
+      {
+       "text": "Coating agent"
+      }
+     ],
+     "hasIngredient": [
+      {
+       "reference": {
+        "reference": "Ingredient/ing-coating-premix-red"
+       }
+      }
+     ]
+    }
+   ],
+   "component": [
+    {
+     "type": {
+      "text": "Basic coating premix, red"
+     },
+     "constituent": [
+      {
+       "amount": [
+        {
+         "value": 4.8,
+         "unit": "mg",
+         "system": "http://unitsofmeasure.org",
+         "code": "mg"
+        }
+       ],
+       "function": [
+        {
+         "text": "Film-forming agent"
+        }
+       ],
+       "hasIngredient": [
+        {
+         "reference": {
+          "reference": "Ingredient/ing-hypromellose"
+         }
+        }
+       ]
+      },
+      {
+       "amount": [
+        {
+         "value": 0.6,
+         "unit": "mg",
+         "system": "http://unitsofmeasure.org",
+         "code": "mg"
+        }
+       ],
+       "function": [
+        {
+         "text": "Polishing agent"
+        }
+       ],
+       "hasIngredient": [
+        {
+         "reference": {
+          "reference": "Ingredient/ing-macrogol-6000"
+         }
+        }
+       ]
+      },
+      {
+       "amount": [
+        {
+         "value": 0.6,
+         "unit": "mg",
+         "system": "http://unitsofmeasure.org",
+         "code": "mg"
+        }
+       ],
+       "function": [
+        {
+         "text": "Opacifier"
+        }
+       ],
+       "hasIngredient": [
+        {
+         "reference": {
+          "reference": "Ingredient/ing-titanium-dioxide"
+         }
+        }
+       ]
+      },
+      {
+       "function": [
+        {
+         "text": "Colorant"
+        }
+       ],
+       "hasIngredient": [
+        {
+         "reference": {
+          "reference": "Ingredient/ing-iron-oxide-red"
+         }
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,62 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-dp-identification-hplc",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8196bde0c1ce7d54832e"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-identification-hplc",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Identification - Identification (HPLC): Batch release The retention time of the main peak from the sample solution coincides with that of the standard solution.; Shelf-life Identified as Sakura Bloom 20 mg Film-coated tablet / Corresponds to reference</p></div>"
+ },
+ "title": "Identification (HPLC)",
+ "status": "active",
+ "category": [
+  {
+   "text": "Identification"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "IDT",
+    "display": "Identification"
+   }
+  ],
+  "text": "Identification - Identification (HPLC)"
+ },
+ "permittedDataType": [
+  "string"
+ ],
+ "method": {
+  "text": "HPLC method"
+ },
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "The retention time of the main peak from the sample solution coincides with that of the standard solution."
+    }
+   ],
+   "context": {
+    "text": "Batch release"
+   }
+  },
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "Identified as Sakura Bloom 20 mg Film-coated tablet / Corresponds to reference"
+    }
+   ],
+   "context": {
+    "text": "Shelf-life"
+   }
+  }
+ ]
+}

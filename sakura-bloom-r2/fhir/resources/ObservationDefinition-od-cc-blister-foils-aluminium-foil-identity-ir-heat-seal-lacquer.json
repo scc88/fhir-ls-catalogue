@@ -1,0 +1,48 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-cc-blister-foils-aluminium-foil-identity-ir-heat-seal-lacquer",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81d18aa0cd2f24d28718"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-cc-blister-foils-aluminium-foil-identity-ir-heat-seal-lacquer",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Identification - Aluminium foil - Identity IR (heat seal lacquer): Corresponds qualitatively to the reference spectrum</p></div>"
+ },
+ "title": "Aluminium foil - Identity IR (heat seal lacquer)",
+ "status": "active",
+ "category": [
+  {
+   "text": "Identification"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "IDT",
+    "display": "Identification"
+   }
+  ],
+  "text": "Identification - Aluminium foil - Identity IR (heat seal lacquer)"
+ },
+ "permittedDataType": [
+  "string"
+ ],
+ "method": {
+  "text": "Spectroscopic testing"
+ },
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "Corresponds qualitatively to the reference spectrum"
+    }
+   ]
+  }
+ ]
+}

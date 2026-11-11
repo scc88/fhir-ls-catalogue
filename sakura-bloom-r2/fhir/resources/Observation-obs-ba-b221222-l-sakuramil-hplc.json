@@ -1,0 +1,44 @@
+{
+ "resourceType": "Observation",
+ "id": "obs-ba-b221222-l-sakuramil-hplc",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+  ]
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Identification - Sakuramil (HPLC): Complies (Substance/ds-b221222)</p></div>"
+ },
+ "status": "final",
+ "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-sakuramil-hplc",
+ "category": [
+  {
+   "text": "Identification"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "IDT",
+    "display": "Identification"
+   }
+  ],
+  "text": "Identification - Sakuramil (HPLC)"
+ },
+ "subject": {
+  "reference": "Substance/ds-b221222"
+ },
+ "performer": [
+  {
+   "reference": "Organization/iroha-corp"
+  }
+ ],
+ "valueString": "Complies",
+ "interpretation": [
+  {
+   "text": "Complies"
+  }
+ ]
+}

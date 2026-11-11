@@ -1,0 +1,394 @@
+{
+ "resourceType": "Bundle",
+ "id": "bundle-ap-cp-4-enantiomeric-purity",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-analytical-procedure-pq"
+  ]
+ },
+ "identifier": {
+  "system": "http://example.org/sakura-bloom-r2/fhir/bundle-id",
+  "value": "bundle-ap-cp-4-enantiomeric-purity"
+ },
+ "type": "collection",
+ "timestamp": "2026-11-08T00:00:00Z",
+ "entry": [
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/cp-4",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "cp-4",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc815fba60f328a2f5fc27"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> CP-4</p></div>"
+    },
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Starting material (SM1); potentially mutagenic"
+     }
+    ],
+    "description": "Starting material (SM1); potentially mutagenic",
+    "molecularWeight": [
+     {
+      "amount": {
+       "value": 274.28,
+       "unit": "g/mol",
+       "system": "http://unitsofmeasure.org",
+       "code": "g/mol"
+      }
+     }
+    ],
+    "structure": {
+     "molecularFormula": "C13H17F3N2O",
+     "representation": [
+      {
+       "type": {
+        "text": "IUPAC name"
+       },
+       "representation": "(3R)-3-{[4-(Trifluoromethyl)phenyl]amino}hexanamide"
+      }
+     ]
+    },
+    "name": [
+     {
+      "name": "CP-4",
+      "type": {
+       "text": "Company code"
+      },
+      "preferred": true
+     },
+     {
+      "name": "(3R)-3-{[4-(Trifluoromethyl)phenyl]amino}hexanamide",
+      "type": {
+       "text": "IUPAC chemical name"
+      }
+     }
+    ],
+    "property": [
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+         "code": "1233444",
+         "display": "Rule-based (Q)Sar"
+        }
+       ],
+       "text": "Rule-based (Q)Sar"
+      },
+      "valueCodeableConcept": {
+       "text": "Positive (DEREK Nexus)"
+      }
+     },
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+         "code": "123555",
+         "display": "Statistical (Q)Sar"
+        }
+       ],
+       "text": "Statistical (Q)Sar"
+      },
+      "valueCodeableConcept": {
+       "text": "Positive (SARAH Nexus)"
+      }
+     },
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+         "code": "123557",
+         "display": "Mutagenicity Comment"
+        }
+       ],
+       "text": "Mutagenicity Comment"
+      },
+      "valueCodeableConcept": {
+       "text": "Aniline functionality eliminated in Step 3; purged by Step 3/4 crystallizations; controlled with CP-3/CP-4/CP-5 to a total of ≤ 37.5 ppm (TTC 1.5 µg/day / MDD 40 mg)"
+      }
+     }
+    ],
+    "manufacturer": [
+     {
+      "reference": "Organization/iroha-corp"
+     },
+     {
+      "reference": "Organization/heto-corp"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SpecimenDefinition/spd-test-sample-ds",
+   "resource": {
+    "resourceType": "SpecimenDefinition",
+    "id": "spd-test-sample-ds",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SpecimenDefinition-drug-pq"
+     ]
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/SpecimenDefinition/spd-test-sample-ds",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SpecimenDefinition</b> spd-test-sample-ds</p></div>"
+    },
+    "status": "active",
+    "title": "Drug substance / material test sample",
+    "typeCollected": {
+     "text": "Drug substance, starting material, intermediate or excipient sample"
+    },
+    "typeTested": [
+     {
+      "preference": "preferred",
+      "type": {
+       "text": "Powder / crystalline solid"
+      },
+      "isDerived": false
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-cp-4-enantiomeric-purity",
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "ap-cp-4-enantiomeric-purity",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81eaaf96e4ea43cad651"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-cp-4-enantiomeric-purity",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> Core quality information (2.3.3.AP) for Analytical Procedures (Enantiomeric purity SM1)[Purity][CP-4].</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-plan-document-reference-pq",
+      "valueReference": {
+       "reference": "DocumentReference/doc-cp-4-enantiomeric-purity-3-2-ap"
+      }
+     },
+     {
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-plan-document-reference-pq",
+      "valueReference": {
+       "reference": "DocumentReference/doc-cp-4-enantiomeric-purity-2-3-4"
+      }
+     }
+    ],
+    "title": "Analytical Procedures (Enantiomeric purity SM1)[Purity][CP-4]",
+    "type": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+       "code": "analytical-procedure",
+       "display": "Analytical Procedure"
+      }
+     ],
+     "text": "Analytical Procedure"
+    },
+    "status": "active",
+    "subjectReference": {
+     "reference": "SubstanceDefinition/cp-4"
+    },
+    "description": "Core quality information (2.3.3.AP) for Analytical Procedures (Enantiomeric purity SM1)[Purity][CP-4].",
+    "action": [
+     {
+      "title": "Technique",
+      "description": "High performance liquid chromatography"
+     },
+     {
+      "title": "Column",
+      "description": "column of length 250 mm, internal diameter 4.6 mm ((type :coated polysaccharide chiral stationary phase) , 5 µm or equivalent"
+     },
+     {
+      "title": "System",
+      "description": "isocratic with UV detection"
+     },
+     {
+      "title": "Mobile phase",
+      "description": "n-Hexane/Isopropanol/Acetonitril/Diethylamine (80/15/5/0.1)"
+     },
+     {
+      "title": "Flow rate",
+      "description": "1.4 ml/min"
+     },
+     {
+      "title": "Injection volume",
+      "description": "10 µl"
+     },
+     {
+      "title": "Detection",
+      "description": "UV 230 nm"
+     },
+     {
+      "title": "Test solution",
+      "description": "Approximately 0.7 mg/ml of sample to be examined in diluent (same as mobile phase)."
+     },
+     {
+      "title": "Identification solution",
+      "description": "Approximately 0.7 mg/ml of CP-4 enantiomeric identification standard in diluent."
+     },
+     {
+      "title": "System Suitability Criteria",
+      "description": "Resolution NLT 1.5"
+     },
+     {
+      "title": "Calculation",
+      "description": "The content of enantiomer is calculated according to following formula: Enantiomer (%) =(r1/rt)*100 ri =      Response of peak due to enantiomer in the test solution rt =     sum of the CP-4 and CP-4 enantiomer responses in the test solution Enantiomer (%) = Content of enantiomer in the substance, in %"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-4-enantiomeric-purity",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-sm-cp-4-enantiomeric-purity",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8158b7e7df2db5a8b4ee"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-4-enantiomeric-purity",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Enantiomeric purity: NMT 1.5 %</p></div>"
+    },
+    "title": "Enantiomeric purity",
+    "status": "active",
+    "category": [
+     {
+      "text": "Enantiomeric purity"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "enantiomeric-purity",
+       "display": "Enantiomeric purity"
+      }
+     ],
+     "text": "Enantiomeric purity"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC In-house"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "NMT 1.5 %"
+       }
+      ],
+      "range": {
+       "high": {
+        "value": 1.5,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/DocumentReference/doc-cp-4-enantiomeric-purity-3-2-ap",
+   "resource": {
+    "resourceType": "DocumentReference",
+    "id": "doc-cp-4-enantiomeric-purity-3-2-ap",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DocumentReference-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81afa2cfc6ad6a761dd2"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DocumentReference</b> 3.2.AP Analytical Procedures (Enantiomeric purity SM1)[Purity][CP-4]</p></div>"
+    },
+    "status": "current",
+    "type": {
+     "text": "Detailed analytical procedure (Module 3.2)"
+    },
+    "description": "3.2.AP Analytical Procedures (Enantiomeric purity SM1)[Purity][CP-4]",
+    "content": [
+     {
+      "attachment": {
+       "contentType": "text/html",
+       "url": "https://ichm4q.notion.site/2a317984c9fc81afa2cfc6ad6a761dd2",
+       "title": "3.2.AP Analytical Procedures (Enantiomeric purity SM1)[Purity][CP-4]"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/DocumentReference/doc-cp-4-enantiomeric-purity-2-3-4",
+   "resource": {
+    "resourceType": "DocumentReference",
+    "id": "doc-cp-4-enantiomeric-purity-2-3-4",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DocumentReference-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81949a40ecdbb499f893"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DocumentReference</b> 2.3.4.AP Analytical Procedures (Enantiomeric purity SM1)[Purity][CP-4]</p></div>"
+    },
+    "status": "current",
+    "type": {
+     "text": "Analytical procedure development / validation summary (2.3.4 DSJ)"
+    },
+    "description": "2.3.4.AP Analytical Procedures (Enantiomeric purity SM1)[Purity][CP-4]",
+    "content": [
+     {
+      "attachment": {
+       "contentType": "text/html",
+       "url": "https://ichm4q.notion.site/2a317984c9fc81949a40ecdbb499f893",
+       "title": "2.3.4.AP Analytical Procedures (Enantiomeric purity SM1)[Purity][CP-4]"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}

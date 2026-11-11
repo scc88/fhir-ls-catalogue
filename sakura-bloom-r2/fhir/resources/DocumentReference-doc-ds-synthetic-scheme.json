@@ -1,0 +1,35 @@
+{
+ "resourceType": "DocumentReference",
+ "id": "doc-ds-synthetic-scheme",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DocumentReference-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc818da9c6d88b3abedfcf"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DocumentReference</b> Figure 1-1 Synthetic scheme of Sakuramil (2.3.3.DS.M.1)</p></div>"
+ },
+ "status": "current",
+ "type": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/diagram-type",
+    "code": "ProcessFlowDiagram",
+    "display": "Process Flow Diagram"
+   }
+  ],
+  "text": "Process Flow Diagram"
+ },
+ "description": "Figure 1-1 Synthetic scheme of Sakuramil (2.3.3.DS.M.1)",
+ "content": [
+  {
+   "attachment": {
+    "contentType": "text/html",
+    "url": "https://ichm4q.notion.site/2a317984c9fc818da9c6d88b3abedfcf",
+    "title": "Figure 1-1 Synthetic scheme of Sakuramil (2.3.3.DS.M.1)"
+   }
+  }
+ ]
+}

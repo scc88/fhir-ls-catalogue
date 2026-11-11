@@ -1,0 +1,128 @@
+{
+ "resourceType": "DiagnosticReport",
+ "id": "dr-char-cp-9-identification-standard",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DiagnosticReport-analysis-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc811bb6a5ffbb4de441ef"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DiagnosticReport</b> Characterization Report</p></div>"
+ },
+ "extension": [
+  {
+   "url": "http://hl7.org/fhir/StructureDefinition/workflow-triggeredBy",
+   "valueReference": {
+    "reference": "PlanDefinition/char-protocol-reference-standards"
+   }
+  }
+ ],
+ "identifier": [
+  {
+   "system": "http://example.org/sakura-bloom-r2/fhir/report-id",
+   "value": "dr-char-cp-9-identification-standard"
+  }
+ ],
+ "status": "final",
+ "code": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-report-type",
+    "code": "Characterization Report",
+    "display": "Characterization Report"
+   }
+  ],
+  "text": "Characterization Report"
+ },
+ "subject": {
+  "reference": "Substance/rs-cp-9-identification-standard"
+ },
+ "performer": [
+  {
+   "reference": "Organization/iroha-corp"
+  }
+ ],
+ "result": [
+  {
+   "reference": "Observation/obs-char-cp-9-identification-standard-ms-1"
+  },
+  {
+   "reference": "Observation/obs-char-cp-9-identification-standard-t0-1h-1"
+  },
+  {
+   "reference": "Observation/obs-char-cp-9-identification-standard-t0-1h-2"
+  },
+  {
+   "reference": "Observation/obs-char-cp-9-identification-standard-t0-1h-3"
+  },
+  {
+   "reference": "Observation/obs-char-cp-9-identification-standard-t0-1h-4"
+  },
+  {
+   "reference": "Observation/obs-char-cp-9-identification-standard-t0-1h-5"
+  },
+  {
+   "reference": "Observation/obs-char-cp-9-identification-standard-t0-1h-6"
+  },
+  {
+   "reference": "Observation/obs-char-cp-9-identification-standard-t0-1h-7"
+  },
+  {
+   "reference": "Observation/obs-char-cp-9-identification-standard-t0-1h-8"
+  },
+  {
+   "reference": "Observation/obs-char-cp-9-identification-standard-t0-1h-9"
+  },
+  {
+   "reference": "Observation/obs-char-cp-9-identification-standard-t0-1h-10"
+  },
+  {
+   "reference": "Observation/obs-char-cp-9-identification-standard-t0-1h-11"
+  },
+  {
+   "reference": "Observation/obs-char-cp-9-identification-standard-t1-13c-1"
+  },
+  {
+   "reference": "Observation/obs-char-cp-9-identification-standard-t1-13c-2"
+  },
+  {
+   "reference": "Observation/obs-char-cp-9-identification-standard-t1-13c-3"
+  },
+  {
+   "reference": "Observation/obs-char-cp-9-identification-standard-t1-13c-4"
+  },
+  {
+   "reference": "Observation/obs-char-cp-9-identification-standard-t1-13c-5"
+  },
+  {
+   "reference": "Observation/obs-char-cp-9-identification-standard-t1-13c-6"
+  },
+  {
+   "reference": "Observation/obs-char-cp-9-identification-standard-t1-13c-7"
+  },
+  {
+   "reference": "Observation/obs-char-cp-9-identification-standard-t2-1h-1"
+  },
+  {
+   "reference": "Observation/obs-char-cp-9-identification-standard-t2-1h-2"
+  },
+  {
+   "reference": "Observation/obs-char-cp-9-identification-standard-t3-13c-1"
+  },
+  {
+   "reference": "Observation/obs-char-cp-9-identification-standard-t3-13c-2"
+  },
+  {
+   "reference": "Observation/obs-char-cp-9-identification-standard-t3-13c-3"
+  },
+  {
+   "reference": "Observation/obs-char-cp-9-identification-standard-t3-13c-4"
+  },
+  {
+   "reference": "Observation/obs-char-cp-9-identification-standard-t3-13c-5"
+  }
+ ],
+ "conclusion": "Structure of CP-9 identification standard confirmed by MS and NMR."
+}

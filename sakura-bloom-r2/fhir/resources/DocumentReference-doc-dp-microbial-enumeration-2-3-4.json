@@ -1,0 +1,28 @@
+{
+ "resourceType": "DocumentReference",
+ "id": "doc-dp-microbial-enumeration-2-3-4",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DocumentReference-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81c7a152d6e8e1d83b2b"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DocumentReference</b> 2.3.4. AP Analytical Procedures (MET)[Purity][Sakura Bloom 20 mg]</p></div>"
+ },
+ "status": "current",
+ "type": {
+  "text": "Analytical procedure development / validation summary (2.3.4 DSJ)"
+ },
+ "description": "2.3.4. AP Analytical Procedures (MET)[Purity][Sakura Bloom 20 mg]",
+ "content": [
+  {
+   "attachment": {
+    "contentType": "text/html",
+    "url": "https://ichm4q.notion.site/2a317984c9fc81c7a152d6e8e1d83b2b",
+    "title": "2.3.4. AP Analytical Procedures (MET)[Purity][Sakura Bloom 20 mg]"
+   }
+  }
+ ]
+}

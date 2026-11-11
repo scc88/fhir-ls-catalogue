@@ -1,0 +1,71 @@
+{
+ "resourceType": "SubstanceDefinition",
+ "id": "cp-7",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc815fba60f328a2f5fc27"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> CP-7</p></div>"
+ },
+ "status": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/publication-status",
+    "code": "active",
+    "display": "Active"
+   }
+  ],
+  "text": "Active"
+ },
+ "classification": [
+  {
+   "text": "Isolated intermediate (IM2)"
+  }
+ ],
+ "description": "Isolated intermediate (IM2)",
+ "molecularWeight": [
+  {
+   "amount": {
+    "value": 387.38,
+    "unit": "g/mol",
+    "system": "http://unitsofmeasure.org",
+    "code": "g/mol"
+   }
+  }
+ ],
+ "structure": {
+  "molecularFormula": "C18H22F3N2O4",
+  "representation": [
+   {
+    "type": {
+     "text": "IUPAC name"
+    },
+    "representation": "Ethyl (2R,4S)-2-propyl-4-(methoxycarbonylamino)-6-(trifluoromethyl)-3,4-dihydroxyquinoline-1(2H)-Carboxylate"
+   }
+  ]
+ },
+ "name": [
+  {
+   "name": "CP-7",
+   "type": {
+    "text": "Company code"
+   },
+   "preferred": true
+  },
+  {
+   "name": "Ethyl (2R,4S)-2-propyl-4-(methoxycarbonylamino)-6-(trifluoromethyl)-3,4-dihydroxyquinoline-1(2H)-Carboxylate",
+   "type": {
+    "text": "IUPAC chemical name"
+   }
+  }
+ ],
+ "manufacturer": [
+  {
+   "reference": "Organization/iroha-corp"
+  }
+ ]
+}

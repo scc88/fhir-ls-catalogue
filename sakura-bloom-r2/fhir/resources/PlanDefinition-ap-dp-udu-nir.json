@@ -1,0 +1,63 @@
+{
+ "resourceType": "PlanDefinition",
+ "id": "ap-dp-udu-nir",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81f09f68d9bff8b472e7"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-udu-nir",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> Core quality information (2.3.3.AP) for Analytical Procedures (Uniformity of dosage units/NIR)[Content uniformity][Sakura Bloom 20 mg].</p></div>"
+ },
+ "extension": [
+  {
+   "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-plan-document-reference-pq",
+   "valueReference": {
+    "reference": "DocumentReference/doc-dp-udu-nir-3-2-ap"
+   }
+  },
+  {
+   "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-plan-document-reference-pq",
+   "valueReference": {
+    "reference": "DocumentReference/doc-dp-udu-nir-2-3-4"
+   }
+  }
+ ],
+ "title": "Analytical Procedures (Uniformity of dosage units/NIR)[Content uniformity][Sakura Bloom 20 mg]",
+ "type": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+    "code": "analytical-procedure",
+    "display": "Analytical Procedure"
+   }
+  ],
+  "text": "Analytical Procedure"
+ },
+ "status": "active",
+ "subjectReference": {
+  "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+ },
+ "description": "Core quality information (2.3.3.AP) for Analytical Procedures (Uniformity of dosage units/NIR)[Content uniformity][Sakura Bloom 20 mg].",
+ "action": [
+  {
+   "title": "Technique",
+   "description": "Analytical procedure principle: ·       Near infrared absorption spectrometry. ·       The spectrum for each test tablet is collected following the acquisition of the background spectrum from the empty reference position on the sample wheel. ·       Select not less than 100 uncoated core tablets for testing."
+  },
+  {
+   "title": "Quantification analysis",
+   "description": "The measured NIR spectra are evaluated by the QUANT method and single results for each tablet with the associated Mahalanobis distance is calculated."
+  },
+  {
+   "title": "Statistical Spectral Quality Test",
+   "description": "The Mahalanobis distance limit is used automatically by the software to determine whether the characteristics of the sample fall within the range of variation for which the model was calibrated and validated."
+  },
+  {
+   "title": "System suitability",
+   "description": "Must be performed and passed daily before any GxP acquisition, for the specific measurement channel (i.e. external transmission) to be used that day."
+  }
+ ]
+}

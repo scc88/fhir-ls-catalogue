@@ -1,0 +1,121 @@
+{
+ "resourceType": "SubstanceDefinition",
+ "id": "cp-4",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc815fba60f328a2f5fc27"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> CP-4</p></div>"
+ },
+ "status": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/publication-status",
+    "code": "active",
+    "display": "Active"
+   }
+  ],
+  "text": "Active"
+ },
+ "classification": [
+  {
+   "text": "Starting material (SM1); potentially mutagenic"
+  }
+ ],
+ "description": "Starting material (SM1); potentially mutagenic",
+ "molecularWeight": [
+  {
+   "amount": {
+    "value": 274.28,
+    "unit": "g/mol",
+    "system": "http://unitsofmeasure.org",
+    "code": "g/mol"
+   }
+  }
+ ],
+ "structure": {
+  "molecularFormula": "C13H17F3N2O",
+  "representation": [
+   {
+    "type": {
+     "text": "IUPAC name"
+    },
+    "representation": "(3R)-3-{[4-(Trifluoromethyl)phenyl]amino}hexanamide"
+   }
+  ]
+ },
+ "name": [
+  {
+   "name": "CP-4",
+   "type": {
+    "text": "Company code"
+   },
+   "preferred": true
+  },
+  {
+   "name": "(3R)-3-{[4-(Trifluoromethyl)phenyl]amino}hexanamide",
+   "type": {
+    "text": "IUPAC chemical name"
+   }
+  }
+ ],
+ "property": [
+  {
+   "type": {
+    "coding": [
+     {
+      "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+      "code": "1233444",
+      "display": "Rule-based (Q)Sar"
+     }
+    ],
+    "text": "Rule-based (Q)Sar"
+   },
+   "valueCodeableConcept": {
+    "text": "Positive (DEREK Nexus)"
+   }
+  },
+  {
+   "type": {
+    "coding": [
+     {
+      "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+      "code": "123555",
+      "display": "Statistical (Q)Sar"
+     }
+    ],
+    "text": "Statistical (Q)Sar"
+   },
+   "valueCodeableConcept": {
+    "text": "Positive (SARAH Nexus)"
+   }
+  },
+  {
+   "type": {
+    "coding": [
+     {
+      "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+      "code": "123557",
+      "display": "Mutagenicity Comment"
+     }
+    ],
+    "text": "Mutagenicity Comment"
+   },
+   "valueCodeableConcept": {
+    "text": "Aniline functionality eliminated in Step 3; purged by Step 3/4 crystallizations; controlled with CP-3/CP-4/CP-5 to a total of ≤ 37.5 ppm (TTC 1.5 µg/day / MDD 40 mg)"
+   }
+  }
+ ],
+ "manufacturer": [
+  {
+   "reference": "Organization/iroha-corp"
+  },
+  {
+   "reference": "Organization/heto-corp"
+  }
+ ]
+}

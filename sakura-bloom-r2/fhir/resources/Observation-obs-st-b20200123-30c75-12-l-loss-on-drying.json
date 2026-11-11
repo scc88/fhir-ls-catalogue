@@ -1,0 +1,48 @@
+{
+ "resourceType": "Observation",
+ "id": "obs-st-b20200123-30c75-12-l-loss-on-drying",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+  ]
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Loss on drying: 0.05 % (Substance/ds-b20200123)</p></div>"
+ },
+ "extension": [
+  {
+   "url": "http://hl7.org/fhir/StructureDefinition/workflow-triggeredBy",
+   "valueReference": {
+    "reference": "PlanDefinition/stability-protocol-ds-registration"
+   }
+  }
+ ],
+ "status": "final",
+ "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-loss-on-drying",
+ "category": [
+  {
+   "text": "Loss on drying"
+  }
+ ],
+ "code": {
+  "text": "Loss on drying"
+ },
+ "subject": {
+  "reference": "Substance/ds-b20200123"
+ },
+ "performer": [
+  {
+   "reference": "Organization/iroha-corp"
+  }
+ ],
+ "valueQuantity": {
+  "value": 0.05,
+  "unit": "%",
+  "system": "http://unitsofmeasure.org",
+  "code": "%"
+ },
+ "specimen": {
+  "reference": "Specimen/spc-ds-b20200123-30c75-12m"
+ }
+}

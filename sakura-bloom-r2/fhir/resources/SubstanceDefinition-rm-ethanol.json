@@ -1,0 +1,34 @@
+{
+ "resourceType": "SubstanceDefinition",
+ "id": "rm-ethanol",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+  ]
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Ethanol</p></div>"
+ },
+ "status": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/publication-status",
+    "code": "active",
+    "display": "Active"
+   }
+  ],
+  "text": "Active"
+ },
+ "classification": [
+  {
+   "text": "Raw material (solvent) for Sakuramil synthesis"
+  }
+ ],
+ "name": [
+  {
+   "name": "Ethanol",
+   "preferred": true
+  }
+ ]
+}

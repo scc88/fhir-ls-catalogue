@@ -1,0 +1,56 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-ds-sakuramil-loss-on-drying",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81bd95b9e9b0ef622af2"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-loss-on-drying",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Loss on drying: ≤ 0.5 %</p></div>"
+ },
+ "title": "Loss on drying",
+ "status": "active",
+ "category": [
+  {
+   "text": "Loss on drying"
+  }
+ ],
+ "code": {
+  "text": "Loss on drying"
+ },
+ "permittedDataType": [
+  "Quantity"
+ ],
+ "method": {
+  "text": "USP <731>"
+ },
+ "permittedUnit": [
+  {
+   "system": "http://unitsofmeasure.org",
+   "code": "[ppm]",
+   "display": "ppm"
+  }
+ ],
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "≤ 0.5 %"
+    }
+   ],
+   "range": {
+    "high": {
+     "value": 0.5,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  }
+ ]
+}

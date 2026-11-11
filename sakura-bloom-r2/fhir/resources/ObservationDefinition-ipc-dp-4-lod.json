@@ -1,0 +1,58 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "ipc-dp-4-lod",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc817e8d67fb0358c483c8"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/ipc-dp-4-lod",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> In-process control - Loss on drying (granules): Target: 1 %; Range: ≤ 2 %</p></div>"
+ },
+ "title": "Loss on drying (granules)",
+ "status": "active",
+ "category": [
+  {
+   "text": "In-process control"
+  }
+ ],
+ "code": {
+  "text": "In-process control - Loss on drying (granules)"
+ },
+ "permittedDataType": [
+  "Quantity"
+ ],
+ "method": {
+  "text": "Weighing"
+ },
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "Target: 1 %; Range: ≤ 2 %"
+    },
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-target-pq",
+     "valueQuantity": {
+      "value": 1,
+      "unit": "%",
+      "system": "http://unitsofmeasure.org",
+      "code": "%"
+     }
+    }
+   ],
+   "range": {
+    "high": {
+     "value": 2,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  }
+ ]
+}

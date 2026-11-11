@@ -1,0 +1,368 @@
+{
+ "resourceType": "DiagnosticReport",
+ "id": "dr-st-ds-b20200117-30c75",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DiagnosticReport-analysis-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc816a9262cac6bc987aba"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DiagnosticReport</b> Stability Study Report</p></div>"
+ },
+ "extension": [
+  {
+   "url": "http://hl7.org/fhir/StructureDefinition/workflow-triggeredBy",
+   "valueReference": {
+    "reference": "PlanDefinition/stability-protocol-ds-registration"
+   }
+  }
+ ],
+ "identifier": [
+  {
+   "system": "http://example.org/sakura-bloom-r2/fhir/report-id",
+   "value": "dr-st-ds-b20200117-30c75"
+  }
+ ],
+ "status": "final",
+ "category": [
+  {
+   "text": "Long-term 30 ± 2 °C / 75 ± 5 % RH"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-report-type",
+    "code": "Stability Study Report",
+    "display": "Stability Study Report"
+   }
+  ],
+  "text": "Stability Study Report"
+ },
+ "subject": {
+  "reference": "Substance/ds-b20200117"
+ },
+ "performer": [
+  {
+   "reference": "Organization/iroha-corp"
+  }
+ ],
+ "specimen": [
+  {
+   "reference": "Specimen/spc-ds-b20200117-30c75-0m"
+  },
+  {
+   "reference": "Specimen/spc-ds-b20200117-30c75-3m"
+  },
+  {
+   "reference": "Specimen/spc-ds-b20200117-30c75-6m"
+  },
+  {
+   "reference": "Specimen/spc-ds-b20200117-30c75-9m"
+  },
+  {
+   "reference": "Specimen/spc-ds-b20200117-30c75-12m"
+  },
+  {
+   "reference": "Specimen/spc-ds-b20200117-30c75-18m"
+  },
+  {
+   "reference": "Specimen/spc-ds-b20200117-30c75-24m"
+  },
+  {
+   "reference": "Specimen/spc-ds-b20200117-30c75-36m"
+  }
+ ],
+ "result": [
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-0-l-appearance"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-3-l-appearance"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-6-l-appearance"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-9-l-appearance"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-12-l-appearance"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-18-l-appearance"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-24-l-appearance"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-36-l-appearance"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-0-l-sakuramil-ir"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-3-l-sakuramil-ir"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-6-l-sakuramil-ir"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-9-l-sakuramil-ir"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-12-l-sakuramil-ir"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-18-l-sakuramil-ir"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-24-l-sakuramil-ir"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-36-l-sakuramil-ir"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-0-l-sakuramil-hplc"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-3-l-sakuramil-hplc"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-6-l-sakuramil-hplc"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-9-l-sakuramil-hplc"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-12-l-sakuramil-hplc"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-18-l-sakuramil-hplc"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-24-l-sakuramil-hplc"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-36-l-sakuramil-hplc"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-0-l-cp-9-1"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-3-l-cp-9-1"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-6-l-cp-9-1"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-9-l-cp-9-1"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-12-l-cp-9-1"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-18-l-cp-9-1"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-24-l-cp-9-1"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-36-l-cp-9-1"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-0-l-cp-8"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-3-l-cp-8"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-6-l-cp-8"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-9-l-cp-8"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-12-l-cp-8"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-18-l-cp-8"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-24-l-cp-8"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-36-l-cp-8"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-0-l-individual-unspecified-impurities"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-3-l-individual-unspecified-impurities"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-6-l-individual-unspecified-impurities"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-9-l-individual-unspecified-impurities"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-12-l-individual-unspecified-impurities"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-18-l-individual-unspecified-impurities"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-24-l-individual-unspecified-impurities"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-36-l-individual-unspecified-impurities"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-0-l-total-impurities"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-3-l-total-impurities"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-6-l-total-impurities"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-9-l-total-impurities"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-12-l-total-impurities"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-18-l-total-impurities"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-24-l-total-impurities"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-36-l-total-impurities"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-0-l-cp-6"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-3-l-cp-6"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-6-l-cp-6"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-9-l-cp-6"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-12-l-cp-6"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-18-l-cp-6"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-24-l-cp-6"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-36-l-cp-6"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-0-l-methylene-chloride"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-3-l-methylene-chloride"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-6-l-methylene-chloride"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-9-l-methylene-chloride"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-12-l-methylene-chloride"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-18-l-methylene-chloride"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-24-l-methylene-chloride"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-36-l-methylene-chloride"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-0-l-loss-on-drying"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-3-l-loss-on-drying"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-6-l-loss-on-drying"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-9-l-loss-on-drying"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-12-l-loss-on-drying"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-18-l-loss-on-drying"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-24-l-loss-on-drying"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-36-l-loss-on-drying"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-0-l-residue-on-ignition"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-3-l-residue-on-ignition"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-6-l-residue-on-ignition"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-9-l-residue-on-ignition"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-12-l-residue-on-ignition"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-18-l-residue-on-ignition"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-24-l-residue-on-ignition"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-36-l-residue-on-ignition"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-0-l-assay-sakuramil-dried-basis"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-3-l-assay-sakuramil-dried-basis"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-6-l-assay-sakuramil-dried-basis"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-9-l-assay-sakuramil-dried-basis"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-12-l-assay-sakuramil-dried-basis"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-18-l-assay-sakuramil-dried-basis"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-24-l-assay-sakuramil-dried-basis"
+  },
+  {
+   "reference": "Observation/obs-st-b20200117-30c75-36-l-assay-sakuramil-dried-basis"
+  }
+ ]
+}

@@ -1,0 +1,43 @@
+{
+ "resourceType": "Organization",
+ "id": "leukocare-science",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8147bd6ec63896f631ca"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Organization</b> Leukocare Science</p></div>"
+ },
+ "identifier": [
+  {
+   "system": "urn:oid:2.16.840.1.113883.4.82",
+   "value": "3002867098"
+  }
+ ],
+ "active": true,
+ "type": [
+  {
+   "text": "Development laboratory"
+  }
+ ],
+ "name": "Leukocare Science",
+ "description": "Development laboratory used for characterization study (US addendum).",
+ "contact": [
+  {
+   "address": {
+    "use": "work",
+    "type": "physical",
+    "line": [
+     "123 Roarstreet"
+    ],
+    "city": "Kingston",
+    "country": "US",
+    "postalCode": "12401",
+    "state": "NY"
+   }
+  }
+ ]
+}

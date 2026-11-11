@@ -1,0 +1,71 @@
+{
+ "resourceType": "DiagnosticReport",
+ "id": "dr-carryover-b221229",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DiagnosticReport-analysis-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81ed9b44d575d38b54cb"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DiagnosticReport</b> Impurities Report</p></div>"
+ },
+ "extension": [
+  {
+   "url": "http://hl7.org/fhir/StructureDefinition/workflow-triggeredBy",
+   "valueReference": {
+    "reference": "PlanDefinition/study-residual-solvent-carryover"
+   }
+  }
+ ],
+ "identifier": [
+  {
+   "system": "http://example.org/sakura-bloom-r2/fhir/report-id",
+   "value": "dr-carryover-b221229"
+  }
+ ],
+ "status": "final",
+ "code": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-report-type",
+    "code": "Impurities Report",
+    "display": "Impurities Report"
+   }
+  ],
+  "text": "Impurities Report"
+ },
+ "subject": {
+  "reference": "Substance/ds-b221229"
+ },
+ "performer": [
+  {
+   "reference": "Organization/iroha-corp"
+  }
+ ],
+ "result": [
+  {
+   "reference": "Observation/obs-co-b221229-ethanol"
+  },
+  {
+   "reference": "Observation/obs-co-b221229-methanol"
+  },
+  {
+   "reference": "Observation/obs-co-b221229-n-hexane"
+  },
+  {
+   "reference": "Observation/obs-co-b221229-tetrahydrofuran"
+  },
+  {
+   "reference": "Observation/obs-co-b221229-benzene"
+  },
+  {
+   "reference": "Observation/obs-co-b221229-toluene"
+  },
+  {
+   "reference": "Observation/obs-co-b221229-roi"
+  }
+ ],
+ "conclusion": "All unspecified residual solvents < LOQ; justifies omission from the drug substance specification."
+}

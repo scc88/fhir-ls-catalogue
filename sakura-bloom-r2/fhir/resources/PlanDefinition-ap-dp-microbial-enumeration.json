@@ -1,0 +1,55 @@
+{
+ "resourceType": "PlanDefinition",
+ "id": "ap-dp-microbial-enumeration",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc812f893bc4905f505ee8"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-microbial-enumeration",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> Core quality information (2.3.3.AP) for Analytical Procedures (MET)[Purity][Sakura Bloom 20 mg].</p></div>"
+ },
+ "extension": [
+  {
+   "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-plan-document-reference-pq",
+   "valueReference": {
+    "reference": "DocumentReference/doc-dp-microbial-enumeration-3-2-ap"
+   }
+  },
+  {
+   "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-plan-document-reference-pq",
+   "valueReference": {
+    "reference": "DocumentReference/doc-dp-microbial-enumeration-2-3-4"
+   }
+  }
+ ],
+ "title": "Analytical Procedures (MET)[Purity][Sakura Bloom 20 mg]",
+ "type": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+    "code": "analytical-procedure",
+    "display": "Analytical Procedure"
+   }
+  ],
+  "text": "Analytical Procedure"
+ },
+ "status": "active",
+ "subjectReference": {
+  "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+ },
+ "description": "Core quality information (2.3.3.AP) for Analytical Procedures (MET)[Purity][Sakura Bloom 20 mg].",
+ "action": [
+  {
+   "title": "Technique",
+   "description": "Plate-count method Ph. Eur. / USP / JP"
+  },
+  {
+   "title": "Procedure",
+   "description": "Determine the total aerobic microbial count (TAMC) and the total combined yeasts/moulds count (TYMC) according to the harmonized methods of Ph. Eur. 2.6.12, USP <61> and JP <4.05 I> “Microbiological Examination of Non-Sterile Products: Microbial Enumeration Tests” by the pour-plate method. For the absence of specified microorganism Escherichia coli proceed according to the harmonized methods of Ph. Eur. 2.6.13, USP <62> and JP <4.05 II> “Microbiological Examination of Non-Sterile Products: Test for Specified Micro-Organisms”."
+  }
+ ]
+}

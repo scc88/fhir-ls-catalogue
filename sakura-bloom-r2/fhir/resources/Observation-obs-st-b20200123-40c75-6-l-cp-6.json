@@ -1,0 +1,55 @@
+{
+ "resourceType": "Observation",
+ "id": "obs-st-b20200123-40c75-6-l-cp-6",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+  ]
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Potentially mutagenic impurities - CP-6: 2 ppm (Substance/ds-b20200123)</p></div>"
+ },
+ "extension": [
+  {
+   "url": "http://hl7.org/fhir/StructureDefinition/workflow-triggeredBy",
+   "valueReference": {
+    "reference": "PlanDefinition/stability-protocol-ds-registration"
+   }
+  }
+ ],
+ "status": "final",
+ "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-cp-6",
+ "category": [
+  {
+   "text": "Potentially mutagenic impurities"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "MUT",
+    "display": "Mutagenic impurities"
+   }
+  ],
+  "text": "Potentially mutagenic impurities - CP-6"
+ },
+ "subject": {
+  "reference": "Substance/ds-b20200123"
+ },
+ "performer": [
+  {
+   "reference": "Organization/iroha-corp"
+  }
+ ],
+ "valueQuantity": {
+  "value": 2,
+  "unit": "ppm",
+  "system": "http://unitsofmeasure.org",
+  "code": "[ppm]"
+ },
+ "specimen": {
+  "reference": "Specimen/spc-ds-b20200123-40c75-6m"
+ }
+}

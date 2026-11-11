@@ -1,0 +1,93 @@
+{
+ "resourceType": "DiagnosticReport",
+ "id": "dr-st-dp-abc123-bottle-lt-unspecified",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DiagnosticReport-analysis-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc819bbcddf4d1fef7e769"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DiagnosticReport</b> Stability Study Report</p></div>"
+ },
+ "extension": [
+  {
+   "url": "http://hl7.org/fhir/StructureDefinition/workflow-triggeredBy",
+   "valueReference": {
+    "reference": "PlanDefinition/stability-protocol-dp-registration"
+   }
+  }
+ ],
+ "identifier": [
+  {
+   "system": "http://example.org/sakura-bloom-r2/fhir/report-id",
+   "value": "dr-st-dp-abc123-bottle-lt-unspecified"
+  }
+ ],
+ "status": "final",
+ "category": [
+  {
+   "text": "Long-term storage (condition not specified)"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-report-type",
+    "code": "Stability Study Report",
+    "display": "Stability Study Report"
+   }
+  ],
+  "text": "Stability Study Report"
+ },
+ "subject": {
+  "reference": "Medication/dp-abc123-bottle"
+ },
+ "performer": [
+  {
+   "reference": "Organization/aparna-pharm"
+  }
+ ],
+ "specimen": [
+  {
+   "reference": "Specimen/spc-abc123-bottle-lt-unspecified-12m"
+  },
+  {
+   "reference": "Specimen/spc-abc123-bottle-lt-unspecified-24m"
+  },
+  {
+   "reference": "Specimen/spc-abc123-bottle-lt-unspecified-36m"
+  }
+ ],
+ "result": [
+  {
+   "reference": "Observation/obs-st-abc123-bottle-lt-unspecified-12-met-tamc"
+  },
+  {
+   "reference": "Observation/obs-st-abc123-bottle-lt-unspecified-12-met-tymc"
+  },
+  {
+   "reference": "Observation/obs-st-abc123-bottle-lt-unspecified-12-met-e-coli"
+  },
+  {
+   "reference": "Observation/obs-st-abc123-bottle-lt-unspecified-24-met-tamc"
+  },
+  {
+   "reference": "Observation/obs-st-abc123-bottle-lt-unspecified-24-met-tymc"
+  },
+  {
+   "reference": "Observation/obs-st-abc123-bottle-lt-unspecified-24-met-e-coli"
+  },
+  {
+   "reference": "Observation/obs-st-abc123-bottle-lt-unspecified-36-met-tamc"
+  },
+  {
+   "reference": "Observation/obs-st-abc123-bottle-lt-unspecified-36-met-tymc"
+  },
+  {
+   "reference": "Observation/obs-st-abc123-bottle-lt-unspecified-36-met-e-coli"
+  }
+ ],
+ "conclusion": "Microbial enumeration test; long-term storage condition not specified in source."
+}

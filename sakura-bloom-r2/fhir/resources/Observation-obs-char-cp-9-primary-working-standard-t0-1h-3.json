@@ -1,0 +1,81 @@
+{
+ "resourceType": "Observation",
+ "id": "obs-char-cp-9-primary-working-standard-t0-1h-3",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+  ]
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 1H NMR signal assignment: δ 4.56-4.09 ppm; 3H; m; H11 (Substance/rs-cp-9-primary-working-standard)</p></div>"
+ },
+ "status": "final",
+ "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-1h-nmr-signal",
+ "category": [
+  {
+   "text": "Elucidation of structure"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "NMR-H",
+    "display": "NMR-H"
+   }
+  ],
+  "text": "Elucidation of structure - 1H NMR signal assignment"
+ },
+ "subject": {
+  "reference": "Substance/rs-cp-9-primary-working-standard"
+ },
+ "performer": [
+  {
+   "reference": "Organization/iroha-corp"
+  }
+ ],
+ "valueString": "δ 4.56-4.09 ppm; 3H; m; H11",
+ "component": [
+  {
+   "code": {
+    "text": "Chemical shift (δ, lower)"
+   },
+   "valueQuantity": {
+    "value": 4.09,
+    "unit": "ppm",
+    "system": "http://unitsofmeasure.org",
+    "code": "[ppm]"
+   }
+  },
+  {
+   "code": {
+    "text": "Chemical shift (δ, upper)"
+   },
+   "valueQuantity": {
+    "value": 4.56,
+    "unit": "ppm",
+    "system": "http://unitsofmeasure.org",
+    "code": "[ppm]"
+   }
+  },
+  {
+   "code": {
+    "text": "Number of nuclei"
+   },
+   "valueString": "3H"
+  },
+  {
+   "code": {
+    "text": "Multiplicity"
+   },
+   "valueString": "m"
+  },
+  {
+   "code": {
+    "text": "Assignment"
+   },
+   "valueString": "H11"
+  }
+ ]
+}

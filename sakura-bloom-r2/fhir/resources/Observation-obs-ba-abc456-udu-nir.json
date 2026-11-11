@@ -1,0 +1,85 @@
+{
+ "resourceType": "Observation",
+ "id": "obs-ba-abc456-udu-nir",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+  ]
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Uniformity of dosage units - Uniformity of dosage units (NIR, RTRT): 100.3 % (Medication/dp-abc456)</p></div>"
+ },
+ "status": "final",
+ "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-udu-nir",
+ "category": [
+  {
+   "text": "Uniformity of dosage units"
+  }
+ ],
+ "code": {
+  "text": "Uniformity of dosage units - Uniformity of dosage units (NIR, RTRT)"
+ },
+ "subject": {
+  "reference": "Medication/dp-abc456"
+ },
+ "performer": [
+  {
+   "reference": "Organization/dakina-analytica"
+  }
+ ],
+ "valueQuantity": {
+  "value": 100.3,
+  "unit": "%",
+  "system": "http://unitsofmeasure.org",
+  "code": "%"
+ },
+ "interpretation": [
+  {
+   "text": "Complies"
+  }
+ ],
+ "component": [
+  {
+   "code": {
+    "text": "Minimum"
+   },
+   "valueQuantity": {
+    "value": 98.6,
+    "unit": "%",
+    "system": "http://unitsofmeasure.org",
+    "code": "%"
+   }
+  },
+  {
+   "code": {
+    "text": "Maximum"
+   },
+   "valueQuantity": {
+    "value": 101.8,
+    "unit": "%",
+    "system": "http://unitsofmeasure.org",
+    "code": "%"
+   }
+  },
+  {
+   "code": {
+    "text": "Acceptance value (AV)"
+   },
+   "valueQuantity": {
+    "value": 2.7,
+    "unit": "%",
+    "system": "http://unitsofmeasure.org",
+    "code": "%"
+   }
+  },
+  {
+   "code": {
+    "text": "Number of units tested (n)"
+   },
+   "valueQuantity": {
+    "value": 10
+   }
+  }
+ ]
+}

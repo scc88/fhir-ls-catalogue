@@ -1,0 +1,41 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-rm-water-water-conductivity",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc817d8758cc2d0c700cf9"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-rm-water-water-conductivity",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Water conductivity: Meet requirements</p></div>"
+ },
+ "title": "Water conductivity",
+ "status": "active",
+ "category": [
+  {
+   "text": "Water conductivity"
+  }
+ ],
+ "code": {
+  "text": "Water conductivity"
+ },
+ "permittedDataType": [
+  "string"
+ ],
+ "method": {
+  "text": "USP <645>"
+ },
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "Meet requirements"
+    }
+   ]
+  }
+ ]
+}

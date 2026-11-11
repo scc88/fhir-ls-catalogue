@@ -1,0 +1,117 @@
+{
+ "resourceType": "SubstanceDefinition",
+ "id": "coating-premix-red",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8101bbdfeab0c7f1d2ed"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Basic coating premix, red</p></div>"
+ },
+ "identifier": [
+  {
+   "system": "http://example.org/sakura-bloom-r2/fhir/material-code",
+   "value": "KIRSCH2358"
+  }
+ ],
+ "status": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/publication-status",
+    "code": "active",
+    "display": "Active"
+   }
+  ],
+  "text": "Active"
+ },
+ "classification": [
+  {
+   "text": "Excipient (non-compendial mixture, commercially available)"
+  }
+ ],
+ "grade": [
+  {
+   "text": "In-house"
+  }
+ ],
+ "description": "Basic coating premix, red. Commercially available film-coating premix; minor adaptations of the quantitative composition may be needed to match the colour reference. None of the components are of animal origin.",
+ "name": [
+  {
+   "name": "Basic coating premix, red",
+   "preferred": true,
+   "synonym": [
+    {
+     "name": "Coating premix red"
+    },
+    {
+     "name": "Coating Premix Red KIRSCH2358"
+    }
+   ]
+  }
+ ],
+ "relationship": [
+  {
+   "substanceDefinitionReference": {
+    "reference": "SubstanceDefinition/hypromellose"
+   },
+   "type": {
+    "text": "Component of mixture"
+   },
+   "isDefining": true,
+   "amountQuantity": {
+    "value": 50.0,
+    "unit": "%",
+    "system": "http://unitsofmeasure.org",
+    "code": "%"
+   }
+  },
+  {
+   "substanceDefinitionReference": {
+    "reference": "SubstanceDefinition/macrogol-6000"
+   },
+   "type": {
+    "text": "Component of mixture"
+   },
+   "isDefining": true,
+   "amountQuantity": {
+    "value": 20.0,
+    "unit": "%",
+    "system": "http://unitsofmeasure.org",
+    "code": "%"
+   }
+  },
+  {
+   "substanceDefinitionReference": {
+    "reference": "SubstanceDefinition/titanium-dioxide"
+   },
+   "type": {
+    "text": "Component of mixture"
+   },
+   "isDefining": true,
+   "amountQuantity": {
+    "value": 25.0,
+    "unit": "%",
+    "system": "http://unitsofmeasure.org",
+    "code": "%"
+   }
+  },
+  {
+   "substanceDefinitionReference": {
+    "reference": "SubstanceDefinition/iron-oxide-red"
+   },
+   "type": {
+    "text": "Component of mixture"
+   },
+   "isDefining": true,
+   "amountQuantity": {
+    "value": 5.0,
+    "unit": "%",
+    "system": "http://unitsofmeasure.org",
+    "code": "%"
+   }
+  }
+ ]
+}

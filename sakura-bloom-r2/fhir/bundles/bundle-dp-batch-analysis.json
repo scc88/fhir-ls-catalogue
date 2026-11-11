@@ -1,0 +1,5745 @@
+{
+ "resourceType": "Bundle",
+ "id": "bundle-dp-batch-analysis",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-batch-analysis-pq"
+  ]
+ },
+ "identifier": {
+  "system": "http://example.org/sakura-bloom-r2/fhir/bundle-id",
+  "value": "bundle-dp-batch-analysis"
+ },
+ "type": "collection",
+ "timestamp": "2026-11-08T00:00:00Z",
+ "entry": [
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-description",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-dp-description",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8196bde0c1ce7d54832e"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-description",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Description - Description (visual inspection): Batch release Pale red colored, round, biconvex film-coated tablet, debossed with ‘SB’ on one side and ‘20’ on the other side</p></div>"
+    },
+    "title": "Description (visual inspection)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Description"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DESC",
+       "display": "Description"
+      }
+     ],
+     "text": "Description - Description (visual inspection)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Visual inspection"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Pale red colored, round, biconvex film-coated tablet, debossed with ‘SB’ on one side and ‘20’ on the other side"
+       }
+      ],
+      "context": {
+       "text": "Batch release"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-identification-nir",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-dp-identification-nir",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8196bde0c1ce7d54832e"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-identification-nir",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Identification - Identification (NIR, RTRT, PLSR model): Batch release Identified as Sakura Bloom 20 mg Film-coated tablet / Corresponds to reference</p></div>"
+    },
+    "title": "Identification (NIR, RTRT, PLSR model)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Identification"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "IDT",
+       "display": "Identification"
+      }
+     ],
+     "text": "Identification - Identification (NIR, RTRT, PLSR model)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Near infrared absorption spectrometry (NIR method) (RTRT) (Model: PLSR)"
+    },
+    "description": "Performed at release only (RTRT).",
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Identified as Sakura Bloom 20 mg Film-coated tablet / Corresponds to reference"
+       }
+      ],
+      "context": {
+       "text": "Batch release"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-identification-hplc",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-dp-identification-hplc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8196bde0c1ce7d54832e"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-identification-hplc",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Identification - Identification (HPLC): Batch release The retention time of the main peak from the sample solution coincides with that of the standard solution.; Shelf-life Identified as Sakura Bloom 20 mg Film-coated tablet / Corresponds to reference</p></div>"
+    },
+    "title": "Identification (HPLC)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Identification"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "IDT",
+       "display": "Identification"
+      }
+     ],
+     "text": "Identification - Identification (HPLC)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "HPLC method"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "The retention time of the main peak from the sample solution coincides with that of the standard solution."
+       }
+      ],
+      "context": {
+       "text": "Batch release"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Identified as Sakura Bloom 20 mg Film-coated tablet / Corresponds to reference"
+       }
+      ],
+      "context": {
+       "text": "Shelf-life"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-identification-uv",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-dp-identification-uv",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8196bde0c1ce7d54832e"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-identification-uv",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Identification - Identification (UV-Vis): Batch release The shape of the ultraviolet absorption spectrum from the sample solution coincides with that of the standard solution / Corresponds to reference; Shelf-life The shape of the ultraviolet absorption spectrum from the sample solution coincides with that of the standard solution / Corresponds to reference</p></div>"
+    },
+    "title": "Identification (UV-Vis)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Identification"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "IDT",
+       "display": "Identification"
+      }
+     ],
+     "text": "Identification - Identification (UV-Vis)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Ultraviolet-visible spectrophotometry"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "The shape of the ultraviolet absorption spectrum from the sample solution coincides with that of the standard solution / Corresponds to reference"
+       }
+      ],
+      "context": {
+       "text": "Batch release"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "The shape of the ultraviolet absorption spectrum from the sample solution coincides with that of the standard solution / Corresponds to reference"
+       }
+      ],
+      "context": {
+       "text": "Shelf-life"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-udu-nir",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-dp-udu-nir",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8196bde0c1ce7d54832e"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-udu-nir",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Uniformity of dosage units - Uniformity of dosage units (NIR, RTRT): Batch release When 200 uncoated tablets, sampled to represent the whole batch during the tableting process, are tested for Assay, the number of tablets exceeding 85.0%-115.0% is 6 or less and exceeding 75.0%-125% is 1 or less.</p></div>"
+    },
+    "title": "Uniformity of dosage units (NIR, RTRT)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Uniformity of dosage units"
+     }
+    ],
+    "code": {
+     "text": "Uniformity of dosage units - Uniformity of dosage units (NIR, RTRT)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Near infrared absorption spectrometry (NIR method) (RTRT)"
+    },
+    "description": "Performed at release only (RTRT).",
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "When 200 uncoated tablets, sampled to represent the whole batch during the tableting process, are tested for Assay, the number of tablets exceeding 85.0%-115.0% is 6 or less and exceeding 75.0%-125% is 1 or less."
+       }
+      ],
+      "context": {
+       "text": "Batch release"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-udu-hplc",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-dp-udu-hplc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8196bde0c1ce7d54832e"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-udu-hplc",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Uniformity of dosage units - Uniformity of dosage units (content uniformity, HPLC): Batch release It meets the criteria of the Content Uniformity Test of the Ph. Eur., USP and JP.</p></div>"
+    },
+    "title": "Uniformity of dosage units (content uniformity, HPLC)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Uniformity of dosage units"
+     }
+    ],
+    "code": {
+     "text": "Uniformity of dosage units - Uniformity of dosage units (content uniformity, HPLC)"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Content Uniformity HPLC method"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "It meets the criteria of the Content Uniformity Test of the Ph. Eur., USP and JP."
+       }
+      ],
+      "context": {
+       "text": "Batch release"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-dissolution-rtrt",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-dp-dissolution-rtrt",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8196bde0c1ce7d54832e"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-dissolution-rtrt",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Dissolution - Dissolution (RTRT dissolution model): Batch release The dissolution rate calculated by the dissolution model at the time point of 30 minutes is 80% or higher.</p></div>"
+    },
+    "title": "Dissolution (RTRT dissolution model)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Dissolution"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "Dissolution",
+       "display": "Dissolution"
+      }
+     ],
+     "text": "Dissolution - Dissolution (RTRT dissolution model)"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "Calculation by the dissolution model; inputs: DS particle size (laser diffraction), granule particle size (FBRM), uncoated tablet hardness (RTRT)"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "The dissolution rate calculated by the dissolution model at the time point of 30 minutes is 80% or higher."
+       }
+      ],
+      "context": {
+       "text": "Batch release"
+      },
+      "range": {
+       "low": {
+        "value": 80,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-dissolution-uv",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-dp-dissolution-uv",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8196bde0c1ce7d54832e"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-dissolution-uv",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Dissolution - Dissolution (paddle, UV, Q in 30 min): Batch release Not Less Than 80% (Q in 30 minutes) of the declared content according to acceptance table 1 of harmonized Ph. Eur., USP and JP; Shelf-life Not Less Than 80% (Q in 30 minutes) of the declared content according to acceptance table 1 of harmonized Ph. Eur., USP and JP</p></div>"
+    },
+    "title": "Dissolution (paddle, UV, Q in 30 min)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Dissolution"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "Dissolution",
+       "display": "Dissolution"
+      }
+     ],
+     "text": "Dissolution - Dissolution (paddle, UV, Q in 30 min)"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "Dissolution test (paddle method), UV-Vis spectrophotometry"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Not Less Than 80% (Q in 30 minutes) of the declared content according to acceptance table 1 of harmonized Ph. Eur., USP and JP"
+       }
+      ],
+      "context": {
+       "text": "Batch release"
+      },
+      "range": {
+       "low": {
+        "value": 80,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Not Less Than 80% (Q in 30 minutes) of the declared content according to acceptance table 1 of harmonized Ph. Eur., USP and JP"
+       }
+      ],
+      "context": {
+       "text": "Shelf-life"
+      },
+      "range": {
+       "low": {
+        "value": 80,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-assay-nir",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-dp-assay-nir",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8196bde0c1ce7d54832e"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-assay-nir",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Assay - Assay (NIR, RTRT): Batch release The results of the uniformity of dosage units test (RTRT) show a mean of 95.0% to 105.0% of the labeled amount.</p></div>"
+    },
+    "title": "Assay (NIR, RTRT)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Assay"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "ASSAY",
+       "display": "Assay"
+      }
+     ],
+     "text": "Assay - Assay (NIR, RTRT)"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "Near infrared absorption spectrometry (NIR method) (RTRT)"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "The results of the uniformity of dosage units test (RTRT) show a mean of 95.0% to 105.0% of the labeled amount."
+       }
+      ],
+      "context": {
+       "text": "Batch release"
+      },
+      "range": {
+       "low": {
+        "value": 95.0,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       },
+       "high": {
+        "value": 105.0,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-assay-hplc",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-dp-assay-hplc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8196bde0c1ce7d54832e"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-assay-hplc",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Assay - Assay (HPLC): Batch release 95.0% to 105.0% of the declared content; Shelf-life 95.0% to 105.0% of the declared content</p></div>"
+    },
+    "title": "Assay (HPLC)",
+    "status": "active",
+    "category": [
+     {
+      "text": "Assay"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "ASSAY",
+       "display": "Assay"
+      }
+     ],
+     "text": "Assay - Assay (HPLC)"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC method"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "95.0% to 105.0% of the declared content"
+       }
+      ],
+      "context": {
+       "text": "Batch release"
+      },
+      "range": {
+       "low": {
+        "value": 95.0,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       },
+       "high": {
+        "value": 105.0,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "95.0% to 105.0% of the declared content"
+       }
+      ],
+      "context": {
+       "text": "Shelf-life"
+      },
+      "range": {
+       "low": {
+        "value": 95.0,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       },
+       "high": {
+        "value": 105.0,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-degradation-cp-9-1",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-dp-degradation-cp-9-1",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8196bde0c1ce7d54832e"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-degradation-cp-9-1",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Degradation Products - Degradation products - specified CP-9-1: Batch release Not more than 0.3%; Shelf-life Not more than 0.5%</p></div>"
+    },
+    "title": "Degradation products - specified CP-9-1",
+    "status": "active",
+    "category": [
+     {
+      "text": "Degradation Products"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DGP",
+       "display": "Degradation Products"
+      }
+     ],
+     "text": "Degradation Products - Degradation products - specified CP-9-1"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "description": "Based on the declared content of Sakuramil drug substance.",
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Not more than 0.3%"
+       }
+      ],
+      "context": {
+       "text": "Batch release"
+      },
+      "range": {
+       "high": {
+        "value": 0.3,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Not more than 0.5%"
+       }
+      ],
+      "context": {
+       "text": "Shelf-life"
+      },
+      "range": {
+       "high": {
+        "value": 0.5,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-degradation-unspecified",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-dp-degradation-unspecified",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8196bde0c1ce7d54832e"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-degradation-unspecified",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Degradation Products - Degradation products - any unspecified: Batch release Not more than 0.2%; Shelf-life Not more than 0.2%</p></div>"
+    },
+    "title": "Degradation products - any unspecified",
+    "status": "active",
+    "category": [
+     {
+      "text": "Degradation Products"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DGP",
+       "display": "Degradation Products"
+      }
+     ],
+     "text": "Degradation Products - Degradation products - any unspecified"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Not more than 0.2%"
+       }
+      ],
+      "context": {
+       "text": "Batch release"
+      },
+      "range": {
+       "high": {
+        "value": 0.2,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Not more than 0.2%"
+       }
+      ],
+      "context": {
+       "text": "Shelf-life"
+      },
+      "range": {
+       "high": {
+        "value": 0.2,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-degradation-total",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-dp-degradation-total",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8196bde0c1ce7d54832e"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-degradation-total",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Degradation Products - Degradation products - total: Batch release Not more than 1.0%; Shelf-life Not more than 1.0%</p></div>"
+    },
+    "title": "Degradation products - total",
+    "status": "active",
+    "category": [
+     {
+      "text": "Degradation Products"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DGP",
+       "display": "Degradation Products"
+      }
+     ],
+     "text": "Degradation Products - Degradation products - total"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "HPLC"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "%",
+      "display": "%"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Not more than 1.0%"
+       }
+      ],
+      "context": {
+       "text": "Batch release"
+      },
+      "range": {
+       "high": {
+        "value": 1.0,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Not more than 1.0%"
+       }
+      ],
+      "context": {
+       "text": "Shelf-life"
+      },
+      "range": {
+       "high": {
+        "value": 1.0,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-tamc",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-dp-met-tamc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8196bde0c1ce7d54832e"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-tamc",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Microbiological Quality - Microbial enumeration - TAMC: Batch release Not more than 1000 CFU/g; Shelf-life Not more than 1000 CFU/g</p></div>"
+    },
+    "title": "Microbial enumeration - TAMC",
+    "status": "active",
+    "category": [
+     {
+      "text": "Microbiological Quality"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "Microbiological Quality",
+       "display": "Microbiological Quality"
+      }
+     ],
+     "text": "Microbiological Quality - Microbial enumeration - TAMC"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "Microbial enumeration tests (plate-count method)"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "{CFU}/g",
+      "display": "CFU/g"
+     }
+    ],
+    "description": "Lot-wise on five consecutive production batches; may be reduced to every tenth batch (at least one batch per calendar year).",
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Not more than 1000 CFU/g"
+       }
+      ],
+      "context": {
+       "text": "Batch release"
+      },
+      "range": {
+       "high": {
+        "value": 1000,
+        "unit": "CFU/g",
+        "system": "http://unitsofmeasure.org",
+        "code": "{CFU}/g"
+       }
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Not more than 1000 CFU/g"
+       }
+      ],
+      "context": {
+       "text": "Shelf-life"
+      },
+      "range": {
+       "high": {
+        "value": 1000,
+        "unit": "CFU/g",
+        "system": "http://unitsofmeasure.org",
+        "code": "{CFU}/g"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-tymc",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-dp-met-tymc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8196bde0c1ce7d54832e"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-tymc",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Microbiological Quality - Microbial enumeration - TYMC: Batch release Not more than 100 CFU/g; Shelf-life Not more than 100 CFU/g</p></div>"
+    },
+    "title": "Microbial enumeration - TYMC",
+    "status": "active",
+    "category": [
+     {
+      "text": "Microbiological Quality"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "Microbiological Quality",
+       "display": "Microbiological Quality"
+      }
+     ],
+     "text": "Microbiological Quality - Microbial enumeration - TYMC"
+    },
+    "permittedDataType": [
+     "Quantity"
+    ],
+    "method": {
+     "text": "Microbial enumeration tests (plate-count method)"
+    },
+    "permittedUnit": [
+     {
+      "system": "http://unitsofmeasure.org",
+      "code": "{CFU}/g",
+      "display": "CFU/g"
+     }
+    ],
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Not more than 100 CFU/g"
+       }
+      ],
+      "context": {
+       "text": "Batch release"
+      },
+      "range": {
+       "high": {
+        "value": 100,
+        "unit": "CFU/g",
+        "system": "http://unitsofmeasure.org",
+        "code": "{CFU}/g"
+       }
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Not more than 100 CFU/g"
+       }
+      ],
+      "context": {
+       "text": "Shelf-life"
+      },
+      "range": {
+       "high": {
+        "value": 100,
+        "unit": "CFU/g",
+        "system": "http://unitsofmeasure.org",
+        "code": "{CFU}/g"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-e-coli",
+   "resource": {
+    "resourceType": "ObservationDefinition",
+    "id": "od-dp-met-e-coli",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8196bde0c1ce7d54832e"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-e-coli",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Microbiological Quality - Specified micro-organism - Escherichia coli: Batch release Absence of Escherichia coli in 1 g; Shelf-life Absence of Escherichia coli in 1 g</p></div>"
+    },
+    "title": "Specified micro-organism - Escherichia coli",
+    "status": "active",
+    "category": [
+     {
+      "text": "Microbiological Quality"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "Microbiological Quality",
+       "display": "Microbiological Quality"
+      }
+     ],
+     "text": "Microbiological Quality - Specified micro-organism - Escherichia coli"
+    },
+    "permittedDataType": [
+     "string"
+    ],
+    "method": {
+     "text": "Test for specified micro-organisms"
+    },
+    "qualifiedValue": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Absence of Escherichia coli in 1 g"
+       }
+      ],
+      "context": {
+       "text": "Batch release"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+        "valueString": "Absence of Escherichia coli in 1 g"
+       }
+      ],
+      "context": {
+       "text": "Shelf-life"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-dp",
+   "resource": {
+    "resourceType": "PlanDefinition",
+    "id": "spec-dp",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8196bde0c1ce7d54832e"
+    },
+    "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/spec-dp",
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> Table 1 of 2.3.3.DP.C. RTRT is employed for identification, uniformity of dosage units, dissolution and assay at release; conventional end-product tests are specified for stability (shelf-life).</p></div>"
+    },
+    "title": "Specifications and test methods for Sakura Bloom 20 mg film-coated tablet (release and shelf-life)",
+    "type": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+       "code": "1244577",
+       "display": "Specification Protocol"
+      }
+     ],
+     "text": "Specification Protocol"
+    },
+    "status": "active",
+    "subjectReference": {
+     "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+    },
+    "description": "Table 1 of 2.3.3.DP.C. RTRT is employed for identification, uniformity of dosage units, dissolution and assay at release; conventional end-product tests are specified for stability (shelf-life).",
+    "action": [
+     {
+      "title": "Batch release",
+      "code": {
+       "text": "Timing Group"
+      },
+      "action": [
+       {
+        "title": "Description (visual inspection)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-description",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-description"
+         }
+        ]
+       },
+       {
+        "title": "Identification (NIR, RTRT, PLSR model)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-identification-nir",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-identity-nir"
+         }
+        ]
+       },
+       {
+        "title": "Identification (HPLC)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-identification-hplc",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-identity-hplc"
+         }
+        ]
+       },
+       {
+        "title": "Identification (UV-Vis)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-identification-uv",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-identity-uv"
+         }
+        ]
+       },
+       {
+        "title": "Uniformity of dosage units (NIR, RTRT)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-udu-nir",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-udu-nir"
+         }
+        ]
+       },
+       {
+        "title": "Uniformity of dosage units (content uniformity, HPLC)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-udu-hplc",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-udu-hplc"
+         }
+        ]
+       },
+       {
+        "title": "Dissolution (RTRT dissolution model)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-dissolution-rtrt",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-dissolution-rtrt"
+         }
+        ]
+       },
+       {
+        "title": "Dissolution (paddle, UV, Q in 30 min)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-dissolution-uv",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-dissolution-uv"
+         }
+        ]
+       },
+       {
+        "title": "Assay (NIR, RTRT)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-assay-nir",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-assay-nir"
+         }
+        ]
+       },
+       {
+        "title": "Assay (HPLC)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-assay-hplc",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-assay-degradation"
+         }
+        ]
+       },
+       {
+        "title": "Degradation products - specified CP-9-1",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-degradation-cp-9-1",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-assay-degradation"
+         }
+        ]
+       },
+       {
+        "title": "Degradation products - any unspecified",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-degradation-unspecified",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-assay-degradation"
+         }
+        ]
+       },
+       {
+        "title": "Degradation products - total",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-degradation-total",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-assay-degradation"
+         }
+        ]
+       },
+       {
+        "title": "Microbial enumeration - TAMC",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-tamc",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-microbial-enumeration"
+         }
+        ]
+       },
+       {
+        "title": "Microbial enumeration - TYMC",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-tymc",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-microbial-enumeration"
+         }
+        ]
+       },
+       {
+        "title": "Specified micro-organism - Escherichia coli",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-e-coli",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-microbial-enumeration"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "title": "Shelf-life",
+      "code": {
+       "text": "Timing Group"
+      },
+      "action": [
+       {
+        "title": "Identification (HPLC)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-identification-hplc",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-identity-hplc"
+         }
+        ]
+       },
+       {
+        "title": "Identification (UV-Vis)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-identification-uv",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-identity-uv"
+         }
+        ]
+       },
+       {
+        "title": "Dissolution (paddle, UV, Q in 30 min)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-dissolution-uv",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-dissolution-uv"
+         }
+        ]
+       },
+       {
+        "title": "Assay (HPLC)",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-assay-hplc",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-assay-degradation"
+         }
+        ]
+       },
+       {
+        "title": "Degradation products - specified CP-9-1",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-degradation-cp-9-1",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-assay-degradation"
+         }
+        ]
+       },
+       {
+        "title": "Degradation products - any unspecified",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-degradation-unspecified",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-assay-degradation"
+         }
+        ]
+       },
+       {
+        "title": "Degradation products - total",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-degradation-total",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-assay-degradation"
+         }
+        ]
+       },
+       {
+        "title": "Microbial enumeration - TAMC",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-tamc",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-microbial-enumeration"
+         }
+        ]
+       },
+       {
+        "title": "Microbial enumeration - TYMC",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-tymc",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-microbial-enumeration"
+         }
+        ]
+       },
+       {
+        "title": "Specified micro-organism - Escherichia coli",
+        "code": {
+         "text": "Test"
+        },
+        "definitionCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-e-coli",
+        "documentation": [
+         {
+          "type": "depends-on",
+          "label": "Analytical procedure",
+          "resource": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-microbial-enumeration"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc123-description",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc123-description",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Description - Description (visual inspection): Complies (Medication/dp-abc123)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-description",
+    "category": [
+     {
+      "text": "Description"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DESC",
+       "display": "Description"
+      }
+     ],
+     "text": "Description - Description (visual inspection)"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc123"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueString": "Complies",
+    "interpretation": [
+     {
+      "text": "Complies"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc456-description",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc456-description",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Description - Description (visual inspection): Complies (Medication/dp-abc456)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-description",
+    "category": [
+     {
+      "text": "Description"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DESC",
+       "display": "Description"
+      }
+     ],
+     "text": "Description - Description (visual inspection)"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc456"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueString": "Complies",
+    "interpretation": [
+     {
+      "text": "Complies"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc789-description",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc789-description",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Description - Description (visual inspection): Complies (Medication/dp-abc789)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-description",
+    "category": [
+     {
+      "text": "Description"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DESC",
+       "display": "Description"
+      }
+     ],
+     "text": "Description - Description (visual inspection)"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc789"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueString": "Complies",
+    "interpretation": [
+     {
+      "text": "Complies"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc123-identification-nir",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc123-identification-nir",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Identification - Identification (NIR, RTRT, PLSR model): Complies (Medication/dp-abc123)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-identification-nir",
+    "category": [
+     {
+      "text": "Identification"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "IDT",
+       "display": "Identification"
+      }
+     ],
+     "text": "Identification - Identification (NIR, RTRT, PLSR model)"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc123"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueString": "Complies",
+    "interpretation": [
+     {
+      "text": "Complies"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc456-identification-nir",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc456-identification-nir",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Identification - Identification (NIR, RTRT, PLSR model): Complies (Medication/dp-abc456)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-identification-nir",
+    "category": [
+     {
+      "text": "Identification"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "IDT",
+       "display": "Identification"
+      }
+     ],
+     "text": "Identification - Identification (NIR, RTRT, PLSR model)"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc456"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueString": "Complies",
+    "interpretation": [
+     {
+      "text": "Complies"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc789-identification-nir",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc789-identification-nir",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Identification - Identification (NIR, RTRT, PLSR model): Complies (Medication/dp-abc789)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-identification-nir",
+    "category": [
+     {
+      "text": "Identification"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "IDT",
+       "display": "Identification"
+      }
+     ],
+     "text": "Identification - Identification (NIR, RTRT, PLSR model)"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc789"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueString": "Complies",
+    "interpretation": [
+     {
+      "text": "Complies"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc123-identification-hplc",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc123-identification-hplc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Identification - Identification (HPLC): Complies (Medication/dp-abc123)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-identification-hplc",
+    "category": [
+     {
+      "text": "Identification"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "IDT",
+       "display": "Identification"
+      }
+     ],
+     "text": "Identification - Identification (HPLC)"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc123"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueString": "Complies",
+    "interpretation": [
+     {
+      "text": "Complies"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc456-identification-hplc",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc456-identification-hplc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Identification - Identification (HPLC): Complies (Medication/dp-abc456)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-identification-hplc",
+    "category": [
+     {
+      "text": "Identification"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "IDT",
+       "display": "Identification"
+      }
+     ],
+     "text": "Identification - Identification (HPLC)"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc456"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueString": "Complies",
+    "interpretation": [
+     {
+      "text": "Complies"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc789-identification-hplc",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc789-identification-hplc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Identification - Identification (HPLC): Complies (Medication/dp-abc789)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-identification-hplc",
+    "category": [
+     {
+      "text": "Identification"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "IDT",
+       "display": "Identification"
+      }
+     ],
+     "text": "Identification - Identification (HPLC)"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc789"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueString": "Complies",
+    "interpretation": [
+     {
+      "text": "Complies"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc123-identification-uv",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc123-identification-uv",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Identification - Identification (UV-Vis): Complies (Medication/dp-abc123)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-identification-uv",
+    "category": [
+     {
+      "text": "Identification"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "IDT",
+       "display": "Identification"
+      }
+     ],
+     "text": "Identification - Identification (UV-Vis)"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc123"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueString": "Complies",
+    "interpretation": [
+     {
+      "text": "Complies"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc456-identification-uv",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc456-identification-uv",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Identification - Identification (UV-Vis): Complies (Medication/dp-abc456)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-identification-uv",
+    "category": [
+     {
+      "text": "Identification"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "IDT",
+       "display": "Identification"
+      }
+     ],
+     "text": "Identification - Identification (UV-Vis)"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc456"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueString": "Complies",
+    "interpretation": [
+     {
+      "text": "Complies"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc789-identification-uv",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc789-identification-uv",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Identification - Identification (UV-Vis): Complies (Medication/dp-abc789)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-identification-uv",
+    "category": [
+     {
+      "text": "Identification"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "IDT",
+       "display": "Identification"
+      }
+     ],
+     "text": "Identification - Identification (UV-Vis)"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc789"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueString": "Complies",
+    "interpretation": [
+     {
+      "text": "Complies"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc123-udu-nir",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc123-udu-nir",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Uniformity of dosage units - Uniformity of dosage units (NIR, RTRT): 100.5 % (Medication/dp-abc123)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-udu-nir",
+    "category": [
+     {
+      "text": "Uniformity of dosage units"
+     }
+    ],
+    "code": {
+     "text": "Uniformity of dosage units - Uniformity of dosage units (NIR, RTRT)"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc123"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueQuantity": {
+     "value": 100.5,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    },
+    "interpretation": [
+     {
+      "text": "Complies"
+     }
+    ],
+    "component": [
+     {
+      "code": {
+       "text": "Minimum"
+      },
+      "valueQuantity": {
+       "value": 98.7,
+       "unit": "%",
+       "system": "http://unitsofmeasure.org",
+       "code": "%"
+      }
+     },
+     {
+      "code": {
+       "text": "Maximum"
+      },
+      "valueQuantity": {
+       "value": 102.6,
+       "unit": "%",
+       "system": "http://unitsofmeasure.org",
+       "code": "%"
+      }
+     },
+     {
+      "code": {
+       "text": "Acceptance value (AV)"
+      },
+      "valueQuantity": {
+       "value": 3.0,
+       "unit": "%",
+       "system": "http://unitsofmeasure.org",
+       "code": "%"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of units tested (n)"
+      },
+      "valueQuantity": {
+       "value": 10
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc456-udu-nir",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc456-udu-nir",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Uniformity of dosage units - Uniformity of dosage units (NIR, RTRT): 100.3 % (Medication/dp-abc456)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-udu-nir",
+    "category": [
+     {
+      "text": "Uniformity of dosage units"
+     }
+    ],
+    "code": {
+     "text": "Uniformity of dosage units - Uniformity of dosage units (NIR, RTRT)"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc456"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueQuantity": {
+     "value": 100.3,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    },
+    "interpretation": [
+     {
+      "text": "Complies"
+     }
+    ],
+    "component": [
+     {
+      "code": {
+       "text": "Minimum"
+      },
+      "valueQuantity": {
+       "value": 98.6,
+       "unit": "%",
+       "system": "http://unitsofmeasure.org",
+       "code": "%"
+      }
+     },
+     {
+      "code": {
+       "text": "Maximum"
+      },
+      "valueQuantity": {
+       "value": 101.8,
+       "unit": "%",
+       "system": "http://unitsofmeasure.org",
+       "code": "%"
+      }
+     },
+     {
+      "code": {
+       "text": "Acceptance value (AV)"
+      },
+      "valueQuantity": {
+       "value": 2.7,
+       "unit": "%",
+       "system": "http://unitsofmeasure.org",
+       "code": "%"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of units tested (n)"
+      },
+      "valueQuantity": {
+       "value": 10
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc789-udu-nir",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc789-udu-nir",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Uniformity of dosage units - Uniformity of dosage units (NIR, RTRT): 100.4 % (Medication/dp-abc789)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-udu-nir",
+    "category": [
+     {
+      "text": "Uniformity of dosage units"
+     }
+    ],
+    "code": {
+     "text": "Uniformity of dosage units - Uniformity of dosage units (NIR, RTRT)"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc789"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueQuantity": {
+     "value": 100.4,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    },
+    "interpretation": [
+     {
+      "text": "Complies"
+     }
+    ],
+    "component": [
+     {
+      "code": {
+       "text": "Minimum"
+      },
+      "valueQuantity": {
+       "value": 98.2,
+       "unit": "%",
+       "system": "http://unitsofmeasure.org",
+       "code": "%"
+      }
+     },
+     {
+      "code": {
+       "text": "Maximum"
+      },
+      "valueQuantity": {
+       "value": 102.4,
+       "unit": "%",
+       "system": "http://unitsofmeasure.org",
+       "code": "%"
+      }
+     },
+     {
+      "code": {
+       "text": "Acceptance value (AV)"
+      },
+      "valueQuantity": {
+       "value": 3.4,
+       "unit": "%",
+       "system": "http://unitsofmeasure.org",
+       "code": "%"
+      }
+     },
+     {
+      "code": {
+       "text": "Number of units tested (n)"
+      },
+      "valueQuantity": {
+       "value": 10
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc123-udu-hplc",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc123-udu-hplc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Uniformity of dosage units - Uniformity of dosage units (content uniformity, HPLC): Complies (Medication/dp-abc123)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-udu-hplc",
+    "category": [
+     {
+      "text": "Uniformity of dosage units"
+     }
+    ],
+    "code": {
+     "text": "Uniformity of dosage units - Uniformity of dosage units (content uniformity, HPLC)"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc123"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueString": "Complies",
+    "interpretation": [
+     {
+      "text": "Complies"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc456-udu-hplc",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc456-udu-hplc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Uniformity of dosage units - Uniformity of dosage units (content uniformity, HPLC): Complies (Medication/dp-abc456)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-udu-hplc",
+    "category": [
+     {
+      "text": "Uniformity of dosage units"
+     }
+    ],
+    "code": {
+     "text": "Uniformity of dosage units - Uniformity of dosage units (content uniformity, HPLC)"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc456"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueString": "Complies",
+    "interpretation": [
+     {
+      "text": "Complies"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc789-udu-hplc",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc789-udu-hplc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Uniformity of dosage units - Uniformity of dosage units (content uniformity, HPLC): Complies (Medication/dp-abc789)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-udu-hplc",
+    "category": [
+     {
+      "text": "Uniformity of dosage units"
+     }
+    ],
+    "code": {
+     "text": "Uniformity of dosage units - Uniformity of dosage units (content uniformity, HPLC)"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc789"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueString": "Complies",
+    "interpretation": [
+     {
+      "text": "Complies"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc123-dissolution-rtrt",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc123-dissolution-rtrt",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Dissolution - Dissolution (RTRT dissolution model): 97 % (Medication/dp-abc123)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-dissolution-rtrt",
+    "category": [
+     {
+      "text": "Dissolution"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "Dissolution",
+       "display": "Dissolution"
+      }
+     ],
+     "text": "Dissolution - Dissolution (RTRT dissolution model)"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc123"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueQuantity": {
+     "value": 97,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    },
+    "interpretation": [
+     {
+      "text": "Complies"
+     }
+    ],
+    "component": [
+     {
+      "code": {
+       "text": "Minimum"
+      },
+      "valueQuantity": {
+       "value": 95,
+       "unit": "%",
+       "system": "http://unitsofmeasure.org",
+       "code": "%"
+      }
+     },
+     {
+      "code": {
+       "text": "Maximum"
+      },
+      "valueQuantity": {
+       "value": 100,
+       "unit": "%",
+       "system": "http://unitsofmeasure.org",
+       "code": "%"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc456-dissolution-rtrt",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc456-dissolution-rtrt",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Dissolution - Dissolution (RTRT dissolution model): 96 % (Medication/dp-abc456)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-dissolution-rtrt",
+    "category": [
+     {
+      "text": "Dissolution"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "Dissolution",
+       "display": "Dissolution"
+      }
+     ],
+     "text": "Dissolution - Dissolution (RTRT dissolution model)"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc456"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueQuantity": {
+     "value": 96,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    },
+    "interpretation": [
+     {
+      "text": "Complies"
+     }
+    ],
+    "component": [
+     {
+      "code": {
+       "text": "Minimum"
+      },
+      "valueQuantity": {
+       "value": 94,
+       "unit": "%",
+       "system": "http://unitsofmeasure.org",
+       "code": "%"
+      }
+     },
+     {
+      "code": {
+       "text": "Maximum"
+      },
+      "valueQuantity": {
+       "value": 100,
+       "unit": "%",
+       "system": "http://unitsofmeasure.org",
+       "code": "%"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc789-dissolution-rtrt",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc789-dissolution-rtrt",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Dissolution - Dissolution (RTRT dissolution model): 98 % (Medication/dp-abc789)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-dissolution-rtrt",
+    "category": [
+     {
+      "text": "Dissolution"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "Dissolution",
+       "display": "Dissolution"
+      }
+     ],
+     "text": "Dissolution - Dissolution (RTRT dissolution model)"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc789"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueQuantity": {
+     "value": 98,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    },
+    "interpretation": [
+     {
+      "text": "Complies"
+     }
+    ],
+    "component": [
+     {
+      "code": {
+       "text": "Minimum"
+      },
+      "valueQuantity": {
+       "value": 92,
+       "unit": "%",
+       "system": "http://unitsofmeasure.org",
+       "code": "%"
+      }
+     },
+     {
+      "code": {
+       "text": "Maximum"
+      },
+      "valueQuantity": {
+       "value": 101,
+       "unit": "%",
+       "system": "http://unitsofmeasure.org",
+       "code": "%"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc123-dissolution-uv",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc123-dissolution-uv",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Dissolution - Dissolution (paddle, UV, Q in 30 min): 96 % (Medication/dp-abc123)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-dissolution-uv",
+    "category": [
+     {
+      "text": "Dissolution"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "Dissolution",
+       "display": "Dissolution"
+      }
+     ],
+     "text": "Dissolution - Dissolution (paddle, UV, Q in 30 min)"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc123"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueQuantity": {
+     "value": 96,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc456-dissolution-uv",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc456-dissolution-uv",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Dissolution - Dissolution (paddle, UV, Q in 30 min): 98 % (Medication/dp-abc456)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-dissolution-uv",
+    "category": [
+     {
+      "text": "Dissolution"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "Dissolution",
+       "display": "Dissolution"
+      }
+     ],
+     "text": "Dissolution - Dissolution (paddle, UV, Q in 30 min)"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc456"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueQuantity": {
+     "value": 98,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc789-dissolution-uv",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc789-dissolution-uv",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Dissolution - Dissolution (paddle, UV, Q in 30 min): 99 % (Medication/dp-abc789)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-dissolution-uv",
+    "category": [
+     {
+      "text": "Dissolution"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "Dissolution",
+       "display": "Dissolution"
+      }
+     ],
+     "text": "Dissolution - Dissolution (paddle, UV, Q in 30 min)"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc789"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueQuantity": {
+     "value": 99,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc123-assay-nir",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc123-assay-nir",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Assay - Assay (NIR, RTRT): 100.1 % (Medication/dp-abc123)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-assay-nir",
+    "category": [
+     {
+      "text": "Assay"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "ASSAY",
+       "display": "Assay"
+      }
+     ],
+     "text": "Assay - Assay (NIR, RTRT)"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc123"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueQuantity": {
+     "value": 100.1,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc456-assay-nir",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc456-assay-nir",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Assay - Assay (NIR, RTRT): 100.4 % (Medication/dp-abc456)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-assay-nir",
+    "category": [
+     {
+      "text": "Assay"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "ASSAY",
+       "display": "Assay"
+      }
+     ],
+     "text": "Assay - Assay (NIR, RTRT)"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc456"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueQuantity": {
+     "value": 100.4,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc789-assay-nir",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc789-assay-nir",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Assay - Assay (NIR, RTRT): 100.3 % (Medication/dp-abc789)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-assay-nir",
+    "category": [
+     {
+      "text": "Assay"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "ASSAY",
+       "display": "Assay"
+      }
+     ],
+     "text": "Assay - Assay (NIR, RTRT)"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc789"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueQuantity": {
+     "value": 100.3,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc123-assay-hplc",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc123-assay-hplc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Assay - Assay (HPLC): 100.2 % (Medication/dp-abc123)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-assay-hplc",
+    "category": [
+     {
+      "text": "Assay"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "ASSAY",
+       "display": "Assay"
+      }
+     ],
+     "text": "Assay - Assay (HPLC)"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc123"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueQuantity": {
+     "value": 100.2,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc456-assay-hplc",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc456-assay-hplc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Assay - Assay (HPLC): 100.1 % (Medication/dp-abc456)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-assay-hplc",
+    "category": [
+     {
+      "text": "Assay"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "ASSAY",
+       "display": "Assay"
+      }
+     ],
+     "text": "Assay - Assay (HPLC)"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc456"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueQuantity": {
+     "value": 100.1,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc789-assay-hplc",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc789-assay-hplc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Assay - Assay (HPLC): 100.4 % (Medication/dp-abc789)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-assay-hplc",
+    "category": [
+     {
+      "text": "Assay"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "ASSAY",
+       "display": "Assay"
+      }
+     ],
+     "text": "Assay - Assay (HPLC)"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc789"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueQuantity": {
+     "value": 100.4,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc123-degradation-cp-9-1",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc123-degradation-cp-9-1",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Degradation Products - Degradation products - specified CP-9-1: 0.1 % (Medication/dp-abc123)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-degradation-cp-9-1",
+    "category": [
+     {
+      "text": "Degradation Products"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DGP",
+       "display": "Degradation Products"
+      }
+     ],
+     "text": "Degradation Products - Degradation products - specified CP-9-1"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc123"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueQuantity": {
+     "value": 0.1,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc456-degradation-cp-9-1",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc456-degradation-cp-9-1",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Degradation Products - Degradation products - specified CP-9-1: 0.2 % (Medication/dp-abc456)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-degradation-cp-9-1",
+    "category": [
+     {
+      "text": "Degradation Products"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DGP",
+       "display": "Degradation Products"
+      }
+     ],
+     "text": "Degradation Products - Degradation products - specified CP-9-1"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc456"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueQuantity": {
+     "value": 0.2,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc789-degradation-cp-9-1",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc789-degradation-cp-9-1",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Degradation Products - Degradation products - specified CP-9-1: 0.2 % (Medication/dp-abc789)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-degradation-cp-9-1",
+    "category": [
+     {
+      "text": "Degradation Products"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DGP",
+       "display": "Degradation Products"
+      }
+     ],
+     "text": "Degradation Products - Degradation products - specified CP-9-1"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc789"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueQuantity": {
+     "value": 0.2,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc123-degradation-unspecified",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc123-degradation-unspecified",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Degradation Products - Degradation products - any unspecified: &lt;0.2 % (Medication/dp-abc123)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-degradation-unspecified",
+    "category": [
+     {
+      "text": "Degradation Products"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DGP",
+       "display": "Degradation Products"
+      }
+     ],
+     "text": "Degradation Products - Degradation products - any unspecified"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc123"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueQuantity": {
+     "comparator": "<",
+     "value": 0.2,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc456-degradation-unspecified",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc456-degradation-unspecified",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Degradation Products - Degradation products - any unspecified: &lt;0.1 % (Medication/dp-abc456)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-degradation-unspecified",
+    "category": [
+     {
+      "text": "Degradation Products"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DGP",
+       "display": "Degradation Products"
+      }
+     ],
+     "text": "Degradation Products - Degradation products - any unspecified"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc456"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueQuantity": {
+     "comparator": "<",
+     "value": 0.1,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc789-degradation-unspecified",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc789-degradation-unspecified",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Degradation Products - Degradation products - any unspecified: &lt;0.1 % (Medication/dp-abc789)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-degradation-unspecified",
+    "category": [
+     {
+      "text": "Degradation Products"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DGP",
+       "display": "Degradation Products"
+      }
+     ],
+     "text": "Degradation Products - Degradation products - any unspecified"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc789"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueQuantity": {
+     "comparator": "<",
+     "value": 0.1,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc123-degradation-total",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc123-degradation-total",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Degradation Products - Degradation products - total: 0.2 % (Medication/dp-abc123)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-degradation-total",
+    "category": [
+     {
+      "text": "Degradation Products"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DGP",
+       "display": "Degradation Products"
+      }
+     ],
+     "text": "Degradation Products - Degradation products - total"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc123"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueQuantity": {
+     "value": 0.2,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc456-degradation-total",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc456-degradation-total",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Degradation Products - Degradation products - total: 0.1 % (Medication/dp-abc456)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-degradation-total",
+    "category": [
+     {
+      "text": "Degradation Products"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DGP",
+       "display": "Degradation Products"
+      }
+     ],
+     "text": "Degradation Products - Degradation products - total"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc456"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueQuantity": {
+     "value": 0.1,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc789-degradation-total",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc789-degradation-total",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Degradation Products - Degradation products - total: 0.2 % (Medication/dp-abc789)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-degradation-total",
+    "category": [
+     {
+      "text": "Degradation Products"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "DGP",
+       "display": "Degradation Products"
+      }
+     ],
+     "text": "Degradation Products - Degradation products - total"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc789"
+    },
+    "performer": [
+     {
+      "reference": "Organization/dakina-analytica"
+     }
+    ],
+    "valueQuantity": {
+     "value": 0.2,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc123-met-tamc",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc123-met-tamc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Microbiological Quality - Microbial enumeration - TAMC: &lt;110 CFU/g (Medication/dp-abc123)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-tamc",
+    "category": [
+     {
+      "text": "Microbiological Quality"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "Microbiological Quality",
+       "display": "Microbiological Quality"
+      }
+     ],
+     "text": "Microbiological Quality - Microbial enumeration - TAMC"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc123"
+    },
+    "performer": [
+     {
+      "reference": "Organization/kunchen-sa"
+     }
+    ],
+    "valueQuantity": {
+     "comparator": "<",
+     "value": 110,
+     "unit": "CFU/g",
+     "system": "http://unitsofmeasure.org",
+     "code": "{CFU}/g"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc456-met-tamc",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc456-met-tamc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Microbiological Quality - Microbial enumeration - TAMC: &lt;100 CFU/g (Medication/dp-abc456)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-tamc",
+    "category": [
+     {
+      "text": "Microbiological Quality"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "Microbiological Quality",
+       "display": "Microbiological Quality"
+      }
+     ],
+     "text": "Microbiological Quality - Microbial enumeration - TAMC"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc456"
+    },
+    "performer": [
+     {
+      "reference": "Organization/kunchen-sa"
+     }
+    ],
+    "valueQuantity": {
+     "comparator": "<",
+     "value": 100,
+     "unit": "CFU/g",
+     "system": "http://unitsofmeasure.org",
+     "code": "{CFU}/g"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc789-met-tamc",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc789-met-tamc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Microbiological Quality - Microbial enumeration - TAMC: &lt;110 CFU/g (Medication/dp-abc789)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-tamc",
+    "category": [
+     {
+      "text": "Microbiological Quality"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "Microbiological Quality",
+       "display": "Microbiological Quality"
+      }
+     ],
+     "text": "Microbiological Quality - Microbial enumeration - TAMC"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc789"
+    },
+    "performer": [
+     {
+      "reference": "Organization/kunchen-sa"
+     }
+    ],
+    "valueQuantity": {
+     "comparator": "<",
+     "value": 110,
+     "unit": "CFU/g",
+     "system": "http://unitsofmeasure.org",
+     "code": "{CFU}/g"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc123-met-tymc",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc123-met-tymc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Microbiological Quality - Microbial enumeration - TYMC: &lt;60 CFU/g (Medication/dp-abc123)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-tymc",
+    "category": [
+     {
+      "text": "Microbiological Quality"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "Microbiological Quality",
+       "display": "Microbiological Quality"
+      }
+     ],
+     "text": "Microbiological Quality - Microbial enumeration - TYMC"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc123"
+    },
+    "performer": [
+     {
+      "reference": "Organization/kunchen-sa"
+     }
+    ],
+    "valueQuantity": {
+     "comparator": "<",
+     "value": 60,
+     "unit": "CFU/g",
+     "system": "http://unitsofmeasure.org",
+     "code": "{CFU}/g"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc456-met-tymc",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc456-met-tymc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Microbiological Quality - Microbial enumeration - TYMC: &lt;65 CFU/g (Medication/dp-abc456)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-tymc",
+    "category": [
+     {
+      "text": "Microbiological Quality"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "Microbiological Quality",
+       "display": "Microbiological Quality"
+      }
+     ],
+     "text": "Microbiological Quality - Microbial enumeration - TYMC"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc456"
+    },
+    "performer": [
+     {
+      "reference": "Organization/kunchen-sa"
+     }
+    ],
+    "valueQuantity": {
+     "comparator": "<",
+     "value": 65,
+     "unit": "CFU/g",
+     "system": "http://unitsofmeasure.org",
+     "code": "{CFU}/g"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc789-met-tymc",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc789-met-tymc",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Microbiological Quality - Microbial enumeration - TYMC: &lt;60 CFU/g (Medication/dp-abc789)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-tymc",
+    "category": [
+     {
+      "text": "Microbiological Quality"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "Microbiological Quality",
+       "display": "Microbiological Quality"
+      }
+     ],
+     "text": "Microbiological Quality - Microbial enumeration - TYMC"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc789"
+    },
+    "performer": [
+     {
+      "reference": "Organization/kunchen-sa"
+     }
+    ],
+    "valueQuantity": {
+     "comparator": "<",
+     "value": 60,
+     "unit": "CFU/g",
+     "system": "http://unitsofmeasure.org",
+     "code": "{CFU}/g"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc123-met-e-coli",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc123-met-e-coli",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Microbiological Quality - Specified micro-organism - Escherichia coli: Complies (Medication/dp-abc123)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-e-coli",
+    "category": [
+     {
+      "text": "Microbiological Quality"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "Microbiological Quality",
+       "display": "Microbiological Quality"
+      }
+     ],
+     "text": "Microbiological Quality - Specified micro-organism - Escherichia coli"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc123"
+    },
+    "performer": [
+     {
+      "reference": "Organization/kunchen-sa"
+     }
+    ],
+    "valueString": "Complies",
+    "interpretation": [
+     {
+      "text": "Complies"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc456-met-e-coli",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc456-met-e-coli",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Microbiological Quality - Specified micro-organism - Escherichia coli: Complies (Medication/dp-abc456)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-e-coli",
+    "category": [
+     {
+      "text": "Microbiological Quality"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "Microbiological Quality",
+       "display": "Microbiological Quality"
+      }
+     ],
+     "text": "Microbiological Quality - Specified micro-organism - Escherichia coli"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc456"
+    },
+    "performer": [
+     {
+      "reference": "Organization/kunchen-sa"
+     }
+    ],
+    "valueString": "Complies",
+    "interpretation": [
+     {
+      "text": "Complies"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Observation/obs-ba-abc789-met-e-coli",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "obs-ba-abc789-met-e-coli",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+     ]
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Microbiological Quality - Specified micro-organism - Escherichia coli: Complies (Medication/dp-abc789)</p></div>"
+    },
+    "status": "final",
+    "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-met-e-coli",
+    "category": [
+     {
+      "text": "Microbiological Quality"
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+       "code": "Microbiological Quality",
+       "display": "Microbiological Quality"
+      }
+     ],
+     "text": "Microbiological Quality - Specified micro-organism - Escherichia coli"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc789"
+    },
+    "performer": [
+     {
+      "reference": "Organization/kunchen-sa"
+     }
+    ],
+    "valueString": "Complies",
+    "interpretation": [
+     {
+      "text": "Complies"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/DiagnosticReport/dr-ba-dp-abc123",
+   "resource": {
+    "resourceType": "DiagnosticReport",
+    "id": "dr-ba-dp-abc123",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DiagnosticReport-analysis-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81f194b3e3a46699a278"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DiagnosticReport</b> Batch Analysis Report</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/workflow-triggeredBy",
+      "valueReference": {
+       "reference": "PlanDefinition/spec-dp"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/report-id",
+      "value": "dr-ba-dp-abc123"
+     }
+    ],
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-report-type",
+       "code": "Batch Analysis Report",
+       "display": "Batch Analysis Report"
+      }
+     ],
+     "text": "Batch Analysis Report"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc123"
+    },
+    "performer": [
+     {
+      "reference": "Organization/aparna-pharm"
+     }
+    ],
+    "result": [
+     {
+      "reference": "Observation/obs-ba-abc123-description"
+     },
+     {
+      "reference": "Observation/obs-ba-abc123-identification-nir"
+     },
+     {
+      "reference": "Observation/obs-ba-abc123-identification-hplc"
+     },
+     {
+      "reference": "Observation/obs-ba-abc123-identification-uv"
+     },
+     {
+      "reference": "Observation/obs-ba-abc123-udu-nir"
+     },
+     {
+      "reference": "Observation/obs-ba-abc123-udu-hplc"
+     },
+     {
+      "reference": "Observation/obs-ba-abc123-dissolution-rtrt"
+     },
+     {
+      "reference": "Observation/obs-ba-abc123-dissolution-uv"
+     },
+     {
+      "reference": "Observation/obs-ba-abc123-assay-nir"
+     },
+     {
+      "reference": "Observation/obs-ba-abc123-assay-hplc"
+     },
+     {
+      "reference": "Observation/obs-ba-abc123-degradation-cp-9-1"
+     },
+     {
+      "reference": "Observation/obs-ba-abc123-degradation-unspecified"
+     },
+     {
+      "reference": "Observation/obs-ba-abc123-degradation-total"
+     },
+     {
+      "reference": "Observation/obs-ba-abc123-met-tamc"
+     },
+     {
+      "reference": "Observation/obs-ba-abc123-met-tymc"
+     },
+     {
+      "reference": "Observation/obs-ba-abc123-met-e-coli"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Medication/dp-abc123",
+   "resource": {
+    "resourceType": "Medication",
+    "id": "dp-abc123",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81f194b3e3a46699a278"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Medication</b> Sakura Bloom 20 mg film-coated tablets - lot ABC123</p></div>"
+    },
+    "code": {
+     "extension": [
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-medication-definition-pq",
+       "valueReference": {
+        "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+       }
+      }
+     ],
+     "text": "Sakura Bloom 20 mg film-coated tablets"
+    },
+    "status": "active",
+    "doseForm": {
+     "coding": [
+      {
+       "system": "http://standardterms.edqm.eu",
+       "code": "10221000",
+       "display": "Film-coated tablet"
+      }
+     ],
+     "text": "Film-coated tablet"
+    },
+    "batch": {
+     "extension": [
+      {
+       "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+       "extension": [
+        {
+         "url": "manufacturingDate",
+         "valueDateTime": "2022-04"
+        },
+        {
+         "url": "batchQuantity",
+         "valueQuantity": {
+          "value": 2600000,
+          "unit": "tablets",
+          "system": "http://unitsofmeasure.org",
+          "code": "{tablets}"
+         }
+        },
+        {
+         "url": "batchUtilization",
+         "valueCodeableConcept": {
+          "text": "Production-scale and commercial batch"
+         }
+        },
+        {
+         "url": "assignedManufacturer",
+         "valueReference": {
+          "reference": "Organization/aparna-pharm"
+         }
+        }
+       ]
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-number-of-items-pq",
+       "valueQuantity": {
+        "value": 2600000,
+        "unit": "tablets",
+        "system": "http://unitsofmeasure.org",
+        "code": "{tablets}"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+       "valueReference": {
+        "reference": "PlanDefinition/dp-manufacturing-process"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+       "valueReference": {
+        "reference": "Substance/ds-b221215"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+       "valueReference": {
+        "reference": "Substance/ds-b221216"
+       }
+      }
+     ],
+     "lotNumber": "ABC123"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/DiagnosticReport/dr-ba-dp-abc456",
+   "resource": {
+    "resourceType": "DiagnosticReport",
+    "id": "dr-ba-dp-abc456",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DiagnosticReport-analysis-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81f194b3e3a46699a278"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DiagnosticReport</b> Batch Analysis Report</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/workflow-triggeredBy",
+      "valueReference": {
+       "reference": "PlanDefinition/spec-dp"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/report-id",
+      "value": "dr-ba-dp-abc456"
+     }
+    ],
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-report-type",
+       "code": "Batch Analysis Report",
+       "display": "Batch Analysis Report"
+      }
+     ],
+     "text": "Batch Analysis Report"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc456"
+    },
+    "performer": [
+     {
+      "reference": "Organization/aparna-pharm"
+     }
+    ],
+    "result": [
+     {
+      "reference": "Observation/obs-ba-abc456-description"
+     },
+     {
+      "reference": "Observation/obs-ba-abc456-identification-nir"
+     },
+     {
+      "reference": "Observation/obs-ba-abc456-identification-hplc"
+     },
+     {
+      "reference": "Observation/obs-ba-abc456-identification-uv"
+     },
+     {
+      "reference": "Observation/obs-ba-abc456-udu-nir"
+     },
+     {
+      "reference": "Observation/obs-ba-abc456-udu-hplc"
+     },
+     {
+      "reference": "Observation/obs-ba-abc456-dissolution-rtrt"
+     },
+     {
+      "reference": "Observation/obs-ba-abc456-dissolution-uv"
+     },
+     {
+      "reference": "Observation/obs-ba-abc456-assay-nir"
+     },
+     {
+      "reference": "Observation/obs-ba-abc456-assay-hplc"
+     },
+     {
+      "reference": "Observation/obs-ba-abc456-degradation-cp-9-1"
+     },
+     {
+      "reference": "Observation/obs-ba-abc456-degradation-unspecified"
+     },
+     {
+      "reference": "Observation/obs-ba-abc456-degradation-total"
+     },
+     {
+      "reference": "Observation/obs-ba-abc456-met-tamc"
+     },
+     {
+      "reference": "Observation/obs-ba-abc456-met-tymc"
+     },
+     {
+      "reference": "Observation/obs-ba-abc456-met-e-coli"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Medication/dp-abc456",
+   "resource": {
+    "resourceType": "Medication",
+    "id": "dp-abc456",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81f194b3e3a46699a278"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Medication</b> Sakura Bloom 20 mg film-coated tablets - lot ABC456</p></div>"
+    },
+    "code": {
+     "extension": [
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-medication-definition-pq",
+       "valueReference": {
+        "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+       }
+      }
+     ],
+     "text": "Sakura Bloom 20 mg film-coated tablets"
+    },
+    "status": "active",
+    "doseForm": {
+     "coding": [
+      {
+       "system": "http://standardterms.edqm.eu",
+       "code": "10221000",
+       "display": "Film-coated tablet"
+      }
+     ],
+     "text": "Film-coated tablet"
+    },
+    "batch": {
+     "extension": [
+      {
+       "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+       "extension": [
+        {
+         "url": "manufacturingDate",
+         "valueDateTime": "2022-05"
+        },
+        {
+         "url": "batchQuantity",
+         "valueQuantity": {
+          "value": 2600000,
+          "unit": "tablets",
+          "system": "http://unitsofmeasure.org",
+          "code": "{tablets}"
+         }
+        },
+        {
+         "url": "batchUtilization",
+         "valueCodeableConcept": {
+          "text": "Production-scale and commercial batch"
+         }
+        },
+        {
+         "url": "assignedManufacturer",
+         "valueReference": {
+          "reference": "Organization/aparna-pharm"
+         }
+        }
+       ]
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-number-of-items-pq",
+       "valueQuantity": {
+        "value": 2600000,
+        "unit": "tablets",
+        "system": "http://unitsofmeasure.org",
+        "code": "{tablets}"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+       "valueReference": {
+        "reference": "PlanDefinition/dp-manufacturing-process"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+       "valueReference": {
+        "reference": "Substance/ds-b221217"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+       "valueReference": {
+        "reference": "Substance/ds-b221218"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+       "valueReference": {
+        "reference": "Substance/ds-b221219"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+       "valueReference": {
+        "reference": "Substance/ds-b221220"
+       }
+      }
+     ],
+     "lotNumber": "ABC456"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/DiagnosticReport/dr-ba-dp-abc789",
+   "resource": {
+    "resourceType": "DiagnosticReport",
+    "id": "dr-ba-dp-abc789",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DiagnosticReport-analysis-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81f194b3e3a46699a278"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DiagnosticReport</b> Batch Analysis Report</p></div>"
+    },
+    "extension": [
+     {
+      "url": "http://hl7.org/fhir/StructureDefinition/workflow-triggeredBy",
+      "valueReference": {
+       "reference": "PlanDefinition/spec-dp"
+      }
+     }
+    ],
+    "identifier": [
+     {
+      "system": "http://example.org/sakura-bloom-r2/fhir/report-id",
+      "value": "dr-ba-dp-abc789"
+     }
+    ],
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-report-type",
+       "code": "Batch Analysis Report",
+       "display": "Batch Analysis Report"
+      }
+     ],
+     "text": "Batch Analysis Report"
+    },
+    "subject": {
+     "reference": "Medication/dp-abc789"
+    },
+    "performer": [
+     {
+      "reference": "Organization/aparna-pharm"
+     }
+    ],
+    "result": [
+     {
+      "reference": "Observation/obs-ba-abc789-description"
+     },
+     {
+      "reference": "Observation/obs-ba-abc789-identification-nir"
+     },
+     {
+      "reference": "Observation/obs-ba-abc789-identification-hplc"
+     },
+     {
+      "reference": "Observation/obs-ba-abc789-identification-uv"
+     },
+     {
+      "reference": "Observation/obs-ba-abc789-udu-nir"
+     },
+     {
+      "reference": "Observation/obs-ba-abc789-udu-hplc"
+     },
+     {
+      "reference": "Observation/obs-ba-abc789-dissolution-rtrt"
+     },
+     {
+      "reference": "Observation/obs-ba-abc789-dissolution-uv"
+     },
+     {
+      "reference": "Observation/obs-ba-abc789-assay-nir"
+     },
+     {
+      "reference": "Observation/obs-ba-abc789-assay-hplc"
+     },
+     {
+      "reference": "Observation/obs-ba-abc789-degradation-cp-9-1"
+     },
+     {
+      "reference": "Observation/obs-ba-abc789-degradation-unspecified"
+     },
+     {
+      "reference": "Observation/obs-ba-abc789-degradation-total"
+     },
+     {
+      "reference": "Observation/obs-ba-abc789-met-tamc"
+     },
+     {
+      "reference": "Observation/obs-ba-abc789-met-tymc"
+     },
+     {
+      "reference": "Observation/obs-ba-abc789-met-e-coli"
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Medication/dp-abc789",
+   "resource": {
+    "resourceType": "Medication",
+    "id": "dp-abc789",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81f194b3e3a46699a278"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Medication</b> Sakura Bloom 20 mg film-coated tablets - lot ABC789</p></div>"
+    },
+    "code": {
+     "extension": [
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-medication-definition-pq",
+       "valueReference": {
+        "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+       }
+      }
+     ],
+     "text": "Sakura Bloom 20 mg film-coated tablets"
+    },
+    "status": "active",
+    "doseForm": {
+     "coding": [
+      {
+       "system": "http://standardterms.edqm.eu",
+       "code": "10221000",
+       "display": "Film-coated tablet"
+      }
+     ],
+     "text": "Film-coated tablet"
+    },
+    "batch": {
+     "extension": [
+      {
+       "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+       "extension": [
+        {
+         "url": "manufacturingDate",
+         "valueDateTime": "2022-06"
+        },
+        {
+         "url": "batchQuantity",
+         "valueQuantity": {
+          "value": 2600000,
+          "unit": "tablets",
+          "system": "http://unitsofmeasure.org",
+          "code": "{tablets}"
+         }
+        },
+        {
+         "url": "batchUtilization",
+         "valueCodeableConcept": {
+          "text": "Production-scale and commercial batch"
+         }
+        },
+        {
+         "url": "assignedManufacturer",
+         "valueReference": {
+          "reference": "Organization/aparna-pharm"
+         }
+        }
+       ]
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-number-of-items-pq",
+       "valueQuantity": {
+        "value": 2600000,
+        "unit": "tablets",
+        "system": "http://unitsofmeasure.org",
+        "code": "{tablets}"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+       "valueReference": {
+        "reference": "PlanDefinition/dp-manufacturing-process"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+       "valueReference": {
+        "reference": "Substance/ds-b221221"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+       "valueReference": {
+        "reference": "Substance/ds-b221222"
+       }
+      },
+      {
+       "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+       "valueReference": {
+        "reference": "Substance/ds-b221223"
+       }
+      }
+     ],
+     "lotNumber": "ABC789"
+    }
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Organization/aparna-pharm",
+   "resource": {
+    "resourceType": "Organization",
+    "id": "aparna-pharm",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8199b90deb4c0456477b"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Organization</b> Aparna Pharmaceutical Manufacturing Pte. Ltd.</p></div>"
+    },
+    "identifier": [
+     {
+      "system": "urn:oid:1.3.6.1.4.1.519.1",
+      "value": "489236805"
+     },
+     {
+      "system": "urn:oid:2.16.840.1.113883.4.82",
+      "value": "489236805"
+     }
+    ],
+    "active": true,
+    "type": [
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+        "code": "drug-product-manufacture",
+        "display": "Drug Product Manufacture"
+       }
+      ],
+      "text": "Drug Product Manufacture"
+     },
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+        "code": "analytical-testing-release",
+        "display": "Analytical Testing - Release"
+       }
+      ],
+      "text": "Analytical Testing - Release"
+     },
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+        "code": "analytical-testing-stability",
+        "display": "Analytical Testing - Stability"
+       }
+      ],
+      "text": "Analytical Testing - Stability"
+     },
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+        "code": "packaging",
+        "display": "Packaging"
+       }
+      ],
+      "text": "Packaging"
+     }
+    ],
+    "name": "Aparna Pharmaceutical Manufacturing Pte. Ltd.",
+    "description": "Manufacture of the drug product; in-process control testing; analytical testing of drug product and excipients; stability testing; primary and secondary packaging.",
+    "contact": [
+     {
+      "address": {
+       "use": "work",
+       "type": "physical",
+       "line": [
+        "10 Green Road"
+       ],
+       "city": "Gulshan",
+       "country": "BD"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Organization/dakina-analytica",
+   "resource": {
+    "resourceType": "Organization",
+    "id": "dakina-analytica",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8199b90deb4c0456477b"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Organization</b> Dakina Analytica SA</p></div>"
+    },
+    "identifier": [
+     {
+      "system": "urn:oid:1.3.6.1.4.1.519.1",
+      "value": "487977499"
+     },
+     {
+      "system": "urn:oid:2.16.840.1.113883.4.82",
+      "value": "487977499"
+     }
+    ],
+    "active": true,
+    "type": [
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+        "code": "analytical-testing-release",
+        "display": "Analytical Testing - Release"
+       }
+      ],
+      "text": "Analytical Testing - Release"
+     }
+    ],
+    "name": "Dakina Analytica SA",
+    "description": "Analytical testing of the drug product (all tests except microbiological testing).",
+    "contact": [
+     {
+      "address": {
+       "use": "work",
+       "type": "physical",
+       "line": [
+        "Via Nociola"
+       ],
+       "city": "Locarno",
+       "country": "CH",
+       "postalCode": "6600"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Organization/kunchen-sa",
+   "resource": {
+    "resourceType": "Organization",
+    "id": "kunchen-sa",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8199b90deb4c0456477b"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Organization</b> Kunchen SA</p></div>"
+    },
+    "identifier": [
+     {
+      "system": "urn:oid:1.3.6.1.4.1.519.1",
+      "value": "415714629"
+     },
+     {
+      "system": "urn:oid:2.16.840.1.113883.4.82",
+      "value": "415714629"
+     }
+    ],
+    "active": true,
+    "type": [
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+        "code": "analytical-testing-release",
+        "display": "Analytical Testing - Release"
+       }
+      ],
+      "text": "Analytical Testing - Release"
+     }
+    ],
+    "name": "Kunchen SA",
+    "description": "Analytical testing of the drug product (microbiological testing only).",
+    "contact": [
+     {
+      "address": {
+       "use": "work",
+       "type": "physical",
+       "line": [
+        "Mangelsfeld"
+       ],
+       "city": "Bad Bocklet-Großenbach",
+       "country": "DE",
+       "postalCode": "97708"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/SubstanceDefinition/sakuramil",
+   "resource": {
+    "resourceType": "SubstanceDefinition",
+    "id": "sakuramil",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc81f89f56d478fe7ac949"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Sakuramil</p></div>"
+    },
+    "identifier": [
+     {
+      "system": "http://cas.org",
+      "value": "262352-13-6"
+     }
+    ],
+    "status": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/publication-status",
+       "code": "active",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "classification": [
+     {
+      "text": "Chemical (small molecule)"
+     }
+    ],
+    "grade": [
+     {
+      "text": "In-house"
+     }
+    ],
+    "description": "Sakuramil (company code CP-9), the drug substance of Sakura Bloom 20 mg film-coated tablets.",
+    "manufacturer": [
+     {
+      "reference": "Organization/iroha-corp",
+      "display": "IROHA-corp.",
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-site-utilization-pq",
+        "valueCoding": {
+         "system": "http://terminology.hl7.org/CodeSystem/product-site-utilization-type",
+         "code": "Primary manufacturing",
+         "display": "Primary Manufacturing"
+        }
+       }
+      ]
+     }
+    ],
+    "characterization": [
+     {
+      "technique": {
+       "text": "Mass spectrometry (ESI positive, Shimadzu LCM-IT-TOF)"
+      },
+      "description": "m/z 614.504 observed (predicted 614.505) on CP-9 primary working standard"
+     },
+     {
+      "technique": {
+       "text": "1H NMR (Bruker 500 MHz, D2O)"
+      }
+     },
+     {
+      "technique": {
+       "text": "13C NMR (Bruker 500 MHz, D2O)"
+      }
+     }
+    ],
+    "property": [
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+         "code": "appearance",
+         "display": "Appearance"
+        }
+       ],
+       "text": "Appearance"
+      },
+      "valueCodeableConcept": {
+       "text": "White solid"
+      }
+     },
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+         "code": "solubility-water",
+         "display": "Solubility purified water"
+        }
+       ],
+       "text": "Solubility purified water"
+      },
+      "valueQuantity": {
+       "value": 0.05,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      }
+     },
+     {
+      "type": {
+       "text": "Solubility in ethanol (RT)"
+      },
+      "valueQuantity": {
+       "value": 45,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      }
+     },
+     {
+      "type": {
+       "text": "Solubility in acetone (RT)"
+      },
+      "valueQuantity": {
+       "value": 71.3,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      }
+     },
+     {
+      "type": {
+       "text": "Aqueous solubility as a function of pH (RT) - Deionized water"
+      },
+      "valueQuantity": {
+       "value": 0.05,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      }
+     },
+     {
+      "type": {
+       "text": "Aqueous solubility as a function of pH (RT) - 0.1 N HCl"
+      },
+      "valueQuantity": {
+       "comparator": "<",
+       "value": 0.01,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      },
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-substance-property-parameter-pq",
+        "extension": [
+         {
+          "url": "parameter",
+          "valueCoding": {
+           "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+           "code": "pH",
+           "display": "pH"
+          }
+         },
+         {
+          "url": "value",
+          "valueQuantity": {
+           "value": 1.2,
+           "unit": "pH",
+           "system": "http://unitsofmeasure.org",
+           "code": "[pH]"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": {
+       "text": "Aqueous solubility as a function of pH (RT) - Acetate buffer"
+      },
+      "valueQuantity": {
+       "value": 5.0,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      },
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-substance-property-parameter-pq",
+        "extension": [
+         {
+          "url": "parameter",
+          "valueCoding": {
+           "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+           "code": "pH",
+           "display": "pH"
+          }
+         },
+         {
+          "url": "value",
+          "valueQuantity": {
+           "value": 4.5,
+           "unit": "pH",
+           "system": "http://unitsofmeasure.org",
+           "code": "[pH]"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": {
+       "text": "Aqueous solubility as a function of pH (RT) - Phosphate buffer"
+      },
+      "valueQuantity": {
+       "value": 3.2,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      },
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-substance-property-parameter-pq",
+        "extension": [
+         {
+          "url": "parameter",
+          "valueCoding": {
+           "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+           "code": "pH",
+           "display": "pH"
+          }
+         },
+         {
+          "url": "value",
+          "valueQuantity": {
+           "value": 6.8,
+           "unit": "pH",
+           "system": "http://unitsofmeasure.org",
+           "code": "[pH]"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": {
+       "text": "Aqueous solubility as a function of pH (RT) - 0.1 N NaOH"
+      },
+      "valueQuantity": {
+       "value": 5.1,
+       "unit": "mg/mL",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg/mL"
+      },
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-substance-property-parameter-pq",
+        "extension": [
+         {
+          "url": "parameter",
+          "valueCoding": {
+           "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+           "code": "pH",
+           "display": "pH"
+          }
+         },
+         {
+          "url": "value",
+          "valueQuantity": {
+           "value": 8.0,
+           "unit": "pH",
+           "system": "http://unitsofmeasure.org",
+           "code": "[pH]"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+         "code": "pH",
+         "display": "pH"
+        }
+       ],
+       "text": "pH"
+      },
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-substance-property-range-pq",
+        "valueRange": {
+         "low": {
+          "value": 5.0,
+          "unit": "pH",
+          "system": "http://unitsofmeasure.org",
+          "code": "[pH]"
+         },
+         "high": {
+          "value": 9.0,
+          "unit": "pH",
+          "system": "http://unitsofmeasure.org",
+          "code": "[pH]"
+         }
+        }
+       }
+      ],
+      "valueCodeableConcept": {
+       "text": "5.0 - 9.0 (RT)"
+      }
+     },
+     {
+      "type": {
+       "text": "pKa (carboxylate)"
+      },
+      "valueQuantity": {
+       "value": 12.6
+      }
+     },
+     {
+      "type": {
+       "text": "pKa (phenol CF3)"
+      },
+      "valueQuantity": {
+       "value": 15.3
+      }
+     },
+     {
+      "type": {
+       "text": "pKa (carbamate)"
+      },
+      "valueQuantity": {
+       "value": 24.2
+      }
+     },
+     {
+      "type": {
+       "text": "Partition coefficient (log P, n-octanol/water)"
+      },
+      "valueQuantity": {
+       "value": 6.3
+      }
+     },
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example",
+         "code": "hygroscopy",
+         "display": "Hygroscopy"
+        }
+       ],
+       "text": "Hygroscopy"
+      },
+      "valueCodeableConcept": {
+       "text": "Not hygroscopic"
+      }
+     },
+     {
+      "type": {
+       "text": "Melting point"
+      },
+      "valueQuantity": {
+       "value": 174,
+       "unit": "°C",
+       "system": "http://unitsofmeasure.org",
+       "code": "Cel"
+      }
+     },
+     {
+      "type": {
+       "text": "Polymorphism"
+      },
+      "valueCodeableConcept": {
+       "text": "Only one polymorph observed in synthetic manufacture and extensive polymorph screening"
+      }
+     },
+     {
+      "type": {
+       "text": "Chirality"
+      },
+      "valueCodeableConcept": {
+       "text": "Two chiral centres; no racemization observed in the manufacturing process"
+      }
+     },
+     {
+      "type": {
+       "text": "Isomerism"
+      },
+      "valueCodeableConcept": {
+       "text": "An enantiomer and two diastereomers can be formed"
+      }
+     },
+     {
+      "type": {
+       "text": "Specific optical rotation (20 °C, aqueous solution)"
+      },
+      "valueQuantity": {
+       "value": 145,
+       "unit": "deg",
+       "system": "http://unitsofmeasure.org",
+       "code": "deg"
+      }
+     },
+     {
+      "type": {
+       "text": "Particle size distribution d(0.1) (laser diffraction)"
+      },
+      "valueQuantity": {
+       "value": 26,
+       "unit": "nm",
+       "system": "http://unitsofmeasure.org",
+       "code": "nm"
+      }
+     },
+     {
+      "type": {
+       "text": "Particle size distribution d(0.5) (laser diffraction)"
+      },
+      "valueQuantity": {
+       "value": 40,
+       "unit": "nm",
+       "system": "http://unitsofmeasure.org",
+       "code": "nm"
+      }
+     },
+     {
+      "type": {
+       "text": "Particle size distribution d(0.9) (laser diffraction)"
+      },
+      "valueQuantity": {
+       "value": 66,
+       "unit": "nm",
+       "system": "http://unitsofmeasure.org",
+       "code": "nm"
+      }
+     },
+     {
+      "type": {
+       "text": "Light sensitivity"
+      },
+      "valueCodeableConcept": {
+       "text": "Not sensitive to light"
+      }
+     },
+     {
+      "type": {
+       "text": "Biopharmaceutics Classification System"
+      },
+      "valueCodeableConcept": {
+       "text": "BCS Class II (poorly soluble, highly permeable)"
+      }
+     }
+    ],
+    "molecularWeight": [
+     {
+      "type": {
+       "text": "Exact/average (free base)"
+      },
+      "amount": {
+       "value": 614.5,
+       "unit": "g/mol",
+       "system": "http://unitsofmeasure.org",
+       "code": "g/mol"
+      }
+     }
+    ],
+    "structure": {
+     "stereochemistry": {
+      "text": "(2S,4S)"
+     },
+     "molecularFormula": "C27H27F9N2O4",
+     "representation": [
+      {
+       "type": {
+        "text": "IUPAC name"
+       },
+       "representation": "Propan-2-yl (2S,4S)-4-[acetyl-[[3,5-bis(trifluoromethyl)phenyl]methyl]amino]-2-methoxy-2-methyl-6-(trifluoromethyl)-3,4-dihydroquinoline-1-carboxylate"
+      }
+     ]
+    },
+    "code": [
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://cas.org",
+         "code": "262352-13-6"
+        }
+       ],
+       "text": "262352-13-6"
+      }
+     },
+     {
+      "code": {
+       "text": "CP-9"
+      }
+     }
+    ],
+    "name": [
+     {
+      "name": "Sakuramil",
+      "type": {
+       "text": "INN"
+      },
+      "preferred": true
+     },
+     {
+      "name": "Sakuramil",
+      "type": {
+       "text": "USAN"
+      }
+     },
+     {
+      "name": "Propan-2-yl (2S,4S)-4-[acetyl-[[3,5-bis(trifluoromethyl)phenyl]methyl]amino]-2-methoxy-2-methyl-6-(trifluoromethyl)-3,4-dihydroquinoline-1-carboxylate",
+      "type": {
+       "text": "IUPAC chemical name"
+      }
+     },
+     {
+      "name": "CP-9",
+      "type": {
+       "text": "Company code"
+      }
+     }
+    ],
+    "relationship": [
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "process",
+           "display": "Process Impurity"
+          }
+         ],
+         "text": "Process Impurity"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-9-1",
+       "display": "CP-9-1"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "PR-IMP",
+         "display": "Process impurity"
+        }
+       ],
+       "text": "Process impurity - Specified related substance; NMT 0.15 % (DS); NMT 0.3 %/0.5 % release/shelf-life (DP)"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "starting-material",
+           "display": "Starting Material"
+          }
+         ],
+         "text": "Starting Material"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-8",
+       "display": "CP-8"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "ST-IMP",
+         "display": "Starting material, forced degradation product"
+        }
+       ],
+       "text": "Starting material, forced degradation product - Specified related substance; NMT 0.10 %"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "intermediate-material",
+           "display": "Intermediate Material"
+          }
+         ],
+         "text": "Intermediate Material"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-6",
+       "display": "CP-6"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "INT-IMP",
+         "display": "Process intermediate, forced degradation product"
+        }
+       ],
+       "text": "Process intermediate, forced degradation product - Potentially mutagenic impurity; NMT 37.5 ppm"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "starting-material",
+           "display": "Starting Material"
+          }
+         ],
+         "text": "Starting Material"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-4",
+       "display": "CP-4"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "ST-IMP",
+         "display": "Starting material, forced degradation product"
+        }
+       ],
+       "text": "Starting material, forced degradation product - Potentially mutagenic; controlled via CP-6 limit and purge"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "intermediate-material",
+           "display": "Intermediate Material"
+          }
+         ],
+         "text": "Intermediate Material"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-5",
+       "display": "CP-5"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "INT-IMP",
+         "display": "Process intermediate, forced degradation product"
+        }
+       ],
+       "text": "Process intermediate, forced degradation product - Potentially mutagenic (structural alert); purged"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "process",
+           "display": "Process Impurity"
+          }
+         ],
+         "text": "Process Impurity"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-3",
+       "display": "CP-3"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "PR-IMP",
+         "display": "Process impurity"
+        }
+       ],
+       "text": "Process impurity - Potentially mutagenic (structural alert); purged"
+      }
+     },
+     {
+      "extension": [
+       {
+        "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq",
+        "valueCodeableConcept": {
+         "coding": [
+          {
+           "system": "http://terminology.hl7.org/CodeSystem/impurity-origin",
+           "code": "intermediate-material",
+           "display": "Intermediate Material"
+          }
+         ],
+         "text": "Intermediate Material"
+        }
+       }
+      ],
+      "substanceDefinitionReference": {
+       "reference": "SubstanceDefinition/cp-7",
+       "display": "CP-7"
+      },
+      "type": {
+       "coding": [
+        {
+         "system": "http://terminology.hl7.org/CodeSystem/impurity-type",
+         "code": "INT-IMP",
+         "display": "Process intermediate, forced degradation product"
+        }
+       ],
+       "text": "Process intermediate, forced degradation product - Intermediate; purged in Step 4 crystallization"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "http://example.org/sakura-bloom-r2/fhir/Ingredient/ing-sakuramil",
+   "resource": {
+    "resourceType": "Ingredient",
+    "id": "ing-sakuramil",
+    "meta": {
+     "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"
+     ],
+     "source": "https://ichm4q.notion.site/2a317984c9fc8144b81ce7e58885d190"
+    },
+    "text": {
+     "status": "generated",
+     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Ingredient</b> ing-sakuramil</p></div>"
+    },
+    "status": "active",
+    "for": [
+     {
+      "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+     },
+     {
+      "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+     }
+    ],
+    "role": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/ingredient-role",
+       "code": "100000072072",
+       "display": "Active"
+      }
+     ],
+     "text": "Active"
+    },
+    "function": [
+     {
+      "text": "Active ingredient"
+     }
+    ],
+    "substance": {
+     "code": {
+      "reference": {
+       "reference": "SubstanceDefinition/sakuramil"
+      }
+     },
+     "strength": [
+      {
+       "presentationRatio": {
+        "numerator": {
+         "value": 20.0,
+         "unit": "mg",
+         "system": "http://unitsofmeasure.org",
+         "code": "mg"
+        },
+        "denominator": {
+         "value": 1,
+         "unit": "tablet",
+         "system": "http://unitsofmeasure.org",
+         "code": "{tablet}"
+        }
+       },
+       "textPresentation": "20.00 mg per film-coated tablet",
+       "basis": {
+        "text": "Neutral, anhydrous base form"
+       },
+       "referenceStrength": [
+        {
+         "substance": {
+          "reference": {
+           "reference": "SubstanceDefinition/sakuramil"
+          }
+         },
+         "strengthRatio": {
+          "numerator": {
+           "value": 20,
+           "unit": "mg",
+           "system": "http://unitsofmeasure.org",
+           "code": "mg"
+          },
+          "denominator": {
+           "value": 1,
+           "unit": "tablet",
+           "system": "http://unitsofmeasure.org",
+           "code": "{tablet}"
+          }
+         }
+        }
+       ]
+      },
+      {
+       "presentationRatio": {
+        "numerator": {
+         "value": 52.0,
+         "unit": "kg",
+         "system": "http://unitsofmeasure.org",
+         "code": "kg"
+        },
+        "denominator": {
+         "value": 520.0,
+         "unit": "kg",
+         "system": "http://unitsofmeasure.org",
+         "code": "kg"
+        }
+       },
+       "textPresentation": "52.000 kg per commercial batch (520.000 kg, approx. 2,600,000 tablets)",
+       "basis": {
+        "text": "Batch formula"
+       }
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

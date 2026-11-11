@@ -1,0 +1,41 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-ex-croscarmellose-sodium-monograph",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ex-croscarmellose-sodium-monograph",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Compendial compliance - Croscarmellose sodium - compliance with monograph: Complies with Ph. Eur., USP/NF and JP monographs</p></div>"
+ },
+ "title": "Croscarmellose sodium - compliance with monograph",
+ "status": "active",
+ "category": [
+  {
+   "text": "Compendial compliance"
+  }
+ ],
+ "code": {
+  "text": "Compendial compliance - Croscarmellose sodium - compliance with monograph"
+ },
+ "permittedDataType": [
+  "string"
+ ],
+ "method": {
+  "text": "Ph. Eur., USP/NF, JP"
+ },
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "Complies with Ph. Eur., USP/NF and JP monographs"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,85 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-dp-degradation-unspecified",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8196bde0c1ce7d54832e"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-dp-degradation-unspecified",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Degradation Products - Degradation products - any unspecified: Batch release Not more than 0.2%; Shelf-life Not more than 0.2%</p></div>"
+ },
+ "title": "Degradation products - any unspecified",
+ "status": "active",
+ "category": [
+  {
+   "text": "Degradation Products"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "DGP",
+    "display": "Degradation Products"
+   }
+  ],
+  "text": "Degradation Products - Degradation products - any unspecified"
+ },
+ "permittedDataType": [
+  "Quantity"
+ ],
+ "method": {
+  "text": "HPLC"
+ },
+ "permittedUnit": [
+  {
+   "system": "http://unitsofmeasure.org",
+   "code": "%",
+   "display": "%"
+  }
+ ],
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "Not more than 0.2%"
+    }
+   ],
+   "context": {
+    "text": "Batch release"
+   },
+   "range": {
+    "high": {
+     "value": 0.2,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  },
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "Not more than 0.2%"
+    }
+   ],
+   "context": {
+    "text": "Shelf-life"
+   },
+   "range": {
+    "high": {
+     "value": 0.2,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  }
+ ]
+}

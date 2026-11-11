@@ -1,0 +1,95 @@
+{
+ "resourceType": "PlanDefinition",
+ "id": "ap-ds-mutagenic-impurities",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc816a8c6ad86637bc3463"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-ds-mutagenic-impurities",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> Core quality information (2.3.3.AP) for Analytical Procedures (Potentially mutagentic Impurities) [Potentially mutagenic Impurities] [Sakuramil].</p></div>"
+ },
+ "extension": [
+  {
+   "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-plan-document-reference-pq",
+   "valueReference": {
+    "reference": "DocumentReference/doc-ds-mutagenic-impurities-3-2-ap"
+   }
+  },
+  {
+   "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-plan-document-reference-pq",
+   "valueReference": {
+    "reference": "DocumentReference/doc-ds-mutagenic-impurities-2-3-4"
+   }
+  }
+ ],
+ "title": "Analytical Procedures (Potentially mutagentic Impurities) [Potentially mutagenic Impurities] [Sakuramil]",
+ "type": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+    "code": "analytical-procedure",
+    "display": "Analytical Procedure"
+   }
+  ],
+  "text": "Analytical Procedure"
+ },
+ "status": "active",
+ "subjectReference": {
+  "reference": "SubstanceDefinition/sakuramil"
+ },
+ "description": "Core quality information (2.3.3.AP) for Analytical Procedures (Potentially mutagentic Impurities) [Potentially mutagenic Impurities] [Sakuramil].",
+ "action": [
+  {
+   "title": "Technique",
+   "description": "High performance liquid chromatography"
+  },
+  {
+   "title": "Column",
+   "description": "Silica C18 3,5 µm 150 x 4.6 mm or equivalent"
+  },
+  {
+   "title": "System",
+   "description": "gradient with UV detection"
+  },
+  {
+   "title": "Mobile phase",
+   "description": "Eluent A : 0.1 % ammonia pH 10.6 Eluent B : methanol + 0.1% ammonia"
+  },
+  {
+   "title": "Gradient",
+   "description": "see Table 2"
+  },
+  {
+   "title": "Flow rate",
+   "description": "1.0 ml/min"
+  },
+  {
+   "title": "Injection volume",
+   "description": "10 µl"
+  },
+  {
+   "title": "detection",
+   "description": "251 nm"
+  },
+  {
+   "title": "Test solution",
+   "description": "1.0 mg/ml in diluent (same as mobile phase)"
+  },
+  {
+   "title": "Reference solution",
+   "description": "0.01 mg/mg CP-6 standard and 0.01 mg/ml CP-9 standard in diluent"
+  },
+  {
+   "title": "System Suitability Criteria",
+   "description": "Rs  ≥ 1.5 Precision (n=6) < 1.0 %"
+  },
+  {
+   "title": "Table 1-2 Gradient",
+   "description": "Time (min) | % A | % B; 0 | 95 | 5; 7.5 | 40 | 60; 10 | 40 | 60; 12.5 | 5 | 95; 15 | 5 | 95; 17.5 | 80 | 20; 20 | 80 | 20"
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "resourceType": "Observation",
+ "id": "obs-ba-b221221-l-particle-size-distribution-d-0-1",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+  ]
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Particulate matters - Particle size distribution d(0.1): 21 nm (Substance/ds-b221221)</p></div>"
+ },
+ "status": "final",
+ "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-ds-sakuramil-particle-size-distribution-d-0-1",
+ "category": [
+  {
+   "text": "Particulate matters"
+  }
+ ],
+ "code": {
+  "text": "Particulate matters - Particle size distribution d(0.1)"
+ },
+ "subject": {
+  "reference": "Substance/ds-b221221"
+ },
+ "performer": [
+  {
+   "reference": "Organization/iroha-corp"
+  }
+ ],
+ "valueQuantity": {
+  "value": 21,
+  "unit": "nm",
+  "system": "http://unitsofmeasure.org",
+  "code": "nm"
+ }
+}

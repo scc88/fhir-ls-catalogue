@@ -1,0 +1,55 @@
+{
+ "resourceType": "Observation",
+ "id": "obs-char-cp-6-standard-ms-1",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+  ]
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - Mass spectrometry (ESI) m/z: 316.323 m/z (Substance/rs-cp-6-standard)</p></div>"
+ },
+ "status": "final",
+ "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-ms-mz",
+ "category": [
+  {
+   "text": "Elucidation of structure"
+  }
+ ],
+ "code": {
+  "text": "Elucidation of structure - Mass spectrometry (ESI) m/z"
+ },
+ "subject": {
+  "reference": "Substance/rs-cp-6-standard"
+ },
+ "performer": [
+  {
+   "reference": "Organization/iroha-corp"
+  }
+ ],
+ "valueQuantity": {
+  "value": 316.323,
+  "unit": "m/z",
+  "system": "http://unitsofmeasure.org",
+  "code": "{m/z}"
+ },
+ "note": [
+  {
+   "text": "Predicted m/z for CP-6 impurity: 316.320"
+  }
+ ],
+ "component": [
+  {
+   "code": {
+    "text": "Predicted m/z"
+   },
+   "valueQuantity": {
+    "value": 316.32,
+    "unit": "m/z",
+    "system": "http://unitsofmeasure.org",
+    "code": "{m/z}"
+   }
+  }
+ ]
+}

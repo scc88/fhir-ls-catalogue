@@ -1,0 +1,33 @@
+{
+ "resourceType": "Substance",
+ "id": "rs-usp-alcohol",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81eea2dedadb29bbf31e"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> USP Alcohol Determination - Alcohol RS (pharmacopeial material) - lot rs-usp-alcohol</p></div>"
+ },
+ "identifier": [
+  {
+   "system": "http://example.org/sakura-bloom-r2/fhir/reference-standard",
+   "value": "rs-usp-alcohol"
+  }
+ ],
+ "instance": true,
+ "status": "active",
+ "category": [
+  {
+   "text": "Reference standard"
+  }
+ ],
+ "code": {
+  "concept": {
+   "text": "USP Alcohol Determination - Alcohol RS"
+  }
+ },
+ "description": "USP Alcohol Determination - Alcohol RS (pharmacopeial material)"
+}

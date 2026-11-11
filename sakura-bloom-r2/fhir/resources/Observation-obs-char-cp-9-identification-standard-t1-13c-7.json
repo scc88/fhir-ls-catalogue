@@ -1,0 +1,70 @@
+{
+ "resourceType": "Observation",
+ "id": "obs-char-cp-9-identification-standard-t1-13c-7",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+  ]
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b> Elucidation of structure - 13C NMR signal assignment: δ 14.80 ppm; 3C; s; C26, C27, C28 (Substance/rs-cp-9-identification-standard)</p></div>"
+ },
+ "status": "final",
+ "instantiatesCanonical": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-char-13c-nmr-signal",
+ "category": [
+  {
+   "text": "Elucidation of structure"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "NMR-C",
+    "display": "NMR-C"
+   }
+  ],
+  "text": "Elucidation of structure - 13C NMR signal assignment"
+ },
+ "subject": {
+  "reference": "Substance/rs-cp-9-identification-standard"
+ },
+ "performer": [
+  {
+   "reference": "Organization/iroha-corp"
+  }
+ ],
+ "valueString": "δ 14.80 ppm; 3C; s; C26, C27, C28",
+ "component": [
+  {
+   "code": {
+    "text": "Chemical shift (δ)"
+   },
+   "valueQuantity": {
+    "value": 14.8,
+    "unit": "ppm",
+    "system": "http://unitsofmeasure.org",
+    "code": "[ppm]"
+   }
+  },
+  {
+   "code": {
+    "text": "Number of nuclei"
+   },
+   "valueString": "3C"
+  },
+  {
+   "code": {
+    "text": "Multiplicity"
+   },
+   "valueString": "s"
+  },
+  {
+   "code": {
+    "text": "Assignment"
+   },
+   "valueString": "C26, C27, C28"
+  }
+ ]
+}

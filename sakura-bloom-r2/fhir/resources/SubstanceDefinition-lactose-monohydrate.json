@@ -1,0 +1,56 @@
+{
+ "resourceType": "SubstanceDefinition",
+ "id": "lactose-monohydrate",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>SubstanceDefinition</b> Lactose monohydrate</p></div>"
+ },
+ "status": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/publication-status",
+    "code": "active",
+    "display": "Active"
+   }
+  ],
+  "text": "Active"
+ },
+ "classification": [
+  {
+   "text": "Excipient (compendial)"
+  }
+ ],
+ "grade": [
+  {
+   "text": "Ph. Eur."
+  },
+  {
+   "text": "USP/NF"
+  },
+  {
+   "text": "JP"
+  }
+ ],
+ "name": [
+  {
+   "name": "Lactose monohydrate",
+   "preferred": true,
+   "synonym": [
+    {
+     "name": "Lactose hydrate"
+    }
+   ]
+  }
+ ],
+ "sourceMaterial": {
+  "type": {
+   "text": "Animal origin (milk); TSE declarations per EMA/410/01 rev.3"
+  }
+ }
+}

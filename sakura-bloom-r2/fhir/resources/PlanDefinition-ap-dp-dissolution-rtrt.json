@@ -1,0 +1,71 @@
+{
+ "resourceType": "PlanDefinition",
+ "id": "ap-dp-dissolution-rtrt",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc81249393fb5c395ec22b"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/PlanDefinition/ap-dp-dissolution-rtrt",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>PlanDefinition</b> Core quality information (2.3.3.AP) for Analytical Procedures (Dissolution/RTRT)[Performance][Sakura Bloom 20 mg].</p></div>"
+ },
+ "extension": [
+  {
+   "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-plan-document-reference-pq",
+   "valueReference": {
+    "reference": "DocumentReference/doc-dp-dissolution-rtrt-3-2-ap"
+   }
+  },
+  {
+   "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-plan-document-reference-pq",
+   "valueReference": {
+    "reference": "DocumentReference/doc-dp-dissolution-rtrt-2-3-4"
+   }
+  }
+ ],
+ "title": "Analytical Procedures (Dissolution/RTRT)[Performance][Sakura Bloom 20 mg]",
+ "type": {
+  "coding": [
+   {
+    "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type",
+    "code": "analytical-procedure",
+    "display": "Analytical Procedure"
+   }
+  ],
+  "text": "Analytical Procedure"
+ },
+ "status": "active",
+ "subjectReference": {
+  "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+ },
+ "description": "Core quality information (2.3.3.AP) for Analytical Procedures (Dissolution/RTRT)[Performance][Sakura Bloom 20 mg].",
+ "action": [
+  {
+   "title": "Particle size",
+   "description": "Laser diffraction particle size distribution analyzer"
+  },
+  {
+   "title": "Granule particle size",
+   "description": "The particle size of the granulation, the particle size at the end of granulation is obtained by a Focused Beam Reflectance Measurement (FBRM) method"
+  },
+  {
+   "title": "Hardness",
+   "description": "Tablet hardness tester. The uncoated tablet hardness is measured in 200 tablets (10 tablets  20 time points) sampled over time"
+  },
+  {
+   "title": "Dissolution",
+   "description": "Dissolution test was performed for the drug product manufactured under the conditions allocated by DoE, and the effect of each factor on the dissolution rate were investigated. The test results were subjected to multidimensional analysis"
+  },
+  {
+   "title": "Dissolution rate",
+   "description": "Calculated by the dissolution model at the time point of 30 minutes is 80% or higher"
+  },
+  {
+   "title": "(continued)",
+   "description": "Dissolution rate = A – B ´ particle size of drug substance – C ´ granule particle size – D ´ uncoated tablet hardness – E ´ particle size of drug substance ´ uncoated tablet hardness."
+  }
+ ]
+}

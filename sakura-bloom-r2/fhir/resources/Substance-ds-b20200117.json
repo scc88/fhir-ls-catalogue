@@ -1,0 +1,56 @@
+{
+ "resourceType": "Substance",
+ "id": "ds-b20200117",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+  ]
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Substance</b> ds-b20200117 - lot B20200117</p></div>"
+ },
+ "extension": [
+  {
+   "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch",
+   "extension": [
+    {
+     "url": "manufacturingDate",
+     "valueDateTime": "2020-11-17"
+    },
+    {
+     "url": "batchUtilization",
+     "valueCodeableConcept": {
+      "text": "Registration stability batch"
+     }
+    },
+    {
+     "url": "assignedManufacturer",
+     "valueReference": {
+      "reference": "Organization/iroha-corp"
+     }
+    }
+   ]
+  },
+  {
+   "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+   "valueReference": {
+    "reference": "PlanDefinition/ds-manufacturing-process"
+   }
+  }
+ ],
+ "identifier": [
+  {
+   "system": "http://example.org/sakura-bloom-r2/fhir/lot-number",
+   "value": "B20200117"
+  }
+ ],
+ "instance": true,
+ "status": "active",
+ "code": {
+  "reference": {
+   "reference": "SubstanceDefinition/sakuramil",
+   "display": "Sakuramil"
+  }
+ }
+}

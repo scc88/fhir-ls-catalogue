@@ -1,0 +1,101 @@
+{
+ "resourceType": "Ingredient",
+ "id": "ing-microcrystalline-cellulose",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8144b81ce7e58885d190"
+ },
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Ingredient</b> ing-microcrystalline-cellulose</p></div>"
+ },
+ "status": "active",
+ "for": [
+  {
+   "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+  },
+  {
+   "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+  }
+ ],
+ "role": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/ingredient-role",
+    "code": "100000072082",
+    "display": "Excipient"
+   }
+  ],
+  "text": "Excipient"
+ },
+ "function": [
+  {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/ingredient-function",
+     "code": "diluent",
+     "display": "Diluent"
+    }
+   ],
+   "text": "Diluent"
+  }
+ ],
+ "substance": {
+  "code": {
+   "reference": {
+    "reference": "SubstanceDefinition/microcrystalline-cellulose"
+   }
+  },
+  "strength": [
+   {
+    "presentationRatio": {
+     "numerator": {
+      "value": 20.0,
+      "unit": "mg",
+      "system": "http://unitsofmeasure.org",
+      "code": "mg"
+     },
+     "denominator": {
+      "value": 1,
+      "unit": "tablet",
+      "system": "http://unitsofmeasure.org",
+      "code": "{tablet}"
+     }
+    },
+    "textPresentation": "20.00 mg per film-coated tablet"
+   },
+   {
+    "presentationRatio": {
+     "numerator": {
+      "value": 52.0,
+      "unit": "kg",
+      "system": "http://unitsofmeasure.org",
+      "code": "kg"
+     },
+     "denominator": {
+      "value": 520.0,
+      "unit": "kg",
+      "system": "http://unitsofmeasure.org",
+      "code": "kg"
+     }
+    },
+    "textPresentation": "52.000 kg per commercial batch (520.000 kg, approx. 2,600,000 tablets)",
+    "basis": {
+     "text": "Batch formula"
+    }
+   }
+  ]
+ },
+ "extension": [
+  {
+   "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-novel-excipient-pq",
+   "valueBoolean": false
+  },
+  {
+   "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-suitability-for-use-pq",
+   "valueString": "Complies with Ph. Eur., USP/NF, JP"
+  }
+ ]
+}

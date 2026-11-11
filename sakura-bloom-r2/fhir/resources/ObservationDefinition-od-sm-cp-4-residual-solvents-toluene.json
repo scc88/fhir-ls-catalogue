@@ -1,0 +1,63 @@
+{
+ "resourceType": "ObservationDefinition",
+ "id": "od-sm-cp-4-residual-solvents-toluene",
+ "meta": {
+  "profile": [
+   "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+  ],
+  "source": "https://ichm4q.notion.site/2a317984c9fc8158b7e7df2db5a8b4ee"
+ },
+ "url": "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/od-sm-cp-4-residual-solvents-toluene",
+ "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>ObservationDefinition</b> Residual solvents - Residual solvents - Toluene: NMT 890 ppm</p></div>"
+ },
+ "title": "Residual solvents - Toluene",
+ "status": "active",
+ "category": [
+  {
+   "text": "Residual solvents"
+  }
+ ],
+ "code": {
+  "coding": [
+   {
+    "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example",
+    "code": "SOL",
+    "display": "Residual solvents"
+   }
+  ],
+  "text": "Residual solvents - Residual solvents - Toluene"
+ },
+ "permittedDataType": [
+  "Quantity"
+ ],
+ "method": {
+  "text": "GC USP <467>"
+ },
+ "permittedUnit": [
+  {
+   "system": "http://unitsofmeasure.org",
+   "code": "[ppm]",
+   "display": "ppm"
+  }
+ ],
+ "qualifiedValue": [
+  {
+   "extension": [
+    {
+     "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq",
+     "valueString": "NMT 890 ppm"
+    }
+   ],
+   "range": {
+    "high": {
+     "value": 890,
+     "unit": "ppm",
+     "system": "http://unitsofmeasure.org",
+     "code": "[ppm]"
+    }
+   }
+  }
+ ]
+}
