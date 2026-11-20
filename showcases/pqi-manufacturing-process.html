@@ -1,0 +1,2873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manufacturing Process as Data – Sakura Bloom</title>
+<style>
+/* Layout idea: Apple product-page rhythm. Big confident sans headlines, light grey bands alternating with white cards,
+   one accent (Apple blue), dark "device" panels for the structured record and code. */
+:root{
+  --ink:#1D1D1F;
+  --plum:#1D1D1F;
+  --paper:#F5F5F7;
+  --card:#FFFFFF;
+  --sakura:#0071E3;
+  --petal:#E8F2FD;
+  --teal:#5E5CE6;
+  --teal-soft:#EFEFFD;
+  --muted:#6E6E73;
+  --line:#E5E5EA;
+  --warn:#B25000;
+  --warn-soft:#FFF3E3;
+  --ok:#248A3D;
+  --font-display:-apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-body:-apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono:"SF Mono", ui-monospace, Menlo, Monaco, Consolas, monospace;
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-body);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased;letter-spacing:-.01em}
+a{color:var(--sakura);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:3px solid rgba(0,113,227,.45);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--font-display);font-weight:600;text-wrap:balance;margin:0;letter-spacing:-.025em}
+h2{font-size:clamp(32px,4.4vw,48px);line-height:1.08;color:var(--ink)}
+h2 em,h1 em{font-style:normal;color:var(--sakura)}
+.lede{max-width:62ch;color:var(--muted);margin:14px 0 0;font-size:19px;line-height:1.45}
+.eyebrow{font-family:var(--font-body);font-size:14px;font-weight:600;letter-spacing:0;color:var(--warn)}
+section{padding:96px 0 8px}
+.mono{font-family:var(--font-mono)}
+.num{font-variant-numeric:tabular-nums}
+
+/* ---------- hero ---------- */
+.hero{background:var(--card);color:var(--ink);padding:28px 0 64px}
+.hero .eyebrow{color:var(--muted);font-weight:500;font-size:13px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:56px}
+.badge{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;background:var(--paper);border-radius:999px;padding:7px 14px;color:var(--ink)}
+.badge .dot{width:8px;height:8px;border-radius:50%;background:#34C759}
+.hero h1{font-size:clamp(46px,7.4vw,96px);line-height:1.02;letter-spacing:-.035em;max-width:16ch;font-weight:700}
+.hero p.sub{max-width:60ch;color:var(--muted);font-size:21px;line-height:1.42;margin:22px 0 32px}
+.ctas{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.btn{font:400 17px var(--font-body);border-radius:980px;padding:11px 22px;text-decoration:none;border:1px solid transparent;cursor:pointer;letter-spacing:-.01em}
+.btn:hover{text-decoration:none}
+.btn.primary{background:var(--sakura);color:#fff}
+.btn.primary:hover{background:#0077ED}
+.btn.ghost{color:var(--sakura);background:transparent;border-color:var(--sakura)}
+.btn.ghost:hover{background:var(--petal)}
+.transform{display:grid;grid-template-columns:1fr 64px 1fr;margin-top:56px;align-items:start}
+.page{background:var(--paper);color:var(--ink);border-radius:22px;padding:26px 28px}
+.page .doc-h{font-size:12px;font-weight:500;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:14px;display:flex;justify-content:space-between;gap:8px}
+.page p{font-family:"New York", "Iowan Old Style", Georgia, serif;font-size:19px;line-height:1.6;margin:0;letter-spacing:0}
+.hl{border-bottom:2px solid var(--sakura);padding:0 1px;cursor:default;transition:background .3s;border-radius:2px}
+.hl.on{background:#D6E8FC}
+.arrow{display:flex;align-items:center;justify-content:center;color:#AEAEB2;font-size:28px;height:100%}
+.record{background:#1D1D1F;border-radius:22px;padding:20px;display:grid;gap:8px;align-content:start;box-shadow:0 30px 60px -20px rgba(0,0,0,.35)}
+.record .doc-h{font-family:var(--font-mono);font-size:11px;color:#8E8E93;display:flex;justify-content:space-between;gap:8px;margin-bottom:4px}
+.chip{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;background:#2C2C2E;border:1px solid transparent;border-radius:12px;padding:10px 12px;transition:background .3s,border-color .3s}
+.chip.on{background:#0A3A6B;border-color:#0A84FF}
+.chip .k{grid-row:span 2;font-size:10px;font-weight:600;color:#0A84FF;writing-mode:vertical-rl;transform:rotate(180deg);text-transform:uppercase;letter-spacing:.06em}
+.chip .t{font-size:15px;color:#F5F5F7;font-weight:500}
+.chip .d{font-family:var(--font-mono);font-size:12px;color:#98989D}
+.stats{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:56px}
+.stat{background:var(--paper);border-radius:18px;padding:18px 18px 16px}
+.stat b{display:block;font-family:var(--font-display);font-size:44px;font-weight:600;line-height:1;letter-spacing:-.03em;color:var(--ink)}
+.stat span{font-size:14px;color:var(--muted)}
+
+/* ---------- explorer ---------- */
+.explorer{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:20px;margin-top:36px}
+.lanes{display:grid;gap:14px}
+.lane{background:var(--card);border-radius:18px;padding:18px 18px 16px}
+.lane-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:12px}
+.lane-h h3{font-size:22px;color:var(--ink)}
+.lane-h .mono{font-size:11px;color:#AEAEB2}
+.uo{border-top:1px solid var(--line);padding-top:12px;margin-top:12px}
+.uo:first-of-type{border-top:0;padding-top:0;margin-top:0}
+.uo-h{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:8px;display:flex;gap:8px;flex-wrap:wrap;align-items:baseline}
+.uo-h .mono{font-weight:400;font-size:11px;color:var(--muted)}
+.steps{display:flex;flex-wrap:wrap;gap:8px}
+.step{font:400 15px var(--font-body);background:var(--paper);border:1px solid transparent;color:var(--ink);border-radius:12px;padding:8px 12px;cursor:pointer;display:flex;gap:8px;align-items:center;text-align:left;letter-spacing:-.01em}
+.step:hover{background:#EBEBF0}
+.step[aria-pressed="true"]{background:var(--sakura);color:#fff}
+.step .n{font-size:12px;font-weight:600;background:#fff;color:var(--ink);border-radius:6px;padding:1px 6px;font-variant-numeric:tabular-nums}
+.step[aria-pressed="true"] .n{background:rgba(255,255,255,.25);color:#fff}
+.step .pp{width:7px;height:7px;border-radius:50%;background:#FF9F0A}
+.legend{font-size:13px;color:var(--muted);display:flex;gap:14px;flex-wrap:wrap;margin-top:10px}
+.legend i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#FF9F0A;margin-right:6px}
+.detail{background:var(--card);border-radius:18px;padding:24px;position:sticky;top:16px;align-self:start;max-height:calc(100vh - 32px);overflow:auto;box-shadow:0 4px 24px rgba(0,0,0,.05)}
+.crumbs{display:flex;flex-wrap:wrap;gap:4px;align-items:center;font-size:12px;margin-bottom:12px}
+.crumbs span{background:var(--paper);color:var(--muted);border-radius:6px;padding:3px 8px}
+.crumbs .sep{background:none;color:#C7C7CC;padding:0}
+.detail .eyebrow{font-size:12px}
+.detail h3{font-size:30px;color:var(--ink);line-height:1.1;margin-top:4px}
+.detail .desc{font-family:"New York", "Iowan Old Style", Georgia, serif;font-size:17px;margin:12px 0 16px;color:var(--ink);letter-spacing:0}
+.kv{display:grid;grid-template-columns:130px 1fr;gap:10px 14px;font-size:15px;border-top:1px solid var(--line);padding-top:14px}
+.kv dt{color:var(--muted)}
+.kv dd{margin:0}
+.tag{display:inline-block;font-size:13px;border-radius:8px;padding:3px 9px;margin:0 4px 4px 0;background:var(--paper)}
+.tag.dev{background:var(--teal-soft);color:var(--teal)}
+.tag.mat{background:var(--petal);color:#0058B0}
+.tag.warn{background:var(--warn-soft);color:var(--warn)}
+.range{margin:8px 0 14px}
+.range .lbl{display:flex;justify-content:space-between;font-size:15px;gap:8px}
+.range .lbl b{font-weight:600}
+.track{position:relative;height:28px;background:var(--paper);border-radius:8px;margin-top:6px}
+.band{position:absolute;top:6px;bottom:6px;background:var(--sakura);border-radius:6px}
+.track .tick{position:absolute;top:0;bottom:0;font-family:var(--font-mono);font-size:11px;color:var(--muted);display:flex;align-items:center}
+.sp{font-size:13px;color:var(--warn);margin-top:4px}
+pre.code{background:#1D1D1F;color:#F5F5F7;border-radius:14px;padding:16px;font:12.5px/1.55 var(--font-mono);overflow:auto;max-height:340px;margin:14px 0 0;white-space:pre;letter-spacing:0}
+.code .tg{color:#FF7AB2}.code .at{color:#78C2FF}.code .av{color:#FC6A5D}.code .cm{color:#7F8C98}
+.small{font-size:14px;color:var(--muted)}
+.flowfig{margin:24px 0 0;background:var(--card);border-radius:18px;padding:18px;overflow-x:auto}
+.flowfig img{display:block;width:100%;min-width:900px;height:auto}
+.flowfig figcaption{font-size:14px;color:var(--muted);margin-top:10px}
+
+/* ---------- queries ---------- */
+.qgrid{display:grid;grid-template-columns:330px minmax(0,1fr);gap:20px;margin-top:36px}
+.qlist{display:grid;gap:8px;align-content:start}
+.q{font:400 16px var(--font-body);text-align:left;background:var(--card);border:2px solid transparent;border-radius:14px;padding:13px 16px;cursor:pointer;color:var(--ink);letter-spacing:-.01em}
+.q:hover{background:#FAFAFC}
+.q[aria-pressed="true"]{border-color:var(--sakura)}
+.qout{background:var(--card);border-radius:18px;padding:24px;min-height:320px}
+.qout .xp{font:12.5px/1.55 var(--font-mono);background:var(--paper);border-radius:10px;padding:12px 14px;color:var(--teal);overflow-x:auto;white-space:pre-wrap;word-break:break-word}
+.qout .meta{display:flex;gap:16px;font-size:13px;color:var(--muted);margin:10px 0 14px;flex-wrap:wrap}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th{text-align:left;font-weight:600;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em;border-bottom:1px solid var(--line);padding:8px 10px}
+td{border-bottom:1px solid var(--line);padding:10px}
+.tablewrap{overflow-x:auto}
+.answer{font-family:var(--font-display);font-weight:600;font-size:26px;letter-spacing:-.02em;color:var(--ink);line-height:1.2;margin-bottom:12px}
+
+/* ---------- impact ---------- */
+.impact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;margin-top:36px}
+.panel{background:var(--card);border-radius:18px;padding:24px}
+.panel h3{font-size:24px!important;color:var(--ink)!important}
+.ctrl{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:4px 0 14px}
+.ctrl label{font-size:14px;color:var(--muted);display:block;margin-bottom:6px}
+.ctrl input[type=range]{width:100%;accent-color:var(--sakura)}
+.ctrl output{font-family:var(--font-display);font-weight:600;font-size:22px;color:var(--ink)}
+.diff{font:13px/1.65 var(--font-mono);border-radius:12px;overflow:hidden;background:var(--paper);margin-top:10px}
+.diff div{padding:1px 14px;white-space:pre;overflow-x:auto}
+.diff .ctx{color:var(--muted)}
+.diff .del{background:#FFE5E3;color:#C1271A}
+.diff .add{background:#E3F6E8;color:#1B7A35}
+.bigfig{display:flex;gap:32px;flex-wrap:wrap;margin:8px 0 14px}
+.bigfig div b{display:block;font-family:var(--font-display);font-size:52px;font-weight:600;letter-spacing:-.03em;line-height:1;color:var(--sakura)}
+.bigfig div span{font-size:14px;color:var(--muted)}
+.chain{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:10px}
+.chain .s{font-size:13px;border-radius:8px;padding:4px 9px;background:var(--paper)}
+.chain .s.src{background:var(--sakura);color:#fff}
+.chain .s.ipc{background:var(--teal-soft);color:var(--teal);font-weight:500}
+
+/* ---------- composition ---------- */
+.comp{margin-top:32px;background:var(--card);border-radius:18px;padding:24px}
+.stack{display:flex;height:56px;border-radius:12px;overflow:hidden;gap:2px;background:#fff}
+.stack div{display:flex;align-items:center;justify-content:center;font-size:13px;color:#fff;font-weight:600;min-width:0;white-space:nowrap;overflow:hidden}
+.complegend{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px 20px;margin-top:18px;font-size:15px}
+.complegend div{display:flex;gap:8px;align-items:baseline}
+.complegend i{width:10px;height:10px;border-radius:50%;flex:none;transform:translateY(1px)}
+
+/* ---------- mapping / gaps ---------- */
+.mapgrid{background:var(--card);border-radius:18px;overflow:hidden;margin-top:36px;padding:6px 0}
+.maprow{display:grid;grid-template-columns:1fr 1.5fr 90px;border-top:1px solid var(--line);margin:0 24px}
+.maprow:first-child,.maprow.h+.maprow{border-top:0}
+.maprow>div{padding:14px 4px}
+.maprow.h>div{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.maprow.h{border-bottom:1px solid var(--line)}
+.maprow .c1{font-weight:600;color:var(--ink)}
+.maprow .c2{font-family:var(--font-mono);font-size:13px;color:var(--teal)}
+.maprow .c3{font-family:var(--font-display);font-weight:600;font-size:28px;letter-spacing:-.02em;line-height:1;color:var(--sakura);text-align:right}
+.gaps{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-top:36px}
+.gap{background:var(--card);border-radius:18px;padding:20px 22px}
+.gap .who{font-size:12px;font-weight:600;border-radius:6px;padding:3px 8px;display:inline-block;margin-bottom:10px}
+.who.data{background:var(--warn-soft);color:var(--warn)}
+.who.iso{background:var(--petal);color:#0058B0}
+.who.hl7{background:var(--teal-soft);color:var(--teal)}
+.gap h3{font-family:var(--font-body);font-size:18px;font-weight:600;color:var(--ink);margin-bottom:6px;letter-spacing:-.015em}
+.gap p{margin:0;font-size:15px;color:var(--muted)}
+
+/* ---------- xml ---------- */
+.xmlbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:24px}
+.val{display:flex;gap:28px;flex-wrap:wrap;background:var(--card);border-radius:18px;padding:22px 24px;margin-top:28px}
+.val .big{font-family:var(--font-display);font-weight:600;font-size:48px;letter-spacing:-.03em;line-height:1;color:var(--ok)}
+.val ul{margin:0;padding-left:18px;font-size:14px;color:var(--muted);columns:2;column-gap:28px}
+.btn.dark{background:var(--ink);color:#fff}
+#xmlview{max-height:520px}
+footer{margin-top:96px;padding:28px 0 48px;border-top:1px solid #D2D2D7;font-size:13px;color:var(--muted)}
+footer .cols{display:grid;grid-template-columns:2fr 1fr;gap:24px}
+
+@media (max-width:900px){
+  .transform{grid-template-columns:1fr}
+  .arrow{transform:rotate(90deg);height:48px}
+  .stats{grid-template-columns:repeat(3,1fr)}
+  .explorer,.qgrid,.impact{grid-template-columns:1fr}
+  .detail{position:static;max-height:none}
+  .maprow{grid-template-columns:1fr 1fr 60px;margin:0 16px}
+  .val ul{columns:1}
+  footer .cols{grid-template-columns:1fr}
+}
+@media (max-width:480px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .kv{grid-template-columns:1fr}
+  .ctrl{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <a href="../showcases-cmc.html" style="display:inline-block;font-size:13px;margin-bottom:18px">← FHIR for Global Regulatory Affairs</a>
+    <div class="topbar">
+      <span class="eyebrow">CTD 3.2.P.3.3 · Sakura Bloom 20 mg film-coated tablets · synthetic data</span>
+      <span class="badge"><span class="dot" aria-hidden="true"></span><span id="valBadge">HL7 FHIR validator · PQI 1.0.0 · 0 errors</span></span>
+    </div>
+    <h1>Your manufacturing process, <em>as data.</em></h1>
+    <p class="sub">The 13 steps a reviewer reads today as prose, captured with the draft ISO 26060 information model and exchanged as an HL7 FHIR Pharmaceutical Quality (PQI) bundle. Every parameter, piece of equipment, material and hand-off becomes something software can check, compare and query, and a person can still read.</p>
+    <div class="ctas">
+      <a class="btn primary" href="#explore">Explore the recipe</a>
+      <a class="btn ghost" href="#ask">Ask the dossier</a>
+      <a class="btn ghost" href="#xml">See the XML</a>
+    </div>
+
+    <div class="transform" aria-label="Step 3 as prose and as structured data">
+      <div class="page">
+        <div class="doc-h"><span>3.2.P.3.3 Description of manufacturing process</span><span>Step 3</span></div>
+        <p id="proseStep3"></p>
+        <p class="small" style="font-family:var(--font-body);font-size:13px;margin-top:14px;color:var(--muted)">Hover a highlighted phrase to see where it lands in the structured record.</p>
+      </div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="record">
+        <div class="doc-h"><span>PlanDefinition.action › action › action</span><span id="recId">#step-03</span></div>
+        <div id="chips3" style="display:grid;gap:8px"></div>
+      </div>
+    </div>
+
+    <div class="stats" id="stats"></div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section id="explore">
+  <div class="eyebrow">ISO 26060 Manufacture domain, clause 7.2</div>
+  <h2>Read it like a reviewer, <em>navigate it like a map</em></h2>
+  <p class="lede">Recipe › Manufacturing Process › Process Stage › Unit Operation › Process Step. Pick a step to see its parameters, equipment, materials, dependencies and the exact XML that carries them. Everything below is read live from the bundle embedded in this page.</p>
+  <div class="explorer">
+    <div>
+      <div class="lanes" id="lanes"></div>
+      <div class="legend"><span><i></i>step has Process Parameter Specifications</span></div>
+    </div>
+    <aside class="detail" id="detail" aria-live="polite"></aside>
+  </div>
+  <figure class="flowfig" id="flowfig">
+    <figcaption>Process flow diagram carried inside the bundle as a PQI DocumentReference and generated from the same structured recipe. Scroll sideways on small screens.</figcaption>
+  </figure>
+</section>
+
+<section id="ask">
+  <div class="eyebrow">Control domain · clause 8.3</div>
+  <h2>Questions a reviewer asks, <em>answered from the file</em></h2>
+  <p class="lede">Each answer runs a real XPath query against the FHIR XML. Finding the same facts in a narrative means reading, cross-referencing and retyping.</p>
+  <div class="qgrid">
+    <div class="qlist" id="qlist" role="group" aria-label="Questions"></div>
+    <div class="qout" id="qout" aria-live="polite"></div>
+  </div>
+</section>
+
+<section id="change">
+  <div class="eyebrow">Lifecycle · post-approval change</div>
+  <h2>A variation becomes a <em>two-value change</em></h2>
+  <p class="lede">Widen the inlet air temperature range for Step 3. The structured record shows exactly what moved, and the recipe graph shows which downstream steps and in-process controls sit behind it.</p>
+  <div class="impact">
+    <div class="panel">
+      <div class="ctrl">
+        <div><label for="lo">Lower bound (°C)</label><input type="range" id="lo" min="60" max="80" step="1" value="75"><output id="loOut" for="lo">75</output></div>
+        <div><label for="hi">Upper bound (°C)</label><input type="range" id="hi" min="80" max="100" step="1" value="85"><output id="hiOut" for="hi">85</output></div>
+      </div>
+      <div class="bigfig">
+        <div><b id="chgCount" class="num">0</b><span>values changed</span></div>
+        <div><b id="lineCount" class="num">0</b><span>lines in the bundle</span></div>
+        <div><b id="downCount" class="num">0</b><span>downstream steps</span></div>
+      </div>
+      <div class="diff" id="diff"></div>
+    </div>
+    <div class="panel">
+      <h3>What sits downstream of Step 3</h3>
+      <p class="small">Traced through <span class="mono">action.relatedAction</span>. The highlighted control is the first in-process check that would show a drying effect.</p>
+      <div class="chain" id="chain"></div>
+      <p class="small" style="margin-top:16px" id="impactNote"></p>
+    </div>
+  </div>
+</section>
+
+<section id="composition">
+  <div class="eyebrow">Description domain · Material</div>
+  <h2>Batch formula to unit formula, <em>computed</em></h2>
+  <p class="lede" id="compLede"></p>
+  <div class="comp">
+    <div class="stack" id="stack" role="img" aria-label="Tablet core composition"></div>
+    <div class="complegend" id="complegend"></div>
+  </div>
+</section>
+
+<section id="mapping">
+  <div class="eyebrow">ISO 26060 ↔ HL7 FHIR PQI</div>
+  <h2>Two standards, <em>one model</em></h2>
+  <p class="lede">ISO 26060 says what each thing means. The PQI implementation guide says how to send it. The counts are taken from this bundle.</p>
+  <div class="mapgrid" id="mapgrid"></div>
+</section>
+
+<section id="gaps">
+  <div class="eyebrow">Open items</div>
+  <h2>What the next draft <em>needs</em></h2>
+  <p class="lede">Building a real bundle exposes what the data, the draft standard and the implementation guide still leave open. Each item is a concrete action.</p>
+  <div class="gaps" id="gapgrid"></div>
+</section>
+
+<section id="xml">
+  <div class="eyebrow">The file itself</div>
+  <h2>One bundle, <em>validated</em></h2>
+  <div class="val">
+    <div><div class="big">0 errors</div><div class="small">HL7 FHIR Validator 7.0.3, FHIR R5, hl7.fhir.uv.pharm-quality 1.0.0, offline</div></div>
+    <ul>
+      <li>40 warnings: ISO 26060 placeholder code systems not resolvable yet</li>
+      <li>34: no human narrative (best practice)</li>
+      <li>26: UCUM and EDQM codes not checked without a terminology server</li>
+      <li>6: UCUM annotation <span class="mono">{tbl}</span></li>
+      <li>3: ISO 26060 identifier types outside the core value set</li>
+      <li>1: core <span class="mono">pld-3</span> FHIRPath cannot handle several goalIds on one action</li>
+      <li>5 information messages (open slices, country, MIME type)</li>
+    </ul>
+  </div>
+  <div class="xmlbar">
+    <p class="small" id="xmlMeta" style="margin:0"></p>
+    <button class="btn dark" id="copyXml" type="button">Copy XML</button>
+  </div>
+  <pre class="code" id="xmlview"></pre>
+</section>
+
+<footer>
+  <div class="cols">
+    <div>
+      <p><b>About this showcase.</b> Sakura Bloom is a synthetic product from the ISO/TC 215/SC 2/WG 1 working draft of ISO 26060 (WD stage, 2026-11-01). The draft is not an International Standard and will change. The per-tablet composition assumes the 52.000 kg of Sakuramil per batch makes 2,600,000 tablets of 20 mg with no overage. ISO 26060 classes and individuals use <span class="mono">example.org</span> placeholder URIs until ISO assigns official identifiers.</p>
+    </div>
+    <div>
+      <p><b>References</b><br>
+      <a href="https://hl7.org/fhir/uv/pharm-quality/">HL7 FHIR Pharmaceutical Quality (Industry) IG</a><br>
+      <a href="https://hl7.org/fhir/R5/plandefinition.html">FHIR R5 PlanDefinition</a><br>
+      <a href="https://ucum.org/">UCUM units</a></p>
+    </div>
+  </div>
+</footer>
+</main>
+
+<script type="application/xml" id="bundle-xml">
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sakura Bloom 20 mg film-coated tablet: manufacturing process (synthetic data).
+     FHIR R5 Bundle conforming to HL7 Pharmaceutical Quality (Industry) IG 1.0.0, profile Bundle-product-manufacturing-pq.
+     Semantics from ISO/WD 26060 (2026-11-01), Manufacture and Control domains, Annex A.2 individuals.
+     ISO 26060 class / individual / parameter-kind URIs use example.org placeholders until ISO assigns official identifiers.
+     Per-tablet composition is derived from the batch formula assuming 52.000 kg Sakuramil = 2,600,000 x 20 mg tablets. -->
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="sakurabloom-product-manufacturing"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-product-manufacturing-pq"/>
+  </meta>
+  <identifier>
+    <system value="http://example.org/fhir/identifier/bundle"/>
+    <value value="SB-3.2.P.3.3-001"/>
+  </identifier>
+  <type value="collection"/>
+  <timestamp value="2026-11-01T20:00:00-05:00"/>
+  <entry>
+    <fullUrl value="http://example.org/fhir/PlanDefinition/sakurabloom-dp-manufacturing-process"/>
+    <resource>
+      <PlanDefinition>
+        <id value="sakurabloom-dp-manufacturing-process"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"/>
+        </meta>
+        <extension url="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-plan-document-reference-pq">
+          <valueReference>
+            <reference value="DocumentReference/sakurabloom-process-flow"/>
+            <display value="Process flow diagram"/>
+          </valueReference>
+        </extension>
+        <extension url="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-history-of-process-pq">
+          <valueMarkdown value="Synthetic example process; no development history recorded."/>
+        </extension>
+        <url value="http://example.org/fhir/PlanDefinition/sakurabloom-dp-manufacturing-process"/>
+        <identifier>
+          <type>
+            <coding>
+              <system value="http://example.org/iso26060/CodeSystem/class"/>
+              <code value="Recipe"/>
+              <display value="Recipe"/>
+            </coding>
+          </type>
+          <system value="http://example.org/iso26060/individual"/>
+          <value value="_Recipe_SakuraBloom_DP"/>
+        </identifier>
+        <identifier>
+          <type>
+            <coding>
+              <system value="http://example.org/iso26060/CodeSystem/class"/>
+              <code value="ManufacturingProcess"/>
+              <display value="Manufacturing Process"/>
+            </coding>
+          </type>
+          <system value="http://example.org/iso26060/individual"/>
+          <value value="_ManufacturingProcessDescription_SakuraBloom_DP"/>
+        </identifier>
+        <identifier>
+          <type>
+            <coding>
+              <system value="http://example.org/iso26060/CodeSystem/class"/>
+              <code value="RecipeProcedure"/>
+              <display value="Recipe Procedure"/>
+            </coding>
+          </type>
+          <system value="http://example.org/iso26060/individual"/>
+          <value value="_RecipeProcedure_SakuraBloom_DP"/>
+        </identifier>
+        <version value="1.0.0"/>
+        <name value="SakuraBloomDPManufacturingProcess"/>
+        <title value="Sakura Bloom 20 mg Film-coated tablet recipe"/>
+        <type>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"/>
+            <code value="workflow-definition"/>
+            <display value="Workflow Definition"/>
+          </coding>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type"/>
+            <code value="manufacturing-process"/>
+            <display value="Manufacturing Process"/>
+          </coding>
+          <coding>
+            <system value="http://example.org/iso26060/CodeSystem/class"/>
+            <code value="Recipe"/>
+            <display value="Recipe"/>
+          </coding>
+        </type>
+        <status value="draft"/>
+        <experimental value="true"/>
+        <subjectReference>
+          <reference value="MedicinalProductDefinition/sakurabloom-20mg-fct"/>
+          <display value="Sakura Bloom 20 mg film-coated tablets"/>
+        </subjectReference>
+        <date value="2026-11-01"/>
+        <publisher value="Synthetic example - ISO/TC 215/SC 2/WG 1 Annex A (Sakura Bloom)"/>
+        <description value="Manufacturing process for Sakura Bloom 20 mg film-coated tablets, structured with the ISO/WD 26060 Manufacture domain (Recipe &gt; Manufacturing Process &gt; Process Stage &gt; Unit Operation &gt; Process Step) and Control domain (Process Parameter Specifications as goals with lower/upper bounds). 4 process stages, 6 unit operations, 13 process steps."/>
+        <goal id="g-s3-inlet-air-volume">
+          <category>
+            <coding>
+              <system value="http://example.org/iso26060/CodeSystem/class"/>
+              <code value="ProcessParameterSpecification"/>
+              <display value="Process Parameter Specification"/>
+            </coding>
+          </category>
+          <description>
+            <text value="Step 3: Inlet air volume 40-45 m³/min. ISO 26060 set point not stated in source."/>
+          </description>
+          <target>
+            <measure>
+              <coding>
+                <system value="http://example.org/iso26060/CodeSystem/parameter-kind"/>
+                <code value="inlet-air-volume"/>
+                <display value="Inlet air volume"/>
+              </coding>
+              <text value="Inlet air volume"/>
+            </measure>
+            <detailRange>
+              <low>
+                <value value="40"/>
+                <unit value="m³/min"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="m3/min"/>
+              </low>
+              <high>
+                <value value="45"/>
+                <unit value="m³/min"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="m3/min"/>
+              </high>
+            </detailRange>
+          </target>
+        </goal>
+        <goal id="g-s3-inlet-air-temperature">
+          <category>
+            <coding>
+              <system value="http://example.org/iso26060/CodeSystem/class"/>
+              <code value="ProcessParameterSpecification"/>
+              <display value="Process Parameter Specification"/>
+            </coding>
+          </category>
+          <description>
+            <text value="Step 3: Inlet air temperature 75-85 °C. ISO 26060 set point not stated in source."/>
+          </description>
+          <target>
+            <measure>
+              <coding>
+                <system value="http://example.org/iso26060/CodeSystem/parameter-kind"/>
+                <code value="inlet-air-temperature"/>
+                <display value="Inlet air temperature"/>
+              </coding>
+              <coding>
+                <system value="http://terminology.hl7.org/CodeSystem/process-parameter"/>
+                <code value="TEMP"/>
+                <display value="Temperature"/>
+              </coding>
+              <text value="Inlet air temperature"/>
+            </measure>
+            <detailRange>
+              <low>
+                <value value="75"/>
+                <unit value="°C"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="Cel"/>
+              </low>
+              <high>
+                <value value="85"/>
+                <unit value="°C"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="Cel"/>
+              </high>
+            </detailRange>
+          </target>
+        </goal>
+        <goal id="g-s3-spray-rate">
+          <category>
+            <coding>
+              <system value="http://example.org/iso26060/CodeSystem/class"/>
+              <code value="ProcessParameterSpecification"/>
+              <display value="Process Parameter Specification"/>
+            </coding>
+          </category>
+          <description>
+            <text value="Step 3: Spray rate 900-1100 g/min. ISO 26060 set point not stated in source."/>
+          </description>
+          <target>
+            <measure>
+              <coding>
+                <system value="http://example.org/iso26060/CodeSystem/parameter-kind"/>
+                <code value="spray-rate"/>
+                <display value="Spray rate"/>
+              </coding>
+              <text value="Spray rate"/>
+            </measure>
+            <detailRange>
+              <low>
+                <value value="900"/>
+                <unit value="g/min"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="g/min"/>
+              </low>
+              <high>
+                <value value="1100"/>
+                <unit value="g/min"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="g/min"/>
+              </high>
+            </detailRange>
+          </target>
+        </goal>
+        <goal id="g-s4-loss-on-drying">
+          <category>
+            <coding>
+              <system value="http://example.org/iso26060/CodeSystem/class"/>
+              <code value="QualityAttributeSpecification"/>
+              <display value="Quality Attribute Specification"/>
+            </coding>
+          </category>
+          <description>
+            <text value="Step 4: Loss on drying (drying end point) 1-2 %. ISO 26060 set point not stated in source."/>
+          </description>
+          <target>
+            <measure>
+              <coding>
+                <system value="http://example.org/iso26060/CodeSystem/parameter-kind"/>
+                <code value="loss-on-drying"/>
+                <display value="Loss on drying (drying end point)"/>
+              </coding>
+              <text value="Loss on drying (drying end point)"/>
+            </measure>
+            <detailRange>
+              <low>
+                <value value="1"/>
+                <unit value="%"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="%"/>
+              </low>
+              <high>
+                <value value="2"/>
+                <unit value="%"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="%"/>
+              </high>
+            </detailRange>
+          </target>
+        </goal>
+        <goal id="g-s8-press-speed">
+          <category>
+            <coding>
+              <system value="http://example.org/iso26060/CodeSystem/class"/>
+              <code value="ProcessParameterSpecification"/>
+              <display value="Process Parameter Specification"/>
+            </coding>
+          </category>
+          <description>
+            <text value="Step 8: Tablet press speed 20-30 revolutions. ISO 26060 set point not stated in source. Source states '20-30 revolutions' without a time base; unit to be confirmed (likely rpm)."/>
+          </description>
+          <target>
+            <measure>
+              <coding>
+                <system value="http://example.org/iso26060/CodeSystem/parameter-kind"/>
+                <code value="tablet-press-speed"/>
+                <display value="Tablet press speed"/>
+              </coding>
+              <coding>
+                <system value="http://terminology.hl7.org/CodeSystem/process-parameter"/>
+                <code value="ROTATIONSPEED"/>
+                <display value="Rotational Speed"/>
+              </coding>
+              <text value="Tablet press speed"/>
+            </measure>
+            <detailRange>
+              <low>
+                <value value="20"/>
+                <unit value="revolutions"/>
+              </low>
+              <high>
+                <value value="30"/>
+                <unit value="revolutions"/>
+              </high>
+            </detailRange>
+          </target>
+        </goal>
+        <goal id="g-s8-compression-force">
+          <category>
+            <coding>
+              <system value="http://example.org/iso26060/CodeSystem/class"/>
+              <code value="ProcessParameterSpecification"/>
+              <display value="Process Parameter Specification"/>
+            </coding>
+          </category>
+          <description>
+            <text value="Step 8: Compression force 6-14 kN. ISO 26060 set point not stated in source."/>
+          </description>
+          <target>
+            <measure>
+              <coding>
+                <system value="http://example.org/iso26060/CodeSystem/parameter-kind"/>
+                <code value="compression-force"/>
+                <display value="Compression force"/>
+              </coding>
+              <text value="Compression force"/>
+            </measure>
+            <detailRange>
+              <low>
+                <value value="6"/>
+                <unit value="kN"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="kN"/>
+              </low>
+              <high>
+                <value value="14"/>
+                <unit value="kN"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="kN"/>
+              </high>
+            </detailRange>
+          </target>
+        </goal>
+        <action id="stage-1">
+          <linkId value="_PStageDescription_Granulation"/>
+          <prefix value="1"/>
+          <title value="Granulation"/>
+          <code>
+            <coding>
+              <system value="http://example.org/iso26060/CodeSystem/class"/>
+              <code value="ProcessStage"/>
+              <display value="Process Stage"/>
+            </coding>
+          </code>
+          <action id="uo-1-1">
+            <linkId value="_UnitOperationDescription_PreBlending"/>
+            <prefix value="1.1"/>
+            <title value="Pre-blending"/>
+            <code>
+              <coding>
+                <system value="http://example.org/iso26060/CodeSystem/class"/>
+                <code value="UnitOperation"/>
+                <display value="Unit Operation"/>
+              </coding>
+            </code>
+            <participant>
+              <typeReference>
+                <extension url="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq">
+                  <valueReference>
+                    <reference value="SubstanceDefinition/sakuramil"/>
+                    <display value="Sakuramil (drug substance)"/>
+                  </valueReference>
+                </extension>
+                <display value="Sakuramil (drug substance)"/>
+              </typeReference>
+              <role>
+                <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/manufacturing-participant-role"/>
+                  <code value="StartingMaterial"/>
+                  <display value="Starting Material"/>
+                </coding>
+              </role>
+            </participant>
+            <participant>
+              <typeReference>
+                <extension url="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq">
+                  <valueReference>
+                    <reference value="SubstanceDefinition/microcrystalline-cellulose"/>
+                    <display value="Cellulose, microcrystalline"/>
+                  </valueReference>
+                </extension>
+                <display value="Cellulose, microcrystalline"/>
+              </typeReference>
+              <role>
+                <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/manufacturing-participant-role"/>
+                  <code value="StartingMaterial"/>
+                  <display value="Starting Material"/>
+                </coding>
+              </role>
+            </participant>
+            <participant>
+              <typeReference>
+                <extension url="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq">
+                  <valueReference>
+                    <reference value="SubstanceDefinition/croscarmellose-sodium"/>
+                    <display value="Croscarmellose sodium"/>
+                  </valueReference>
+                </extension>
+                <display value="Croscarmellose sodium"/>
+              </typeReference>
+              <role>
+                <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/manufacturing-participant-role"/>
+                  <code value="StartingMaterial"/>
+                  <display value="Starting Material"/>
+                </coding>
+              </role>
+            </participant>
+            <participant>
+              <typeReference>
+                <extension url="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq">
+                  <valueReference>
+                    <reference value="SubstanceDefinition/lactose-monohydrate"/>
+                    <display value="Lactose monohydrate"/>
+                  </valueReference>
+                </extension>
+                <display value="Lactose monohydrate"/>
+              </typeReference>
+              <role>
+                <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/manufacturing-participant-role"/>
+                  <code value="StartingMaterial"/>
+                  <display value="Starting Material"/>
+                </coding>
+              </role>
+            </participant>
+            <participant>
+              <typeReference>
+                <extension url="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq">
+                  <valueReference>
+                    <reference value="SubstanceDefinition/hydroxypropyl-cellulose"/>
+                    <display value="Hydroxypropyl cellulose"/>
+                  </valueReference>
+                </extension>
+                <display value="Hydroxypropyl cellulose"/>
+              </typeReference>
+              <role>
+                <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/manufacturing-participant-role"/>
+                  <code value="StartingMaterial"/>
+                  <display value="Starting Material"/>
+                </coding>
+              </role>
+            </participant>
+            <participant>
+              <typeReference>
+                <extension url="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq">
+                  <valueReference>
+                    <reference value="SubstanceDefinition/purified-water"/>
+                    <display value="Purified water"/>
+                  </valueReference>
+                </extension>
+                <display value="Purified water"/>
+              </typeReference>
+              <role>
+                <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/manufacturing-participant-role"/>
+                  <code value="ProcessingMaterial"/>
+                  <display value="Processing Material"/>
+                </coding>
+              </role>
+            </participant>
+            <participant>
+              <typeReference>
+                <extension url="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq">
+                  <valueReference>
+                    <reference value="SubstanceDefinition/pre-blend"/>
+                    <display value="Pre-blend (Step 1 output)"/>
+                  </valueReference>
+                </extension>
+                <display value="Pre-blend (Step 1 output)"/>
+              </typeReference>
+              <role>
+                <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/manufacturing-participant-role"/>
+                  <code value="IntermediateMaterial"/>
+                  <display value="Intermediate Material"/>
+                </coding>
+              </role>
+            </participant>
+            <participant>
+              <typeReference>
+                <extension url="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq">
+                  <valueReference>
+                    <reference value="SubstanceDefinition/granulation-liquid"/>
+                    <display value="Granulation liquid (Step 2 output)"/>
+                  </valueReference>
+                </extension>
+                <display value="Granulation liquid (Step 2 output)"/>
+              </typeReference>
+              <role>
+                <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/manufacturing-participant-role"/>
+                  <code value="IntermediateMaterial"/>
+                  <display value="Intermediate Material"/>
+                </coding>
+              </role>
+            </participant>
+            <action id="step-01">
+              <linkId value="_PStep1_Desc_DryBlendOfFourSolids"/>
+              <prefix value="1"/>
+              <title value="Dry blend of four solids"/>
+              <description value="Blend 52.000 kg of cellulose, microcrystalline, 26.000 kg of croscarmellose sodium, 353.600 kg of lactose monohydrate/Lactose hydrate and 52.000 kg of Sakuramil drug substance into a diffusion mixer (bin blender)."/>
+              <code>
+                <coding>
+                  <system value="http://example.org/iso26060/CodeSystem/class"/>
+                  <code value="ProcessStep"/>
+                  <display value="Process Step"/>
+                </coding>
+                <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/manufacturing-step"/>
+                  <code value="Mixing of ingredients"/>
+                  <display value="Mixing of ingredients"/>
+                </coding>
+              </code>
+              <participant>
+                <typeReference>
+                  <reference value="DeviceDefinition/bin-blender"/>
+                  <display value="Diffusion mixer (bin blender)"/>
+                </typeReference>
+                <role>
+                  <coding>
+                    <system value="http://terminology.hl7.org/CodeSystem/pharmaceutical-manufacturing-equipment-class"/>
+                    <code value="Blender"/>
+                    <display value="Blender"/>
+                  </coding>
+                </role>
+              </participant>
+            </action>
+            <action id="step-02">
+              <linkId value="_PStep_2_Desc_PrepareGranulationLiquid"/>
+              <prefix value="2"/>
+              <title value="Prepare granulation liquid"/>
+              <description value="Dissolve 15.600 kg hydroxypropyl cellulose in purified water using a vessel with stirrer to prepare a granulation liquid free from lumps."/>
+              <code>
+                <coding>
+                  <system value="http://example.org/iso26060/CodeSystem/class"/>
+                  <code value="ProcessStep"/>
+                  <display value="Process Step"/>
+                </coding>
+              </code>
+              <participant>
+                <typeReference>
+                  <reference value="DeviceDefinition/granulation-liquid-vessel"/>
+                  <display value="Vessel with stirrer (granulation liquid)"/>
+                </typeReference>
+                <role>
+                  <coding>
+                    <system value="http://terminology.hl7.org/CodeSystem/pharmaceutical-manufacturing-equipment-class"/>
+                    <code value="mixing-vessel"/>
+                    <display value="Mixing Vessel"/>
+                  </coding>
+                </role>
+              </participant>
+            </action>
+          </action>
+          <action id="uo-1-2">
+            <extension url="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq">
+              <extension url="parameter">
+                <valueCodeableConcept>
+                  <text value="Inlet air volume"/>
+                </valueCodeableConcept>
+              </extension>
+              <extension url="valueText">
+                <valueString value="40-45 m³/min (Step 3; range only, no set point stated)"/>
+              </extension>
+            </extension>
+            <extension url="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq">
+              <extension url="parameter">
+                <valueCodeableConcept>
+                  <coding>
+                    <system value="http://terminology.hl7.org/CodeSystem/process-parameter"/>
+                    <code value="TEMP"/>
+                    <display value="Temperature"/>
+                  </coding>
+                  <text value="Inlet air temperature"/>
+                </valueCodeableConcept>
+              </extension>
+              <extension url="valueText">
+                <valueString value="75-85 °C (Step 3; range only, no set point stated)"/>
+              </extension>
+            </extension>
+            <extension url="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq">
+              <extension url="parameter">
+                <valueCodeableConcept>
+                  <text value="Spray rate"/>
+                </valueCodeableConcept>
+              </extension>
+              <extension url="valueText">
+                <valueString value="900-1100 g/min (Step 3; range only, no set point stated)"/>
+              </extension>
+            </extension>
+            <linkId value="_UnitOperationDescription_GranulationAndBlending"/>
+            <prefix value="1.2"/>
+            <title value="Granulation and blending"/>
+            <code>
+              <coding>
+                <system value="http://example.org/iso26060/CodeSystem/class"/>
+                <code value="UnitOperation"/>
+                <display value="Unit Operation"/>
+              </coding>
+            </code>
+            <participant>
+              <typeReference>
+                <extension url="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq">
+                  <valueReference>
+                    <reference value="SubstanceDefinition/pre-blend"/>
+                    <display value="Pre-blend (Step 1 output)"/>
+                  </valueReference>
+                </extension>
+                <display value="Pre-blend (Step 1 output)"/>
+              </typeReference>
+              <role>
+                <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/manufacturing-participant-role"/>
+                  <code value="StartingMaterial"/>
+                  <display value="Starting Material"/>
+                </coding>
+              </role>
+            </participant>
+            <participant>
+              <typeReference>
+                <extension url="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq">
+                  <valueReference>
+                    <reference value="SubstanceDefinition/granulation-liquid"/>
+                    <display value="Granulation liquid (Step 2 output)"/>
+                  </valueReference>
+                </extension>
+                <display value="Granulation liquid (Step 2 output)"/>
+              </typeReference>
+              <role>
+                <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/manufacturing-participant-role"/>
+                  <code value="StartingMaterial"/>
+                  <display value="Starting Material"/>
+                </coding>
+              </role>
+            </participant>
+            <participant>
+              <typeReference>
+                <extension url="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq">
+                  <valueReference>
+                    <reference value="SubstanceDefinition/magnesium-stearate"/>
+                    <display value="Magnesium stearate"/>
+                  </valueReference>
+                </extension>
+                <display value="Magnesium stearate"/>
+              </typeReference>
+              <role>
+                <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/manufacturing-participant-role"/>
+                  <code value="StartingMaterial"/>
+                  <display value="Starting Material"/>
+                </coding>
+              </role>
+            </participant>
+            <participant>
+              <typeReference>
+                <extension url="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq">
+                  <valueReference>
+                    <reference value="SubstanceDefinition/dried-sieved-granules"/>
+                    <display value="Dried, sieved granules (Steps 3-5 output)"/>
+                  </valueReference>
+                </extension>
+                <display value="Dried, sieved granules (Steps 3-5 output)"/>
+              </typeReference>
+              <role>
+                <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/manufacturing-participant-role"/>
+                  <code value="IntermediateMaterial"/>
+                  <display value="Intermediate Material"/>
+                </coding>
+              </role>
+            </participant>
+            <participant>
+              <typeReference>
+                <extension url="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq">
+                  <valueReference>
+                    <reference value="SubstanceDefinition/final-blend"/>
+                    <display value="Final blend (Step 7 output)"/>
+                  </valueReference>
+                </extension>
+                <display value="Final blend (Step 7 output)"/>
+              </typeReference>
+              <role>
+                <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/manufacturing-participant-role"/>
+                  <code value="ResultingMaterial"/>
+                  <display value="Resulting Material"/>
+                </coding>
+              </role>
+            </participant>
+            <action id="step-03">
+              <linkId value="_PStep_3_Desc_FluidBedGranulate"/>
+              <prefix value="3"/>
+              <title value="Fluid bed granulate"/>
+              <description value="Load the pre-blended material from Step 1 into a fluid bed granulator and add granulation liquid from Step 2 using an inlet air volume of 40-45 m³/min, an inlet air temperature of 75-85°C and a spray rate of 900 – 1100 g/min, to achieve wetting of pre-blended material and formation of granules."/>
+              <code>
+                <coding>
+                  <system value="http://example.org/iso26060/CodeSystem/class"/>
+                  <code value="ProcessStep"/>
+                  <display value="Process Step"/>
+                </coding>
+              </code>
+              <goalId value="g-s3-inlet-air-volume"/>
+              <goalId value="g-s3-inlet-air-temperature"/>
+              <goalId value="g-s3-spray-rate"/>
+              <relatedAction>
+                <targetId value="step-01"/>
+                <relationship value="after"/>
+              </relatedAction>
+              <relatedAction>
+                <targetId value="step-02"/>
+                <relationship value="after"/>
+              </relatedAction>
+              <participant>
+                <typeReference>
+                  <reference value="DeviceDefinition/fluid-bed-granulator"/>
+                  <display value="Fluid bed granulator with integrated dryer"/>
+                </typeReference>
+                <role>
+                  <coding>
+                    <system value="http://terminology.hl7.org/CodeSystem/pharmaceutical-manufacturing-equipment-class"/>
+                    <code value="Dryer"/>
+                    <display value="Dryer"/>
+                  </coding>
+                </role>
+              </participant>
+            </action>
+            <action id="step-04">
+              <linkId value="_PStep_4_Desc_FluidBedDry"/>
+              <prefix value="4"/>
+              <title value="Fluid bed dry"/>
+              <description value="Dry the obtained granules using dryer integrated within the fluid bed granulator unit. until loss on drying of 1 - 2% is achieved."/>
+              <code>
+                <coding>
+                  <system value="http://example.org/iso26060/CodeSystem/class"/>
+                  <code value="ProcessStep"/>
+                  <display value="Process Step"/>
+                </coding>
+                <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/manufacturing-step"/>
+                  <code value="drying"/>
+                  <display value="Drying"/>
+                </coding>
+              </code>
+              <documentation>
+                <type value="documentation"/>
+                <display value="Loss on drying (in-process control, Step 4)"/>
+                <resource value="http://example.org/fhir/ObservationDefinition/lod-ipc"/>
+              </documentation>
+              <goalId value="g-s4-loss-on-drying"/>
+              <relatedAction>
+                <targetId value="step-03"/>
+                <relationship value="after"/>
+              </relatedAction>
+              <participant>
+                <typeReference>
+                  <reference value="DeviceDefinition/fluid-bed-granulator"/>
+                  <display value="Fluid bed granulator with integrated dryer"/>
+                </typeReference>
+                <role>
+                  <coding>
+                    <system value="http://terminology.hl7.org/CodeSystem/pharmaceutical-manufacturing-equipment-class"/>
+                    <code value="Dryer"/>
+                    <display value="Dryer"/>
+                  </coding>
+                </role>
+              </participant>
+            </action>
+            <action id="step-05">
+              <linkId value="_PStep_5_Desc_ScreeMillGranules"/>
+              <prefix value="5"/>
+              <title value="Screen-mill granules"/>
+              <description value="Sieve the dried granules from Step 4 using a screening mill."/>
+              <code>
+                <coding>
+                  <system value="http://example.org/iso26060/CodeSystem/class"/>
+                  <code value="ProcessStep"/>
+                  <display value="Process Step"/>
+                </coding>
+                <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/manufacturing-step"/>
+                  <code value="particleSizeReduction"/>
+                  <display value="Particle Size Reduction"/>
+                </coding>
+              </code>
+              <relatedAction>
+                <targetId value="step-04"/>
+                <relationship value="after"/>
+              </relatedAction>
+              <participant>
+                <typeReference>
+                  <reference value="DeviceDefinition/screening-mill"/>
+                  <display value="Screening mill"/>
+                </typeReference>
+                <role>
+                  <coding>
+                    <system value="http://terminology.hl7.org/CodeSystem/pharmaceutical-manufacturing-equipment-class"/>
+                    <code value="Compression Milling"/>
+                    <display value="Compression Milling"/>
+                  </coding>
+                </role>
+              </participant>
+            </action>
+            <action id="step-06">
+              <linkId value="_PStep_6_Desc_SieveAddMgStearate"/>
+              <prefix value="6"/>
+              <title value="Sieve and add magnesium stearate"/>
+              <description value="Sieve 5.200 kg of magnesium stearate through a screen and add it to the granules from Step 5."/>
+              <code>
+                <coding>
+                  <system value="http://example.org/iso26060/CodeSystem/class"/>
+                  <code value="ProcessStep"/>
+                  <display value="Process Step"/>
+                </coding>
+              </code>
+              <relatedAction>
+                <targetId value="step-05"/>
+                <relationship value="after"/>
+              </relatedAction>
+              <participant>
+                <typeReference>
+                  <reference value="DeviceDefinition/lubricant-screen"/>
+                  <display value="Screen (sieve) for magnesium stearate"/>
+                </typeReference>
+              </participant>
+            </action>
+            <action id="step-07">
+              <linkId value="_PStep_7_Desc_FinalBlend"/>
+              <prefix value="7"/>
+              <title value="Final blend"/>
+              <description value="Blend the mixture from step 6 using a diffusion mixer (bin blender) to obtain the final blend."/>
+              <code>
+                <coding>
+                  <system value="http://example.org/iso26060/CodeSystem/class"/>
+                  <code value="ProcessStep"/>
+                  <display value="Process Step"/>
+                </coding>
+                <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/manufacturing-step"/>
+                  <code value="Mixing of ingredients"/>
+                  <display value="Mixing of ingredients"/>
+                </coding>
+              </code>
+              <relatedAction>
+                <targetId value="step-06"/>
+                <relationship value="after"/>
+              </relatedAction>
+              <participant>
+                <typeReference>
+                  <reference value="DeviceDefinition/bin-blender"/>
+                  <display value="Diffusion mixer (bin blender)"/>
+                </typeReference>
+                <role>
+                  <coding>
+                    <system value="http://terminology.hl7.org/CodeSystem/pharmaceutical-manufacturing-equipment-class"/>
+                    <code value="Blender"/>
+                    <display value="Blender"/>
+                  </coding>
+                </role>
+              </participant>
+            </action>
+          </action>
+        </action>
+        <action id="stage-2">
+          <linkId value="_PStageDescription_Compression"/>
+          <prefix value="2"/>
+          <title value="Compression"/>
+          <code>
+            <coding>
+              <system value="http://example.org/iso26060/CodeSystem/class"/>
+              <code value="ProcessStage"/>
+              <display value="Process Stage"/>
+            </coding>
+          </code>
+          <action id="uo-2-1">
+            <extension url="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq">
+              <extension url="parameter">
+                <valueCodeableConcept>
+                  <coding>
+                    <system value="http://terminology.hl7.org/CodeSystem/process-parameter"/>
+                    <code value="ROTATIONSPEED"/>
+                    <display value="Rotational Speed"/>
+                  </coding>
+                  <text value="Tablet press speed"/>
+                </valueCodeableConcept>
+              </extension>
+              <extension url="valueText">
+                <valueString value="20-30 revolutions (Step 8; range only, no set point stated)"/>
+              </extension>
+            </extension>
+            <extension url="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq">
+              <extension url="parameter">
+                <valueCodeableConcept>
+                  <text value="Compression force"/>
+                </valueCodeableConcept>
+              </extension>
+              <extension url="valueText">
+                <valueString value="6-14 kN (Step 8; range only, no set point stated)"/>
+              </extension>
+            </extension>
+            <linkId value="_UnitOperationDescription_TabletCompression"/>
+            <prefix value="2.1"/>
+            <title value="Tablet compression"/>
+            <code>
+              <coding>
+                <system value="http://example.org/iso26060/CodeSystem/class"/>
+                <code value="UnitOperation"/>
+                <display value="Unit Operation"/>
+              </coding>
+            </code>
+            <participant>
+              <typeReference>
+                <extension url="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq">
+                  <valueReference>
+                    <reference value="SubstanceDefinition/final-blend"/>
+                    <display value="Final blend (Step 7 output)"/>
+                  </valueReference>
+                </extension>
+                <display value="Final blend (Step 7 output)"/>
+              </typeReference>
+              <role>
+                <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/manufacturing-participant-role"/>
+                  <code value="StartingMaterial"/>
+                  <display value="Starting Material"/>
+                </coding>
+              </role>
+            </participant>
+            <participant>
+              <typeReference>
+                <extension url="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq">
+                  <valueReference>
+                    <reference value="SubstanceDefinition/tablet-cores"/>
+                    <display value="Tablet cores (Step 8 output)"/>
+                  </valueReference>
+                </extension>
+                <display value="Tablet cores (Step 8 output)"/>
+              </typeReference>
+              <role>
+                <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/manufacturing-participant-role"/>
+                  <code value="ResultingMaterial"/>
+                  <display value="Resulting Material"/>
+                </coding>
+              </role>
+            </participant>
+            <action id="step-08">
+              <linkId value="_PStep_8_Desc_CompressTablet"/>
+              <prefix value="8"/>
+              <title value="Compress tablets"/>
+              <description value="Compress the final blend from step 7 using a tablet press at 20-30 revolutions with a compression force of 6-14 kN to obtain the tablet cores."/>
+              <code>
+                <coding>
+                  <system value="http://example.org/iso26060/CodeSystem/class"/>
+                  <code value="ProcessStep"/>
+                  <display value="Process Step"/>
+                </coding>
+              </code>
+              <goalId value="g-s8-press-speed"/>
+              <goalId value="g-s8-compression-force"/>
+              <relatedAction>
+                <targetId value="step-07"/>
+                <relationship value="after"/>
+              </relatedAction>
+              <participant>
+                <typeReference>
+                  <reference value="DeviceDefinition/tablet-press"/>
+                  <display value="Tablet press"/>
+                </typeReference>
+              </participant>
+            </action>
+          </action>
+        </action>
+        <action id="stage-3">
+          <linkId value="_PStageDescription_Finishing"/>
+          <prefix value="3"/>
+          <title value="Finishing"/>
+          <code>
+            <coding>
+              <system value="http://example.org/iso26060/CodeSystem/class"/>
+              <code value="ProcessStage"/>
+              <display value="Process Stage"/>
+            </coding>
+          </code>
+          <action id="uo-3-1">
+            <linkId value="_UnitOperationDescription_FilmCoating"/>
+            <prefix value="3.1"/>
+            <title value="Film coating"/>
+            <code>
+              <coding>
+                <system value="http://example.org/iso26060/CodeSystem/class"/>
+                <code value="UnitOperation"/>
+                <display value="Unit Operation"/>
+              </coding>
+            </code>
+            <participant>
+              <typeReference>
+                <extension url="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq">
+                  <valueReference>
+                    <reference value="SubstanceDefinition/coating-premix-red"/>
+                    <display value="Basic coating premix, red"/>
+                  </valueReference>
+                </extension>
+                <display value="Basic coating premix, red"/>
+              </typeReference>
+              <role>
+                <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/manufacturing-participant-role"/>
+                  <code value="StartingMaterial"/>
+                  <display value="Starting Material"/>
+                </coding>
+              </role>
+            </participant>
+            <participant>
+              <typeReference>
+                <extension url="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq">
+                  <valueReference>
+                    <reference value="SubstanceDefinition/purified-water"/>
+                    <display value="Purified water"/>
+                  </valueReference>
+                </extension>
+                <display value="Purified water"/>
+              </typeReference>
+              <role>
+                <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/manufacturing-participant-role"/>
+                  <code value="ProcessingMaterial"/>
+                  <display value="Processing Material"/>
+                </coding>
+              </role>
+            </participant>
+            <participant>
+              <typeReference>
+                <extension url="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq">
+                  <valueReference>
+                    <reference value="SubstanceDefinition/tablet-cores"/>
+                    <display value="Tablet cores (Step 8 output)"/>
+                  </valueReference>
+                </extension>
+                <display value="Tablet cores (Step 8 output)"/>
+              </typeReference>
+              <role>
+                <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/manufacturing-participant-role"/>
+                  <code value="StartingMaterial"/>
+                  <display value="Starting Material"/>
+                </coding>
+              </role>
+            </participant>
+            <participant>
+              <typeReference>
+                <extension url="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq">
+                  <valueReference>
+                    <reference value="SubstanceDefinition/coating-suspension"/>
+                    <display value="Film-coat suspension (Step 9 output)"/>
+                  </valueReference>
+                </extension>
+                <display value="Film-coat suspension (Step 9 output)"/>
+              </typeReference>
+              <role>
+                <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/manufacturing-participant-role"/>
+                  <code value="IntermediateMaterial"/>
+                  <display value="Intermediate Material"/>
+                </coding>
+              </role>
+            </participant>
+            <participant>
+              <typeReference>
+                <extension url="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq">
+                  <valueReference>
+                    <reference value="SubstanceDefinition/film-coated-tablets"/>
+                    <display value="Film-coated tablets, bulk (Step 10 output)"/>
+                  </valueReference>
+                </extension>
+                <display value="Film-coated tablets, bulk (Step 10 output)"/>
+              </typeReference>
+              <role>
+                <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/manufacturing-participant-role"/>
+                  <code value="ResultingMaterial"/>
+                  <display value="Resulting Material"/>
+                </coding>
+              </role>
+            </participant>
+            <action id="step-09">
+              <linkId value="_PStep_9_Desc_PrepareCoatingSuspension"/>
+              <prefix value="9"/>
+              <title value="Prepare coating suspension"/>
+              <description value="Prepare a homogeneous suspension of the Basic coating premix, red in purified water in a suitable sized vessel."/>
+              <code>
+                <coding>
+                  <system value="http://example.org/iso26060/CodeSystem/class"/>
+                  <code value="ProcessStep"/>
+                  <display value="Process Step"/>
+                </coding>
+              </code>
+              <participant>
+                <typeReference>
+                  <reference value="DeviceDefinition/coating-suspension-vessel"/>
+                  <display value="Suitably sized vessel (coating suspension)"/>
+                </typeReference>
+                <role>
+                  <coding>
+                    <system value="http://terminology.hl7.org/CodeSystem/pharmaceutical-manufacturing-equipment-class"/>
+                    <code value="mixing-vessel"/>
+                    <display value="Mixing Vessel"/>
+                  </coding>
+                </role>
+              </participant>
+            </action>
+            <action id="step-10">
+              <linkId value="_PStep_10_Desc_PanCoatAndDry"/>
+              <prefix value="10"/>
+              <title value="Pan coat and dry"/>
+              <description value="Film-coat the tablet cores from Step 8 using the film coat suspension from Step 9 in a coating pan to achieve desired film-coat weight gain, followed by drying. Collect the film coated tablets in a suitable container."/>
+              <code>
+                <coding>
+                  <system value="http://example.org/iso26060/CodeSystem/class"/>
+                  <code value="ProcessStep"/>
+                  <display value="Process Step"/>
+                </coding>
+              </code>
+              <relatedAction>
+                <targetId value="step-08"/>
+                <relationship value="after"/>
+              </relatedAction>
+              <relatedAction>
+                <targetId value="step-09"/>
+                <relationship value="after"/>
+              </relatedAction>
+              <participant>
+                <typeReference>
+                  <reference value="DeviceDefinition/coating-pan"/>
+                  <display value="Coating pan"/>
+                </typeReference>
+              </participant>
+            </action>
+          </action>
+          <action id="uo-3-2">
+            <linkId value="_UnitOperationDescription_Inspection"/>
+            <prefix value="3.2"/>
+            <title value="Inspection"/>
+            <code>
+              <coding>
+                <system value="http://example.org/iso26060/CodeSystem/class"/>
+                <code value="UnitOperation"/>
+                <display value="Unit Operation"/>
+              </coding>
+            </code>
+            <participant>
+              <typeReference>
+                <extension url="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq">
+                  <valueReference>
+                    <reference value="SubstanceDefinition/film-coated-tablets"/>
+                    <display value="Film-coated tablets, bulk (Step 10 output)"/>
+                  </valueReference>
+                </extension>
+                <display value="Film-coated tablets, bulk (Step 10 output)"/>
+              </typeReference>
+              <role>
+                <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/manufacturing-participant-role"/>
+                  <code value="StartingMaterial"/>
+                  <display value="Starting Material"/>
+                </coding>
+              </role>
+            </participant>
+            <action id="step-11">
+              <linkId value="_PStep_11_Desc_RTRTInspection"/>
+              <prefix value="11"/>
+              <title value="RTRT inspection"/>
+              <description value="Collect 10 tablets to perform Description test method with RTRT and Identification Test method with RTRT."/>
+              <code>
+                <coding>
+                  <system value="http://example.org/iso26060/CodeSystem/class"/>
+                  <code value="ProcessStep"/>
+                  <display value="Process Step"/>
+                </coding>
+              </code>
+              <documentation>
+                <type value="documentation"/>
+                <display value="Description test method with RTRT (Step 11)"/>
+                <resource value="http://example.org/fhir/ObservationDefinition/description-rtrt"/>
+              </documentation>
+              <documentation>
+                <type value="documentation"/>
+                <display value="Identification test method with RTRT (Step 11)"/>
+                <resource value="http://example.org/fhir/ObservationDefinition/identification-rtrt"/>
+              </documentation>
+              <relatedAction>
+                <targetId value="step-10"/>
+                <relationship value="after"/>
+              </relatedAction>
+            </action>
+          </action>
+        </action>
+        <action id="stage-4">
+          <linkId value="_PStageDescription_Packaging"/>
+          <prefix value="4"/>
+          <title value="Packaging"/>
+          <code>
+            <coding>
+              <system value="http://example.org/iso26060/CodeSystem/class"/>
+              <code value="ProcessStage"/>
+              <display value="Process Stage"/>
+            </coding>
+          </code>
+          <action id="uo-4-1">
+            <linkId value="_UnitOperationDescription_Packaging"/>
+            <prefix value="4.1"/>
+            <title value="Packaging"/>
+            <code>
+              <coding>
+                <system value="http://example.org/iso26060/CodeSystem/class"/>
+                <code value="UnitOperation"/>
+                <display value="Unit Operation"/>
+              </coding>
+            </code>
+            <participant>
+              <typeReference>
+                <extension url="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq">
+                  <valueReference>
+                    <reference value="SubstanceDefinition/film-coated-tablets"/>
+                    <display value="Film-coated tablets, bulk (Step 10 output)"/>
+                  </valueReference>
+                </extension>
+                <display value="Film-coated tablets, bulk (Step 10 output)"/>
+              </typeReference>
+              <role>
+                <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/manufacturing-participant-role"/>
+                  <code value="StartingMaterial"/>
+                  <display value="Starting Material"/>
+                </coding>
+              </role>
+            </participant>
+            <participant>
+              <typeReference>
+                <extension url="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq">
+                  <valueReference>
+                    <reference value="SubstanceDefinition/packaged-product"/>
+                    <display value="Packaged product (Steps 12-13 output)"/>
+                  </valueReference>
+                </extension>
+                <display value="Packaged product (Steps 12-13 output)"/>
+              </typeReference>
+              <role>
+                <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/manufacturing-participant-role"/>
+                  <code value="ResultingMaterial"/>
+                  <display value="Resulting Material"/>
+                </coding>
+              </role>
+            </participant>
+            <action id="step-12">
+              <linkId value="_PStep_12_Desc_PrimaryPackaging"/>
+              <prefix value="12"/>
+              <title value="Primary packaging"/>
+              <description value="The film-coated tablets are primary packaged."/>
+              <code>
+                <coding>
+                  <system value="http://example.org/iso26060/CodeSystem/class"/>
+                  <code value="ProcessStep"/>
+                  <display value="Process Step"/>
+                </coding>
+              </code>
+              <relatedAction>
+                <targetId value="step-11"/>
+                <relationship value="after"/>
+              </relatedAction>
+            </action>
+            <action id="step-13">
+              <linkId value="_PStep_13_Desc_SecondaryPackaging"/>
+              <prefix value="13"/>
+              <title value="Secondary packaging"/>
+              <description value="The primary packaged product is then packed in a cardboard based secondary pack."/>
+              <code>
+                <coding>
+                  <system value="http://example.org/iso26060/CodeSystem/class"/>
+                  <code value="ProcessStep"/>
+                  <display value="Process Step"/>
+                </coding>
+              </code>
+              <relatedAction>
+                <targetId value="step-12"/>
+                <relationship value="after"/>
+              </relatedAction>
+            </action>
+          </action>
+        </action>
+      </PlanDefinition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/MedicinalProductDefinition/sakurabloom-20mg-fct"/>
+    <resource>
+      <MedicinalProductDefinition>
+        <id value="sakurabloom-20mg-fct"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq"/>
+        </meta>
+        <identifier>
+          <system value="http://example.org/fhir/identifier/product"/>
+          <value value="SAKURABLOOM-20MG-FCT"/>
+        </identifier>
+        <description value="Sakura Bloom 20 mg film-coated tablets (synthetic example product). Active substance: Sakuramil."/>
+        <combinedPharmaceuticalDoseForm>
+          <coding>
+            <system value="http://standardterms.edqm.eu"/>
+            <code value="10221000"/>
+            <display value="Film-coated tablet"/>
+          </coding>
+        </combinedPharmaceuticalDoseForm>
+        <route>
+          <coding>
+            <system value="http://standardterms.edqm.eu"/>
+            <code value="20053000"/>
+            <display value="Oral use"/>
+          </coding>
+        </route>
+        <name>
+          <productName value="Sakura Bloom 20 mg film-coated tablets"/>
+          <type>
+            <coding>
+              <system value="http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-productNameType-pq-example"/>
+              <code value="Proprietary"/>
+              <display value="Proprietary"/>
+            </coding>
+          </type>
+        </name>
+      </MedicinalProductDefinition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/Ingredient/ing-sakuramil"/>
+    <resource>
+      <Ingredient>
+        <id value="ing-sakuramil"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"/>
+        </meta>
+        <status value="active"/>
+        <for>
+          <reference value="MedicinalProductDefinition/sakurabloom-20mg-fct"/>
+        </for>
+        <role>
+          <coding>
+            <system value="http://hl7.org/fhir/ingredient-role"/>
+            <code value="100000072072"/>
+            <display value="Active"/>
+          </coding>
+        </role>
+        <function>
+          <text value="Active substance"/>
+        </function>
+        <substance>
+          <code>
+            <reference>
+              <reference value="SubstanceDefinition/sakuramil"/>
+              <display value="Sakuramil (drug substance)"/>
+            </reference>
+          </code>
+          <strength>
+            <presentationRatio>
+              <numerator>
+                <value value="20"/>
+                <unit value="mg"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="mg"/>
+              </numerator>
+              <denominator>
+                <value value="1"/>
+                <unit value="tablet"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="{tbl}"/>
+              </denominator>
+            </presentationRatio>
+            <textPresentation value="20 mg per tablet core (derived: 52.000 kg per batch of 2,600,000 tablets)"/>
+          </strength>
+        </substance>
+      </Ingredient>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/Ingredient/ing-microcrystalline-cellulose"/>
+    <resource>
+      <Ingredient>
+        <id value="ing-microcrystalline-cellulose"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"/>
+        </meta>
+        <status value="active"/>
+        <for>
+          <reference value="MedicinalProductDefinition/sakurabloom-20mg-fct"/>
+        </for>
+        <role>
+          <coding>
+            <system value="http://hl7.org/fhir/ingredient-role"/>
+            <code value="100000072082"/>
+            <display value="Excipient"/>
+          </coding>
+        </role>
+        <function>
+          <text value="Filler / binder"/>
+        </function>
+        <substance>
+          <code>
+            <reference>
+              <reference value="SubstanceDefinition/microcrystalline-cellulose"/>
+              <display value="Cellulose, microcrystalline"/>
+            </reference>
+          </code>
+          <strength>
+            <presentationRatio>
+              <numerator>
+                <value value="20"/>
+                <unit value="mg"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="mg"/>
+              </numerator>
+              <denominator>
+                <value value="1"/>
+                <unit value="tablet"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="{tbl}"/>
+              </denominator>
+            </presentationRatio>
+            <textPresentation value="20 mg per tablet core (derived: 52.000 kg per batch of 2,600,000 tablets)"/>
+          </strength>
+        </substance>
+      </Ingredient>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/Ingredient/ing-croscarmellose-sodium"/>
+    <resource>
+      <Ingredient>
+        <id value="ing-croscarmellose-sodium"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"/>
+        </meta>
+        <status value="active"/>
+        <for>
+          <reference value="MedicinalProductDefinition/sakurabloom-20mg-fct"/>
+        </for>
+        <role>
+          <coding>
+            <system value="http://hl7.org/fhir/ingredient-role"/>
+            <code value="100000072082"/>
+            <display value="Excipient"/>
+          </coding>
+        </role>
+        <function>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/ingredient-function"/>
+            <code value="disintegrant"/>
+            <display value="Disintegrant"/>
+          </coding>
+        </function>
+        <substance>
+          <code>
+            <reference>
+              <reference value="SubstanceDefinition/croscarmellose-sodium"/>
+              <display value="Croscarmellose sodium"/>
+            </reference>
+          </code>
+          <strength>
+            <presentationRatio>
+              <numerator>
+                <value value="10"/>
+                <unit value="mg"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="mg"/>
+              </numerator>
+              <denominator>
+                <value value="1"/>
+                <unit value="tablet"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="{tbl}"/>
+              </denominator>
+            </presentationRatio>
+            <textPresentation value="10 mg per tablet core (derived: 26.000 kg per batch of 2,600,000 tablets)"/>
+          </strength>
+        </substance>
+      </Ingredient>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/Ingredient/ing-lactose-monohydrate"/>
+    <resource>
+      <Ingredient>
+        <id value="ing-lactose-monohydrate"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"/>
+        </meta>
+        <status value="active"/>
+        <for>
+          <reference value="MedicinalProductDefinition/sakurabloom-20mg-fct"/>
+        </for>
+        <role>
+          <coding>
+            <system value="http://hl7.org/fhir/ingredient-role"/>
+            <code value="100000072082"/>
+            <display value="Excipient"/>
+          </coding>
+        </role>
+        <function>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/ingredient-function"/>
+            <code value="diluent"/>
+            <display value="Diluent"/>
+          </coding>
+        </function>
+        <substance>
+          <code>
+            <reference>
+              <reference value="SubstanceDefinition/lactose-monohydrate"/>
+              <display value="Lactose monohydrate"/>
+            </reference>
+          </code>
+          <strength>
+            <presentationRatio>
+              <numerator>
+                <value value="136"/>
+                <unit value="mg"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="mg"/>
+              </numerator>
+              <denominator>
+                <value value="1"/>
+                <unit value="tablet"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="{tbl}"/>
+              </denominator>
+            </presentationRatio>
+            <textPresentation value="136 mg per tablet core (derived: 353.600 kg per batch of 2,600,000 tablets)"/>
+          </strength>
+        </substance>
+      </Ingredient>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/Ingredient/ing-hydroxypropyl-cellulose"/>
+    <resource>
+      <Ingredient>
+        <id value="ing-hydroxypropyl-cellulose"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"/>
+        </meta>
+        <status value="active"/>
+        <for>
+          <reference value="MedicinalProductDefinition/sakurabloom-20mg-fct"/>
+        </for>
+        <role>
+          <coding>
+            <system value="http://hl7.org/fhir/ingredient-role"/>
+            <code value="100000072082"/>
+            <display value="Excipient"/>
+          </coding>
+        </role>
+        <function>
+          <text value="Binder"/>
+        </function>
+        <substance>
+          <code>
+            <reference>
+              <reference value="SubstanceDefinition/hydroxypropyl-cellulose"/>
+              <display value="Hydroxypropyl cellulose"/>
+            </reference>
+          </code>
+          <strength>
+            <presentationRatio>
+              <numerator>
+                <value value="6"/>
+                <unit value="mg"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="mg"/>
+              </numerator>
+              <denominator>
+                <value value="1"/>
+                <unit value="tablet"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="{tbl}"/>
+              </denominator>
+            </presentationRatio>
+            <textPresentation value="6 mg per tablet core (derived: 15.600 kg per batch of 2,600,000 tablets)"/>
+          </strength>
+        </substance>
+      </Ingredient>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/Ingredient/ing-magnesium-stearate"/>
+    <resource>
+      <Ingredient>
+        <id value="ing-magnesium-stearate"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"/>
+        </meta>
+        <status value="active"/>
+        <for>
+          <reference value="MedicinalProductDefinition/sakurabloom-20mg-fct"/>
+        </for>
+        <role>
+          <coding>
+            <system value="http://hl7.org/fhir/ingredient-role"/>
+            <code value="100000072082"/>
+            <display value="Excipient"/>
+          </coding>
+        </role>
+        <function>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/ingredient-function"/>
+            <code value="lubricant"/>
+            <display value="Lubricant"/>
+          </coding>
+        </function>
+        <substance>
+          <code>
+            <reference>
+              <reference value="SubstanceDefinition/magnesium-stearate"/>
+              <display value="Magnesium stearate"/>
+            </reference>
+          </code>
+          <strength>
+            <presentationRatio>
+              <numerator>
+                <value value="2"/>
+                <unit value="mg"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="mg"/>
+              </numerator>
+              <denominator>
+                <value value="1"/>
+                <unit value="tablet"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="{tbl}"/>
+              </denominator>
+            </presentationRatio>
+            <textPresentation value="2 mg per tablet core (derived: 5.200 kg per batch of 2,600,000 tablets)"/>
+          </strength>
+        </substance>
+      </Ingredient>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/Ingredient/ing-coating-premix-red"/>
+    <resource>
+      <Ingredient>
+        <id value="ing-coating-premix-red"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"/>
+        </meta>
+        <status value="active"/>
+        <for>
+          <reference value="MedicinalProductDefinition/sakurabloom-20mg-fct"/>
+        </for>
+        <role>
+          <coding>
+            <system value="http://hl7.org/fhir/ingredient-role"/>
+            <code value="100000072082"/>
+            <display value="Excipient"/>
+          </coding>
+        </role>
+        <function>
+          <text value="Film coat"/>
+        </function>
+        <substance>
+          <code>
+            <reference>
+              <reference value="SubstanceDefinition/coating-premix-red"/>
+              <display value="Basic coating premix, red"/>
+            </reference>
+          </code>
+        </substance>
+      </Ingredient>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/SubstanceDefinition/sakuramil"/>
+    <resource>
+      <SubstanceDefinition>
+        <id value="sakuramil"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"/>
+        </meta>
+        <name>
+          <name value="Sakuramil (drug substance)"/>
+        </name>
+      </SubstanceDefinition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/SubstanceDefinition/microcrystalline-cellulose"/>
+    <resource>
+      <SubstanceDefinition>
+        <id value="microcrystalline-cellulose"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"/>
+        </meta>
+        <name>
+          <name value="Cellulose, microcrystalline"/>
+        </name>
+      </SubstanceDefinition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/SubstanceDefinition/croscarmellose-sodium"/>
+    <resource>
+      <SubstanceDefinition>
+        <id value="croscarmellose-sodium"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"/>
+        </meta>
+        <name>
+          <name value="Croscarmellose sodium"/>
+        </name>
+      </SubstanceDefinition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/SubstanceDefinition/lactose-monohydrate"/>
+    <resource>
+      <SubstanceDefinition>
+        <id value="lactose-monohydrate"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"/>
+        </meta>
+        <name>
+          <name value="Lactose monohydrate"/>
+        </name>
+      </SubstanceDefinition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/SubstanceDefinition/hydroxypropyl-cellulose"/>
+    <resource>
+      <SubstanceDefinition>
+        <id value="hydroxypropyl-cellulose"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"/>
+        </meta>
+        <name>
+          <name value="Hydroxypropyl cellulose"/>
+        </name>
+      </SubstanceDefinition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/SubstanceDefinition/magnesium-stearate"/>
+    <resource>
+      <SubstanceDefinition>
+        <id value="magnesium-stearate"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"/>
+        </meta>
+        <name>
+          <name value="Magnesium stearate"/>
+        </name>
+      </SubstanceDefinition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/SubstanceDefinition/coating-premix-red"/>
+    <resource>
+      <SubstanceDefinition>
+        <id value="coating-premix-red"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"/>
+        </meta>
+        <name>
+          <name value="Basic coating premix, red"/>
+        </name>
+      </SubstanceDefinition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/SubstanceDefinition/purified-water"/>
+    <resource>
+      <SubstanceDefinition>
+        <id value="purified-water"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"/>
+        </meta>
+        <name>
+          <name value="Purified water"/>
+        </name>
+      </SubstanceDefinition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/SubstanceDefinition/pre-blend"/>
+    <resource>
+      <SubstanceDefinition>
+        <id value="pre-blend"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"/>
+        </meta>
+        <description value="Process intermediate defined by the ISO 26060 recipe for Sakura Bloom 20 mg."/>
+        <name>
+          <name value="Pre-blend (Step 1 output)"/>
+        </name>
+      </SubstanceDefinition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/SubstanceDefinition/granulation-liquid"/>
+    <resource>
+      <SubstanceDefinition>
+        <id value="granulation-liquid"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"/>
+        </meta>
+        <description value="Process intermediate defined by the ISO 26060 recipe for Sakura Bloom 20 mg."/>
+        <name>
+          <name value="Granulation liquid (Step 2 output)"/>
+        </name>
+      </SubstanceDefinition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/SubstanceDefinition/dried-sieved-granules"/>
+    <resource>
+      <SubstanceDefinition>
+        <id value="dried-sieved-granules"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"/>
+        </meta>
+        <description value="Process intermediate defined by the ISO 26060 recipe for Sakura Bloom 20 mg."/>
+        <name>
+          <name value="Dried, sieved granules (Steps 3-5 output)"/>
+        </name>
+      </SubstanceDefinition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/SubstanceDefinition/final-blend"/>
+    <resource>
+      <SubstanceDefinition>
+        <id value="final-blend"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"/>
+        </meta>
+        <description value="Process intermediate defined by the ISO 26060 recipe for Sakura Bloom 20 mg."/>
+        <name>
+          <name value="Final blend (Step 7 output)"/>
+        </name>
+      </SubstanceDefinition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/SubstanceDefinition/tablet-cores"/>
+    <resource>
+      <SubstanceDefinition>
+        <id value="tablet-cores"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"/>
+        </meta>
+        <description value="Process intermediate defined by the ISO 26060 recipe for Sakura Bloom 20 mg."/>
+        <name>
+          <name value="Tablet cores (Step 8 output)"/>
+        </name>
+      </SubstanceDefinition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/SubstanceDefinition/coating-suspension"/>
+    <resource>
+      <SubstanceDefinition>
+        <id value="coating-suspension"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"/>
+        </meta>
+        <description value="Process intermediate defined by the ISO 26060 recipe for Sakura Bloom 20 mg."/>
+        <name>
+          <name value="Film-coat suspension (Step 9 output)"/>
+        </name>
+      </SubstanceDefinition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/SubstanceDefinition/film-coated-tablets"/>
+    <resource>
+      <SubstanceDefinition>
+        <id value="film-coated-tablets"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"/>
+        </meta>
+        <description value="Process intermediate defined by the ISO 26060 recipe for Sakura Bloom 20 mg."/>
+        <name>
+          <name value="Film-coated tablets, bulk (Step 10 output)"/>
+        </name>
+      </SubstanceDefinition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/SubstanceDefinition/packaged-product"/>
+    <resource>
+      <SubstanceDefinition>
+        <id value="packaged-product"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"/>
+        </meta>
+        <description value="Process intermediate defined by the ISO 26060 recipe for Sakura Bloom 20 mg."/>
+        <name>
+          <name value="Packaged product (Steps 12-13 output)"/>
+        </name>
+      </SubstanceDefinition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/DeviceDefinition/bin-blender"/>
+    <resource>
+      <DeviceDefinition>
+        <id value="bin-blender"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DeviceDefinition-drug-pq"/>
+        </meta>
+        <deviceName>
+          <name value="Diffusion mixer (bin blender)"/>
+          <type value="user-friendly-name"/>
+        </deviceName>
+        <classification>
+          <type>
+            <text value="Diffusion mixer"/>
+          </type>
+        </classification>
+      </DeviceDefinition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/DeviceDefinition/granulation-liquid-vessel"/>
+    <resource>
+      <DeviceDefinition>
+        <id value="granulation-liquid-vessel"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DeviceDefinition-drug-pq"/>
+        </meta>
+        <deviceName>
+          <name value="Vessel with stirrer (granulation liquid)"/>
+          <type value="user-friendly-name"/>
+        </deviceName>
+        <classification>
+          <type>
+            <text value="Vessel with stirrer"/>
+          </type>
+        </classification>
+      </DeviceDefinition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/DeviceDefinition/fluid-bed-granulator"/>
+    <resource>
+      <DeviceDefinition>
+        <id value="fluid-bed-granulator"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DeviceDefinition-drug-pq"/>
+        </meta>
+        <deviceName>
+          <name value="Fluid bed granulator with integrated dryer"/>
+          <type value="user-friendly-name"/>
+        </deviceName>
+        <classification>
+          <type>
+            <text value="Fluid bed granulator with integrated dryer"/>
+          </type>
+        </classification>
+      </DeviceDefinition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/DeviceDefinition/screening-mill"/>
+    <resource>
+      <DeviceDefinition>
+        <id value="screening-mill"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DeviceDefinition-drug-pq"/>
+        </meta>
+        <deviceName>
+          <name value="Screening mill"/>
+          <type value="user-friendly-name"/>
+        </deviceName>
+        <classification>
+          <type>
+            <text value="Screening mill"/>
+          </type>
+        </classification>
+      </DeviceDefinition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/DeviceDefinition/lubricant-screen"/>
+    <resource>
+      <DeviceDefinition>
+        <id value="lubricant-screen"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DeviceDefinition-drug-pq"/>
+        </meta>
+        <deviceName>
+          <name value="Screen (sieve) for magnesium stearate"/>
+          <type value="user-friendly-name"/>
+        </deviceName>
+        <classification>
+          <type>
+            <text value="Screen"/>
+          </type>
+        </classification>
+      </DeviceDefinition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/DeviceDefinition/tablet-press"/>
+    <resource>
+      <DeviceDefinition>
+        <id value="tablet-press"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DeviceDefinition-drug-pq"/>
+        </meta>
+        <deviceName>
+          <name value="Tablet press"/>
+          <type value="user-friendly-name"/>
+        </deviceName>
+        <classification>
+          <type>
+            <text value="Tablet press"/>
+          </type>
+        </classification>
+      </DeviceDefinition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/DeviceDefinition/coating-suspension-vessel"/>
+    <resource>
+      <DeviceDefinition>
+        <id value="coating-suspension-vessel"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DeviceDefinition-drug-pq"/>
+        </meta>
+        <deviceName>
+          <name value="Suitably sized vessel (coating suspension)"/>
+          <type value="user-friendly-name"/>
+        </deviceName>
+        <classification>
+          <type>
+            <text value="Suitably sized vessel"/>
+          </type>
+        </classification>
+      </DeviceDefinition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/DeviceDefinition/coating-pan"/>
+    <resource>
+      <DeviceDefinition>
+        <id value="coating-pan"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DeviceDefinition-drug-pq"/>
+        </meta>
+        <deviceName>
+          <name value="Coating pan"/>
+          <type value="user-friendly-name"/>
+        </deviceName>
+        <classification>
+          <type>
+            <text value="Coating pan"/>
+          </type>
+        </classification>
+      </DeviceDefinition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/ObservationDefinition/lod-ipc"/>
+    <resource>
+      <ObservationDefinition>
+        <id value="lod-ipc"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"/>
+        </meta>
+        <url value="http://example.org/fhir/ObservationDefinition/lod-ipc"/>
+        <title value="Loss on drying (in-process control, Step 4)"/>
+        <status value="active"/>
+        <code>
+          <text value="Loss on drying"/>
+        </code>
+        <qualifiedValue>
+          <range>
+            <low>
+              <value value="1"/>
+              <unit value="%"/>
+              <system value="http://unitsofmeasure.org"/>
+              <code value="%"/>
+            </low>
+            <high>
+              <value value="2"/>
+              <unit value="%"/>
+              <system value="http://unitsofmeasure.org"/>
+              <code value="%"/>
+            </high>
+          </range>
+        </qualifiedValue>
+      </ObservationDefinition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/ObservationDefinition/description-rtrt"/>
+    <resource>
+      <ObservationDefinition>
+        <id value="description-rtrt"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"/>
+        </meta>
+        <url value="http://example.org/fhir/ObservationDefinition/description-rtrt"/>
+        <title value="Description test method with RTRT (Step 11)"/>
+        <status value="active"/>
+        <code>
+          <text value="Description"/>
+        </code>
+        <method>
+          <text value="Real-time release testing (RTRT) on 10 film-coated tablets"/>
+        </method>
+      </ObservationDefinition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/ObservationDefinition/identification-rtrt"/>
+    <resource>
+      <ObservationDefinition>
+        <id value="identification-rtrt"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"/>
+        </meta>
+        <url value="http://example.org/fhir/ObservationDefinition/identification-rtrt"/>
+        <title value="Identification test method with RTRT (Step 11)"/>
+        <status value="active"/>
+        <code>
+          <text value="Identification"/>
+        </code>
+        <method>
+          <text value="Real-time release testing (RTRT) on 10 film-coated tablets"/>
+        </method>
+      </ObservationDefinition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/DocumentReference/sakurabloom-process-flow"/>
+    <resource>
+      <DocumentReference>
+        <id value="sakurabloom-process-flow"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DocumentReference-drug-pq"/>
+        </meta>
+        <identifier>
+          <system value="http://example.org/fhir/identifier/document"/>
+          <value value="SB-FLOW-001"/>
+        </identifier>
+        <status value="current"/>
+        <type>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/diagram-type"/>
+            <code value="ProcessFlowDiagram"/>
+            <display value="Process Flow Diagram"/>
+          </coding>
+        </type>
+        <description value="Process flow diagram generated from the ISO 26060 structured recipe"/>
+        <content>
+          <attachment>
+            <contentType value="image/svg+xml"/>
+            <data value="PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMTgwIiBoZWlnaHQ9IjQ3MCIgdmlld0JveD0iMCAwIDExODAgNDcwIiBmb250LWZhbWlseT0iSGVsdmV0aWNhLCBBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiI+CjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNmZmZmZmYiLz4KPHRleHQgeD0iMjAiIHk9IjI4IiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iIzFEMUQxRiI+U2FrdXJhIEJsb29tIDIwIG1nIGZpbG0tY29hdGVkIHRhYmxldCAtIHByb2Nlc3MgZmxvdyAoSVNPIDI2MDYwIHJlY2lwZSk8L3RleHQ+CjxyZWN0IHg9IjIwIiB5PSI0NSIgd2lkdGg9IjI4MCIgaGVpZ2h0PSIzMCIgcng9IjQiIGZpbGw9IiMxRDFEMUYiLz4KPHRleHQgeD0iMzAiIHk9IjY1IiBmaWxsPSIjZmZmZmZmIiBmb250LXdlaWdodD0iYm9sZCI+U3RhZ2UgMTogR3JhbnVsYXRpb248L3RleHQ+CjxyZWN0IHg9IjIwIiB5PSI4NSIgd2lkdGg9IjI4MCIgaGVpZ2h0PSI0NiIgcng9IjYiIGZpbGw9IiNGNUY1RjciLz4KPHRleHQgeD0iMzAiIHk9IjEwNCIgZmlsbD0iIzFEMUQxRiIgZm9udC13ZWlnaHQ9ImJvbGQiPlN0ZXAgMTogRHJ5QmxlbmRPZkZvdXJTb2xpZHM8L3RleHQ+Cjx0ZXh0IHg9IjMwIiB5PSIxMjEiIGZpbGw9IiM2RTZFNzMiPlVuaXQgb3BlcmF0aW9uOiBQcmVCbGVuZGluZzwvdGV4dD4KPHRleHQgeD0iMTU2LjAiIHk9IjEzNyIgZmlsbD0iIzAwNzFFMyI+JiM5NjYwOzwvdGV4dD4KPHJlY3QgeD0iMjAiIHk9IjEzOSIgd2lkdGg9IjI4MCIgaGVpZ2h0PSI0NiIgcng9IjYiIGZpbGw9IiNGNUY1RjciLz4KPHRleHQgeD0iMzAiIHk9IjE1OCIgZmlsbD0iIzFEMUQxRiIgZm9udC13ZWlnaHQ9ImJvbGQiPlN0ZXAgMjogUHJlcGFyZUdyYW51bGF0aW9uTGlxdWlkPC90ZXh0Pgo8dGV4dCB4PSIzMCIgeT0iMTc1IiBmaWxsPSIjNkU2RTczIj5Vbml0IG9wZXJhdGlvbjogUHJlQmxlbmRpbmc8L3RleHQ+Cjx0ZXh0IHg9IjE1Ni4wIiB5PSIxOTEiIGZpbGw9IiMwMDcxRTMiPiYjOTY2MDs8L3RleHQ+CjxyZWN0IHg9IjIwIiB5PSIxOTMiIHdpZHRoPSIyODAiIGhlaWdodD0iNDYiIHJ4PSI2IiBmaWxsPSIjRjVGNUY3Ii8+Cjx0ZXh0IHg9IjMwIiB5PSIyMTIiIGZpbGw9IiMxRDFEMUYiIGZvbnQtd2VpZ2h0PSJib2xkIj5TdGVwIDM6IEZsdWlkQmVkR3JhbnVsYXRlPC90ZXh0Pgo8dGV4dCB4PSIzMCIgeT0iMjI5IiBmaWxsPSIjNkU2RTczIj5Vbml0IG9wZXJhdGlvbjogR3JhbnVsYXRpb25BbmRCbGVuZGluZzwvdGV4dD4KPHRleHQgeD0iMTU2LjAiIHk9IjI0NSIgZmlsbD0iIzAwNzFFMyI+JiM5NjYwOzwvdGV4dD4KPHJlY3QgeD0iMjAiIHk9IjI0NyIgd2lkdGg9IjI4MCIgaGVpZ2h0PSI0NiIgcng9IjYiIGZpbGw9IiNGNUY1RjciLz4KPHRleHQgeD0iMzAiIHk9IjI2NiIgZmlsbD0iIzFEMUQxRiIgZm9udC13ZWlnaHQ9ImJvbGQiPlN0ZXAgNDogRmx1aWRCZWREcnk8L3RleHQ+Cjx0ZXh0IHg9IjMwIiB5PSIyODMiIGZpbGw9IiM2RTZFNzMiPlVuaXQgb3BlcmF0aW9uOiBHcmFudWxhdGlvbkFuZEJsZW5kaW5nPC90ZXh0Pgo8dGV4dCB4PSIxNTYuMCIgeT0iMjk5IiBmaWxsPSIjMDA3MUUzIj4mIzk2NjA7PC90ZXh0Pgo8cmVjdCB4PSIyMCIgeT0iMzAxIiB3aWR0aD0iMjgwIiBoZWlnaHQ9IjQ2IiByeD0iNiIgZmlsbD0iI0Y1RjVGNyIvPgo8dGV4dCB4PSIzMCIgeT0iMzIwIiBmaWxsPSIjMUQxRDFGIiBmb250LXdlaWdodD0iYm9sZCI+U3RlcCA1OiBTY3JlZU1pbGxHcmFudWxlczwvdGV4dD4KPHRleHQgeD0iMzAiIHk9IjMzNyIgZmlsbD0iIzZFNkU3MyI+VW5pdCBvcGVyYXRpb246IEdyYW51bGF0aW9uQW5kQmxlbmRpbmc8L3RleHQ+Cjx0ZXh0IHg9IjE1Ni4wIiB5PSIzNTMiIGZpbGw9IiMwMDcxRTMiPiYjOTY2MDs8L3RleHQ+CjxyZWN0IHg9IjIwIiB5PSIzNTUiIHdpZHRoPSIyODAiIGhlaWdodD0iNDYiIHJ4PSI2IiBmaWxsPSIjRjVGNUY3Ii8+Cjx0ZXh0IHg9IjMwIiB5PSIzNzQiIGZpbGw9IiMxRDFEMUYiIGZvbnQtd2VpZ2h0PSJib2xkIj5TdGVwIDY6IFNpZXZlQWRkTWdTdGVhcmF0ZTwvdGV4dD4KPHRleHQgeD0iMzAiIHk9IjM5MSIgZmlsbD0iIzZFNkU3MyI+VW5pdCBvcGVyYXRpb246IEdyYW51bGF0aW9uQW5kQmxlbmRpbmc8L3RleHQ+Cjx0ZXh0IHg9IjE1Ni4wIiB5PSI0MDciIGZpbGw9IiMwMDcxRTMiPiYjOTY2MDs8L3RleHQ+CjxyZWN0IHg9IjIwIiB5PSI0MDkiIHdpZHRoPSIyODAiIGhlaWdodD0iNDYiIHJ4PSI2IiBmaWxsPSIjRjVGNUY3Ii8+Cjx0ZXh0IHg9IjMwIiB5PSI0MjgiIGZpbGw9IiMxRDFEMUYiIGZvbnQtd2VpZ2h0PSJib2xkIj5TdGVwIDc6IEZpbmFsQmxlbmQ8L3RleHQ+Cjx0ZXh0IHg9IjMwIiB5PSI0NDUiIGZpbGw9IiM2RTZFNzMiPlVuaXQgb3BlcmF0aW9uOiBHcmFudWxhdGlvbkFuZEJsZW5kaW5nPC90ZXh0Pgo8dGV4dCB4PSIzMDEiIHk9IjY1IiBmaWxsPSIjMDA3MUUzIiBmb250LXNpemU9IjE0Ij4mIzk2NTQ7PC90ZXh0Pgo8cmVjdCB4PSIzMTMiIHk9IjQ1IiB3aWR0aD0iMjgwIiBoZWlnaHQ9IjMwIiByeD0iNCIgZmlsbD0iIzFEMUQxRiIvPgo8dGV4dCB4PSIzMjMiIHk9IjY1IiBmaWxsPSIjZmZmZmZmIiBmb250LXdlaWdodD0iYm9sZCI+U3RhZ2UgMjogQ29tcHJlc3Npb248L3RleHQ+CjxyZWN0IHg9IjMxMyIgeT0iODUiIHdpZHRoPSIyODAiIGhlaWdodD0iNDYiIHJ4PSI2IiBmaWxsPSIjRjVGNUY3Ii8+Cjx0ZXh0IHg9IjMyMyIgeT0iMTA0IiBmaWxsPSIjMUQxRDFGIiBmb250LXdlaWdodD0iYm9sZCI+U3RlcCA4OiBDb21wcmVzc1RhYmxldDwvdGV4dD4KPHRleHQgeD0iMzIzIiB5PSIxMjEiIGZpbGw9IiM2RTZFNzMiPlVuaXQgb3BlcmF0aW9uOiBUYWJsZXRDb21wcmVzc2lvbjwvdGV4dD4KPHRleHQgeD0iNTk0IiB5PSI2NSIgZmlsbD0iIzAwNzFFMyIgZm9udC1zaXplPSIxNCI+JiM5NjU0OzwvdGV4dD4KPHJlY3QgeD0iNjA2IiB5PSI0NSIgd2lkdGg9IjI4MCIgaGVpZ2h0PSIzMCIgcng9IjQiIGZpbGw9IiMxRDFEMUYiLz4KPHRleHQgeD0iNjE2IiB5PSI2NSIgZmlsbD0iI2ZmZmZmZiIgZm9udC13ZWlnaHQ9ImJvbGQiPlN0YWdlIDM6IEZpbmlzaGluZzwvdGV4dD4KPHJlY3QgeD0iNjA2IiB5PSI4NSIgd2lkdGg9IjI4MCIgaGVpZ2h0PSI0NiIgcng9IjYiIGZpbGw9IiNGNUY1RjciLz4KPHRleHQgeD0iNjE2IiB5PSIxMDQiIGZpbGw9IiMxRDFEMUYiIGZvbnQtd2VpZ2h0PSJib2xkIj5TdGVwIDk6IFByZXBhcmVDb2F0aW5nU3VzcGVuc2lvbjwvdGV4dD4KPHRleHQgeD0iNjE2IiB5PSIxMjEiIGZpbGw9IiM2RTZFNzMiPlVuaXQgb3BlcmF0aW9uOiBGaWxtQ29hdGluZzwvdGV4dD4KPHRleHQgeD0iNzQyLjAiIHk9IjEzNyIgZmlsbD0iIzAwNzFFMyI+JiM5NjYwOzwvdGV4dD4KPHJlY3QgeD0iNjA2IiB5PSIxMzkiIHdpZHRoPSIyODAiIGhlaWdodD0iNDYiIHJ4PSI2IiBmaWxsPSIjRjVGNUY3Ii8+Cjx0ZXh0IHg9IjYxNiIgeT0iMTU4IiBmaWxsPSIjMUQxRDFGIiBmb250LXdlaWdodD0iYm9sZCI+U3RlcCAxMDogUGFuQ29hdEFuZERyeTwvdGV4dD4KPHRleHQgeD0iNjE2IiB5PSIxNzUiIGZpbGw9IiM2RTZFNzMiPlVuaXQgb3BlcmF0aW9uOiBGaWxtQ29hdGluZzwvdGV4dD4KPHRleHQgeD0iNzQyLjAiIHk9IjE5MSIgZmlsbD0iIzAwNzFFMyI+JiM5NjYwOzwvdGV4dD4KPHJlY3QgeD0iNjA2IiB5PSIxOTMiIHdpZHRoPSIyODAiIGhlaWdodD0iNDYiIHJ4PSI2IiBmaWxsPSIjRjVGNUY3Ii8+Cjx0ZXh0IHg9IjYxNiIgeT0iMjEyIiBmaWxsPSIjMUQxRDFGIiBmb250LXdlaWdodD0iYm9sZCI+U3RlcCAxMTogUlRSVEluc3BlY3Rpb248L3RleHQ+Cjx0ZXh0IHg9IjYxNiIgeT0iMjI5IiBmaWxsPSIjNkU2RTczIj5Vbml0IG9wZXJhdGlvbjogSW5zcGVjdGlvbjwvdGV4dD4KPHRleHQgeD0iODg3IiB5PSI2NSIgZmlsbD0iIzAwNzFFMyIgZm9udC1zaXplPSIxNCI+JiM5NjU0OzwvdGV4dD4KPHJlY3QgeD0iODk5IiB5PSI0NSIgd2lkdGg9IjI4MCIgaGVpZ2h0PSIzMCIgcng9IjQiIGZpbGw9IiMxRDFEMUYiLz4KPHRleHQgeD0iOTA5IiB5PSI2NSIgZmlsbD0iI2ZmZmZmZiIgZm9udC13ZWlnaHQ9ImJvbGQiPlN0YWdlIDQ6IFBhY2thZ2luZzwvdGV4dD4KPHJlY3QgeD0iODk5IiB5PSI4NSIgd2lkdGg9IjI4MCIgaGVpZ2h0PSI0NiIgcng9IjYiIGZpbGw9IiNGNUY1RjciLz4KPHRleHQgeD0iOTA5IiB5PSIxMDQiIGZpbGw9IiMxRDFEMUYiIGZvbnQtd2VpZ2h0PSJib2xkIj5TdGVwIDEyOiBQcmltYXJ5UGFja2FnaW5nPC90ZXh0Pgo8dGV4dCB4PSI5MDkiIHk9IjEyMSIgZmlsbD0iIzZFNkU3MyI+VW5pdCBvcGVyYXRpb246IFBhY2thZ2luZzwvdGV4dD4KPHRleHQgeD0iMTAzNS4wIiB5PSIxMzciIGZpbGw9IiMwMDcxRTMiPiYjOTY2MDs8L3RleHQ+CjxyZWN0IHg9Ijg5OSIgeT0iMTM5IiB3aWR0aD0iMjgwIiBoZWlnaHQ9IjQ2IiByeD0iNiIgZmlsbD0iI0Y1RjVGNyIvPgo8dGV4dCB4PSI5MDkiIHk9IjE1OCIgZmlsbD0iIzFEMUQxRiIgZm9udC13ZWlnaHQ9ImJvbGQiPlN0ZXAgMTM6IFNlY29uZGFyeVBhY2thZ2luZzwvdGV4dD4KPHRleHQgeD0iOTA5IiB5PSIxNzUiIGZpbGw9IiM2RTZFNzMiPlVuaXQgb3BlcmF0aW9uOiBQYWNrYWdpbmc8L3RleHQ+Cjwvc3ZnPg=="/>
+            <title value="Sakura Bloom process flow"/>
+          </attachment>
+        </content>
+      </DocumentReference>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/Organization/sakura-bloom-pharma-dp"/>
+    <resource>
+      <Organization>
+        <id value="sakura-bloom-pharma-dp"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"/>
+        </meta>
+        <identifier>
+          <system value="http://example.org/fhir/identifier/organization"/>
+          <value value="SYN-ORG-0001"/>
+        </identifier>
+        <active value="true"/>
+        <type>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type"/>
+            <code value="drug-product-manufacture"/>
+            <display value="Drug Product Manufacture"/>
+          </coding>
+        </type>
+        <name value="Sakura Bloom Pharma (synthetic drug product site)"/>
+        <contact>
+          <address>
+            <use value="work"/>
+            <line value="1 Example Street"/>
+            <city value="Example City"/>
+            <country value="JP"/>
+          </address>
+        </contact>
+      </Organization>
+    </resource>
+  </entry>
+</Bundle>
+
+</script>
+
+<script>
+(function(){
+const xmlText = document.getElementById('bundle-xml').textContent.trim();
+const doc = new DOMParser().parseFromString(xmlText, 'application/xml');
+const NS = 'http://hl7.org/fhir';
+const kids = (el, n) => el ? [...el.children].filter(c => c.localName === n) : [];
+const kid = (el, n) => kids(el, n)[0];
+const val = (el, path) => { let c = el; for (const p of path.split('/')) { c = kid(c, p); if (!c) return null; } return c.getAttribute('value'); };
+const esc = s => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+const $ = id => document.getElementById(id);
+const nsr = p => p === 'f' ? NS : null;
+const xp = (expr, ctx) => { const r = doc.evaluate(expr, ctx || doc, nsr, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null); const out = []; for (let i = 0; i < r.snapshotLength; i++) out.push(r.snapshotItem(i)); return out; };
+
+// ---------- index resources ----------
+const res = {};
+for (const e of kids(doc.documentElement, 'entry')) {
+  const r = kid(e, 'resource').firstElementChild;
+  res[r.localName + '/' + val(r, 'id')] = r;
+}
+const ofType = t => Object.entries(res).filter(([k]) => k.startsWith(t + '/')).map(([, v]) => v);
+const plan = ofType('PlanDefinition')[0];
+const nameOf = ref => { const r = res[ref]; if (!r) return ref; return val(r, 'name/name') || val(r, 'deviceName/name') || val(r, 'title') || ref; };
+
+// goals
+const goals = {};
+for (const g of kids(plan, 'goal')) {
+  const t = kid(g, 'target'), rng = kid(t, 'detailRange');
+  goals[g.getAttribute('id')] = {
+    id: g.getAttribute('id'),
+    kind: val(g, 'category/coding/code'),
+    desc: val(g, 'description/text'),
+    measure: val(t, 'measure/text'),
+    lo: +val(rng, 'low/value'), hi: +val(rng, 'high/value'),
+    unit: val(rng, 'low/unit'), ucum: val(rng, 'low/code'),
+    el: g
+  };
+}
+
+// actions
+const stages = [], steps = {};
+for (const s of kids(plan, 'action')) {
+  const st = { id: s.getAttribute('id'), prefix: val(s, 'prefix'), title: val(s, 'title'), link: val(s, 'linkId'), uos: [] };
+  for (const u of kids(s, 'action')) {
+    const uo = { id: u.getAttribute('id'), prefix: val(u, 'prefix'), title: val(u, 'title'), link: val(u, 'linkId'), steps: [], params: [], mats: [] };
+    for (const ex of kids(u, 'extension').filter(x => x.getAttribute('url').endsWith('process-parameters-pq'))) {
+      const p = kids(ex, 'extension');
+      uo.params.push({ name: val(p.find(x => x.getAttribute('url') === 'parameter'), 'valueCodeableConcept/text'), text: val(p.find(x => x.getAttribute('url') === 'valueText'), 'valueString') });
+    }
+    for (const p of kids(u, 'participant')) {
+      const tr = kid(p, 'typeReference'), ex = kid(tr, 'extension');
+      uo.mats.push({ ref: val(ex, 'valueReference/reference'), name: val(tr, 'display'), role: val(p, 'role/coding/code') });
+    }
+    for (const a of kids(u, 'action')) {
+      const step = {
+        id: a.getAttribute('id'), n: +val(a, 'prefix'), title: val(a, 'title'), desc: val(a, 'description'), link: val(a, 'linkId'),
+        codes: kids(kid(a, 'code'), 'coding').map(c => ({ sys: val(c, 'system'), code: val(c, 'code'), display: val(c, 'display') })),
+        goals: kids(a, 'goalId').map(g => goals[g.getAttribute('value')]),
+        deps: kids(a, 'relatedAction').map(r => val(r, 'targetId')),
+        devices: kids(a, 'participant').map(p => ({ ref: val(p, 'typeReference/reference'), name: val(p, 'typeReference/display'), role: val(p, 'role/coding/display') })),
+        docs: kids(a, 'documentation').map(d => ({ display: val(d, 'display'), url: val(d, 'resource') })),
+        stage: st, uo, el: a
+      };
+      uo.steps.push(step); steps[step.id] = step;
+    }
+    st.uos.push(uo);
+  }
+  stages.push(st);
+}
+const stepList = Object.values(steps).sort((a, b) => a.n - b.n);
+const fmtR = g => `${g.lo}–${g.hi} ${g.unit}`;
+
+// ---------- xml pretty helpers ----------
+function snippet(el) {
+  let s = new XMLSerializer().serializeToString(el).replace(/ xmlns="http:\/\/hl7\.org\/fhir"/g, '');
+  const lines = s.split('\n'); const last = lines[lines.length - 1]; const ind = last.match(/^\s*/)[0].length;
+  return lines.map((l, i) => i === 0 ? l : l.slice(Math.min(ind, l.match(/^\s*/)[0].length))).join('\n');
+}
+function hilite(x) {
+  return esc(x)
+    .replace(/(&lt;!--[\s\S]*?--&gt;)/g, '<span class="cm">$1</span>')
+    .replace(/(&lt;\/?)([A-Za-z][\w.-]*)/g, '$1<span class="tg">$2</span>')
+    .replace(/ ([a-zA-Z]+)=(&quot;)(.*?)(&quot;)/g, ' <span class="at">$1</span>=<span class="av">$2$3$4</span>');
+}
+
+// ---------- hero ----------
+const s3 = steps['step-03'];
+(function hero() {
+  const marks = [
+    { re: /fluid bed granulator/, key: 'dev' },
+    { re: /Step 1/, key: 'dep1' }, { re: /Step 2/, key: 'dep2' },
+    { re: /inlet air volume of 40-45 m³\/min/, key: 'g-s3-inlet-air-volume' },
+    { re: /inlet air temperature of 75-85°C/, key: 'g-s3-inlet-air-temperature' },
+    { re: /spray rate of 900 – 1100 g\/min/, key: 'g-s3-spray-rate' }
+  ];
+  let html = esc(s3.desc);
+  for (const m of marks) html = html.replace(m.re, x => `<span class="hl" data-k="${m.key}">${x}</span>`);
+  $('proseStep3').innerHTML = html;
+  const chips = [];
+  for (const g of s3.goals) chips.push({ k: g.id, kind: 'PPS', t: g.measure, d: `low ${g.lo} · high ${g.hi} · UCUM ${g.ucum} · set point: not stated` });
+  for (const d of s3.devices) chips.push({ k: 'dev', kind: 'Equip', t: d.name, d: d.ref });
+  chips.push({ k: 'dep1', kind: 'After', t: 'Step 1 · Dry blend of four solids', d: 'relatedAction → #step-01' });
+  chips.push({ k: 'dep2', kind: 'After', t: 'Step 2 · Prepare granulation liquid', d: 'relatedAction → #step-02' });
+  $('chips3').innerHTML = chips.map(c => `<div class="chip" data-k="${c.k}"><span class="k">${c.kind}</span><span class="t">${esc(c.t)}</span><span class="d">${esc(c.d)}</span></div>`).join('');
+  const all = () => document.querySelectorAll('.hero [data-k]');
+  const set = k => all().forEach(e => e.classList.toggle('on', e.dataset.k === k));
+  all().forEach(e => { e.addEventListener('mouseenter', () => set(e.dataset.k)); e.addEventListener('mouseleave', () => set(null)); });
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const order = ['g-s3-inlet-air-volume', 'g-s3-inlet-air-temperature', 'g-s3-spray-rate', 'dev', 'dep1', 'dep2'];
+    order.forEach((k, i) => setTimeout(() => set(k), 600 + i * 700));
+    setTimeout(() => set(null), 600 + order.length * 700 + 400);
+  }
+  const lineCount = xmlText.split('\n').length;
+  const stats = [
+    [stages.length, 'process stages'], [stages.reduce((n, s) => n + s.uos.length, 0), 'unit operations'],
+    [stepList.length, 'process steps'], [Object.keys(goals).length, 'parameter and attribute specs'],
+    [Object.keys(res).length, 'FHIR resources'], [0, 'validation errors']
+  ];
+  $('stats').innerHTML = stats.map(([n, l]) => `<div class="stat"><b class="num">${n}</b><span>${l}</span></div>`).join('');
+})();
+
+// ---------- explorer ----------
+function renderLanes(sel) {
+  $('lanes').innerHTML = stages.map(st => `
+    <div class="lane">
+      <div class="lane-h"><h3>${st.prefix} · ${esc(st.title)}</h3><span class="mono">${esc(st.link)}</span></div>
+      ${st.uos.map(uo => `<div class="uo">
+        <div class="uo-h">${esc(uo.title)} <span class="mono">Unit Operation ${uo.prefix}</span></div>
+        <div class="steps">${uo.steps.map(s => `<button type="button" class="step" data-id="${s.id}" aria-pressed="${s.id === sel}"><span class="n">${s.n}</span>${esc(s.title)}${s.goals.length ? '<span class="pp" title="has parameter specifications"></span>' : ''}</button>`).join('')}</div>
+      </div>`).join('')}
+    </div>`).join('');
+  document.querySelectorAll('.step').forEach(b => b.addEventListener('click', () => select(b.dataset.id)));
+}
+function rangeBar(g) {
+  const span = g.hi - g.lo, min = g.lo - span * 0.6, max = g.hi + span * 0.6;
+  const pos = v => ((v - min) / (max - min) * 100).toFixed(1);
+  const isQA = g.kind === 'QualityAttributeSpecification';
+  return `<div class="range">
+    <div class="lbl"><b>${esc(g.measure)}</b><span class="num mono">${fmtR(g)}</span></div>
+    <div class="track"><div class="band" style="left:${pos(g.lo)}%;width:${(pos(g.hi) - pos(g.lo)).toFixed(1)}%;${isQA ? 'background:var(--teal)' : ''}"></div>
+      <span class="tick" style="left:calc(${pos(g.lo)}% - 26px)">${g.lo}</span><span class="tick" style="left:calc(${pos(g.hi)}% + 6px)">${g.hi}</span></div>
+    <div class="sp">${isQA ? 'Quality Attribute Specification (in-process end point)' : 'Process Parameter Specification · set point not stated'}${g.ucum ? '' : ' · unit has no UCUM code'}</div>
+  </div>`;
+}
+function select(id) {
+  const s = steps[id];
+  renderLanes(id);
+  const pqi = s.codes.find(c => c.sys.includes('manufacturing-step'));
+  const dependents = stepList.filter(x => x.deps.includes(id)).map(x => x.n);
+  $('detail').innerHTML = `
+    <div class="crumbs"><span>Recipe</span><span class="sep">›</span><span>Manufacturing Process</span><span class="sep">›</span><span>Stage ${s.stage.prefix} ${esc(s.stage.title)}</span><span class="sep">›</span><span>UO ${s.uo.prefix} ${esc(s.uo.title)}</span><span class="sep">›</span><span>Step ${s.n}</span></div>
+    <div class="eyebrow">ISO 26060 Process Step · ${esc(s.link)}</div>
+    <h3>${s.n}. ${esc(s.title)}</h3>
+    <p class="desc">${esc(s.desc)}</p>
+    ${s.goals.map(rangeBar).join('')}
+    <dl class="kv">
+      <dt>Equipment</dt><dd>${s.devices.length ? s.devices.map(d => `<span class="tag dev">${esc(d.name)}</span>`).join('') : '<span class="small">None stated in source</span>'}</dd>
+      <dt>Materials (unit op)</dt><dd>${s.uo.mats.map(m => `<span class="tag mat" title="${esc(m.role)}">${esc(m.name.replace(/ \(.*\)/, ''))}</span>`).join('') || '<span class="small">None</span>'}</dd>
+      <dt>Follows</dt><dd>${s.deps.length ? s.deps.map(d => `<span class="tag">Step ${steps[d].n}</span>`).join('') : '<span class="small">Start of a branch</span>'}</dd>
+      <dt>Feeds</dt><dd>${dependents.length ? dependents.map(n => `<span class="tag">Step ${n}</span>`).join('') : '<span class="small">End of process</span>'}</dd>
+      <dt>Controls</dt><dd>${s.docs.length ? s.docs.map(d => `<span class="tag dev">${esc(d.display)}</span>`).join('') : '<span class="small">None linked</span>'}</dd>
+      <dt>PQI step code</dt><dd>${pqi ? `<span class="tag">${esc(pqi.display)}</span>` : '<span class="tag warn">No matching code in PQI terminology</span>'}</dd>
+    </dl>
+    <pre class="code" aria-label="XML for this step">${hilite(snippet(s.el))}</pre>`;
+}
+renderLanes('step-03'); select('step-03');
+(function flow() {
+  const dr = ofType('DocumentReference')[0];
+  const data = val(dr, 'content/attachment/data'), ct = val(dr, 'content/attachment/contentType');
+  const img = new Image(); img.alt = 'Process flow diagram of the four stages and thirteen steps'; img.src = `data:${ct};base64,${data}`;
+  $('flowfig').prepend(img);
+})();
+
+// ---------- queries ----------
+const Q = [
+  { q: 'Which steps run above 70 °C?', run() {
+      const x = "//f:PlanDefinition/f:goal[f:target/f:detailRange/f:high/f:code/@value='Cel'][number(f:target/f:detailRange/f:high/f:value/@value) > 70]";
+      const gs = xp(x).map(g => goals[g.getAttribute('id')]);
+      const rows = gs.map(g => { const s = stepList.find(s => s.goals.includes(g)); return [`Step ${s.n} · ${s.title}`, g.measure, fmtR(g)]; });
+      return { x, answer: rows.length === 1 ? `One step: ${rows[0][0]}.` : `${rows.length} steps.`, head: ['Step', 'Parameter', 'Range'], rows };
+  }},
+  { q: 'Which process parameters have no set point?', run() {
+      const x = "//f:goal[f:category/f:coding/f:code/@value='ProcessParameterSpecification'][not(f:target/f:detailQuantity)]";
+      const gs = xp(x).map(g => goals[g.getAttribute('id')]);
+      const rows = gs.map(g => { const s = stepList.find(s => s.goals.includes(g)); return [`Step ${s.n}`, g.measure, fmtR(g), g.ucum || 'no UCUM code']; });
+      return { x, answer: `All ${rows.length}. ISO 26060 expects a set point for each one.`, head: ['Step', 'Parameter', 'Range', 'Unit code'], rows };
+  }},
+  { q: 'What equipment touches the product?', run() {
+      const x = "//f:DeviceDefinition";
+      const rows = xp(x).map(d => { const id = 'DeviceDefinition/' + val(d, 'id'); const used = stepList.filter(s => s.devices.some(v => v.ref === id)).map(s => s.n); return [val(d, 'deviceName/name'), used.map(n => 'Step ' + n).join(', ')]; });
+      return { x, answer: `${rows.length} pieces of equipment across ${stepList.filter(s => s.devices.length).length} steps.`, head: ['Equipment', 'Used in'], rows };
+  }},
+  { q: 'What goes into the pre-blend?', run() {
+      const x = "//f:action[f:linkId/@value='_UnitOperationDescription_PreBlending']/f:participant[f:role/f:coding/f:code/@value='StartingMaterial']";
+      const ing = {}; ofType('Ingredient').forEach(i => ing[val(i, 'substance/code/reference/reference')] = i);
+      const rows = xp(x).map(p => { const ref = val(kid(kid(p, 'typeReference'), 'extension'), 'valueReference/reference'); const i = ing[ref]; return [val(p, 'typeReference/display'), i ? val(i, 'role/coding/display') : 'Process material', i ? (val(i, 'function/coding/display') || val(i, 'function/text')) : '']; });
+      return { x, answer: `${rows.length} starting materials, each linked to a SubstanceDefinition.`, head: ['Material', 'Role', 'Function'], rows };
+  }},
+  { q: 'What is tested, where, and against what?', run() {
+      const x = "//f:action[f:documentation]";
+      const rows = []; xp(x).forEach(a => { const s = steps[a.getAttribute('id')]; s.docs.forEach(d => { const od = res['ObservationDefinition/' + d.url.split('/').pop()]; const r = kid(kid(od, 'qualifiedValue'), 'range'); rows.push([`Step ${s.n}`, val(od, 'title'), val(od, 'method/text') || 'In-process control', r ? `${val(r, 'low/value')}–${val(r, 'high/value')} ${val(r, 'low/unit')}` : 'Criteria not stated']); }); });
+      return { x, answer: `${rows.length} controls: one in-process check and two RTRT release tests.`, head: ['Step', 'Test', 'Method', 'Acceptance'], rows };
+  }},
+  { q: 'Which steps have no PQI step code?', run() {
+      const x = "//f:PlanDefinition//f:action[f:code/f:coding/f:code/@value='ProcessStep'][not(f:code/f:coding/f:system/@value='http://terminology.hl7.org/CodeSystem/manufacturing-step')]";
+      const rows = xp(x).map(a => { const s = steps[a.getAttribute('id')]; return [`Step ${s.n}`, s.title, s.uo.title]; });
+      return { x, answer: `${rows.length} of ${stepList.length} steps. PQI's example terminology has no codes for granulation, compression, coating or packaging.`, head: ['Step', 'Title', 'Unit operation'], rows };
+  }}
+];
+$('qlist').innerHTML = Q.map((q, i) => `<button type="button" class="q" data-i="${i}" aria-pressed="false">${esc(q.q)}</button>`).join('');
+function ask(i) {
+  document.querySelectorAll('.q').forEach(b => b.setAttribute('aria-pressed', b.dataset.i == i));
+  const t0 = performance.now(); const r = Q[i].run(); const ms = (performance.now() - t0).toFixed(1);
+  $('qout').innerHTML = `<div class="answer">${esc(r.answer)}</div>
+    <div class="xp">${esc(r.x)}</div>
+    <div class="meta"><span>${r.rows.length} result${r.rows.length === 1 ? '' : 's'}</span><span>${ms} ms in this browser</span></div>
+    <div class="tablewrap"><table><thead><tr>${r.head.map(h => `<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${r.rows.map(row => `<tr>${row.map(c => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+}
+document.querySelectorAll('.q').forEach(b => b.addEventListener('click', () => ask(+b.dataset.i)));
+ask(0);
+
+// ---------- change impact ----------
+const gT = goals['g-s3-inlet-air-temperature'];
+const totalLines = xmlText.split('\n').length;
+function downstream(id) {
+  const seen = new Set(), q = [id];
+  while (q.length) { const c = q.shift(); stepList.filter(s => s.deps.includes(c)).forEach(s => { if (!seen.has(s.id)) { seen.add(s.id); q.push(s.id); } }); }
+  return stepList.filter(s => seen.has(s.id));
+}
+const down = downstream('step-03');
+function impact() {
+  const lo = +$('lo').value, hi = +$('hi').value;
+  $('loOut').textContent = lo; $('hiOut').textContent = hi;
+  const ch = (lo !== gT.lo) + (hi !== gT.hi);
+  $('chgCount').textContent = ch; $('lineCount').textContent = totalLines.toLocaleString(); $('downCount').textContent = down.length;
+  const L = (cls, t) => `<div class="${cls}">${esc(t)}</div>`;
+  let d = L('ctx', '<goal id="g-s3-inlet-air-temperature">') + L('ctx', '  …<detailRange>') + L('ctx', '    <low>');
+  d += lo !== gT.lo ? L('del', `-     <value value="${gT.lo}"/>`) + L('add', `+     <value value="${lo}"/>`) : L('ctx', `      <value value="${lo}"/>`);
+  d += L('ctx', '    </low>') + L('ctx', '    <high>');
+  d += hi !== gT.hi ? L('del', `-     <value value="${gT.hi}"/>`) + L('add', `+     <value value="${hi}"/>`) : L('ctx', `      <value value="${hi}"/>`);
+  d += L('ctx', '    </high>');
+  $('diff').innerHTML = d;
+  $('impactNote').textContent = ch === 0
+    ? 'Move a slider to propose a change.'
+    : `Proposed: inlet air temperature ${lo}–${hi} °C (approved ${gT.lo}–${gT.hi} °C). A reviewer sees the one Process Parameter Specification that changed, the step it governs, the loss-on-drying check in Step 4 that verifies the outcome, and the ${down.length} steps whose input comes from these granules.`;
+}
+$('chain').innerHTML = `<span class="s src">Step 3 · ${esc(s3.title)}</span>` + down.map(s => `<span class="small">→</span><span class="s${s.docs.some(d => d.url.includes('lod')) ? ' ipc' : ''}">Step ${s.n} · ${esc(s.title)}${s.docs.some(d => d.url.includes('lod')) ? ' · LOD 1–2 %' : ''}</span>`).join('');
+['lo', 'hi'].forEach(i => $(i).addEventListener('input', impact));
+impact();
+
+// ---------- composition ----------
+(function comp() {
+  const palette = ['#0071E3', '#5E5CE6', '#30B0C7', '#FF9F0A', '#34C759', '#FF375F'];
+  const items = ofType('Ingredient').map(i => ({ name: val(i, 'substance/code/reference/display'), mg: +val(i, 'substance/strength/presentationRatio/numerator/value'), role: val(i, 'role/coding/display'), func: val(i, 'function/coding/display') || val(i, 'function/text') })).filter(i => i.mg);
+  const total = items.reduce((a, b) => a + b.mg, 0);
+  items.sort((a, b) => b.mg - a.mg);
+  $('stack').innerHTML = items.map((it, k) => `<div style="flex:${it.mg};background:${palette[k % palette.length]}" title="${esc(it.name)}: ${it.mg} mg">${it.mg / total > .08 ? `${it.mg} mg` : ''}</div>`).join('');
+  $('complegend').innerHTML = items.map((it, k) => `<div><i style="background:${palette[k % palette.length]}"></i><span><b class="num">${it.mg} mg</b> ${esc(it.name.replace(/ \(.*\)/, ''))} <span class="small">· ${esc(it.func)} · ${(it.mg / total * 100).toFixed(1)}%</span></span></div>`).join('');
+  $('compLede').textContent = `The process text gives kilograms per batch. Stored as Ingredient resources with a per-tablet ratio, they add up to a ${total} mg tablet core, plus a film coat whose amount the source does not state.`;
+})();
+
+// ---------- mapping ----------
+(function map() {
+  const rows = [
+    ['Recipe + Manufacturing Process', 'PlanDefinition (PlanDefinition-drug-pq)', ofType('PlanDefinition').length],
+    ['Process Stage', 'PlanDefinition.action', stages.length],
+    ['Unit Operation', 'action.action + process-parameters-pq', stages.reduce((n, s) => n + s.uos.length, 0)],
+    ['Process Step', 'action.action.action, linkId = ISO individual', stepList.length],
+    ['Process Parameter / Quality Attribute Specification', 'goal.target.detailRange ← action.goalId', Object.keys(goals).length],
+    ['Equipment', 'DeviceDefinition via action.participant', ofType('DeviceDefinition').length],
+    ['Material and intermediates', 'SubstanceDefinition + Ingredient', ofType('SubstanceDefinition').length],
+    ['Step-to-step hand-off', 'action.relatedAction', stepList.reduce((n, s) => n + s.deps.length, 0)],
+    ['Monitoring / measurement', 'ObservationDefinition via action.documentation', ofType('ObservationDefinition').length],
+  ];
+  $('mapgrid').innerHTML = `<div class="maprow h"><div>ISO 26060 class</div><div>FHIR PQI element</div><div style="text-align:right">In bundle</div></div>` +
+    rows.map(r => `<div class="maprow"><div class="c1">${esc(r[0])}</div><div class="c2">${esc(r[1])}</div><div class="c3 num">${r[2]}</div></div>`).join('');
+})();
+
+// ---------- gaps ----------
+(function gaps() {
+  const noPqi = stepList.filter(s => !s.codes.some(c => c.sys.includes('manufacturing-step'))).length;
+  const G = [
+    ['data', 'Set points are missing', `All ${Object.values(goals).filter(g => g.kind === 'ProcessParameterSpecification').length} process parameters give only a range. ISO 26060 clause 8.3.2 requires a set point for each.`],
+    ['data', 'Press speed has no time base', 'Step 8 says “20–30 revolutions”. The bundle keeps the text and leaves the UCUM code empty until the unit is confirmed.'],
+    ['data', 'Coating weight gain is unquantified', 'Step 10 asks for the “desired film-coat weight gain” without a value, so the film coat cannot be added to the unit formula.'],
+    ['iso', 'Assign identifiers to the model', 'Classes, individuals and parameter kinds use example.org placeholders. Official URIs would let systems resolve them.'],
+    ['iso', 'Fill the Control and Storage parts of Annex A', 'The Sakura Bloom annex covers the Manufacture domain only. This bundle is a ready source for A.3.'],
+    ['hl7', 'Let PQI extensions reach the step level', 'process-parameters-pq and manufacturing-participant-pq stop at action.action, one level above the ISO 26060 Process Step. Ranges here sit in core goals instead.'],
+    ['hl7', 'Allow a range in process parameters', 'The PQI value slot is a single Quantity, so the lower/set point/upper triple cannot travel there without loss.'],
+    ['hl7', 'Grow the PQI terminology', `${noPqi} of ${stepList.length} steps have no PQI step code, and only 5 equipment classes exist. ISO 26060 unit operations are a natural seed.`],
+  ];
+  const who = { data: 'Source data', iso: 'ISO 26060 draft', hl7: 'HL7 PQI IG' };
+  $('gapgrid').innerHTML = G.map(([w, h, p]) => `<div class="gap"><span class="who ${w}">${who[w]}</span><h3>${esc(h)}</h3><p>${esc(p)}</p></div>`).join('');
+})();
+
+// ---------- xml view ----------
+$('xmlview').innerHTML = hilite(xmlText.replace(/(<data value=")([A-Za-z0-9+/=]{80})[A-Za-z0-9+/=]+"/, '$1$2…(base64 SVG, truncated for display)"'));
+$('xmlMeta').textContent = `${totalLines.toLocaleString()} lines · ${(new Blob([xmlText]).size / 1024).toFixed(0)} KB · Bundle type collection · profile Bundle-product-manufacturing-pq`;
+$('copyXml').addEventListener('click', async () => {
+  try { await navigator.clipboard.writeText(xmlText); $('copyXml').textContent = 'Copied'; }
+  catch (e) { $('copyXml').textContent = 'Copy blocked. Select the text below instead'; }
+  setTimeout(() => $('copyXml').textContent = 'Copy XML', 2500);
+});
+})();
+</script>
+</body>
+</html>

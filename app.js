@@ -1,5 +1,5 @@
-// FHIR-LS Catalogue — app.js
-// Minor interactivity for the homepage and catalogue
+// FHIR for Global Regulatory Affairs — app.js
+// Minor interactivity for the homepage and standards pages
 
 document.addEventListener('DOMContentLoaded', function () {
 
