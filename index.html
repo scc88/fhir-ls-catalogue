@@ -175,7 +175,7 @@
 
     /* ===== HERO — LIGHT THEME ===== */
     .hero {
-      padding: 80px 0 72px;
+      padding: 72px 0 56px;
       background: var(--white);
       border-bottom: 1px solid var(--border-light);
       position: relative; overflow: hidden;
@@ -217,7 +217,7 @@
       font-size: 17px; color: var(--text-secondary);
       max-width: 580px; margin: 0 auto 36px; line-height: 1.7;
     }
-    .hero-actions { display: flex; gap: 16px; justify-content: center; margin-bottom: 56px; }
+    .hero-actions { display: flex; gap: 16px; justify-content: center; margin-bottom: 0; }
 
     .hero-stats {
       display: flex; align-items: center; justify-content: center; gap: 0;
@@ -508,7 +508,7 @@
 
     /* ===== ISO 20022 ANALOGY SECTION ===== */
     .iso-section {
-      padding: 96px 0;
+      padding: 64px 0 96px;
       background: var(--white);
     }
     .iso-content { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
@@ -629,14 +629,14 @@
             </svg>
           </div>
           <div class="logo-text">
-            <span class="logo-main">FHIR-LS</span>
+            <span class="logo-main">FHIR for Global Regulatory Affairs</span>
             <span class="logo-sub">Life Sciences Catalogue</span>
           </div>
         </a>
         <ul class="nav-menu">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li class="has-dropdown">
-            <a href="#" class="nav-link">Standards <span class="chevron">▾</span></a>
+            <a href="#" class="nav-link">FHIR Standards <span class="chevron">▾</span></a>
             <ul class="dropdown">
               <li><a href="standard-epi.html">ePI — Labelling</a></li>
               <li><a href="standard-idmp.html">IDMP — Product Identity</a></li>
@@ -651,11 +651,13 @@
           <li class="has-dropdown">
             <a href="#" class="nav-link">Showcases <span class="chevron">▾</span></a>
             <ul class="dropdown">
-              <li><a href="pqi-use-cases.html">PQI — Use cases</a></li>
-              <li><a href="showcases/pqi-structured-cmc-review.html">PQI — Structured CMC review (demo)</a></li>
+              <li><a href="showcases-labeling.html">Labeling</a></li>
+              <li><a href="showcases-cmc.html">CMC</a></li>
+              <li><a href="showcases-safety.html">Safety</a></li>
+              <li><a href="showcases-clinical.html">Clinical</a></li>
+              <li><a href="showcases-administrative.html">Administrative</a></li>
             </ul>
           </li>
-          <li><a href="#" class="nav-link">Data Dictionary</a></li>
           <li><a href="adoption.html" class="nav-link">Adoption</a></li>
         </ul>
         <div class="nav-actions">
@@ -685,15 +687,6 @@
             Browse Catalogue
           </a>
           <a href="#iso" class="btn btn-outline btn-lg">Why FHIR-LS? →</a>
-        </div>
-        <div class="hero-stats">
-          <div class="stat"><span class="stat-num">6</span><span class="stat-label">Standards</span></div>
-          <div class="stat-divider"></div>
-          <div class="stat"><span class="stat-num">140+</span><span class="stat-label">FHIR Profiles</span></div>
-          <div class="stat-divider"></div>
-          <div class="stat"><span class="stat-num">40+</span><span class="stat-label">Nations</span></div>
-          <div class="stat-divider"></div>
-          <div class="stat"><span class="stat-num">12</span><span class="stat-label">Regulators</span></div>
         </div>
       </div>
     </section>
@@ -951,45 +944,6 @@
       </div>
     </section>
 
-    <!-- ================================ -->
-    <!-- ECOSYSTEM                        -->
-    <!-- ================================ -->
-    <section class="ecosystem-section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Who Uses FHIR-LS</span>
-          <h2>A Growing Global Ecosystem</h2>
-        </div>
-        <div class="ecosystem-map" style="text-align: center; padding: 40px 0;">
-          <a href="adoption.html" style="display: block; transition: transform 0.2s; border-radius: var(--radius-lg); overflow: hidden; background: white; border: 1px solid var(--border); box-shadow: var(--shadow-md);">
-            <div style="padding: 24px; background: rgba(0,82,204,0.03); border-bottom: 1px solid var(--border-light);">
-              <h3 style="color: var(--blue-700); font-weight: 700;">View Global Adoption Map & Metrics →</h3>
-            </div>
-            <div style="padding: 40px; background: url('https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg') no-repeat center center; opacity: 0.9; background-size: cover; height: 320px; position: relative;">
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================================ -->
-    <!-- CTA BANNER                       -->
-    <!-- ================================ -->
-    <section class="cta-banner">
-      <div class="container">
-        <div class="cta-card">
-          <div class="cta-text">
-            <h2>Ready to implement?</h2>
-            <p>Access implementation guides, profiles, value sets, and tooling to get started with FHIR-LS in your regulatory systems.</p>
-          </div>
-          <div class="cta-buttons">
-            <a href="#standards" class="btn btn-primary btn-lg">Browse Catalogue</a>
-            <a href="#" class="btn btn-subtle btn-lg">Data Dictionary</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
   </main>
 
   <!-- Footer -->
@@ -1020,7 +974,6 @@
           <h5>Resources</h5>
           <ul>
             <li><a href="pqi-use-cases.html">PQI Use Cases</a></li>
-            <li><a href="#">Data Dictionary</a></li>
             <li><a href="#">Full Catalogue</a></li>
             <li><a href="#">FHIR Validator</a></li>
             <li><a href="#">API Reference</a></li>

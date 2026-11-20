@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clinical Showcases | FHIR for Global Regulatory Affairs</title>
+  <meta name="description" content="FHIR showcases for the Clinical domain of regulatory affairs.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue-900: #091E42; --blue-700: #0747A6; --blue-600: #0052CC; --blue-500: #0065FF; --blue-400: #2684FF;
+      --blue-200: #B3D4FF; --blue-100: #DEEBFF; --blue-50: #F0F5FF;
+      --gray-50: #F7F8FA; --gray-100: #EBECF0; --gray-200: #DFE1E6; --gray-500: #7A869A; --gray-900: #172B4D;
+      --white: #ffffff; --text-primary: #172B4D; --text-secondary: #505F79; --text-muted: #7A869A;
+      --border: #DFE1E6; --border-light: #EBECF0;
+      --shadow-md: 0 4px 16px rgba(9,30,66,0.08); --shadow-lg: 0 12px 40px rgba(9,30,66,0.12);
+      --radius-md: 10px; --radius-lg: 16px;
+    }
+    body { font-family: 'Inter', sans-serif; color: var(--text-primary); background: var(--gray-50); line-height: 1.6; }
+    a { color: var(--blue-600); text-decoration: none; }
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+
+    /* Header */
+    .site-header { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+    .header-top { background: var(--gray-50); color: var(--text-secondary); font-size: 12px; padding: 6px 0; border-bottom: 1px solid var(--border-light); }
+    .header-top .container { display: flex; justify-content: space-between; align-items: center; }
+    .header-links { display: flex; gap: 20px; }
+    .header-links a { color: var(--text-secondary); }
+    .nav-inner { display: flex; align-items: center; gap: 32px; height: 64px; }
+    .logo { display: flex; align-items: center; gap: 12px; color: inherit; flex-shrink: 0; }
+    .logo-icon { width: 36px; height: 36px; background: linear-gradient(135deg, #0052CC, #00B8D9); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .logo-text { line-height: 1.2; }
+    .logo-main { display: block; font-size: 18px; font-weight: 800; color: var(--blue-700); letter-spacing: -0.03em; }
+    .logo-sub { display: block; font-size: 10px; color: var(--gray-500); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+    .nav-menu { display: flex; align-items: center; list-style: none; gap: 2px; flex: 1; }
+    .nav-link { display: flex; align-items: center; gap: 4px; padding: 8px 14px; border-radius: 6px; color: var(--text-secondary); font-weight: 500; font-size: 14px; }
+    .nav-link.active, .nav-link:hover { color: var(--blue-600); background: var(--blue-50); }
+    .has-dropdown { position: relative; cursor: pointer; }
+    .dropdown { position: absolute; top: calc(100% + 8px); left: 0; background: white; border-radius: var(--radius-md); box-shadow: var(--shadow-lg); border: 1px solid var(--border); min-width: 240px; list-style: none; padding: 8px; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: all 0.2s; z-index: 999; }
+    .has-dropdown:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+    .dropdown li a { display: block; padding: 10px 14px; border-radius: 6px; color: var(--text-secondary); font-size: 14px; font-weight: 500; }
+    .dropdown li a:hover { background: var(--gray-50); color: var(--blue-600); }
+    .chevron { font-size: 10px; opacity: 0.6; }
+    .nav-actions { margin-left: auto; flex-shrink: 0; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 8px 18px; border-radius: 6px; font-weight: 600; font-size: 14px; transition: all 0.2s; cursor: pointer; }
+    .btn-primary { background: #0052CC; color: white; border: 2px solid #0052CC; }
+    .btn-primary:hover { background: #0065FF; border-color: #0065FF; box-shadow: 0 4px 14px rgba(0,82,204,0.3); transform: translateY(-1px); }
+
+    /* Domain hero */
+    .domain-hero { background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-700) 60%, #00B8D9 140%); color: white; padding: 72px 0 64px; position: relative; overflow: hidden; }
+    .domain-hero::after { content: ""; position: absolute; right: -120px; top: -120px; width: 420px; height: 420px; border-radius: 50%; background: radial-gradient(circle, rgba(255,255,255,0.12), transparent 70%); }
+    .domain-hero .crumbs { font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 18px; }
+    .domain-hero .crumbs a { color: rgba(255,255,255,0.8); }
+    .domain-tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.25); padding: 4px 12px; border-radius: 20px; margin-bottom: 18px; }
+    .domain-hero h1 { font-size: 44px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.12; margin-bottom: 16px; max-width: 760px; }
+    .domain-hero p { font-size: 17px; color: rgba(255,255,255,0.78); max-width: 680px; line-height: 1.7; }
+    .hero-meta { display: flex; gap: 28px; margin-top: 28px; font-size: 13px; color: rgba(255,255,255,0.65); flex-wrap: wrap; }
+    .hero-meta strong { color: white; font-weight: 700; }
+
+    /* Domain tabs */
+    .domain-tabs { background: var(--white); border-bottom: 1px solid var(--border); }
+    .domain-tabs ul { display: flex; list-style: none; gap: 4px; overflow-x: auto; }
+    .domain-tabs a { display: block; padding: 14px 18px; font-size: 14px; font-weight: 600; color: var(--text-secondary); border-bottom: 3px solid transparent; white-space: nowrap; }
+    .domain-tabs a:hover { color: var(--blue-600); }
+    .domain-tabs a.active { color: var(--blue-600); border-bottom-color: var(--blue-600); }
+
+    /* Showcase grid */
+    .section { padding: 56px 0 24px; }
+    .section-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; gap: 16px; }
+    .section-head h2 { font-size: 24px; font-weight: 800; letter-spacing: -0.02em; }
+    .section-head span { font-size: 13px; color: var(--text-muted); }
+    .showcase-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; }
+    .showcase-card { display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; color: inherit; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; }
+    a.showcase-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--blue-400); }
+    .showcase-card .kind { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue-600); background: var(--blue-50); padding: 3px 10px; border-radius: 12px; align-self: flex-start; margin-bottom: 14px; }
+    .showcase-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.01em; }
+    .showcase-card p { font-size: 14px; color: var(--text-secondary); flex: 1; }
+    .showcase-card .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+    .showcase-card .tags span { font-size: 11px; font-family: 'JetBrains Mono', monospace; color: var(--text-secondary); background: var(--gray-50); border: 1px solid var(--border-light); padding: 2px 8px; border-radius: 4px; }
+    .showcase-card .go { margin-top: 18px; font-size: 14px; font-weight: 600; color: var(--blue-600); }
+    .showcase-card.placeholder { border-style: dashed; background: transparent; }
+    .showcase-card.placeholder .kind { color: var(--text-muted); background: var(--gray-100); }
+    .showcase-card.placeholder h3 { color: var(--text-secondary); }
+
+    .related { padding: 32px 0 64px; }
+    .related-list { display: flex; flex-wrap: wrap; gap: 12px; }
+    .related-list a { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 12px 18px; font-size: 14px; font-weight: 600; }
+    .related-list a:hover { border-color: var(--blue-400); }
+
+    /* Footer */
+    .site-footer { background: var(--gray-900); padding: 48px 0 24px; }
+    .footer-bottom { padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); text-align: center; color: rgba(255,255,255,0.35); font-size: 11px; }
+
+    @media (max-width: 900px) { .domain-hero h1 { font-size: 32px; } .nav-menu { display: none; } }
+  </style>
+</head>
+<body>
+
+<!-- HEADER:BEGIN -->
+  <header class="site-header" id="site-header">
+    <div class="header-top">
+      <div class="container">
+        <span>The open FHIR standard for end-to-end life sciences regulatory workflows</span>
+        <div class="header-links">
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          <a href="#">GitHub</a>
+        </div>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <div class="container nav-inner">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M4 6h16M4 12h10M4 18h13" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="20" cy="18" r="3.5" fill="white" fill-opacity="0.9"/>
+              <path d="M18.5 18l1 1 2.5-2" stroke="#0052CC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="logo-text">
+            <span class="logo-main">FHIR for Global Regulatory Affairs</span>
+            <span class="logo-sub">Life Sciences Catalogue</span>
+          </div>
+        </a>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li class="has-dropdown">
+            <a href="#" class="nav-link">FHIR Standards <span class="chevron">▾</span></a>
+            <ul class="dropdown">
+              <li><a href="standard-epi.html">ePI — Labelling</a></li>
+              <li><a href="standard-idmp.html">IDMP — Product Identity</a></li>
+              <li><a href="standard-pqi.html">PQI — CMC Quality</a></li>
+              <li><a href="standard-apix.html">APIX — Information Exchange</a></li>
+              <li><a href="standard-icsr.html">AER — Adverse Event Reporting</a></li>
+              <li><a href="standard-hta.html">HTA — Health Technology Assessment</a></li>
+              <li><a href="standard-rtq.html">RTQ — Regulatory Questions</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#standards" class="nav-link">Catalogue</a></li>
+          <li class="has-dropdown">
+            <a href="#" class="nav-link">Showcases <span class="chevron">▾</span></a>
+            <ul class="dropdown">
+              <li><a href="showcases-labeling.html">Labeling</a></li>
+              <li><a href="showcases-cmc.html">CMC</a></li>
+              <li><a href="showcases-safety.html">Safety</a></li>
+              <li><a href="showcases-clinical.html">Clinical</a></li>
+              <li><a href="showcases-administrative.html">Administrative</a></li>
+            </ul>
+          </li>
+          <li><a href="adoption.html" class="nav-link">Adoption</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="index.html#standards" class="btn btn-primary">Browse Catalogue</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+<!-- HEADER:END -->
+
+  <main>
+    <section class="domain-hero">
+      <div class="container">
+        <div class="crumbs"><a href="index.html">Home</a> / Showcases / Clinical</div>
+        <span class="domain-tag">Showcases · Clinical</span>
+        <h1>Clinical evidence &amp; assessment</h1>
+        <p>This page summarizes the showcases for clinical content. Each one shows how clinical study and evidence data can be structured in FHIR for regulatory review and health technology assessment.</p>
+        <div class="hero-meta"><span><strong>0</strong> live showcases</span><span><strong>1</strong> in preparation</span><span><strong>1</strong> related FHIR standard</span></div>
+      </div>
+    </section>
+
+    <nav class="domain-tabs">
+      <div class="container"><ul><li><a href="showcases-labeling.html">Labeling</a></li><li><a href="showcases-cmc.html">CMC</a></li><li><a href="showcases-safety.html">Safety</a></li><li><a href="showcases-clinical.html" class="active">Clinical</a></li><li><a href="showcases-administrative.html">Administrative</a></li></ul></div>
+    </nav>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head"><h2>Clinical showcases</h2><span>Showcases in preparation</span></div>
+        <div class="showcase-grid">
+        <div class="showcase-card placeholder">
+          <span class="kind">Coming soon</span>
+          <h3>Structured clinical evidence for HTA</h3>
+          <p>This showcase is in preparation.</p>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="related">
+      <div class="container">
+        <div class="section-head"><h2>Related FHIR standards</h2></div>
+        <div class="related-list"><a href="standard-hta.html">HTA — Health Technology Assessment →</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 FHIR for Global Regulatory Affairs | Published under Creative Commons Attribution 4.0</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
