@@ -57658,6 +57658,9 @@
      },
      {
       "type": {
+       "concept": {
+        "text": "Drug product manufacture"
+       },
        "reference": {
         "reference": "PlanDefinition/dp-manufacturing-process"
        }

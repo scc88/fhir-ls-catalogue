@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PQI Type 3 · Linked document | FHIR for Global Regulatory Affairs</title>
+<meta name="description" content="PQI Type 3 showcases: the authored CTD narrative is linked, sentence by sentence, to the PQI resources it discusses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="pqi-types.css">
+<style>
+  .reader { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 16px; align-items: start; }
+  .entries li button { font-size: 13px; align-items: flex-start; }
+  .entries .rt { flex: none; }
+  .hit { padding: 12px 0; border-bottom: 1px solid var(--sep); }
+  .hit:last-child { border-bottom: 0; }
+  .hit blockquote { margin: 6px 0 0; padding: 6px 12px; border-left: 3px solid var(--accent); background: var(--accent-soft); border-radius: 0 8px 8px 0; font-size: 13.5px; }
+  @media (max-width: 1200px) { .reader { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<noscript>This showcase needs JavaScript.</noscript>
+<script src="data/t3.js"></script>
+<script src="data/resources.js"></script>
+<script src="pqi-types.js"></script>
+<script>
+(function () {
+  const D = PQIDATA.t3, RS = PQIDATA.resources, esc = PT.esc;
+  const db = PT.db(RS.bundle, RS.registry);
+  const docs = D.docs.map((d, i) => ({ ...d, i, comp: d.composition, code: PT.docCode(d.composition), title: PT.shortTitle(d.composition.title), carriesSet: new Set(d.carries) }));
+  docs.forEach((d) => { d.secs = PT.walk(d.comp.section); d.secs.forEach((x) => { x.doc = d; }); });
+  const allSecs = docs.flatMap((d) => d.secs);
+  const isFig = (ref) => /^DocumentReference\/fig-/.test(ref);
+  const COLORS = { PlanDefinition: "#5e5ce6", SubstanceDefinition: "#0a8fa8", Organization: "#ff9500", Observation: "#34c759", DiagnosticReport: "#248a3d", ObservationDefinition: "#af52de", Ingredient: "#64d2ff", MedicinalProductDefinition: "#0071e3", ManufacturedItemDefinition: "#5ac8fa", PackagedProductDefinition: "#ffcc00", Substance: "#a2845e", Medication: "#ff2d55", DeviceDefinition: "#8e8e93", DocumentReference: "#c7c7cc", Specimen: "#30b0c7", RegulatedAuthorization: "#d70015" };
+  const col = (t) => COLORS[t] || "#aeaeb2";
+
+  // index: every textLink, with the anchored text
+  const links = []; // {doc, sec, ref, htmlid, data, text}
+  for (const x of allSecs) {
+    const div = (x.s.text || {}).div || "";
+    let dom = null;
+    for (const e of x.s.entry || []) {
+      for (const tl of PT.textLinks(e)) {
+        if (!dom) dom = new DOMParser().parseFromString(`<body>${div}</body>`, "text/html");
+        const el = tl.htmlid ? dom.getElementById(tl.htmlid) : null;
+        links.push({ doc: x.doc, sec: x, ref: e.reference, htmlid: tl.htmlid, data: tl.data, found: !!el, text: el ? el.textContent.replace(/\s+/g, " ").trim() : "" });
+      }
+    }
+  }
+  const linksByRef = new Map();
+  links.forEach((l) => { if (!linksByRef.has(l.ref)) linksByRef.set(l.ref, []); linksByRef.get(l.ref).push(l); });
+
+  // ====================== 1. Linked reading ======================
+  function read(main, param) {
+    const [docId, code] = param ? param.split("/") : ["sakura-bloom-m23-type3", "2.3.S.4"];
+    const d = docs.find((x) => x.comp.id === docId) || docs[0];
+    const cur = d.secs.find((x) => x.code === code) || d.secs.find((x) => (x.s.entry || []).length) || d.secs[0];
+    const s = cur.s;
+    const ents = (s.entry || []).map((e) => ({ e, tl: PT.textLinks(e)[0], r: db.get(e.reference) }));
+    const linkMap = {};
+    ents.forEach(({ e, tl, r }) => { if (tl && tl.htmlid) linkMap[tl.htmlid] = { title: e.reference + (r ? " · " + PT.label(r) : "") }; });
+    main.innerHTML = PT.head("Showcase 1 · Linked reading", "Section narrative with textLink anchors and the resources each section links to",
+      `The narrative is the same text the author wrote. In Type 3 each passage that discusses a resource carries an anchor, and the section's entry points to that resource with a <span class="mono">textLink</span>. Highlighted passages are links: click one to open the specification, batch, impurity or site it talks about.`,
+      "Assessors verify a statement against its data <b>in one click</b> instead of searching other leaf documents, and the document still reads as a document.") +
+      `<div class="grid g4" style="margin-bottom:16px">
+        <div class="stat accent"><b>${PT.fmt(links.length)}</b><span>textLinks from narrative to resources</span></div>
+        <div class="stat"><b>${PT.fmt(linksByRef.size)}</b><span>distinct resources discussed in the text</span></div>
+        <div class="stat"><b>${allSecs.filter((x) => (x.s.entry || []).some((e) => PT.textLinks(e).length)).length}</b><span>sections with linked narrative</span></div>
+        <div class="stat"><b>${PT.fmt(RS.bundle.length - (db.byType.get("DocumentReference") || []).filter((r) => isFig("DocumentReference/" + r.id)).length)}</b><span>PQI resources in the Type 3 bundles</span></div>
+      </div>
+      <div class="split">
+        <div class="card flat sticky" style="max-height:calc(100vh - 140px);display:flex;flex-direction:column">
+          <div style="padding:12px;border-bottom:1px solid var(--sep)"><label class="toggle" style="padding:2px 0"><input type="checkbox" id="onlyLinked" checked><span>Only sections with links</span></label></div>
+          <div class="tree scroll" id="tree" style="padding:6px"></div>
+        </div>
+        <div class="reader">
+          <div class="card"><div class="narr-head"><span class="code">${esc(cur.code.length > 14 ? "3.2.R" : cur.code)}</span><h3>${esc(s.title)}</h3><span class="muted small">${esc(d.title)}</span></div>
+            <div class="narr" id="narr">${s.text && s.text.div ? PT.narrative(s.text.div, { images: {}, links: linkMap }) : `<p class="muted">No narrative.</p>`}</div></div>
+          <div class="card flat sticky" style="max-height:calc(100vh - 140px);overflow:auto"><div style="padding:14px 16px 6px"><h3 style="margin:0">Linked data</h3><p class="sub" style="margin:4px 0 0">This section's <span class="mono">entry</span> list.</p></div>
+            <ul class="list entries" style="padding:0 6px 10px">${ents.map(({ e, tl, r }, i) => `<li><button data-i="${i}" data-hid="${esc(tl && tl.htmlid || "")}"><span class="chip rt" style="background:${col(e.reference.split("/")[0])}22;color:${col(e.reference.split("/")[0])}">${esc(e.reference.split("/")[0].replace("DocumentReference", "DocRef").replace("Definition", "Def."))}</span><span>${esc(r ? PT.label(r) : e.reference)}${tl ? "" : `<div class="muted small">${isFig(e.reference) ? "figure (no link needed)" : "no textLink"}</div>`}</span></button></li>`).join("") || `<li class="empty">No entries.</li>`}</ul></div>
+        </div>
+      </div>`;
+    const tree = PT.$("#tree", main);
+    const drawTree = () => {
+      const only = PT.$("#onlyLinked", main).checked;
+      tree.innerHTML = docs.map((dd) => {
+        const rows = dd.secs.filter((x) => !only || (x.s.entry || []).some((e) => PT.textLinks(e).length));
+        if (!rows.length) return "";
+        return `<div class="doc">${esc(dd.code === "2.3" ? "Module 2.3 · QOS" : "Module 3.2 · " + dd.code)}</div>` + rows.map((x) => { const n = (x.s.entry || []).filter((e) => PT.textLinks(e).length).length; return `<button style="padding-left:${10 + (only ? 0 : x.depth * 14)}px" data-doc="${esc(dd.comp.id)}" data-code="${esc(x.code)}" ${x === cur ? 'aria-current="true"' : ""}><span class="code">${esc(x.code.length > 14 ? "3.2.R·" : x.code)}</span><span class="ttl">${esc(x.s.title)}</span>${n ? `<span class="badge">🔗 ${n}</span>` : ""}</button>`; }).join("");
+      }).join("");
+      tree.querySelectorAll("button").forEach((b) => b.onclick = () => { location.hash = `read/${b.dataset.doc}/${b.dataset.code}`; });
+      const on = tree.querySelector('[aria-current="true"]'); if (on) tree.scrollTop = on.offsetTop - tree.clientHeight / 2;
+    };
+    PT.$("#onlyLinked", main).onchange = drawTree;
+    drawTree();
+    const open = (ent) => {
+      if (!ent) return;
+      const anchor = ent.tl ? (PT.$(`#narr [data-htmlid="${CSS.escape(ent.tl.htmlid)}"]`, main) || {}).textContent : "";
+      const head = ent.tl ? `<div><h4>Linked from</h4><blockquote class="callout" style="margin:0">${esc((anchor || "").replace(/\s+/g, " ").trim().slice(0, 400)) || "<span class='muted'>(the whole section)</span>"}</blockquote>
+        <div class="path" style="margin-top:6px">entry.extension[textLink] · htmlid = ${esc(ent.tl.htmlid)} · data = ${esc(ent.tl.data)}</div></div>` : "";
+      if (ent.r) PT.inspectResource(ent.e.reference, db, head);
+    };
+    PT.$$("#narr [data-link]", main).forEach((el) => {
+      const ent = ents.find((x) => x.tl && x.tl.htmlid === el.dataset.link);
+      el.onclick = () => open(ent);
+      el.onmouseenter = () => { const b = PT.$(`.entries [data-hid="${CSS.escape(el.dataset.link)}"]`, main); if (b) b.setAttribute("aria-current", "true"); };
+      el.onmouseleave = () => PT.$$(".entries [aria-current]", main).forEach((b) => b.removeAttribute("aria-current"));
+    });
+    PT.$$(".entries button", main).forEach((b) => {
+      const ent = ents[+b.dataset.i];
+      b.onclick = () => { open(ent); const el = b.dataset.hid && PT.$(`#narr [data-link="${CSS.escape(b.dataset.hid)}"]`, main); if (el) el.scrollIntoView({ block: "center", behavior: "smooth" }); };
+      b.onmouseenter = () => { const el = b.dataset.hid && PT.$(`#narr [data-link="${CSS.escape(b.dataset.hid)}"]`, main); if (el) el.classList.add("hl"); };
+      b.onmouseleave = () => PT.$$("#narr .hl", main).forEach((x) => x.classList.remove("hl"));
+    });
+  }
+
+  // ====================== 2. Where is this discussed? ======================
+  let revQ = "", revType = "all";
+  function reverse(main, param) {
+    const keys = [...linksByRef.keys()].filter((k) => !isFig(k) && db.get(k));
+    const types = [...new Set(keys.map((k) => k.split("/")[0]))].sort();
+    const sel = param && linksByRef.has(param) ? param : (keys.includes("PlanDefinition/spec-dp") ? "PlanDefinition/spec-dp" : keys[0]);
+    const r = db.get(sel), hits = linksByRef.get(sel) || [];
+    const docsHit = new Set(hits.map((h) => h.doc.code));
+    main.innerHTML = PT.head("Showcase 2 · Where is this discussed?", "Passages in Module 2.3 and 3.2 that link to a selected resource",
+      `The links work in both directions. From any specification, impurity, batch, procedure or site, a system can list every passage of Module 2.3 and 3.2 that discusses it, with the passage itself.`,
+      "Change impact on the narrative becomes a query. When a limit, a site or a supplier changes, <b>the sponsor and the assessor see exactly which passages need review</b>.") +
+      `<div class="split">
+        <div class="card flat sticky" style="max-height:calc(100vh - 140px);display:flex;flex-direction:column">
+          <div style="padding:12px;border-bottom:1px solid var(--sep);display:grid;gap:8px"><input class="input" id="rq" placeholder="Find a resource…" value="${esc(revQ)}">
+            <select class="input" id="rt"><option value="all">All resource types (${keys.length})</option>${types.map((t) => `<option ${revType === t ? "selected" : ""} value="${t}">${t} (${keys.filter((k) => k.startsWith(t + "/")).length})</option>`).join("")}</select></div>
+          <ul class="list scroll" id="rlist" style="padding:6px"></ul>
+        </div>
+        <div class="grid">
+          <div class="card"><div class="chips" style="margin-bottom:8px"><span class="chip rt acc">${esc(sel.split("/")[0])}</span>${db.registry.has(sel) ? `<span class="chip warn">resolved from registry</span>` : ""}<span class="chip">${esc(sel)}</span></div>
+            <h3 style="font-size:22px">${esc(PT.label(r))}</h3>
+            <div class="grid g3" style="margin:10px 0 14px"><div class="stat" style="background:var(--fill)"><b>${hits.length}</b><span>linked passages</span></div><div class="stat" style="background:var(--fill)"><b>${new Set(hits.map((h) => h.sec)).size}</b><span>sections</span></div><div class="stat" style="background:var(--fill)"><b>${docsHit.size}</b><span>documents: ${[...docsHit].map(esc).join(", ")}</span></div></div>
+            <details><summary class="small" style="cursor:pointer;color:var(--muted)">What the resource says</summary><div style="margin-top:8px" id="rsum">${PT.summary(r, db)}</div></details></div>
+          <div class="card"><h3>Passages that discuss it</h3><p class="sub">If this resource changes, these are the sentences to review.</p>
+            ${hits.map((h) => `<div class="hit"><div class="chips"><span class="chip acc mono">${esc(h.sec.code.length > 14 ? "3.2.R" : h.sec.code)}</span><b class="small">${esc(h.sec.s.title)}</b><span class="muted small">${esc(h.doc.title)}</span><a class="small" style="margin-left:auto" href="#read/${esc(h.doc.comp.id)}/${esc(h.sec.code)}">Open in reader →</a></div>
+              <blockquote>${esc(h.text.slice(0, 420)) || "<span class='muted'>(link on the whole section)</span>"}${h.text.length > 420 ? "…" : ""}</blockquote></div>`).join("")}</div>
+        </div>
+      </div>`;
+    const list = PT.$("#rlist", main);
+    const draw = () => {
+      const q = revQ.toLowerCase();
+      const ks = keys.filter((k) => (revType === "all" || k.startsWith(revType + "/")) && (!q || (k + " " + PT.label(db.get(k))).toLowerCase().includes(q)))
+        .sort((a, b) => linksByRef.get(b).length - linksByRef.get(a).length);
+      list.innerHTML = ks.slice(0, 300).map((k) => `<li><button data-k="${esc(k)}" ${k === sel ? 'aria-current="true"' : ""}><span class="chip rt" style="background:${col(k.split("/")[0])}22;color:${col(k.split("/")[0])};flex:none">${linksByRef.get(k).length}</span><span class="small">${esc(PT.label(db.get(k)))}<div class="muted mono" style="font-size:10.5px">${esc(k)}</div></span></button></li>`).join("") || `<li class="empty">No match.</li>`;
+      list.querySelectorAll("button").forEach((b) => b.onclick = () => { location.hash = "reverse/" + b.dataset.k; });
+    };
+    PT.$("#rq", main).oninput = (e) => { revQ = e.target.value; draw(); };
+    PT.$("#rt", main).onchange = (e) => { revType = e.target.value; draw(); };
+    draw();
+    PT.$$("#rsum [data-ref]", main).forEach((a) => a.onclick = (e) => { e.preventDefault(); PT.inspectResource(a.dataset.ref, db); });
+  }
+
+  // ====================== 3. Link integrity and coverage ======================
+  const canonOf = new Map();
+  const canonicals = (k) => { if (!canonOf.has(k)) { const r = db.get(k); canonOf.set(k, r ? [...JSON.stringify(r).matchAll(/"(http:\/\/example\.org\/sakura-bloom-r2\/fhir\/[A-Za-z]+\/[^"]+)"/g)].map((m) => m[1]).filter((u) => u !== r.url) : []); } return canonOf.get(k); };
+  function integrity(main) {
+    const perDoc = docs.map((d) => {
+      const ents = d.secs.flatMap((x) => (x.s.entry || []).map((e) => ({ x, e, tls: PT.textLinks(e) })));
+      const nonFig = ents.filter((o) => !isFig(o.e.reference) && o.x.code !== "pqi-product-data");
+      const res = {
+        cat: (((d.comp.category || [])[0] || {}).coding || [])[0].code === "type-3",
+        resolve: ents.filter((o) => !d.carriesSet.has(o.e.reference)).map((o) => o.e.reference),
+        unlinked: nonFig.filter((o) => !o.tls.length).map((o) => o.x.code + " → " + o.e.reference),
+        dataMismatch: ents.flatMap((o) => o.tls.filter((t) => t.data !== o.e.reference && !String(t.data || "").startsWith(o.e.reference)).map((t) => o.e.reference)),
+        anchor: links.filter((l) => l.doc === d && !l.found).map((l) => l.sec.code + " #" + l.htmlid),
+      };
+      let inDoc = 0, otherDoc = 0, reg = 0;
+      const regSet = new Set();
+      for (const k of d.carries) for (const u of canonicals(k)) {
+        const t = db.get(u); if (!t) continue;
+        const tk = t.resourceType + "/" + t.id;
+        if (d.carriesSet.has(tk)) inDoc++; else if (db.registry.has(tk)) { reg++; regSet.add(tk); } else otherDoc++;
+      }
+      return { d, res, nonFig: nonFig.length, linked: nonFig.length - res.unlinked.length, inDoc, otherDoc, reg, regSet };
+    });
+    const sum = (f) => perDoc.reduce((a, p) => a + f(p), 0);
+    const regAll = new Set(perDoc.flatMap((p) => [...p.regSet]));
+    const checks = [
+      ["Declared as Type 3", "Composition.category is type-3.", "pqi cat", perDoc.filter((p) => !p.res.cat).map((p) => p.d.code)],
+      ["Every entry resolves in its own Bundle", "Each section.entry reference points to a resource carried in the same document Bundle.", "bdl-7", perDoc.filter((p) => p.res.resolve.length).map((p) => `${p.d.code}: ${p.res.resolve.slice(0, 3).join(", ")}`)],
+      ["Every discussed resource carries a textLink", "Entries of CTD sections link to the narrative. Image DocumentReferences, and the Product data section (resources no CTD section discusses), are exempt.", "pqi-t3-1", perDoc.filter((p) => p.res.unlinked.length).map((p) => `${p.d.code}: ${p.res.unlinked.length} unlinked (${p.res.unlinked.slice(0, 2).join("; ")})`)],
+      ["Every textLink anchor exists in the narrative", "textLink.htmlid matches an id in the section's text.div (checked by an external validation app).", "conformance", perDoc.filter((p) => p.res.anchor.length).map((p) => `${p.d.code}: ${p.res.anchor.slice(0, 3).join(", ")}`)],
+      ["textLink.data repeats the entry reference", "The link's data value names the same resource as the entry (or an element inside it).", "conformance", perDoc.filter((p) => p.res.dataMismatch.length).map((p) => `${p.d.code}: ${p.res.dataMismatch.length}`)],
+    ];
+    const byType = {}; links.filter((l) => !isFig(l.ref)).forEach((l) => { const t = l.ref.split("/")[0]; byType[t] = (byType[t] || 0) + 1; });
+    const typeList = Object.entries(byType).sort((a, b) => b[1] - a[1]);
+    main.innerHTML = PT.head("Showcase 3 · Link integrity", "Reference and textLink checks across the 20 Type 3 documents",
+      `A link is only useful if it lands. These checks run in the browser over the 20 Type 3 documents: every entry resolves, every anchor exists, every discussed resource is linked. A second table follows the canonical references inside the resources, such as a specification test pointing to its ObservationDefinition.`,
+      "Both sides can rely on the links: <b>broken or missing links are caught before review</b>, and the receiver can see which references resolve inside the document and which need a shared registry.") +
+      `<div class="grid g4" style="margin-bottom:16px">
+        <div class="stat accent"><b>${PT.fmt(links.length)}</b><span>textLinks checked</span></div>
+        <div class="stat"><b>${PT.fmt(sum((p) => p.linked))}/${PT.fmt(sum((p) => p.nonFig))}</b><span>non-figure entries linked to narrative</span></div>
+        <div class="stat"><b>${PT.fmt(sum((p) => p.inDoc))}</b><span>canonical references resolved inside their document</span></div>
+        <div class="stat"><b style="color:${regAll.size ? "var(--warn)" : "var(--ok)"}">${regAll.size}</b><span>canonical targets not carried in any Type 3 bundle</span></div>
+      </div>
+      <div class="grid g2" style="align-items:start">
+        <div class="card"><h3>Checks across 20 documents</h3>${checks.map(([n, desc, id, bad]) => `<div class="check"><span class="ic ${bad.length ? "fail" : "pass"}">${bad.length ? "✕" : "✓"}</span><div><b>${esc(n)}</b> <span class="rule">${esc(id)}</span><p>${esc(desc)}</p>${bad.length ? `<details><summary>${bad.length} document${bad.length > 1 ? "s" : ""}</summary>${bad.map((b) => `<div class="small">${esc(b)}</div>`).join("")}</details>` : ""}</div><span class="chip ${bad.length ? "bad" : "ok"}">${docs.length - bad.length}/${docs.length}</span></div>`).join("")}
+          <div class="check"><span class="ic ${regAll.size ? "warn" : "pass"}">${regAll.size ? "!" : "✓"}</span><div><b>Canonical references resolve</b> <span class="rule">registry</span><p>${regAll.size ? `${regAll.size} resources are referenced by canonical URL but not carried in the Type 3 example bundles (${esc([...new Set([...regAll].map((k) => k.split("/")[0]))].join(", "))}). This showcase resolves them from the shared Sakura Bloom resource set; a receiver would need them in the bundle or from a registry.` : "All canonical references resolve inside the bundles."}</p></div><span class="chip ${regAll.size ? "warn" : "ok"}">${regAll.size ? "registry" : "ok"}</span></div></div>
+        <div class="card"><h3>What the narrative links to</h3><p class="sub">textLinks by resource type, all 20 documents.</p>
+          <div class="stack" style="margin-bottom:10px">${typeList.map(([t, n]) => `<i style="width:${(100 * n) / links.length}%;background:${col(t)}" title="${t}: ${n}"></i>`).join("")}</div>
+          <div class="legend" style="margin-bottom:16px">${typeList.map(([t, n]) => `<span style="--c:${col(t)}">${esc(t)} ${n}</span>`).join("")}</div>
+          <table class="t"><tr><th>Document</th><th class="num">Links</th><th>Mix</th><th class="num">Refs in doc / elsewhere / registry</th></tr>
+          ${perDoc.map((p) => { const mix = {}; links.filter((l) => l.doc === p.d && !isFig(l.ref)).forEach((l) => { const t = l.ref.split("/")[0]; mix[t] = (mix[t] || 0) + 1; }); const n = Object.values(mix).reduce((a, b) => a + b, 0);
+            return `<tr class="click" data-doc="${esc(p.d.comp.id)}"><td class="mono">${esc(p.d.code)}</td><td class="num">${n}</td><td style="min-width:120px"><div class="stack">${Object.entries(mix).map(([t, c]) => `<i style="width:${(100 * c) / Math.max(n, 1)}%;background:${col(t)}"></i>`).join("")}</div></td><td class="num small">${p.inDoc} / ${p.otherDoc} / <span style="color:${p.reg ? "var(--warn)" : "inherit"}">${p.reg}</span></td></tr>`; }).join("")}</table></div>
+      </div>`;
+    PT.$$("tr[data-doc]", main).forEach((tr) => tr.onclick = () => { const d = docs.find((x) => x.comp.id === tr.dataset.doc); const s = d.secs.find((x) => (x.s.entry || []).some((e) => PT.textLinks(e).length)); location.hash = `read/${d.comp.id}/${s ? s.code : d.code}`; });
+  }
+
+  PT.shell({
+    type: 3,
+    foot: "Data: <span class='mono'>sakura-bloom-r2/fhir/pqi-types/type3</span>. Every reference resolves inside its own document.",
+    views: [
+      { id: "read", title: "Linked reading", sub: "Click a sentence, see its data", render: read },
+      { id: "reverse", title: "Where is this discussed?", sub: "From a resource back to the text", render: reverse },
+      { id: "links", title: "Link integrity", sub: "Every link checked on arrival", render: integrity },
+    ],
+  });
+})();
+</script>
+</body>
+</html>

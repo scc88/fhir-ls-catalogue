@@ -1,0 +1,227 @@
+{
+ "fig-02b55165": {
+  "file": "calc-dilution-factor.png",
+  "title": "Exemplary dilution factor used in the impurity calculation",
+  "description": "Exemplary dilution factor used in the impurity calculation. Redrawn for the PQI examples from data given in the ICH Sakura Bloom mock-up: values given in the procedure (20 mL test solution, 1:1000 reference dilution)."
+ },
+ "fig-08ad9626": {
+  "file": "calc-impurities-rf-cp-9.png",
+  "title": "Calculation of related substances of Sakuramil (CP-9), with dilution factor",
+  "description": "Calculation of related substances of Sakuramil (CP-9), with dilution factor. Redrawn for the PQI examples from data given in the ICH Sakura Bloom mock-up: typeset from the variable definitions, dilution factor and response factors given in the 3.2.S.4.2 procedure."
+ },
+ "fig-16083f0c": {
+  "file": "ra-cande-parameters.png",
+  "title": "Table 3-2 Examples of Process Parameters Assessed at Initial Risk Assessment",
+  "description": "Table 3-2 Examples of Process Parameters Assessed at Initial Risk Assessment. Synthetic illustration made for the PQI examples: the parameters are those the mock-up text names for Steps 3 and 4; the risk levels are made up."
+ },
+ "fig-2a1a6548": {
+  "file": "m7-results-09.png",
+  "title": "Table 1-2 Results of ICH M7 Risk Assessment (Methyl chloroformate, part 9 of 10)",
+  "description": "Table 1-2 Results of ICH M7 Risk Assessment (Methyl chloroformate, part 9 of 10). Redrawn for the PQI examples from data given in the ICH Sakura Bloom mock-up: classes, (Q)SAR outcomes and controls follow the rationale and control strategy in the mock-up text (Class 3 = aniline-containing, positive in both (Q)SAR systems); roles from the manufacturing process."
+ },
+ "fig-2a90a174": {
+  "file": "m7-classes.png",
+  "title": "Table 1-1 Classification of substances into classes",
+  "description": "Table 1-1 Classification of substances into classes. Redrawn for the PQI examples from ICH M7(R2) Table 1, which the mock-up cites; wording condensed."
+ },
+ "fig-2ba025f0": {
+  "file": "cpp-cqa-step3-step4.png",
+  "title": "Figure 4-1 CPP and CQA (IMA) Identified for Step 3 and Step 4",
+  "description": "Figure 4-1 CPP and CQA (IMA) Identified for Step 3 and Step 4. Redrawn for the PQI examples from data given in the ICH Sakura Bloom mock-up: CPPs and proven acceptable ranges from the CPP resources (cpp-ds-3-1, cpp-ds-4-1, cpp-ds-4-2) and IPC #2; limits for CP-7-1 and CP-8 from the narrative and the drug substance specification."
+ },
+ "fig-3838218f": {
+  "file": "calc-dp-assay.png",
+  "title": "Calculation of the assay of Sakuramil in Sakura Bloom 20 mg film-coated tablets",
+  "description": "Calculation of the assay of Sakuramil in Sakura Bloom 20 mg film-coated tablets. Redrawn for the PQI examples from data given in the ICH Sakura Bloom mock-up: typeset from the symbol table that follows it in the 3.2.P.5.2 procedure; same structure as the HL7 PQI example 3.2.P.5.2 assay calculation."
+ },
+ "fig-3ae48670": {
+  "file": "structure-cp-7-1.png",
+  "title": "Figure 3-2 CP-7-1, Ethyl Homolog",
+  "description": "Figure 3-2 CP-7-1, Ethyl Homolog. Structure drawn for the PQI examples from the structure of CP-7 given in the ICH Sakura Bloom mock-up, with the methyl carbamate replaced by an ethyl carbamate as the mock-up describes; (2R,4S) as in CP-7."
+ },
+ "fig-3cb5acc2": {
+  "file": "calc-assay-cp-4.png",
+  "title": "Calculation of the assay of CP-4 (HPLC, external standard)",
+  "description": "Calculation of the assay of CP-4 (HPLC, external standard). Redrawn for the PQI examples from data given in the ICH Sakura Bloom mock-up: the formula is typeset from the variable definitions in the 3.2.S.2.3 procedure; same structure as the assay calculation in the HL7 PQI example 3.2.P.5.2 analytical procedure."
+ },
+ "fig-4014f47e": {
+  "file": "calc-impurities-rf.png",
+  "title": "Calculation of specified and unspecified impurities against the reference substance, with response correction factor",
+  "description": "Calculation of specified and unspecified impurities against the reference substance, with response correction factor. Redrawn for the PQI examples from data given in the ICH Sakura Bloom mock-up: typeset from the variable definitions and dilution factor given in the procedure; the response-factor correction follows the HL7 PQI example 3.2.P.5.2 analytical procedure."
+ },
+ "fig-4919fb3a": {
+  "file": "calc-dp-degradation.png",
+  "title": "Calculation of individual degradation products in Sakura Bloom 20 mg film-coated tablets",
+  "description": "Calculation of individual degradation products in Sakura Bloom 20 mg film-coated tablets. Redrawn for the PQI examples from data given in the ICH Sakura Bloom mock-up: typeset from the symbol table that follows it in the 3.2.P.5.2 procedure; response-factor correction as in the HL7 PQI example 3.2.P.5.2 procedure."
+ },
+ "fig-498bc2d6": {
+  "file": "calc-impurities-rf.png",
+  "title": "Calculation of specified and unspecified impurities against the reference substance, with response correction factor",
+  "description": "Calculation of specified and unspecified impurities against the reference substance, with response correction factor. Redrawn for the PQI examples from data given in the ICH Sakura Bloom mock-up: typeset from the variable definitions and dilution factor given in the procedure; the response-factor correction follows the HL7 PQI example 3.2.P.5.2 analytical procedure."
+ },
+ "fig-49fcade0": {
+  "file": "m7-results-10.png",
+  "title": "Table 1-2 Results of ICH M7 Risk Assessment (Ethyl chloroformate, part 10 of 10)",
+  "description": "Table 1-2 Results of ICH M7 Risk Assessment (Ethyl chloroformate, part 10 of 10). Redrawn for the PQI examples from data given in the ICH Sakura Bloom mock-up: classes, (Q)SAR outcomes and controls follow the rationale and control strategy in the mock-up text (Class 3 = aniline-containing, positive in both (Q)SAR systems); roles from the manufacturing process."
+ },
+ "fig-4adc4b56": {
+  "file": "ra-cqa-matrix.png",
+  "title": "Table 3-3 Designation of Possibility Which Affect on Sakuramil CQA through a Risk Assessment",
+  "description": "Table 3-3 Designation of Possibility Which Affect on Sakuramil CQA through a Risk Assessment. Synthetic illustration made for the PQI examples: rows and CQAs follow the mock-up (CP-7-1 formed in Step 3, CP-8 purged in Step 4 crystallization, PMIs controlled in starting material and intermediate specifications); the ratings are made up."
+ },
+ "fig-505a109a": {
+  "file": "route-sm2-cp-8.png",
+  "title": "Route of synthesis of starting material SM2 CP-8",
+  "description": "Route of synthesis of starting material SM2 CP-8. Redrawn for the PQI examples from data given in the ICH Sakura Bloom mock-up: two-step route, reagents and intermediate as described in the nitrosamine risk evaluation text (names kept as in the mock-up)."
+ },
+ "fig-5367c0ec": {
+  "file": "m7-results-07.png",
+  "title": "Table 1-2 Results of ICH M7 Risk Assessment (CP-8, part 7 of 10)",
+  "description": "Table 1-2 Results of ICH M7 Risk Assessment (CP-8, part 7 of 10). Redrawn for the PQI examples from data given in the ICH Sakura Bloom mock-up: classes, (Q)SAR outcomes and controls follow the rationale and control strategy in the mock-up text (Class 3 = aniline-containing, positive in both (Q)SAR systems); roles from the manufacturing process."
+ },
+ "fig-58d396c2": {
+  "file": "m7-results-05.png",
+  "title": "Table 1-2 Results of ICH M7 Risk Assessment (CP-7, part 5 of 10)",
+  "description": "Table 1-2 Results of ICH M7 Risk Assessment (CP-7, part 5 of 10). Redrawn for the PQI examples from data given in the ICH Sakura Bloom mock-up: classes, (Q)SAR outcomes and controls follow the rationale and control strategy in the mock-up text (Class 3 = aniline-containing, positive in both (Q)SAR systems); roles from the manufacturing process."
+ },
+ "fig-7d09f749": {
+  "file": "doe-step4-crystallization.png",
+  "title": "Table 3-9 Step 4 Crystallization DoE",
+  "description": "Table 3-9 Step 4 Crystallization DoE. Synthetic illustration made for the PQI examples: the design, spike level and the water-addition and cooling-rate ranges (CPP #4.1, #4.2) are from the mock-up; the other five factors and levels are made up."
+ },
+ "fig-7e96d536": {
+  "file": "m7-results-06.png",
+  "title": "Table 1-2 Results of ICH M7 Risk Assessment (CP-7-1, part 6 of 10)",
+  "description": "Table 1-2 Results of ICH M7 Risk Assessment (CP-7-1, part 6 of 10). Redrawn for the PQI examples from data given in the ICH Sakura Bloom mock-up: classes, (Q)SAR outcomes and controls follow the rationale and control strategy in the mock-up text (Class 3 = aniline-containing, positive in both (Q)SAR systems); roles from the manufacturing process."
+ },
+ "fig-84e85761": {
+  "file": "ra-focus-areas.png",
+  "title": "Table 3-1 Focus Area in Risk Assessment for Manufacturing Process of Sakuramil",
+  "description": "Table 3-1 Focus Area in Risk Assessment for Manufacturing Process of Sakuramil. Redrawn for the PQI examples from data given in the ICH Sakura Bloom mock-up: focus areas FA1-FA6 derived from the Step 3 and Step 4 process descriptions, CPPs and IPCs of the drug substance manufacturing process."
+ },
+ "fig-85c8672c": {
+  "file": "m7-results-08.png",
+  "title": "Table 1-2 Results of ICH M7 Risk Assessment (CP-9-1, part 8 of 10)",
+  "description": "Table 1-2 Results of ICH M7 Risk Assessment (CP-9-1, part 8 of 10). Redrawn for the PQI examples from data given in the ICH Sakura Bloom mock-up: classes, (Q)SAR outcomes and controls follow the rationale and control strategy in the mock-up text (Class 3 = aniline-containing, positive in both (Q)SAR systems); roles from the manufacturing process."
+ },
+ "fig-9454a19c": {
+  "file": "calc-impurities-rf.png",
+  "title": "Calculation of specified and unspecified impurities against the reference substance, with response correction factor",
+  "description": "Calculation of specified and unspecified impurities against the reference substance, with response correction factor. Redrawn for the PQI examples from data given in the ICH Sakura Bloom mock-up: typeset from the variable definitions and dilution factor given in the procedure; the response-factor correction follows the HL7 PQI example 3.2.P.5.2 analytical procedure."
+ },
+ "fig-95354845": {
+  "file": "doe-step3-reaction.png",
+  "title": "Table 3-5 Step 3 Reaction DoE",
+  "description": "Table 3-5 Step 3 Reaction DoE. Synthetic illustration made for the PQI examples: the factors come from the mock-up text; numeric levels the mock-up does not give are made up. The standard charge of 2.5 equiv. ethyl chloroformate, reflux at 66 °C, the 36-hour hold and the 0.15 % criterion are from the mock-up."
+ },
+ "fig-9715e701": {
+  "file": "m7-results-03.png",
+  "title": "Table 1-2 Results of ICH M7 Risk Assessment (CP-5, part 3 of 10)",
+  "description": "Table 1-2 Results of ICH M7 Risk Assessment (CP-5, part 3 of 10). Redrawn for the PQI examples from data given in the ICH Sakura Bloom mock-up: classes, (Q)SAR outcomes and controls follow the rationale and control strategy in the mock-up text (Class 3 = aniline-containing, positive in both (Q)SAR systems); roles from the manufacturing process."
+ },
+ "fig-9cbf8c6c": {
+  "file": "calc-impurities-rf.png",
+  "title": "Calculation of specified and unspecified impurities against the reference substance, with response correction factor",
+  "description": "Calculation of specified and unspecified impurities against the reference substance, with response correction factor. Redrawn for the PQI examples from data given in the ICH Sakura Bloom mock-up: typeset from the variable definitions and dilution factor given in the procedure; the response-factor correction follows the HL7 PQI example 3.2.P.5.2 analytical procedure."
+ },
+ "fig-9ff338b0": {
+  "file": "calc-dilution-factor.png",
+  "title": "Exemplary dilution factor used in the impurity calculation",
+  "description": "Exemplary dilution factor used in the impurity calculation. Redrawn for the PQI examples from data given in the ICH Sakura Bloom mock-up: values given in the procedure (20 mL test solution, 1:1000 reference dilution)."
+ },
+ "fig-a2a791ed": {
+  "file": "m7-results-01.png",
+  "title": "Table 1-2 Results of ICH M7 Risk Assessment (CP-3, part 1 of 10)",
+  "description": "Table 1-2 Results of ICH M7 Risk Assessment (CP-3, part 1 of 10). Redrawn for the PQI examples from data given in the ICH Sakura Bloom mock-up: classes, (Q)SAR outcomes and controls follow the rationale and control strategy in the mock-up text (Class 3 = aniline-containing, positive in both (Q)SAR systems); roles from the manufacturing process."
+ },
+ "fig-a611e8db": {
+  "file": "ra-focus-identified.png",
+  "title": "Table 3-4 Focus Areas Identified for the Sakuramil Manufacturing Process",
+  "description": "Table 3-4 Focus Areas Identified for the Sakuramil Manufacturing Process. Redrawn for the PQI examples from data given in the ICH Sakura Bloom mock-up: focus areas, attributes, parameters and designs as described in the 3.2.S.2.2 narrative."
+ },
+ "fig-b2f4b126": {
+  "file": "calc-dilution-factor.png",
+  "title": "Exemplary dilution factor used in the impurity calculation",
+  "description": "Exemplary dilution factor used in the impurity calculation. Redrawn for the PQI examples from data given in the ICH Sakura Bloom mock-up: values given in the procedure (20 mL test solution, 1:1000 reference dilution)."
+ },
+ "fig-b5581a7f": {
+  "file": "calc-dilution-factor.png",
+  "title": "Exemplary dilution factor used in the impurity calculation",
+  "description": "Exemplary dilution factor used in the impurity calculation. Redrawn for the PQI examples from data given in the ICH Sakura Bloom mock-up: values given in the procedure (20 mL test solution, 1:1000 reference dilution)."
+ },
+ "fig-c257a28d": {
+  "file": "doe-step4-reaction.png",
+  "title": "Table 3-8 Step 4 Reaction DoE",
+  "description": "Table 3-8 Step 4 Reaction DoE. Synthetic illustration made for the PQI examples: the temperature range (12-25 °C), the agitation observation and the responses are from the mock-up; the other levels are made up."
+ },
+ "fig-c330fd2d": {
+  "file": "nitrosamine-vulnerable-amines.png",
+  "title": "Vulnerable amines and nitrite sources in the Sakuramil manufacturing process",
+  "description": "Vulnerable amines and nitrite sources in the Sakuramil manufacturing process. Synthetic illustration made for the PQI examples: summarises the nitrosamine risk evaluation text of the mock-up step by step; it adds no data."
+ },
+ "fig-c3394d41": {
+  "file": "mva-step4.png",
+  "title": "Table 3-15 Summary of Mulitvariate Analysis Results for Step 4",
+  "description": "Table 3-15 Summary of Mulitvariate Analysis Results for Step 4. Redrawn for the PQI examples from data given in the ICH Sakura Bloom mock-up: conclusions and CPPs as stated in the 3.2.S.2.2 narrative and the CPP resources; ranges as in Tables 3-8 and 3-9."
+ },
+ "fig-c37f64d3": {
+  "file": "calc-assay-cp-6.png",
+  "title": "Calculation of the assay of CP-6 (HPLC, external standard)",
+  "description": "Calculation of the assay of CP-6 (HPLC, external standard). Redrawn for the PQI examples from data given in the ICH Sakura Bloom mock-up: the formula is typeset from the variable definitions in the 3.2.S.2.4 procedure; same structure as the assay calculation in the HL7 PQI example 3.2.P.5.2 analytical procedure."
+ },
+ "fig-c407d1c7": {
+  "file": "m7-results-04.png",
+  "title": "Table 1-2 Results of ICH M7 Risk Assessment (CP-6, part 4 of 10)",
+  "description": "Table 1-2 Results of ICH M7 Risk Assessment (CP-6, part 4 of 10). Redrawn for the PQI examples from data given in the ICH Sakura Bloom mock-up: classes, (Q)SAR outcomes and controls follow the rationale and control strategy in the mock-up text (Class 3 = aniline-containing, positive in both (Q)SAR systems); roles from the manufacturing process."
+ },
+ "fig-c5cd1501": {
+  "file": "m7-results-02.png",
+  "title": "Table 1-2 Results of ICH M7 Risk Assessment (CP-4, part 2 of 10)",
+  "description": "Table 1-2 Results of ICH M7 Risk Assessment (CP-4, part 2 of 10). Redrawn for the PQI examples from data given in the ICH Sakura Bloom mock-up: classes, (Q)SAR outcomes and controls follow the rationale and control strategy in the mock-up text (Class 3 = aniline-containing, positive in both (Q)SAR systems); roles from the manufacturing process."
+ },
+ "fig-d69c883f": {
+  "file": "linearity-sakuramil.png",
+  "title": "Figure 2-4 Linearity Plot: Sakuramil",
+  "description": "Figure 2-4 Linearity Plot: Sakuramil. Redrawn for the PQI examples from data given in the ICH Sakura Bloom mock-up: points from Table 2-7 (5 levels, 60-130 %, 3 injections); the regression line is fitted to those points."
+ },
+ "fig-e09ee9bb": {
+  "file": "mva-step3.png",
+  "title": "Table 3-7 Summary of Multivariate Analysis Results for Step 3",
+  "description": "Table 3-7 Summary of Multivariate Analysis Results for Step 3. Synthetic illustration made for the PQI examples: effects summarised from the mock-up conclusions (CP-7-1 rises with high ethyl chloroformate, low carbonate and high concentration, stays below 0.15 % with carbonate; total impurities 0.3-0.5 %; water addition is CPP #3.1); ranges as in Tables 3-5 and 3-6."
+ },
+ "fig-e29689b4": {
+  "file": "dissolution-table-4.png",
+  "title": "Table 4 Dissolution test method and specifications",
+  "description": "Table 4 Dissolution test method and specifications. Redrawn for the PQI examples from data given in the ICH Sakura Bloom mock-up: content taken from Table 4 of 2.3.4.DP.D Description in the mock-up extract."
+ },
+ "fig-e4ec73a4": {
+  "file": "xrpd-overlay-25c60.png",
+  "title": "XRPD overlay of Sakuramil drug substance at initial, 6, 24 and 36 months (25 °C/60 % RH)",
+  "description": "XRPD overlay of Sakuramil drug substance at initial, 6, 24 and 36 months (25 °C/60 % RH). Synthetic illustration made for the PQI examples: traces built on the peak positions of the HL7 PQI example XRPD pattern (input/examples-pdf) used in Figure 1-9, showing no change of form, as the mock-up states; it does not show measured Sakura Bloom data."
+ },
+ "fig-f242b2ef": {
+  "file": "calc-enantiomer-cp-4.png",
+  "title": "Calculation of the CP-4 enantiomer content (chiral HPLC)",
+  "description": "Calculation of the CP-4 enantiomer content (chiral HPLC). Redrawn for the PQI examples from data given in the ICH Sakura Bloom mock-up: typeset from the variable definitions in the 3.2.S.2.3 procedure."
+ },
+ "fig-f8cfa3af": {
+  "file": "calc-assay-cp-8.png",
+  "title": "Calculation of the assay of CP-8 (HPLC, external standard)",
+  "description": "Calculation of the assay of CP-8 (HPLC, external standard). Redrawn for the PQI examples from data given in the ICH Sakura Bloom mock-up: the formula is typeset from the variable definitions in the 3.2.S.2.3 procedure; same structure as the assay calculation in the HL7 PQI example 3.2.P.5.2 analytical procedure."
+ },
+ "fig-f930ba12": {
+  "file": "doe-step3-crystallization.png",
+  "title": "Table 3-6 Step 3 Crystallization DoE",
+  "description": "Table 3-6 Step 3 Crystallization DoE. Synthetic illustration made for the PQI examples: the water-addition range is the CPP #3.1 proven acceptable range from the mock-up QOS; the other levels are made up."
+ },
+ "fig-fca29d81": {
+  "file": "calc-assay-cp-9.png",
+  "title": "Calculation of the assay of CP-9 (HPLC, external standard)",
+  "description": "Calculation of the assay of CP-9 (HPLC, external standard). Redrawn for the PQI examples from data given in the ICH Sakura Bloom mock-up: the formula is typeset from the variable definitions in the 3.2.S.4.2 procedure; same structure as the assay calculation in the HL7 PQI example 3.2.P.5.2 analytical procedure."
+ },
+ "fig-fd6f7eab": {
+  "file": "structure-cp-9-1.png",
+  "title": "Structural formula of impurity CP-9-1",
+  "description": "Structural formula of impurity CP-9-1. Structure drawn for the PQI examples from the IUPAC name given in the ICH Sakura Bloom mock-up."
+ }
+}

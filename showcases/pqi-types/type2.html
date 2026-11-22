@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PQI Type 2 · Document + product data | FHIR for Global Regulatory Affairs</title>
+<meta name="description" content="PQI Type 2 showcases: product, packaging, ingredient, site and authorization master data travel with the CMC documents as FHIR resources.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="pqi-types.css">
+<style>
+  .idcard { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2px; background: var(--sep); border-radius: 16px; overflow: hidden; }
+  .idcard > div { background: var(--surface); padding: 12px 14px; cursor: pointer; }
+  .idcard > div:hover { background: var(--accent-soft); }
+  .idcard label { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); font-weight: 600; cursor: pointer; }
+  .idcard span.v { display: block; font-weight: 600; margin-top: 2px; }
+  .idcard .fp { display: block; font-family: var(--mono); font-size: 10.5px; color: var(--accent); margin-top: 4px; overflow-wrap: anywhere; }
+  .form-row { display: grid; grid-template-columns: 170px 1fr; gap: 4px 12px; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--sep); font-size: 14px; }
+  .form-row:last-child { border-bottom: 0; }
+  .form-row label { color: var(--muted); font-size: 13px; }
+  .form-row .val { background: var(--fill); border-radius: 8px; padding: 6px 10px; min-height: 32px; transition: background .4s; }
+  .form-row .val.filled { background: var(--accent-soft); }
+  .form-row .src { grid-column: 2; font-family: var(--mono); font-size: 10.5px; color: var(--muted); }
+  .ops td, .ops th { font-size: 12.5px; padding: 6px 8px; }
+  .ops .ids { font-family: var(--mono); font-size: 10.5px; color: var(--muted); white-space: nowrap; }
+  @media (max-width: 820px) { .form-row { grid-template-columns: 1fr; } .form-row .src { grid-column: 1; } }
+  .t1quote { max-height: 420px; overflow: auto; border: 1px dashed var(--line); border-radius: 12px; padding: 10px 14px; background: #fcfcfd; }
+</style>
+</head>
+<body>
+<noscript>This showcase needs JavaScript.</noscript>
+<script src="data/t2.js"></script>
+<script src="pqi-types.js"></script>
+<script>
+(function () {
+  const D = PQIDATA.t2, esc = PT.esc;
+  const db = PT.db(Object.values(D.resources));
+  const R = (k) => db.get(k);
+  const docs = D.docs.map((d) => ({ ...d, comp: d.composition, code: PT.docCode(d.composition), title: PT.shortTitle(d.composition.title) }));
+  const m23 = docs[0].comp;
+  const mpd = R(m23.subject[0].reference), applicant = R(m23.author[0].reference);
+  const mid = (db.byType.get("ManufacturedItemDefinition") || [])[0];
+  const ra = (db.byType.get("RegulatedAuthorization") || [])[0];
+  const packs = db.byType.get("PackagedProductDefinition") || [];
+  const ings = db.byType.get("Ingredient") || [];
+  const orgs = db.byType.get("Organization") || [];
+  const api = ings.find((i) => /Active/i.test(PT.cc(i.role)));
+  const apiSd = R(api.substance.code.reference.reference);
+  const insp = (k) => PT.inspectResource(k, db);
+  const refLink = (r, txt) => `<a href="#" data-ref="${esc(r.resourceType + "/" + r.id)}">${esc(txt || PT.label(r))}</a>`;
+  const wire = (el) => el.querySelectorAll("[data-ref]").forEach((a) => a.addEventListener("click", (e) => { e.preventDefault(); insp(a.dataset.ref); }));
+  const strength = (i) => { const s = ((i.substance || {}).strength || [])[0] || {}; return s.textPresentation || ""; };
+  const edqm = (cc) => { const c = (cc && cc.coding || [])[0]; return c && /edqm/.test(c.system) ? `<span class="chip rt">EDQM ${esc(c.code)}</span>` : ""; };
+  const shelf = (p) => ((p.packaging || {}).shelfLifeStorage || []).map((s) => ({ zone: PT.cc(s.type).replace(/^Shelf life of the medicinal product as packaged for sale - /, ""), months: s.periodDuration ? s.periodDuration.value : null, store: ((s.specialPrecautionsForStorage || [])[0] || {}).text || "" }));
+
+  // ====================== 1. Product identity ======================
+  function identity(main) {
+    const fields = [
+      ["Product (Composition.subject)", mpd.name[0].productName, "Composition.subject → MedicinalProductDefinition.name.productName", mpd],
+      ["Product identifier", (mpd.identifier || [])[0].value, "MedicinalProductDefinition.identifier", mpd],
+      ["Dose form", PT.cc(mpd.combinedPharmaceuticalDoseForm), "MedicinalProductDefinition.combinedPharmaceuticalDoseForm", mpd, edqm(mpd.combinedPharmaceuticalDoseForm)],
+      ["Route", (mpd.route || []).map(PT.cc).join(", "), "MedicinalProductDefinition.route", mpd, edqm((mpd.route || [])[0])],
+      ["Strength", strength(api), "Ingredient.substance.strength", api],
+      ["Active substance", `${PT.label(apiSd)} · CAS ${((apiSd.identifier || [])[0] || {}).value}`, "Ingredient.substance.code → SubstanceDefinition", apiSd],
+      ["Unit of presentation", PT.cc(mid.unitOfPresentation), "ManufacturedItemDefinition.unitOfPresentation", mid, edqm(mid.unitOfPresentation)],
+      ["Applicant (Composition.author)", applicant.name, "Composition.author → Organization", applicant],
+      ["Marketing authorization", `${ra.identifier[0].value} · ${(ra.region || []).map(PT.cc).join(", ")} · ${PT.cc(ra.status)}`, "RegulatedAuthorization", ra],
+      ["Packs", packs.map((p) => PT.cc(p.type)).join(" · "), "PackagedProductDefinition × " + packs.length, packs[0]],
+      ["Sites", orgs.length + " organizations", "Organization × " + orgs.length, orgs[0]],
+      ["Shelf life (bottle, zone I/II)", (shelf(packs[0])[0] || {}).months + " months", "PackagedProductDefinition.packaging.shelfLifeStorage", packs[0]],
+    ];
+    const props = (mid.property || []).map((p) => [PT.cc(p.type), p.valueCodeableConcept ? PT.cc(p.valueCodeableConcept) : p.valueQuantity ? PT.qty(p.valueQuantity) : p.valueString || ""]);
+    main.innerHTML = PT.head("Showcase 1 · Product identity", "Product identity card built from the Type 2 product data resources",
+      `A Type 2 document keeps the Type 1 narrative exactly as it was and adds the product's master data as FHIR resources in the same Bundle. The Composition names its <b>subject</b> (the product) and its <b>author</b> (the applicant), and a Product data section lists the resources.`,
+      "Identity and regulatory context arrive <b>coded and up front</b>: dose form and route as EDQM codes, strength as a quantity, the authorization as a resource. The same records can feed IDMP submissions.") +
+      `<div class="grid" style="grid-template-columns:minmax(0,1.6fr) minmax(300px,1fr);align-items:start">
+        <div class="grid">
+          <div class="card"><h3>Identity card, read from the resources</h3><p class="sub">Click a field to open the resource it comes from.</p>
+            <div class="idcard">${fields.map((f, i) => `<div data-i="${i}"><label>${esc(f[0])}</label><span class="v">${esc(f[1])} ${f[4] || ""}</span><span class="fp">${esc(f[2])}</span></div>`).join("")}</div></div>
+          <div class="card"><h3>Qualitative and quantitative composition</h3><p class="sub">${ings.length} Ingredient resources, each pointing to its SubstanceDefinition.</p>
+            <div class="scroll"><table class="t"><tr><th>Component</th><th>Role</th><th>Function</th><th class="num">Per tablet</th></tr>${ings.map((i) => { const sd = R(((i.substance || {}).code || {}).reference && i.substance.code.reference.reference); return `<tr class="click" data-ref="Ingredient/${esc(i.id)}"><td>${esc(sd ? PT.label(sd) : i.id)}</td><td>${esc(PT.cc(i.role))}</td><td>${esc(PT.cc((i.function || [])[0]))}</td><td class="num">${esc(strength(i).replace(" per film-coated tablet", ""))}</td></tr>`; }).join("")}</table></div></div>
+          <div class="card"><h3>Packs and shelf life</h3><div class="grid g3">${packs.map((p) => `<div class="stat" style="background:var(--fill);cursor:pointer" data-ref="PackagedProductDefinition/${esc(p.id)}"><b style="font-size:17px">${esc(PT.cc(p.type))}</b><span>${shelf(p).map((s) => `${esc(s.zone)}: <b>${s.months} mo</b>`).join("<br>")}</span></div>`).join("")}</div></div>
+        </div>
+        <div class="grid">
+          <div class="card"><h3>The tablet</h3><dl class="kv small">${props.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("")}</dl></div>
+          <div class="card"><h3>The same facts in Type 1</h3><p class="sub">Module 2.3 Introduction, as authored. Readable, but a system can only find these values by parsing a table in the narrative.</p><div class="t1quote narr small">${PT.narrative(D.t1Intro)}</div></div>
+        </div>
+      </div>`;
+    PT.$$(".idcard > div", main).forEach((el) => el.onclick = () => { const r = fields[+el.dataset.i][3]; insp(r.resourceType + "/" + r.id); });
+    PT.$$("[data-ref]", main).forEach((el) => el.onclick = (e) => { e.preventDefault(); insp(el.dataset.ref); });
+  }
+
+  // ====================== 2. RIM / agency intake ======================
+  let received = false;
+  function intake(main) {
+    const ops = (mpd.operation || []).map((o) => ({ op: PT.cc((o.type || {}).concept) || "(operation type not coded)", orgs: (o.organization || []).map((x) => x.reference) }));
+    const opNames = [...new Set(ops.map((o) => o.op))];
+    const duns = (o) => ((o.identifier || []).find((i) => /519\.1/.test(i.system)) || {}).value;
+    const fei = (o) => ((o.identifier || []).find((i) => /4\.82/.test(i.system)) || {}).value;
+    const form = [
+      ["Application number", ra.identifier[0].value, "RegulatedAuthorization.identifier"],
+      ["Authorization type", PT.cc(ra.type), "RegulatedAuthorization.type"],
+      ["Region", (ra.region || []).map(PT.cc).join(", "), "RegulatedAuthorization.region"],
+      ["Status", `${PT.cc(ra.status)} (since ${ra.statusDate})`, "RegulatedAuthorization.status"],
+      ["Holder / applicant", applicant.name, "RegulatedAuthorization.holder"],
+      ["Proprietary name", mpd.name[0].productName, "MedicinalProductDefinition.name"],
+      ["Invented name part", (mpd.name[0].part || []).find((p) => /Invented/.test(PT.cc(p.type))).part, "…name.part (Invented name part)"],
+      ["Dose form", `${PT.cc(mpd.combinedPharmaceuticalDoseForm)} (EDQM ${mpd.combinedPharmaceuticalDoseForm.coding[0].code})`, "…combinedPharmaceuticalDoseForm"],
+      ["Route", `${PT.cc(mpd.route[0])} (EDQM ${mpd.route[0].coding[0].code})`, "MedicinalProductDefinition.route"],
+      ["Active substance", `${PT.label(apiSd)} (CAS ${apiSd.identifier[0].value})`, "Ingredient → SubstanceDefinition"],
+      ["Strength", strength(api), "Ingredient.substance.strength"],
+      ["Excipients", `${ings.length - 1} components`, "Ingredient (role = Excipient)"],
+      ["Packs", packs.map((p) => PT.cc(p.type)).join("; "), "PackagedProductDefinition"],
+      ["Shelf life", [...new Set(packs.flatMap((p) => shelf(p).map((s) => s.months + " months")))].join(", "), "…packaging.shelfLifeStorage"],
+      ["Manufacturing and testing sites", `${orgs.length} organizations, ${orgs.filter(fei).length} with an FEI number`, "Organization.identifier"],
+    ];
+    main.innerHTML = PT.head("Showcase 2 · Registration without retyping", "Agency intake form filled from the authorization, product and organization resources",
+      `When a Type 2 dossier arrives, a regulatory information management system can open the case from the resources alone: application, product, substance, packs and sites. Nothing is copied from a cover letter or retyped from a PDF table.`,
+      "Fewer transcription errors and faster case set-up. Sponsors map their <b>existing RIM/IDMP master data</b> once, and every Module 2.3 and 3.2 document carries it.") +
+      `<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(440px,1fr));align-items:start">
+        <div class="card"><div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;flex-wrap:wrap"><h3 style="margin:0">New quality submission</h3><span class="chip" id="cnt"></span><button class="btn primary" id="recv" style="margin-left:auto">${received ? "Received ✓" : "Receive Type 2 bundle"}</button></div>
+          <p class="sub" style="margin-top:6px">A mock agency intake form. Each field shows the FHIR element that fills it.</p>
+          <div id="form">${form.map((f, i) => `<div class="form-row"><label>${esc(f[0])}</label><div class="val" data-i="${i}"></div><span class="src">${esc(f[2])}</span></div>`).join("")}</div></div>
+        <div class="grid">
+          <div class="card"><h3>Who does what</h3><p class="sub">MedicinalProductDefinition.operation × Organization, with DUNS and FEI identifiers.</p>
+            <div class="scroll"><table class="t ops"><tr><th>Organization</th>${opNames.map((o) => `<th class="c" title="${esc(o)}">${esc(o.replace("Quality control testing", "QC testing").replace(" (release)", "").replace("(operation type not coded)", "Not coded").replace("Drug substance manufacture", "DS manufacture"))}</th>`).join("")}</tr>
+            ${orgs.filter((o) => ops.some((x) => x.orgs.includes("Organization/" + o.id))).map((o) => `<tr><td>${refLink(o)}<div class="ids">${duns(o) ? "DUNS " + esc(duns(o)) : ""}${fei(o) && fei(o) !== duns(o) ? " · FEI " + esc(fei(o)) : fei(o) ? " (also FEI)" : ""}</div></td>${opNames.map((n) => `<td class="c">${ops.some((x) => x.op === n && x.orgs.includes("Organization/" + o.id)) ? "●" : ""}</td>`).join("")}</tr>`).join("")}</table></div>
+            ${ops.some((o) => /not coded/.test(o.op)) ? `<p class="muted small" style="margin:8px 0 0">One operation in the example has no type code; a receiving system can flag that automatically.</p>` : ""}</div>
+          <div class="card"><h3>What a generic FHIR viewer shows</h3><p class="sub">The Product data section's generated narrative (<span class="mono">text.status = generated</span>).</p><div class="narr small" style="max-height:300px;overflow:auto">${PT.narrative(((m23.section || []).find((s) => PT.code(s) === "pqi-product-data").text || {}).div)}</div></div>
+        </div>
+      </div>`;
+    const fill = (animate) => {
+      PT.$$("#form .val", main).forEach((el, i) => {
+        const doit = () => { el.textContent = form[i][1]; el.classList.add("filled"); PT.$("#cnt", main).textContent = `${i + 1} of ${form.length} fields filled · 0 typed`; };
+        animate ? setTimeout(doit, 80 * i) : doit();
+      });
+    };
+    PT.$("#cnt", main).textContent = received ? `${form.length} of ${form.length} fields filled · 0 typed` : `0 of ${form.length} fields filled`;
+    if (received) fill(false);
+    PT.$("#recv", main).onclick = (e) => { received = true; e.target.textContent = "Received ✓"; fill(true); };
+    wire(main);
+  }
+
+  // ====================== 3. Master data once ======================
+  const SCEN = {
+    name: { label: "The invented name is refused and changes", key: "MedicinalProductDefinition/sakura-bloom-20mg", edit: "MedicinalProductDefinition.name.part[Invented name part]" },
+    site: { label: "Packaging site Pack Alpha Group renames itself", key: "Organization/pack-alpha", edit: "Organization.name" },
+    ma: { label: "The US application number is updated", key: "RegulatedAuthorization/sakura-bloom-20mg-us", edit: "RegulatedAuthorization.identifier" },
+    api: { label: "A new CAS registry number is recorded for Sakuramil", key: "SubstanceDefinition/sakuramil", edit: "SubstanceDefinition.identifier" },
+  };
+  let scen = null;
+  function reuse(main) {
+    const keys = Object.keys(D.copies).sort((a, b) => a.localeCompare(b));
+    const types = [...new Set(keys.map((k) => k.split("/")[0]))];
+    const allSame = Object.values(D.copies).every((c) => c.identical);
+    const totalCopies = Object.values(D.copies).reduce((a, c) => a + c.docs, 0);
+    main.innerHTML = PT.head("Showcase 3 · Maintained once", "Product data resources mapped against the 20 documents that carry them",
+      `The ${keys.length} product data resources are copied into each of the 20 documents that use them, under the same identifier and with the same content. Pick a change below: it touches one record, and the documents carrying it follow.`,
+      "Product data is <b>maintained once</b> in the source system and stays consistent across Module 2.3, every Module 3.2 document and IDMP. In Type 1 the same facts are scattered through prose.") +
+      `<div class="grid g4" style="margin-bottom:16px">
+        <div class="stat accent"><b>${keys.length}</b><span>distinct product data resources</span></div>
+        <div class="stat"><b>${PT.fmt(totalCopies)}</b><span>copies across the 20 documents</span></div>
+        <div class="stat"><b style="color:${allSame ? "var(--ok)" : "var(--bad)"}">${allSame ? "100 %" : "check"}</b><span>copies identical to their master (same id, same content)</span></div>
+        <div class="stat"><b>${docs.filter((d) => /SubstanceDefinition/.test(d.comp.subject[0].reference)).length} / ${docs.filter((d) => /MedicinalProduct/.test(d.comp.subject[0].reference)).length}</b><span>documents whose subject is the drug substance / drug product</span></div>
+      </div>
+      <div class="grid" style="grid-template-columns:minmax(260px,340px) minmax(0,1fr);align-items:start">
+        <div class="card sticky"><h3>Change the master data</h3><div id="scen">${Object.entries(SCEN).map(([k, s]) => `<label class="toggle"><input type="radio" name="sc" value="${k}" ${scen === k ? "checked" : ""}><span>${esc(s.label)}<div class="path">${esc(s.edit)}</div></span></label>`).join("")}</div><div id="impact" style="margin-top:10px"></div></div>
+        <div class="card flat"><div class="scroll" style="max-height:calc(100vh - 160px);padding:12px 16px"><table class="matrix" id="mx">
+          <tr><th></th>${docs.map((d) => `<th class="rot"><div>${esc(d.code)}</div></th>`).join("")}</tr>
+          <tr><td class="lbl muted small">Composition.subject</td>${docs.map((d) => `<td title="${esc(d.comp.subject[0].reference)}" style="background:${/Substance/.test(d.comp.subject[0].reference) ? "var(--t3-soft)" : "var(--t1-soft)"};font-size:10px">${/Substance/.test(d.comp.subject[0].reference) ? "DS" : "DP"}</td>`).join("")}</tr>
+          ${types.map((t) => `<tr><th colspan="${docs.length + 1}" style="padding-top:10px">${esc(t)}</th></tr>` + keys.filter((k) => k.startsWith(t + "/")).map((k) => `<tr data-k="${esc(k)}"><td class="lbl"><a href="#" data-ref="${esc(k)}">${esc(PT.label(R(k)).slice(0, 46))}</a></td>${docs.map((d, i) => `<td class="${d.carries.includes(k) ? "y" : ""}" data-col="${i}"></td>`).join("")}</tr>`).join("")).join("")}
+        </table></div></div>
+      </div>`;
+    wire(main);
+    const show = () => {
+      if (!scen) { PT.$("#impact", main).innerHTML = `<p class="muted small">Choose a change to see which documents it reaches.</p>`; return; }
+      const s = SCEN[scen], c = D.copies[s.key], m = D.t1Mentions[s.key];
+      const row = PT.$(`#mx tr[data-k="${CSS.escape(s.key)}"]`, main);
+      PT.$$("#mx tr", main).forEach((tr) => (tr.style.opacity = tr.dataset.k && tr !== row ? 0.35 : 1));
+      row.querySelectorAll("td.y").forEach((td) => { td.classList.remove("flash"); void td.offsetWidth; td.classList.add("flash"); });
+      row.scrollIntoView({ block: "center", behavior: "smooth" });
+      PT.$("#impact", main).innerHTML = `<div class="callout"><b>Type 2:</b> edit <b>1</b> record; <b>${c.docs}</b> document${c.docs > 1 ? "s" : ""} carry it and update with it.</div>
+        <div class="callout" style="margin-top:8px;border-color:var(--warn);background:var(--warn-soft)"><b>Narrative:</b> ${m && m.total ? `“${esc(m.term)}” is still written out <b>${PT.fmt(m.total)}</b> time${m.total > 1 ? "s" : ""} in ${m.hits.length} section${m.hits.length > 1 ? "s" : ""} of the Type 1/2 narrative. Type 2 leaves prose unchanged; <a href="type3.html">Type 3</a> links it to the record and <a href="type4.html">Type 4</a> can generate it.` : `this value does not appear in the narrative at all: in Type 1 it was not in the dossier as data.`}</div>`;
+    };
+    PT.$$("#scen input", main).forEach((i) => i.onchange = () => { scen = i.value; show(); });
+    show();
+  }
+
+  PT.shell({
+    type: 2,
+    foot: "Data: <span class='mono'>sakura-bloom-r2/fhir/pqi-types/type2</span>. The marketing authorization is made up for the examples.",
+    views: [
+      { id: "identity", title: "Product identity", sub: "Subject, author and coded product data", render: identity },
+      { id: "intake", title: "Registration without retyping", sub: "An intake form filled from the bundle", render: intake },
+      { id: "reuse", title: "Maintained once", sub: "One record, many documents", render: reuse },
+    ],
+  });
+})();
+</script>
+</body>
+</html>

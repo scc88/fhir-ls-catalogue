@@ -248,7 +248,7 @@ def build(S):
                   "part": [{"part": "Sakura Bloom", "type": cc("Invented name part")}, {"part": "20 mg", "type": cc("Strength part")}, {"part": "film-coated tablets", "type": cc("Pharmaceutical dose form part")}]}],
         "operation": [
             {"type": {"concept": cc("Drug substance manufacture")}, "organization": [ref("Organization", "iroha-corp")]},
-            {"type": {"reference": ref("PlanDefinition", "dp-manufacturing-process")}, "organization": [ref("Organization", "aparna-pharm")]},
+            {"type": {"concept": cc("Drug product manufacture"), "reference": ref("PlanDefinition", "dp-manufacturing-process")}, "organization": [ref("Organization", "aparna-pharm")]},
             {"type": {"concept": cc("Quality control testing (release)")}, "organization": [ref("Organization", "aparna-pharm"), ref("Organization", "dakina-analytica"), ref("Organization", "kunchen-sa")]},
             {"type": {"concept": cc("Primary packaging")}, "organization": [ref("Organization", "aparna-pharm"), ref("Organization", "pack-alpha"), ref("Organization", "cocopharma")]},
             {"type": {"concept": cc("Secondary packaging")}, "organization": [ref("Organization", "aparna-pharm"), ref("Organization", "pack-alpha")]},

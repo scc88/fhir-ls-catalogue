@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PQI Type 1 · Structured document | FHIR for Global Regulatory Affairs</title>
+<meta name="description" content="PQI Type 1 showcases: the CTD Module 2.3 and 3.2 Word templates converted 1:1 into coded FHIR sections, validated on receipt, with figures as addressable objects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="pqi-types.css">
+</head>
+<body>
+<noscript>This showcase needs JavaScript.</noscript>
+<script src="data/t1.js"></script>
+<script src="pqi-types.js"></script>
+<script>
+(function () {
+  const D = PQIDATA.t1, esc = PT.esc;
+  PT.images = D.images;
+  const docs = D.docs.map((d, i) => ({ ...d, i, comp: d.composition, code: PT.docCode(d.composition), title: PT.shortTitle(d.composition.title) }));
+  docs.forEach((d) => { d.secs = PT.walk(d.comp.section); d.secs.forEach((x) => { x.doc = d; x.plain = PT.plain((x.s.text || {}).div); }); });
+  const allSecs = docs.flatMap((d) => d.secs);
+  const findSec = (docId, code) => { const d = docs.find((x) => x.comp.id === docId) || docs[0]; return d.secs.find((x) => x.code === code) || d.secs.find((x) => x.s.text) || d.secs[0]; };
+  const fhirPath = (x) => { const idx = []; let c = x; while (c) { const sib = c.parent ? c.parent.s.section : c.doc.comp.section; idx.unshift(sib.indexOf(c.s)); c = c.parent; } return "Composition" + idx.map((i) => `.section[${i}]`).join(""); };
+  const figOf = (ref) => D.figures[ref];
+  const imgOfFig = (fig) => { const at = ((fig.content || [])[0] || {}).attachment || {}; return D.images[at.url]; };
+
+  // ====================== 1. Coded CTD navigator ======================
+  let navQuery = "";
+  function navigator(main, param) {
+    const [docId, code] = param ? param.split("/") : [docs[0].comp.id, "2.3.INTRO"];
+    const cur = findSec(docId, code);
+    const total = allSecs.filter((x) => x.s.text && x.s.text.div).length;
+    main.innerHTML = PT.head("Showcase 1 · Navigation", "Module 2.3 and 3.2 sections, browsed by CTD heading code",
+      `The Module 2.3 summary and the 19 Module 3.2 documents, converted 1:1 from the ICH M4Q(R1) Word templates. The narrative and figures are the same as in Word, but each heading now carries a code from the CTD Quality Section Headings code system, so “3.2.P.5.1” is an address, not a page number.`,
+      "A reviewer, a validation tool or another agency can request <b>exactly one section</b> of the dossier by its code, across documents and submissions, without opening PDFs or depending on bookmarks.") +
+      `<div class="grid g4" style="margin-bottom:16px">
+        <div class="stat accent"><b>${docs.length}</b><span>FHIR documents (1 × Module 2.3, 19 × Module 3.2)</span></div>
+        <div class="stat"><b>${PT.fmt(allSecs.length)}</b><span>coded sections</span></div>
+        <div class="stat"><b>${PT.fmt(total)}</b><span>sections with authored narrative</span></div>
+        <div class="stat"><b>${PT.fmt(Object.keys(D.figures).length)}</b><span>figures as DocumentReference + Binary</span></div>
+      </div>
+      <div class="split">
+        <div class="card flat sticky" style="max-height:calc(100vh - 140px);display:flex;flex-direction:column">
+          <div style="padding:12px;border-bottom:1px solid var(--sep);display:grid;gap:8px">
+            <form id="goto" style="display:flex;gap:6px"><input class="input mono" id="gotoCode" placeholder="Go to code, e.g. 3.2.P.5.1" aria-label="Go to section code"><button class="btn primary" type="submit">Go</button></form>
+            <input class="input" id="q" placeholder="Search the narrative…" value="${esc(navQuery)}" aria-label="Search narrative">
+          </div>
+          <div class="tree scroll" id="tree" style="padding:6px"></div>
+        </div>
+        <div class="card" id="reader"></div>
+      </div>`;
+    const tree = PT.$("#tree", main);
+    const drawTree = () => {
+      const q = navQuery.trim().toLowerCase();
+      if (q.length > 1) {
+        const hits = allSecs.filter((x) => x.plain.toLowerCase().includes(q) || x.code.toLowerCase().includes(q) || (x.s.title || "").toLowerCase().includes(q));
+        tree.innerHTML = `<div class="doc">${hits.length} sections match</div>` + hits.slice(0, 200).map((x) => {
+          const p = x.plain.toLowerCase().indexOf(q);
+          const snip = p >= 0 ? "…" + x.plain.slice(Math.max(0, p - 40), p + 70) + "…" : "";
+          return `<button data-doc="${esc(x.doc.comp.id)}" data-code="${esc(x.code)}" ${x === cur ? 'aria-current="true"' : ""}><span class="code">${esc(x.code)}</span><span class="ttl">${esc(x.s.title)}<div class="muted small">${esc(snip)}</div></span></button>`;
+        }).join("");
+      } else {
+        tree.innerHTML = docs.map((d) => `<div class="doc">${esc(d.code === "2.3" ? "Module 2.3 · QOS" : "Module 3.2 · " + d.code)}</div>` +
+          d.secs.map((x) => `<button style="padding-left:${10 + x.depth * 14}px" data-doc="${esc(d.comp.id)}" data-code="${esc(x.code)}" ${x === cur ? 'aria-current="true"' : ""}><span class="code">${esc(x.code.length > 14 ? "3.2.R·" : x.code)}</span><span class="ttl">${esc(x.s.title)}</span>${(x.s.entry || []).length ? `<span class="badge">▣ ${x.s.entry.length}</span>` : ""}</button>`).join("")).join("");
+      }
+      tree.querySelectorAll("button").forEach((b) => b.onclick = () => { location.hash = `navigator/${b.dataset.doc}/${b.dataset.code}`; });
+      const on = tree.querySelector('[aria-current="true"]');
+      if (on && !q) tree.scrollTop = on.offsetTop - tree.clientHeight / 2;
+    };
+    drawTree();
+    PT.$("#q", main).oninput = (e) => { navQuery = e.target.value; drawTree(); };
+    PT.$("#goto", main).onsubmit = (e) => {
+      e.preventDefault();
+      const c = PT.$("#gotoCode", main).value.trim().toUpperCase().replace(/^(\d)/, "$1");
+      const hit = allSecs.find((x) => x.code.toUpperCase() === c);
+      if (hit) location.hash = `navigator/${hit.doc.comp.id}/${hit.code}`;
+      else PT.$("#gotoCode", main).setCustomValidity("No section with that code"), PT.$("#gotoCode", main).reportValidity();
+    };
+    PT.$("#gotoCode", main).oninput = (e) => e.target.setCustomValidity("");
+    const s = cur.s, d = cur.doc;
+    const cod = ((s.code || {}).coding || [])[0] || {};
+    const figs = (s.entry || []).map((e) => figOf(e.reference)).filter(Boolean);
+    const kids = s.section || [];
+    PT.$("#reader", main).innerHTML = `<div class="narr-head"><span class="code">${esc(cur.code)}</span><h3>${esc(s.title)}</h3></div>
+      <dl class="kv small" style="margin-bottom:14px">
+        <dt>Document</dt><dd>${esc(d.title)} <span class="muted">· ${esc(d.bundleId)}</span></dd>
+        <dt>Code</dt><dd class="mono">${esc(cod.system || "(code.text)")}#${esc(cod.code || (s.code || {}).text)}</dd>
+        <dt>FHIR path</dt><dd class="mono">${esc(fhirPath(cur))}</dd>
+        <dt>Narrative</dt><dd>${s.text ? `${esc(s.text.status)} · ${PT.fmt(cur.plain.length)} characters` : "<span class='muted'>none (heading only)</span>"}${figs.length ? ` · ${figs.length} figure${figs.length > 1 ? "s" : ""} in <span class='mono'>section.entry</span>` : ""}</dd>
+      </dl>
+      ${kids.length ? `<div class="chips" style="margin-bottom:14px">${kids.map((k) => `<button class="chip" data-code="${esc(PT.code(k))}">${esc(PT.code(k).length > 14 ? "Regional" : PT.code(k))} ${esc(k.title.length > 40 ? k.title.slice(0, 40) + "…" : k.title)}</button>`).join("")}</div>` : ""}
+      <div class="narr">${s.text && s.text.div ? PT.narrative(s.text.div, { images: D.images }) : `<p class="muted">This heading groups its sub-sections and has no narrative of its own.</p>`}</div>`;
+    PT.$$("#reader [data-code]", main).forEach((b) => b.onclick = () => { location.hash = `navigator/${d.comp.id}/${b.dataset.code}`; });
+    PT.$$("#reader img", main).forEach((img) => { img.style.cursor = "zoom-in"; img.onclick = () => { const fig = Object.values(D.figures).find((f) => ((f.content || [])[0] || {}).attachment && f.content[0].attachment.url === img.dataset.binary); if (fig) showFigure(fig); }; });
+    if (navQuery) PT.$("#q", main).focus();
+  }
+
+  // ====================== 2. Intake validation ======================
+  const faults = {
+    txt: { label: "Delete the narrative of 3.2.P.5.1 Specification(s)", doc: "3.2.P.5", fn: (c) => { const x = PT.walk(c.section).find((y) => y.code === "3.2.P.5.1"); delete x.s.text; } },
+    nest: { label: "Move 3.2.P.5.4 Batch Analyses under 3.2.P.3 by mistake", doc: "3.2.P.5", fn: (c) => { const top = c.section.find((s) => PT.code(s) === "3.2.P.5"); const i = top.section.findIndex((s) => PT.code(s) === "3.2.P.5.4"); const s = top.section[i]; s.code.coding[0].code = "3.2.P.3.4"; } },
+    dup: { label: "Paste 3.2.S.4.1 Specification twice", doc: "3.2.S.4", fn: (c) => { const top = c.section.find((s) => PT.code(s) === "3.2.S.4"); top.section.splice(1, 0, JSON.parse(JSON.stringify(top.section[0]))); } },
+    link: { label: "Link the drug product specification resource from 3.2.P.5.1 (a Type 3 feature)", doc: "3.2.P.5", fn: (c) => { const x = PT.walk(c.section).find((y) => y.code === "3.2.P.5.1"); (x.s.entry = x.s.entry || []).push({ reference: "PlanDefinition/spec-dp" }); } },
+    img: { label: "Lose one figure's Binary during conversion", doc: "3.2.P.3", binDrop: true },
+    top: { label: "Put 3.2.P.4 into the 3.2.P.5 document as a second top-level section", doc: "3.2.P.5", fn: (c) => { c.section.push({ title: "Control of Excipients", code: { coding: [{ system: "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/ctd-section-pq", code: "3.2.P.4" }] }, text: { status: "additional", div: "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>…</p></div>" } }); } },
+  };
+  const active = new Set();
+  const CTD = "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/ctd-section-pq";
+  const RULES = [
+    { id: "bdl", name: "FHIR document Bundle", desc: "Bundle.type is document and the first entry is the Composition.", f: (d) => d.bundleType === "document" && d.firstEntry === "Composition" ? [] : ["not a document Bundle"] },
+    { id: "cat", name: "Declared as Type 1", desc: "Composition.category is type-1 from the PQI maturity type code system.", f: (d) => (((d.c.category || [])[0] || {}).coding || [])[0].code === "type-1" ? [] : ["category is not type-1"] },
+    { id: "pqi-sec-0", name: "Top-level headings are CTD codes", desc: "Every top-level section uses the CTD Quality Section Headings code system.", f: (d) => d.c.section.filter((s) => (((s.code || {}).coding || [])[0] || {}).system !== CTD).map((s) => s.title) },
+    { id: "pqi-sec-1", name: "Sub-sections sit under their parent", desc: "A sub-section's code extends its parent's code (3.2.R uses regional headings).", f: (d) => PT.walk(d.c.section).filter((x) => x.parent && x.parent.code !== "3.2.R" && !x.code.startsWith(x.parent.code + ".")).map((x) => `${x.code} under ${x.parent.code}`) },
+    { id: "pqi-gran-1", name: "One CTD level-3 heading per Module 3.2 document", desc: "A Module 3.2 document has exactly one CTD top-level section.", f: (d) => d.code === "2.3" || d.c.section.filter((s) => PT.code(s) !== "pqi-product-data").length === 1 ? [] : [`${d.c.section.length} top-level sections`] },
+    { id: "pqi-sec-2", name: "Sibling headings are unique", desc: "Siblings are unique by code and title; in Type 1 a heading repeats only with a different title.", f: (d) => { const out = []; const chk = (secs) => { const seen = new Set(); (secs || []).forEach((s) => { const k = PT.code(s) + "|" + s.title; if (seen.has(k)) out.push(PT.code(s) + " repeated"); seen.add(k); chk(s.section); }); }; chk(d.c.section); return out; } },
+    { id: "pqi-t1-1", name: "Entries reference figures only", desc: "In Type 1, section.entry may only reference image DocumentReferences.", f: (d) => PT.walk(d.c.section).flatMap((x) => (x.s.entry || []).filter((e) => !/^DocumentReference\//.test(e.reference) || !D.figures[e.reference]).map((e) => `${x.code} → ${e.reference}`)) },
+    { id: "pqi-t1-2", name: "Narrative is authored", desc: "Narrative status is additional, or empty (notstarted) in a blank template.", f: (d) => PT.walk(d.c.section).filter((x) => x.s.text && !["additional", "empty"].includes(x.s.text.status)).map((x) => x.code + ": " + x.s.text.status) },
+    { id: "pqi-txt-1", name: "Every leaf section has narrative", desc: "A section without sub-sections must carry narrative.", f: (d) => PT.walk(d.c.section).filter((x) => PT.isLeaf(x.s) && !(x.s.text && x.s.text.div)).map((x) => x.code) },
+    { id: "cont", name: "No contained resources", desc: "Composition.contained is 0..0.", f: (d) => d.contained ? [d.contained + " contained"] : [] },
+    { id: "img", name: "Every figure resolves", desc: "Each <img> in the narrative points to a Binary carried in the same Bundle (checked by an external validation app).", f: (d) => PT.walk(d.c.section).flatMap((x) => [...((x.s.text || {}).div || "").matchAll(/src="([^"]+)"/g)].map((m) => m[1]).filter((src) => !d.bins.has(src)).map((src) => `${x.code}: ${src}`)) },
+  ];
+  function runChecks() {
+    return docs.map((d) => {
+      const c = JSON.parse(JSON.stringify(d.comp));
+      const bins = new Set(d.binaries);
+      for (const k of active) {
+        const f = faults[k];
+        if (f.doc !== d.code) continue;
+        if (f.fn) f.fn(c);
+        if (f.binDrop) bins.delete([...bins][0]);
+      }
+      const ctx = { ...d, c, bins };
+      return { d, res: RULES.map((r) => ({ r, issues: r.f(ctx) })) };
+    });
+  }
+  function validate(main) {
+    main.innerHTML = PT.head("Showcase 2 · Intake validation", "Type 1 structural rules checked on all 20 documents, with a heading completeness map",
+      `The receiving system runs the Type 1 rules on all 20 documents the moment they arrive. Headings, nesting, narrative and figures are checked in this browser against the actual example data. Switch on a conversion mistake to see which rule catches it.`,
+      "Technical validation of CMC content moves from manual page-turning to an automated check at the gateway: <b>missing or misfiled sections are found before an assessor opens the file.</b>") +
+      `<div class="grid g4" id="vstats" style="margin-bottom:16px"></div>
+       <div class="grid" style="grid-template-columns:minmax(260px,360px) minmax(0,1fr);align-items:start">
+         <div class="card"><h3>Simulate a conversion mistake</h3><p class="sub">Each switch edits a copy of one document before the checks run.</p><div id="faults"></div></div>
+         <div class="card"><h3>Type 1 rules × 20 documents</h3><p class="sub">Rule IDs follow the PQI Type 1 profile. Expand a rule to see which document fails.</p><div id="rules"></div></div>
+       </div>
+       <div class="card" style="margin-top:16px"><h3>Completeness map: ICH M4Q(R1) Module 3.2 headings</h3><p class="sub">Each cell is a heading the template expects. Shade = amount of narrative; a red outline = expected but absent. Click a cell to open it.</p><div id="complete"></div></div>`;
+    PT.$("#faults", main).innerHTML = Object.entries(faults).map(([k, f]) => `<label class="toggle"><input type="checkbox" data-f="${k}" ${active.has(k) ? "checked" : ""}><span>${esc(f.label)}<div class="muted small">in document ${esc(f.doc)}</div></span></label>`).join("") + `<button class="btn" id="reset" style="margin-top:8px">Reset</button>`;
+    PT.$$("#faults input", main).forEach((i) => i.onchange = () => { i.checked ? active.add(i.dataset.f) : active.delete(i.dataset.f); draw(); });
+    PT.$("#reset", main).onclick = () => { active.clear(); PT.$$("#faults input", main).forEach((i) => (i.checked = false)); draw(); };
+    function draw() {
+      const out = runChecks();
+      const checks = out.length * RULES.length;
+      const failed = out.reduce((a, o) => a + o.res.filter((x) => x.issues.length).length, 0);
+      const docsFail = out.filter((o) => o.res.some((x) => x.issues.length)).length;
+      PT.$("#vstats", main).innerHTML = `<div class="stat accent"><b>${checks}</b><span>checks run (${RULES.length} rules × ${out.length} documents)</span></div>
+        <div class="stat"><b style="color:${failed ? "var(--bad)" : "var(--ok)"}">${checks - failed}</b><span>checks passed</span></div>
+        <div class="stat"><b style="color:${failed ? "var(--bad)" : "var(--ok)"}">${failed}</b><span>checks failed</span></div>
+        <div class="stat"><b>${out.length - docsFail}/${out.length}</b><span>documents structurally valid</span></div>`;
+      PT.$("#rules", main).innerHTML = RULES.map((r, ri) => {
+        const bad = out.filter((o) => o.res[ri].issues.length);
+        return `<div class="check"><span class="ic ${bad.length ? "fail" : "pass"}">${bad.length ? "✕" : "✓"}</span><div><b>${esc(r.name)}</b> <span class="rule">${esc(r.id)}</span><p>${esc(r.desc)}</p>
+          ${bad.length ? `<details open><summary>${bad.length} document${bad.length > 1 ? "s" : ""} fail</summary>${bad.map((o) => `<div><b class="mono">${esc(o.d.code)}</b>: ${o.res[ri].issues.slice(0, 5).map(esc).join("; ")}</div>`).join("")}</details>` : ""}</div><span class="chip ${bad.length ? "bad" : "ok"}">${out.length - bad.length}/${out.length}</span></div>`;
+      }).join("");
+    }
+    draw();
+    // completeness
+    const byCode = new Map(allSecs.filter((x) => x.doc.code !== "2.3").map((x) => [x.code, x]));
+    const max = Math.max(...allSecs.map((x) => x.plain.length));
+    const cell = (code, title) => {
+      const x = byCode.get(code);
+      if (!x) return `<div class="cell" style="border:2px solid var(--bad);background:var(--bad-soft)"><b class="mono">${esc(code)}</b><div>${esc(title || "")} · absent</div></div>`;
+      const n = x.plain.length, a = n ? 0.12 + 0.75 * Math.sqrt(n / max) : 0;
+      return `<button class="cell" data-doc="${esc(x.doc.comp.id)}" data-code="${esc(code)}" style="border:0;text-align:left;cursor:pointer;background:color-mix(in srgb, var(--accent) ${Math.round(a * 100)}%, var(--fill));color:${a > 0.5 ? "#fff" : "inherit"}" title="${PT.fmt(n)} characters"><b class="mono">${esc(code)}</b><div>${esc(x.s.title.length > 34 ? x.s.title.slice(0, 34) + "…" : x.s.title)}</div></button>`;
+    };
+    PT.$("#complete", main).innerHTML = `<div style="display:grid;gap:6px">` + PT.M32.map(([c, t, kids]) => `<div style="display:grid;grid-template-columns:150px repeat(auto-fill,minmax(120px,1fr));gap:6px">${cell(c, t)}${kids.map((k) => cell(k)).join("")}</div>`).join("") + `</div>`;
+    PT.$$("#complete [data-code]", main).forEach((b) => b.onclick = () => { location.hash = `navigator/${b.dataset.doc}/${b.dataset.code}`; });
+  }
+
+  // ====================== 3. Figure register ======================
+  const PROV = [
+    ["ich", "From an ICH guideline", /from ICH M\d/],
+    ["mock-up", "Redrawn from mock-up data", /Redrawn for the PQI examples/],
+    ["iupac", "Structure drawn", /Structure drawn/],
+    ["fda", "FDA example QOS", /FDA example/],
+    ["pqi", "HL7 PQI example data", /PQI example data|FHIR PQI team/],
+    ["synthetic", "Synthetic illustration", /Synthetic illustration/],
+    ["placeholder", "Labelled placeholder", /placeholder/i],
+  ];
+  const provOf = (fig) => (PROV.find((p) => p[2].test(fig.description || "")) || ["other", "Other"])[0];
+  const usage = new Map(); // figure ref -> [{doc, code}]
+  for (const d of docs) for (const x of d.secs) for (const e of x.s.entry || []) if (D.figures[e.reference]) { if (!usage.has(e.reference)) usage.set(e.reference, []); usage.get(e.reference).push(x); }
+  const byImage = new Map(); // img file -> [figure refs]
+  for (const [ref, f] of Object.entries(D.figures)) { const im = imgOfFig(f); if (!im) continue; if (!byImage.has(im)) byImage.set(im, []); byImage.get(im).push(ref); }
+  function showFigure(fig) {
+    const ref = "DocumentReference/" + fig.id, im = imgOfFig(fig);
+    const used = usage.get(ref) || [];
+    const twins = (byImage.get(im) || []).filter((r) => r !== ref);
+    const at = fig.content[0].attachment;
+    const p = PROV.find((x) => x[0] === provOf(fig));
+    PT.inspect({
+      title: at.title || fig.id, path: ref, json: fig,
+      chips: [`<span class="chip rt acc">DocumentReference</span>`, `<span class="chip">${esc(p ? p[1] : "Other")}</span>`],
+      html: `${im ? `<img src="${esc(im)}" alt="${esc(at.title || "")}" style="max-width:100%;border:1px solid var(--sep);border-radius:10px;background:#fff">` : ""}
+        <div><h4>Provenance (DocumentReference.description)</h4><p class="small" style="margin:0">${esc(fig.description)}</p></div>
+        <div><h4>Cited in</h4>${used.map((x) => `<a href="#navigator/${esc(x.doc.comp.id)}/${esc(x.code)}" class="chip" style="margin:0 4px 4px 0">${esc(x.code)} · ${esc(x.s.title.slice(0, 30))}</a>`).join("") || "<span class='muted small'>not cited in section.entry</span>"}</div>
+        ${twins.length ? `<div><h4>Same image, other DocumentReferences</h4>${twins.map((r) => `<span class="chip rt" style="margin:0 4px 4px 0">${esc(r)}</span>`).join("")}<p class="muted small" style="margin:6px 0 0">Identical bytes. A content hash on the Binary finds duplicates automatically.</p></div>` : ""}`,
+    });
+  }
+  let figFilter = "all", figMod = "all", figQ = "";
+  function figures(main) {
+    const all = Object.values(D.figures);
+    const counts = {}; all.forEach((f) => { const p = provOf(f); counts[p] = (counts[p] || 0) + 1; });
+    const reused = [...byImage.values()].filter((v) => v.length > 1).length;
+    const both = [...byImage.values()].filter((v) => v.some((r) => (usage.get(r) || []).some((x) => x.doc.code === "2.3")) && v.some((r) => (usage.get(r) || []).some((x) => x.doc.code !== "2.3"))).length;
+    main.innerHTML = PT.head("Showcase 3 · Figure register", "All figure DocumentReferences, filterable by provenance and module",
+      `In Word, a figure is pixels inside a page. In a Type 1 document it is a DocumentReference with a title and a description of how it was made, plus a Binary with the image bytes, listed in the entry of the section that shows it.`,
+      "Assessors and publishers can list, filter and reuse figures across the dossier, see <b>where each figure was cited</b> and how it was produced, and find duplicates by content.") +
+      `<div class="grid g4" style="margin-bottom:16px">
+        <div class="stat accent"><b>${all.length}</b><span>figure DocumentReferences</span></div>
+        <div class="stat"><b>${byImage.size}</b><span>distinct images (by content hash)</span></div>
+        <div class="stat"><b>${reused}</b><span>images carried by more than one DocumentReference</span></div>
+        <div class="stat"><b>${both}</b><span>images shown in both Module 2.3 and Module 3.2</span></div>
+      </div>
+      <div class="toolbar">
+        <div class="chips" id="prov"><button class="chip ${figFilter === "all" ? "on" : ""}" data-p="all">All ${all.length}</button>${PROV.filter((p) => counts[p[0]]).map((p) => `<button class="chip ${figFilter === p[0] ? "on" : ""}" data-p="${p[0]}">${esc(p[1])} ${counts[p[0]]}</button>`).join("")}</div>
+        <div class="seg" id="mod">${[["all", "Both modules"], ["2.3", "Module 2.3"], ["3.2", "Module 3.2"]].map(([k, l]) => `<button aria-pressed="${figMod === k}" data-m="${k}">${l}</button>`).join("")}</div>
+        <input class="input" id="fq" style="max-width:260px" placeholder="Filter by caption…" value="${esc(figQ)}">
+      </div>
+      <div class="gallery" id="gal"></div>`;
+    const draw = () => {
+      const q = figQ.toLowerCase();
+      const seen = new Set();
+      const list = all.filter((f) => {
+        if (figFilter !== "all" && provOf(f) !== figFilter) return false;
+        const u = usage.get("DocumentReference/" + f.id) || [];
+        if (figMod === "2.3" && !u.some((x) => x.doc.code === "2.3")) return false;
+        if (figMod === "3.2" && !u.some((x) => x.doc.code !== "2.3")) return false;
+        if (q && !(f.description || "").toLowerCase().includes(q)) return false;
+        const im = imgOfFig(f);
+        if (seen.has(im)) return false;
+        seen.add(im);
+        return true;
+      });
+      PT.$("#gal", main).innerHTML = list.map((f) => {
+        const at = f.content[0].attachment, u = usage.get("DocumentReference/" + f.id) || [];
+        const p = PROV.find((x) => x[0] === provOf(f));
+        const n = (byImage.get(imgOfFig(f)) || []).length;
+        return `<button class="fig" data-id="${esc(f.id)}"><div class="im"><img loading="lazy" src="${esc(imgOfFig(f))}" alt=""></div><div class="cap"><span>${esc((at.title || "").replace(/\s+/g, " ").slice(0, 90))}</span><span class="chips"><span class="chip small">${esc(p ? p[1] : "Other")}</span>${u[0] ? `<span class="chip rt">${esc(u[0].code)}</span>` : ""}${n > 1 ? `<span class="chip acc">×${n}</span>` : ""}</span></div></button>`;
+      }).join("") || `<div class="empty">No figures match.</div>`;
+      PT.$$("#gal .fig", main).forEach((b) => b.onclick = () => showFigure(D.figures["DocumentReference/" + b.dataset.id]));
+    };
+    PT.$$("#prov button", main).forEach((b) => b.onclick = () => { figFilter = b.dataset.p; PT.$$("#prov button", main).forEach((x) => x.classList.toggle("on", x === b)); draw(); });
+    PT.$$("#mod button", main).forEach((b) => b.onclick = () => { figMod = b.dataset.m; PT.$$("#mod button", main).forEach((x) => x.setAttribute("aria-pressed", x === b)); draw(); });
+    PT.$("#fq", main).oninput = (e) => { figQ = e.target.value; draw(); };
+    draw();
+  }
+
+  PT.shell({
+    type: 1,
+    foot: "Data: <span class='mono'>sakura-bloom-r2/fhir/pqi-types/type1</span>. Synthetic: ICH M4Q(R2) Sakura Bloom mock-up, FDA example QOS and HL7 PQI team examples.",
+    views: [
+      { id: "navigator", title: "Coded CTD navigator", sub: "Request any section by its code", render: navigator },
+      { id: "validate", title: "Intake validation", sub: "Type 1 rules run on receipt", render: validate },
+      { id: "figures", title: "Figure register", sub: "Figures with address and provenance", render: figures },
+    ],
+  });
+})();
+</script>
+</body>
+</html>

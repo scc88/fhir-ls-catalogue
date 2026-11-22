@@ -198,6 +198,7 @@
             <ul class="dropdown">
               <li><a href="showcases-labeling.html">Labeling</a></li>
               <li><a href="showcases-cmc.html">CMC</a></li>
+              <li><a href="showcases-pqi-types.html">CMC · PQI Types 1–4</a></li>
               <li><a href="showcases-workflow.html">Workflow</a></li>
             </ul>
           </li>
@@ -217,7 +218,7 @@
         <span class="domain-tag">Showcases · CMC</span>
         <h1>Chemistry, Manufacturing &amp; Controls</h1>
         <p>This page summarizes the showcases for CMC and what they demonstrate: what a quality assessor can do when CTD Module 2.3 and 3.2 arrive as linked FHIR PQI resources instead of static PDF leaf documents. The demos use the Sakura Bloom example product from the ICH M4Q(R2) mock-up.</p>
-        <div class="hero-meta"><span><strong>3</strong> live showcases</span><span><strong>0</strong> in preparation</span><span><strong>1</strong> related FHIR standard</span></div>
+        <div class="hero-meta"><span><strong>3</strong> live showcases</span><span><strong>12</strong> PQI Type 1–4 showcases</span><span><strong>0</strong> in preparation</span><span><strong>1</strong> related FHIR standard</span></div>
       </div>
     </section>
 
@@ -249,6 +250,42 @@
           <p>The 13-step manufacturing process (CTD 3.2.P.3.3) captured with the draft ISO 26060 model and exchanged as a validated FHIR PQI bundle. Explore the recipe step by step, query it with XPath, and see what a process-parameter change touches downstream.</p>
           <div class="tags"><span>PQI</span><span>ISO 26060</span><span>PlanDefinition</span><span>3.2.P.3.3</span></div>
           <span class="go">Open showcase →</span>
+        </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pqi-types">
+      <div class="container">
+        <div class="section-head"><h2>PQI Types 1–4</h2><span>12 showcases · <a href="showcases-pqi-types.html">see the overview →</a></span></div>
+        <div class="showcase-grid">
+        <a class="showcase-card" href="showcases/pqi-types/type1.html">
+          <span class="kind">Type 1 · 3 showcases</span>
+          <h3>Structured document</h3>
+          <p>The Word templates converted 1:1 into coded CTD sections: navigate by heading code, validate structure on receipt, and register every figure with its provenance.</p>
+          <div class="tags"><span>Composition</span><span>ctd-section-pq</span><span>DocumentReference</span></div>
+          <span class="go">Open Type 1 →</span>
+        </a>
+        <a class="showcase-card" href="showcases/pqi-types/type2.html">
+          <span class="kind">Type 2 · 3 showcases</span>
+          <h3>Document + product data</h3>
+          <p>Product, packs, ingredients, sites and the authorization travel as resources: a coded identity card, an intake form filled without retyping, master data maintained once.</p>
+          <div class="tags"><span>MedicinalProductDefinition</span><span>RegulatedAuthorization</span></div>
+          <span class="go">Open Type 2 →</span>
+        </a>
+        <a class="showcase-card" href="showcases/pqi-types/type3.html">
+          <span class="kind">Type 3 · 3 showcases</span>
+          <h3>Linked document</h3>
+          <p>Each passage of the narrative linked to the resources it discusses: click from a sentence to its data, list every passage that relies on a resource, and check every link on arrival.</p>
+          <div class="tags"><span>textLink</span><span>PlanDefinition</span><span>Observation</span></div>
+          <span class="go">Open Type 3 →</span>
+        </a>
+        <a class="showcase-card" href="showcases/pqi-types/type4.html">
+          <span class="kind">Type 4 · 3 showcases</span>
+          <h3>Data-first document</h3>
+          <p>Where resources carry the content they replace the narrative: compare authored and generated sections, regenerate them from a QMS or LIMS change, and plan mixed-maturity collections.</p>
+          <div class="tags"><span>text.status = generated</span><span>DiagnosticReport</span></div>
+          <span class="go">Open Type 4 →</span>
         </a>
         </div>
       </div>

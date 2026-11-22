@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PQI Type 4 · Data-first document | FHIR for Global Regulatory Affairs</title>
+<meta name="description" content="PQI Type 4 showcases: sections carried entirely by PQI resources are generated from source systems; the resources are the record.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="pqi-types.css">
+<style>
+  .cmp { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+  .cmp .col-h { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .gen table.t td, .gen table.t th { font-size: 12.5px; padding: 6px 8px; }
+  .gen h4 { font-size: 14px; margin: 14px 0 6px; }
+  .v-pass { color: var(--ok); } .v-near { color: var(--warn); font-weight: 600; } .v-fail { color: var(--bad); font-weight: 700; } .v-info { color: var(--muted); }
+  td.changed, tr.changed td { background: #fff7d6 !important; }
+  th.newcol, td.newcol { background: var(--accent-soft); }
+  .src-panel label { display: block; font-size: 12px; color: var(--muted); margin: 10px 0 4px; font-weight: 600; }
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .event { font-size: 12.5px; padding: 6px 0; border-bottom: 1px solid var(--sep); }
+  .event:last-child { border-bottom: 0; }
+  .lock::after { content: " 🔒"; font-size: 10px; }
+  .preset { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tsel { display: inline-flex; gap: 2px; background: var(--fill); padding: 2px; border-radius: 8px; }
+  .tsel button { border: 0; background: none; padding: 3px 9px; border-radius: 6px; cursor: pointer; font-size: 12px; font-weight: 600; color: var(--muted); }
+  .tsel button[aria-pressed="true"] { color: #fff; }
+  @container (max-width: 1000px) { .cmp { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<noscript>This showcase needs JavaScript.</noscript>
+<script src="data/t4.js"></script>
+<script src="data/resources.js"></script>
+<script src="data/stats.js"></script>
+<script src="data/logic.js"></script>
+<script src="pqi-types.js"></script>
+<script>
+(function () {
+  const D = PQIDATA.t4, RS = PQIDATA.resources, ST = PQIDATA.stats, esc = PT.esc;
+  const db = PT.db(RS.bundle, RS.registry);
+  const L = PQI, ldb = L.load([...RS.bundle, ...RS.registry]);
+  const docs = D.docs.map((d) => ({ ...d, comp: d.composition, code: PT.docCode(d.composition), title: PT.shortTitle(d.composition.title) }));
+  docs.forEach((d) => { d.secs = PT.walk(d.comp.section); d.secs.forEach((x) => (x.doc = d)); });
+  const allSecs = docs.flatMap((d) => d.secs);
+  const secBy = (code) => allSecs.find((x) => x.code === code);
+  const replaced = Object.keys(D.t3).filter((c) => (secBy(c) || { s: {} }).s.text && secBy(c).s.text.status === "generated");
+  const REQUIRED = ["3.2.P.2", "3.2.S.4.5", "3.2.P.5.6", "3.2.S.7.1", "3.2.P.8.1"];
+  const odUrl = (id) => "http://example.org/sakura-bloom-r2/fhir/ObservationDefinition/" + id;
+  const vcls = (st) => "v-" + (st || "info");
+
+  // ---------- generators: resources -> human-readable section ----------
+  let overrides = {}; // odId -> {ctx -> {low, high}}
+  const critFor = (od, ctx) => {
+    const o = overrides[od.id] && overrides[od.id][ctx];
+    if (o) return { text: [o.low != null && o.low !== "" ? "NLT " + o.low + " %" : "", o.high != null && o.high !== "" ? "NMT " + o.high + " %" : ""].filter(Boolean).join(", "), range: { low: o.low !== "" && o.low != null ? { value: +o.low } : null, high: o.high !== "" && o.high != null ? { value: +o.high } : null }, changed: true };
+    const c = L.criterion(od, ctx);
+    return c && c.ctx === ctx ? { text: c.text, range: c.range } : null;
+  };
+  function specRows(pd) {
+    const rows = new Map();
+    for (const grp of pd.action || []) for (const a of grp.action || [grp]) {
+      if (!a.definitionCanonical) continue;
+      const od = db.get(a.definitionCanonical); if (!od) continue;
+      if (!rows.has(od.id)) rows.set(od.id, { od, title: a.title, ap: db.get(((a.documentation || [])[0] || {}).resource), groups: [] });
+      rows.get(od.id).groups.push(grp.title);
+    }
+    return [...rows.values()];
+  }
+  function genSpec(pd) {
+    const rows = specRows(pd);
+    return `<h4>${esc(pd.title)}</h4><table class="t"><tr><th>Test</th><th>Batch release</th><th>Shelf-life</th><th>Procedure</th></tr>${rows.map((r) => {
+      const rel = critFor(r.od, "Batch release"), sl = critFor(r.od, "Shelf-life");
+      return `<tr><td><a href="#" data-ref="ObservationDefinition/${esc(r.od.id)}">${esc(r.title)}</a></td><td class="${rel && rel.changed ? "changed" : ""}">${rel ? esc(rel.text) : "—"}</td><td class="${sl && sl.changed ? "changed" : ""}">${sl ? esc(sl.text) : "—"}</td><td class="small">${r.ap ? `<a href="#" data-ref="PlanDefinition/${esc(r.ap.id)}">${esc((r.ap.title || r.ap.id).replace(/^Analytical Procedures? \(?/, "").replace(/\)?\s*\[.*$/, "").slice(0, 40))}</a>` : ""}</td></tr>`;
+    }).join("")}</table>`;
+  }
+  function evalObs(obs, ctx) {
+    const od = db.get(obs.instantiatesCanonical);
+    const c = od ? critFor(od, ctx) : null;
+    return L.evaluate(ldb, obs, c && c.changed ? c.range : null);
+  }
+  let newBatch = null; // {assay}
+  function genBatches(drs, specPd) {
+    const batches = drs.map((dr) => ({ label: PT.label(db.get(dr.subject.reference)).replace("Batch ", ""), obs: (dr.result || []).map((x) => db.get(x.reference)).filter(Boolean) }));
+    if (newBatch && specPd && specPd.id === "spec-dp") {
+      const base = batches.find((b) => b.label === "ABC456") || batches[0];
+      batches.push({ label: "DEF001", isNew: true, obs: base.obs.map((o) => { const c = JSON.parse(JSON.stringify(o)); c.id += "-def001"; if (/assay-hplc$/.test(c.instantiatesCanonical) && c.valueQuantity) c.valueQuantity.value = newBatch.assay; return c; }) });
+    }
+    const order = specPd ? specRows(specPd).map((r) => r.od.id) : [];
+    const odIds = [...new Set(batches.flatMap((b) => b.obs.map((o) => (o.instantiatesCanonical || "").split("/").pop())))].sort((a, b) => (order.indexOf(a) + 1 || 999) - (order.indexOf(b) + 1 || 999));
+    let fails = 0;
+    const body = odIds.map((id) => {
+      const od = db.get(odUrl(id));
+      return `<tr><td>${esc(od ? od.title || PT.cc(od.code) : id)}</td>${batches.map((b) => {
+        const o = b.obs.find((x) => (x.instantiatesCanonical || "").endsWith("/" + id));
+        if (!o) return `<td class="${b.isNew ? "newcol" : ""}"></td>`;
+        const ev = evalObs(o, "Batch release");
+        if (ev.status === "fail") fails++;
+        return `<td class="num ${b.isNew ? "newcol" : ""} ${vcls(ev.status)}" title="${esc(ev.crit ? ev.crit.text : "")}">${esc(L.valueText(o))}</td>`;
+      }).join("")}</tr>`;
+    }).join("");
+    return { html: `<table class="t"><tr><th>Test</th>${batches.map((b) => `<th class="num ${b.isNew ? "newcol" : ""}">${esc(b.label)}${b.isNew ? " · new" : ""}</th>`).join("")}</tr>${body}</table>`, fails };
+  }
+  let stabOd = {};
+  function genStability(code, drs) {
+    const ods = new Map();
+    drs.forEach((dr) => (dr.result || []).forEach((x) => { const o = db.get(x.reference); if (o && o.valueQuantity && o.instantiatesCanonical) { const od = db.get(o.instantiatesCanonical); if (od) ods.set(od.id, od); } }));
+    const list = [...ods.values()];
+    const pick = stabOd[code] && ods.has(stabOd[code]) ? stabOd[code] : (list.find((o) => /assay/.test(o.id)) || list[0] || {}).id;
+    if (!pick) return "<p class='muted'>No numeric results.</p>";
+    const od = ods.get(pick);
+    const series = L.stabilitySeries(ldb, pick).filter((s) => !/^\d+$/.test(s.lot) || true);
+    const months = [...new Set(series.flatMap((s) => s.points.map((p) => p.t)))].sort((a, b) => a - b);
+    const crit = critFor(od, "Shelf-life") || critFor(od, "Batch release");
+    return `<div class="toolbar" style="margin:6px 0"><label class="small muted">Attribute</label><select class="input" style="max-width:340px" data-stab="${esc(code)}">${list.map((o) => `<option value="${esc(o.id)}" ${o.id === pick ? "selected" : ""}>${esc(o.title || PT.cc(o.code))}</option>`).join("")}</select><span class="chip">${esc(crit ? "Limit: " + crit.text : "")}</span></div>
+      <div class="scroll"><table class="t"><tr><th>Batch · pack · condition</th>${months.map((m) => `<th class="num">${m} mo</th>`).join("")}</tr>${series.map((s) => `<tr><td class="small">${esc(s.lot)} · ${esc(s.pack)} · ${esc(s.condition.replace(" (long-term)", " LT").replace(" (accelerated)", " acc.").replace(" (intermediate)", " int."))}</td>${months.map((m) => { const p = s.points.find((x) => x.t === m); if (!p) return "<td></td>"; const ev = evalObs(p.obs, "Shelf-life"); return `<td class="num ${vcls(ev.status)}">${p.cmp ? esc(p.cmp) : ""}${p.v}</td>`; }).join("")}</tr>`).join("")}</table></div>
+      <p class="muted small">${series.length} series from ${drs.length} DiagnosticReports. Colour shows each result against the shelf-life criterion.</p>`;
+  }
+  function genSubstance(sd) {
+    const props = (sd.property || []).map((p) => [PT.cc(p.type), p.valueQuantity ? PT.qty(p.valueQuantity) : p.valueCodeableConcept ? PT.cc(p.valueCodeableConcept) : p.valueString || p.valueMarkdown || (p.valueAttachment ? "(attachment)" : "")]);
+    const names = (sd.name || []).map((n) => [n.name, PT.cc(n.type)]);
+    const st = sd.structure || {};
+    const mw = ((sd.molecularWeight || [])[0] || {}).amount;
+    return `<dl class="kv small"><dt>Names</dt><dd>${names.map(([n, t]) => `${esc(n)}${t ? ` <span class="muted">(${esc(t)})</span>` : ""}`).join("<br>")}</dd><dt>Identifiers</dt><dd>${(sd.identifier || []).map((i) => esc(i.value)).join(", ")}</dd>${st.molecularFormula ? `<dt>Formula</dt><dd>${esc(st.molecularFormula)}</dd>` : ""}${mw ? `<dt>Molecular weight</dt><dd>${esc(PT.qty(mw))}</dd>` : ""}</dl>
+      ${props.length ? `<h4>General properties (${props.length})</h4><table class="t">${props.map(([k, v]) => `<tr><td>${esc(k)}</td><td>${esc(v)}</td></tr>`).join("")}</table>` : ""}`;
+  }
+  function genOrgs(orgs) {
+    return `<table class="t"><tr><th>Organization</th><th>Responsibilities</th><th>Location</th></tr>${orgs.map((o) => { const a = ((o.contact || [])[0] || {}).address || {}; return `<tr><td><a href="#" data-ref="Organization/${esc(o.id)}">${esc(o.name)}</a><div class="muted mono" style="font-size:10.5px">${(o.identifier || []).map((i) => esc(i.value)).filter((v, i, arr) => arr.indexOf(v) === i).join(" · ")}</div></td><td class="small">${(o.type || []).map((t) => esc(PT.cc(t))).join("; ")}</td><td class="small">${esc([a.city, a.country].filter(Boolean).join(", "))}</td></tr>`; }).join("")}</table>`;
+  }
+  function genComposition(ents) {
+    const mid = ents.find((r) => r.resourceType === "ManufacturedItemDefinition");
+    const ings = ents.filter((r) => r.resourceType === "Ingredient");
+    return `${mid ? `<dl class="kv small">${(mid.property || []).map((p) => `<dt>${esc(PT.cc(p.type))}</dt><dd>${esc(p.valueCodeableConcept ? PT.cc(p.valueCodeableConcept) : p.valueQuantity ? PT.qty(p.valueQuantity) : p.valueString || "")}</dd>`).join("")}</dl>` : ""}
+      <h4>Composition</h4><table class="t"><tr><th>Component</th><th>Function</th><th class="num">mg / tablet</th></tr>${ings.map((i) => { const sd = db.get((((i.substance || {}).code || {}).reference || {}).reference); const s = ((i.substance || {}).strength || [])[0] || {}; return `<tr><td>${esc(sd ? PT.label(sd) : i.id)}</td><td>${esc(PT.cc((i.function || [])[0]))}</td><td class="num">${esc(s.presentationRatio ? s.presentationRatio.numerator.value : s.textPresentation || "")}</td></tr>`; }).join("")}</table>`;
+  }
+  function genPacks(packs) {
+    return packs.map((p) => `<h4><a href="#" data-ref="PackagedProductDefinition/${esc(p.id)}">${esc(PT.cc(p.type))}</a></h4><p class="small" style="margin:0 0 6px">${esc(p.description || "")}</p><table class="t">${((p.packaging || {}).shelfLifeStorage || []).map((s) => `<tr><td class="small">${esc(PT.cc(s.type).replace(/^Shelf life of the medicinal product as packaged for sale - /, ""))}</td><td class="num">${s.periodDuration ? s.periodDuration.value + " months" : ""}</td><td class="small">${esc(((s.specialPrecautionsForStorage || [])[0] || {}).text || "")}</td></tr>`).join("")}</table>`).join("");
+  }
+  function generate(code, sec) {
+    const ents = (sec.entry || []).map((e) => db.get(e.reference)).filter(Boolean);
+    const by = (t) => ents.filter((r) => r.resourceType === t);
+    const drs = by("DiagnosticReport");
+    const figs = by("DocumentReference").length;
+    let html = "";
+    if (by("PlanDefinition").some((p) => /spec/.test(p.id))) html = by("PlanDefinition").filter((p) => /spec/.test(p.id)).map(genSpec).join("");
+    else if (drs.length && /Stability/.test(PT.cc(drs[0].code))) html = genStability(code, drs);
+    else if (drs.length && /Batch/.test(PT.cc(drs[0].code))) html = genBatches(drs, code.startsWith("3.2.P") ? db.get("PlanDefinition/spec-dp") : db.get("PlanDefinition/spec-ds-sakuramil")).html;
+    else if (by("Organization").length) html = genOrgs(by("Organization"));
+    else if (by("Ingredient").length) html = genComposition(ents);
+    else if (by("PackagedProductDefinition").length) html = genPacks(by("PackagedProductDefinition"));
+    else if (by("SubstanceDefinition").length === 1 && ents.length <= 2) html = genSubstance(by("SubstanceDefinition")[0]);
+    else if (by("Substance").length) html = `<table class="t"><tr><th>Reference standard batch</th><th>Description</th></tr>${by("Substance").map((s) => `<tr><td><a href="#" data-ref="Substance/${esc(s.id)}">${esc(PT.label(s))}</a></td><td class="small">${esc(s.description || "")}</td></tr>`).join("")}</table>` + (drs.length ? `<p class="small muted">${drs.length} characterisation / qualification reports linked.</p>` : "");
+    else html = `<ul>${ents.map((r) => `<li><a href="#" data-ref="${esc(r.resourceType + "/" + r.id)}">${esc(PT.label(r))}</a></li>`).join("")}</ul>`;
+    return html + (figs ? `<p class="small muted">+ ${figs} figure${figs > 1 ? "s" : ""} (DocumentReference) kept as images.</p>` : "");
+  }
+  const wire = (el) => {
+    el.querySelectorAll("a[data-ref]").forEach((a) => a.addEventListener("click", (e) => { e.preventDefault(); PT.inspectResource(a.dataset.ref, db); }));
+  };
+
+  // ====================== 1. Authored vs generated ======================
+  function compare(main, param) {
+    const code = replaced.includes(param) ? param : "3.2.P.5.1";
+    const x = secBy(code), t3 = D.t3[code];
+    const t3chars = PT.plain((t3.text || {}).div).length;
+    const removed = replaced.reduce((a, c) => a + PT.plain((D.t3[c].text || {}).div).length, 0);
+    const sum = (t, k) => ST.types[t].reduce((a, d) => a + d[k], 0);
+    main.innerHTML = PT.head("Showcase 1 · Authored vs generated", "Type 3 authored narrative next to the same section rendered from Type 4 resources",
+      `In ${replaced.length} headings of the example dossier, Type 4 drops the authored narrative and keeps only the section's entries. Left: the Type 3 section as written. Right: the same section rendered in this browser from the resources. The narrative stored in the Bundle is marked <span class="mono">generated</span> and is for display only.`,
+      "Specifications, batch results, stability tables, sites and composition are <b>published straight from LIMS, MES, QMS and RIM</b>: no transcription and no copy-paste errors. Receivers treat the resources, not the generated text, as the record.") +
+      `<div class="grid g4" style="margin-bottom:16px">
+        <div class="stat accent"><b>${replaced.length}</b><span>headings carried by resources alone</span></div>
+        <div class="stat"><b>${PT.kfmt(removed)}</b><span>characters of authored text no longer transcribed</span></div>
+        <div class="stat"><b>${sum(4, "generatedSections")}</b><span>sections with generated narrative (incl. Product data)</span></div>
+        <div class="stat"><b>${REQUIRED.length}</b><span>heading groups that stay authored: development, justifications, stability conclusions</span></div>
+      </div>
+      <div class="toolbar"><div class="chips">${replaced.map((c) => `<a class="chip ${c === code ? "on" : ""}" href="#compare/${esc(c)}" style="text-decoration:none">${esc(c)} ${esc(secBy(c).s.title.replace("Description of Manufacturing Process and Process Controls", "Process").slice(0, 26))}</a>`).join("")}</div></div>
+      <div class="cmp">
+        <div class="card"><div class="col-h">${PT.typeChip(3)}<h3 style="margin:0">Authored narrative</h3><span class="muted small" style="margin-left:auto">${PT.fmt(t3chars)} characters</span></div>
+          <div class="narr small" style="max-height:70vh;overflow:auto">${PT.narrative((t3.text || {}).div, {})}</div></div>
+        <div class="card"><div class="col-h">${PT.typeChip(4)}<h3 style="margin:0">Rendered from ${(x.s.entry || []).length} resource${(x.s.entry || []).length > 1 ? "s" : ""}</h3></div>
+          <div class="gen" id="gen" style="max-height:70vh;overflow:auto">${generate(code, x.s)}</div>
+          <details style="margin-top:12px"><summary class="small" style="cursor:pointer;color:var(--muted)">What the Bundle stores as text (status = generated)</summary><div class="narr small" style="margin-top:8px">${PT.narrative(x.s.text.div)}</div></details></div>
+      </div>`;
+    wire(main);
+    PT.$$("[data-stab]", main).forEach((s) => s.onchange = () => { stabOd[s.dataset.stab] = s.value; compare(main, code); });
+  }
+
+  // ====================== 2. Regenerate from source ======================
+  const events = [];
+  function regenerate(main) {
+    const spec = db.get("PlanDefinition/spec-dp");
+    const numeric = specRows(spec).filter((r) => (r.od.qualifiedValue || []).some((q) => q.range));
+    const just = secBy("3.2.P.5.6"), ba = secBy("3.2.P.5.4");
+    const justLinksSpec = (just.s.entry || []).some((e) => e.reference === "PlanDefinition/spec-dp");
+    const changed = Object.keys(overrides).length > 0;
+    const sel = regenerate.sel || "od-dp-assay-hplc";
+    const od = db.get(odUrl(sel));
+    const cur = (ctx) => { const c = critFor(od, ctx); return c && c.range ? c.range : {}; };
+    const batches = genBatches(((ba.s.entry || []).map((e) => db.get(e.reference)).filter((r) => r && r.resourceType === "DiagnosticReport")), spec);
+    const stabFails = changed ? Object.keys(overrides).reduce((a, id) => a + L.resultsFor(ldb, id).filter((r) => r.report && /Stability/.test(PT.cc(r.report.code)) && evalObs(r.obs, "Shelf-life").status === "fail").length, 0) : 0;
+    main.innerHTML = PT.head("Showcase 2 · Regenerate from source", "Specification and batch analysis sections regenerated after a criterion or batch change",
+      `Play the source system. Change an acceptance criterion as the QMS would after an approved change, or release a new batch from the LIMS. Sections 3.2.P.5.1 and 3.2.P.5.4 are regenerated from the resources at once. Section 3.2.P.5.6 stays authored, and because its link points to the specification, it is flagged for review.`,
+      "Lifecycle updates become <b>data updates</b>: the regenerated sections are always consistent with the source, and the authored argument that depends on them is found automatically.") +
+      `<div class="grid" style="grid-template-columns:minmax(260px,330px) minmax(0,1fr);align-items:start">
+        <div class="grid sticky">
+          <div class="card src-panel"><h3>QMS: change a criterion</h3>
+            <label>Test</label><select class="input" id="od">${numeric.map((r) => `<option value="${esc(r.od.id)}" ${r.od.id === sel ? "selected" : ""}>${esc(r.title)}</option>`).join("")}</select>
+            <label>Batch release (low / high, %)</label><div class="row2"><input class="input num" id="rl" value="${cur("Batch release").low ? cur("Batch release").low.value : ""}" placeholder="—"><input class="input num" id="rh" value="${cur("Batch release").high ? cur("Batch release").high.value : ""}" placeholder="—"></div>
+            <label>Shelf-life (low / high, %)</label><div class="row2"><input class="input num" id="sl" value="${cur("Shelf-life").low ? cur("Shelf-life").low.value : ""}" placeholder="—"><input class="input num" id="sh" value="${cur("Shelf-life").high ? cur("Shelf-life").high.value : ""}" placeholder="—"></div>
+            <div style="display:flex;gap:8px;margin-top:12px"><button class="btn primary" id="apply">Apply change</button><button class="btn" id="tight">Try 97–103 %</button></div></div>
+          <div class="card src-panel"><h3>LIMS: release batch DEF001</h3><p class="sub">Same results as ABC456, with an assay you choose.</p>
+            <label>Assay (HPLC): <b id="av">${newBatch ? newBatch.assay : 99.6}</b> %</label><input type="range" min="93" max="107" step="0.1" value="${newBatch ? newBatch.assay : 99.6}" id="assay" style="width:100%">
+            <div style="display:flex;gap:8px;margin-top:10px"><button class="btn primary" id="rel">${newBatch ? "Update batch" : "Release batch"}</button>${newBatch || changed ? `<button class="btn" id="reset">Reset all</button>` : ""}</div></div>
+          <div class="card"><h3>Regeneration log</h3>${events.length ? events.slice(-6).reverse().map((e) => `<div class="event">${e}</div>`).join("") : `<p class="muted small" style="margin:0">Nothing changed yet.</p>`}</div>
+        </div>
+        <div class="grid">
+          <div class="card"><div class="col-h" style="display:flex;gap:8px;align-items:center;margin-bottom:8px">${PT.typeChip(4)}<h3 style="margin:0">3.2.P.5.1 Specification(s)</h3><span class="chip ${changed ? "warn" : ""}" style="margin-left:auto">${changed ? "regenerated" : "generated"}</span></div><div class="gen" id="specbox" style="max-height:380px;overflow:auto">${genSpec(spec)}</div></div>
+          <div class="card"><div style="display:flex;gap:8px;align-items:center;margin-bottom:8px">${PT.typeChip(4)}<h3 style="margin:0">3.2.P.5.4 Batch Analyses</h3><span class="chip ${batches.fails ? "bad" : "ok"}" style="margin-left:auto">${batches.fails ? batches.fails + " result" + (batches.fails > 1 ? "s" : "") + " out of specification" : "all results conform"}</span></div>
+            <div class="gen scroll">${batches.html}</div>${changed ? `<p class="small" style="margin:8px 0 0">Stability results now outside the shelf-life criterion: <b class="${stabFails ? "v-fail" : "v-pass"}">${stabFails}</b> (3.2.P.8.3 regenerates the same way).</p>` : ""}</div>
+          <div class="card" style="${changed && justLinksSpec ? "box-shadow:inset 0 0 0 2px var(--warn)" : ""}"><div style="display:flex;gap:8px;align-items:center;margin-bottom:8px">${PT.typeChip(3)}<h3 style="margin:0">3.2.P.5.6 Justification of Specification(s)</h3><span class="chip ${changed && justLinksSpec ? "warn" : ""}" style="margin-left:auto">${changed && justLinksSpec ? "review: linked specification changed" : "authored, narrative required"}</span></div>
+            ${changed && justLinksSpec ? `<div class="callout" style="border-color:var(--warn);background:var(--warn-soft);margin-bottom:10px">This section's <span class="mono">textLink</span> points to <span class="mono">PlanDefinition/spec-dp</span>. The argument is authored, so a person must confirm it still holds.</div>` : ""}
+            <div class="narr small" style="max-height:340px;overflow:auto">${PT.narrative(just.s.text.div, {})}</div></div>
+        </div>
+      </div>`;
+    wire(main);
+    const ch = PT.$("#specbox td.changed", main);
+    if (ch) PT.$("#specbox", main).scrollTop = ch.parentElement.offsetTop - 60;
+    PT.$("#od", main).onchange = (e) => { regenerate.sel = e.target.value; regenerate(main); };
+    PT.$("#apply", main).onclick = () => {
+      const v = (id) => PT.$(id, main).value.trim();
+      overrides[sel] = { "Batch release": { low: v("#rl"), high: v("#rh") }, "Shelf-life": { low: v("#sl"), high: v("#sh") } };
+      events.push(`<b>QMS</b> · ${esc(od.title)} → release ${esc(v("#rl") || "—")}–${esc(v("#rh") || "—")} %, shelf-life ${esc(v("#sl") || "—")}–${esc(v("#sh") || "—")} %. Regenerated 3.2.P.5.1, 3.2.P.5.4, 3.2.P.8.3; flagged 3.2.P.5.6.`);
+      regenerate(main);
+    };
+    PT.$("#tight", main).onclick = () => { ["#rl", "#sl"].forEach((i) => (PT.$(i, main).value = 97)); ["#rh", "#sh"].forEach((i) => (PT.$(i, main).value = 103)); PT.$("#apply", main).click(); };
+    PT.$("#assay", main).oninput = (e) => (PT.$("#av", main).textContent = e.target.value);
+    PT.$("#rel", main).onclick = () => { newBatch = { assay: +PT.$("#assay", main).value }; events.push(`<b>LIMS</b> · batch DEF001 released, assay ${newBatch.assay} %. Regenerated 3.2.P.5.4.`); regenerate(main); };
+    const rs = PT.$("#reset", main); if (rs) rs.onclick = () => { overrides = {}; newBatch = null; events.push("Reset to the example data."); regenerate(main); };
+  }
+
+  // ====================== 3. Maturity map ======================
+  let picks = null;
+  function map(main) {
+    const codes = ST.types[1].map((d) => d.code);
+    if (!picks) picks = codes.map(() => 4);
+    const treat = (code) => {
+      const x = secBy(code);
+      if (!x) return { k: "absent", label: "not in dossier" };
+      if (x.s.text && x.s.text.status === "generated") return { k: "gen", label: "data-first (generated)" };
+      if ((x.s.entry || []).some((e) => PT.textLinks(e).length)) return { k: "link", label: "authored, linked" };
+      if (x.s.text && x.s.text.div) return { k: "auth", label: "authored" };
+      return { k: "head", label: "heading only" };
+    };
+    const C = { gen: "var(--t4)", link: "var(--t3)", auth: "#aeaeb2", head: "var(--fill)", absent: "var(--bad-soft)" };
+    const cell = (code, title) => {
+      const t = treat(code), req = REQUIRED.some((r) => code === r || (r === "3.2.P.2" && code.startsWith("3.2.P.2")));
+      const x = secBy(code);
+      return `<a class="cell ${req ? "lock" : ""}" href="${t.k === "gen" ? "#compare/" + esc(code) : "type3.html#read/" + esc(x ? x.doc.comp.id.replace("type4", "type3") : "") + "/" + esc(code)}" style="text-decoration:none;display:block;background:${C[t.k]};color:${["gen", "link"].includes(t.k) ? "#fff" : "var(--ink)"}" title="${esc(t.label)}${req ? " · narrative required by the IG" : ""}"><b class="mono">${esc(code)}</b><div>${esc((title || (x ? x.s.title : "")).slice(0, 30))}</div></a>`;
+    };
+    const tot = (k) => picks.reduce((a, t, i) => a + ST.types[t][i][k], 0);
+    const PRE = { "All Type 1": () => codes.map(() => 1), "Type 2 everywhere": () => codes.map(() => 2), "Data-rich at Type 4": () => codes.map((c) => (/^3\.2\.(S\.[1457]|P\.[1357]|P\.8|S\.2|P\.3)/.test(c) ? 4 : 2)), "All Type 4": () => codes.map(() => 4) };
+    const max = { authoredChars: Math.max(...[1, 2, 3, 4].map((t) => ST.types[t].reduce((a, d) => a + d.authoredChars, 0))), resources: Math.max(...[1, 2, 3, 4].map((t) => ST.types[t].reduce((a, d) => a + d.resources, 0))), links: Math.max(...[1, 2, 3, 4].map((t) => ST.types[t].reduce((a, d) => a + d.links, 0))), generatedSections: Math.max(...[1, 2, 3, 4].map((t) => ST.types[t].reduce((a, d) => a + d.generatedSections, 0))) };
+    main.innerHTML = PT.head("Showcase 3 · Maturity map", "Module 3.2 headings by Type 4 treatment, with a per-document type selector",
+      `Left: how each Module 3.2 heading is carried in the Type 4 example. Development, justifications and stability conclusions (🔒) must stay authored. Right: maturity can rise one document at a time, so a collection can mix types. Choose a type per document to see what the collection carries.`,
+      "Sponsors can adopt PQI <b>incrementally</b>: start at Type 1, move 3.2.P.5 or 3.2.P.8 to Type 4 when the LIMS can feed it, and leave the rest until it pays.") +
+      `<div class="grid" style="grid-template-columns:minmax(0,1fr) minmax(380px,0.9fr);align-items:start">
+        <div class="card"><h3>Module 3.2 in the Type 4 example</h3>
+          <div class="legend" style="margin-bottom:12px">${[["gen", "data-first (generated)"], ["link", "authored, linked"], ["auth", "authored"], ["head", "heading only"], ["absent", "not in dossier"]].map(([k, l]) => `<span style="--c:${C[k]}">${l}</span>`).join("")}<span>🔒 narrative required</span></div>
+          <div style="display:grid;gap:6px">${PT.M32.map(([c, t, kids]) => `<div style="display:grid;grid-template-columns:150px repeat(auto-fill,minmax(112px,1fr));gap:6px">${cell(c, t)}${kids.map((k) => cell(k)).join("")}</div>`).join("")}</div></div>
+        <div class="card"><h3>Build a mixed-maturity collection</h3><p class="sub">Figures are the measured values of each example document at each type.</p>
+          <div class="preset" style="margin-bottom:12px">${Object.keys(PRE).map((k) => `<button class="btn" data-pre="${esc(k)}">${esc(k)}</button>`).join("")}</div>
+          <div class="grid g2" style="gap:10px;margin-bottom:14px">${[["authoredChars", "characters of authored narrative"], ["resources", "PQI resources carried"], ["links", "narrative-to-data links"], ["generatedSections", "generated sections"]].map(([k, l]) => `<div class="stat" style="background:var(--fill);padding:12px 14px"><b style="font-size:24px">${PT.kfmt(tot(k))}</b><span>${l}</span><div class="bar" style="margin-top:8px"><i style="width:${Math.round((100 * tot(k)) / Math.max(1, max[k]))}%"></i></div></div>`).join("")}</div>
+          <div class="scroll" style="max-height:52vh"><table class="t"><tr><th>Document</th><th>Type</th><th class="num">Resources</th><th class="num">Links</th></tr>${codes.map((c, i) => `<tr><td class="mono">${esc(c)}</td><td><span class="tsel">${[1, 2, 3, 4].map((t) => `<button data-i="${i}" data-t="${t}" aria-pressed="${picks[i] === t}" style="${picks[i] === t ? `background:var(--t${t})` : ""}">T${t}</button>`).join("")}</span></td><td class="num">${ST.types[picks[i]][i].resources}</td><td class="num">${ST.types[picks[i]][i].links}</td></tr>`).join("")}</table></div></div>
+      </div>`;
+    PT.$$("[data-pre]", main).forEach((b) => b.onclick = () => { picks = PRE[b.dataset.pre](); map(main); });
+    PT.$$(".tsel button", main).forEach((b) => b.onclick = () => { picks[+b.dataset.i] = +b.dataset.t; const y = main.scrollTop; map(main); main.scrollTop = y; });
+  }
+
+  PT.shell({
+    type: 4,
+    foot: "Data: <span class='mono'>sakura-bloom-r2/fhir/pqi-types/type4</span>. Rendering and evaluation run in this browser over the example resources.",
+    views: [
+      { id: "compare", title: "Authored vs generated", sub: "The same section, typed or rendered", render: compare },
+      { id: "regenerate", title: "Regenerate from source", sub: "Change the data, the document follows", render: regenerate },
+      { id: "map", title: "Maturity map", sub: "Mix types document by document", render: map },
+    ],
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PQI Types 1–4 Showcases | FHIR for Global Regulatory Affairs</title>
+  <meta name="description" content="Twelve FHIR showcases of the HL7 PQI maturity types 1 to 4, on the same synthetic CTD quality dossier: structured, product data, linked and data-first documents.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue-900: #091E42; --blue-700: #0747A6; --blue-600: #0052CC; --blue-500: #0065FF; --blue-400: #2684FF;
+      --blue-200: #B3D4FF; --blue-100: #DEEBFF; --blue-50: #F0F5FF;
+      --gray-50: #F7F8FA; --gray-100: #EBECF0; --gray-200: #DFE1E6; --gray-500: #7A869A; --gray-900: #172B4D;
+      --white: #ffffff; --text-primary: #172B4D; --text-secondary: #505F79; --text-muted: #7A869A;
+      --border: #DFE1E6; --border-light: #EBECF0;
+      --shadow-md: 0 4px 16px rgba(9,30,66,0.08); --shadow-lg: 0 12px 40px rgba(9,30,66,0.12);
+      --radius-md: 10px; --radius-lg: 16px;
+    }
+    body { font-family: 'Inter', sans-serif; color: var(--text-primary); background: var(--gray-50); line-height: 1.6; }
+    a { color: var(--blue-600); text-decoration: none; }
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+
+    /* Header */
+    .site-header { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+    .nav-inner { display: flex; align-items: center; gap: 32px; height: 64px; }
+    .logo { display: flex; align-items: center; gap: 12px; color: inherit; flex-shrink: 0; }
+    .logo-icon { width: 36px; height: 36px; background: linear-gradient(135deg, #0052CC, #00B8D9); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .logo-text { line-height: 1.2; }
+    .logo-main { display: block; font-size: 18px; font-weight: 800; color: var(--blue-700); letter-spacing: -0.03em; }
+    .logo-sub { display: block; font-size: 10px; color: var(--gray-500); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+    .nav-menu { display: flex; align-items: center; list-style: none; gap: 2px; flex: 1; }
+    .nav-link { display: flex; align-items: center; gap: 4px; padding: 8px 14px; border-radius: 6px; color: var(--text-secondary); font-weight: 500; font-size: 14px; }
+    .nav-link.active, .nav-link:hover { color: var(--blue-600); background: var(--blue-50); }
+    .has-dropdown { position: relative; cursor: pointer; }
+    .dropdown { position: absolute; top: calc(100% + 8px); left: 0; background: white; border-radius: var(--radius-md); box-shadow: var(--shadow-lg); border: 1px solid var(--border); min-width: 240px; list-style: none; padding: 8px; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: all 0.2s; z-index: 999; }
+    .has-dropdown:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+    .dropdown li a { display: block; padding: 10px 14px; border-radius: 6px; color: var(--text-secondary); font-size: 14px; font-weight: 500; }
+    .dropdown li a:hover { background: var(--gray-50); color: var(--blue-600); }
+    .chevron { font-size: 10px; opacity: 0.6; }
+    .nav-actions { margin-left: auto; flex-shrink: 0; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 8px 18px; border-radius: 6px; font-weight: 600; font-size: 14px; transition: all 0.2s; cursor: pointer; }
+    .btn-primary { background: #0052CC; color: white; border: 2px solid #0052CC; }
+    .btn-primary:hover { background: #0065FF; border-color: #0065FF; box-shadow: 0 4px 14px rgba(0,82,204,0.3); transform: translateY(-1px); }
+
+    /* Domain hero */
+    .domain-hero { background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-700) 60%, #00B8D9 140%); color: white; padding: 72px 0 64px; position: relative; overflow: hidden; }
+    .domain-hero::after { content: ""; position: absolute; right: -120px; top: -120px; width: 420px; height: 420px; border-radius: 50%; background: radial-gradient(circle, rgba(255,255,255,0.12), transparent 70%); }
+    .domain-hero .crumbs { font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 18px; }
+    .domain-hero .crumbs a { color: rgba(255,255,255,0.8); }
+    .domain-tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.25); padding: 4px 12px; border-radius: 20px; margin-bottom: 18px; }
+    .domain-hero h1 { font-size: 44px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.12; margin-bottom: 16px; max-width: 760px; }
+    .domain-hero p { font-size: 17px; color: rgba(255,255,255,0.78); max-width: 680px; line-height: 1.7; }
+    .hero-meta { display: flex; gap: 28px; margin-top: 28px; font-size: 13px; color: rgba(255,255,255,0.65); flex-wrap: wrap; }
+    .hero-meta strong { color: white; font-weight: 700; }
+
+    /* Domain tabs */
+    .domain-tabs { background: var(--white); border-bottom: 1px solid var(--border); }
+    .domain-tabs ul { display: flex; list-style: none; gap: 4px; overflow-x: auto; }
+    .domain-tabs a { display: block; padding: 14px 18px; font-size: 14px; font-weight: 600; color: var(--text-secondary); border-bottom: 3px solid transparent; white-space: nowrap; }
+    .domain-tabs a:hover { color: var(--blue-600); }
+    .domain-tabs a.active { color: var(--blue-600); border-bottom-color: var(--blue-600); }
+
+    /* Showcase grid */
+    .section { padding: 56px 0 24px; }
+    .section-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; gap: 16px; }
+    .section-head h2 { font-size: 24px; font-weight: 800; letter-spacing: -0.02em; }
+    .section-head span { font-size: 13px; color: var(--text-muted); }
+    .showcase-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; }
+    .showcase-card { display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; color: inherit; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; }
+    a.showcase-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--blue-400); }
+    .showcase-card .kind { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue-600); background: var(--blue-50); padding: 3px 10px; border-radius: 12px; align-self: flex-start; margin-bottom: 14px; }
+    .showcase-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.01em; }
+    .showcase-card p { font-size: 14px; color: var(--text-secondary); flex: 1; }
+    .showcase-card .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+    .showcase-card .tags span { font-size: 11px; font-family: 'JetBrains Mono', monospace; color: var(--text-secondary); background: var(--gray-50); border: 1px solid var(--border-light); padding: 2px 8px; border-radius: 4px; }
+    .showcase-card .go { margin-top: 18px; font-size: 14px; font-weight: 600; color: var(--blue-600); }
+    .showcase-card.placeholder { border-style: dashed; background: transparent; }
+    .showcase-card.placeholder .kind { color: var(--text-muted); background: var(--gray-100); }
+    .showcase-card.placeholder h3 { color: var(--text-secondary); }
+
+    .related { padding: 32px 0 64px; }
+    main > .section:last-child { padding-bottom: 64px; }
+    .related-list { display: flex; flex-wrap: wrap; gap: 12px; }
+    .related-list a { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 12px 18px; font-size: 14px; font-weight: 600; }
+    .related-list a:hover { border-color: var(--blue-400); }
+
+    /* Footer */
+    .site-footer { background: var(--gray-900); padding: 48px 0 24px; }
+    .footer-bottom { padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); text-align: center; color: rgba(255,255,255,0.35); font-size: 11px; }
+
+    @media (max-width: 900px) { .domain-hero h1 { font-size: 32px; } .nav-menu { display: none; } }
+    .cmc-explainer {
+      --accent: #0052CC; --accent-bg: rgba(0,82,204,0.06);
+      --gray-50: #F7F8FA; --gray-100: #EBECF0; --gray-300: #C1C7D0; --gray-500: #7A869A; --gray-700: #505F79;
+      --shadow-sm: 0 1px 3px rgba(9,30,66,0.08), 0 0 0 1px rgba(9,30,66,0.04);
+      --shadow-md: 0 4px 16px rgba(9,30,66,0.1), 0 1px 4px rgba(9,30,66,0.06);
+      --radius-sm: 6px; --radius-md: 10px; --radius-lg: 16px; --radius-xl: 24px;
+      --transition: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      background: var(--white); font-size: 15px;
+    }
+    .cmc-explainer a.uc-link, .cmc-explainer a { color: var(--accent); }
+    .cmc-explainer a.resource-card { color: inherit; }
+    .cmc-explainer .btn-primary { color: #fff; }
+    .section-tag { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); background: rgba(0,82,204,0.08); padding: 4px 14px; border-radius: 100px; margin-bottom: 12px; }
+    .vp-section { padding: 80px 0; } .vp-header { margin-bottom: 48px; }
+    .vp-header h2 { font-size: 32px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 12px; }
+    .vp-header p { font-size: 16px; color: var(--text-secondary); max-width: 600px; line-height: 1.7; }
+    .vp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .vp-card { background: var(--gray-50); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 28px; transition: all var(--transition); }
+    .vp-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: transparent; }
+    .vp-icon { width: 44px; height: 44px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 14px; background: var(--white); border: 1px solid var(--border); }
+    .vp-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; } .vp-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+    .benefits-section { padding: 80px 0; background: var(--gray-50); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); }
+    .benefits-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .benefits-content h2 { font-size: 32px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 12px; }
+    .benefits-content > p { font-size: 15px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 28px; }
+    .benefit-items { display: flex; flex-direction: column; gap: 16px; }
+    .benefit-item { display: flex; gap: 14px; } .benefit-check { width: 24px; height: 24px; border-radius: 50%; background: rgba(0,82,204,0.1); color: #0052CC; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+    .benefit-item strong { display: block; font-size: 14px; font-weight: 700; margin-bottom: 2px; }
+    .benefit-item p { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+    .benefits-visual { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; }
+    .visual-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--border-light); }
+    .visual-icon { font-size: 20px; } .visual-title { font-size: 14px; font-weight: 700; } .visual-subtitle { font-size: 12px; color: var(--text-muted); }
+    .visual-items { display: flex; flex-direction: column; gap: 10px; }
+    .visual-item { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 8px; background: var(--gray-50); border: 1px solid var(--border-light); font-size: 13px; color: var(--text-secondary); transition: all var(--transition); }
+    .visual-item:hover { background: var(--accent-bg); border-color: rgba(0,82,204,0.15); }
+    .visual-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; } .visual-item-label { font-weight: 600; color: var(--text-primary); }
+    .resources-section { padding: 80px 0; } .resources-header { margin-bottom: 48px; }
+    .resources-header h2 { font-size: 32px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 12px; }
+    .resources-header p { font-size: 16px; color: var(--text-secondary); }
+    .resources-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .resource-card { display: flex; align-items: center; gap: 16px; padding: 20px 24px; background: var(--gray-50); border: 1px solid var(--border); border-radius: var(--radius-md); transition: all var(--transition); color: inherit; }
+    .resource-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--accent); color: inherit; background: var(--white); }
+    .resource-icon { width: 44px; height: 44px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; background: var(--white); border: 1px solid var(--border); }
+    .resource-text h4 { font-size: 15px; font-weight: 700; margin-bottom: 3px; } .resource-text p { font-size: 12px; color: var(--text-muted); }
+    .resource-arrow { margin-left: auto; color: var(--gray-300); font-size: 16px; transition: all var(--transition); }
+    .resource-card:hover .resource-arrow { color: var(--accent); transform: translateX(4px); }
+    /* PQI use-cases page */
+    code { font-family: 'JetBrains Mono', monospace; font-size: 12.5px; background: var(--gray-100); padding: 1px 5px; border-radius: 4px; }
+    .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .compare-card { border-radius: var(--radius-lg); padding: 28px; border: 1px solid var(--border); }
+    .compare-pdf { background: var(--gray-50); }
+    .compare-fhir { background: var(--white); border-color: rgba(0,82,204,0.35); box-shadow: var(--shadow-md); }
+    .compare-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 10px; }
+    .compare-fhir .compare-label { color: var(--accent); }
+    .compare-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 14px; line-height: 1.35; }
+    .compare-steps { padding-left: 20px; display: grid; gap: 8px; font-size: 14px; color: var(--text-secondary); }
+    .compare-fhir p { font-size: 14px; color: var(--text-secondary); margin-bottom: 18px; }
+    .compare-stats { display: flex; flex-wrap: wrap; gap: 16px 32px; margin-bottom: 16px; }
+    .cs-num { display: block; font-size: 30px; font-weight: 800; letter-spacing: -0.02em; color: var(--text-primary); font-variant-numeric: tabular-nums; }
+    .cs-lbl { display: block; font-size: 12px; color: var(--text-muted); max-width: 200px; }
+    .uc-section { padding: 80px 0; background: var(--gray-50); border-top: 1px solid var(--border-light); }
+    .uc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; }
+    .uc-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; display: flex; flex-direction: column; gap: 10px; transition: all var(--transition); }
+    .uc-card:hover { box-shadow: var(--shadow-md); border-color: rgba(0,82,204,0.35); }
+    .uc-wide { grid-column: 1 / -1; }
+    .uc-top { display: flex; justify-content: space-between; align-items: center; }
+    .uc-num { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; color: var(--accent); }
+    .uc-tag { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); background: var(--gray-50); border: 1px solid var(--border-light); padding: 2px 8px; border-radius: 100px; }
+    .uc-card h3 { font-size: 17px; font-weight: 700; line-height: 1.35; }
+    .uc-card p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; }
+    .uc-q { font-size: 13px; font-style: italic; color: var(--text-primary); border-left: 3px solid var(--accent); padding: 4px 10px; background: var(--accent-bg); border-radius: 0 6px 6px 0; }
+    .uc-res { display: flex; flex-wrap: wrap; gap: 6px; }
+    .uc-res span { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gray-700); background: var(--gray-100); padding: 2px 7px; border-radius: 4px; }
+    .uc-link { margin-top: auto; font-weight: 600; font-size: 14px; }
+    .benefit-check.open { background: var(--gray-100); color: var(--gray-500); }
+    .uc-note { margin-top: 24px; font-size: 12px; color: var(--text-muted); }
+    @media (max-width: 900px) { .compare-grid, .hero-layout, .benefits-layout { grid-template-columns: 1fr; } .resources-grid { grid-template-columns: 1fr; } .vp-grid { grid-template-columns: 1fr; } .cta-card { flex-direction: column; align-items: flex-start; } }
+    /* PQI types hub */
+    :root { --t1: #0071e3; --t2: #0a8fa8; --t3: #5e5ce6; --t4: #248a3d; --t1s: #eaf3fe; --t2s: #e3f5f8; --t3s: #efeffd; --t4s: #e8f7ec; }
+    .ladder-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; align-items: stretch; }
+    .rung { display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 22px; color: inherit; border-top: 5px solid var(--c); transition: transform .2s, box-shadow .2s; }
+    .rung:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .rung.t1 { --c: var(--t1); } .rung.t2 { --c: var(--t2); } .rung.t3 { --c: var(--t3); } .rung.t4 { --c: var(--t4); }
+    .rung-n { font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--c); }
+    .rung h3 { font-size: 19px; font-weight: 800; margin: 4px 0 8px; letter-spacing: -0.01em; }
+    .rung .adds { font-size: 13.5px; color: var(--text-secondary); flex: 1; }
+    .rung dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 10px; font-size: 12.5px; margin: 12px 0; }
+    .rung dt { color: var(--text-muted); font-weight: 600; } .rung dd { margin: 0; }
+    .rung-stats { display: flex; flex-direction: column; gap: 2px; font-size: 12.5px; color: var(--text-secondary); border-top: 1px solid var(--border-light); padding-top: 10px; }
+    .rung-stats b { color: var(--c); font-size: 15px; font-variant-numeric: tabular-nums; }
+    .tn { display: inline-block; font-size: 12px; font-weight: 800; letter-spacing: .04em; padding: 3px 10px; border-radius: 20px; vertical-align: 3px; margin-right: 6px; }
+    .tn.t1 { color: var(--t1); background: var(--t1s); } .tn.t2 { color: var(--t2); background: var(--t2s); } .tn.t3 { color: var(--t3); background: var(--t3s); } .tn.t4 { color: var(--t4); background: var(--t4s); }
+    .showcase-card .kind.k1 { color: var(--t1); background: var(--t1s); } .showcase-card .kind.k2 { color: var(--t2); background: var(--t2s); }
+    .showcase-card .kind.k3 { color: var(--t3); background: var(--t3s); } .showcase-card .kind.k4 { color: var(--t4); background: var(--t4s); }
+    #type1 .showcase-card:hover { border-color: var(--t1); } #type2 .showcase-card:hover { border-color: var(--t2); } #type3 .showcase-card:hover { border-color: var(--t3); } #type4 .showcase-card:hover { border-color: var(--t4); }
+    #type1 .go { color: var(--t1); } #type2 .go { color: var(--t2); } #type3 .go { color: var(--t3); } #type4 .go { color: var(--t4); }
+    .section { padding: 44px 0 12px; }
+    .cmp-wrap { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow-x: auto; }
+    .cmp-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .cmp-table th, .cmp-table td { padding: 12px 16px; border-bottom: 1px solid var(--border-light); text-align: left; vertical-align: top; }
+    .cmp-table tr:last-child td { border-bottom: 0; }
+    .cmp-table td:first-child { color: var(--text-secondary); font-weight: 600; white-space: nowrap; }
+    .cmp-table td[data-s] { font-variant-numeric: tabular-nums; font-weight: 600; }
+    code { font-family: 'JetBrains Mono', monospace; font-size: 12.5px; background: var(--gray-100); padding: 1px 5px; border-radius: 4px; }
+    .note { font-size: 13px; color: var(--text-muted); margin-top: 12px; max-width: 900px; }
+    .about-data { background: var(--white); border: 1px solid var(--border); border-left: 4px solid #FF991F; border-radius: var(--radius-md); padding: 20px 24px; font-size: 14px; color: var(--text-secondary); }
+    .about-data h3 { font-size: 16px; color: var(--text-primary); margin-bottom: 8px; }
+    .about-data p + p { margin-top: 8px; }
+    @media (max-width: 1000px) { .ladder-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .ladder-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<!-- HEADER:BEGIN -->
+  <header class="site-header" id="site-header">
+    <nav class="main-nav">
+      <div class="container nav-inner">
+        <a href="index.html" class="logo">
+          <img class="logo-flame" src="assets/fhir-flame.png" alt="FHIR" width="32" height="32" style="width:32px;height:32px;object-fit:contain;display:block;" onerror="this.style.display='none'">
+          <div class="logo-text">
+            <span class="logo-main">FHIR for Global Regulatory Affairs</span>
+          </div>
+        </a>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li class="has-dropdown">
+            <a href="#" class="nav-link">FHIR Standards <span class="chevron">▾</span></a>
+            <ul class="dropdown">
+              <li><a href="standard-epi.html">ePI — Labelling</a></li>
+              <li><a href="standard-pqi.html">PQI — CMC Quality</a></li>
+              <li><a href="standard-rwi.html">RWI — Regulatory Workflow</a></li>
+              <li><a href="standard-rtq.html">RTQ — Regulatory Questions</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="#" class="nav-link">Showcases <span class="chevron">▾</span></a>
+            <ul class="dropdown">
+              <li><a href="showcases-labeling.html">Labeling</a></li>
+              <li><a href="showcases-cmc.html">CMC</a></li>
+              <li><a href="showcases-workflow.html">Workflow</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="nav-actions">
+          <a href="index.html#standards" class="btn btn-primary">Browse Standards</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+<!-- HEADER:END -->
+
+  <main>
+    <section class="domain-hero">
+      <div class="container">
+        <div class="crumbs"><a href="index.html">Home</a> / Showcases / <a href="showcases-cmc.html">CMC</a> / PQI Types 1–4</div>
+        <span class="domain-tag">Showcases · CMC · PQI maturity types</span>
+        <h1>FHIR PQI Types 1–4, shown on one example dossier</h1>
+        <p>The HL7 PQI implementation guide now defines four maturity types for CTD quality documents. Each type is a FHIR document that adds one layer to the type before it. These showcases put the same synthetic CTD quality dossier (Module 2.3 plus the 19 Module 3.2 documents) at each type, so you can see what each step adds and who benefits from it.</p>
+        <div class="hero-meta"><span><strong>4</strong> maturity types</span><span><strong>12</strong> live showcases</span><span><strong>20</strong> FHIR documents per type</span><span><strong>1</strong> related FHIR standard</span></div>
+      </div>
+    </section>
+
+    <nav class="domain-tabs">
+      <div class="container"><ul><li><a href="showcases-labeling.html">Labeling</a></li><li><a href="showcases-cmc.html" class="active">CMC</a></li><li><a href="showcases-workflow.html">Workflow</a></li></ul></div>
+    </nav>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head"><h2>The four types</h2><span>Each type contains everything in the type before it</span></div>
+        <div class="ladder-grid">
+          <a class="rung t1" href="showcases/pqi-types/type1.html">
+            <span class="rung-n">Type 1</span><h3>Structured document</h3>
+            <p class="adds">Coded ICH M4Q(R1) headings. Narrative and figures carry over from the Word template.</p>
+            <dl><dt>For</dt><dd>Sponsors still authoring in Word</dd><dt>Effort</dt><dd>Convert the Word template</dd></dl>
+            <div class="rung-stats"><span><b data-s="1:sections">…</b> coded sections</span><span><b data-s="1:figures">…</b> figures</span><span><b>0</b> data resources</span></div>
+          </a>
+          <a class="rung t2" href="showcases/pqi-types/type2.html">
+            <span class="rung-n">Type 2</span><h3>Document + product data</h3>
+            <p class="adds">Adds product, packs, ingredients, sites and the authorization as resources, plus the document's subject and author.</p>
+            <dl><dt>For</dt><dd>Sponsors with RIM or IDMP master data</dd><dt>Effort</dt><dd>Type 1 + map the master data</dd></dl>
+            <div class="rung-stats"><span><b data-s="2:uniq">…</b> master data resources</span><span><b>0</b> narrative links</span></div>
+          </a>
+          <a class="rung t3" href="showcases/pqi-types/type3.html">
+            <span class="rung-n">Type 3</span><h3>Linked document</h3>
+            <p class="adds">Adds any PQI domain resource and links each passage of the narrative to the resources it discusses.</p>
+            <dl><dt>For</dt><dd>Vendors of CMC authoring tools</dd><dt>Effort</dt><dd>Type 2 + link narrative to data</dd></dl>
+            <div class="rung-stats"><span><b data-s="3:links">…</b> narrative-to-data links</span><span><b data-s="3:uniq">…</b> resources</span></div>
+          </a>
+          <a class="rung t4" href="showcases/pqi-types/type4.html">
+            <span class="rung-n">Type 4</span><h3>Data-first document</h3>
+            <p class="adds">Resources replace narrative where they carry the content. Generated text is for display; the resources are the record.</p>
+            <dl><dt>For</dt><dd>Sponsors with LIMS, MES or QMS data</dd><dt>Effort</dt><dd>Type 3 + generate from those systems</dd></dl>
+            <div class="rung-stats"><span><b data-s="4:replaced">…</b> headings generated from data</span><span><b data-s="4:gen">…</b> generated sections</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="type1">
+      <div class="container">
+        <div class="section-head"><h2><span class="tn t1">Type 1</span> Structured document</h2><span>3 showcases · <a href="showcases/pqi-types/type1.html">open Type 1 →</a></span></div>
+        <div class="showcase-grid">
+          <a class="showcase-card" href="showcases/pqi-types/type1.html#navigator"><span class="kind k1">Navigation</span><h3>Coded CTD navigator</h3><p>All 20 documents as one tree of coded headings. Jump to any section by its code, such as 3.2.P.5.1, or search the narrative across the whole dossier.</p><div class="tags"><span>Composition.section.code</span><span>ctd-section-pq</span></div><span class="go">Open showcase →</span></a>
+          <a class="showcase-card" href="showcases/pqi-types/type1.html#validate"><span class="kind k1">Validation</span><h3>Intake validation</h3><p>The Type 1 rules run in the browser on every document: headings, nesting, narrative, figures. Switch on a conversion mistake and see which rule catches it, plus a completeness map of the M4Q headings.</p><div class="tags"><span>pqi-sec-0</span><span>pqi-t1-1</span><span>pqi-txt-1</span></div><span class="go">Open showcase →</span></a>
+          <a class="showcase-card" href="showcases/pqi-types/type1.html#figures"><span class="kind k1">Figures</span><h3>Figure register</h3><p>Every figure as a DocumentReference with its provenance, where it is cited and which other references carry the same image.</p><div class="tags"><span>DocumentReference</span><span>Binary</span></div><span class="go">Open showcase →</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="type2">
+      <div class="container">
+        <div class="section-head"><h2><span class="tn t2">Type 2</span> Document + product data</h2><span>3 showcases · <a href="showcases/pqi-types/type2.html">open Type 2 →</a></span></div>
+        <div class="showcase-grid">
+          <a class="showcase-card" href="showcases/pqi-types/type2.html#identity"><span class="kind k2">Identity</span><h3>Product identity</h3><p>Product, strength, dose form, packs, applicant and authorization, read from coded resources rather than from a table in the narrative.</p><div class="tags"><span>MedicinalProductDefinition</span><span>Ingredient</span><span>EDQM</span></div><span class="go">Open showcase →</span></a>
+          <a class="showcase-card" href="showcases/pqi-types/type2.html#intake"><span class="kind k2">Agency intake</span><h3>Registration without retyping</h3><p>A mock agency intake form filled from the bundle: application, product, substance, packs and sites, with DUNS and FEI identifiers. Every field shows its FHIR source.</p><div class="tags"><span>RegulatedAuthorization</span><span>Organization</span></div><span class="go">Open showcase →</span></a>
+          <a class="showcase-card" href="showcases/pqi-types/type2.html#reuse"><span class="kind k2">Master data</span><h3>Maintained once</h3><p>One record carried by every document that needs it, under the same identifier. Change it once and see which documents follow, and how often the Type 1 narrative spells it out.</p><div class="tags"><span>Composition.subject</span><span>Product data section</span></div><span class="go">Open showcase →</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="type3">
+      <div class="container">
+        <div class="section-head"><h2><span class="tn t3">Type 3</span> Linked document</h2><span>3 showcases · <a href="showcases/pqi-types/type3.html">open Type 3 →</a></span></div>
+        <div class="showcase-grid">
+          <a class="showcase-card" href="showcases/pqi-types/type3.html#read"><span class="kind k3">Traceability</span><h3>Linked reading</h3><p>Read the narrative as written. Highlighted passages are links: click one to open the specification, batch report, impurity or site it discusses.</p><div class="tags"><span>textLink</span><span>section.entry</span></div><span class="go">Open showcase →</span></a>
+          <a class="showcase-card" href="showcases/pqi-types/type3.html#reverse"><span class="kind k3">Change impact</span><h3>Where is this discussed?</h3><p>Start from a resource and list every passage in Module 2.3 and 3.2 that relies on it. These are the passages to review when that resource changes.</p><div class="tags"><span>PlanDefinition</span><span>SubstanceDefinition</span></div><span class="go">Open showcase →</span></a>
+          <a class="showcase-card" href="showcases/pqi-types/type3.html#links"><span class="kind k3">Integrity</span><h3>Link integrity</h3><p>Every entry, anchor and link checked on arrival, with link coverage per document and a report on canonical references that need a registry.</p><div class="tags"><span>pqi-t3-1</span><span>canonical</span></div><span class="go">Open showcase →</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="type4">
+      <div class="container">
+        <div class="section-head"><h2><span class="tn t4">Type 4</span> Data-first document</h2><span>3 showcases · <a href="showcases/pqi-types/type4.html">open Type 4 →</a></span></div>
+        <div class="showcase-grid">
+          <a class="showcase-card" href="showcases/pqi-types/type4.html#compare"><span class="kind k4">Generation</span><h3>Authored vs generated</h3><p>For each heading Type 4 replaces, the authored Type 3 text side by side with the same section rendered from its resources: specifications, batch results, stability, sites, composition.</p><div class="tags"><span>text.status = generated</span><span>DiagnosticReport</span></div><span class="go">Open showcase →</span></a>
+          <a class="showcase-card" href="showcases/pqi-types/type4.html#regenerate"><span class="kind k4">Lifecycle</span><h3>Regenerate from source</h3><p>Act as the QMS or LIMS: tighten a limit or release a batch. The specification and batch sections regenerate, and the authored justification linked to them is flagged for review.</p><div class="tags"><span>ObservationDefinition</span><span>Observation</span></div><span class="go">Open showcase →</span></a>
+          <a class="showcase-card" href="showcases/pqi-types/type4.html#map"><span class="kind k4">Adoption</span><h3>Maturity map</h3><p>Which headings are carried by data and which must stay authored, and a builder for collections that mix types document by document.</p><div class="tags"><span>vs-ctd-replaceable-pq</span><span>mixed maturity</span></div><span class="go">Open showcase →</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head"><h2>The same dossier at each type</h2><span>Measured from the example bundles</span></div>
+        <div class="cmp-wrap"><table class="cmp-table">
+          <thead><tr><th></th><th><span class="tn t1">Type 1</span></th><th><span class="tn t2">Type 2</span></th><th><span class="tn t3">Type 3</span></th><th><span class="tn t4">Type 4</span></th></tr></thead>
+          <tbody>
+            <tr><td>Composition.category</td><td><code>type-1</code></td><td><code>type-2</code></td><td><code>type-3</code></td><td><code>type-4</code></td></tr>
+            <tr><td>section.entry may hold</td><td>Figures only</td><td>Figures; product data in its own section</td><td>Any PQI resource, linked to the narrative</td><td>Any PQI resource; sole content where replaceable</td></tr>
+            <tr><td>Narrative</td><td>Authored</td><td>Authored</td><td>Authored, with anchors</td><td>Authored or generated</td></tr>
+            <tr><td>Characters of authored narrative</td><td data-s="1:auth"></td><td data-s="2:auth"></td><td data-s="3:auth"></td><td data-s="4:auth"></td></tr>
+            <tr><td>Distinct data resources</td><td>0</td><td data-s="2:uniq"></td><td data-s="3:uniq"></td><td data-s="4:uniq"></td></tr>
+            <tr><td>Narrative-to-data links</td><td>0</td><td>0</td><td data-s="3:links"></td><td data-s="4:links"></td></tr>
+            <tr><td>Sections with generated narrative</td><td data-s="1:gen"></td><td data-s="2:gen"></td><td data-s="3:gen"></td><td data-s="4:gen"></td></tr>
+            <tr><td>Size of the 20 example documents</td><td data-s="1:mb"></td><td data-s="2:mb"></td><td data-s="3:mb"></td><td data-s="4:mb"></td></tr>
+          </tbody>
+        </table></div>
+        <p class="note">Type 2 adds the Product data section, whose narrative is generated. Type 4 links fewer passages than Type 3 because the replaced sections no longer have authored text to link. The resource count of Type 4 is that of Type 3: the same resources, used as the record.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="about-data">
+          <h3>About the data</h3>
+          <p><b>Synthetic example data.</b> The documents are fictitious. Their content comes from the ICH M4Q(R2) Sakura Bloom mock-up, the FDA example Quality Overall Summaries and the synthetic example data of the HL7 FHIR PQI team. They do not describe a real product, company or authorization; every resource is labelled as test data (HTEST). The examples are in <code>sakura-bloom-r2/fhir/pqi-types</code> of this site's repository, and the type definitions are in the <a href="https://build.fhir.org/ig/HL7/uv-dx-pq/en/build.html" target="_blank" rel="noopener">PQI implementation guide (continuous build)</a>.</p>
+          <p>Every reference in the Type 3 and 4 documents resolves inside the document itself, including the ObservationDefinitions behind each specification test. Figures the mock-up extract did not include were rebuilt from the mock-up's own data, the HL7 PQI example data or ICH M7; each figure's DocumentReference says how it was made, and where a value had to be made up.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="related">
+      <div class="container">
+        <div class="section-head"><h2>Related</h2></div>
+        <div class="related-list"><a href="showcases-cmc.html">All CMC showcases →</a><a href="standard-pqi.html">PQI — Pharmaceutical Quality Information →</a><a href="https://build.fhir.org/ig/HL7/uv-dx-pq/en/build.html" target="_blank" rel="noopener">PQI Types in the IG ↗</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 FHIR for Global Regulatory Affairs | Published under Creative Commons Attribution 4.0</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="showcases/pqi-types/data/stats.js"></script>
+  <script>
+  (function () {
+    var S = window.PQIDATA && PQIDATA.stats; if (!S) return;
+    var fmt = function (n) { return n.toLocaleString("en-US"); };
+    var sum = function (t, k) { return S.types[t].reduce(function (a, d) { return a + d[k]; }, 0); };
+    var v = {};
+    [1, 2, 3, 4].forEach(function (t) {
+      v[t + ":sections"] = fmt(sum(t, "sections"));
+      v[t + ":figures"] = fmt(S.images.ids);
+      v[t + ":auth"] = fmt(sum(t, "authoredChars"));
+      v[t + ":links"] = fmt(sum(t, "links"));
+      v[t + ":gen"] = fmt(sum(t, "generatedSections"));
+      v[t + ":mb"] = (sum(t, "bytes") / 1048576).toFixed(1) + " MB";
+      v[t + ":uniq"] = fmt((S.uniqueResources || {})[t] || 0);
+    });
+    v["4:replaced"] = fmt(S.replaced || 0);
+    v["reg"] = fmt(S.registry);
+    document.querySelectorAll("[data-s]").forEach(function (el) { if (v[el.dataset.s] != null) el.textContent = v[el.dataset.s]; });
+  })();
+  </script>
+
+</body>
+</html>
