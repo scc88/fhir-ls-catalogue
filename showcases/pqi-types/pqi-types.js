@@ -271,15 +271,16 @@ const PT = (function () {
     document.body.classList.add("type" + cfg.type);
     document.body.innerHTML = `<div class="app">
       <header class="top">
+        <button class="pane-toggle" id="paneToggle" aria-controls="pane" aria-expanded="true" title="Hide or show the side panel"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><rect x="1.5" y="2.5" width="15" height="13" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/><line x1="6.5" y1="2.5" x2="6.5" y2="15.5" stroke="currentColor" stroke-width="1.5"/></svg><span class="vh">Toggle side panel</span></button>
         <div class="brand"><a class="back" href="../../showcases-pqi-types.html">← PQI Types 1–4</a>
           <div class="brand-text"><b>PQI Type ${cfg.type} · ${M.esc(t.name)}</b><small>HL7 FHIR PQI · synthetic CTD Module 2.3 and 3.2 example data</small></div></div>
         <nav class="ladder" aria-label="PQI maturity types">${[1, 2, 3, 4].map((n) => `<a href="${M.TYPES[n].page}" ${n === cfg.type ? 'aria-current="page"' : ""} title="Type ${n}: ${M.esc(M.TYPES[n].name)}"><span class="dot" style="background:var(--t${n})"></span>T${n}<span class="lbl">${M.esc(M.TYPES[n].short)}</span></a>`).join("")}</nav>
         <span class="synthetic" title="Fictitious product. Every resource is tagged HTEST.">Synthetic data</span>
       </header>
       <div class="workspace">
-        <nav class="pane" aria-label="Showcases">
-          <div class="about"><div class="tname">PQI Type ${cfg.type}</div><h2>${M.esc(t.name)}</h2>
-            <dl><dt>Adds</dt><dd>${M.esc(t.adds)}</dd><dt>For</dt><dd>${M.esc(t.who)}</dd><dt>Effort</dt><dd>${M.esc(t.effort)}</dd></dl></div>
+        <nav class="pane" id="pane" aria-label="Showcases">
+          <details class="about" id="about"><summary><span><span class="tname">PQI Type ${cfg.type}</span><h2>${M.esc(t.name)}</h2></span><span class="chev" aria-hidden="true">▾</span></summary>
+            <dl><dt>Adds</dt><dd>${M.esc(t.adds)}</dd><dt>For</dt><dd>${M.esc(t.who)}</dd><dt>Effort</dt><dd>${M.esc(t.effort)}</dd></dl></details>
           <div class="pane-label">Showcases</div>
           <div class="tabs">${cfg.views.map((v, i) => `<a href="#${v.id}" data-view="${v.id}"><span class="n">${i + 1}</span><span>${M.esc(v.title)}<small>${M.esc(v.sub)}</small></span></a>`).join("")}</div>
           <div class="pane-foot">${cfg.foot || ""}<br>Profiles: <a href="${M.IG}build_type${cfg.type}.html" target="_blank" rel="noopener">PQI Type ${cfg.type} in the IG ↗</a></div>
@@ -287,6 +288,17 @@ const PT = (function () {
         <main id="main" tabindex="-1"></main>
         <aside class="insp" id="insp" aria-label="FHIR inspector"></aside>
       </div></div>`;
+    const app = $(".app"), tog = $("#paneToggle");
+    const setPane = (show) => { app.classList.toggle("pane-closed", !show); tog.setAttribute("aria-expanded", show); $("#pane").inert = !show; };
+    let paneOpen = !matchMedia("(max-width: 820px)").matches;
+    try { const v = localStorage.getItem("pqi-types-pane"); if (v) paneOpen = v === "open"; } catch (e) {}
+    setPane(paneOpen);
+    tog.onclick = () => { const show = app.classList.contains("pane-closed"); setPane(show); try { localStorage.setItem("pqi-types-pane", show ? "open" : "closed"); } catch (e) {} };
+    const about = $("#about");
+    let open = true;
+    try { open = localStorage.getItem("pqi-types-about") !== "closed"; } catch (e) {}
+    about.open = open && !matchMedia("(max-width: 820px)").matches;
+    about.addEventListener("toggle", () => { try { localStorage.setItem("pqi-types-about", about.open ? "open" : "closed"); } catch (e) {} });
     const go = () => {
       const [id, ...rest] = decodeURIComponent(location.hash.slice(1)).split("/");
       const v = cfg.views.find((x) => x.id === id) || cfg.views[0];
