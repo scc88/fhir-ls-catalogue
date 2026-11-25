@@ -132,6 +132,26 @@ table.t tr.click { cursor: pointer; } table.t tr.click:hover td { background: va
 .hero .eyebrow { margin: 0 0 12px; font-size: 19px; font-weight: 600; color: var(--accent); }
 .hero h2 { font-size: clamp(40px, 6vw, 72px); line-height: 1.05; font-weight: 800; letter-spacing: -0.02em; }
 .hero p.lede { margin: 20px auto 0; max-width: 640px; font-size: 21px; line-height: 1.45; color: var(--muted); }
+.hero p.about { margin: 18px auto 0; max-width: 720px; font-size: 16px; line-height: 1.55; color: var(--muted); }
+.hero h2.plain { font-size: clamp(32px, 4.4vw, 52px); }
+.tour-steps { display: flex; gap: 6px; flex-wrap: wrap; list-style: none; padding: 0; margin: 0 0 16px; counter-reset: ts; }
+.tour-steps a { display: flex; align-items: center; gap: 8px; padding: 7px 14px 7px 8px; border-radius: 980px; background: var(--fill); color: var(--ink); font-size: 14px; text-decoration: none; }
+.tour-steps a:hover { background: var(--accent-soft); color: var(--accent); text-decoration: none; }
+.tour-steps a b { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: #ffffff; font-size: 12px; }
+.tour-steps a.done b { background: var(--accent-soft); color: var(--accent); }
+.tour-steps a[aria-current="step"] { background: var(--accent); color: #ffffff; font-weight: 600; }
+.tour-steps a[aria-current="step"] b { color: var(--accent); }
+.tour-card { background: var(--surface); border-radius: var(--radius-card); padding: 24px 28px; margin-bottom: 22px; box-shadow: 0 0 0 2px var(--accent) inset; }
+.tour-card .kicker { margin: 0 0 4px; font-size: 13px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: .04em; }
+.tour-card h2 { font-size: 30px; font-weight: 800; margin: 0 0 10px; }
+.tour-card p { margin: 0 0 10px; max-width: 80ch; font-size: 16.5px; line-height: 1.55; color: var(--ink); }
+.tour-card p.muted { color: var(--muted); }
+.tour-nav { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-top: 16px; }
+.tour-nav .spacer { flex: 1; }
+.tour-stage .view-head h2 { font-size: 24px; }
+.tour-stage .view-head p { font-size: 15px; }
+.tour-foot { margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--sep); }
+.pane-sep { height: 10px; }
 .hero .ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 28px; }
 .bignums { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; text-align: center; padding: 8px 0 40px; }
 .bignums .n { font-size: 52px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.05; font-variant-numeric: tabular-nums; }
@@ -344,6 +364,7 @@ function subjLabel(r) { return r.resourceType === "Medication" ? PQI.label(r) : 
 
 // ---------- routing
 const VIEWS = [
+  ["tour", "Guided tour", viewTour],
   ["overview", "Overview", viewOverview],
   ["ctd", "CTD navigator", viewCtd],
   ["control-strategy", "Control strategy", viewControl],
@@ -355,8 +376,8 @@ const VIEWS = [
   ["change-impact", "Change impact", viewImpact],
   ["post-noc-intake", "Post-NOC intake", viewIntake],
 ];
-const ICONS = {"post-noc-intake": "<path d=\"M4 13l2.5-8h11L20 13v6H4z\"/><path d=\"M4 13h5l1 2h4l1-2h5\"/>", "overview": "<path d=\"M4 13h6V4H4zM14 20h6V4h-6zM4 20h6v-4H4z\"/>", "ctd": "<path d=\"M6 3h9l4 4v14H6z\"/><path d=\"M9 12h7M9 16h5\"/>", "control-strategy": "<path d=\"M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z\"/><path d=\"M9 12l2 2 4-4\"/>", "specifications": "<path d=\"M9 6h11M9 12h11M9 18h11\"/><path d=\"M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2\"/>", "batches": "<circle cx=\"6\" cy=\"6\" r=\"2.5\"/><circle cx=\"18\" cy=\"6\" r=\"2.5\"/><circle cx=\"12\" cy=\"18\" r=\"2.5\"/><path d=\"M6 8.5v2l6 5M18 8.5v2l-6 5\"/>", "stability": "<path d=\"M4 19l5-6 4 3 7-9\"/><path d=\"M4 4v15h16\"/>", "process": "<path d=\"M4 6h16M4 12h10M4 18h7\"/>", "trace": "<circle cx=\"11\" cy=\"11\" r=\"6\"/><path d=\"M20 20l-4.5-4.5\"/>", "change-impact": "<path d=\"M12 4l9 16H3z\"/><path d=\"M12 10v4M12 17v.5\"/>"};
-$("#tabs").innerHTML = VIEWS.map(([id, t]) => `<a href="#${id}" data-v="${id}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[id] || ""}</svg><span>${esc(t)}</span></a>`).join("");
+const ICONS = {"tour": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M15.5 8.5l-2 5-5 2 2-5z\"/>", "post-noc-intake": "<path d=\"M4 13l2.5-8h11L20 13v6H4z\"/><path d=\"M4 13h5l1 2h4l1-2h5\"/>", "overview": "<path d=\"M4 13h6V4H4zM14 20h6V4h-6zM4 20h6v-4H4z\"/>", "ctd": "<path d=\"M6 3h9l4 4v14H6z\"/><path d=\"M9 12h7M9 16h5\"/>", "control-strategy": "<path d=\"M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z\"/><path d=\"M9 12l2 2 4-4\"/>", "specifications": "<path d=\"M9 6h11M9 12h11M9 18h11\"/><path d=\"M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2\"/>", "batches": "<circle cx=\"6\" cy=\"6\" r=\"2.5\"/><circle cx=\"18\" cy=\"6\" r=\"2.5\"/><circle cx=\"12\" cy=\"18\" r=\"2.5\"/><path d=\"M6 8.5v2l6 5M18 8.5v2l-6 5\"/>", "stability": "<path d=\"M4 19l5-6 4 3 7-9\"/><path d=\"M4 4v15h16\"/>", "process": "<path d=\"M4 6h16M4 12h10M4 18h7\"/>", "trace": "<circle cx=\"11\" cy=\"11\" r=\"6\"/><path d=\"M20 20l-4.5-4.5\"/>", "change-impact": "<path d=\"M12 4l9 16H3z\"/><path d=\"M12 10v4M12 17v.5\"/>"};
+$("#tabs").innerHTML = VIEWS.map(([id, t]) => (id === "overview" && VIEWS[0][0] === "tour" ? `<div class="pane-sep"></div><div class="pane-label">Explore on your own</div>` : "") + `<a href="#${id}" data-v="${id}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[id] || ""}</svg><span>${esc(t)}</span></a>`).join("");
 (function pane() {
   const btn = $("#paneToggle"), app = document.querySelector(".app");
   const narrow = () => window.matchMedia("(max-width: 860px)").matches;
@@ -369,14 +390,21 @@ $("#tabs").innerHTML = VIEWS.map(([id, t]) => `<a href="#${id}" data-v="${id}"><
 })();
 const STATE = { ctdSection: null, spec: "spec-dp", stab: { prod: "DP", od: "od-dp-assay-hplc", pack: "all", cond: "25 °C / 60 % RH (long-term)" }, proc: "dp", trace: "CP-9-1", impact: null, batch: "ABC123" };
 function route() {
-  const [h, sub] = decodeURIComponent((location.hash || "#overview").slice(1)).split("/");
+  const [h, sub] = decodeURIComponent((location.hash || "#tour").slice(1)).split("/");
   const v = VIEWS.find((x) => x[0] === h) || VIEWS[0];
   document.querySelectorAll("#tabs a").forEach((a) => a.setAttribute("aria-current", a.dataset.v === v[0] ? "page" : "false"));
+  if (v[0] !== "tour") STATE.tourShown = null;
   const main = $("#view");
+  const same = location.hash === LAST_ROUTE;
+  const keepMain = main.scrollTop, keepWin = window.scrollY;
+  LAST_ROUTE = location.hash;
+  main.style.minHeight = same ? main.offsetHeight + "px" : "";
   main.innerHTML = "";
   v[2](main, sub);
-  main.scrollTop = 0;
+  main.style.minHeight = "";
+  if (same) { main.scrollTop = keepMain; window.scrollTo(0, keepWin); } else main.scrollTop = 0;
 }
+let LAST_ROUTE = null;
 window.addEventListener("hashchange", route);
 function go(v) { if (location.hash === "#" + v) route(); else location.hash = v; }
 
@@ -398,12 +426,52 @@ document.addEventListener("click", (e) => {
 });
 
 // =====================================================================================
+// Guided tour
+const ABOUT = "This showcase is a quality (CMC) dossier, CTD Module 2.3 and 3.2, rebuilt as linked HL7 FHIR PQI data instead of PDFs. It was assembled from the Sakura Bloom mock dossier, FHIR PQI team examples and FDA synthetic data. Because specifications, test methods, batches and stability results are linked to each other, a reviewer can ask a question once and get the answer with its sources, rather than searching across documents.";
+const TOUR = [
+  { short: "The question", title: "A review question: PDF dossier versus structured dossier",
+    text: [ABOUT, "Take a typical assessor question: has any drug-product result for the impurity CP-9-1 come close to its shelf-life limit? On the left is what answering it takes with a PDF dossier. On the right is the same question asked of the structured dossier, where the limit, the test method and every result are linked."],
+    render: (el) => { el.innerHTML = `<p class="section-sub" style="text-align:left;margin:0 0 14px;font-size:19px;color:var(--ink);font-weight:600">Has any drug-product CP-9-1 result come close to its shelf-life limit?</p>${compareBlock(false)}`; } },
+  { short: "Trace", title: "Tracing impurity CP-9-1 through the dossier",
+    text: ["Everything about CP-9-1 is pulled together in one place: what it is, the tests and acceptance criteria that control it, the analytical procedures, every result, and the narrative sections that mention it. The right-hand column lists the PDF documents you would otherwise have to search.", "Use the tabs to trace another attribute, or click any item to see the FHIR resource behind it."],
+    setup: () => { STATE.trace = "CP-9-1"; }, render: (el) => viewTrace(el) },
+  { short: "Stability", title: "Stability results against the shelf-life limit",
+    text: ["The stability chart is drawn straight from the result data and compared with the shelf-life limit stored with the test. Pack and storage condition come from each sample record, so nothing is retyped from a stability table.", "Switch the test, condition or pack to check other attributes."],
+    setup: () => { STATE.stab.prod = "DP"; STATE.stab.od = "od-dp-degradation-cp-9-1"; STATE.stab.cond = "25 °C / 60 % RH (long-term)"; STATE.stab.pack = "all"; }, render: (el) => viewStability(el) },
+  { short: "Change impact", title: "Impact of changing an acceptance range",
+    text: ["Propose a new acceptance range for a test and see straight away which existing results, batches and stability time points would fall outside it. This works because each result is linked to the limit it is judged against.", "Try tightening the assay range, or pick another test."],
+    setup: () => { STATE.impact = "od-dp-assay-hplc"; }, render: (el) => viewImpact(el) },
+  { short: "Post-approval change", title: "Triage of post-approval changes",
+    text: ["After approval, changes can be sent as FHIR bundles too. Each one is compared with the approved dossier to show exactly what changed, then categorised against Health Canada’s post-NOC quality guidance and routed to an assessor. The company does not need to describe the change in a cover letter.", "The Post Approval CMC Lifecycle Change showcase covers this in more detail."],
+    extra: `<a class="btn" href="pqi-post-noc-intake.html">Open the Post Approval CMC Lifecycle Change showcase</a>`,
+    render: (el) => viewIntake(el) },
+];
+function viewTour(el, sub) {
+  let i = Math.min(Math.max((parseInt(sub, 10) || 1) - 1, 0), TOUR.length - 1);
+  const step = TOUR[i];
+  if (STATE.tourShown !== i) { if (step.setup) step.setup(); STATE.tourShown = i; }
+  const nav = () => `<div class="tour-nav">
+      ${i > 0 ? `<a class="btn" href="#tour/${i}">← Previous</a>` : ""}
+      ${i < TOUR.length - 1 ? `<a class="btn primary" href="#tour/${i + 2}">Next: ${esc(TOUR[i + 1].short)} →</a>` : `<a class="btn primary" href="#overview">Explore the dossier on your own →</a>`}
+      ${step.extra || ""}
+      <span class="spacer"></span>
+      ${i < TOUR.length - 1 ? `<a href="#overview" class="muted" style="font-size:14px">Skip the tour</a>` : ""}
+    </div>`;
+  el.innerHTML = `<ol class="tour-steps" aria-label="Tour steps">${TOUR.map((t, k) => `<li><a href="#tour/${k + 1}"${k === i ? ' aria-current="step"' : ""}${k < i ? ' class="done"' : ""}><b>${k + 1}</b>${esc(t.short)}</a></li>`).join("")}</ol>
+  <section class="tour-card">
+    <p class="kicker">Guided tour · step ${i + 1} of ${TOUR.length}</p>
+    <h2>${esc(step.title)}</h2>
+    ${step.text.map((t, k) => `<p${k ? ' class="muted"' : ""}>${esc(t)}</p>`).join("")}
+    ${nav()}
+  </section>
+  <div class="tour-stage" id="tourStage"></div>
+  <div class="tour-foot">${nav()}</div>`;
+  step.render($("#tourStage", el));
+}
+
+// =====================================================================================
 // Overview
-function viewOverview(el) {
-  const obs = all("Observation");
-  const counts = { pass: 0, near: 0, fail: 0, info: 0 };
-  obs.forEach((o) => counts[ev(o).status]++);
-  const ranked = obs.map((o) => ({ o, e: ev(o) })).filter((x) => x.e.margin != null && x.o.valueQuantity && !x.o.valueQuantity.comparator).sort((a, b) => a.e.margin - b.e.margin).slice(0, 5);
+function compareBlock(withButtons) {
   const od = get("ObservationDefinition/od-dp-degradation-cp-9-1");
   const rs = PQI.resultsFor(db, od.id);
   const maxR = rs.filter((r) => r.obs.valueQuantity).sort((a, b) => b.obs.valueQuantity.value - a.obs.valueQuantity.value)[0];
@@ -411,6 +479,25 @@ function viewOverview(el) {
   rs.forEach((r) => { if (r.report) involved.add("DiagnosticReport/" + r.report.id); });
   const ap = db.apOf.get(od.id); if (ap) involved.add("PlanDefinition/" + ap.id);
   const docs = [...PQI.sourcesOf(db, involved)].map(srcTitle);
+  return `<div class="compare">
+    <div class="pdf"><h3>Answering from the PDF dossier</h3>
+      <p class="muted" style="margin:0">${docs.length} documents to open and ${rs.length} values to copy. The limit is in one document and the test method in another. The results are spread across batch-analysis and stability tables for two packs, so each value has to be found and copied by hand:</p>
+      <ul class="doclist">${docs.map((d) => `<li>${esc(d)}</li>`).join("")}</ul></div>
+    <div class="fhir"><h3>Answering from the FHIR PQI dossier</h3>
+      <div class="statrow" style="margin:6px 0 14px">
+        <div class="stat"><span class="big num">${rs.length}</span><small>results found</small></div>
+        <div class="stat"><span class="big num">${esc(PQI.valueText(maxR.obs))}</span><small>highest · ${esc(subjLabel(maxR.subject))}${maxR.si ? ", " + maxR.si.months + " mo" : ""}</small></div>
+        <div class="stat"><span class="big num">${esc(critText(od, "Shelf-life").replace("Not more than", "≤ "))}</span><small>shelf-life limit</small></div>
+      </div>
+      <p class="muted" style="margin:0 0 16px">The limit, its procedure (${esc(ap ? ap.title.replace("Analytical Procedures ", "") : "")}) and every result are linked, so the answer traces back to the source documents.</p>
+      ${withButtons ? `<div class="chips"><button class="btn primary" data-go="trace|CP-9-1">Trace CP-9-1</button><button class="btn" data-go="stability|DP:od-dp-degradation-cp-9-1">See the stability trend</button></div>` : ""}</div>
+  </div>`;
+}
+function viewOverview(el) {
+  const obs = all("Observation");
+  const counts = { pass: 0, near: 0, fail: 0, info: 0 };
+  obs.forEach((o) => counts[ev(o).status]++);
+  const ranked = obs.map((o) => ({ o, e: ev(o) })).filter((x) => x.e.margin != null && x.o.valueQuantity && !x.o.valueQuantity.comparator).sort((a, b) => a.e.margin - b.e.margin).slice(0, 5);
   const sd = get("SubstanceDefinition/sakuramil");
   const mpd = all("MedicinalProductDefinition")[0];
   const specs = all("PlanDefinition").filter((p) => p.id.startsWith("spec-")).length;
@@ -419,9 +506,10 @@ function viewOverview(el) {
   el.innerHTML = `
   <section class="hero">
     <p class="eyebrow">For quality assessors at FDA, Health Canada, PMDA, HSA, EMA and TGA</p>
-    <h2>Review the dossier.<br>Not the documents.</h2>
-    <p class="lede">CTD Module 2.3 and 3.2 for Sakura Bloom 20 mg, delivered as ${RES.length.toLocaleString()} linked HL7 FHIR PQI resources.</p>
-    <div class="ctas"><button class="btn primary" data-go="ctd">Start reviewing</button><button class="btn" data-go="trace|CP-9-1">See how it compares to PDF</button></div>
+    <h2 class="plain">Sakura Bloom 20 mg: structured CMC dossier</h2>
+    <p class="lede">CTD Module 2.3 and 3.2, delivered as ${RES.length.toLocaleString()} linked HL7 FHIR PQI resources.</p>
+    <p class="about">${ABOUT} New here? The guided tour walks through it in five steps.</p>
+    <div class="ctas"><button class="btn primary" data-go="tour">Take the guided tour</button><button class="btn" data-go="ctd">Read the CTD with its data</button></div>
   </section>
   <div class="bignums">
     <div><div class="n">${RES.length.toLocaleString()}</div><div class="l">linked FHIR resources</div></div>
@@ -429,23 +517,11 @@ function viewOverview(el) {
     <div><div class="n" style="color:${counts.fail ? "var(--bad)" : "var(--ok)"}">${counts.fail}</div><div class="l">out of limit</div></div>
     <div><div class="n">${specs}</div><div class="l">specifications, as data</div></div>
   </div>
-  <h2 class="section-title">One question. Two ways.</h2>
+  <h2 class="section-title" style="font-size:30px">Answering a review question</h2>
   <p class="section-sub">Has any drug-product CP-9-1 result come close to its shelf-life limit?</p>
-  <div class="compare">
-    <div class="pdf"><span class="label">Today · PDF and DOCX</span><h3>Open ${docs.length} documents.<br>Copy ${rs.length} numbers.</h3>
-      <p class="muted" style="margin:0">Find the limit in one, the method in another, then transcribe results from batch-analysis and stability tables for two packs:</p>
-      <ul class="doclist">${docs.map((d) => `<li>${esc(d)}</li>`).join("")}</ul></div>
-    <div class="fhir"><span class="label">With FHIR PQI</span><h3>Ask once.<br>Get the answer with its sources.</h3>
-      <div class="statrow" style="margin:6px 0 14px">
-        <div class="stat"><span class="big num">${rs.length}</span><small>results found</small></div>
-        <div class="stat"><span class="big num">${esc(PQI.valueText(maxR.obs))}</span><small>highest · ${esc(subjLabel(maxR.subject))}${maxR.si ? ", " + maxR.si.months + " mo" : ""}</small></div>
-        <div class="stat"><span class="big num">${esc(critText(od, "Shelf-life").replace("Not more than", "≤ "))}</span><small>shelf-life limit</small></div>
-      </div>
-      <p class="muted" style="margin:0 0 16px">The limit, its procedure (${esc(ap ? ap.title.replace("Analytical Procedures ", "") : "")}) and every result are linked, so the answer traces back to source.</p>
-      <div class="chips"><button class="btn primary" data-go="trace|CP-9-1">Trace CP-9-1 everywhere</button><button class="btn" data-go="stability|DP:od-dp-degradation-cp-9-1">See the stability trend</button></div></div>
-  </div>
+  ${compareBlock(true)}
   <div class="grid g2" style="margin-bottom:16px;align-items:start">
-    <div><h3 style="font-size:22px;margin:0 0 10px">Ask the dossier</h3><div class="asklist">
+    <div><h3 style="font-size:22px;margin:0 0 10px">Questions to start from</h3><div class="asklist">
       <button type="button" data-go="control-strategy"><span>Which controls assure each critical quality attribute?</span><span class="hint">Control strategy</span><span class="chev" aria-hidden="true">›</span></button>
       <button type="button" data-go="batches"><span>Which drug-substance batches went into ABC456?</span><span class="hint">Genealogy</span><span class="chev" aria-hidden="true">›</span></button>
       <button type="button" data-go="stability"><span>Does the 36-month shelf life hold in both packs?</span><span class="hint">Stability</span><span class="chev" aria-hidden="true">›</span></button>
@@ -454,7 +530,7 @@ function viewOverview(el) {
       <button type="button" data-go="post-noc-intake"><span>How would a post-NOC change be triaged on arrival?</span><span class="hint">Post-NOC intake</span><span class="chev" aria-hidden="true">›</span></button>
       <button type="button" data-go="ctd"><span>Read the narrative with its data attached</span><span class="hint">CTD navigator</span><span class="chev" aria-hidden="true">›</span></button>
     </div></div>
-    <div><h3 style="font-size:22px;margin:0 0 10px">Every result, checked</h3><div class="card">
+    <div><h3 style="font-size:22px;margin:0 0 10px">Results against their limits</h3><div class="card">
       <div class="statrow"><div class="stat"><span class="big num" style="color:var(--ok)">${(counts.pass + counts.near).toLocaleString()}</span><small>within limit</small></div><div class="stat"><span class="big num" style="color:${counts.fail ? "var(--bad)" : "var(--ink)"}">${counts.fail}</span><small>out of limit</small></div><div class="stat"><span class="big num" style="color:var(--muted)">${counts.info}</span><small>reported only</small></div></div>
       <div aria-hidden="true" style="display:flex;height:8px;border-radius:4px;overflow:hidden;margin:12px 0 16px"><span style="flex:${counts.pass + counts.near};background:#34c759"></span><span style="flex:${counts.fail};background:var(--bad)"></span><span style="flex:${counts.info};background:#c7c7cc"></span></div>
       <p class="note" style="margin:0 0 6px">Closest to a limit</p>
@@ -765,7 +841,7 @@ function viewTrace(el) {
     <div class="card accent"><h3>${esc(STATE.trace)}</h3><p style="margin-top:0">${esc(tp.note)}</p>${tp.sd ? refBtn("SubstanceDefinition/" + tp.sd, "Substance definition") : ""}
       <div class="statrow" style="margin-top:10px"><div class="stat"><span class="big num">${ods.length}</span><small>test definitions</small></div><div class="stat"><span class="big num">${results.length}</span><small>results</small></div><div class="stat"><span class="big num">${mentions.length}</span><small>narrative sections</small></div></div></div>
     <div class="card"><h3>Analytical procedures</h3><div class="chips">${aps.map((a) => refBtn("PlanDefinition/" + a.id, a.title.replace("Analytical Procedures ", ""))).join("") || '<span class="muted">Compendial / not linked</span>'}</div></div>
-    <div class="card" style="background:var(--info-soft)"><h3>The PDF route</h3><p style="margin-top:0" class="muted">The same answer is spread over <b style="color:var(--ink)">${docs.length}</b> leaf documents plus ${mentions.length} narrative sections:</p><ul class="doclist">${docs.slice(0, 10).map((u) => `<li><a href="${esc(u)}" target="_blank" rel="noopener">${esc(srcTitle(u))}</a></li>`).join("")}${docs.length > 10 ? `<li>…and ${docs.length - 10} more</li>` : ""}</ul></div>
+    <div class="card" style="background:var(--info-soft)"><h3>Where it appears in the PDF dossier</h3><p style="margin-top:0" class="muted">The same answer is spread over <b style="color:var(--ink)">${docs.length}</b> leaf documents plus ${mentions.length} narrative sections:</p><ul class="doclist">${docs.slice(0, 10).map((u) => `<li><a href="${esc(u)}" target="_blank" rel="noopener">${esc(srcTitle(u))}</a></li>`).join("")}${docs.length > 10 ? `<li>…and ${docs.length - 10} more</li>` : ""}</ul></div>
   </div>
   <div class="card scroll" style="margin-bottom:14px"><h3>Every limit for ${esc(STATE.trace)}</h3><table class="t"><thead><tr><th>Specification</th><th>Test</th><th>Context</th><th>Criterion</th></tr></thead><tbody>
     ${rows.map((r) => `<tr class="click" data-open="ObservationDefinition/${r.od.id}"><td>${[...(db.specOf.get(r.od.id) || [])].map((p) => esc(get("PlanDefinition/" + p).title)).join("<br>")}</td><td>${esc(r.od.title)}</td><td>${esc(r.ctx || "Release / re-test")}</td><td><b>${esc(r.text)}</b></td></tr>`).join("")}</tbody></table></div>
@@ -862,7 +938,7 @@ function viewIntake(el, sub) {
 function viewIntakeDashboard(el) {
   PNC = PNC || POSTNOC.build(PQI, db);
   const byLvl = (l) => PNC.filter((x) => x.level === l).length;
-  el.innerHTML = `<div class="view-head full"><h2>Post-NOC change intake</h2><p>What a health authority could see when post-approval quality changes arrive as FHIR PQI bundles over an API: each change is compared with the approved dossier, proposed a reporting category under Health Canada’s <a href="https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/applications-submissions/guidance-documents/post-notice-compliance-changes/quality-document/guidance.html" target="_blank" rel="noopener">Post-NOC Changes: Quality Document</a>, and placed on a risk gradient for triage.</p></div>
+  el.innerHTML = `<div class="view-head full"><h2>Post-NOC change intake</h2><p>Two things have been structured here. The company’s CMC data for Sakura Bloom 20 mg is expressed as HL7 FHIR PQI resources, and Health Canada’s <a href="https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/applications-submissions/guidance-documents/post-notice-compliance-changes/quality-document/guidance.html" target="_blank" rel="noopener">Post-NOC Changes: Quality Document</a> guidance is encoded as data: for each change, its prescribed conditions, the supporting data required, and its reporting category.</p><p>So when a post-approval change arrives as a structured FHIR bundle, the regulator can triage and categorise it on receipt, checking it against the conditions, supporting data and reporting category set out in the guidance. The submission is also compared with what was previously filed in the dossier. That difference check shows exactly what changed, without the company having to describe the change. Each submission is then placed on a risk gradient and routed to an assessor.</p></div>
   <ol class="pipeline" aria-label="Automated intake steps">
     <li><b>Received</b><span>POST /fhir · transaction Bundle</span></li>
     <li><b>Validated</b><span>PQI profiles</span></li>

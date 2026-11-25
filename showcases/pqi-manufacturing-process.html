@@ -219,12 +219,12 @@ footer .cols{display:grid;grid-template-columns:2fr 1fr;gap:24px}
 
 <header class="hero">
   <div class="wrap">
-    <a href="../showcases-cmc.html" style="display:inline-block;font-size:13px;margin-bottom:18px">← FHIR for Global Regulatory Affairs</a>
+    <a href="../standard-pqi.html" style="display:inline-block;font-size:13px;margin-bottom:18px">← FHIR for Global Regulatory Affairs</a>
     <div class="topbar">
       <span class="eyebrow">CTD 3.2.P.3.3 · Sakura Bloom 20 mg film-coated tablets · synthetic data</span>
       <span class="badge"><span class="dot" aria-hidden="true"></span><span id="valBadge">HL7 FHIR validator · PQI 1.0.0 · 0 errors</span></span>
     </div>
-    <h1>Your manufacturing process, <em>as data.</em></h1>
+    <h1>Manufacturing process (CTD 3.2.P.3.3) as structured data</h1>
     <p class="sub">The 13 steps a reviewer reads today as prose, captured with the draft ISO 26060 information model and exchanged as an HL7 FHIR Pharmaceutical Quality (PQI) bundle. Every parameter, piece of equipment, material and hand-off becomes something software can check, compare and query, and a person can still read.</p>
     <div class="ctas">
       <a class="btn primary" href="#explore">Explore the recipe</a>
@@ -253,7 +253,7 @@ footer .cols{display:grid;grid-template-columns:2fr 1fr;gap:24px}
 
 <section id="explore">
   <div class="eyebrow">ISO 26060 Manufacture domain, clause 7.2</div>
-  <h2>Read it like a reviewer, <em>navigate it like a map</em></h2>
+  <h2>Manufacturing recipe, step by step</h2>
   <p class="lede">Recipe › Manufacturing Process › Process Stage › Unit Operation › Process Step. Pick a step to see its parameters, equipment, materials, dependencies and the exact XML that carries them. Everything below is read live from the bundle embedded in this page.</p>
   <div class="explorer">
     <div>
@@ -269,7 +269,7 @@ footer .cols{display:grid;grid-template-columns:2fr 1fr;gap:24px}
 
 <section id="ask">
   <div class="eyebrow">Control domain · clause 8.3</div>
-  <h2>Questions a reviewer asks, <em>answered from the file</em></h2>
+  <h2>Reviewer questions answered with XML queries</h2>
   <p class="lede">Each answer runs a real XPath query against the FHIR XML. Finding the same facts in a narrative means reading, cross-referencing and retyping.</p>
   <div class="qgrid">
     <div class="qlist" id="qlist" role="group" aria-label="Questions"></div>
@@ -279,7 +279,7 @@ footer .cols{display:grid;grid-template-columns:2fr 1fr;gap:24px}
 
 <section id="change">
   <div class="eyebrow">Lifecycle · post-approval change</div>
-  <h2>A variation becomes a <em>two-value change</em></h2>
+  <h2>Impact of widening a process parameter range</h2>
   <p class="lede">Widen the inlet air temperature range for Step 3. The structured record shows exactly what moved, and the recipe graph shows which downstream steps and in-process controls sit behind it.</p>
   <div class="impact">
     <div class="panel">
@@ -305,7 +305,7 @@ footer .cols{display:grid;grid-template-columns:2fr 1fr;gap:24px}
 
 <section id="composition">
   <div class="eyebrow">Description domain · Material</div>
-  <h2>Batch formula to unit formula, <em>computed</em></h2>
+  <h2>Batch formula and unit formula</h2>
   <p class="lede" id="compLede"></p>
   <div class="comp">
     <div class="stack" id="stack" role="img" aria-label="Tablet core composition"></div>
@@ -315,21 +315,21 @@ footer .cols{display:grid;grid-template-columns:2fr 1fr;gap:24px}
 
 <section id="mapping">
   <div class="eyebrow">ISO 26060 ↔ HL7 FHIR PQI</div>
-  <h2>Two standards, <em>one model</em></h2>
+  <h2>How ISO 26060 maps to HL7 FHIR PQI</h2>
   <p class="lede">ISO 26060 says what each thing means. The PQI implementation guide says how to send it. The counts are taken from this bundle.</p>
   <div class="mapgrid" id="mapgrid"></div>
 </section>
 
 <section id="gaps">
   <div class="eyebrow">Open items</div>
-  <h2>What the next draft <em>needs</em></h2>
+  <h2>Open issues for the next draft</h2>
   <p class="lede">Building a real bundle exposes what the data, the draft standard and the implementation guide still leave open. Each item is a concrete action.</p>
   <div class="gaps" id="gapgrid"></div>
 </section>
 
 <section id="xml">
   <div class="eyebrow">The file itself</div>
-  <h2>One bundle, <em>validated</em></h2>
+  <h2>FHIR bundle and validation results</h2>
   <div class="val">
     <div><div class="big">0 errors</div><div class="small">HL7 FHIR Validator 7.0.3, FHIR R5, hl7.fhir.uv.pharm-quality 1.0.0, offline</div></div>
     <ul>

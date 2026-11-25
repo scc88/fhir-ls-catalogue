@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PQI Types 1–4 Showcases | FHIR for Global Regulatory Affairs</title>
-  <meta name="description" content="Twelve FHIR showcases of the HL7 PQI maturity types 1 to 4, on the same synthetic CTD quality dossier: structured, product data, linked and data-first documents.">
+  <meta name="description" content="Eleven FHIR showcases of the HL7 PQI maturity types 1 to 4, on the same synthetic CTD quality dossier: structured, product data, linked and data-first documents.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
@@ -45,13 +45,13 @@
     .btn-primary:hover { background: #0065FF; border-color: #0065FF; box-shadow: 0 4px 14px rgba(0,82,204,0.3); transform: translateY(-1px); }
 
     /* Domain hero */
-    .domain-hero { background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-700) 60%, #00B8D9 140%); color: white; padding: 72px 0 64px; position: relative; overflow: hidden; }
+    .domain-hero { background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-700) 60%, #00B8D9 140%); color: white; padding: 36px 0 36px; position: relative; overflow: hidden; }
     .domain-hero::after { content: ""; position: absolute; right: -120px; top: -120px; width: 420px; height: 420px; border-radius: 50%; background: radial-gradient(circle, rgba(255,255,255,0.12), transparent 70%); }
     .domain-hero .crumbs { font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 18px; }
     .domain-hero .crumbs a { color: rgba(255,255,255,0.8); }
     .domain-tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.25); padding: 4px 12px; border-radius: 20px; margin-bottom: 18px; }
-    .domain-hero h1 { font-size: 44px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.12; margin-bottom: 16px; max-width: 760px; }
-    .domain-hero p { font-size: 17px; color: rgba(255,255,255,0.78); max-width: 680px; line-height: 1.7; }
+    .domain-hero h1 { font-size: 44px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.12; margin-bottom: 16px; }
+    .domain-hero p { font-size: 17px; color: rgba(255,255,255,0.78); line-height: 1.7; }
     .hero-meta { display: flex; gap: 28px; margin-top: 28px; font-size: 13px; color: rgba(255,255,255,0.65); flex-wrap: wrap; }
     .hero-meta strong { color: white; font-weight: 700; }
 
@@ -188,6 +188,7 @@
     #type1 .showcase-card:hover { border-color: var(--t1); } #type2 .showcase-card:hover { border-color: var(--t2); } #type3 .showcase-card:hover { border-color: var(--t3); } #type4 .showcase-card:hover { border-color: var(--t4); }
     #type1 .go { color: var(--t1); } #type2 .go { color: var(--t2); } #type3 .go { color: var(--t3); } #type4 .go { color: var(--t4); }
     .section { padding: 44px 0 12px; }
+    .domain-hero + .section { padding-top: 20px; }
     .cmp-wrap { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow-x: auto; }
     .cmp-table { width: 100%; border-collapse: collapse; font-size: 14px; }
     .cmp-table th, .cmp-table td { padding: 12px 16px; border-bottom: 1px solid var(--border-light); text-align: left; vertical-align: top; }
@@ -218,20 +219,12 @@
         <ul class="nav-menu">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li class="has-dropdown">
-            <a href="#" class="nav-link">FHIR Standards <span class="chevron">▾</span></a>
+            <a href="#" class="nav-link">FHIR Standards and Showcases <span class="chevron">▾</span></a>
             <ul class="dropdown">
               <li><a href="standard-epi.html">ePI — Labelling</a></li>
               <li><a href="standard-pqi.html">PQI — CMC Quality</a></li>
               <li><a href="standard-rwi.html">RWI — Regulatory Workflow</a></li>
               <li><a href="standard-rtq.html">RTQ — Regulatory Questions</a></li>
-            </ul>
-          </li>
-          <li class="has-dropdown">
-            <a href="#" class="nav-link">Showcases <span class="chevron">▾</span></a>
-            <ul class="dropdown">
-              <li><a href="showcases-labeling.html">Labeling</a></li>
-              <li><a href="showcases-cmc.html">CMC</a></li>
-              <li><a href="showcases-workflow.html">Workflow</a></li>
             </ul>
           </li>
         </ul>
@@ -246,17 +239,12 @@
   <main>
     <section class="domain-hero">
       <div class="container">
-        <div class="crumbs"><a href="index.html">Home</a> / Showcases / <a href="showcases-cmc.html">CMC</a> / PQI Types 1–4</div>
         <span class="domain-tag">Showcases · CMC · PQI maturity types</span>
         <h1>FHIR PQI Types 1–4, shown on one example dossier</h1>
-        <p>The HL7 PQI implementation guide now defines four maturity types for CTD quality documents. Each type is a FHIR document that adds one layer to the type before it. These showcases put the same synthetic CTD quality dossier (Module 2.3 plus the 19 Module 3.2 documents) at each type, so you can see what each step adds and who benefits from it.</p>
-        <div class="hero-meta"><span><strong>4</strong> maturity types</span><span><strong>12</strong> live showcases</span><span><strong>20</strong> FHIR documents per type</span><span><strong>1</strong> related FHIR standard</span></div>
+        <p>The four PQI maturity types ease companies into structured FHIR PQI content one step at a time. PQI provides 20 prefabricated FHIR PQI XML templates, one per CTD quality document: 1 for Module 2.3, 7 for drug substance (3.2.S), 8 for drug product (3.2.P), 3 for the appendices (3.2.A) and 1 for regional information (3.2.R). At Type 1, a company does a straight conversion of its Word templates into these FHIR PQI templates. From there it can move up the maturity curve, each type adding a layer to the one before, until it reaches Type 4, where the content is fully structured. These showcases put the same synthetic CTD quality dossier at each type, so you can see what each step adds and who benefits from it.</p>
       </div>
     </section>
 
-    <nav class="domain-tabs">
-      <div class="container"><ul><li><a href="showcases-labeling.html">Labeling</a></li><li><a href="showcases-cmc.html" class="active">CMC</a></li><li><a href="showcases-workflow.html">Workflow</a></li></ul></div>
-    </nav>
 
     <section class="section">
       <div class="container">
@@ -265,26 +253,18 @@
           <a class="rung t1" href="showcases/pqi-types/type1.html">
             <span class="rung-n">Type 1</span><h3>Structured document</h3>
             <p class="adds">Coded ICH M4Q(R1) headings. Narrative and figures carry over from the Word template.</p>
-            <dl><dt>For</dt><dd>Sponsors still authoring in Word</dd><dt>Effort</dt><dd>Convert the Word template</dd></dl>
-            <div class="rung-stats"><span><b data-s="1:sections">…</b> coded sections</span><span><b data-s="1:figures">…</b> figures</span><span><b>0</b> data resources</span></div>
           </a>
           <a class="rung t2" href="showcases/pqi-types/type2.html">
             <span class="rung-n">Type 2</span><h3>Document + product data</h3>
             <p class="adds">Adds product, packs, ingredients, sites and the authorization as resources, plus the document's subject and author.</p>
-            <dl><dt>For</dt><dd>Sponsors with RIM or IDMP master data</dd><dt>Effort</dt><dd>Type 1 + map the master data</dd></dl>
-            <div class="rung-stats"><span><b data-s="2:uniq">…</b> master data resources</span><span><b>0</b> narrative links</span></div>
           </a>
           <a class="rung t3" href="showcases/pqi-types/type3.html">
             <span class="rung-n">Type 3</span><h3>Linked document</h3>
             <p class="adds">Adds any PQI domain resource and links each passage of the narrative to the resources it discusses.</p>
-            <dl><dt>For</dt><dd>Vendors of CMC authoring tools</dd><dt>Effort</dt><dd>Type 2 + link narrative to data</dd></dl>
-            <div class="rung-stats"><span><b data-s="3:links">…</b> narrative-to-data links</span><span><b data-s="3:uniq">…</b> resources</span></div>
           </a>
           <a class="rung t4" href="showcases/pqi-types/type4.html">
             <span class="rung-n">Type 4</span><h3>Data-first document</h3>
             <p class="adds">Resources replace narrative where they carry the content. Generated text is for display; the resources are the record.</p>
-            <dl><dt>For</dt><dd>Sponsors with LIMS, MES or QMS data</dd><dt>Effort</dt><dd>Type 3 + generate from those systems</dd></dl>
-            <div class="rung-stats"><span><b data-s="4:replaced">…</b> headings generated from data</span><span><b data-s="4:gen">…</b> generated sections</span></div>
           </a>
         </div>
       </div>
@@ -303,11 +283,10 @@
 
     <section class="section" id="type2">
       <div class="container">
-        <div class="section-head"><h2><span class="tn t2">Type 2</span> Document + product data</h2><span>3 showcases · <a href="showcases/pqi-types/type2.html">open Type 2 →</a></span></div>
+        <div class="section-head"><h2><span class="tn t2">Type 2</span> Document + product data</h2><span>2 showcases · <a href="showcases/pqi-types/type2.html">open Type 2 →</a></span></div>
         <div class="showcase-grid">
-          <a class="showcase-card" href="showcases/pqi-types/type2.html#identity"><span class="kind k2">Identity</span><h3>Product identity</h3><p>Product, strength, dose form, packs, applicant and authorization, read from coded resources rather than from a table in the narrative.</p><div class="tags"><span>MedicinalProductDefinition</span><span>Ingredient</span><span>EDQM</span></div><span class="go">Open showcase →</span></a>
-          <a class="showcase-card" href="showcases/pqi-types/type2.html#intake"><span class="kind k2">Agency intake</span><h3>Registration without retyping</h3><p>A mock agency intake form filled from the bundle: application, product, substance, packs and sites, with DUNS and FEI identifiers. Every field shows its FHIR source.</p><div class="tags"><span>RegulatedAuthorization</span><span>Organization</span></div><span class="go">Open showcase →</span></a>
-          <a class="showcase-card" href="showcases/pqi-types/type2.html#reuse"><span class="kind k2">Master data</span><h3>Maintained once</h3><p>One record carried by every document that needs it, under the same identifier. Change it once and see which documents follow, and how often the Type 1 narrative spells it out.</p><div class="tags"><span>Composition.subject</span><span>Product data section</span></div><span class="go">Open showcase →</span></a>
+          <a class="showcase-card" href="showcases/pqi-types/type2.html#added"><span class="kind k2">Product data</span><h3>Product data added in Type 2</h3><p>The Type 1 General information table next to the same facts as structured resources: substance identifiers, EDQM codes, strength as a quantity, packs, the authorization and every organization with its full address.</p><div class="tags"><span>MedicinalProductDefinition</span><span>SubstanceDefinition</span><span>Organization</span></div><span class="go">Open showcase →</span></a>
+          <a class="showcase-card" href="showcases/pqi-types/type2.html#reuse"><span class="kind k2">Master data</span><h3>Product data across the 20 documents</h3><p>One record carried by every document that needs it, under the same identifier. Change it once and see which documents follow, and how often the Type 1 narrative spells it out.</p><div class="tags"><span>Composition.subject</span><span>Product data section</span></div><span class="go">Open showcase →</span></a>
         </div>
       </div>
     </section>
@@ -336,29 +315,9 @@
 
     <section class="section">
       <div class="container">
-        <div class="section-head"><h2>The same dossier at each type</h2><span>Measured from the example bundles</span></div>
-        <div class="cmp-wrap"><table class="cmp-table">
-          <thead><tr><th></th><th><span class="tn t1">Type 1</span></th><th><span class="tn t2">Type 2</span></th><th><span class="tn t3">Type 3</span></th><th><span class="tn t4">Type 4</span></th></tr></thead>
-          <tbody>
-            <tr><td>Composition.category</td><td><code>type-1</code></td><td><code>type-2</code></td><td><code>type-3</code></td><td><code>type-4</code></td></tr>
-            <tr><td>section.entry may hold</td><td>Figures only</td><td>Figures; product data in its own section</td><td>Any PQI resource, linked to the narrative</td><td>Any PQI resource; sole content where replaceable</td></tr>
-            <tr><td>Narrative</td><td>Authored</td><td>Authored</td><td>Authored, with anchors</td><td>Authored or generated</td></tr>
-            <tr><td>Characters of authored narrative</td><td data-s="1:auth"></td><td data-s="2:auth"></td><td data-s="3:auth"></td><td data-s="4:auth"></td></tr>
-            <tr><td>Distinct data resources</td><td>0</td><td data-s="2:uniq"></td><td data-s="3:uniq"></td><td data-s="4:uniq"></td></tr>
-            <tr><td>Narrative-to-data links</td><td>0</td><td>0</td><td data-s="3:links"></td><td data-s="4:links"></td></tr>
-            <tr><td>Sections with generated narrative</td><td data-s="1:gen"></td><td data-s="2:gen"></td><td data-s="3:gen"></td><td data-s="4:gen"></td></tr>
-            <tr><td>Size of the 20 example documents</td><td data-s="1:mb"></td><td data-s="2:mb"></td><td data-s="3:mb"></td><td data-s="4:mb"></td></tr>
-          </tbody>
-        </table></div>
-        <p class="note">Type 2 adds the Product data section, whose narrative is generated. Type 4 links fewer passages than Type 3 because the replaced sections no longer have authored text to link. The resource count of Type 4 is that of Type 3: the same resources, used as the record.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
         <div class="about-data">
           <h3>About the data</h3>
-          <p><b>Synthetic example data.</b> The documents are fictitious. Their content comes from the ICH M4Q(R2) Sakura Bloom mock-up, the FDA example Quality Overall Summaries and the synthetic example data of the HL7 FHIR PQI team. They do not describe a real product, company or authorization; every resource is labelled as test data (HTEST). The examples are in <code>sakura-bloom-r2/fhir/pqi-types</code> of this site's repository, and the type definitions are in the <a href="https://build.fhir.org/ig/HL7/uv-dx-pq/en/build.html" target="_blank" rel="noopener">PQI implementation guide (continuous build)</a>.</p>
+          <p><b>Synthetic example data.</b> The documents are fictitious. Their content comes from the <a href="https://ichm4q.notion.site/2a317984c9fc8103a29bdb2d7d0ee587" target="_blank" rel="noopener">ICH M4Q(R2) Sakura Bloom mock-up</a>, the two FDA example Quality Overall Summaries (<a href="https://www.fda.gov/media/75109/download" target="_blank" rel="noopener">Ersatzine immediate-release tablets</a> and <a href="https://www.fda.gov/media/75103/download" target="_blank" rel="noopener">MK controlled-release capsules</a>) and the synthetic example data of the HL7 FHIR PQI team. They do not describe a real product, company or authorization; every resource is labelled as test data (HTEST). The examples are in <code>sakura-bloom-r2/fhir/pqi-types</code> of this site's repository, and the type definitions are in the <a href="https://build.fhir.org/ig/HL7/uv-dx-pq/en/build.html" target="_blank" rel="noopener">PQI implementation guide (continuous build)</a>.</p>
           <p>Every reference in the Type 3 and 4 documents resolves inside the document itself, including the ObservationDefinitions behind each specification test. Figures the mock-up extract did not include were rebuilt from the mock-up's own data, the HL7 PQI example data or ICH M7; each figure's DocumentReference says how it was made, and where a value had to be made up.</p>
         </div>
       </div>
@@ -367,7 +326,7 @@
     <section class="related">
       <div class="container">
         <div class="section-head"><h2>Related</h2></div>
-        <div class="related-list"><a href="showcases-cmc.html">All CMC showcases →</a><a href="standard-pqi.html">PQI — Pharmaceutical Quality Information →</a><a href="https://build.fhir.org/ig/HL7/uv-dx-pq/en/build.html" target="_blank" rel="noopener">PQI Types in the IG ↗</a></div>
+        <div class="related-list"><a href="standard-pqi.html">PQI — Pharmaceutical Quality Information →</a><a href="https://build.fhir.org/ig/HL7/uv-dx-pq/en/build.html" target="_blank" rel="noopener">PQI Types in the IG ↗</a></div>
       </div>
     </section>
   </main>

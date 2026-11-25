@@ -1,12 +1,12 @@
 # PQI Types 1–4 showcases
 
-Twelve interactive showcases, three per PQI maturity type, built on the Sakura Bloom examples in
+Eleven interactive showcases, two or three per PQI maturity type, built on the Sakura Bloom examples in
 `sakura-bloom-r2/fhir/pqi-types/`. The overview page is `showcases-pqi-types.html` at the site root.
 
 | Page | Showcases |
 |---|---|
 | `type1.html` Structured document | Coded CTD navigator · Intake validation (Type 1 rules, simulated conversion mistakes, completeness map) · Figure register |
-| `type2.html` Document + product data | Product identity · Registration without retyping · Maintained once (master data reuse across the 20 documents) |
+| `type2.html` Document + product data | Product data added in Type 2 (Type 1 table next to the structured resources, with full organization addresses; gaps filled with made-up values marked †) · Product data across the 20 documents (master data reuse) |
 | `type3.html` Linked document | Linked reading (textLink) · Where is this discussed? (resource → passages) · Link integrity |
 | `type4.html` Data-first document | Authored vs generated · Regenerate from source (QMS/LIMS change) · Maturity map and mixed-maturity collection builder |
 

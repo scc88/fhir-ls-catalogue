@@ -79,8 +79,6 @@
     .status-ballot { background: rgba(101,84,192,0.1); color: #6554C0; }
     .section-tag { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); background: rgba(0,135,90,0.08); padding: 4px 14px; border-radius: 100px; margin-bottom: 12px; }
     .vp-section { padding: 80px 0; } .vp-header { margin-bottom: 48px; }
-    .vp-header h2 { font-size: 32px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 12px; }
-    .vp-header p { font-size: 16px; color: var(--text-secondary); max-width: 600px; line-height: 1.7; }
     .vp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     .vp-card { background: var(--gray-50); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 28px; transition: all var(--transition); }
     .vp-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: transparent; }
@@ -162,6 +160,7 @@
     .sc-soon .sc-kind { align-self: center; display: inline-block; color: #7A869A; background: #EBECF0; }
     .sc-soon h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; color: var(--text-primary, #172B4D); }
     .sc-soon p { font-size: 15px; color: var(--text-secondary, #505F79); max-width: 560px; margin: 0 auto; line-height: 1.6; }
+    /* use cases (moved from standard-pqi.html) */
   </style>
 </head>
 <body>
@@ -178,21 +177,12 @@
         <ul class="nav-menu">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li class="has-dropdown">
-            <a href="#" class="nav-link">FHIR Standards <span class="chevron">▾</span></a>
+            <a href="#" class="nav-link">FHIR Standards and Showcases <span class="chevron">▾</span></a>
             <ul class="dropdown">
               <li><a href="standard-epi.html">ePI — Labelling</a></li>
               <li><a href="standard-pqi.html">PQI — CMC Quality</a></li>
               <li><a href="standard-rwi.html">RWI — Regulatory Workflow</a></li>
               <li><a href="standard-rtq.html">RTQ — Regulatory Questions</a></li>
-            </ul>
-          </li>
-          <li class="has-dropdown">
-            <a href="#" class="nav-link">Showcases <span class="chevron">▾</span></a>
-            <ul class="dropdown">
-              <li><a href="showcases-labeling.html">Labeling</a></li>
-              <li><a href="showcases-cmc.html">CMC</a></li>
-              <li><a href="showcases-pqi-types.html">CMC · PQI Types 1–4</a></li>
-              <li><a href="showcases-workflow.html">Workflow</a></li>
             </ul>
           </li>
         </ul>
@@ -215,24 +205,36 @@
 
     <section class="std-showcases" id="showcases">
       <div class="container">
-        <div class="sc-head"><h2>PQI showcases</h2><a href="showcases-cmc.html">All CMC showcases →</a></div>
+        <div class="sc-head"><h2>PQI showcases</h2></div>
         <div class="sc-grid">
           <a class="sc-card" href="showcases-pqi-types.html">
-            <span class="sc-kind">12 interactive demos</span>
+            <span class="sc-kind">11 interactive demos</span>
             <h3>PQI — Types 1–4</h3>
-            <p>The same Sakura Bloom dossier at each PQI maturity type: structured document, document plus product data, linked document and data-first document, with three showcases per type.</p>
+            <p>The same Sakura Bloom dossier at each PQI maturity type: structured document, document plus product data, linked document and data-first document, with two or three showcases per type.</p>
             <span class="sc-go">Open showcases →</span>
           </a>
           <a class="sc-card" href="showcases/pqi-structured-cmc-review.html">
             <span class="sc-kind">Interactive demo</span>
             <h3>PQI — Structured CMC review</h3>
-            <p>A reviewer workspace built on a full FHIR PQI dossier (Sakura Bloom). It covers specifications, stability trends and batch data, with each value traceable to its FHIR Observation.</p>
+            <p>A reviewer workspace built on a full FHIR PQI dossier, assembled from Sakura Bloom, FHIR PQI team and FDA synthetic data. It covers specifications, stability trends and batch data, with each value traceable to its FHIR Observation.</p>
             <span class="sc-go">Open showcase →</span>
           </a>
           <a class="sc-card" href="showcases/pqi-post-noc-intake.html">
             <span class="sc-kind">Interactive demo</span>
-            <h3>PQI — Post-NOC change intake</h3>
+            <h3>PQI — Post Approval CMC Lifecycle Change</h3>
             <p>How Health Canada could triage post-approval quality changes arriving as FHIR PQI bundles over an API: each change is compared with the approved dossier, categorised, risk-rated and routed to an assessor.</p>
+            <span class="sc-go">Open showcase →</span>
+          </a>
+          <a class="sc-card" href="showcases/pqi-pack-layers.html">
+            <span class="sc-kind">Interactive 3D</span>
+            <h3>PQI — Packaged product, layer by layer</h3>
+            <p>A 3D model of the Sakura Bloom pack that comes apart with a slider: the box gives way to the bottle or blister, the primary pack to the tablet, and the tablet to its ingredients, with the pack, product and ingredient data shown for each layer.</p>
+            <span class="sc-go">Open showcase →</span>
+          </a>
+          <a class="sc-card" href="showcases/pqi-manufacturing-film.html">
+            <span class="sc-kind">Interactive 3D</span>
+            <h3>PQI — Manufacturing, step by step</h3>
+            <p>Follow one batch along the manufacturing line: starting materials react to form the drug substance, which is blended with excipients, granulated, compressed, coated, inspected and packaged. Each step shows its materials, charges, equipment, parameters and controls.</p>
             <span class="sc-go">Open showcase →</span>
           </a>
           <a class="sc-card" href="showcases/pqi-manufacturing-process.html">
@@ -244,6 +246,7 @@
         </div>
       </div>
     </section>
+
 
   </main>
 

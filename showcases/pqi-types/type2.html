@@ -26,6 +26,44 @@
   .ops .ids { font-family: var(--mono); font-size: 10.5px; color: var(--muted); white-space: nowrap; }
   @media (max-width: 820px) { .form-row { grid-template-columns: 1fr; } .form-row .src { grid-column: 1; } }
   .t1quote { max-height: 420px; overflow: auto; border: 1px dashed var(--line); border-radius: 12px; padding: 10px 14px; background: #fcfcfd; }
+  .fhirtog { display: inline-flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; padding: 10px 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; cursor: pointer; margin: 0 0 16px; }
+  .fhirtog input { width: 18px; height: 18px; accent-color: var(--t2); margin: 0; }
+  .cmp { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 16px; align-items: start; }
+  .cmp-h { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 4px; }
+  .cmp-h h3 { margin: 0; }
+  .tag { font-size: 11.5px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; }
+  .tag.t1 { color: var(--t1); background: var(--t1-soft); } .tag.t2 { color: var(--t2); background: var(--t2-soft); }
+  .cmp-t2, .orgs { box-shadow: inset 0 0 0 2px var(--t2); }
+  .t1box { border: 1px dashed var(--line); border-radius: 14px; padding: 14px 16px; background: #fcfcfd; }
+  .t1tbl { border: 1px solid var(--sep); border-radius: 10px; overflow: hidden; }
+  .t1r { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); width: 100%; border: 0; border-top: 1px solid var(--sep); background: var(--surface); font: inherit; font-size: 14px; line-height: 1.4; text-align: left; padding: 0; color: var(--ink); }
+  .t1r > span { padding: 9px 12px; } .t1r.hd { border-top: 0; background: var(--fill); font-weight: 700; font-size: 13px; }
+  .t1r.dim { color: var(--muted); } .t1r.pk { cursor: pointer; min-height: 44px; } .t1r.pk:hover { background: var(--t2-soft); }
+  .pk.on { background: var(--t2-soft) !important; box-shadow: inset 0 0 0 2px var(--t2); }
+  .t2grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 10px; }
+  .t2c { display: flex; flex-direction: column; gap: 6px; text-align: left; font: inherit; color: var(--ink); background: #fafafb; border: 1px solid var(--sep); border-radius: 14px; padding: 12px 14px; cursor: pointer; }
+  .t2c:hover { border-color: var(--t2); }
+  .t2top { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  .t2top .lbl { font-size: 11.5px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
+  .new { font-size: 11px; font-weight: 700; color: #8a4b00; background: #fff1de; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+  .t2v { font-size: 15.5px; font-weight: 600; line-height: 1.35; }
+  .facts { display: grid; grid-template-columns: fit-content(46%) minmax(0, 1fr); gap: 3px 10px; margin: 0; font-size: 12.5px; line-height: 1.4; }
+  .facts dt { color: var(--muted); } .facts dd { margin: 0; font-weight: 500; overflow-wrap: anywhere; }
+  .fk { color: var(--warn); font-weight: 700; margin-left: 2px; }
+  .fpath { display: none; font-family: var(--mono); font-size: 11px; color: var(--t2); overflow-wrap: anywhere; }
+  .showfhir .fpath { display: block; }
+  .orgs { margin-top: 16px; }
+  .orggrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 10px; }
+  .orgc { display: flex; flex-direction: column; gap: 8px; background: #fafafb; border: 1px solid var(--sep); border-radius: 14px; padding: 14px 16px; }
+  .orgc.mah { background: #f2fafb; border: 2px solid var(--t2); }
+  .oname { font-size: 15.5px; font-weight: 700; color: var(--ink); line-height: 1.3; }
+  .roles { display: flex; flex-wrap: wrap; gap: 4px; }
+  .role { font-size: 11.5px; font-weight: 600; color: #0b5563; background: var(--t2-soft); padding: 2px 8px; border-radius: 999px; }
+  .role.mah { color: #fff; background: var(--t2); }
+  .nextbar { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 16px; }
+  .nextbar p { margin: 0; flex: 1 1 420px; font-size: 15px; line-height: 1.5; }
+  @media (max-width: 1100px) { .cmp { grid-template-columns: 1fr; } .orggrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 640px) { .t2grid, .orggrid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -54,95 +92,120 @@
   const edqm = (cc) => { const c = (cc && cc.coding || [])[0]; return c && /edqm/.test(c.system) ? `<span class="chip rt">EDQM ${esc(c.code)}</span>` : ""; };
   const shelf = (p) => ((p.packaging || {}).shelfLifeStorage || []).map((s) => ({ zone: PT.cc(s.type).replace(/^Shelf life of the medicinal product as packaged for sale - /, ""), months: s.periodDuration ? s.periodDuration.value : null, store: ((s.specialPrecautionsForStorage || [])[0] || {}).text || "" }));
 
-  // ====================== 1. Product identity ======================
-  function identity(main) {
-    const fields = [
-      ["Product (Composition.subject)", mpd.name[0].productName, "Composition.subject → MedicinalProductDefinition.name.productName", mpd],
-      ["Product identifier", (mpd.identifier || [])[0].value, "MedicinalProductDefinition.identifier", mpd],
-      ["Dose form", PT.cc(mpd.combinedPharmaceuticalDoseForm), "MedicinalProductDefinition.combinedPharmaceuticalDoseForm", mpd, edqm(mpd.combinedPharmaceuticalDoseForm)],
-      ["Route", (mpd.route || []).map(PT.cc).join(", "), "MedicinalProductDefinition.route", mpd, edqm((mpd.route || [])[0])],
-      ["Strength", strength(api), "Ingredient.substance.strength", api],
-      ["Active substance", `${PT.label(apiSd)} · CAS ${((apiSd.identifier || [])[0] || {}).value}`, "Ingredient.substance.code → SubstanceDefinition", apiSd],
-      ["Unit of presentation", PT.cc(mid.unitOfPresentation), "ManufacturedItemDefinition.unitOfPresentation", mid, edqm(mid.unitOfPresentation)],
-      ["Applicant (Composition.author)", applicant.name, "Composition.author → Organization", applicant],
-      ["Marketing authorization", `${ra.identifier[0].value} · ${(ra.region || []).map(PT.cc).join(", ")} · ${PT.cc(ra.status)}`, "RegulatedAuthorization", ra],
-      ["Packs", packs.map((p) => PT.cc(p.type)).join(" · "), "PackagedProductDefinition × " + packs.length, packs[0]],
-      ["Sites", orgs.length + " organizations", "Organization × " + orgs.length, orgs[0]],
-      ["Shelf life (bottle, zone I/II)", (shelf(packs[0])[0] || {}).months + " months", "PackagedProductDefinition.packaging.shelfLifeStorage", packs[0]],
-    ];
-    const props = (mid.property || []).map((p) => [PT.cc(p.type), p.valueCodeableConcept ? PT.cc(p.valueCodeableConcept) : p.valueQuantity ? PT.qty(p.valueQuantity) : p.valueString || ""]);
-    main.innerHTML = PT.head("Showcase 1 · Product identity", "Product identity card built from the Type 2 product data resources",
-      `A Type 2 document keeps the Type 1 narrative exactly as it was and adds the product's master data as FHIR resources in the same Bundle. The Composition names its <b>subject</b> (the product) and its <b>author</b> (the applicant), and a Product data section lists the resources.`,
-      "Identity and regulatory context arrive <b>coded and up front</b>: dose form and route as EDQM codes, strength as a quantity, the authorization as a resource. The same records can feed IDMP submissions.") +
-      `<div class="grid" style="grid-template-columns:minmax(0,1.6fr) minmax(300px,1fr);align-items:start">
-        <div class="grid">
-          <div class="card"><h3>Identity card, read from the resources</h3><p class="sub">Click a field to open the resource it comes from.</p>
-            <div class="idcard">${fields.map((f, i) => `<div data-i="${i}"><label>${esc(f[0])}</label><span class="v">${esc(f[1])} ${f[4] || ""}</span><span class="fp">${esc(f[2])}</span></div>`).join("")}</div></div>
-          <div class="card"><h3>Qualitative and quantitative composition</h3><p class="sub">${ings.length} Ingredient resources, each pointing to its SubstanceDefinition.</p>
-            <div class="scroll"><table class="t"><tr><th>Component</th><th>Role</th><th>Function</th><th class="num">Per tablet</th></tr>${ings.map((i) => { const sd = R(((i.substance || {}).code || {}).reference && i.substance.code.reference.reference); return `<tr class="click" data-ref="Ingredient/${esc(i.id)}"><td>${esc(sd ? PT.label(sd) : i.id)}</td><td>${esc(PT.cc(i.role))}</td><td>${esc(PT.cc((i.function || [])[0]))}</td><td class="num">${esc(strength(i).replace(" per film-coated tablet", ""))}</td></tr>`; }).join("")}</table></div></div>
-          <div class="card"><h3>Packs and shelf life</h3><div class="grid g3">${packs.map((p) => `<div class="stat" style="background:var(--fill);cursor:pointer" data-ref="PackagedProductDefinition/${esc(p.id)}"><b style="font-size:17px">${esc(PT.cc(p.type))}</b><span>${shelf(p).map((s) => `${esc(s.zone)}: <b>${s.months} mo</b>`).join("<br>")}</span></div>`).join("")}</div></div>
-        </div>
-        <div class="grid">
-          <div class="card"><h3>The tablet</h3><dl class="kv small">${props.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("")}</dl></div>
-          <div class="card"><h3>The same facts in Type 1</h3><p class="sub">Module 2.3 Introduction, as authored. Readable, but a system can only find these values by parsing a table in the narrative.</p><div class="t1quote narr small">${PT.narrative(D.t1Intro)}</div></div>
-        </div>
-      </div>`;
-    PT.$$(".idcard > div", main).forEach((el) => el.onclick = () => { const r = fields[+el.dataset.i][3]; insp(r.resourceType + "/" + r.id); });
-    PT.$$("[data-ref]", main).forEach((el) => el.onclick = (e) => { e.preventDefault(); insp(el.dataset.ref); });
-  }
+  // ====================== 1. Product data added in Type 2 ======================
+  // Made-up values (†) that fill gaps in the synthetic example bundle, so every structured field shows.
+  const SUPP = {
+    unii: "SKR9M2X7QF",
+    address: { "sakura-pharma": { line: ["1-5-20 Sakuradai, Nerima-ku"], city: "Tokyo", state: "Tokyo (prefecture)", postalCode: "176-0002", country: "JP" } },
+    state: { "iroha-corp": "Zhejiang", "aparna-pharm": "Dhaka Division", "kunchen-sa": "Bavaria", "dakina-analytica": "Ticino", "pack-alpha": "Basel-Landschaft", "cocopharma": "Basel-Landschaft", "warehouse-yaohai": "Anhui", "heto-corp": "Hesse", "abcr-gmbh": "Baden-Württemberg" },
+    postal: { "aparna-pharm": "1212" },
+    duns: { "sakura-pharma": "690123457", "leukocare-science": "081234567", "warehouse-yaohai": "554321098", "heto-corp": "342198765", "abcr-gmbh": "316547890" },
+    fei: { "sakura-pharma": "3009876543", "heto-corp": "3011223344", "abcr-gmbh": "3011223355" },
+    roles: { "leukocare-science": ["Microbiological testing"], "warehouse-yaohai": ["Storage and distribution"], "heto-corp": ["Starting material supply"], "abcr-gmbh": ["Reference standard supply"] },
+  };
+  const COUNTRY = { CN: "China", BD: "Bangladesh", DE: "Germany", CH: "Switzerland", US: "United States", JP: "Japan" };
+  const fv = (v, fake) => v ? `${esc(v)}${fake ? '<sup class="fk" title="Made up for this showcase">†</sup>' : ""}` : '<span class="muted">—</span>';
+  const kv = (rows) => `<dl class="facts">${rows.map(([k, v, fake]) => `<dt>${esc(k)}</dt><dd>${fv(v, fake)}</dd>`).join("")}</dl>`;
+  const codeOf = (cc) => ((cc && cc.coding) || [])[0] || {};
+  const qty = (q) => q ? `${q.value} ${q.unit || q.code || ""}`.trim() : "";
+  let pick = "substance", showFhir = false;
 
-  // ====================== 2. RIM / agency intake ======================
-  let received = false;
-  function intake(main) {
-    const ops = (mpd.operation || []).map((o) => ({ op: PT.cc((o.type || {}).concept) || "(operation type not coded)", orgs: (o.organization || []).map((x) => x.reference) }));
-    const opNames = [...new Set(ops.map((o) => o.op))];
-    const duns = (o) => ((o.identifier || []).find((i) => /519\.1/.test(i.system)) || {}).value;
-    const fei = (o) => ((o.identifier || []).find((i) => /4\.82/.test(i.system)) || {}).value;
-    const form = [
-      ["Application number", ra.identifier[0].value, "RegulatedAuthorization.identifier"],
-      ["Authorization type", PT.cc(ra.type), "RegulatedAuthorization.type"],
-      ["Region", (ra.region || []).map(PT.cc).join(", "), "RegulatedAuthorization.region"],
-      ["Status", `${PT.cc(ra.status)} (since ${ra.statusDate})`, "RegulatedAuthorization.status"],
-      ["Holder / applicant", applicant.name, "RegulatedAuthorization.holder"],
-      ["Proprietary name", mpd.name[0].productName, "MedicinalProductDefinition.name"],
-      ["Invented name part", (mpd.name[0].part || []).find((p) => /Invented/.test(PT.cc(p.type))).part, "…name.part (Invented name part)"],
-      ["Dose form", `${PT.cc(mpd.combinedPharmaceuticalDoseForm)} (EDQM ${mpd.combinedPharmaceuticalDoseForm.coding[0].code})`, "…combinedPharmaceuticalDoseForm"],
-      ["Route", `${PT.cc(mpd.route[0])} (EDQM ${mpd.route[0].coding[0].code})`, "MedicinalProductDefinition.route"],
-      ["Active substance", `${PT.label(apiSd)} (CAS ${apiSd.identifier[0].value})`, "Ingredient → SubstanceDefinition"],
-      ["Strength", strength(api), "Ingredient.substance.strength"],
-      ["Excipients", `${ings.length - 1} components`, "Ingredient (role = Excipient)"],
-      ["Packs", packs.map((p) => PT.cc(p.type)).join("; "), "PackagedProductDefinition"],
-      ["Shelf life", [...new Set(packs.flatMap((p) => shelf(p).map((s) => s.months + " months")))].join(", "), "…packaging.shelfLifeStorage"],
-      ["Manufacturing and testing sites", `${orgs.length} organizations, ${orgs.filter(fei).length} with an FEI number`, "Organization.identifier"],
+  function added(main) {
+    // Type 1 table, read from the Type 1 narrative
+    const t1doc = new DOMParser().parseFromString(D.t1Intro, "text/html");
+    const MAP = [[/name of the drug substance/i, "substance"], [/^Dosage form/i, "doseform"], [/^Strength/i, "strength"], [/^Route/i, "route"], [/^Primary packaging/i, "packs"]];
+    const t1rows = [...t1doc.querySelectorAll("table tr")].slice(1).map((tr) => {
+      const [a, b] = [...tr.querySelectorAll("td,th")].map((td) => td.textContent.replace(/\s+/g, " ").trim());
+      const m = MAP.find(([re]) => re.test(a || ""));
+      return { label: a || "", value: b || "", id: m ? m[1] : null };
+    });
+    const sdName = (t) => ((apiSd.name || []).find((n) => new RegExp(t, "i").test(PT.cc(n.type))) || {}).name;
+    const unii = ((apiSd.identifier || []).find((i) => /unii/i.test(i.system || "")) || {}).value;
+    const cas = ((apiSd.identifier || []).find((i) => /cas/i.test(i.system || "")) || {}).value;
+    const mw = (apiSd.molecularWeight || [])[0];
+    const st = ((api.substance || {}).strength || [])[0] || {};
+    const df = mpd.combinedPharmaceuticalDoseForm, rt = (mpd.route || [])[0];
+    const nm = mpd.name[0];
+    const cards = [
+      { id: "product", label: "Product", isNew: true, value: nm.productName, ref: mpd, fhir: "Composition.subject → MedicinalProductDefinition",
+        rows: [["Identifier", ((mpd.identifier || [])[0] || {}).value], ["Name type", PT.cc(nm.type)]].concat((nm.part || []).map((p) => [PT.cc(p.type), p.part])) },
+      { id: "substance", label: "Active substance", value: PT.label(apiSd), ref: apiSd, fhir: "Ingredient.substance.code → SubstanceDefinition",
+        rows: [["INN", sdName("INN")], ["USAN", sdName("USAN")], ["UNII", unii || SUPP.unii, !unii], ["CAS number", cas], ["Company code", sdName("Company code")], ["Molecular formula", (apiSd.structure || {}).molecularFormula], ["Molecular weight", mw ? `${qty(mw.amount)} (${PT.cc(mw.type)})` : ""]] },
+      { id: "doseform", label: "Dose form", value: PT.cc(df), ref: mpd, fhir: "MedicinalProductDefinition.combinedPharmaceuticalDoseForm",
+        rows: [["Code system", /edqm/.test(codeOf(df).system || "") ? "EDQM Standard Terms" : codeOf(df).system], ["Code", codeOf(df).code], ["Unit of presentation", `${PT.cc(mid.unitOfPresentation)} · EDQM ${codeOf(mid.unitOfPresentation).code}`]] },
+      { id: "strength", label: "Strength", value: st.textPresentation || strength(api), ref: api, fhir: "Ingredient.substance.strength",
+        rows: [["Numerator", qty((st.presentationRatio || {}).numerator) + " (UCUM)"], ["Denominator", qty((st.presentationRatio || {}).denominator)], ["Basis", PT.cc(st.basis)], ["Reference substance", PT.label(apiSd)]] },
+      { id: "route", label: "Route", value: PT.cc(rt), ref: mpd, fhir: "MedicinalProductDefinition.route",
+        rows: [["Code system", /edqm/.test(codeOf(rt).system || "") ? "EDQM Standard Terms" : codeOf(rt).system], ["Code", codeOf(rt).code]] },
+      { id: "packs", label: "Packs", value: `${packs.length} packaged products`, ref: packs[0], fhir: `PackagedProductDefinition × ${packs.length}`,
+        rows: packs.map((p, i) => ["Pack " + (i + 1), PT.cc(p.type)]) },
+      { id: "ma", label: "Marketing authorization", isNew: true, value: ra.identifier[0].value, ref: ra, fhir: "RegulatedAuthorization",
+        rows: [["Type", PT.cc(ra.type)], ["Region", (ra.region || []).map((r) => `${PT.cc(r)} (ISO 3166: ${codeOf(r).code})`).join(", ")], ["Status", PT.cc(ra.status)], ["Holder", (R((ra.holder || {}).reference) || {}).name]] },
     ];
-    main.innerHTML = PT.head("Showcase 2 · Registration without retyping", "Agency intake form filled from the authorization, product and organization resources",
-      `When a Type 2 dossier arrives, a regulatory information management system can open the case from the resources alone: application, product, substance, packs and sites. Nothing is copied from a cover letter or retyped from a PDF table.`,
-      "Fewer transcription errors and faster case set-up. Sponsors map their <b>existing RIM/IDMP master data</b> once, and every Module 2.3 and 3.2 document carries it.") +
-      `<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(440px,1fr));align-items:start">
-        <div class="card"><div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;flex-wrap:wrap"><h3 style="margin:0">New quality submission</h3><span class="chip" id="cnt"></span><button class="btn primary" id="recv" style="margin-left:auto">${received ? "Received ✓" : "Receive Type 2 bundle"}</button></div>
-          <p class="sub" style="margin-top:6px">A mock agency intake form. Each field shows the FHIR element that fills it.</p>
-          <div id="form">${form.map((f, i) => `<div class="form-row"><label>${esc(f[0])}</label><div class="val" data-i="${i}"></div><span class="src">${esc(f[2])}</span></div>`).join("")}</div></div>
-        <div class="grid">
-          <div class="card"><h3>Who does what</h3><p class="sub">MedicinalProductDefinition.operation × Organization, with DUNS and FEI identifiers.</p>
-            <div class="scroll"><table class="t ops"><tr><th>Organization</th>${opNames.map((o) => `<th class="c" title="${esc(o)}">${esc(o.replace("Quality control testing", "QC testing").replace(" (release)", "").replace("(operation type not coded)", "Not coded").replace("Drug substance manufacture", "DS manufacture"))}</th>`).join("")}</tr>
-            ${orgs.filter((o) => ops.some((x) => x.orgs.includes("Organization/" + o.id))).map((o) => `<tr><td>${refLink(o)}<div class="ids">${duns(o) ? "DUNS " + esc(duns(o)) : ""}${fei(o) && fei(o) !== duns(o) ? " · FEI " + esc(fei(o)) : fei(o) ? " (also FEI)" : ""}</div></td>${opNames.map((n) => `<td class="c">${ops.some((x) => x.op === n && x.orgs.includes("Organization/" + o.id)) ? "●" : ""}</td>`).join("")}</tr>`).join("")}</table></div>
-            ${ops.some((o) => /not coded/.test(o.op)) ? `<p class="muted small" style="margin:8px 0 0">One operation in the example has no type code; a receiving system can flag that automatically.</p>` : ""}</div>
-          <div class="card"><h3>What a generic FHIR viewer shows</h3><p class="sub">The Product data section's generated narrative (<span class="mono">text.status = generated</span>).</p><div class="narr small" style="max-height:300px;overflow:auto">${PT.narrative(((m23.section || []).find((s) => PT.code(s) === "pqi-product-data").text || {}).div)}</div></div>
-        </div>
-      </div>`;
-    const fill = (animate) => {
-      PT.$$("#form .val", main).forEach((el, i) => {
-        const doit = () => { el.textContent = form[i][1]; el.classList.add("filled"); PT.$("#cnt", main).textContent = `${i + 1} of ${form.length} fields filled · 0 typed`; };
-        animate ? setTimeout(doit, 80 * i) : doit();
-      });
+    // organizations: holder first, then those with an operation, then the rest
+    const holderRef = (ra.holder || {}).reference;
+    const roleMap = {};
+    (mpd.operation || []).forEach((o) => (o.organization || []).forEach((x) => { (roleMap[x.reference] = roleMap[x.reference] || []).push(PT.cc((o.type || {}).concept) || "Operation not coded"); }));
+    const orgKey = (o) => "Organization/" + o.id;
+    const ordered = [...orgs].sort((a, b) => ((orgKey(b) === holderRef) - (orgKey(a) === holderRef)) || (!!roleMap[orgKey(b)] - !!roleMap[orgKey(a)]));
+    const idv = (o, re) => ((o.identifier || []).find((i) => re.test(i.system || "")) || {}).value;
+    const orgCards = ordered.map((o) => {
+      const real = ((o.contact || []).find((c) => c.address) || {}).address || (o.address || [])[0];
+      const fa = SUPP.address[o.id], a = real || fa || {}, fakeAddr = !real && !!fa;
+      const roles = orgKey(o) === holderRef ? ["Applicant", "Marketing authorization holder"] : roleMap[orgKey(o)] || (SUPP.roles[o.id] || []).map((r) => r + " †");
+      const duns = idv(o, /519\.1/), fei = idv(o, /4\.82/);
+      const state = a.state || SUPP.state[o.id], postal = a.postalCode || SUPP.postal[o.id];
+      return { o, mah: orgKey(o) === holderRef, roles, rows: [
+        ["Street", (a.line || []).join(", "), fakeAddr], ["City", a.city, fakeAddr], ["State / province", state, fakeAddr || (!a.state && !!SUPP.state[o.id])],
+        ["Postal code", postal, fakeAddr || (!a.postalCode && !!SUPP.postal[o.id])], ["Country", a.country ? `${COUNTRY[a.country] || a.country} (${a.country})` : "", fakeAddr],
+        ["DUNS", duns || SUPP.duns[o.id], !duns && !!SUPP.duns[o.id]], ["FEI", fei || SUPP.fei[o.id], !fei && !!SUPP.fei[o.id]]] };
+    });
+    const NOTES = {
+      substance: "Type 1 names the substance in prose. Type 2 links it to a SubstanceDefinition with its identifiers, formula and weight.",
+      doseform: "Type 1 says “film-coated tablet”. Type 2 adds the EDQM standard term, so every agency reads the same code.",
+      strength: "Type 1 states the strength as text. Type 2 carries it as a number and unit that systems can compare and check.",
+      route: "Type 1 says “Oral, to be swallowed whole”. Type 2 adds the EDQM route code.",
+      packs: "Type 1 describes the packaging in one sentence. Type 2 has a separate record for each pack.",
+      product: "Not in the Type 1 table: the document now names the product it is about, with its identifier and name parts.",
+      ma: "Not in the Type 1 table: the authorization, its region, status and holder travel with the document.",
     };
-    PT.$("#cnt", main).textContent = received ? `${form.length} of ${form.length} fields filled · 0 typed` : `0 of ${form.length} fields filled`;
-    if (received) fill(false);
-    PT.$("#recv", main).onclick = (e) => { received = true; e.target.textContent = "Received ✓"; fill(true); };
+    const nLinked = t1rows.filter((r) => r.id).length;
+    main.innerHTML = PT.head("Showcase 1 · Product data added in Type 2", "What Type 2 adds to the Type 1 document",
+      "The narrative is exactly the same as in Type 1. What changes is that the product facts written in it are now also carried as structured FHIR resources inside the same document, each one split into separate, coded fields. Select a row on either side to see its match.") +
+      `<label class="fhirtog"><input type="checkbox" id="fhirTog" ${showFhir ? "checked" : ""}> Show the FHIR behind each value</label>
+      <div class="cmp ${showFhir ? "showfhir" : ""}" id="cmp">
+        <section class="card cmp-t1"><div class="cmp-h"><h3>Type 1 · the document as authored</h3><span class="tag t1">Narrative only</span></div>
+          <p class="sub">Module 2.3, section 2.3.1 General information. People can read it, but software can only find these values by parsing the table.</p>
+          <div class="t1box"><b>2.3.1 General information</b><div class="muted small" style="margin:2px 0 10px">Table 1: General information</div>
+            <div class="t1tbl"><div class="t1r hd"><span>Product attribute</span><span>Details</span></div>
+            ${t1rows.map((r) => r.id ? `<button type="button" class="t1r pk" data-pick="${r.id}"><span>${esc(r.label)}</span><span><b>${esc(r.value)}</b></span></button>` : `<div class="t1r dim"><span>${esc(r.label)}</span><span>${esc(r.value)}</span></div>`).join("")}</div></div>
+          <p class="muted small" style="margin:10px 0 0">Rows in grey have no structured counterpart in this example.</p></section>
+        <section class="card cmp-t2"><div class="cmp-h"><h3>Type 2 · same narrative, plus product data</h3><span class="tag t2">Structured</span></div>
+          <p class="sub">The same section 2.3.1 travels unchanged. Alongside it, the document's Product data section carries each fact as a FHIR resource, split into separate fields with standard codes that any system can read directly.</p>
+          <div class="t2grid">${cards.map((c) => `<button type="button" class="t2c pk" data-pick="${c.id}">
+            <span class="t2top"><span class="lbl">${esc(c.label)}</span>${c.isNew ? '<span class="new">New in Type 2</span>' : ""}</span>
+            <span class="t2v">${esc(c.value)}</span>${kv(c.rows)}
+            <a href="#" class="fpath" data-ref="${esc(c.ref.resourceType + "/" + c.ref.id)}">${esc(c.fhir)} ›</a></button>`).join("")}</div></section>
+      </div>
+      <section class="card orgs ${showFhir ? "showfhir" : ""}"><div class="cmp-h"><h3>Applicant, marketing authorization holder and sites</h3><span class="new">New in Type 2</span></div>
+        <p class="sub">Every organization named in the dossier is an Organization resource in the Type 2 document, with its role, its DUNS and FEI numbers, and an address split into street, city, state or province, postal code and ISO country code. A Type 1 document only mentions them in prose.</p>
+        <div class="orggrid">${orgCards.map((c) => `<article class="orgc ${c.mah ? "mah" : ""}"><a href="#" class="oname" data-ref="Organization/${esc(c.o.id)}">${esc(c.o.name)}</a>
+          <div class="roles">${c.roles.map((r) => `<span class="role ${c.mah ? "mah" : ""}">${esc(r)}</span>`).join("")}</div>${kv(c.rows)}
+          <span class="fpath">Organization.contact.address · Organization.identifier</span></article>`).join("")}</div>
+        <p class="small" style="color:var(--warn);margin:14px 0 0">Values marked † are made up for this showcase to fill gaps in the synthetic Sakura Bloom bundle. All organizations, addresses and identifiers are fictitious.</p></section>
+      <div class="card nextbar"><p><b>${nLinked} facts from the Type 1 table, plus the product, its authorization and ${orgs.length} organizations, now arrive as data.</b> <span id="pickNote"></span></p>
+        <a class="btn primary" href="#reuse">Next: Product data across the 20 documents →</a></div>`;
+    const sync = () => {
+      PT.$$("[data-pick]", main).forEach((el) => { const on = el.dataset.pick === pick; el.classList.toggle("on", on); el.setAttribute("aria-pressed", on); });
+      PT.$("#pickNote", main).textContent = pick ? NOTES[pick] : "Select a row or card to compare.";
+    };
+    PT.$$("[data-pick]", main).forEach((el) => el.addEventListener("click", (e) => { if (e.target.closest("[data-ref]")) return; pick = pick === el.dataset.pick ? null : el.dataset.pick; sync(); }));
+    PT.$("#fhirTog", main).onchange = (e) => { showFhir = e.target.checked; PT.$$("#cmp, .orgs", main).forEach((x) => x.classList.toggle("showfhir", showFhir)); };
     wire(main);
+    sync();
   }
 
-  // ====================== 3. Master data once ======================
+  // ====================== 2. Product data across the 20 documents ======================
   const SCEN = {
     name: { label: "The invented name is refused and changes", key: "MedicinalProductDefinition/sakura-bloom-20mg", edit: "MedicinalProductDefinition.name.part[Invented name part]" },
     site: { label: "Packaging site Pack Alpha Group renames itself", key: "Organization/pack-alpha", edit: "Organization.name" },
@@ -155,9 +218,8 @@
     const types = [...new Set(keys.map((k) => k.split("/")[0]))];
     const allSame = Object.values(D.copies).every((c) => c.identical);
     const totalCopies = Object.values(D.copies).reduce((a, c) => a + c.docs, 0);
-    main.innerHTML = PT.head("Showcase 3 · Maintained once", "Product data resources mapped against the 20 documents that carry them",
-      `The ${keys.length} product data resources are copied into each of the 20 documents that use them, under the same identifier and with the same content. Pick a change below: it touches one record, and the documents carrying it follow.`,
-      "Product data is <b>maintained once</b> in the source system and stays consistent across Module 2.3, every Module 3.2 document and IDMP. In Type 1 the same facts are scattered through prose.") +
+    main.innerHTML = PT.head("Showcase 2 · Product data across the 20 documents", "Product data resources mapped against the 20 documents that carry them",
+      `The ${keys.length} product data resources are copied into each of the 20 documents that use them, under the same identifier and with the same content. Pick a change below: it touches one record, and the documents carrying it follow.`) +
       `<div class="grid g4" style="margin-bottom:16px">
         <div class="stat accent"><b>${keys.length}</b><span>distinct product data resources</span></div>
         <div class="stat"><b>${PT.fmt(totalCopies)}</b><span>copies across the 20 documents</span></div>
@@ -189,11 +251,10 @@
 
   PT.shell({
     type: 2,
-    foot: "Data: <span class='mono'>sakura-bloom-r2/fhir/pqi-types/type2</span>. The marketing authorization is made up for the examples.",
+    foot: "Data: <span class='mono'>sakura-bloom-r2/fhir/pqi-types/type2</span>. The marketing authorization is made up for the examples, and values marked † fill gaps in the example data.",
     views: [
-      { id: "identity", title: "Product identity", sub: "Subject, author and coded product data", render: identity },
-      { id: "intake", title: "Registration without retyping", sub: "An intake form filled from the bundle", render: intake },
-      { id: "reuse", title: "Maintained once", sub: "One record, many documents", render: reuse },
+      { id: "added", title: "Product data added in Type 2", sub: "Type 1 table next to the structured data", render: added },
+      { id: "reuse", title: "Product data across the 20 documents", sub: "Which documents carry each record", render: reuse },
     ],
   });
 })();

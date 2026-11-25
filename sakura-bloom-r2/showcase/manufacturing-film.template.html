@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manufacturing, step by step – Sakura Bloom | FHIR for Global Regulatory Affairs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root { --bg: #f5f5f7; --surface: #fff; --ink: #1d1d1f; --muted: #6e6e73; --sep: #e5e5ea; --accent: #00875a; --accent-soft: #e3f4ec; --ds: #5e5ce6; --dp: #00875a; --pk: #b25000; --mono: "JetBrains Mono", ui-monospace, monospace; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Inter, -apple-system, "Helvetica Neue", Arial, sans-serif; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; } a:hover { text-decoration: underline; }
+.top { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; padding: 12px 24px; background: rgba(255,255,255,.9); backdrop-filter: blur(12px); border-bottom: 1px solid var(--sep); position: sticky; top: 0; z-index: 10; }
+.top .back { font-size: 14px; }
+.top .brand { display: flex; flex-direction: column; line-height: 1.2; }
+.top .brand b { font-size: 15px; } .top .brand small { font-size: 12px; color: var(--muted); }
+.top .syn { margin-left: auto; font-size: 12px; font-weight: 600; color: #8a4b00; background: #fff1de; padding: 4px 10px; border-radius: 999px; }
+main { max-width: 1440px; margin: 0 auto; padding: 24px 24px 48px; }
+.intro h1 { margin: 0 0 8px; font-size: 32px; font-weight: 800; letter-spacing: -.02em; }
+.intro p { margin: 0 0 20px; max-width: 92ch; font-size: 16.5px; line-height: 1.55; color: #48484d; }
+.stage { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(320px, 1fr); gap: 16px; align-items: stretch; }
+.viewer { position: relative; min-height: 560px; border-radius: 22px; overflow: hidden; background: linear-gradient(180deg, #f3f5f8 0%, #e3e8ee 70%, #d6dce4 100%); }
+#c { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+#labels { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.lbl { position: absolute; transform: translate(-50%, -100%); white-space: nowrap; font-size: 12px; font-weight: 600; color: var(--ink); background: rgba(255,255,255,.93); border: 1px solid var(--sep); border-radius: 8px; padding: 3px 8px; box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+.lbl small { display: block; font-weight: 500; color: var(--muted); font-size: 11px; }
+.lbl i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; border: 1px solid rgba(0,0,0,.15); }
+.lbl.eq { background: #1d1d1f; color: #fff; border-color: #1d1d1f; }
+.lbl.eq small { color: #c7c7cc; }
+.lbl.box { background: #fff7ec; border-color: #f0d2a8; }
+.cap { position: absolute; left: 18px; top: 16px; right: 18px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; pointer-events: none; }
+.cap .ph { font-size: 12px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; color: #fff; }
+.cap .t { font-size: 22px; font-weight: 800; letter-spacing: -.01em; }
+.cap .sub { width: 100%; font-size: 13.5px; color: #48484d; }
+.meta { background: var(--surface); border-radius: 22px; padding: 22px 24px; overflow: auto; max-height: 640px; }
+.meta .kicker { margin: 0 0 4px; font-size: 12px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+.meta h2 { margin: 0 0 6px; font-size: 22px; font-weight: 800; }
+.meta .lead { margin: 0 0 14px; font-size: 14.5px; line-height: 1.5; color: #48484d; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 14px; }
+.chip { font-family: var(--mono); font-size: 11.5px; color: var(--accent); background: var(--accent-soft); padding: 3px 8px; border-radius: 6px; }
+h3.h { margin: 14px 0 8px; font-size: 12px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
+table.t { width: 100%; border-collapse: collapse; font-size: 13px; }
+table.t td { padding: 6px 4px; border-top: 1px solid var(--sep); vertical-align: top; }
+table.t td.v { font-family: var(--mono); font-size: 12px; text-align: right; width: 34%; overflow-wrap: anywhere; }
+.role { font-size: 11px; font-weight: 600; padding: 2px 7px; border-radius: 999px; white-space: nowrap; }
+.role.s { color: #0b5563; background: #e3f5f8; } .role.p { color: #5a5a60; background: #f0f0f3; } .role.i { color: #3a39b8; background: #efeffd; } .role.r { color: #fff; background: var(--accent); }
+.dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: -1px; border: 1px solid rgba(0,0,0,.15); }
+ul.ck { margin: 0; padding: 0; list-style: none; font-size: 13px; }
+ul.ck li { padding: 5px 0; border-top: 1px solid var(--sep); display: flex; gap: 8px; align-items: baseline; }
+ul.ck b { font-size: 10.5px; padding: 1px 6px; border-radius: 4px; background: #f0f0f3; color: #3a3a3c; }
+ul.ck b.cpp { background: #ffeceb; color: #b3261e; } ul.ck b.ipc { background: #eaf3fe; color: #0060c0; }
+.ill { font-size: 10.5px; font-weight: 600; color: #8a4b00; background: #fff1de; padding: 1px 6px; border-radius: 4px; margin-left: 4px; }
+.muted { color: var(--muted); }
+.ctrl { margin-top: 16px; background: var(--surface); border-radius: 18px; padding: 14px 18px; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 16px; align-items: center; }
+.ctrl .play { grid-row: span 2; border: 0; background: var(--accent); color: #fff; font: inherit; font-weight: 600; font-size: 14px; border-radius: 999px; padding: 0 18px; min-height: 44px; cursor: pointer; white-space: nowrap; }
+.phases { display: grid; gap: 4px; }
+.phases div { font-size: 11.5px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; padding: 4px 8px; border-radius: 6px; color: #fff; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.slider input { width: 100%; accent-color: var(--accent); height: 26px; margin: 0; }
+.dots { display: grid; margin-top: 2px; }
+.dots button { border: 0; background: none; font: inherit; font-size: 11.5px; color: var(--muted); cursor: pointer; padding: 4px 0; min-height: 30px; text-align: center; }
+.dots button.on { color: var(--ink); font-weight: 800; }
+.note { margin: 14px 0 0; font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+@media (max-width: 980px) { .stage { grid-template-columns: 1fr; } .viewer { min-height: 440px; } .meta { max-height: none; } }
+.stage { display: grid; grid-template-columns: 240px minmax(0, 1.6fr) minmax(300px, 1fr); gap: 16px; align-items: stretch; height: calc(100vh - 96px); min-height: 560px; }
+.viewer { min-height: 0 !important; }
+.meta { max-height: none !important; min-height: 0; }
+.rail { background: var(--surface); border-radius: 22px; padding: 14px 12px; display: flex; flex-direction: column; gap: 12px; min-height: 0; }
+.rail .play { border: 0; background: var(--accent); color: #fff; font: inherit; font-weight: 600; font-size: 14px; border-radius: 999px; padding: 0 18px; min-height: 44px; cursor: pointer; white-space: nowrap; }
+.track { flex: 1; display: flex; gap: 6px; min-height: 0; }
+.track input { writing-mode: vertical-lr; direction: ltr; width: 26px; height: 100%; margin: 0; accent-color: var(--accent); cursor: pointer; }
+.steps { flex: 1; display: flex; flex-direction: column; list-style: none; margin: 0; padding: 0; min-height: 0; }
+.steps li { flex: 1; display: flex; min-height: 0; }
+.steps button { width: 100%; display: flex; flex-direction: column; justify-content: center; gap: 1px; text-align: left; border: 0; border-left: 3px solid var(--sep); background: none; font: inherit; font-size: 12.5px; line-height: 1.25; color: var(--muted); padding: 2px 8px; cursor: pointer; overflow: hidden; border-radius: 0 8px 8px 0; }
+.steps button:hover { background: var(--fill, #f2f2f7); color: var(--ink); }
+.steps button.on { color: var(--ink); font-weight: 700; background: var(--accent-soft); }
+.steps button .ph { font-size: 10px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+@media (max-width: 980px) { .stage { grid-template-columns: 1fr; height: auto; } .rail { order: -1; } .track { min-height: 260px; } .viewer { min-height: 420px !important; } }
+</style>
+</head>
+<body>
+<header class="top">
+  <a class="back" href="../standard-pqi.html">← PQI — Pharmaceutical Quality Information</a>
+  <div class="brand"><b>PQI</b><small>Manufacturing, step by step</small></div>
+  <span class="syn" title="Fictitious product. Every resource is tagged HTEST.">Synthetic data</span>
+</header>
+<main>
+  <section class="intro">
+    <h1>Manufacturing, step by step</h1>
+    <p>The manufacturing processes of Sakura Bloom 20 mg, played back from their FHIR PQI process descriptions. Move the slider to follow one batch: starting materials react to form the drug substance Sakuramil, the drug substance and excipients are blended, granulated, compressed and coated into tablets, and the tablets are inspected and packaged. The panel shows the structured data for each step: materials and charges, equipment, process parameters and controls.</p>
+  </section>
+  <div class="stage">
+    <nav class="rail" aria-label="Manufacturing steps">
+      <button type="button" class="play" id="play">▶ Play</button>
+      <div class="track">
+        <input type="range" id="s" min="0" max="17" step="0.001" value="0" aria-label="Manufacturing step">
+        <ol class="steps" id="dots"></ol>
+      </div>
+    </nav>
+    <div class="viewer" id="viewer">
+      <canvas id="c" role="img" aria-label="Animated 3D view of the manufacturing line"></canvas>
+      <div id="labels" aria-hidden="true"></div>
+      <div class="cap" id="cap"></div>
+    </div>
+    <aside class="meta" id="meta" aria-live="polite"></aside>
+  </div>
+  <p class="note">Illustrative: equipment and materials are drawn schematically, and particle counts do not represent quantities. Every step, material, charge, item of equipment, parameter and control comes from the PlanDefinition process descriptions of the synthetic Sakura Bloom dossier (CTD 3.2.S.2.2 and 3.2.P.3.3). The product, companies and data are fictitious.</p>
+</main>
+<script src="vendor/three-r149.min.js"></script>
+<script>const DATA = __DATA__;</script>
+<script>
+(function () {
+  "use strict";
+  const $ = (s) => document.querySelector(s);
+  const esc = (s) => String(s == null ? "" : s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const clamp = (x, a, b) => Math.max(a, Math.min(b, x));
+  const seg = (s, a, b) => clamp((s - a) / (b - a), 0, 1);
+  const ease = (t) => t * t * (3 - 2 * t);
+  const lerp = (a, b, t) => a + (b - a) * t;
+
+  // ---------------- steps ----------------
+  const STEPS = [];
+  DATA.ds.steps.forEach((s, i) => STEPS.push(Object.assign({ phase: "ds", n: i + 1, site: DATA.ds.site, plan: DATA.ds }, s)));
+  DATA.dp.steps.forEach((s, i) => STEPS.push(Object.assign({ phase: /packaging/i.test(s.title) ? "pk" : "dp", n: i + 1, site: DATA.dp.site, plan: DATA.dp }, s)));
+  const N = STEPS.length;
+  const PH = { ds: { name: "Drug substance", color: "#5e5ce6" }, dp: { name: "Drug product", color: "#00875a" }, pk: { name: "Packaging", color: "#b25000" } };
+  const titleOf = (st) => st.phase === "ds" ? `Step ${st.n} · ${resultName(st) ? "Synthesis of " + resultName(st) : "Synthesis"}` : st.title.replace(/^Step (\d+) - /, "Step $1 · ");
+  function resultName(st) { const r = st.materials.find((m) => /Result/i.test(m.role)); return r ? r.name.replace(/^In situ intermediate /i, "").replace(/^Intermediate /i, "") : ""; }
+  const charge = (st, name) => {
+    const n = name.toLowerCase().trim();
+    const p = st.params.find((x) => { if (!/^charge:/i.test(x[0])) return false; const c = x[0].replace(/^charge:\s*/i, "").toLowerCase().trim(); return c === n || c.endsWith(" " + n) || n.endsWith(" " + c); });
+    return p ? p[1] : "";
+  };
+
+  // colours: drug substance chemistry, then excipient identity colours
+  const COL = { "cp-4": "#4ea8de", "cp-5": "#72b7c9", "cp-6": "#9b8fd1", "cp-7": "#d98fb8", "cp-8": "#5fbf9a", "sakuramil": "#e8590c", "lactose-monohydrate": "#efe2c4", "microcrystalline-cellulose": "#b8c4cf", "croscarmellose-sodium": "#74a9cf", "hydroxypropyl-cellulose": "#93c47d", "magnesium-stearate": "#8d8d8d", "coating-premix-red": "#c0392b", "purified-water": "#9ad1f5" };
+  const colOf = (ref, fallback) => { const k = (ref || "").split("/").pop(); return COL[k] || fallback || "#bcd4e6"; };
+  const C = (h) => new THREE.Color(h);
+
+  // what leaves each station and where it goes
+  const DSN = DATA.ds.steps.length;
+  const FLOW = {};
+  STEPS.forEach((st, i) => {
+    if (st.phase === "ds") { const r = st.materials.find((m) => /Result/i.test(m.role)); FLOW[i] = { to: i + 1, name: r ? r.name : "Intermediate", color: colOf(r && r.ref), fromData: !!r }; }
+  });
+  const dp = (k) => DSN + k - 1; // DP step k (1-based) → station index
+  Object.assign(FLOW, {
+    [dp(1)]: { to: dp(3), fromData: false, name: "Pre-blend", color: "#e9dcc0", mix: true },
+    [dp(2)]: { to: dp(3), name: "Granulation liquid", color: "#c4e3b5", liquid: true },
+    [dp(3)]: { to: dp(4), name: "Wet granules", color: "#e2d6bb", mix: true },
+    [dp(4)]: { to: dp(5), name: "Dried granules", color: "#ece3cf", mix: true },
+    [dp(5)]: { to: dp(6), name: "Screened granules", color: "#ece3cf", mix: true },
+    [dp(6)]: { to: dp(7), name: "Granules with lubricant", color: "#e5ddca", mix: true },
+    [dp(7)]: { to: dp(8), name: "Final blend", color: "#ece3cf", mix: true },
+    [dp(8)]: { to: dp(10), name: "Tablet cores", color: "#f7f4ee", tabs: true },
+    [dp(9)]: { to: dp(10), name: "Coating suspension", color: "#d0574a", liquid: true },
+    [dp(10)]: { to: dp(11), name: "Film-coated tablets", color: "#dc8d88", tabs: true },
+    [dp(11)]: { to: dp(12), name: "Inspected tablets", color: "#dc8d88", tabs: true },
+    [dp(12)]: { to: dp(13), name: "Filled bottles and blisters", color: "#ffffff", packs: true },
+  });
+  const MIXCOL = {};
+  const INFLOW = {}; Object.entries(FLOW).forEach(([from, f]) => { (INFLOW[f.to] = INFLOW[f.to] || []).push(Object.assign({ from: +from }, f)); });
+
+  // ---------------- scene ----------------
+  const canvas = $("#c"), viewer = $("#viewer");
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  renderer.setPixelRatio(Math.min(2, window.devicePixelRatio || 1));
+  renderer.outputEncoding = THREE.sRGBEncoding;
+  const scene = new THREE.Scene();
+  scene.fog = new THREE.Fog(0xe3e8ee, 16, 34);
+  const camera = new THREE.PerspectiveCamera(36, 1, 0.1, 120);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x9aa3b0, 0.85));
+  const sun = new THREE.DirectionalLight(0xffffff, 0.7); sun.position.set(6, 10, 8); scene.add(sun);
+  const STEP = 6.5;
+  const mat = (color, o) => new THREE.MeshStandardMaterial(Object.assign({ color, roughness: 0.5, metalness: 0.1 }, o || {}));
+  const steel = mat("#c9cfd6", { metalness: 0.55, roughness: 0.35 }), darkSteel = mat("#8d96a0", { metalness: 0.5, roughness: 0.4 });
+  const glass = mat("#dfeaf2", { transparent: true, opacity: 0.22, roughness: 0.1, metalness: 0.1, side: THREE.DoubleSide, depthWrite: false });
+  const floor = new THREE.Mesh(new THREE.PlaneGeometry(STEP * (N + 4), 14), mat("#9ea8b4", { roughness: 0.95 }));
+  floor.rotation.x = -Math.PI / 2; floor.position.set(STEP * (N - 1) / 2, 0, 0); scene.add(floor);
+  // phase floor bands
+  ["ds", "dp", "pk"].forEach((ph) => {
+    const idx = STEPS.map((s, i) => s.phase === ph ? i : -1).filter((i) => i >= 0);
+    const a = idx[0] * STEP - STEP / 2 + 0.15, b = idx[idx.length - 1] * STEP + STEP / 2 - 0.15;
+    const band = new THREE.Mesh(new THREE.PlaneGeometry(b - a, 0.18), new THREE.MeshBasicMaterial({ color: PH[ph].color }));
+    band.rotation.x = -Math.PI / 2; band.position.set((a + b) / 2, 0.01, 2.6); scene.add(band);
+  });
+  const box = (w, h, d, m) => new THREE.Mesh(new THREE.BoxGeometry(w, h, d), m);
+  const cyl = (rt, rb, h, m, seg) => new THREE.Mesh(new THREE.CylinderGeometry(rt, rb, h, seg || 32), m);
+  const sphereGeo = new THREE.SphereGeometry(1, 10, 8);
+  const tabGeo = (() => { const pts = [], n = 10; for (let i = 0; i <= n; i++) { const t = i / n; pts.push(new THREE.Vector2(Math.max(0.0001, 0.11 * Math.sin(t * Math.PI / 2)), 0.025 + 0.025 * Math.cos(t * Math.PI / 2))); } pts.push(new THREE.Vector2(0.11, -0.025)); for (let i = n; i >= 0; i--) { const t = i / n; pts.push(new THREE.Vector2(Math.max(0.0001, 0.11 * Math.sin(t * Math.PI / 2)), -0.025 - 0.025 * Math.cos(t * Math.PI / 2))); } return new THREE.LatheGeometry(pts, 20); })();
+
+  // ---------------- labels ----------------
+  const LBL = [];
+  function label(cls, html, anchor, vis) {
+    const el = document.createElement("div"); el.className = "lbl " + (cls || ""); el.innerHTML = html; $("#labels").appendChild(el);
+    const L = { el, anchor, vis }; LBL.push(L); return L;
+  }
+
+  // ---------------- transfer containers ----------------
+  function drumMesh(color, r, h) {
+    const g = new THREE.Group();
+    const body = cyl(r, r, h, mat("#e4e8ec", { metalness: 0.35, roughness: 0.4 }), 28); body.position.y = h / 2;
+    const band = cyl(r * 1.01, r * 1.01, h * 0.28, mat(color, { roughness: 0.6 }), 28); band.position.y = h * 0.55;
+    const lid = cyl(r * 0.98, r * 0.98, 0.04, darkSteel, 28); lid.position.y = h + 0.02;
+    g.add(body, band, lid); return g;
+  }
+  const containers = {};
+  Object.entries(FLOW).forEach(([from, f]) => {
+    from = +from;
+    const g = drumMesh(f.color, f.packs ? 0.01 : 0.36, f.packs ? 0.01 : 0.72);
+    if (f.packs) { // a tray of filled packs instead of a drum
+      const tray = box(1.1, 0.06, 0.7, darkSteel); tray.position.y = 0.03; g.add(tray);
+      for (let k = 0; k < 4; k++) { const b = cyl(0.12, 0.12, 0.3, mat("#f4f5f7"), 20); b.position.set(-0.35 + k * 0.23, 0.21, -0.12); const c = cyl(0.085, 0.085, 0.08, mat("#ffffff"), 20); c.position.y = 0.19; b.add(c); g.add(b); }
+      const bl = box(0.5, 0.02, 0.24, mat("#cfd5dc", { metalness: 0.6, roughness: 0.3 })); bl.position.set(0.1, 0.08, 0.18); g.add(bl);
+    }
+    scene.add(g);
+    const fx = from * STEP + 2.2, tx = f.to * STEP - 2.3, skip = f.to - from > 1;
+    containers[from] = Object.assign({ g, fx, tx, skip, from }, f);
+    label("box", `${esc(f.name)}<small>to step ${STEPS[f.to].n}${STEPS[f.to].phase !== STEPS[from].phase ? " · " + esc(STEPS[f.to].site) : ""}${f.fromData ? "" : " · illustrative"}</small>`, () => g.position.clone().add(new THREE.Vector3(0, f.packs ? 0.65 : 1.0, 0)), () => g.visible ? 1 : 0);
+  });
+  function containerPos(c, s) {
+    const pf = s - c.from;            // progress through the "from" step
+    const pt = s - c.to;              // progress through the "to" step
+    let x = c.fx, z = 0.9, y = 0;
+    const slide = ease(seg(pf, 0.9, 1.0));
+    if (c.skip) { const mid = ease(seg(pf, 0.9, 1.0)); x = lerp(c.fx, c.tx, mid); z = lerp(0.9, 1.6, Math.sin(mid * Math.PI)); }
+    else x = lerp(c.fx, c.tx, slide);
+    c.g.visible = pf > 0.7 && pt < 0.42;
+    c.g.position.set(x, y, z);
+    return c.g.position;
+  }
+
+  // ---------------- stations ----------------
+  const KIND = (st) => st.phase === "ds" ? "reactor" : /Pre-blending|Final blending/i.test(st.title) ? "blender" : /Lubricant/i.test(st.title) ? "lube" : /liquid|suspension/i.test(st.title) ? "vessel" : /Granulation/i.test(st.title) ? "fluidbed" : /Drying/i.test(st.title) ? "dryer" : /Screening/i.test(st.title) ? "mill" : /compression/i.test(st.title) ? "press" : /coating/i.test(st.title) ? "coater" : /Inspection/i.test(st.title) ? "inspect" : /Primary/i.test(st.title) ? "pack1" : "pack2";
+  const stations = STEPS.map((st, i) => {
+    const g = new THREE.Group(); g.position.x = i * STEP; scene.add(g);
+    const base = box(3.4, 0.16, 2.6, mat("#cfd5dc", { roughness: 0.8 })); base.position.y = 0.08; g.add(base);
+    const S = { i, st, g, kind: KIND(st), parts: {}, drums: [], inner: new THREE.Vector3(0, 1.1, 0) };
+    build(S);
+    // raw-material drums behind the equipment
+    const fromDS = (INFLOW[i] || []).some((f) => STEPS[f.from].phase === "ds" && st.phase !== "ds");
+    const own = st.materials.filter((m) => /Starting|Processing/i.test(m.role) && !(fromDS && /sakuramil/i.test(m.name)));
+    const main = own.filter((m) => /Starting/i.test(m.role)), proc = own.filter((m) => /Processing/i.test(m.role));
+    const list = main.concat(proc);
+    list.forEach((m, k) => {
+      const big = /Starting/i.test(m.role) || st.phase !== "ds";
+      const d = drumMesh(colOf(m.ref, "#bcd4e6"), big ? 0.3 : 0.18, big ? 0.62 : 0.38);
+      const cols = Math.max(list.length, 1);
+      d.position.set(-1.45 + (k + 0.5) * (2.9 / cols), 0.16, -1.05);
+      g.add(d);
+      const D = { m, d, color: colOf(m.ref, "#bcd4e6"), big, liquid: /water|ethanol|methanol|tetrahydrofuran|hexane|chloride|acid|hydroxide|chloroformate/i.test(m.name) && !/magnesium chloride|sodium chloride/i.test(m.name) };
+      S.drums.push(D);
+      if (big || k === main.length) {
+        const q = charge(st, m.name.replace(/^Starting Material |^Intermediate |^In situ Intermediate /i, ""));
+        label("", big ? `<i style="background:${D.color}"></i>${esc(m.name)}${q ? `<small>${esc(q)}</small>` : ""}` : `+ ${proc.length} reagents and solvents<small>listed in the panel</small>`, () => d.getWorldPosition(new THREE.Vector3()).add(new THREE.Vector3(0, big ? 0.85 : 0.6, 0)), (s) => near(s, i) * (1 - seg(s - i, 0.45, 0.6)) );
+      }
+    });
+    const listed = st.devices.length > 0;
+    const devs = listed ? st.devices.join(" · ") : (S.kind === "reactor" ? "Reactor" : S.kind === "inspect" ? "Inspection line" : S.kind.startsWith("pack") ? "Packaging line" : "");
+    const nC = st.checks.filter((c) => c.kind === "CPP").length, nI = st.checks.filter((c) => c.kind === "IPC").length;
+    const ctl = [nC ? `${nC} CPP${nC > 1 ? "s" : ""}` : "", nI ? `${nI} IPC${nI > 1 ? "s" : ""}` : ""].filter(Boolean).join(" · ");
+    if (devs) label("eq", `${esc(devs)}${!listed ? "<small>illustrative · no equipment listed in the data</small>" : ""}${ctl ? `<small>${ctl}</small>` : ""}`, () => S.g.position.clone().add(new THREE.Vector3(1.35, Math.min(S.top || 2.6, 2.45), 0.3)), (s) => near(s, i) * seg(s - i, 0.3, 0.42) * (1 - seg(s - i, 0.85, 0.95)));
+    buildParticles(S);
+    return S;
+  });
+  function near(s, i) { const p = s - i; return p > -0.02 && p < 1.0 ? 1 : 0; }
+
+  // ---------------- equipment builders ----------------
+  function build(S) {
+    const g = S.g, k = S.kind, P = S.parts;
+    if (k === "reactor") {
+      const shell = cyl(0.8, 0.8, 1.5, glass, 40); shell.position.y = 1.2; g.add(shell);
+      const top = new THREE.Mesh(new THREE.SphereGeometry(0.8, 32, 12, 0, Math.PI * 2, 0, Math.PI / 2), steel); top.position.y = 1.95; top.scale.y = 0.45; g.add(top);
+      const bot = new THREE.Mesh(new THREE.SphereGeometry(0.8, 32, 12, 0, Math.PI * 2, Math.PI / 2, Math.PI / 2), steel); bot.position.y = 0.45; bot.scale.y = 0.35; g.add(bot);
+      const ring = cyl(0.84, 0.84, 0.08, darkSteel, 40); ring.position.y = 1.95; g.add(ring);
+      for (let a = 0; a < 3; a++) { const leg = box(0.08, 0.5, 0.08, darkSteel); leg.position.set(Math.cos(a * 2.09) * 0.7, 0.4, Math.sin(a * 2.09) * 0.7); g.add(leg); }
+      const motor = box(0.4, 0.35, 0.4, mat("#5e5ce6", { roughness: 0.4 })); motor.position.y = 2.5; g.add(motor);
+      const shaft = cyl(0.03, 0.03, 1.8, darkSteel, 8); shaft.position.y = 1.5; g.add(shaft);
+      const imp = new THREE.Group(); imp.position.y = 0.75; imp.add(box(0.9, 0.05, 0.12, darkSteel)); const b2 = box(0.9, 0.05, 0.12, darkSteel); b2.rotation.y = Math.PI / 2; imp.add(b2); g.add(imp);
+      const liquid = cyl(0.76, 0.76, 1, mat("#bcd4e6", { transparent: true, opacity: 0.45, roughness: 0.1, depthWrite: false }), 40); liquid.position.y = 0.5; g.add(liquid);
+      Object.assign(P, { imp, liquid }); S.inner.set(0, 1.0, 0); S.top = 2.9;
+    } else if (k === "blender" || k === "lube") {
+      for (const x of [-1.05, 1.05]) { const post = box(0.14, 1.7, 0.14, darkSteel); post.position.set(x, 0.95, 0); g.add(post); }
+      const axle = cyl(0.05, 0.05, 2.2, darkSteel, 8); axle.rotation.z = Math.PI / 2; axle.position.y = 1.6; g.add(axle);
+      const bin = new THREE.Group(); bin.position.y = 1.6;
+      const shell = box(1.15, 1.15, 1.15, mat("#d6dce3", { transparent: true, opacity: 0.32, metalness: 0.4, roughness: 0.3, side: THREE.DoubleSide, depthWrite: false }));
+      const edges = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(1.15, 1.15, 1.15)), new THREE.LineBasicMaterial({ color: 0x8d96a0 }));
+      bin.add(shell, edges); bin.rotation.x = Math.PI / 4; g.add(bin);
+      P.bin = bin; S.inner.set(0, 1.6, 0); S.top = 2.75;
+    } else if (k === "vessel") {
+      const shell = cyl(0.6, 0.6, 1.1, glass, 36); shell.position.y = 0.9; g.add(shell);
+      const rim = cyl(0.63, 0.63, 0.06, darkSteel, 36); rim.position.y = 1.45; g.add(rim);
+      const bot = cyl(0.62, 0.55, 0.12, steel, 36); bot.position.y = 0.32; g.add(bot);
+      const motor = box(0.3, 0.3, 0.3, mat("#00875a", { roughness: 0.4 })); motor.position.y = 1.85; g.add(motor);
+      const bridge = box(1.4, 0.06, 0.12, darkSteel); bridge.position.y = 1.62; g.add(bridge);
+      const shaft = cyl(0.025, 0.025, 1.2, darkSteel, 8); shaft.position.y = 1.1; g.add(shaft);
+      const imp = box(0.6, 0.04, 0.1, darkSteel); imp.position.y = 0.55; g.add(imp);
+      const liquid = cyl(0.57, 0.57, 1, mat("#9ad1f5", { transparent: true, opacity: 0.55, roughness: 0.1, depthWrite: false }), 36); liquid.position.y = 0.4; g.add(liquid);
+      Object.assign(P, { imp, liquid }); S.inner.set(0, 0.8, 0); S.top = 2.3;
+    } else if (k === "fluidbed" || k === "dryer") {
+      const lower = cyl(0.75, 0.45, 0.8, glass, 36); lower.position.y = 0.75; g.add(lower);
+      const upper = cyl(0.75, 0.75, 1.3, glass, 36); upper.position.y = 1.8; g.add(upper);
+      const hood = cyl(0.35, 0.78, 0.4, steel, 36); hood.position.y = 2.65; g.add(hood);
+      const duct = cyl(0.18, 0.18, 0.5, darkSteel, 16); duct.position.y = 3.05; g.add(duct);
+      const base = cyl(0.5, 0.5, 0.3, darkSteel, 32); base.position.y = 0.3; g.add(base);
+      const screen = cyl(0.46, 0.46, 0.02, mat("#8d96a0", { wireframe: true }), 24); screen.position.y = 0.36; g.add(screen);
+      if (k === "fluidbed") { const noz = cyl(0.06, 0.02, 0.3, darkSteel, 12); noz.position.y = 2.3; g.add(noz); P.noz = noz; }
+      S.inner.set(0, 1.3, 0); S.top = 3.4;
+    } else if (k === "mill") {
+      const hopper = cyl(0.55, 0.18, 0.6, mat("#d6dce3", { transparent: true, opacity: 0.45, metalness: 0.4, side: THREE.DoubleSide, depthWrite: false }), 24); hopper.position.y = 1.85; g.add(hopper);
+      const body = box(0.9, 0.7, 0.7, steel); body.position.y = 1.2; g.add(body);
+      const rotor = cyl(0.18, 0.18, 0.75, darkSteel, 6); rotor.rotation.z = Math.PI / 2; rotor.position.set(0, 1.2, 0.36); g.add(rotor);
+      const chute = cyl(0.2, 0.25, 0.4, steel, 20); chute.position.y = 0.65; g.add(chute);
+      P.rotor = rotor; S.inner.set(0, 1.2, 0); S.top = 2.4;
+    } else if (k === "press") {
+      const frame = box(1.6, 0.5, 1.4, mat("#e7eaee", { metalness: 0.3 })); frame.position.y = 0.45; g.add(frame);
+      const head = box(1.6, 0.35, 1.4, mat("#e7eaee", { metalness: 0.3 })); head.position.y = 2.15; g.add(head);
+      for (const x of [-0.7, 0.7]) { const col = cyl(0.07, 0.07, 1.5, darkSteel, 10); col.position.set(x, 1.3, -0.55); g.add(col); }
+      const turret = new THREE.Group(); turret.position.y = 1.3;
+      turret.add(cyl(0.6, 0.6, 0.18, steel, 40));
+      for (let a = 0; a < 16; a++) { const pu = cyl(0.035, 0.035, 0.7, darkSteel, 8); pu.position.set(Math.cos(a / 16 * 6.283) * 0.5, 0, Math.sin(a / 16 * 6.283) * 0.5); turret.add(pu); }
+      g.add(turret);
+      const hopper = cyl(0.35, 0.12, 0.5, mat("#d6dce3", { transparent: true, opacity: 0.45, side: THREE.DoubleSide, depthWrite: false }), 20); hopper.position.set(-0.25, 2.6, 0.1); g.add(hopper);
+      const chute = box(0.9, 0.04, 0.3, steel); chute.position.set(1.15, 0.85, 0.35); chute.rotation.z = -0.35; g.add(chute);
+      const bin = box(0.7, 0.35, 0.6, mat("#dfe3e8", { transparent: true, opacity: 0.6, side: THREE.DoubleSide, depthWrite: false })); bin.position.set(1.35, 0.35, 0.35); g.add(bin);
+      P.turret = turret; S.inner.set(-0.25, 2.6, 0.1); S.top = 2.9;
+    } else if (k === "coater") {
+      const cab = box(2.2, 1.8, 1.6, mat("#e7eaee", { metalness: 0.25, transparent: true, opacity: 0.35, depthWrite: false, side: THREE.DoubleSide })); cab.position.y = 1.1; g.add(cab);
+      const drum = new THREE.Group(); drum.position.y = 1.15;
+      const shell = cyl(0.62, 0.62, 1.2, mat("#aab3bd", { metalness: 0.5, roughness: 0.4, transparent: true, opacity: 0.4, side: THREE.DoubleSide, depthWrite: false, wireframe: false }), 32);
+      shell.rotation.z = Math.PI / 2; drum.add(shell);
+      const holes = new THREE.Mesh(new THREE.CylinderGeometry(0.63, 0.63, 1.2, 24, 6, true), new THREE.MeshBasicMaterial({ color: 0x8d96a0, wireframe: true, transparent: true, opacity: 0.35 }));
+      holes.rotation.z = Math.PI / 2; drum.add(holes); g.add(drum);
+      const gun = cyl(0.04, 0.02, 0.35, darkSteel, 10); gun.position.set(0, 1.75, 0); g.add(gun);
+      P.drum = drum; S.inner.set(0, 1.0, 0); S.top = 2.4;
+    } else if (k === "inspect") {
+      const belt = box(3.2, 0.08, 0.6, mat("#3a3f46", { roughness: 0.9 })); belt.position.y = 0.7; g.add(belt);
+      for (const x of [-1.5, 1.5]) { const leg = box(0.08, 0.6, 0.5, darkSteel); leg.position.set(x, 0.35, 0); g.add(leg); }
+      const arch = new THREE.Group(); arch.position.y = 0.7;
+      for (const z of [-0.4, 0.4]) { const p = box(0.1, 0.9, 0.1, steel); p.position.set(0, 0.45, z); arch.add(p); }
+      const beam = box(0.3, 0.12, 0.95, mat("#2b2f35")); beam.position.y = 0.92; arch.add(beam);
+      const light = new THREE.Mesh(new THREE.PlaneGeometry(0.08, 0.6), new THREE.MeshBasicMaterial({ color: 0x34c759, transparent: true, opacity: 0.6, side: THREE.DoubleSide }));
+      light.rotation.x = -Math.PI / 2; light.position.set(0, 0.06, 0); arch.add(light);
+      g.add(arch); P.light = light; S.inner.set(-1.4, 0.8, 0); S.top = 2.0;
+    } else if (k === "pack1") {
+      const belt = box(3.2, 0.08, 0.7, mat("#3a3f46", { roughness: 0.9 })); belt.position.y = 0.7; g.add(belt);
+      const fill = box(0.5, 0.6, 0.5, steel); fill.position.set(-0.7, 1.6, 0); g.add(fill);
+      const fh = cyl(0.3, 0.08, 0.4, mat("#d6dce3", { transparent: true, opacity: 0.5, side: THREE.DoubleSide, depthWrite: false }), 20); fh.position.set(-0.7, 2.1, 0); g.add(fh);
+      const seal = box(0.6, 0.5, 0.6, mat("#e7eaee")); seal.position.set(0.8, 1.4, 0); g.add(seal);
+      const bottles = [], caps = [];
+      for (let k2 = 0; k2 < 4; k2++) { const b = cyl(0.14, 0.14, 0.36, mat("#f4f5f7", { transparent: true, opacity: 1 }), 20); b.position.set(-1.3 + k2 * 0.32, 0.92, -0.12); g.add(b); bottles.push(b); const c = cyl(0.095, 0.095, 0.09, mat("#ffffff"), 20); c.position.set(b.position.x, 1.5, -0.12); g.add(c); caps.push(c); }
+      const blister = box(0.6, 0.03, 0.3, mat("#cfd5dc", { metalness: 0.6, roughness: 0.3 })); blister.position.set(-0.2, 0.76, 0.18); g.add(blister);
+      Object.assign(P, { bottles, caps, blister }); S.inner.set(-0.7, 2.1, 0); S.top = 2.6;
+    } else {
+      const belt = box(3.2, 0.08, 0.8, mat("#3a3f46", { roughness: 0.9 })); belt.position.y = 0.7; g.add(belt);
+      const cartons = [];
+      for (let k2 = 0; k2 < 3; k2++) {
+        const c = new THREE.Group(); c.position.set(-0.9 + k2 * 0.9, 0.74, 0);
+        const w = k2 === 2 ? 0.75 : 0.4, h = k2 === 2 ? 0.25 : 0.5, d = k2 === 2 ? 0.3 : 0.4;
+        const bx = box(w, h, d, mat("#ffffff", { roughness: 0.85 })); bx.position.y = h / 2; c.add(bx);
+        const stripe = box(w * 1.01, h * 0.12, d * 1.01, mat("#00875a")); stripe.position.y = h * 0.4; c.add(stripe);
+        const flap = box(w, 0.01, d, mat("#f2f2f2")); flap.position.set(0, h, -d / 2); flap.geometry.translate(0, 0, d / 2); c.add(flap);
+        c.userData = { flap, h }; g.add(c); cartons.push(c);
+      }
+      const items = [];
+      for (let k2 = 0; k2 < 3; k2++) {
+        let it;
+        if (k2 < 2) { it = cyl(0.13, 0.13, 0.34, mat("#f4f5f7"), 20); const c = cyl(0.09, 0.09, 0.08, mat("#ffffff"), 20); c.position.y = 0.2; it.add(c); }
+        else { it = box(0.6, 0.03, 0.26, mat("#cfd5dc", { metalness: 0.6, roughness: 0.3 })); }
+        it.visible = false; S.g.add(it); items.push(it);
+      }
+      P.cartons = cartons; P.items = items; S.inner.set(-1.2, 1.0, 0); S.top = 1.8;
+    }
+  }
+
+  // ---------------- particles per station ----------------
+  const tmpM = new THREE.Matrix4(), tmpQ = new THREE.Quaternion(), tmpS = new THREE.Vector3(), tmpP = new THREE.Vector3(), tmpC = new THREE.Color();
+  function rnd(seed) { let x = Math.sin(seed * 9301 + 49297) * 233280; return x - Math.floor(x); }
+  function buildParticles(S) {
+    const srcs = []; // { pos: () => Vector3 world, color, n, kind }
+    const inflow = INFLOW[S.i] || [];
+    inflow.forEach((f) => srcs.push({ pos: () => containers[f.from].g.position.clone().add(new THREE.Vector3(0, 0.75, 0)), color: f.color, palette: f.mix ? MIXCOL[f.from] : null, n: f.liquid ? 18 : 60, liquid: !!f.liquid, tabs: !!f.tabs, packs: !!f.packs, from: f.from }));
+    S.drums.forEach((D) => srcs.push({ pos: () => D.d.getWorldPosition(new THREE.Vector3()).add(new THREE.Vector3(0, D.big ? 0.7 : 0.45, 0)), color: D.color, n: D.big ? (S.st.phase === "ds" ? 50 : 34) : 8, liquid: D.liquid || /water/i.test(D.m.name), small: !D.big }));
+    const parts = [];
+    srcs.forEach((src, si) => { for (let k = 0; k < src.n; k++) { const j = parts.length, r4 = rnd(S.i * 4000 + j + 3); parts.push({ si, src, j, r1: rnd(S.i * 1000 + j), r2: rnd(S.i * 2000 + j + 7), r3: rnd(S.i * 3000 + j + 13), color: src.palette && src.palette.length ? src.palette[Math.floor(r4 * src.palette.length)] : src.color }); } });
+    MIXCOL[S.i] = parts.filter((q) => !q.src.liquid && !q.src.tabs && !q.src.packs).map((q) => q.color);
+    const powder = parts.filter((p) => !p.src.tabs && !p.src.packs);
+    S.powder = powder;
+    if (powder.length) {
+      const im = new THREE.InstancedMesh(sphereGeo, mat("#ffffff", { roughness: 0.6 }), powder.length);
+      im.instanceMatrix.setUsage(THREE.DynamicDrawUsage); im.frustumCulled = false; scene.add(im); S.im = im;
+      powder.forEach((p, k) => im.setColorAt(k, C(p.color)));
+    }
+    // tablets for the solid-dose stations
+    const tabKinds = { press: 60, coater: 70, inspect: 40, pack1: 40 };
+    if (tabKinds[S.kind]) {
+      const n = tabKinds[S.kind];
+      const tm = new THREE.InstancedMesh(tabGeo, mat("#ffffff", { roughness: 0.45 }), n);
+      tm.instanceMatrix.setUsage(THREE.DynamicDrawUsage); tm.frustumCulled = false; scene.add(tm); S.tm = tm; S.ntab = n;
+      for (let k = 0; k < n; k++) tm.setColorAt(k, C(S.kind === "press" ? "#f7f4ee" : "#dc8d88"));
+      S.tabSrc = srcs.find((x) => x.tabs);
+    }
+    S.outColor = FLOW[S.i] ? FLOW[S.i].color : "#ffffff";
+  }
+  const arc = (a, b, t, h, out) => { out.set(lerp(a.x, b.x, t), lerp(a.y, b.y, t) + Math.sin(t * Math.PI) * h, lerp(a.z, b.z, t)); return out; };
+
+  // where a powder particle sits inside each piece of equipment (station-local), at local progress p and time t
+  function home(S, q, p, t, out) {
+    const k = S.kind, a = q.r1 * Math.PI * 2, r = Math.sqrt(q.r2);
+    if (k === "reactor") {
+      const stir = seg(p, 0.35, 0.75), settle = seg(p, 0.72, 0.8);
+      const ang = a + t * 2.2 * stir;
+      if (q.src.liquid) { out.set(Math.cos(ang) * r * 0.6, lerp(0.5 + q.r3 * 0.6, 0.5, settle), Math.sin(ang) * r * 0.6); return out; }
+      out.set(Math.cos(ang) * r * 0.62, lerp(0.5 + q.r3 * 0.8, 0.42 + q.r3 * 0.12, settle), Math.sin(ang) * r * 0.62); return out;
+    }
+    if (k === "blender" || k === "lube") {
+      const mix = k === "blender" ? ease(seg(p, 0.42, 0.75)) : 0.3 * ease(seg(p, 0.42, 0.7));
+      const layer = (q.si + 0.5) / Math.max(1, S.srcCount || 4);
+      const ly = -0.45 + layer * 0.9, lx = (q.r1 - 0.5) * 0.9, lz = (q.r2 - 0.5) * 0.9;
+      const mx = (q.r3 - 0.5) * 0.9, my = (rnd(q.j + 77) - 0.5) * 0.9, mz = (rnd(q.j + 91) - 0.5) * 0.9;
+      out.set(lerp(lx, mx, mix), lerp(ly, my, mix), lerp(lz, mz, mix));
+      const rot = S.parts.bin.rotation.x;
+      const y = out.y * Math.cos(rot) - out.z * Math.sin(rot), z = out.y * Math.sin(rot) + out.z * Math.cos(rot);
+      out.set(out.x, y + 1.6, z); return out;
+    }
+    if (k === "vessel") { const ang = a + t * 3 * seg(p, 0.35, 0.75); out.set(Math.cos(ang) * r * 0.5, 0.4 + q.r3 * 0.5, Math.sin(ang) * r * 0.5); return out; }
+    if (k === "fluidbed" || k === "dryer") {
+      const act = seg(p, 0.32, 0.4) * (1 - seg(p, 0.72, 0.8));
+      if (q.src.liquid) { const fall = (t * 0.9 + q.r3) % 1; out.set(Math.cos(a) * r * 0.3 * fall, 2.25 - fall * 1.2, Math.sin(a) * r * 0.3 * fall); return out; }
+      const bob = Math.sin(t * 3 + q.r3 * 12) * 0.5 * act;
+      out.set(Math.cos(a + t * 0.6 * act) * r * 0.55, 0.65 + q.r3 * 0.5 + act * (0.7 + bob), Math.sin(a + t * 0.6 * act) * r * 0.55); return out;
+    }
+    if (k === "mill") { const f = seg(p, 0.35, 0.75), u = (q.r3 + f * 1.4) % 1; out.set((q.r1 - 0.5) * 0.5 * (1 - u * 0.6), 1.95 - u * 1.4, (q.r2 - 0.5) * 0.4); return out; }
+    if (k === "press") { out.set(-0.25 + Math.cos(a) * r * 0.25, 2.55 + q.r3 * 0.25, 0.1 + Math.sin(a) * r * 0.25); return out; }
+    if (k === "coater") { out.set((q.r1 - 0.5) * 0.2, 1.75 - ((t * 1.2 + q.r3) % 1) * 0.5, (q.r2 - 0.5) * 0.2); return out; }
+    out.set(0, 1, 0); return out;
+  }
+  function powderScale(S, q, p) {
+    const k = S.kind; let s = q.src.small ? 0.035 : 0.05;
+    if (q.src.liquid) s = 0.04;
+    if (k === "fluidbed" && !q.src.liquid) s *= lerp(1, 1.7, seg(p, 0.4, 0.72));
+    if (k === "dryer" || (k === "mill" && seg(p, 0.35, 0.75) < 0.5) || (k === "lube" && !q.src.small && q.si === 0)) s *= (k === "mill" ? lerp(1.7, 1.1, seg(p, 0.35, 0.75)) : 1.6);
+    if (k === "lube" && q.si === 0) s = 0.07;
+    if (k === "blender" && S.i !== dp(1)) s = 0.06;
+    if (k === "vessel" && !q.src.liquid) s *= 1 - seg(p, 0.4, 0.62);
+    if (k === "press") s *= 1 - seg(p, 0.45, 0.7);
+    if (k === "coater") s = 0.035;
+    return s;
+  }
+  function powderColor(S, q, p, out) {
+    out.set(q.color);
+    const k = S.kind;
+    if (k === "reactor" && !q.src.liquid) out.lerp(tmpC.set(S.outColor), seg(p, 0.45, 0.72));
+    if (k === "reactor" && q.src.liquid) out.set("#bcd4e6");
+    if (k === "vessel") out.lerp(tmpC.set(S.outColor), seg(p, 0.4, 0.7));
+    return out;
+  }
+
+  // ---------------- per-frame station update ----------------
+  function updateStation(S, s, t) {
+    const p = s - S.i, active = p > -0.05 && p < 1.05;
+    const vis = p > -1.2 && p < 1.4;
+    S.g.visible = Math.abs(p) < 3;
+    const P = S.parts, k = S.kind;
+    S.srcCount = (INFLOW[S.i] || []).length + S.drums.length;
+    // equipment motion
+    const run = seg(p, 0.35, 0.45) * (1 - seg(p, 0.72, 0.8));
+    if (P.imp) P.imp.rotation.y = t * 5 * run;
+    if (P.liquid) {
+      const lv = k === "reactor" ? 1.15 * seg(p, 0.08, 0.35) * (1 - 0.85 * seg(p, 0.74, 0.82)) : 0.85 * seg(p, 0.08, 0.35) * (1 - seg(p, 0.78, 0.9));
+      P.liquid.visible = lv > 0.01; P.liquid.scale.y = Math.max(lv, 0.001); P.liquid.position.y = (k === "reactor" ? 0.45 : 0.38) + lv / 2;
+      P.liquid.material.color.set(k === "vessel" ? tmpC.set("#9ad1f5").lerp(new THREE.Color(S.outColor), seg(p, 0.4, 0.7)) : "#bcd4e6");
+    }
+    if (P.bin) P.bin.rotation.x = Math.PI / 4 + (k === "blender" ? ease(seg(p, 0.42, 0.75)) * Math.PI * 6 : 0);
+    if (P.rotor) P.rotor.rotation.x = t * 12 * run;
+    if (P.turret) P.turret.rotation.y = t * 2.5 * run;
+    if (P.drum) P.drum.rotation.x = t * 1.6 * run;
+    if (P.light) { P.light.material.opacity = 0.25 + 0.5 * run * (0.5 + 0.5 * Math.sin(t * 8)); }
+    if (P.caps) P.caps.forEach((c, j) => { const d = seg(p, 0.55 + j * 0.04, 0.62 + j * 0.04); c.position.y = lerp(1.5, 1.14, d); c.position.x = lerp(0.8, P.bottles[j].position.x, Math.min(1, d * 1.3)); });
+    if (P.cartons) P.cartons.forEach((c, j) => { const d = seg(p, 0.5 + j * 0.06, 0.6 + j * 0.06); c.userData.flap.rotation.x = lerp(-1.9, 0, d); });
+    if (P.items) {
+      const inc = (INFLOW[S.i] || [])[0], from = inc ? containers[inc.from].g.position.clone().sub(S.g.position).add(new THREE.Vector3(0, 0.3, 0)) : new THREE.Vector3(-2.3, 0.3, 0.9);
+      P.items.forEach((it, j) => {
+        const c = P.cartons[j], tt = ease(seg(p, 0.12 + j * 0.08, 0.32 + j * 0.08));
+        const dst = c.position.clone().add(new THREE.Vector3(0, j === 2 ? 0.1 : 0.2, 0));
+        it.visible = p > 0.1 + j * 0.08 && p < 0.56 + j * 0.06;
+        it.position.copy(arc(from, dst, tt, 0.9, new THREE.Vector3()));
+      });
+    }
+    // container of this station's output, and any containers arriving here
+    if (containers[S.i]) containerPos(containers[S.i], s);
+    // powder
+    if (S.im) {
+      const im = S.im, out = containers[S.i];
+      S.powder.forEach((q, n) => {
+        const d = q.r1 * 0.12;
+        const tin = seg(p, 0.06 + d, 0.3 + d), tout = seg(p, 0.78 + d * 0.5, 0.92 + d * 0.5);
+        let show = active && tin > 0 && tout < 1;
+        let sc = powderScale(S, q, p);
+        if (S.kind === "vessel" && !q.src.liquid && p > 0.62) show = false;
+        if ((S.kind === "press" && p > 0.7) || (S.kind === "coater" && (p < 0.35 || p > 0.75))) show = show && S.kind !== "press" && false;
+        if (S.kind === "coater") show = active && q.src.liquid && p > 0.35 && p < 0.72;
+        if (!show || sc <= 0.001) { tmpM.makeScale(0, 0, 0); im.setMatrixAt(n, tmpM); return; }
+        const hp = home(S, q, p, t, tmpP).add(S.g.position);
+        let pos = hp;
+        if (tin < 1 && S.kind !== "coater") pos = arc(q.src.pos(), hp, ease(tin), 0.9, new THREE.Vector3());
+        else if (tout > 0 && out && S.kind !== "press" && S.kind !== "coater") pos = arc(hp, out.g.position.clone().add(new THREE.Vector3(0, 0.75, 0)), ease(tout), 0.8, new THREE.Vector3());
+        tmpS.setScalar(sc); tmpQ.identity(); tmpM.compose(pos, tmpQ, tmpS); im.setMatrixAt(n, tmpM);
+        im.setColorAt(n, powderColor(S, q, p, tmpC.clone()));
+      });
+      im.instanceMatrix.needsUpdate = true; if (im.instanceColor) im.instanceColor.needsUpdate = true;
+      im.visible = vis;
+    }
+    if (S.tm) updateTablets(S, p, t, active);
+  }
+  const eul = new THREE.Euler();
+  function updateTablets(S, p, t, active) {
+    const tm = S.tm, n = S.ntab, k = S.kind, G = S.g.position, out = containers[S.i];
+    for (let j = 0; j < n; j++) {
+      const r1 = rnd(S.i * 50 + j), r2 = rnd(S.i * 70 + j), r3 = rnd(S.i * 90 + j);
+      let show = active, pos = new THREE.Vector3(), rx = r1 * 6, ry = r2 * 6, sc = 1, col = null;
+      if (k === "press") {
+        const born = 0.45 + (j / n) * 0.3, b = seg(p, born, born + 0.05);
+        show = active && b > 0;
+        const slide = seg(p, born, born + 0.04);
+        pos.set(lerp(0.5, 1.35 + (r1 - 0.5) * 0.45, slide), lerp(1.35, 0.25 + r3 * 0.18, slide), lerp(0.2, 0.35 + (r2 - 0.5) * 0.35, slide)).add(G);
+        const tout = seg(p, 0.86 + r1 * 0.06, 0.95 + r1 * 0.04);
+        if (tout > 0 && out) pos = arc(pos, out.g.position.clone().add(new THREE.Vector3(0, 0.75, 0)), ease(tout), 0.7, new THREE.Vector3());
+        show = show && tout < 1;
+      } else if (k === "coater") {
+        const tin = seg(p, 0.06 + r1 * 0.12, 0.3 + r1 * 0.12), tout = seg(p, 0.8 + r1 * 0.08, 0.92 + r1 * 0.06);
+        const ang = r1 * 6.283 + t * 1.6 * seg(p, 0.35, 0.45) * (1 - seg(p, 0.72, 0.8));
+        const tumble = new THREE.Vector3((r2 - 0.5) * 0.9, 1.15 - Math.abs(Math.cos(ang)) * 0.42 - r3 * 0.05, Math.sin(ang) * 0.3).add(G);
+        pos = tumble;
+        if (tin < 1 && S.tabSrc) pos = arc(S.tabSrc.pos(), tumble, ease(tin), 0.8, new THREE.Vector3());
+        if (tout > 0 && out) pos = arc(tumble, out.g.position.clone().add(new THREE.Vector3(0, 0.75, 0)), ease(tout), 0.7, new THREE.Vector3());
+        show = active && tin > 0 && tout < 1;
+        col = tmpC.set("#f7f4ee").lerp(new THREE.Color("#dc8d88"), seg(p, 0.42, 0.72)).clone();
+        rx += t * 3; ry += t * 2;
+      } else if (k === "inspect") {
+        const tin = seg(p, 0.05 + r1 * 0.1, 0.25 + r1 * 0.1), tout = seg(p, 0.82 + r1 * 0.06, 0.93 + r1 * 0.05);
+        const u = clamp((p - 0.2) / 0.6 + (j / n) * 0.9 - 0.45, 0, 1);
+        const belt = new THREE.Vector3(lerp(-1.4, 1.4, u), 0.78, (r2 - 0.5) * 0.4).add(G);
+        pos = belt; rx = Math.PI / 2 * 0; ry = r1 * 6;
+        if (tin < 1 && S.tabSrc) pos = arc(S.tabSrc.pos(), belt, ease(tin), 0.8, new THREE.Vector3());
+        if (tout > 0 && out) pos = arc(belt, out.g.position.clone().add(new THREE.Vector3(0, 0.75, 0)), ease(tout), 0.7, new THREE.Vector3());
+        show = active && tin > 0 && tout < 1; rx = 0;
+      } else if (k === "pack1") {
+        const tin = seg(p, 0.06 + r1 * 0.1, 0.28 + r1 * 0.1);
+        const fillT = seg(p, 0.32 + (j / n) * 0.2, 0.36 + (j / n) * 0.2);
+        const hop = new THREE.Vector3(-0.7 + (r1 - 0.5) * 0.3, 2.15 + r3 * 0.15, (r2 - 0.5) * 0.3).add(G);
+        const isBl = j % 5 === 4, slot = Math.floor(j / 5) % 4;
+        const dst = isBl ? new THREE.Vector3(-0.42 + (j % 10 < 5 ? 0 : 0.1) + (slot) * 0.1, 0.8, 0.18).add(G) : new THREE.Vector3(S.parts.bottles[slot].position.x + (r1 - 0.5) * 0.1, 1.0 + r3 * 0.06, -0.12).add(G);
+        pos = tin < 1 && S.tabSrc ? arc(S.tabSrc.pos(), hop, ease(tin), 0.8, new THREE.Vector3()) : arc(hop, dst, ease(fillT), 0.2, new THREE.Vector3());
+        show = active && tin > 0 && p < 0.86; sc = 0.9;
+      }
+      if (!show) { tmpM.makeScale(0, 0, 0); tm.setMatrixAt(j, tmpM); continue; }
+      eul.set(rx, ry, 0); tmpQ.setFromEuler(eul); tmpS.setScalar(sc); tmpM.compose(pos, tmpQ, tmpS); tm.setMatrixAt(j, tmpM);
+      if (col) tm.setColorAt(j, col);
+    }
+    tm.instanceMatrix.needsUpdate = true; if (tm.instanceColor) tm.instanceColor.needsUpdate = true;
+  }
+  // final packaged products appear on the last station
+  const last = stations[N - 1];
+  label("box", `Packaged product<small>${DATA.packs.map((p) => esc(p.type)).join(" · ")}</small>`, () => last.g.position.clone().add(new THREE.Vector3(0, 1.45, 0)), (s) => seg(s - (N - 1), 0.75, 0.85));
+
+  // ---------------- side panel + caption ----------------
+  let shown = -1;
+  const ILL = ' <span class="ill" title="Not in the process data: inferred from the step descriptions">illustrative</span>';
+  const ckList = (st, kind, head) => { const l = st.checks.filter((c) => c.kind === kind); return l.length ? `<h3 class="h">${head}</h3><ul class="ck">${l.map((c) => `<li><b class="${kind.toLowerCase()}">${esc(kind)}</b><span>${esc(c.title)}</span></li>`).join("")}</ul>` : ""; };
+  const roleCls = (r) => /Start/i.test(r) ? "s" : /Process/i.test(r) ? "p" : /Inter/i.test(r) ? "i" : "r";
+  function renderStep(i) {
+    if (i === shown) return; shown = i;
+    const st = STEPS[i], ph = PH[st.phase], f = FLOW[i], inn = INFLOW[i] || [];
+    $("#cap").innerHTML = `<span class="ph" style="background:${ph.color}">${ph.name} · ${esc(st.site)}</span><span class="t">${esc(titleOf(st))}</span>`;
+    document.querySelectorAll("#dots button").forEach((b, k) => b.classList.toggle("on", k === i));
+    const mats = st.materials.map((m) => `<tr><td><span class="dot" style="background:${colOf(m.ref, "#bcd4e6")}"></span>${esc(m.name)}</td><td><span class="role ${roleCls(m.role)}">${esc(m.role)}</span></td><td class="v">${esc(charge(st, m.name.replace(/^Starting Material |^Intermediate |^In situ Intermediate /i, "")))}</td></tr>`).join("");
+    const other = st.params.filter((x) => !/^Charge:/i.test(x[0]));
+    $("#meta").innerHTML = `<p class="kicker" style="color:${ph.color}">${ph.name} · step ${st.n} of ${st.plan.steps.length}</p>
+      <h2>${esc(titleOf(st))}</h2>
+      <p class="lead">${esc(st.description)}</p>
+      <div class="chips"><span class="chip">PlanDefinition.action[${st.n - 1}]</span>${st.materials.length ? '<span class="chip">participant</span>' : ""}${st.params.length ? '<span class="chip">process-parameters</span>' : ""}</div>
+      ${inn.length ? `<h3 class="h">Received from earlier steps</h3><table class="t">${inn.map((x) => `<tr><td><span class="dot" style="background:${x.color}"></span>${esc(x.name)}${x.fromData ? "" : ILL}</td><td class="v">step ${STEPS[x.from].n}${STEPS[x.from].phase !== st.phase ? " · " + esc(PH[STEPS[x.from].phase].name.toLowerCase()) : ""}</td></tr>`).join("")}</table>` : ""}
+      ${mats ? `<h3 class="h">Materials and charges</h3><table class="t">${mats}</table>` : ""}
+      <h3 class="h">Equipment</h3><table class="t">${st.devices.length ? st.devices.map((d) => `<tr><td>${esc(d)}</td></tr>`).join("") : `<tr><td class="muted">None listed in the process data</td></tr>`}</table>
+      ${other.length ? `<h3 class="h">Process parameters</h3><table class="t">${other.map((x) => `<tr><td>${esc(x[0])}</td><td class="v">${esc(x[1])}</td></tr>`).join("")}</table>` : ""}
+      ${ckList(st, "CPP", "Critical process parameters")}${ckList(st, "IPC", "In-process controls")}${ckList(st, "Control", "Other controls")}
+      ${f ? `<h3 class="h">Output</h3><table class="t"><tr><td><span class="dot" style="background:${f.color}"></span>${esc(f.name)}${f.fromData ? "" : ILL}</td><td class="v">to step ${STEPS[f.to].n}</td></tr></table>` : `<h3 class="h">Output</h3><table class="t"><tr><td>Packaged product: ${DATA.packs.map((p) => esc(p.type)).join(" and ")}</td></tr></table>`}
+      <p class="note" style="margin-top:14px">${f || inn.length ? (f && f.fromData ? "The output is the resulting material recorded for this step. " : "") + "The process data does not record which step feeds which, or the names of drug product intermediates: those marked <em>illustrative</em>, and the transfers between steps, are inferred from the step descriptions. " : ""}${esc(st.plan.title)}</p>`;
+  }
+  // phase strip and step buttons
+  const groups = ["ds", "dp", "pk"].map((ph) => ({ ph, n: STEPS.filter((s) => s.phase === ph).length }));
+  const shortTitle = (st) => titleOf(st).replace(/^Step \d+ · /, "");
+  $("#dots").innerHTML = STEPS.map((st, i) => { const first = i === 0 || STEPS[i - 1].phase !== st.phase;
+    return `<li><button type="button" style="border-left-color:${PH[st.phase].color}" aria-label="${esc(titleOf(st))}">${first ? `<span class="ph" style="color:${PH[st.phase].color}">${PH[st.phase].name}</span>` : ""}<span>${st.n}. ${esc(shortTitle(st))}</span></button></li>`; }).join("");
+  const slider = $("#s"); slider.max = N;
+  let sTarget = 0, sCur = 0, playing = false;
+  const stopPlay = () => { playing = false; $("#play").textContent = "▶ Play"; };
+  slider.addEventListener("input", () => { sTarget = +slider.value; stopPlay(); });
+  document.querySelectorAll("#dots button").forEach((b, i) => b.onclick = () => { sTarget = i + 0.02; slider.value = sTarget; stopPlay(); });
+  $("#play").onclick = () => { playing = !playing; if (playing && sTarget >= N - 0.01) { sTarget = 0; sCur = 0; } $("#play").textContent = playing ? "❚❚ Pause" : "▶ Play"; };
+
+  function resize() { const w = viewer.clientWidth, h = viewer.clientHeight; renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix(); }
+  new ResizeObserver(resize).observe(viewer);
+
+  const v3 = new THREE.Vector3(), clock = new THREE.Clock();
+  function frame() {
+    const t = clock.getElapsedTime();
+    if (playing) { sTarget = Math.min(N, sTarget + 0.0042); slider.value = sTarget; if (sTarget >= N) stopPlay(); }
+    sCur += (sTarget - sCur) * 0.1; if (Math.abs(sTarget - sCur) < 0.0005) sCur = sTarget;
+    const s = Math.min(sCur, N - 0.0001), i = Math.floor(s), p = s - i;
+    // camera follows the batch: settle on the station, glide to the next as the output leaves
+    const camX = (i + (i < N - 1 ? ease(seg(p, 0.86, 1)) : 0)) * STEP;
+    camera.position.set(camX + 0.6, 3.6, 8.4); camera.lookAt(camX + 0.3, 1.25, 0);
+    stations.forEach((S) => updateStation(S, s, t));
+    renderStep(i);
+    const W = viewer.clientWidth, H = viewer.clientHeight;
+    LBL.forEach((L) => {
+      const a = L.vis(s);
+      if (a < 0.02) { L.el.style.opacity = 0; return; }
+      v3.copy(L.anchor()).project(camera);
+      if (v3.z > 1 || Math.abs(v3.x) > 1.1) { L.el.style.opacity = 0; return; }
+      L.el.style.opacity = a; L.el.style.left = ((v3.x + 1) / 2 * W) + "px"; L.el.style.top = ((1 - v3.y) / 2 * H) + "px";
+    });
+    renderer.render(scene, camera);
+    requestAnimationFrame(frame);
+  }
+  resize(); renderStep(0); requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
