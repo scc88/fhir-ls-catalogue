@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sakura Bloom 20 mg · ePI viewer | FHIR for Global Regulatory Affairs</title>
+<meta name="description" content="One synthetic ePI shown as Type 1 to Type 4: the full SmPC, package leaflet and instructions for use, with product data, clinical data and linked content added type by type.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --ink: #172B4D; --muted: #5E6C84; --line: #DFE1E6; --sep: #EBECF0; --bg: #F5F6F8;
+    --t1: #0071e3; --t2: #0a7a8f; --t3: #5e5ce6; --t4: #248a3d; --t1d: #0059b3; --t2d: #07707f; --t3d: #4643c7; --t4d: #1d6e31;
+    --t1s: #EAF3FE; --t2s: #DDF2F5; --t3s: #EFEFFD; --t4s: #E8F7EC; --warn: #8a4b00; --warn-s: #FFF4E0; --bad: #B3261E; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.5 Inter, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: var(--acc-d); } button { font: inherit; cursor: pointer; }
+  .mono { font-family: "JetBrains Mono", ui-monospace, monospace; }
+  body.t1 { --acc: var(--t1); --acc-d: var(--t1d); --acc-s: var(--t1s); } body.t2 { --acc: var(--t2); --acc-d: var(--t2d); --acc-s: var(--t2s); }
+  body.t3 { --acc: var(--t3); --acc-d: var(--t3d); --acc-s: var(--t3s); } body.t4 { --acc: var(--t4); --acc-d: var(--t4d); --acc-s: var(--t4s); }
+  .wrap { max-width: 1320px; margin: 0 auto; padding: 0 28px; }
+  header.top { background: #fff; border-bottom: 1px solid var(--line); }
+  .crumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding-top: 16px; font-size: 13px; color: var(--muted); }
+  .crumbs a { color: var(--muted); text-decoration: none; } .crumbs a:hover { color: var(--acc-d); }
+  .pill { font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 999px; white-space: nowrap; }
+  .pill.synth { margin-left: auto; color: var(--warn); background: var(--warn-s); }
+  .titlerow { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 10px; }
+  h1 { margin: 0; font-size: 30px; font-weight: 800; letter-spacing: -0.02em; }
+  .sub { margin: 4px 0 0; color: var(--muted); font-size: 14.5px; }
+  .types { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 14px; }
+  .types a { display: flex; flex-direction: column; gap: 1px; padding: 10px 18px; border-radius: 12px 12px 0 0; text-decoration: none; color: #42526E; border-top: 3px solid transparent; }
+  .types a b { font-size: 11px; letter-spacing: .06em; } .types a span { font-size: 14px; font-weight: 600; }
+  .types a[aria-current="page"] { background: var(--bg); color: var(--ink); }
+  .types a:hover { background: #F9FAFB; }
+  .docbar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding-top: 16px; }
+  .docbar a { padding: 8px 14px; border-radius: 999px; font-size: 13.5px; font-weight: 600; text-decoration: none; background: #fff; color: #42526E; border: 1px solid var(--line); }
+  .docbar a[aria-current="page"] { background: var(--acc); color: #fff; border-color: var(--acc); }
+  .seg { display: inline-flex; background: #E4E6EB; border-radius: 10px; padding: 3px; margin-left: 8px; }
+  .seg a { padding: 5px 12px; border-radius: 8px; font-size: 13px; color: #42526E; text-decoration: none; }
+  .seg a[aria-current="true"] { background: #fff; color: var(--ink); font-weight: 600; box-shadow: 0 1px 2px rgba(9,30,66,.15); }
+  .layout { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; padding: 16px 0 56px; }
+  .left, .rail { position: sticky; top: 12px; max-height: calc(100vh - 24px); overflow-y: auto; display: flex; flex-direction: column; gap: 14px; }
+  .left { flex: 1 1 230px; max-width: 250px; } .rail { flex: 1 1 340px; max-width: 380px; }
+  .box { background: #fff; border-radius: 14px; padding: 16px 18px; }
+  .box h2 { margin: 0 0 10px; font-size: 14.5px; }
+  dl.kv { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 6px 12px; font-size: 13px; } dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; }
+  nav.toc { padding: 14px 10px; } nav.toc .lbl { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); padding: 0 8px 6px; }
+  nav.toc button { display: block; width: 100%; text-align: left; border: 0; background: none; padding: 5px 8px; border-radius: 8px; color: var(--ink); font-size: 13px; line-height: 1.35; }
+  nav.toc button.sub { padding-left: 20px; color: #42526E; font-size: 12.5px; }
+  nav.toc button:hover { background: var(--bg); } nav.toc button[aria-current="true"] { background: var(--acc-s); color: var(--acc-d); font-weight: 600; }
+  article.doc { flex: 999 1 520px; min-width: 0; background: #fff; border-radius: 14px; padding: 28px 36px 40px; box-shadow: 0 1px 3px rgba(9,30,66,.08); font-size: 14.5px; line-height: 1.65; }
+  .doc .kicker { margin: 0 0 4px; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .doc h2 { font-size: 18px; margin: 26px 0 8px; padding-top: 14px; border-top: 1px solid var(--sep); scroll-margin-top: 16px; }
+  .doc h3 { font-size: 15.5px; margin: 18px 0 6px; scroll-margin-top: 16px; }
+  .doc p { margin: 0 0 8px; } .doc ul { margin: 0 0 8px; padding-left: 22px; }
+  .doc table { border-collapse: collapse; font-size: 13px; margin: 6px 0 10px; width: 100%; }
+  .doc td, .doc th { border: 1px solid var(--line); padding: 6px 8px; text-align: left; vertical-align: top; } .doc th { background: var(--bg); }
+  .doc img.pic { display: block; max-width: 220px; height: auto; margin: 6px 0; }
+  .doc.ifu .step > div { display: grid; grid-template-columns: 150px 1fr; gap: 18px; align-items: start; }
+  .doc.ifu img.pic { width: 140px; background: #F2F6FC; border-radius: 12px; padding: 8px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 2px 0 8px; }
+  .chip { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 600; padding: 2px 10px; border-radius: 999px; border: 0; }
+  .chip.p { background: var(--t2s); color: var(--t2d); } .chip.c { background: var(--t3s); color: var(--t3d); }
+  .chip:hover { filter: brightness(.96); }
+  .doc .lnk { border-radius: 3px; padding: 0 2px; cursor: pointer; }
+  .doc .lnk.lk-c { background: var(--t3s); border-bottom: 2px solid var(--t3); } .doc .lnk.lk-p { background: #E6F5F7; border-bottom: 2px solid var(--t2); }
+  .doc .lnk.on { outline: 2px solid var(--t4); outline-offset: 1px; }
+  .card { background: #fff; border-radius: 14px; padding: 16px 18px; display: flex; flex-direction: column; gap: 10px; transition: box-shadow .3s; }
+  .card h3 { margin: 0; font-size: 15px; } .card.flash { box-shadow: 0 0 0 3px var(--acc); }
+  .card ul { margin: 0; padding-left: 18px; font-size: 13px; line-height: 1.6; }
+  .warnbox { display: flex; gap: 8px; background: #FFF8EC; border-radius: 10px; padding: 8px 10px; font-size: 12.5px; }
+  .dose { border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+  .dose .nums { display: flex; gap: 14px; margin: 6px 0; font-size: 11.5px; color: var(--muted); } .dose .nums b { display: block; font-size: 15px; color: var(--ink); }
+  .sev { font-size: 11.5px; font-weight: 700; padding: 1px 8px; border-radius: 999px; white-space: nowrap; height: fit-content; }
+  .sev.stop { color: #fff; background: var(--bad); } .sev.adj { color: #6b3a00; background: #FFD8A8; } .sev.mon { color: #42526E; background: var(--sep); }
+  .ilist { list-style: none; margin: 0; padding: 0 !important; } .ilist li { display: flex; flex-direction: column; gap: 3px; padding: 8px 0; border-bottom: 1px solid var(--sep); }
+  .ilist li:last-child { border-bottom: 0; }
+  table.ing { width: 100%; border-collapse: collapse; font-size: 12.5px; } table.ing td { padding: 6px 4px; border-bottom: 1px solid var(--sep); vertical-align: top; }
+  table.ing small { display: block; font-size: 11.5px; color: var(--muted); } table.ing small.ke { color: var(--warn); font-weight: 600; }
+  .packrow { display: flex; align-items: flex-start; gap: 4px; }
+  .ptile { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; }
+  .ptile .pic { width: 100%; height: 70px; background: #F2FAFB; border: 1px solid #CDE9ED; border-radius: 10px; display: grid; place-items: center; }
+  .ptile b { font-size: 12.5px; } .ptile span { font-size: 11px; color: var(--muted); overflow-wrap: anywhere; }
+  .parrow { flex: none; height: 70px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: var(--t2); font-size: 11px; font-weight: 800; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; } .tags span { font-size: 12px; background: var(--bg); padding: 4px 9px; border-radius: 8px; }
+  .legend { display: flex; flex-direction: column; gap: 8px; font-size: 12.5px; } .legend i { display: inline-block; width: 18px; height: 10px; margin-right: 8px; vertical-align: -1px; }
+  .chain { display: flex; flex-direction: column; gap: 6px; } .chain div { border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; }
+  .chain div.hl { border: 2px solid var(--t4); background: #EEF8F0; } .chain small { font-size: 11px; color: var(--muted); } .chain p { margin: 2px 0 0; font-size: 13px; font-weight: 600; }
+  .chain .ar { border: 0; padding: 0; text-align: center; color: #97A0AF; line-height: 1; }
+  .muted { color: var(--muted); } .small { font-size: 12.5px; }
+  .note { font-size: 12px; color: var(--muted); line-height: 1.5; margin: 0; }
+  @media (max-width: 900px) { .left, .rail { position: static; max-height: none; max-width: none; flex-basis: 100%; } article.doc { padding: 20px; } .doc.ifu .step > div { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body class="t1">
+<noscript>This page needs JavaScript.</noscript>
+<div id="app"></div>
+<script src="data/epi-data.js"></script>
+<script src="epi-types.js"></script>
+<script>
+(function () {
+  const esc = EP.esc, $ = EP.$, $$ = EP.$$;
+  const TN = { 1: "Digital label", 2: "Product data", 3: "Clinical data", 4: "Linked content" };
+  const DOCS = { smpc: "Summary of Product Characteristics", pil: "Package leaflet", ifu: "Instructions for use" };
+  const KICK = { smpc: "Summary of Product Characteristics", pil: "Package leaflet: information for the patient", ifu: "Instructions for use" };
+  let S = { t: 1, doc: "smpc", sel: null };
+  const LINK = '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg>';
+  const WARN = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8a4b00" stroke-width="2" aria-hidden="true" style="flex:none"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>';
+
+  function readHash() {
+    const p = new URLSearchParams(location.hash.slice(1));
+    const t = +p.get("t"); S.t = [1, 2, 3, 4].includes(t) ? t : 1;
+    S.doc = DOCS[p.get("doc")] ? p.get("doc") : "smpc";
+  }
+  const href = (o) => "#" + new URLSearchParams({ t: o.t ?? S.t, doc: o.doc ?? S.doc }).toString();
+  const current = () => EP.load(S.t).find((d) => d.key === `${S.doc}-en`);
+
+  // ---------- labels for chips and cards ----------
+  const kindOf = (ref) => (/^(ClinicalUseDefinition|Group)\//.test(ref) ? "c" : "p");
+  const name = (r, db) => {
+    switch (r.resourceType) {
+      case "ClinicalUseDefinition": {
+        const b = EP.cudBody(r);
+        if (r.type === "interaction") return b.interactant.map((i) => EP.cc(i.itemCodeableConcept)).join(", ");
+        if (r.type === "warning") return b.code.coding[0].display;
+        if (r.type === "undesirable-effect") return b.symptomConditionEffect.concept.coding[0].display;
+        return EP.cc(b.diseaseSymptomProcedure.concept);
+      }
+      case "Group": return r.name.replace(/ \(.*\)$/, "");
+      case "Ingredient": return EP.label(db.get(r.substance.code.reference)) || r.id;
+      case "SubstanceDefinition": return EP.label(r);
+      case "PackagedProductDefinition": return r.name.replace(/^.* - /, "");
+      case "RegulatedAuthorization": return r.identifier[0].value;
+      case "Organization": return r.name;
+      case "ManufacturedItemDefinition": return "Tablet appearance";
+      case "AdministrableProductDefinition": return "Dose form and route";
+      case "MedicinalProductDefinition": return r.name[0].productName;
+    }
+    return r.id;
+  };
+  const KIND = { indication: "Indication", contraindication: "Contraindication", interaction: "Interaction", warning: "Warning", "undesirable-effect": "Side effect",
+    Group: "Population", Ingredient: "Ingredient", SubstanceDefinition: "Substance", PackagedProductDefinition: "Pack", RegulatedAuthorization: "Authorisation",
+    Organization: "Organisation", ManufacturedItemDefinition: "Tablet", AdministrableProductDefinition: "Dose form", MedicinalProductDefinition: "Product" };
+  const kindName = (r) => KIND[r.resourceType === "ClinicalUseDefinition" ? r.type : r.resourceType] || r.resourceType;
+  const chipText = (r, db) => {
+    if (["ManufacturedItemDefinition", "AdministrableProductDefinition", "MedicinalProductDefinition"].includes(r.resourceType)) return name(r, db);
+    return `${kindName(r)}: ${name(r, db)}`;
+  };
+
+  // ---------- document ----------
+  function docHtml(d) {
+    const db = d.db, kinds = S.t === 2 ? "p" : S.t >= 3 ? "pc" : "";
+    const root = d.comp.section[0];
+    const linkMap = (s) => { if (S.t < 4) return null; const m = {}; EP.textLinks(s).forEach((l) => { const r = db.get(l.data); m[l.htmlid] = { title: r ? chipText(r, db) : l.data, cls: "lk-" + kindOf(l.data) }; }); return m; };
+    const body = (s) => EP.narrative(s.text.div, { images: d.images, links: linkMap(s) }).replace(/<img /g, '<img class="pic" ');
+    const chips = (s) => {
+      if (S.t < 2 || S.t === 4) return "";
+      const cs = (s.entry || []).map((e) => e.reference).filter((ref) => kinds.includes(kindOf(ref)) && db.get(ref));
+      return cs.length ? `<div class="chips">${cs.map((ref) => `<button class="chip ${kindOf(ref)}" data-ref="${esc(ref)}">${LINK}${esc(chipText(db.get(ref), db))}</button>`).join("")}</div>` : "";
+    };
+    let h = `<p class="kicker">${esc(KICK[d.kind])}</p>` + body(root);
+    const sec = (s, depth) => {
+      const tag = depth === 0 ? "h2" : "h3";
+      h += `<${tag} id="sec-${esc(s.id)}">${esc(s.title)}</${tag}>` + chips(s);
+      if (!(depth === 0 && (s.section || []).length)) h += d.kind === "ifu" && /<img/.test(s.text.div) ? `<div class="step">${body(s).replace(/(<p><img[^>]*><\/p>)([\s\S]*)/, "<div>$1</div><div>$2</div>")}</div>` : body(s);
+      (s.section || []).forEach((c) => sec(c, depth + 1));
+    };
+    root.section.forEach((s) => sec(s, 0));
+    return h;
+  }
+
+  // ---------- rails ----------
+  const card = (title, inner, ref) => `<section class="card" ${ref ? `data-card="${esc(ref)}"` : ""}><h3>${title}</h3>${inner}</section>`;
+  const kv = (rows) => `<dl class="kv">${rows.filter((r) => r[1]).map(([k, v]) => `<dt>${esc(k)}</dt><dd>${v}</dd>`).join("")}</dl>`;
+  const strengthTxt = (i) => (((i.substance.strength || [])[0] || {}).textPresentation || "").replace(/ per film-coated tablet$/, "");
+  const SVGS = {
+    carton: '<svg width="54" height="48" viewBox="0 0 70 62" aria-hidden="true"><path d="M8 18 35 6l27 12v30L35 58 8 48z" fill="#fff" stroke="#0a7a8f" stroke-width="2.5" stroke-linejoin="round"/><path d="M8 18l27 12 27-12M35 30v28" fill="none" stroke="#0a7a8f" stroke-width="2.5"/><path d="M8 18 35 30v28L8 48z" fill="#DDF2F5" stroke="#0a7a8f" stroke-width="2.5" stroke-linejoin="round"/></svg>',
+    bottle: '<svg width="40" height="54" viewBox="0 0 40 54" aria-hidden="true"><rect x="11" y="3" width="18" height="9" rx="2" fill="#fff" stroke="#0a7a8f" stroke-width="2.5"/><path d="M8 16c0-2 2-4 4-4h16c2 0 4 2 4 4v32a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2z" fill="#fff" stroke="#0a7a8f" stroke-width="2.5"/><path d="M8 26h24v14H8z" fill="#DDF2F5" stroke="#0a7a8f" stroke-width="2"/></svg>',
+    blister: '<svg width="40" height="54" viewBox="0 0 52 66" aria-hidden="true"><rect x="4" y="2" width="44" height="62" rx="6" fill="#E9ECF0" stroke="#8C96A5" stroke-width="2"/>' + [0, 1, 2, 3, 4, 5, 6].map((i) => `<circle cx="${18 + (i % 2) * 16}" cy="${12 + Math.floor(i / 2) * 14}" r="5.5" fill="#E8A9A2" stroke="#C4786F" stroke-width="1.5"/>`).join("") + "</svg>",
+    tablet: '<svg width="44" height="44" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="24" fill="#E8A9A2" stroke="#C4786F" stroke-width="2.5"/><text x="28" y="34" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="800" text-anchor="middle" fill="#9a4f47">SB</text></svg>',
+  };
+  const tile = (svg, b, s) => `<div class="ptile"><div class="pic">${svg}</div><b>${esc(b)}</b><span>${s}</span></div>`;
+  const arrow = (n) => `<div class="parrow" aria-hidden="true">× ${n}<svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 6h19M15 1l5 5-5 5"/></svg></div>`;
+
+  function productRail(d) {
+    const db = d.db, mpd = db.all("MedicinalProductDefinition")[0], mid = db.all("ManufacturedItemDefinition")[0], apd = db.all("AdministrableProductDefinition")[0];
+    const ings = db.all("Ingredient"), act = ings.filter((i) => EP.cc(i.role) === "Active");
+    const smpc = EP.load(S.t).find((x) => x.key === "smpc-en");
+    const ke = new Set(((smpc.secs.find((x) => x.code === "200000029793") || {}).s || { entry: [] }).entry.map((e) => e.reference));
+    const prop = (n) => EP.cc((mid.property.find((p) => p.type.text === n) || {}).valueCodeableConcept);
+    const maxd = (mpd.characteristic || []).find((c) => c.type.text === "Maximum daily dose");
+    const order = (i) => (EP.cc(i.role) === "Active" ? 0 : /coating/i.test(EP.cc(i.function[0])) ? 2 : 1);
+    const rows = ings.filter((i) => !/removed during processing|coating agent/i.test(EP.cc(i.function[0]))).sort((a, b) => order(a) - order(b))
+      .map((i) => `<tr><td>${esc(name(i, db))}<small class="${ke.has("Ingredient/" + i.id) && EP.cc(i.role) !== "Active" ? "ke" : ""}">${esc(EP.cc(i.role))}${ke.has("Ingredient/" + i.id) && EP.cc(i.role) !== "Active" ? " · known effect" : ""} · ${esc(EP.cc(i.function[0]).replace(/ \(component of coating premix\)/, ", coating"))}</small></td><td style="text-align:right;white-space:nowrap">${esc(strengthTxt(i))}</td></tr>`).join("");
+    const packs = db.all("PackagedProductDefinition").map((p) => {
+      const inner = p.packaging.packaging[0], per = (inner.containedItem || [])[0], sl = (inner.shelfLifeStorage || [])[0];
+      const isBottle = /bottle/i.test(EP.cc(inner.type));
+      const gtin = ((p.identifier || []).find((i) => /gs1/.test(i.system)) || {}).value;
+      return card(`Pack · ${esc(EP.qty(p.containedItemQuantity[0]))}s`,
+        `<div class="packrow">${tile(SVGS.carton, "Carton", `GTIN<br>${esc(gtin)}`)}${arrow(inner.quantity)}${tile(isBottle ? SVGS.bottle : SVGS.blister, EP.cc(inner.type), isBottle ? "HDPE, child-resistant" : "PA/Al/PVC")}${arrow(per ? per.amount.value : "")}${tile(SVGS.tablet, "Tablet", esc(strengthTxt(act[0])))}</div>
+         <div class="tags">${sl ? `<span>Shelf life ${esc(EP.qty(sl.periodDuration))}</span><span>${esc(EP.cc(sl.specialPrecautionsForStorage[0]).replace(/^This medicinal product does not require any special storage requirement\.?$/, "No special storage"))}</span>` : ""}</div>`, "PackagedProductDefinition/" + p.id);
+    }).join("");
+    const ras = db.all("RegulatedAuthorization"), mah = db.get(ras[0].holder);
+    return card("Substance and form", kv([["Active substance", act.map((i) => esc(name(i, db))).join(", ")], ["Strength", esc(act.map(strengthTxt).join(", ")) + " per tablet"], ["Dose form", esc(EP.cc(apd.administrableDoseForm))], ["Route", esc(EP.cc(apd.routeOfAdministration[0].code))], ["Maximum daily dose", maxd ? esc(EP.qty(maxd.valueQuantity)) : ""], ["Supply", esc(EP.cc(mpd.legalStatusOfSupply))]]), "MedicinalProductDefinition/" + mpd.id)
+      + card("Appearance", `<div style="display:flex;gap:14px;align-items:center">${d.images["#tablet-image"] ? `<img src="${d.images["#tablet-image"]}" alt="Tablet, both faces" style="width:130px">` : ""}${kv([["Colour", esc(prop("Colour"))], ["Shape", esc(prop("Shape"))], ["Imprint", esc(prop("Imprint / debossing"))]])}</div>`, "ManufacturedItemDefinition/" + mid.id)
+      + card("Ingredients per tablet", `<table class="ing"><tbody>${rows}</tbody></table>`, "Ingredient")
+      + packs
+      + card("Marketing authorisation", kv([["Holder", esc(mah.name) + (mah.contact ? ", " + esc(mah.contact[0].address.city) : "")], ["Numbers", ras.map((r) => `<span class="mono">${esc(r.identifier[0].value)}</span> · ${esc(name(db.get(r.subject[0]), db))}`).join("<br>")], ["Status", esc(EP.cc(ras[0].status)) + " since " + esc(ras[0].statusDate)]]), "RegulatedAuthorization");
+  }
+
+  const sevOf = (r) => { const m = EP.cc((EP.cudBody(r).management || [])[0]); return /^contraindicated/i.test(m) ? ["stop", "Contraindicated"] : /exceed/i.test(m) ? ["adj", "Adjust dose"] : /avoid/i.test(m) ? ["adj", "Avoid"] : ["mon", "Monitor"]; };
+  function clinicalRail(d) {
+    const db = d.db, all = db.all("ClinicalUseDefinition"), by = (k) => all.filter((r) => r.type === k);
+    const ind = by("indication")[0], b = EP.cudBody(ind), dg = (ind.extension || []).find((x) => /dosing-guideline/.test(x.url)).valueDosage;
+    const pop = (r) => (r.population || []).map((p) => name(db.get(p), db)).join(", ");
+    const doseCard = (ttl, dose, mx, chip, warn, ref) => `<div class="dose" ${ref ? `data-card="${esc(ref)}"` : ""}><b style="font-size:13px">${esc(ttl)}</b><div class="nums"><span>Dose<b>${esc(dose)}</b></span><span>Interval<b>${dg.timing.repeat.frequency === 1 && dg.timing.repeat.periodUnit === "d" ? "Daily" : ""}</b></span><span>Max / 24 h<b>${esc(mx)}</b></span></div><span class="pill" style="display:inline-block;white-space:normal;border-radius:10px;${warn ? "color:var(--warn);background:var(--warn-s)" : "background:var(--sep)"}">${esc(chip)}</span></div>`;
+    const caps = [...by("warning"), ...by("interaction")].map((r) => { const bb = EP.cudBody(r); const txt = [bb.description, ...(bb.management || []).map(EP.cc)].join(" "); const m = txt.match(/not exceed (\d+) mg/i); return m ? { r, mg: m[1] } : null; }).filter(Boolean);
+    const base = EP.qty(dg.doseAndRate[0].doseQuantity), max = EP.qty(dg.maxDosePerPeriod[0].numerator);
+    const doses = doseCard(pop(ind) + " · usual", base, max, (dg.text.split(";")[1] || "").split(".")[0].trim().replace(/^./, (c) => c.toUpperCase()), false, "ClinicalUseDefinition/" + ind.id)
+      + caps.map(({ r, mg }) => doseCard(r.type === "interaction" ? "With " + name(r, db) : (pop(r) || name(r, db)), mg + " mg", mg + " mg", r.type === "interaction" ? "Interaction" : "Warning", true, "ClinicalUseDefinition/" + r.id)).join("");
+    const ues = EP.ueItems(all), freqs = Object.keys(EPIDATA.freq).sort((a, c) => EPIDATA.freq[a].rank - EPIDATA.freq[c].rank);
+    return card("Indication", kv([["Condition", esc(EP.cc(b.diseaseSymptomProcedure.concept))], ["Population", esc(pop(ind))], ["Intended effect", esc(EP.cc(b.intendedEffect.concept))]]), "ClinicalUseDefinition/" + ind.id)
+      + card("Dosing", `<div style="display:flex;flex-direction:column;gap:8px">${doses}</div>`)
+      + card("Contraindications", `<ul>${by("contraindication").map((r) => { const bb = EP.cudBody(r); return `<li data-card="ClinicalUseDefinition/${esc(r.id)}">${esc(EP.cc(bb.diseaseSymptomProcedure.concept))}${bb.otherTherapy ? ": " + esc(bb.otherTherapy.map((o) => EP.cc(o.treatment.concept)).join(", ")) : ""}</li>`; }).join("")}</ul>`)
+      + card("Warnings", by("warning").map((r) => `<div class="warnbox" data-card="ClinicalUseDefinition/${esc(r.id)}">${WARN}<span><b>${esc(name(r, db))}:</b> ${esc(EP.cudBody(r).description)}</span></div>`).join(""))
+      + card("Interactions", `<ul class="ilist">${by("interaction").map((r) => { const bb = EP.cudBody(r), [k, l] = sevOf(r); return `<li data-card="ClinicalUseDefinition/${esc(r.id)}"><span style="display:flex;justify-content:space-between;gap:8px"><b style="font-size:13px">${esc(name(r, db))}</b><span class="sev ${k}">${l}</span></span><span class="small" style="color:#42526E">${esc(EP.cc(bb.effect.concept))}. ${esc(EP.cc(bb.management[0]))}.</span></li>`; }).join("")}</ul>`)
+      + card("Side effects", kv(freqs.map((f) => [EPIDATA.freq[f].en, ues.filter((u) => u.freq === f).map((u) => `<span data-card="ClinicalUseDefinition/${esc(u.id)}">${esc(u.term)}</span>`).join(", ")])))
+      + card("Populations", `<ul>${db.all("Group").map((g) => `<li data-card="Group/${esc(g.id)}">${esc(g.name)}</li>`).join("")}</ul>`);
+  }
+
+  function friendly(r, db) {
+    const b = r.resourceType === "ClinicalUseDefinition" ? EP.cudBody(r) : null;
+    switch (r.resourceType === "ClinicalUseDefinition" ? r.type : r.resourceType) {
+      case "indication": { const dg = r.extension[0].valueDosage; return kv([["Condition", esc(EP.cc(b.diseaseSymptomProcedure.concept))], ["Dosing", esc(dg.text)]]); }
+      case "contraindication": return kv([["Condition", esc(EP.cc(b.diseaseSymptomProcedure.concept))], ["With", esc((b.otherTherapy || []).map((o) => EP.cc(o.treatment.concept)).join(", "))]]);
+      case "interaction": return kv([["With", esc(name(r, db))], ["Effect", esc(EP.cc(b.effect.concept))], ["Management", esc(EP.cc(b.management[0]))]]);
+      case "warning": return kv([["Warning", esc(b.description)]]);
+      case "undesirable-effect": return kv([["Effect", esc(name(r, db))], ["Frequency", esc(EP.cc(b.frequencyOfOccurrence))], ["Body system", esc(EP.cc(b.classification))]]);
+      case "Group": return kv([["Population", esc(r.name)]]);
+      case "Ingredient": return kv([["Substance", esc(name(r, db))], ["Role", esc(EP.cc(r.role))], ["Amount", esc(strengthTxt(r))]]);
+      case "PackagedProductDefinition": return kv([["Pack", esc(name(r, db))], ["GTIN", `<span class="mono">${esc(r.identifier[0].value)}</span>`], ["Shelf life", esc(EP.qty(r.packaging.packaging[0].shelfLifeStorage[0].periodDuration))]]);
+      case "ManufacturedItemDefinition": return kv(r.property.filter((p) => p.valueCodeableConcept).map((p) => [EP.cc(p.type), esc(EP.cc(p.valueCodeableConcept))]));
+      case "AdministrableProductDefinition": return kv([["Dose form", esc(EP.cc(r.administrableDoseForm))], ["Route", esc(EP.cc(r.routeOfAdministration[0].code))]]);
+      case "MedicinalProductDefinition": return kv([["Product", esc(name(r, db))], ["Supply", esc(EP.cc(r.legalStatusOfSupply))]]);
+      case "RegulatedAuthorization": return kv([["Number", `<span class="mono">${esc(name(r, db))}</span>`], ["Since", esc(r.statusDate)]]);
+      case "Organization": return kv([["Name", esc(r.name)], ["Address", r.contact ? esc([...(r.contact[0].address.line || []), r.contact[0].address.city, r.contact[0].address.country].join(", ")) : ""]]);
+      case "SubstanceDefinition": return kv([["Substance", esc(name(r, db))]]);
+    }
+    return "";
+  }
+  function linkedRail(d) {
+    const db = d.db, links = d.secs.flatMap((x) => EP.textLinks(x.s).map((l) => ({ ...l, x })));
+    const legend = card("Highlighted phrases", `<div class="legend"><span><i style="background:var(--t3s);border-bottom:2px solid var(--t3)"></i>Linked to clinical data</span><span><i style="background:#E6F5F7;border-bottom:2px solid var(--t2)"></i>Linked to product data</span></div><p class="note">Select a phrase to see the data it stands for. The wording is the approved text, unchanged.</p>`);
+    if (!S.sel) return legend + card("Selected phrase", `<p class="note">No phrase selected.</p>`);
+    const l = links.find((y) => y.htmlid === S.sel), r = l && db.get(l.data);
+    if (!r) return legend;
+    const el = document.querySelector(`#doc [data-link="${CSS.escape(S.sel)}"]`), phrase = el ? el.textContent.replace(/\s+/g, " ").trim() : "";
+    const others = links.filter((y) => y.data === l.data && y.htmlid !== l.htmlid);
+    return legend
+      + card(`<span class="pill" style="background:${kindOf(l.data) === "c" ? "var(--t3s);color:var(--t3d)" : "var(--t2s);color:var(--t2d)"}">${esc(kindName(r))}</span> ${esc(name(r, db))}`, friendly(r, db))
+      + card("How this phrase is linked", `<div class="chain"><div><small>Phrase in ${esc(l.x.s.title)}</small><p>“${esc(phrase.length > 90 ? phrase.slice(0, 88) + "…" : phrase)}”</p></div><div class="ar">↓</div><div><small>Linked to</small><p>${esc(chipText(r, db))}</p></div><div class="ar">↓</div><div class="hl"><small>Which holds</small><p>${esc(phrase && friendly(r, db).replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim().slice(0, 140))}</p></div></div>`)
+      + (others.length ? card("Also linked from", `<ul class="ilist">${others.map((o) => `<li><button class="chip ${kindOf(o.data)}" data-jump="${esc(o.htmlid)}" style="align-self:flex-start">${esc(o.x.s.title)}</button></li>`).join("")}</ul>`) : "");
+  }
+
+  // ---------- page ----------
+  function render() {
+    readHash();
+    S.sel = null;
+    document.body.className = "t" + S.t;
+    const d = current();
+    document.title = `${DOCS[S.doc]} · ePI Type ${S.t} · Sakura Bloom 20 mg | FHIR for Global Regulatory Affairs`;
+    const toc = d.comp.section[0].section.map((s) => `<button data-sec="sec-${esc(s.id)}">${esc(s.title)}</button>` + (s.section || []).map((c) => `<button class="sub" data-sec="sec-${esc(c.id)}">${esc(c.title)}</button>`).join("")).join("");
+    const rail = S.t === 2 ? productRail(d) : S.t === 3 ? clinicalRail(d) + `<p class="note" style="padding:4px 4px 0">Product data, from Type 2</p>` + productRail(d) : S.t === 4 ? linkedRail(d) : "";
+    $("#app").innerHTML = `
+      <header class="top"><div class="wrap">
+        <div class="crumbs"><a href="../../index.html">FHIR for Global Regulatory Affairs</a><span>›</span><a href="../../standard-epi.html">ePI</a><span>›</span><a href="../../showcases-epi-types.html">ePI Types 1–4</a><span>›</span><span>Sakura Bloom 20 mg</span>
+          <span class="pill synth">Synthetic data · invented clinical content</span></div>
+        <div class="titlerow"><h1>Sakura Bloom 20 mg film-coated tablets</h1><span class="pill" style="color:#1f6f3a;background:#E3F5E9">Final · v1</span><span class="pill" style="color:#42526E;background:var(--sep)">Prescription only</span></div>
+        <p class="sub">Sakuramil · Sakura Pharmaceuticals Europe B.V. · revised 11/2026</p>
+        <nav class="types" aria-label="ePI type">${[1, 2, 3, 4].map((n) => `<a href="${href({ t: n })}" ${n === S.t ? 'aria-current="page"' : ""} style="${n === S.t ? `border-top-color:var(--t${n})` : ""}"><b style="color:var(--t${n}d)">TYPE ${n}</b><span>${TN[n]}</span></a>`).join("")}</nav>
+      </div></header>
+      <div class="wrap">
+        <div class="docbar"><nav aria-label="Document" style="display:flex;flex-wrap:wrap;gap:6px">${Object.entries(DOCS).map(([k, l]) => `<a href="${href({ doc: k })}" ${k === S.doc ? 'aria-current="page"' : ""}>${l}</a>`).join("")}</nav>
+</div>
+        <div class="layout">
+          <div class="left">
+            <div class="box"><h2>Document</h2>${kv([["Type", esc(DOCS[S.doc])], ["Language", "English"], ["ePI type", `Type ${S.t} · ${TN[S.t]}`], ["Status", "Final · version 1"], ["Date", esc(d.comp.date)]])}<a href="${esc(d.file)}" download style="display:inline-block;margin-top:12px;font-size:12.5px">Download FHIR document</a></div>
+            <nav class="box toc" aria-label="Contents"><span class="lbl">Contents</span>${toc}</nav>
+          </div>
+          <article class="doc ${S.doc}" id="doc" lang="${d.lang}">${docHtml(d)}</article>
+          ${rail ? `<aside class="rail" id="rail" aria-label="${TN[S.t]}">${rail}</aside>` : ""}
+        </div>
+      </div>`;
+    wire(d);
+  }
+  function wire(d) {
+    $$("nav.toc button").forEach((b) => b.onclick = () => { const el = document.getElementById(b.dataset.sec); if (el) el.scrollIntoView({ behavior: "smooth", block: "start" }); });
+    const heads = $$("#doc h2, #doc h3");
+    const spy = () => { let cur = heads[0]; heads.forEach((h) => { if (h.getBoundingClientRect().top < 120) cur = h; }); $$("nav.toc button").forEach((b) => b.toggleAttribute("aria-current", cur && b.dataset.sec === cur.id)); if (cur) { const on = $(`nav.toc button[data-sec="${cur.id}"]`); if (on) on.setAttribute("aria-current", "true"); } };
+    window.onscroll = spy; spy();
+    $$("#doc .chip[data-ref]").forEach((c) => c.onclick = () => {
+      const ref = c.dataset.ref, t = ref.split("/")[0];
+      const FALL = { SubstanceDefinition: "Ingredient", AdministrableProductDefinition: "MedicinalProductDefinition/" + d.db.all("MedicinalProductDefinition")[0].id, Organization: "RegulatedAuthorization" };
+      const el = $(`#rail [data-card="${CSS.escape(ref)}"]`) || $(`#rail [data-card="${CSS.escape(FALL[t] || t)}"]`);
+      if (!el) return;
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+      const box = el.closest(".card") || el; box.classList.add("flash"); setTimeout(() => box.classList.remove("flash"), 1400);
+    });
+    if (S.t === 4) {
+      const select = (id) => { S.sel = id; $$("#doc .lnk.on").forEach((x) => x.classList.remove("on")); const el = $(`#doc [data-link="${CSS.escape(id)}"]`); if (el) el.classList.add("on"); $("#rail").innerHTML = linkedRail(d); $("#rail").scrollTop = 0; wireRail(); };
+      const wireRail = () => $$("#rail [data-jump]").forEach((b) => b.onclick = () => { const el = $(`#doc [data-link="${CSS.escape(b.dataset.jump)}"]`); if (el) el.scrollIntoView({ behavior: "smooth", block: "center" }); select(b.dataset.jump); });
+      $$("#doc [data-link]").forEach((el) => { el.tabIndex = 0; el.setAttribute("role", "button"); el.onclick = () => select(el.dataset.link); el.onkeydown = (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(el.dataset.link); } }; });
+      wireRail();
+    }
+  }
+  window.addEventListener("hashchange", () => { render(); window.scrollTo(0, 0); });
+  render();
+})();
+</script>
+</body>
+</html>

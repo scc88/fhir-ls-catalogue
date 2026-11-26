@@ -1,0 +1,305 @@
+{
+  "resourceType": "Bundle",
+  "id": "epi-t1-pil-en",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/emedicinal-product-info/StructureDefinition/Bundle-uv-epi"
+    ],
+    "security": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ],
+    "tag": [
+      {
+        "system": "http://example.org/fhir-gra/CodeSystem/epi-type",
+        "code": "type-1",
+        "display": "ePI Type 1: Digital label"
+      }
+    ]
+  },
+  "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:uuid:0dc82324-7894-5fa5-bf76-4210b8dab38c"
+  },
+  "type": "document",
+  "timestamp": "2026-11-02T09:00:00Z",
+  "entry": [
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/Composition/comp-pil-en-t1",
+      "resource": {
+        "resourceType": "Composition",
+        "id": "comp-pil-en-t1",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/emedicinal-product-info/StructureDefinition/Composition-uv-epi"
+          ],
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        },
+        "contained": [
+          {
+            "resourceType": "Binary",
+            "id": "tablet-image",
+            "meta": {
+              "profile": [
+                "http://hl7.org/fhir/uv/emedicinal-product-info/StructureDefinition/binary-epi"
+              ]
+            },
+            "contentType": "image/svg+xml",
+            "data": "PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNDAgMTIwIiB3aWR0aD0iMjQwIiBoZWlnaHQ9IjEyMCI+PHRpdGxlPlNha3VyYSBCbG9vbSAyMCBtZyB0YWJsZXQsIGJvdGggZmFjZXM8L3RpdGxlPgo8ZGVmcz48cmFkaWFsR3JhZGllbnQgaWQ9ImciIGN4PSI0MCUiIGN5PSIzNSUiIHI9IjcwJSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZjZjOWM0Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZDk4Zjg4Ii8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+CjxjaXJjbGUgY3g9IjYwIiBjeT0iNjAiIHI9IjQ4IiBmaWxsPSJ1cmwoI2cpIiBzdHJva2U9IiNiODZkNjYiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjYwIiB5PSI3MCIgZm9udC1mYW1pbHk9IkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmIiBmb250LXNpemU9IjMwIiBmb250LXdlaWdodD0iNzAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjYTg1ZDU3Ij5TQjwvdGV4dD4KPGNpcmNsZSBjeD0iMTgwIiBjeT0iNjAiIHI9IjQ4IiBmaWxsPSJ1cmwoI2cpIiBzdHJva2U9IiNiODZkNjYiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjE4MCIgeT0iNzAiIGZvbnQtZmFtaWx5PSJBcmlhbCxIZWx2ZXRpY2Esc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzMCIgZm9udC13ZWlnaHQ9IjcwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2E4NWQ1NyI+MjA8L3RleHQ+PC9zdmc+"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Sakura Bloom 20 mg film-coated tablets - Package leaflet. ePI Type 1 (Digital label). Synthetic example.</p></div>"
+        },
+        "identifier": [
+          {
+            "system": "urn:ietf:rfc:3986",
+            "value": "urn:uuid:091939be-11b8-556a-a973-3461820cfec6"
+          }
+        ],
+        "version": "1",
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "https://spor.ema.europa.eu/rmswi",
+              "code": "100000155538",
+              "display": "Package Leaflet"
+            }
+          ],
+          "text": "Package Leaflet"
+        },
+        "language": "en",
+        "subject": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          }
+        ],
+        "date": "2026-11-02",
+        "author": [
+          {
+            "reference": "Organization/sakura-pharma-eu"
+          }
+        ],
+        "title": "Sakura Bloom 20 mg film-coated tablets - Package leaflet",
+        "section": [
+          {
+            "id": "p-pil-0",
+            "title": "Package leaflet: information for the patient",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir-gra/CodeSystem/pil-section",
+                  "code": "pil-0",
+                  "display": "PACKAGE LEAFLET: INFORMATION FOR THE PATIENT"
+                }
+              ],
+              "text": "PACKAGE LEAFLET: INFORMATION FOR THE PATIENT"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><i>Synthetic example. Sakura Bloom and Sakuramil are fictitious. This text was written for a FHIR ePI demonstration and must not be used for any clinical purpose.</i></p><p><b>Sakura Bloom 20 mg film-coated tablets</b><br/>Sakuramil</p><p>Read all of this leaflet carefully before you start taking this medicine because it contains important information for you.</p><ul><li>Keep this leaflet. You may need to read it again.</li><li>If you have any further questions, ask your doctor or pharmacist.</li><li>This medicine has been prescribed for you only. Do not pass it on to others.</li><li>If you get any side effects, talk to your doctor or pharmacist. See section 4.</li></ul></div>"
+            },
+            "section": [
+              {
+                "id": "p-pil-1",
+                "title": "1. What Sakura Bloom is and what it is used for",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://example.org/fhir-gra/CodeSystem/pil-section",
+                      "code": "pil-1",
+                      "display": "1. What Sakura Bloom is and what it is used for"
+                    }
+                  ],
+                  "text": "1. What Sakura Bloom is and what it is used for"
+                },
+                "text": {
+                  "status": "additional",
+                  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Sakura Bloom contains the active substance Sakuramil. It lowers the amount of LDL-cholesterol, sometimes called bad cholesterol, in your blood.</p><p>Sakura Bloom is used together with a cholesterol-lowering diet in adults whose cholesterol is too high when diet and exercise alone have not been enough.</p></div>"
+                }
+              },
+              {
+                "id": "p-pil-2",
+                "title": "2. What you need to know before you take Sakura Bloom",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://example.org/fhir-gra/CodeSystem/pil-section",
+                      "code": "pil-2",
+                      "display": "2. What you need to know before you take Sakura Bloom"
+                    }
+                  ],
+                  "text": "2. What you need to know before you take Sakura Bloom"
+                },
+                "text": {
+                  "status": "additional",
+                  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Do not take Sakura Bloom</b></p><ul><li>if you are allergic to Sakuramil or any of the other ingredients of this medicine (listed in section 6)</li><li>if you have liver disease</li><li>if you take ketoconazole or itraconazole (for fungal infections) or clarithromycin (for bacterial infections)</li><li>if you are pregnant or breast-feeding</li></ul><p><b>Warnings and precautions</b></p><p>Talk to your doctor or pharmacist before taking Sakura Bloom:</p><ul><li>Your doctor will do a blood test to check your liver before you start and during treatment.</li><li>if you have high blood pressure. Your doctor will check your blood pressure regularly.</li><li>if you have severe kidney problems. You should not take more than 20 mg a day.</li></ul><p><b>Children and adolescents</b></p><p>Do not give this medicine to children and adolescents under 18 years, because it has not been studied in this age group.</p><p><b>Other medicines and Sakura Bloom</b></p><p>Tell your doctor or pharmacist if you are taking, have recently taken or might take any other medicines, in particular:</p><ul><li>diltiazem or verapamil (for high blood pressure or heart problems). You should not take more than 20 mg of Sakura Bloom a day</li><li>rifampicin (for tuberculosis), which can stop Sakura Bloom working well</li><li>warfarin (to prevent blood clots). Your doctor may check your blood more often</li></ul><p><b>Sakura Bloom with food and drink</b></p><p>Do not drink more than 1 litre of grapefruit juice a day.</p><p><b>Pregnancy and breast-feeding</b></p><p>Do not take Sakura Bloom if you are pregnant or breast-feeding. If you could become pregnant, use effective contraception while taking this medicine.</p><p><b>Driving and using machines</b></p><p>Sakura Bloom can make some people feel dizzy. If this happens to you, do not drive or use machines.</p><p><b>Sakura Bloom contains lactose and sodium</b></p><p>If you have been told by your doctor that you have an intolerance to some sugars, contact your doctor before taking this medicine. This medicine contains less than 1 mmol sodium (23 mg) per tablet, that is to say essentially sodium-free.</p></div>"
+                }
+              },
+              {
+                "id": "p-pil-3",
+                "title": "3. How to take Sakura Bloom",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://example.org/fhir-gra/CodeSystem/pil-section",
+                      "code": "pil-3",
+                      "display": "3. How to take Sakura Bloom"
+                    }
+                  ],
+                  "text": "3. How to take Sakura Bloom"
+                },
+                "text": {
+                  "status": "additional",
+                  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Always take this medicine exactly as your doctor or pharmacist has told you. Check with your doctor or pharmacist if you are not sure.</p><p>The recommended dose is one 20 mg tablet once a day. Your doctor may increase it to 40 mg once a day after at least 4 weeks. Do not take more than 40 mg a day.</p><p>Swallow the tablet whole with a glass of water, with or without food, at about the same time each day.</p><p><b>If you take more Sakura Bloom than you should</b></p><p>Contact your doctor or the nearest hospital emergency department.</p><p><b>If you forget to take Sakura Bloom</b></p><p>Take the next dose at the usual time. Do not take a double dose to make up for a forgotten tablet.</p><p><b>If you stop taking Sakura Bloom</b></p><p>Talk to your doctor first, because your cholesterol may rise again.</p></div>"
+                }
+              },
+              {
+                "id": "p-pil-4",
+                "title": "4. Possible side effects",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://example.org/fhir-gra/CodeSystem/pil-section",
+                      "code": "pil-4",
+                      "display": "4. Possible side effects"
+                    }
+                  ],
+                  "text": "4. Possible side effects"
+                },
+                "text": {
+                  "status": "additional",
+                  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Like all medicines, this medicine can cause side effects, although not everybody gets them.</p><p><b>Stop taking Sakura Bloom and see a doctor straight away if you get</b> swelling of the face, lips, tongue or throat.</p><div id=\"gen-pil-se\"><p><b>Common (may affect up to 1 in 10 people)</b></p><ul><li>headache</li><li>feeling sick (nausea)</li><li>muscle pain</li></ul><p><b>Uncommon (may affect up to 1 in 100 people)</b></p><ul><li>dizziness</li><li>high blood pressure</li><li>raised liver enzymes in blood tests</li></ul><p><b>Rare (may affect up to 1 in 1,000 people)</b></p><ul><li>swelling of the face, lips, tongue or throat (angioedema)</li><li>skin rash</li></ul></div><p><b>Reporting of side effects</b></p><p>If you get any side effects, talk to your doctor or pharmacist. You can also report side effects directly via the national reporting system.</p></div>"
+                }
+              },
+              {
+                "id": "p-pil-5",
+                "title": "5. How to store Sakura Bloom",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://example.org/fhir-gra/CodeSystem/pil-section",
+                      "code": "pil-5",
+                      "display": "5. How to store Sakura Bloom"
+                    }
+                  ],
+                  "text": "5. How to store Sakura Bloom"
+                },
+                "text": {
+                  "status": "additional",
+                  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Keep this medicine out of the sight and reach of children.</p><p>Do not use this medicine after the expiry date which is stated on the carton and the blister or bottle after EXP.</p><p>This medicine does not require any special storage conditions.</p><p>Do not throw away any medicines via wastewater or household waste. Ask your pharmacist how to throw away medicines you no longer use.</p></div>"
+                }
+              },
+              {
+                "id": "p-pil-6",
+                "title": "6. Contents of the pack and other information",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://example.org/fhir-gra/CodeSystem/pil-section",
+                      "code": "pil-6",
+                      "display": "6. Contents of the pack and other information"
+                    }
+                  ],
+                  "text": "6. Contents of the pack and other information"
+                },
+                "text": {
+                  "status": "additional",
+                  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>What Sakura Bloom contains</b></p><ul><li>The active substance is Sakuramil. Each film-coated tablet contains 20 mg Sakuramil.</li><li>The other ingredients are: tablet core: lactose monohydrate, microcrystalline cellulose, croscarmellose sodium, hydroxypropyl cellulose, magnesium stearate; film-coating: hypromellose, macrogol 6000, titanium dioxide (E171), iron oxide red (E172).</li></ul><p><b>What Sakura Bloom looks like and contents of the pack</b></p><p>Sakura Bloom tablets are pale red, round film-coated tablets marked SB on one side and 20 on the other.</p><p><img src=\"#tablet-image\" alt=\"Pale red round film-coated tablet debossed SB and 20\"/></p><p>They come in cartons of 28 tablets in blisters and bottles of 30 tablets. Not all pack sizes may be marketed.</p><p><b>Marketing Authorisation Holder</b></p><p>Sakura Pharmaceuticals Europe B.V., Bloesemlaan 1, 1000 AA Amsterdam, Netherlands</p><p><b>Manufacturer</b></p><p>Aparna Pharmaceutical Manufacturing Pte. Ltd., 10 Green Road, Gulshan, Bangladesh</p><p>This leaflet was last revised in 11/2026.</p></div>"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/MedicinalProductDefinition/sakura-bloom-20mg",
+      "resource": {
+        "resourceType": "MedicinalProductDefinition",
+        "id": "sakura-bloom-20mg",
+        "identifier": [
+          {
+            "system": "http://example.org/sakura-bloom-r2/fhir/product-id",
+            "value": "SB-20MG-FCT"
+          }
+        ],
+        "name": [
+          {
+            "productName": "Sakura Bloom 20 mg film-coated tablets"
+          }
+        ],
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/Organization/sakura-pharma-eu",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "sakura-pharma-eu",
+        "identifier": [
+          {
+            "system": "http://example.org/fhir-gra/organization-id",
+            "value": "SAKURA-EU-0001"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/emedicinal-product-info/CodeSystem/epi-ig",
+                "code": "marketing-authorization-holder",
+                "display": "Marketing authorization holder"
+              }
+            ],
+            "text": "Marketing authorization holder"
+          }
+        ],
+        "name": "Sakura Pharmaceuticals Europe B.V.",
+        "contact": [
+          {
+            "address": {
+              "use": "work",
+              "type": "physical",
+              "line": [
+                "Bloesemlaan 1"
+              ],
+              "city": "Amsterdam",
+              "postalCode": "1000 AA",
+              "country": "NL"
+            }
+          }
+        ],
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

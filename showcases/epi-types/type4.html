@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ePI Type 4 · Dynamic digital label | FHIR for Global Regulatory Affairs</title>
+<meta name="description" content="ePI Type 4 showcases: narrative phrases linked to the resources that carry their meaning, a personalised leaflet, and one data change flowing into every document. Synthetic data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../pqi-types/pqi-types.css">
+<link rel="stylesheet" href="epi-types.css">
+<style>
+  .reader { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 16px; align-items: start; }
+  .entries li button { font-size: 13px; align-items: flex-start; }
+  .foryou { display: flex; flex-wrap: wrap; gap: 6px; }
+  .narr tr.ins td, .narr li.ins { background: #d3f5dd; }
+  .narr li.ins { border-radius: 6px; }
+  @container (max-width: 1150px) { .reader { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<noscript>This showcase needs JavaScript.</noscript>
+<script src="data/epi-data.js"></script>
+<script src="epi-types.js"></script>
+<script>
+(function () {
+  const esc = EP.esc, docs = EP.load(4);
+  const doc = (k) => docs.find((d) => d.key === k) || docs[0];
+  const db = docs[0].db;
+  const linksOf = (d) => d.secs.flatMap((x) => EP.textLinks(x.s).map((l) => ({ ...l, x, d })));
+
+  // ====================== 1. Linked reading ======================
+  function read(main, param) {
+    const [key, code] = (param || "").split("/");
+    const d = doc(key || "smpc-en");
+    const tops = d.secs.filter((x) => x.depth <= 1 || (x.parent && x.parent.depth === 0 && !x.s.section));
+    const leafOrTop = d.secs.filter((x) => x.depth >= 1);
+    const cur = d.secs.find((x) => x.code === code) || d.secs.find((x) => x.code === (d.kind === "smpc" ? "200000029805" : "pil-2"));
+    const sub = EP.walk([cur.s]);
+    const links = sub.flatMap((x) => EP.textLinks(x.s).map((l) => ({ ...l, x })));
+    const all = linksOf(d);
+    main.innerHTML = EP.head("Showcase 1 · Linked reading", "Narrative phrases linked to resources with textLink",
+      `In Type 4 each phrase that states something the data also holds is wrapped in a <span class="mono">&lt;span id&gt;</span>, and the section's narrative carries a <span class="mono">textLink</span> extension from that id to the resource. The text reads exactly as approved; the highlighted phrases are links into the product and clinical resources.`,
+      "Readers, reviewers and software move <b>between the approved wording and the structured data in one click</b>, and know exactly which words a resource stands for.") +
+      `      <div style="margin-bottom:14px">${EP.docSwitch(docs, d.key)}</div>
+      <div class="split">
+        <div class="card flat sticky" style="max-height:calc(100vh - 140px);display:flex;flex-direction:column"><div class="tree scroll" style="padding:6px">
+          ${leafOrTop.map((x) => { const n = EP.walk([x.s]).reduce((a, y) => a + EP.textLinks(y.s).length, 0); return `<button style="padding-left:${10 + (x.depth - 1) * 14}px" data-code="${esc(x.code)}" ${x === cur ? 'aria-current="true"' : ""}><span class="ttl">${esc(x.s.title)}</span>${n ? `<span class="badge">${n}</span>` : ""}</button>`; }).join("")}</div></div>
+        <div class="reader">
+          <div class="card"><div class="narr-head"><span class="code">${esc(cur.code)}</span><h3>${esc(cur.s.title)}</h3><span class="muted small">${esc(d.name)}</span></div>
+            <div class="narr" id="narr">${EP.sectionHtml(cur.s, d, { links: EP.linkMap(db) })}</div></div>
+          <div class="card flat sticky" style="max-height:calc(100vh - 140px);overflow:auto"><div style="padding:14px 16px 6px"><h3 style="margin:0">textLinks</h3><p class="sub" style="margin:4px 0 0">htmlid → resource, for this section.</p></div>
+            <ul class="list entries" style="padding:0 6px 10px">${links.map((l, i) => { const t = l.data.split("/")[0]; return `<li><button data-i="${i}" data-hid="${esc(l.htmlid)}"><span class="chip rt" style="background:${EP.col(t)}22;color:${EP.col(t)};flex:none">${esc(t.replace(/Definition$/, "Def."))}</span><span class="small">${esc(EP.label(db.get(l.data)))}</span></button></li>`; }).join("") || `<li class="empty">No links in this section.</li>`}</ul></div>
+        </div>
+      </div>`;
+    EP.$$("[data-doc]", main).forEach((b) => b.onclick = () => { location.hash = "read/" + b.dataset.doc; });
+    EP.$$(".tree button", main).forEach((b) => b.onclick = () => { location.hash = `read/${d.key}/${b.dataset.code}`; });
+    const open = (l) => {
+      const el = EP.$(`#narr [data-htmlid="${CSS.escape(l.htmlid)}"]`, main);
+      EP.inspectResource(l.data, db, `<div><h4>Linked from</h4><blockquote class="callout" style="margin:0">${esc((el ? el.textContent : "").replace(/\s+/g, " ").trim())}</blockquote><div class="path" style="margin-top:6px">section ${esc(l.x.s.id)} · text.extension[textLink] · htmlid = ${esc(l.htmlid)} · data = ${esc(l.data)}</div></div>`);
+    };
+    EP.$$("#narr [data-link]", main).forEach((el) => {
+      const l = links.find((x) => x.htmlid === el.dataset.link);
+      el.onclick = () => open(l);
+      el.onmouseenter = () => { const b = EP.$(`.entries [data-hid="${CSS.escape(el.dataset.link)}"]`, main); if (b) b.setAttribute("aria-current", "true"); };
+      el.onmouseleave = () => EP.$$(".entries [aria-current]", main).forEach((b) => b.removeAttribute("aria-current"));
+    });
+    EP.$$(".entries button", main).forEach((b) => {
+      const l = links[+b.dataset.i];
+      b.onclick = () => { open(l); const el = EP.$(`#narr [data-link="${CSS.escape(l.htmlid)}"]`, main); if (el) el.scrollIntoView({ block: "center", behavior: "smooth" }); };
+      b.onmouseenter = () => { const el = EP.$(`#narr [data-link="${CSS.escape(l.htmlid)}"]`, main); if (el) el.classList.add("hl"); };
+      b.onmouseleave = () => EP.$$("#narr .hl", main).forEach((x) => x.classList.remove("hl"));
+    });
+  }
+
+  // ====================== 2. Personalised leaflet ======================
+  let persona = "tomas", P = JSON.parse(JSON.stringify(EP.PERSONAS[1])), fold = true;
+  function lens(main) {
+    const d = doc("pil-en");
+    const res = EP.evaluate(EP.patient(P), db);
+    const hit = new Map();
+    res.forEach((x) => { const lvl = x.level; [`ClinicalUseDefinition/${x.r.id}`, ...(String(x.via).startsWith("Group/") ? [x.via] : [])].forEach((k) => { if (hit.get(k) !== "stop") hit.set(k, lvl); }); });
+    const links = linksOf(d), lit = links.filter((l) => hit.has(l.data));
+    const relevant = new Set(lit.map((l) => l.x.s.id));
+    const linkFn = (s) => { const m = {}; EP.textLinks(s).forEach((l) => { if (hit.has(l.data)) m[l.htmlid] = { title: l.data, cls: hit.get(l.data) === "stop" ? "lens" : "lens-c" }; }); return m; };
+    const root = d.comp.section[0];
+    const body = EP.narrative(root.text.div, { images: d.images }) + root.section.map((s) => EP.sectionHtml(s, d, { links: linkFn, showTitle: true, secClass: (x) => (fold && res.length && !EP.walk([x]).some((y) => relevant.has(y.s.id)) ? "folded dim" : "") })).join("");
+    main.innerHTML = EP.head("Showcase 2 · Personalised leaflet", "Package leaflet filtered for a patient profile",
+      `A patient app holds a small health profile. It runs the Type 3 rules against it, then uses the Type 4 <span class="mono">textLink</span>s to find the exact phrases of the approved leaflet that matter for this person, highlights them, and folds the sections with nothing for them. No wording is changed or generated: the leaflet stays the regulator-approved text.`,
+      "Patients see <b>what applies to them first</b>, without losing access to the full approved leaflet.") +
+      `<div class="grid g3" style="margin-bottom:16px">${EP.PERSONAS.map((x) => `<button class="persona" data-p="${x.id}" aria-pressed="${x.id === persona}"><b>${esc(x.name)}</b><span>${esc(x.note)}</span></button>`).join("")}</div>
+      <div class="toolbar">
+        <label class="toggle" style="padding:4px 8px"><input type="checkbox" id="fold" ${fold ? "checked" : ""}><span>Fold sections with nothing for this patient</span></label>
+        <span class="chip">${lit.length} of ${links.length} linked phrases apply</span></div>
+      <div class="grid" style="grid-template-columns:minmax(0,1fr) 320px;align-items:start">
+        <div class="card"><div class="narr" id="narr">${body}</div></div>
+        <div class="card sticky"><h3>For ${esc(P.name || "this patient")}</h3>
+          ${res.length ? res.map((x) => `<div class="alert ${x.level}"><span class="ic">${x.level === "stop" ? "✕" : "!"}</span><div><b>${esc(x.r.type === "indication" ? "Not for this age group" : EP.label(x.r))}</b><p>${esc(x.why)}</p><button class="chip" data-jump="${esc(x.r.id)}">Show in leaflet</button></div></div>`).join("")
+            : `<div class="alert ok"><span class="ic">✓</span><div><b>Nothing specific</b><p>No contraindication, warning or interaction applies. Every section is shown.</p></div></div>`}
+          <details style="margin-top:10px"><summary class="small muted" style="cursor:pointer">Edit the profile</summary><div style="margin-top:8px">${EP.patientForm(P)}</div></details></div>
+      </div>`;
+    EP.$$("[data-p]", main).forEach((b) => b.onclick = () => { persona = b.dataset.p; P = JSON.parse(JSON.stringify(EP.PERSONAS.find((x) => x.id === persona))); lens(main); });
+    EP.$("#fold", main).onchange = (e) => { fold = e.target.checked; lens(main); };
+    EP.$$(".pform input", main).forEach((i) => i.onchange = () => { const name = P.name; P = EP.readForm(main); P.name = name; persona = ""; lens(main); });
+    EP.$$("[data-jump]", main).forEach((b) => b.onclick = () => { const l = lit.find((y) => y.data === "ClinicalUseDefinition/" + b.dataset.jump) || lit.find((y) => y.data.startsWith("Group/")); const el = l && EP.$(`#narr [data-link="${CSS.escape(l.htmlid)}"]`, main); if (el) { el.scrollIntoView({ block: "center", behavior: "smooth" }); el.classList.add("hl"); setTimeout(() => el.classList.remove("hl"), 1400); } });
+    EP.$$("#narr [data-link]", main).forEach((el) => el.onclick = () => { const l = links.find((y) => y.htmlid === el.dataset.link); if (l) EP.inspectResource(l.data, db); });
+  }
+
+  // ====================== 3. One change, every document ======================
+  const CHANGES = [
+    { id: "add", label: "New undesirable effect: insomnia, uncommon", note: "A signal is confirmed and insomnia is added to the safety data.",
+      apply: (list) => [...list, JSON.parse(JSON.stringify(EPIDATA.candidate))] },
+    { id: "freq", label: "Dizziness reclassified from uncommon to common", note: "Pooled data show dizziness is more frequent than first reported.",
+      apply: (list) => list.map((r) => { if (r.id !== "ue-dizziness") return r; const c = JSON.parse(JSON.stringify(r)); c.undesirableEffect.frequencyOfOccurrence = { coding: [{ system: "http://example.org/fhir-gra/CodeSystem/frequency", code: "common", display: "Common" }], text: "Common" }; return c; }) },
+    { id: "del", label: "Myalgia removed after a safety review", note: "The causal link is not confirmed and myalgia is removed.", apply: (list) => list.filter((r) => r.id !== "ue-myalgia") },
+  ];
+  let change = "add";
+  function changeView(main) {
+    const ch = CHANGES.find((c) => c.id === change);
+    const before = db.all("ClinicalUseDefinition"), after = ch.apply(before);
+    const ib = EP.ueItems(before), ia = EP.ueItems(after);
+    const changed = after.filter((r) => !before.includes(r)).concat(before.filter((r) => !after.some((x) => x.id === r.id)));
+    const blocks = docs.filter((d) => d.kind !== "ifu").map((d) => {
+      const isS = d.kind === "smpc", gid = isS ? "gen-ue-table" : "gen-pil-se";
+      const stored = new DOMParser().parseFromString(d.secs.find((x) => x.code === (isS ? "200000029816" : "pil-4")).s.text.div, "text/html").getElementById(gid);
+      const render = (items) => EP.expand(isS ? EP.ueTable(items) : EP.pilSideEffects(items, d.lang), "chg");
+      const b = render(ib), a = render(ia);
+      const same = stored.textContent.replace(/\s+/g, " ") === new DOMParser().parseFromString(b.html, "text/html").body.textContent.replace(/\s+/g, " ");
+      const sel = isS ? "tr" : "li";
+      const keyOf = (x) => (isS ? [...x.children].map((c) => c.textContent).join(" · ") : x.closest("ul").previousElementSibling.textContent.split(" (")[0] + ": " + x.textContent);
+      const oldSet = new Set([...new DOMParser().parseFromString(b.html, "text/html").querySelectorAll(sel)].map(keyOf));
+      const newDoc = new DOMParser().parseFromString(`<body>${a.html}</body>`, "text/html");
+      const newSet = new Set([...newDoc.querySelectorAll(sel)].map(keyOf));
+      newDoc.querySelectorAll(sel).forEach((x) => { if (!oldSet.has(keyOf(x))) x.classList.add("ins"); });
+      const removed = [...oldSet].filter((t) => !newSet.has(t));
+      return { d, same, html: newDoc.body.innerHTML, removed, dl: a.links.length - b.links.length };
+    });
+    main.innerHTML = EP.head("Showcase 3 · Side-effect update across documents", "Regenerating the side-effect lists after a data change",
+      `In this Type 4 example the SmPC 4.8 table and the leaflet's side-effect lists are generated from the undesirable-effect resources, with each term linked back by <span class="mono">textLink</span>. Make a safety change to the data: the SmPC and the leaflet regenerate together, and each new phrase is linked to its resource. Authored text around the lists is untouched.`,
+      "A safety update is <b>made once, in the data, and reaches every document consistently</b>, ready for review as a new version of each ePI.") +
+      `<div class="grid g3" style="margin-bottom:16px">${CHANGES.map((c) => `<button class="persona" data-c="${c.id}" aria-pressed="${c.id === change}"><b>${esc(c.label)}</b><span>${esc(c.note)}</span></button>`).join("")}</div>
+      <div class="grid g2" style="margin-bottom:16px;align-items:start">
+        <div class="card"><h3>The data change</h3><p class="sub">${changed.length} ClinicalUseDefinition ${change === "del" ? "removed" : change === "add" ? "added" : "updated"}.</p>${changed.map((r) => `<pre class="json" style="max-height:240px">${EP.json(r.undesirableEffect ? { resourceType: r.resourceType, id: r.id, type: r.type, undesirableEffect: r.undesirableEffect } : r)}</pre>`).join("")}</div>
+        <div class="card"><h3>What each document gets</h3>
+          <table class="t"><tr><th>Document</th><th>Generator matches stored text</th><th>textLinks</th><th>New version</th></tr>
+          ${blocks.map((b) => `<tr><td>${esc(b.d.name)}</td><td>${b.same ? '<span class="status ok">yes</span>' : '<span class="status bad">no</span>'}</td><td>${b.dl > 0 ? "+" : ""}${b.dl}</td><td class="mono small">Composition.version 1 → 2</td></tr>`).join("")}</table>
+          <p class="small muted" style="margin:10px 0 0">The second column re-renders the current data with the same code that built the published documents and compares it with the stored narrative, so the regenerated text is known to start from the approved one. Each new version would carry <span class="mono">relatesTo</span> = replaces version 1 and go through review before publication.</p></div>
+      </div>
+      <div class="grid g3" style="align-items:start">${blocks.map((b) => `<div class="card"><div class="chips" style="margin-bottom:8px"><span class="chip acc">${esc(b.d.name)}</span><span class="chip rt">${b.d.kind === "smpc" ? "4.8" : "section 4"}</span></div>
+          <div class="narr diff">${EP.narrative(b.html)}</div>${b.removed.length ? `<p class="small" style="margin:8px 0 0">Removed: ${b.removed.map((t) => `<del>${esc(t)}</del>`).join(" ")}</p>` : ""}</div>`).join("")}</div>`;
+    EP.$$("[data-c]", main).forEach((b) => b.onclick = () => { change = b.dataset.c; changeView(main); });
+    EP.$$("pre.json [data-ref]", main).forEach((a) => a.onclick = (e) => { e.preventDefault(); EP.inspectResource(a.dataset.ref, db); });
+  }
+
+  // ====================== 4. Link integrity ======================
+  function integrity(main) {
+    const per = docs.map((d) => {
+      const keys = new Set(d.bundle.entry.map((e) => e.resource.resourceType + "/" + e.resource.id));
+      const ls = linksOf(d), bad = { anchor: [], resolve: [], entry: [], orphan: [], uncovered: [] };
+      for (const x of d.secs) {
+        const ids = new Set([...new DOMParser().parseFromString(x.s.text.div, "text/html").querySelectorAll("span[id]")].map((e) => e.id));
+        const tl = EP.textLinks(x.s), ent = new Set((x.s.entry || []).map((e) => e.reference));
+        tl.forEach((l) => { if (!ids.has(l.htmlid)) bad.anchor.push(`${x.s.title}: #${l.htmlid}`); if (!keys.has(l.data)) bad.resolve.push(l.data); if (!ent.has(l.data)) bad.entry.push(`${x.s.title}: ${l.data}`); });
+        ids.forEach((id) => { if (!tl.some((l) => l.htmlid === id)) bad.orphan.push(`${x.s.title}: #${id}`); });
+        ent.forEach((r) => { if (!tl.some((l) => l.data === r)) bad.uncovered.push(`${x.s.title}: ${r}`); });
+      }
+      const multi = d.secs.filter((x) => EP.textLinks(x.s).length > 1).length;
+      return { d, ls, bad, multi };
+    });
+    const checks = [
+      ["Every textLink anchor exists", "textLink.htmlid matches a <span id> in the same section's narrative.", "anchor"],
+      ["Every textLink resolves", "textLink.data names a resource carried in the same document Bundle.", "resolve"],
+      ["Every linked resource is a section entry", "The target is also in section.entry, as the IG's Type 4 steps require.", "entry"],
+      ["No orphan anchors", "Every <span id> in the narrative is used by a textLink.", "orphan"],
+      ["Every section entry is anchored in the text", "Each resource in section.entry has at least one phrase linked to it.", "uncovered"],
+    ];
+    const byType = {}; per.forEach((p) => p.ls.forEach((l) => { const t = l.data.split("/")[0]; byType[t] = (byType[t] || 0) + 1; }));
+    const total = per.reduce((a, p) => a + p.ls.length, 0), types = Object.entries(byType).sort((a, b) => b[1] - a[1]);
+    main.innerHTML = EP.head("Showcase 4 · Link integrity", "textLink integrity checks",
+      `A dynamic label is only as good as its links. These checks run in the browser over the Type 4 documents: anchors exist, targets resolve inside the Bundle, every target is also a section entry, and no anchor or entry is left unlinked.`,
+      "Publishers and regulators can <b>accept a Type 4 ePI knowing every highlighted phrase lands on the right data</b>.") +
+      `      <div class="grid g2" style="align-items:start">
+        <div class="card"><h3>Checks across the documents</h3>${checks.map(([n, desc, k]) => { const bad = per.flatMap((p) => p.bad[k].map((b) => `${p.d.key}: ${b}`)); return `<div class="check"><span class="ic ${bad.length ? "fail" : "pass"}">${bad.length ? "✕" : "✓"}</span><div><b>${esc(n)}</b><p>${esc(desc)}</p>${bad.length ? `<details><summary>${bad.length} issues</summary>${bad.slice(0, 20).map(esc).join("<br>")}</details>` : ""}</div></div>`; }).join("")}
+          <div class="check"><span class="ic warn">!</span><div><b>Several textLinks on one narrative</b> <span class="rule">FHIR-59812</span><p>${per.reduce((a, p) => a + p.multi, 0)} sections carry more than one textLink. The ePI IG allows this, but the core extension allows one per element, so validators report an error until change request FHIR-59812 is resolved.</p></div></div></div>
+        <div class="card"><h3>What the text links to</h3><p class="sub">textLinks by resource type, all documents.</p>
+          <div class="stack" style="margin-bottom:10px">${types.map(([t, n]) => `<i style="width:${(100 * n) / total}%;background:${EP.col(t)}" title="${t}: ${n}"></i>`).join("")}</div>
+          <div class="legend" style="margin-bottom:16px">${types.map(([t, n]) => `<span style="--c:${EP.col(t)}">${esc(t)} ${n}</span>`).join("")}</div>
+          <table class="t"><tr><th>Document</th><th class="num">Links</th><th class="num">Sections with links</th><th class="num">Resources</th></tr>
+          ${per.map((p) => `<tr class="click" data-doc="${p.d.key}"><td>${esc(p.d.name)}</td><td class="num">${p.ls.length}</td><td class="num">${new Set(p.ls.map((l) => l.x.s.id)).size}/${p.d.secs.length}</td><td class="num">${new Set(p.ls.map((l) => l.data)).size}</td></tr>`).join("")}</table></div>
+      </div>`;
+    EP.$$("tr[data-doc]", main).forEach((tr) => tr.onclick = () => { location.hash = "read/" + tr.dataset.doc; });
+  }
+
+  EP.shell({
+    type: 4,
+    foot: "textLink on <span class='mono'>section.text</span>, one per linked phrase. Clinical content invented for this showcase.",
+    views: [
+      { id: "read", title: "Linked reading", sub: "Phrases linked to resources", render: read },
+      { id: "lens", title: "Personalised leaflet", sub: "Leaflet filtered for a patient", render: lens },
+      { id: "change", title: "Side-effect update across documents", sub: "SmPC and leaflets regenerated", render: changeView },
+      { id: "links", title: "Link integrity", sub: "textLink checks", render: integrity },
+    ],
+  });
+})();
+</script>
+</body>
+</html>

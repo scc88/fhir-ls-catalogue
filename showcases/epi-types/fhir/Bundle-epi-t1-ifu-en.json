@@ -1,0 +1,389 @@
+{
+  "resourceType": "Bundle",
+  "id": "epi-t1-ifu-en",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/emedicinal-product-info/StructureDefinition/Bundle-uv-epi"
+    ],
+    "security": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ],
+    "tag": [
+      {
+        "system": "http://example.org/fhir-gra/CodeSystem/epi-type",
+        "code": "type-1",
+        "display": "ePI Type 1: Digital label"
+      }
+    ]
+  },
+  "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:uuid:08e986be-2507-5fba-b1db-fcd8a3fade7e"
+  },
+  "type": "document",
+  "timestamp": "2026-11-02T09:00:00Z",
+  "entry": [
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/Composition/comp-ifu-en-t1",
+      "resource": {
+        "resourceType": "Composition",
+        "id": "comp-ifu-en-t1",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/emedicinal-product-info/StructureDefinition/Composition-uv-epi"
+          ],
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        },
+        "contained": [
+          {
+            "resourceType": "Binary",
+            "id": "tablet-image",
+            "meta": {
+              "profile": [
+                "http://hl7.org/fhir/uv/emedicinal-product-info/StructureDefinition/binary-epi"
+              ]
+            },
+            "contentType": "image/svg+xml",
+            "data": "PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNDAgMTIwIiB3aWR0aD0iMjQwIiBoZWlnaHQ9IjEyMCI+PHRpdGxlPlNha3VyYSBCbG9vbSAyMCBtZyB0YWJsZXQsIGJvdGggZmFjZXM8L3RpdGxlPgo8ZGVmcz48cmFkaWFsR3JhZGllbnQgaWQ9ImciIGN4PSI0MCUiIGN5PSIzNSUiIHI9IjcwJSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZjZjOWM0Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZDk4Zjg4Ii8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+CjxjaXJjbGUgY3g9IjYwIiBjeT0iNjAiIHI9IjQ4IiBmaWxsPSJ1cmwoI2cpIiBzdHJva2U9IiNiODZkNjYiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjYwIiB5PSI3MCIgZm9udC1mYW1pbHk9IkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmIiBmb250LXNpemU9IjMwIiBmb250LXdlaWdodD0iNzAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjYTg1ZDU3Ij5TQjwvdGV4dD4KPGNpcmNsZSBjeD0iMTgwIiBjeT0iNjAiIHI9IjQ4IiBmaWxsPSJ1cmwoI2cpIiBzdHJva2U9IiNiODZkNjYiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjE4MCIgeT0iNzAiIGZvbnQtZmFtaWx5PSJBcmlhbCxIZWx2ZXRpY2Esc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzMCIgZm9udC13ZWlnaHQ9IjcwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2E4NWQ1NyI+MjA8L3RleHQ+PC9zdmc+"
+          },
+          {
+            "resourceType": "Binary",
+            "id": "picto-1",
+            "meta": {
+              "profile": [
+                "http://hl7.org/fhir/uv/emedicinal-product-info/StructureDefinition/binary-epi"
+              ]
+            },
+            "contentType": "image/svg+xml",
+            "data": "PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTEwIiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjExMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMTcyQjREIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHJlY3QgeD0iNDUiIHk9IjIwIiB3aWR0aD0iMzAiIGhlaWdodD0iMTIiIHJ4PSIzIi8+PHBhdGggZD0iTTQwIDM4YzAtMyAzLTYgNi02aDI4YzMgMCA2IDMgNiA2djU2YTMgMyAwIDAgMS0zIDNINDNhMyAzIDAgMCAxLTMtM3oiLz48cGF0aCBkPSJNNDAgNTJoNDBNNDAgODJoNDAiLz48Y2lyY2xlIGN4PSI2MCIgY3k9IjY3IiByPSI3IiBzdHJva2U9IiMwMDcxZTMiLz48cGF0aCBkPSJNNTcgNjdsMiAyIDQtNCIgc3Ryb2tlPSIjMDA3MWUzIi8+PC9zdmc+"
+          },
+          {
+            "resourceType": "Binary",
+            "id": "picto-2",
+            "meta": {
+              "profile": [
+                "http://hl7.org/fhir/uv/emedicinal-product-info/StructureDefinition/binary-epi"
+              ]
+            },
+            "contentType": "image/svg+xml",
+            "data": "PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTEwIiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjExMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMTcyQjREIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHJlY3QgeD0iNDAiIHk9IjQ2IiB3aWR0aD0iNDAiIGhlaWdodD0iMTYiIHJ4PSI0Ii8+PHBhdGggZD0iTTQyIDY2aDM2djM0SDQyeiIvPjxwYXRoIGQ9Ik02MCAxNHYyNE01MiAzMGw4IDggOC04IiBzdHJva2U9IiMwMDcxZTMiLz48cGF0aCBkPSJNODYgNDBhMjYgMjYgMCAwIDEgMCAyOE05MyA2NGwtNyA0LTEtOCIgc3Ryb2tlPSIjMDA3MWUzIi8+PC9zdmc+"
+          },
+          {
+            "resourceType": "Binary",
+            "id": "picto-3",
+            "meta": {
+              "profile": [
+                "http://hl7.org/fhir/uv/emedicinal-product-info/StructureDefinition/binary-epi"
+              ]
+            },
+            "contentType": "image/svg+xml",
+            "data": "PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTEwIiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjExMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMTcyQjREIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTM4IDUyaDQ0djQ4SDM4eiIvPjxlbGxpcHNlIGN4PSI2MCIgY3k9IjUyIiByeD0iMjIiIHJ5PSI2Ii8+PHBhdGggZD0iTTU4IDUwYzYtMTQgMTYtMjIgMzAtMjZsNCA4Yy0xMiA0LTIwIDEwLTI0IDIwIiBmaWxsPSIjRUFGM0ZFIiBzdHJva2U9IiMwMDcxZTMiLz48L3N2Zz4="
+          },
+          {
+            "resourceType": "Binary",
+            "id": "picto-4",
+            "meta": {
+              "profile": [
+                "http://hl7.org/fhir/uv/emedicinal-product-info/StructureDefinition/binary-epi"
+              ]
+            },
+            "contentType": "image/svg+xml",
+            "data": "PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTEwIiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjExMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMTcyQjREIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTI0IDY2YzAgMTggMTYgMzAgMzYgMzBzMzYtMTIgMzYtMzAiLz48Y2lyY2xlIGN4PSI2MCIgY3k9IjYyIiByPSIxMSIgZmlsbD0iI0U4QTlBMiIgc3Ryb2tlPSIjQzQ3ODZGIi8+PHBhdGggZD0iTTYwIDE2djI2TTUyIDM0bDggOCA4LTgiIHN0cm9rZT0iIzAwNzFlMyIvPjwvc3ZnPg=="
+          },
+          {
+            "resourceType": "Binary",
+            "id": "picto-5",
+            "meta": {
+              "profile": [
+                "http://hl7.org/fhir/uv/emedicinal-product-info/StructureDefinition/binary-epi"
+              ]
+            },
+            "contentType": "image/svg+xml",
+            "data": "PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTEwIiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjExMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMTcyQjREIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTcwIDMwaDI0bC0zIDY2SDczeiIvPjxwYXRoIGQ9Ik03MSA1MGgyMiIgc3Ryb2tlPSIjMDA3MWUzIi8+PGNpcmNsZSBjeD0iNDAiIGN5PSI0NCIgcj0iMTgiLz48cGF0aCBkPSJNMzIgNTJjNCA0IDEyIDQgMTYgMCIvPjxwYXRoIGQ9Ik01NCA3MGwxMi0xMiIgc3Ryb2tlPSIjMDA3MWUzIi8+PC9zdmc+"
+          },
+          {
+            "resourceType": "Binary",
+            "id": "picto-6",
+            "meta": {
+              "profile": [
+                "http://hl7.org/fhir/uv/emedicinal-product-info/StructureDefinition/binary-epi"
+              ]
+            },
+            "contentType": "image/svg+xml",
+            "data": "PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTEwIiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjExMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMTcyQjREIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHJlY3QgeD0iNDAiIHk9IjM4IiB3aWR0aD0iNDAiIGhlaWdodD0iMTYiIHJ4PSI0Ii8+PHBhdGggZD0iTTQyIDU4aDM2djQwSDQyeiIvPjxwYXRoIGQ9Ik0zNCAzMGEyNiAyNiAwIDAgMCAwIDI4TTI3IDU0bDcgNCAxLTgiIHN0cm9rZT0iIzAwNzFlMyIvPjwvc3ZnPg=="
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Sakura Bloom 20 mg film-coated tablets - Instructions for use. ePI Type 1 (Digital label). Synthetic example.</p></div>"
+        },
+        "identifier": [
+          {
+            "system": "urn:ietf:rfc:3986",
+            "value": "urn:uuid:96d5c109-8330-5687-af2c-6760a0a5f48d"
+          }
+        ],
+        "version": "1",
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/uv/emedicinal-product-info/CodeSystem/epi-document-type-example",
+              "code": "instructions-for-use",
+              "display": "Instructions for use"
+            }
+          ],
+          "text": "Instructions for use"
+        },
+        "language": "en",
+        "subject": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          }
+        ],
+        "date": "2026-11-02",
+        "author": [
+          {
+            "reference": "Organization/sakura-pharma-eu"
+          }
+        ],
+        "title": "Sakura Bloom 20 mg film-coated tablets - Instructions for use",
+        "section": [
+          {
+            "id": "i-ifu-0",
+            "title": "Instructions for use",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir-gra/CodeSystem/ifu-section",
+                  "code": "ifu-0",
+                  "display": "INSTRUCTIONS FOR USE"
+                }
+              ],
+              "text": "INSTRUCTIONS FOR USE"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><i>Synthetic example. Sakura Bloom and Sakuramil are fictitious. This text was written for a FHIR ePI demonstration and must not be used for any clinical purpose.</i></p><p><b>Sakura Bloom 20 mg film-coated tablets</b><br/>Opening the bottle and taking your tablet</p><p>For the 30-tablet bottle with a child-resistant cap. Read these steps the first time you open a new bottle.</p><p><b>You will need:</b> the bottle and a glass of water.</p></div>"
+            },
+            "section": [
+              {
+                "id": "i-ifu-1",
+                "title": "Step 1. Check the pack",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://example.org/fhir-gra/CodeSystem/ifu-section",
+                      "code": "ifu-1",
+                      "display": "Step 1. Check the pack"
+                    }
+                  ],
+                  "text": "Step 1. Check the pack"
+                },
+                "text": {
+                  "status": "additional",
+                  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><img src=\"#picto-1\" alt=\"Step 1 pictogram\"/></p><p>Check the expiry date on the label and that the cap has not been opened.</p></div>"
+                }
+              },
+              {
+                "id": "i-ifu-2",
+                "title": "Step 2. Push down and turn",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://example.org/fhir-gra/CodeSystem/ifu-section",
+                      "code": "ifu-2",
+                      "display": "Step 2. Push down and turn"
+                    }
+                  ],
+                  "text": "Step 2. Push down and turn"
+                },
+                "text": {
+                  "status": "additional",
+                  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><img src=\"#picto-2\" alt=\"Step 2 pictogram\"/></p><p>Press the cap down firmly and, while pressing, turn it anticlockwise to open.</p></div>"
+                }
+              },
+              {
+                "id": "i-ifu-3",
+                "title": "Step 3. Remove the seal",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://example.org/fhir-gra/CodeSystem/ifu-section",
+                      "code": "ifu-3",
+                      "display": "Step 3. Remove the seal"
+                    }
+                  ],
+                  "text": "Step 3. Remove the seal"
+                },
+                "text": {
+                  "status": "additional",
+                  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><img src=\"#picto-3\" alt=\"Step 3 pictogram\"/></p><p>The first time only, peel off the foil seal using the tab. Do not use the bottle if the seal is broken.</p></div>"
+                }
+              },
+              {
+                "id": "i-ifu-4",
+                "title": "Step 4. Take out one tablet",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://example.org/fhir-gra/CodeSystem/ifu-section",
+                      "code": "ifu-4",
+                      "display": "Step 4. Take out one tablet"
+                    }
+                  ],
+                  "text": "Step 4. Take out one tablet"
+                },
+                "text": {
+                  "status": "additional",
+                  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><img src=\"#picto-4\" alt=\"Step 4 pictogram\"/></p><p>Tip one tablet into your hand. Check it is pale red, round and marked SB.</p></div>"
+                }
+              },
+              {
+                "id": "i-ifu-5",
+                "title": "Step 5. Swallow it whole",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://example.org/fhir-gra/CodeSystem/ifu-section",
+                      "code": "ifu-5",
+                      "display": "Step 5. Swallow it whole"
+                    }
+                  ],
+                  "text": "Step 5. Swallow it whole"
+                },
+                "text": {
+                  "status": "additional",
+                  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><img src=\"#picto-5\" alt=\"Step 5 pictogram\"/></p><p>Swallow the tablet whole with a glass of water, with or without food. Do not crush or chew it.</p></div>"
+                }
+              },
+              {
+                "id": "i-ifu-6",
+                "title": "Step 6. Close the cap",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://example.org/fhir-gra/CodeSystem/ifu-section",
+                      "code": "ifu-6",
+                      "display": "Step 6. Close the cap"
+                    }
+                  ],
+                  "text": "Step 6. Close the cap"
+                },
+                "text": {
+                  "status": "additional",
+                  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><img src=\"#picto-6\" alt=\"Step 6 pictogram\"/></p><p>Turn the cap clockwise until it clicks, so children cannot open it. Keep the bottle out of the sight and reach of children.</p></div>"
+                }
+              },
+              {
+                "id": "i-ifu-7",
+                "title": "If you have trouble opening the cap",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://example.org/fhir-gra/CodeSystem/ifu-section",
+                      "code": "ifu-7",
+                      "display": "If you have trouble opening the cap"
+                    }
+                  ],
+                  "text": "If you have trouble opening the cap"
+                },
+                "text": {
+                  "status": "additional",
+                  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Ask your pharmacist about other ways to open it. Do not move the tablets to another container. For dosing, missed doses and side effects, read the package leaflet.</p></div>"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/MedicinalProductDefinition/sakura-bloom-20mg",
+      "resource": {
+        "resourceType": "MedicinalProductDefinition",
+        "id": "sakura-bloom-20mg",
+        "identifier": [
+          {
+            "system": "http://example.org/sakura-bloom-r2/fhir/product-id",
+            "value": "SB-20MG-FCT"
+          }
+        ],
+        "name": [
+          {
+            "productName": "Sakura Bloom 20 mg film-coated tablets"
+          }
+        ],
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/Organization/sakura-pharma-eu",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "sakura-pharma-eu",
+        "identifier": [
+          {
+            "system": "http://example.org/fhir-gra/organization-id",
+            "value": "SAKURA-EU-0001"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/emedicinal-product-info/CodeSystem/epi-ig",
+                "code": "marketing-authorization-holder",
+                "display": "Marketing authorization holder"
+              }
+            ],
+            "text": "Marketing authorization holder"
+          }
+        ],
+        "name": "Sakura Pharmaceuticals Europe B.V.",
+        "contact": [
+          {
+            "address": {
+              "use": "work",
+              "type": "physical",
+              "line": [
+                "Bloesemlaan 1"
+              ],
+              "city": "Amsterdam",
+              "postalCode": "1000 AA",
+              "country": "NL"
+            }
+          }
+        ],
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

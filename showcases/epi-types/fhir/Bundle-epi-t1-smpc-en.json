@@ -1,0 +1,707 @@
+{
+  "resourceType": "Bundle",
+  "id": "epi-t1-smpc-en",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/emedicinal-product-info/StructureDefinition/Bundle-uv-epi"
+    ],
+    "security": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ],
+    "tag": [
+      {
+        "system": "http://example.org/fhir-gra/CodeSystem/epi-type",
+        "code": "type-1",
+        "display": "ePI Type 1: Digital label"
+      }
+    ]
+  },
+  "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:uuid:e3bcdfd0-921c-5814-b4be-feb0ae01cf42"
+  },
+  "type": "document",
+  "timestamp": "2026-11-02T09:00:00Z",
+  "entry": [
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/Composition/comp-smpc-en-t1",
+      "resource": {
+        "resourceType": "Composition",
+        "id": "comp-smpc-en-t1",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/emedicinal-product-info/StructureDefinition/Composition-uv-epi"
+          ],
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        },
+        "contained": [
+          {
+            "resourceType": "Binary",
+            "id": "tablet-image",
+            "meta": {
+              "profile": [
+                "http://hl7.org/fhir/uv/emedicinal-product-info/StructureDefinition/binary-epi"
+              ]
+            },
+            "contentType": "image/svg+xml",
+            "data": "PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNDAgMTIwIiB3aWR0aD0iMjQwIiBoZWlnaHQ9IjEyMCI+PHRpdGxlPlNha3VyYSBCbG9vbSAyMCBtZyB0YWJsZXQsIGJvdGggZmFjZXM8L3RpdGxlPgo8ZGVmcz48cmFkaWFsR3JhZGllbnQgaWQ9ImciIGN4PSI0MCUiIGN5PSIzNSUiIHI9IjcwJSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZjZjOWM0Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZDk4Zjg4Ii8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+CjxjaXJjbGUgY3g9IjYwIiBjeT0iNjAiIHI9IjQ4IiBmaWxsPSJ1cmwoI2cpIiBzdHJva2U9IiNiODZkNjYiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjYwIiB5PSI3MCIgZm9udC1mYW1pbHk9IkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmIiBmb250LXNpemU9IjMwIiBmb250LXdlaWdodD0iNzAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjYTg1ZDU3Ij5TQjwvdGV4dD4KPGNpcmNsZSBjeD0iMTgwIiBjeT0iNjAiIHI9IjQ4IiBmaWxsPSJ1cmwoI2cpIiBzdHJva2U9IiNiODZkNjYiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjE4MCIgeT0iNzAiIGZvbnQtZmFtaWx5PSJBcmlhbCxIZWx2ZXRpY2Esc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzMCIgZm9udC13ZWlnaHQ9IjcwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2E4NWQ1NyI+MjA8L3RleHQ+PC9zdmc+"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Sakura Bloom 20 mg film-coated tablets - Summary of Product Characteristics. ePI Type 1 (Digital label). Synthetic example.</p></div>"
+        },
+        "identifier": [
+          {
+            "system": "urn:ietf:rfc:3986",
+            "value": "urn:uuid:6fd87518-90a8-5b63-86de-674b25e87572"
+          }
+        ],
+        "version": "1",
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "https://spor.ema.europa.eu/rmswi",
+              "code": "100000155532",
+              "display": "Summary of Product Characteristics"
+            }
+          ],
+          "text": "Summary of Product Characteristics"
+        },
+        "language": "en",
+        "subject": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          }
+        ],
+        "date": "2026-11-02",
+        "author": [
+          {
+            "reference": "Organization/sakura-pharma-eu"
+          }
+        ],
+        "title": "Sakura Bloom 20 mg film-coated tablets - Summary of Product Characteristics",
+        "section": [
+          {
+            "id": "s-200000029791",
+            "title": "Summary of Product Characteristics",
+            "code": {
+              "coding": [
+                {
+                  "system": "https://spor.ema.europa.eu/rmswi",
+                  "code": "200000029791",
+                  "display": "SUMMARY OF PRODUCT CHARACTERISTICS"
+                }
+              ],
+              "text": "SUMMARY OF PRODUCT CHARACTERISTICS"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><i>Synthetic example. Sakura Bloom and Sakuramil are fictitious. This text was written for a FHIR ePI demonstration and must not be used for any clinical purpose.</i></p></div>"
+            },
+            "section": [
+              {
+                "id": "s-200000029792",
+                "title": "1. Name of the medicinal product",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "https://spor.ema.europa.eu/rmswi",
+                      "code": "200000029792",
+                      "display": "1. NAME OF THE MEDICINAL PRODUCT"
+                    }
+                  ],
+                  "text": "1. NAME OF THE MEDICINAL PRODUCT"
+                },
+                "text": {
+                  "status": "additional",
+                  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Sakura Bloom 20 mg film-coated tablets</p></div>"
+                }
+              },
+              {
+                "id": "s-200000029793",
+                "title": "2. Qualitative and quantitative composition",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "https://spor.ema.europa.eu/rmswi",
+                      "code": "200000029793",
+                      "display": "2. QUALITATIVE AND QUANTITATIVE COMPOSITION"
+                    }
+                  ],
+                  "text": "2. QUALITATIVE AND QUANTITATIVE COMPOSITION"
+                },
+                "text": {
+                  "status": "additional",
+                  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Each film-coated tablet contains 20 mg Sakuramil.</p><p><b>Excipient with known effect</b></p><p>Each film-coated tablet contains 136 mg lactose (as monohydrate).</p><p>For the full list of excipients, see section 6.1.</p></div>"
+                }
+              },
+              {
+                "id": "s-200000029797",
+                "title": "3. Pharmaceutical form",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "https://spor.ema.europa.eu/rmswi",
+                      "code": "200000029797",
+                      "display": "3. PHARMACEUTICAL FORM"
+                    }
+                  ],
+                  "text": "3. PHARMACEUTICAL FORM"
+                },
+                "text": {
+                  "status": "additional",
+                  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Film-coated tablet.</p><p>Pale red, round, biconvex film-coated tablet, debossed with SB on one side and 20 on the other, approximately 8 mm in diameter.</p><p><img src=\"#tablet-image\" alt=\"Pale red round film-coated tablet debossed SB and 20\"/></p></div>"
+                }
+              },
+              {
+                "id": "s-200000029798",
+                "title": "4. Clinical particulars",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "https://spor.ema.europa.eu/rmswi",
+                      "code": "200000029798",
+                      "display": "4. CLINICAL PARTICULARS"
+                    }
+                  ],
+                  "text": "4. CLINICAL PARTICULARS"
+                },
+                "text": {
+                  "status": "additional",
+                  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Clinical particulars.</p></div>"
+                },
+                "section": [
+                  {
+                    "id": "s-200000029799",
+                    "title": "4.1 Therapeutic indications",
+                    "code": {
+                      "coding": [
+                        {
+                          "system": "https://spor.ema.europa.eu/rmswi",
+                          "code": "200000029799",
+                          "display": "4.1 Therapeutic indications"
+                        }
+                      ],
+                      "text": "4.1 Therapeutic indications"
+                    },
+                    "text": {
+                      "status": "additional",
+                      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Sakura Bloom is indicated in adults as an adjunct to diet for the reduction of low-density lipoprotein cholesterol (LDL-C) in primary hypercholesterolaemia, when the response to diet and other non-pharmacological measures is inadequate.</p></div>"
+                    }
+                  },
+                  {
+                    "id": "s-200000029800",
+                    "title": "4.2 Posology and method of administration",
+                    "code": {
+                      "coding": [
+                        {
+                          "system": "https://spor.ema.europa.eu/rmswi",
+                          "code": "200000029800",
+                          "display": "4.2 Posology and method of administration"
+                        }
+                      ],
+                      "text": "4.2 Posology and method of administration"
+                    },
+                    "text": {
+                      "status": "additional",
+                      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Posology</b></p><p><i>Adults</i></p><p>The recommended starting dose is 20 mg once daily. Depending on the LDL-C response, the dose may be increased to 40 mg once daily after at least 4 weeks of treatment. The maximum daily dose is 40 mg.</p><p><i>Older people</i></p><p>No dose adjustment is needed.</p><p><i>Renal impairment</i></p><p>No dose adjustment is needed in mild or moderate renal impairment. In severe renal impairment (eGFR below 30 mL/min/1.73 m²) the dose must not exceed 20 mg once daily.</p><p><i>Hepatic impairment</i></p><p>Sakura Bloom is contraindicated in patients with active liver disease (see section 4.3).</p><p><i>Concomitant moderate CYP3A4 inhibitors</i></p><p>In patients taking diltiazem or verapamil the dose must not exceed 20 mg once daily (see section 4.5).</p><p><i>Paediatric population</i></p><p>The safety and efficacy of Sakura Bloom in children and adolescents under 18 years of age have not been established. No data are available.</p><p><b>Method of administration</b></p><p>Oral use. The tablet should be swallowed whole with water, with or without food, at about the same time each day.</p></div>"
+                    }
+                  },
+                  {
+                    "id": "s-200000029805",
+                    "title": "4.3 Contraindications",
+                    "code": {
+                      "coding": [
+                        {
+                          "system": "https://spor.ema.europa.eu/rmswi",
+                          "code": "200000029805",
+                          "display": "4.3 Contraindications"
+                        }
+                      ],
+                      "text": "4.3 Contraindications"
+                    },
+                    "text": {
+                      "status": "additional",
+                      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Hypersensitivity to the active substance or to any of the excipients listed in section 6.1.</li><li>Active liver disease or unexplained persistent elevations of serum transaminases.</li><li>Concomitant use of strong CYP3A4 inhibitors such as ketoconazole, itraconazole or clarithromycin (see section 4.5).</li><li>Pregnancy and breast-feeding (see section 4.6).</li></ul></div>"
+                    }
+                  },
+                  {
+                    "id": "s-200000029806",
+                    "title": "4.4 Special warnings and precautions for use",
+                    "code": {
+                      "coding": [
+                        {
+                          "system": "https://spor.ema.europa.eu/rmswi",
+                          "code": "200000029806",
+                          "display": "4.4 Special warnings and precautions for use"
+                        }
+                      ],
+                      "text": "4.4 Special warnings and precautions for use"
+                    },
+                    "text": {
+                      "status": "additional",
+                      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Liver effects</b></p><p>Liver function tests should be performed before treatment starts, 12 weeks later and periodically thereafter. Treatment should be stopped if transaminases rise persistently above 3 times the upper limit of normal.</p><p><b>Blood pressure</b></p><p>Small increases in blood pressure were observed in clinical studies. Blood pressure should be checked before treatment and at each follow-up visit, particularly in patients with hypertension.</p><p><b>Excipients</b></p><p>Patients with rare hereditary problems of galactose intolerance, total lactase deficiency or glucose-galactose malabsorption should not take this medicinal product.</p><p>This medicinal product contains less than 1 mmol sodium (23 mg) per tablet, that is to say essentially sodium-free.</p></div>"
+                    }
+                  },
+                  {
+                    "id": "s-200000029809",
+                    "title": "4.5 Interaction with other medicinal products and other forms of interaction",
+                    "code": {
+                      "coding": [
+                        {
+                          "system": "https://spor.ema.europa.eu/rmswi",
+                          "code": "200000029809",
+                          "display": "4.5 Interaction with other medicinal products and other forms of interaction"
+                        }
+                      ],
+                      "text": "4.5 Interaction with other medicinal products and other forms of interaction"
+                    },
+                    "text": {
+                      "status": "additional",
+                      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Sakuramil is metabolised mainly by cytochrome P450 3A4 (CYP3A4).</p><p><b>Strong CYP3A4 inhibitors</b></p><p>Ketoconazole increased Sakuramil exposure (AUC) about 4-fold. Use with strong CYP3A4 inhibitors is contraindicated (see section 4.3).</p><p><b>Moderate CYP3A4 inhibitors</b></p><p>Diltiazem and verapamil increased Sakuramil exposure about 2-fold. The dose must not exceed 20 mg once daily.</p><p><b>CYP3A4 inducers</b></p><p>Rifampicin reduced Sakuramil exposure by about 70%. Concomitant use should be avoided.</p><p><b>Grapefruit juice</b></p><p>Large quantities of grapefruit juice (more than 1 litre a day) should be avoided.</p><p><b>Warfarin</b></p><p>A small increase in INR was seen with warfarin. INR should be monitored when Sakura Bloom is started, stopped or its dose changed.</p></div>"
+                    }
+                  },
+                  {
+                    "id": "s-200000029811",
+                    "title": "4.6 Fertility, pregnancy and lactation",
+                    "code": {
+                      "coding": [
+                        {
+                          "system": "https://spor.ema.europa.eu/rmswi",
+                          "code": "200000029811",
+                          "display": "4.6 Fertility, pregnancy and lactation"
+                        }
+                      ],
+                      "text": "4.6 Fertility, pregnancy and lactation"
+                    },
+                    "text": {
+                      "status": "additional",
+                      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Pregnancy</b></p><p>There are no data from the use of Sakuramil in pregnant women. Animal studies have shown reproductive toxicity (see section 5.3). Sakura Bloom is contraindicated during pregnancy. Women of childbearing potential should use effective contraception during treatment.</p><p><b>Breast-feeding</b></p><p>It is unknown whether Sakuramil is excreted in human milk. Sakura Bloom is contraindicated during breast-feeding.</p><p><b>Fertility</b></p><p>No human data are available. Animal studies did not show effects on fertility.</p></div>"
+                    }
+                  },
+                  {
+                    "id": "s-200000029815",
+                    "title": "4.7 Effects on ability to drive and use machines",
+                    "code": {
+                      "coding": [
+                        {
+                          "system": "https://spor.ema.europa.eu/rmswi",
+                          "code": "200000029815",
+                          "display": "4.7 Effects on ability to drive and use machines"
+                        }
+                      ],
+                      "text": "4.7 Effects on ability to drive and use machines"
+                    },
+                    "text": {
+                      "status": "additional",
+                      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Sakura Bloom has minor influence on the ability to drive and use machines. Dizziness has been reported; patients who experience it should not drive or use machines.</p></div>"
+                    }
+                  },
+                  {
+                    "id": "s-200000029816",
+                    "title": "4.8 Undesirable effects",
+                    "code": {
+                      "coding": [
+                        {
+                          "system": "https://spor.ema.europa.eu/rmswi",
+                          "code": "200000029816",
+                          "display": "4.8 Undesirable effects"
+                        }
+                      ],
+                      "text": "4.8 Undesirable effects"
+                    },
+                    "text": {
+                      "status": "additional",
+                      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Summary of the safety profile</b></p><p>The most common adverse reactions were headache, nausea and myalgia. In clinical studies 3.1% of patients stopped treatment because of an adverse reaction.</p><p><b>Tabulated list of adverse reactions</b></p><p>Frequencies are defined as very common (≥1/10), common (≥1/100 to &lt;1/10), uncommon (≥1/1,000 to &lt;1/100), rare (≥1/10,000 to &lt;1/1,000) and very rare (&lt;1/10,000).</p><div id=\"gen-ue-table\"><table><tr><th>System organ class</th><th>Frequency</th><th>Adverse reaction</th></tr><tr><td>Nervous system disorders</td><td>Common</td><td>Headache</td></tr><tr><td>Nervous system disorders</td><td>Uncommon</td><td>Dizziness</td></tr><tr><td>Vascular disorders</td><td>Uncommon</td><td>Hypertension</td></tr><tr><td>Gastrointestinal disorders</td><td>Common</td><td>Nausea</td></tr><tr><td>Skin and subcutaneous tissue disorders</td><td>Rare</td><td>Angioedema, Rash</td></tr><tr><td>Musculoskeletal and connective tissue disorders</td><td>Common</td><td>Myalgia</td></tr><tr><td>Investigations</td><td>Uncommon</td><td>Alanine aminotransferase increased</td></tr></table></div><p><b>Reporting of suspected adverse reactions</b></p><p>Healthcare professionals are asked to report any suspected adverse reactions via the national reporting system.</p></div>"
+                    }
+                  },
+                  {
+                    "id": "s-200000029819",
+                    "title": "4.9 Overdose",
+                    "code": {
+                      "coding": [
+                        {
+                          "system": "https://spor.ema.europa.eu/rmswi",
+                          "code": "200000029819",
+                          "display": "4.9 Overdose"
+                        }
+                      ],
+                      "text": "4.9 Overdose"
+                    },
+                    "text": {
+                      "status": "additional",
+                      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>There is no specific treatment for overdose. Supportive measures should be taken and liver function monitored. Haemodialysis is not expected to remove Sakuramil because it is highly bound to plasma proteins.</p></div>"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "s-200000029821",
+                "title": "5. Pharmacological properties",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "https://spor.ema.europa.eu/rmswi",
+                      "code": "200000029821",
+                      "display": "5. PHARMACOLOGICAL PROPERTIES"
+                    }
+                  ],
+                  "text": "5. PHARMACOLOGICAL PROPERTIES"
+                },
+                "text": {
+                  "status": "additional",
+                  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Pharmacological properties.</p></div>"
+                },
+                "section": [
+                  {
+                    "id": "s-200000029822",
+                    "title": "5.1 Pharmacodynamic properties",
+                    "code": {
+                      "coding": [
+                        {
+                          "system": "https://spor.ema.europa.eu/rmswi",
+                          "code": "200000029822",
+                          "display": "5.1 Pharmacodynamic properties"
+                        }
+                      ],
+                      "text": "5.1 Pharmacodynamic properties"
+                    },
+                    "text": {
+                      "status": "additional",
+                      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Pharmacotherapeutic group: lipid modifying agents, other. ATC code: not assigned (fictitious substance).</p><p><b>Mechanism of action</b></p><p>Sakuramil is a fictitious substance created for the ICH M4Q(R2) mock-up. In this example it is described as an orally active agent that lowers LDL-C.</p><p><b>Clinical efficacy</b></p><p>In a fictitious 12-week, placebo-controlled study in 480 adults with primary hypercholesterolaemia, LDL-C fell by 31% with 20 mg and 38% with 40 mg, compared with 3% with placebo.</p></div>"
+                    }
+                  },
+                  {
+                    "id": "s-200000029827",
+                    "title": "5.2 Pharmacokinetic properties",
+                    "code": {
+                      "coding": [
+                        {
+                          "system": "https://spor.ema.europa.eu/rmswi",
+                          "code": "200000029827",
+                          "display": "5.2 Pharmacokinetic properties"
+                        }
+                      ],
+                      "text": "5.2 Pharmacokinetic properties"
+                    },
+                    "text": {
+                      "status": "additional",
+                      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Absorption</b></p><p>Peak plasma concentrations are reached 2 to 4 hours after an oral dose. Food has no relevant effect.</p><p><b>Distribution</b></p><p>Sakuramil is more than 99% bound to plasma proteins.</p><p><b>Biotransformation</b></p><p>Sakuramil is metabolised mainly by CYP3A4 to inactive metabolites.</p><p><b>Elimination</b></p><p>The terminal half-life is about 30 hours. Elimination is mainly in the faeces.</p><p><b>Renal impairment</b></p><p>Exposure was about 1.6-fold higher in severe renal impairment (see section 4.2).</p></div>"
+                    }
+                  },
+                  {
+                    "id": "s-200000029834",
+                    "title": "5.3 Preclinical safety data",
+                    "code": {
+                      "coding": [
+                        {
+                          "system": "https://spor.ema.europa.eu/rmswi",
+                          "code": "200000029834",
+                          "display": "5.3 Preclinical safety data"
+                        }
+                      ],
+                      "text": "5.3 Preclinical safety data"
+                    },
+                    "text": {
+                      "status": "additional",
+                      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>In fictitious repeat-dose studies, increased liver weight and transaminases were seen at exposures above 10 times the clinical exposure. Embryo-fetal toxicity was observed in rats at maternally toxic doses.</p></div>"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "s-200000029836",
+                "title": "6. Pharmaceutical particulars",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "https://spor.ema.europa.eu/rmswi",
+                      "code": "200000029836",
+                      "display": "6. PHARMACEUTICAL PARTICULARS"
+                    }
+                  ],
+                  "text": "6. PHARMACEUTICAL PARTICULARS"
+                },
+                "text": {
+                  "status": "additional",
+                  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Pharmaceutical particulars.</p></div>"
+                },
+                "section": [
+                  {
+                    "id": "s-200000029837",
+                    "title": "6.1 List of excipients",
+                    "code": {
+                      "coding": [
+                        {
+                          "system": "https://spor.ema.europa.eu/rmswi",
+                          "code": "200000029837",
+                          "display": "6.1 List of excipients"
+                        }
+                      ],
+                      "text": "6.1 List of excipients"
+                    },
+                    "text": {
+                      "status": "additional",
+                      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><i>Tablet core</i></p><ul><li>Lactose monohydrate</li><li>Microcrystalline cellulose</li><li>Croscarmellose sodium</li><li>Hydroxypropyl cellulose</li><li>Magnesium stearate</li></ul><p><i>Film-coating</i></p><ul><li>Hypromellose</li><li>Macrogol 6000</li><li>Titanium dioxide (E171)</li><li>Iron oxide red (E172)</li></ul></div>"
+                    }
+                  },
+                  {
+                    "id": "s-200000029838",
+                    "title": "6.2 Incompatibilities",
+                    "code": {
+                      "coding": [
+                        {
+                          "system": "https://spor.ema.europa.eu/rmswi",
+                          "code": "200000029838",
+                          "display": "6.2 Incompatibilities"
+                        }
+                      ],
+                      "text": "6.2 Incompatibilities"
+                    },
+                    "text": {
+                      "status": "additional",
+                      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Not applicable.</p></div>"
+                    }
+                  },
+                  {
+                    "id": "s-200000029839",
+                    "title": "6.3 Shelf life",
+                    "code": {
+                      "coding": [
+                        {
+                          "system": "https://spor.ema.europa.eu/rmswi",
+                          "code": "200000029839",
+                          "display": "6.3 Shelf life"
+                        }
+                      ],
+                      "text": "6.3 Shelf life"
+                    },
+                    "text": {
+                      "status": "additional",
+                      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Blister: 3 years.</p><p>Bottle: 3 years.</p></div>"
+                    }
+                  },
+                  {
+                    "id": "s-200000029840",
+                    "title": "6.4 Special precautions for storage",
+                    "code": {
+                      "coding": [
+                        {
+                          "system": "https://spor.ema.europa.eu/rmswi",
+                          "code": "200000029840",
+                          "display": "6.4 Special precautions for storage"
+                        }
+                      ],
+                      "text": "6.4 Special precautions for storage"
+                    },
+                    "text": {
+                      "status": "additional",
+                      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This medicinal product does not require any special storage conditions.</p></div>"
+                    }
+                  },
+                  {
+                    "id": "s-200000029841",
+                    "title": "6.5 Nature and contents of container",
+                    "code": {
+                      "coding": [
+                        {
+                          "system": "https://spor.ema.europa.eu/rmswi",
+                          "code": "200000029841",
+                          "display": "6.5 Nature and contents of container"
+                        }
+                      ],
+                      "text": "6.5 Nature and contents of container"
+                    },
+                    "text": {
+                      "status": "additional",
+                      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>PA/Al/PVC blisters in a carton. Pack size: 28 film-coated tablets.</p><p>White HDPE bottle with a child-resistant polypropylene closure and induction seal, in a carton. Pack size: 30 film-coated tablets.</p><p>Not all pack sizes may be marketed.</p></div>"
+                    }
+                  },
+                  {
+                    "id": "s-200000029842",
+                    "title": "6.6 Special precautions for disposal",
+                    "code": {
+                      "coding": [
+                        {
+                          "system": "https://spor.ema.europa.eu/rmswi",
+                          "code": "200000029842",
+                          "display": "6.6 Special precautions for disposal"
+                        }
+                      ],
+                      "text": "6.6 Special precautions for disposal"
+                    },
+                    "text": {
+                      "status": "additional",
+                      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>No special requirements. Any unused medicinal product or waste material should be disposed of in accordance with local requirements.</p></div>"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "s-200000029844",
+                "title": "7. Marketing authorisation holder",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "https://spor.ema.europa.eu/rmswi",
+                      "code": "200000029844",
+                      "display": "7. MARKETING AUTHORISATION HOLDER"
+                    }
+                  ],
+                  "text": "7. MARKETING AUTHORISATION HOLDER"
+                },
+                "text": {
+                  "status": "additional",
+                  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Sakura Pharmaceuticals Europe B.V.<br/>Bloesemlaan 1<br/>1000 AA Amsterdam<br/>Netherlands</p></div>"
+                }
+              },
+              {
+                "id": "s-200000029845",
+                "title": "8. Marketing authorisation number(s)",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "https://spor.ema.europa.eu/rmswi",
+                      "code": "200000029845",
+                      "display": "8. MARKETING AUTHORISATION NUMBER(S)"
+                    }
+                  ],
+                  "text": "8. MARKETING AUTHORISATION NUMBER(S)"
+                },
+                "text": {
+                  "status": "additional",
+                  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>EU/1/00/0000/001 (28 film-coated tablets, blister)</p><p>EU/1/00/0000/002 (30 film-coated tablets, bottle)</p></div>"
+                }
+              },
+              {
+                "id": "s-200000029846",
+                "title": "9. Date of first authorisation/renewal of the authorisation",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "https://spor.ema.europa.eu/rmswi",
+                      "code": "200000029846",
+                      "display": "9. DATE OF FIRST AUTHORISATION/RENEWAL OF THE AUTHORISATION"
+                    }
+                  ],
+                  "text": "9. DATE OF FIRST AUTHORISATION/RENEWAL OF THE AUTHORISATION"
+                },
+                "text": {
+                  "status": "additional",
+                  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Date of first authorisation: 02 March 2026</p></div>"
+                }
+              },
+              {
+                "id": "s-200000029847",
+                "title": "10. Date of revision of the text",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "https://spor.ema.europa.eu/rmswi",
+                      "code": "200000029847",
+                      "display": "10. DATE OF REVISION OF THE TEXT"
+                    }
+                  ],
+                  "text": "10. DATE OF REVISION OF THE TEXT"
+                },
+                "text": {
+                  "status": "additional",
+                  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>11/2026</p></div>"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/MedicinalProductDefinition/sakura-bloom-20mg",
+      "resource": {
+        "resourceType": "MedicinalProductDefinition",
+        "id": "sakura-bloom-20mg",
+        "identifier": [
+          {
+            "system": "http://example.org/sakura-bloom-r2/fhir/product-id",
+            "value": "SB-20MG-FCT"
+          }
+        ],
+        "name": [
+          {
+            "productName": "Sakura Bloom 20 mg film-coated tablets"
+          }
+        ],
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/Organization/sakura-pharma-eu",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "sakura-pharma-eu",
+        "identifier": [
+          {
+            "system": "http://example.org/fhir-gra/organization-id",
+            "value": "SAKURA-EU-0001"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/emedicinal-product-info/CodeSystem/epi-ig",
+                "code": "marketing-authorization-holder",
+                "display": "Marketing authorization holder"
+              }
+            ],
+            "text": "Marketing authorization holder"
+          }
+        ],
+        "name": "Sakura Pharmaceuticals Europe B.V.",
+        "contact": [
+          {
+            "address": {
+              "use": "work",
+              "type": "physical",
+              "line": [
+                "Bloesemlaan 1"
+              ],
+              "city": "Amsterdam",
+              "postalCode": "1000 AA",
+              "country": "NL"
+            }
+          }
+        ],
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

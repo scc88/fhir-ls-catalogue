@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ePI Type 3 · Clinical information | FHIR for Global Regulatory Affairs</title>
+<meta name="description" content="ePI Type 3 showcases: indication, dosing, contraindications, interactions, warnings and undesirable effects as coded ClinicalUseDefinitions. Synthetic data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../pqi-types/pqi-types.css">
+<link rel="stylesheet" href="epi-types.css">
+</head>
+<body>
+<noscript>This showcase needs JavaScript.</noscript>
+<script src="data/epi-data.js"></script>
+<script src="epi-types.js"></script>
+<script>
+(function () {
+  const esc = EP.esc, docs = EP.load(3);
+  const doc = (k) => docs.find((d) => d.key === k);
+  const smpc = doc("smpc-en"), pil = doc("pil-en"), db = smpc.db;
+  const KINDS = [["indication", "Indication"], ["contraindication", "Contraindications"], ["warning", "Warnings"], ["interaction", "Interactions"], ["undesirable-effect", "Undesirable effects"]];
+  const cuds = db.all("ClinicalUseDefinition").slice().sort((a, b) => KINDS.findIndex((k) => k[0] === a.type) - KINDS.findIndex((k) => k[0] === b.type));
+  const statedIn = (ref) => docs.filter((d) => d.lang === "en").flatMap((d) => d.secs.filter((x) => (x.s.entry || []).some((e) => e.reference === ref)).map((x) => ({ d, x })));
+  const where = (ref) => statedIn(ref).map(({ d, x }) => `<a class="chip" href="type1.html#read/${d.key}/${esc(x.code)}">${d.kind === "smpc" ? "SmPC " + esc(x.s.title.split(" ")[0]) : "Leaflet " + esc(x.s.title.split(".")[0])}</a>`).join(" ");
+  const std = (r) => { const c = EP.cudConcept(r); return ((c && c.coding) || []).some((x) => !/example\.org/.test(x.system)); };
+
+  // ====================== 1. Clinical particulars as data ======================
+  let kind = "all";
+  function data(main) {
+    const show = cuds.filter((r) => kind === "all" || r.type === kind);
+    const card = (r) => {
+      const b = EP.cudBody(r), c = EP.cudConcept(r);
+      let meta = "";
+      if (r.type === "indication") { const dg = r.extension[0].valueDosage; meta = `Dosing: ${esc(dg.text)}`; }
+      if (r.type === "contraindication" && b.otherTherapy) meta = "With: " + b.otherTherapy.map((o) => esc(EP.cc(o.treatment.concept))).join(", ");
+      if (r.type === "interaction") meta = `${esc(EP.cc(b.effect.concept))}. <b>${esc(EP.cc(b.management[0]))}</b>`;
+      if (r.type === "warning") meta = esc(b.description);
+      if (r.type === "undesirable-effect") meta = `${esc(EP.cc(b.classification))} · <b>${esc(EP.cc(b.frequencyOfOccurrence))}</b>`;
+      return `<button class="cud-card" data-ref="ClinicalUseDefinition/${esc(r.id)}"><div class="chips"><span class="chip k-${r.type}">${esc(r.type)}</span>${(r.population || []).map((p) => `<span class="chip">${esc(EP.label(db.get(p)))}</span>`).join("")}</div>
+        <h4>${esc(EP.cc(c))}</h4><div>${(c.coding || []).slice(0, 3).map((x) => EP.coding({ coding: [x] })).join(" ")}</div><div class="meta">${meta}</div><div class="chips">${where("ClinicalUseDefinition/" + r.id)}</div></button>`;
+    };
+    const n = (k) => cuds.filter((r) => r.type === k).length;
+    main.innerHTML = EP.head("Showcase 1 · Clinical particulars as data", "Sections 4.1 to 4.8 as ClinicalUseDefinitions",
+      `Type 3 turns the clinical particulars into <span class="mono">ClinicalUseDefinition</span> resources: the indication with a structured dosing guideline, each contraindication, warning and interaction, and every undesirable effect with its system organ class and frequency. Conditions are coded with SNOMED CT and medicines with ATC. Each card shows where the SmPC and the leaflet state it.`,
+      "Prescribing, pharmacy and safety systems can <b>use the approved clinical content directly</b>, instead of re-keying it from the PDF into their own drug databases.") +
+      `      <div class="toolbar"><div class="seg">${[["all", "All"], ...KINDS].map(([k, l]) => `<button data-k="${k}" aria-pressed="${k === kind}">${l}${k === "all" ? "" : " · " + n(k)}</button>`).join("")}</div></div>
+      <div class="grid g3">${show.map(card).join("")}</div>`;
+    EP.$$("[data-k]", main).forEach((b) => b.onclick = () => { kind = b.dataset.k; data(main); });
+    EP.$$(".cud-card", main).forEach((b) => b.onclick = (e) => { if (e.target.closest("a")) return; EP.inspectResource(b.dataset.ref, db); });
+  }
+
+  // ====================== 2. Patient safety check ======================
+  let persona = "hana", P = JSON.parse(JSON.stringify(EP.PERSONAS[0]));
+  function check(main) {
+    const p = EP.patient(P), res = EP.evaluate(p, db);
+    const ind = db.get("ClinicalUseDefinition/ind-hypercholesterolaemia"), dg = ind.extension[0].valueDosage;
+    let cap = dg.maxDosePerPeriod[0].numerator.value, capBy = "the indication's dosing guideline";
+    res.forEach((x) => { const b = EP.cudBody(x.r); const txt = [b.description, ...(b.management || []).map(EP.cc)].join(" "); const m = txt.match(/not exceed (\d+) mg/i); if (m && +m[1] < cap) { cap = +m[1]; capBy = EP.label(x.r); } });
+    const stop = res.some((x) => x.level === "stop");
+    main.innerHTML = EP.head("Showcase 2 · Patient safety check", "Label rules applied to a patient profile",
+      `Pick a synthetic patient or edit the profile. The check runs the Type 3 resources against it: the indication's population (a <span class="mono">Group</span>), contraindications by condition and co-medication, warnings, and interactions by ATC code. Each alert points back to the section of the SmPC that states it, and the dose cap is read from the data.`,
+      "The approved label becomes <b>decision support at the point of prescribing or dispensing</b>, and every alert can be traced to the regulator-approved text.") +
+      `<div class="grid g3" style="margin-bottom:16px">${EP.PERSONAS.map((x) => `<button class="persona" data-p="${x.id}" aria-pressed="${x.id === persona}"><b>${esc(x.name)}</b><span>${esc(x.note)}</span></button>`).join("")}</div>
+      <div class="grid" style="grid-template-columns:minmax(240px,320px) minmax(0,1fr);align-items:start">
+        <div class="card">${EP.patientForm(P)}</div>
+        <div class="grid">
+          <div class="card"><div class="grid g2"><div class="stat" style="background:${stop ? "var(--bad-soft)" : "var(--ok-soft)"}"><b style="color:${stop ? "var(--bad)" : "var(--ok)"}">${stop ? "Do not use" : "Can be used"}</b><span>${res.filter((x) => x.level === "stop").length} stop, ${res.filter((x) => x.level === "caution").length} caution</span></div>
+            <div class="stat" style="background:var(--fill)"><b>${stop ? "–" : cap + " mg"}</b><span>${stop ? "no dose" : `maximum daily dose, capped by ${esc(capBy)}`}</span></div></div></div>
+          <div class="card"><h3>Alerts</h3>${res.length ? res.map((x) => `<div class="alert ${x.level}"><span class="ic">${x.level === "stop" ? "✕" : "!"}</span><div><b>${esc(x.r.type === "indication" ? "Outside the indicated population" : EP.label(x.r))}</b> <span class="chip k-${x.r.type}">${esc(x.r.type)}</span><p>${esc(x.why)}</p>
+              <div class="src">Matched on <span class="mono">${esc(x.via.split("/").pop().split("|").pop())}</span> · <a href="#" data-ref="ClinicalUseDefinition/${esc(x.r.id)}">ClinicalUseDefinition/${esc(x.r.id)}</a> · stated in ${where("ClinicalUseDefinition/" + x.r.id) || "–"}</div></div></div>`).join("")
+            : `<div class="alert ok"><span class="ic">✓</span><div><b>No contraindication, warning or interaction applies</b><p>Usual dosing: ${esc(dg.text)}</p></div></div>`}</div>
+        </div>
+      </div>`;
+    EP.$$("[data-p]", main).forEach((b) => b.onclick = () => { persona = b.dataset.p; P = JSON.parse(JSON.stringify(EP.PERSONAS.find((x) => x.id === persona))); check(main); });
+    EP.$$(".pform input", main).forEach((i) => i.onchange = () => { P = EP.readForm(main); persona = ""; check(main); });
+    EP.$$("[data-ref]", main).forEach((a) => a.onclick = (e) => { e.preventDefault(); EP.inspectResource(a.dataset.ref, db); });
+  }
+
+  // ====================== 3. Undesirable effects from data ======================
+  const MUT = [
+    { id: "angio", label: "SmPC 4.8 table drafted without angioedema", apply: (sm, pl) => { sm.div = sm.div.replace("Angioedema, ", ""); } },
+    { id: "head", label: "Leaflet lists headache as uncommon", apply: (sm, pl) => { pl.div = pl.div.replace("<li>headache</li>", "").replace("<li>dizziness</li>", "<li>headache</li><li>dizziness</li>"); } },
+    { id: "freq", label: "SmPC lists dizziness as common", apply: (sm) => { sm.div = sm.div.replace("<tr><td>Nervous system disorders</td><td>Uncommon</td><td>Dizziness</td></tr>", "").replace("<td>Nervous system disorders</td><td>Common</td><td>Headache</td>", "<td>Nervous system disorders</td><td>Common</td><td>Headache, Dizziness</td>"); } },
+  ];
+  const mon = new Set();
+  function table(main) {
+    const items = EP.ueItems(cuds);
+    const s48 = smpc.secs.find((x) => x.code === "200000029816").s, p4 = pil.secs.find((x) => x.code === "pil-4").s;
+    const sm = { div: s48.text.div }, pl = { div: p4.text.div };
+    MUT.filter((m) => mon.has(m.id)).forEach((m) => m.apply(sm, pl));
+    const parse = (html) => new DOMParser().parseFromString(html, "text/html");
+    const authoredSm = [...parse(sm.div).querySelectorAll("#gen-ue-table tr")].slice(1).flatMap((tr) => { const td = [...tr.children].map((x) => x.textContent.trim()); return td[2].split(/,\s*/).map((t) => ({ soc: td[0], freq: td[1].toLowerCase(), term: t })); });
+    const authoredPl = []; let f = null;
+    parse(pl.div).querySelectorAll("#gen-pil-se > *").forEach((el) => { if (el.tagName === "P") f = Object.keys(EPIDATA.freq).find((k) => EPIDATA.freq[k].en_pil === el.textContent.trim()); else el.querySelectorAll("li").forEach((li) => authoredPl.push({ freq: f, term: li.textContent.trim() })); });
+    const issues = [];
+    items.forEach((i) => {
+      const a = authoredSm.find((x) => x.term === i.term);
+      if (!a) issues.push({ where: "SmPC 4.8", what: `${i.term} is in the data (${i.freq}) but missing from the table`, ref: i.id });
+      else if (a.freq !== i.freq || a.soc !== i.soc) issues.push({ where: "SmPC 4.8", what: `${i.term}: table says ${a.freq} / ${a.soc}, data says ${i.freq} / ${i.soc}`, ref: i.id });
+      const b = authoredPl.find((x) => x.term === i.en);
+      if (!b) issues.push({ where: "Leaflet section 4", what: `"${i.en}" is in the data but missing from the leaflet`, ref: i.id });
+      else if (b.freq !== i.freq) issues.push({ where: "Leaflet section 4", what: `"${i.en}": leaflet says ${b.freq}, data says ${i.freq}`, ref: i.id });
+    });
+    authoredSm.filter((a) => !items.some((i) => i.term === a.term)).forEach((a) => issues.push({ where: "SmPC 4.8", what: `${a.term} is in the table but not in the data`, ref: null }));
+    const freqs = Object.keys(EPIDATA.freq).sort((a, b) => EPIDATA.freq[a].rank - EPIDATA.freq[b].rank);
+    const socs = EPIDATA.soc.filter((s) => items.some((i) => i.soc === s));
+    main.innerHTML = EP.head("Showcase 3 · Undesirable effects from data", "SmPC 4.8 and leaflet side effects compared with the resources",
+      `Each undesirable effect is a resource with a coded term, a system organ class and a frequency, plus the patient wording. Below, the matrix is drawn from those resources and then compared with the authored SmPC 4.8 table and the leaflet's section 4. Introduce an inconsistency to see it caught.`,
+      "The SmPC and the leaflet <b>cannot disagree on a side effect or its frequency</b> without it being flagged, and safety teams can query adverse reactions across products.") +
+      `<div class="card" style="margin-bottom:16px"><h3>From the resources</h3><p class="sub">System organ class × frequency. Click an effect to open its resource.</p>
+        <table class="matrix2"><tr><th></th>${freqs.map((k) => `<th>${esc(EPIDATA.freq[k].en)}</th>`).join("")}</tr>
+        ${socs.map((s) => `<tr><td class="lbl">${esc(s)}</td>${freqs.map((k) => `<td>${items.filter((i) => i.soc === s && i.freq === k).map((i) => `<button class="chip k-undesirable-effect" data-ref="ClinicalUseDefinition/${i.id}">${esc(i.term)}</button>`).join("")}</td>`).join("")}</tr>`).join("")}</table></div>
+      <div class="grid" style="grid-template-columns:minmax(240px,320px) minmax(0,1fr);align-items:start">
+        <div class="card mutations"><h3>Introduce an inconsistency</h3><p class="sub">Applied to copies of the authored text.</p>${MUT.map((m) => `<label class="toggle"><input type="checkbox" data-m="${m.id}" ${mon.has(m.id) ? "checked" : ""}><span>${esc(m.label)}</span></label>`).join("")}</div>
+        <div class="card"><div class="chips" style="margin-bottom:10px"><span class="status ${issues.length ? "bad" : "ok"}">${issues.length ? issues.length + " inconsistenc" + (issues.length > 1 ? "ies" : "y") : "SmPC, leaflet and data agree"}</span><span class="chip">${items.length} effects · ${authoredSm.length} table entries · ${authoredPl.length} leaflet entries</span></div>
+          ${issues.map((x) => `<div class="check"><span class="ic fail">✕</span><div><b>${esc(x.where)}</b><p>${esc(x.what)}</p></div>${x.ref ? `<a href="#" class="small" data-ref="ClinicalUseDefinition/${x.ref}">resource</a>` : ""}</div>`).join("")}
+          <div class="cols2" style="margin-top:10px"><div><h4 class="small muted" style="margin-bottom:6px">SMPC 4.8 (AUTHORED)</h4><div class="narr">${EP.narrative(parse(sm.div).querySelector("#gen-ue-table").outerHTML)}</div></div>
+            <div><h4 class="small muted" style="margin-bottom:6px">LEAFLET SECTION 4 (AUTHORED)</h4><div class="narr">${EP.narrative(parse(pl.div).querySelector("#gen-pil-se").outerHTML)}</div></div></div></div>
+      </div>`;
+    EP.$$("[data-m]", main).forEach((i) => i.onchange = () => { i.checked ? mon.add(i.dataset.m) : mon.delete(i.dataset.m); table(main); });
+    EP.$$("[data-ref]", main).forEach((a) => a.onclick = (e) => { e.preventDefault(); EP.inspectResource(a.dataset.ref, db); });
+  }
+
+  EP.shell({
+    type: 3,
+    foot: "Clinical content invented for this showcase. Codes: SNOMED CT, ATC, EDQM; local example codes where noted.",
+    views: [
+      { id: "data", title: "Clinical particulars as data", sub: "Sections 4.1 to 4.8 as resources", render: data },
+      { id: "check", title: "Patient safety check", sub: "Label rules on a patient profile", render: check },
+      { id: "effects", title: "Undesirable effects from data", sub: "SmPC 4.8 and leaflet compared with data", render: table },
+    ],
+  });
+})();
+</script>
+</body>
+</html>

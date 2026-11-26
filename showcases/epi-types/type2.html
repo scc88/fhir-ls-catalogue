@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ePI Type 2 · Product identification | FHIR for Global Regulatory Affairs</title>
+<meta name="description" content="ePI Type 2: the product behind the label, from its FHIR resources. A powder for oral suspension as a product passport and as a spec sheet comparing the manufactured item with the administrable product. Illustrative example data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../pqi-types/pqi-types.css">
+<link rel="stylesheet" href="epi-types.css">
+<style>
+  .hit { cursor: pointer; } .hit:hover { outline: 2px solid var(--accent-soft); outline-offset: 2px; border-radius: 10px; }
+  .kfx { display: inline-block; font-size: 11px; font-weight: 700; color: #8a4b00; background: #FFF1DC; padding: 1px 8px; border-radius: 999px; white-space: nowrap; }
+  .chips { display: flex; gap: 6px; flex-wrap: wrap; }
+  .pchip { background: #DDF2F5; color: #07707f; font-size: 12px; font-weight: 600; border-radius: 999px; padding: 4px 10px; }
+  .phones { display: flex; gap: 32px; justify-content: center; overflow-x: auto; padding: 8px 4px 16px; }
+  .phone-wrap { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 12px; flex: none; }
+  .phone-wrap figcaption { font-size: 13px; color: var(--muted); max-width: 320px; text-align: center; }
+  .phone { width: 340px; height: 720px; border-radius: 46px; background: #111; padding: 11px; box-shadow: 0 20px 50px rgba(9,30,66,.18); transition: box-shadow .3s; }
+  .phone.flash { animation: flash 1.2s ease; } @keyframes flash { 30% { box-shadow: 0 0 0 6px var(--accent), 0 20px 50px rgba(9,30,66,.18); } }
+  .phone-in { width: 100%; height: 100%; border-radius: 36px; background: #fff; overflow: hidden; }
+  .phone-bar { height: 38px; display: flex; justify-content: space-between; align-items: center; padding: 0 24px; font-size: 12px; font-weight: 700; } .phone-bar i { width: 86px; height: 24px; background: #111; border-radius: 14px; }
+  .phone-body { padding: 4px 16px 16px; height: 650px; overflow-y: auto; font-size: 14px; }
+  .ok { font-size: 12px; color: #07707f; font-weight: 700; display: flex; align-items: center; gap: 6px; margin-top: 6px; } .ok .dot { width: 8px; height: 8px; border-radius: 50%; background: #2fb36b; }
+  .hero { background: linear-gradient(180deg, #EEF8FA, #fff); border-radius: 20px; margin-top: 10px; display: grid; place-items: center; height: 200px; }
+  .pn { font-size: 20px; margin: 12px 0 4px; } .psub { font-size: 13.5px; color: var(--muted); } .hit .chips, .pn + .psub + .chips { margin-top: 10px; }
+  .ps { margin-top: 14px; } .ps-h { font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+  .box2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; } .box2 svg { flex: none; } .box2 > div { background: var(--fill); border-radius: 14px; padding: 10px; display: flex; gap: 10px; align-items: center; font-size: 12.5px; } .box2 span { display: block; color: var(--muted); }
+  .cta { margin-top: 16px; width: 100%; border: 0; background: #0a7a8f; color: #fff; border-radius: 14px; padding: 13px; font: inherit; font-weight: 700; font-size: 15px; cursor: pointer; }
+  .ph { font-size: 16px; margin: 8px 0 8px; }
+  .step { display: flex; gap: 12px; align-items: center; padding: 9px 0; border-bottom: 1px solid var(--sep); } .step .n { width: 28px; height: 28px; border-radius: 50%; background: #DDF2F5; color: #07707f; display: grid; place-items: center; font-weight: 800; flex: none; } .step .t { flex: 1; }
+  .now { margin-top: 14px; border-radius: 18px; padding: 14px; background: #FBF6EC; border: 1px solid #EFE0C2; } .now .k { font-size: 11px; font-weight: 800; color: #8a6a2a; letter-spacing: .06em; text-transform: uppercase; } .now .big { font-size: 21px; font-weight: 800; margin: 4px 0; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; font-size: 12.5px; } .two > div { background: #fff; border-radius: 12px; padding: 10px; } .two span { display: block; font-size: 11px; color: var(--muted); } .two b { font-size: 15px; display: block; }
+  .two.g { margin-top: 0; } .two.g > div { background: var(--fill); }
+  .ing { display: flex; justify-content: space-between; gap: 8px; padding: 9px 0; border-bottom: 1px solid var(--sep); } .ing span { display: block; font-size: 12px; color: var(--muted); } .ing .r { text-align: right; white-space: nowrap; font-size: 13px; }
+  .warn { margin-top: 10px; font-size: 12.5px; background: #FFF8EC; border-radius: 12px; padding: 10px; color: #6b4a12; }
+  .org { background: var(--fill); border-radius: 14px; padding: 12px; font-size: 13px; } .org span { display: block; color: var(--muted); margin-bottom: 8px; }
+  .spec-head { display: flex; gap: 28px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+  dl.kv2 { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 5px 16px; font-size: 13px; } dl.kv2 dt { color: var(--muted); } dl.kv2 dd { margin: 0; }
+  table.spec { width: 100%; border-collapse: collapse; min-width: 720px; }
+  table.spec td, table.spec th { padding: 12px 16px; border-bottom: 1px solid var(--sep); text-align: left; vertical-align: top; font-size: 14px; }
+  table.spec .x { background: #FBFAF6; } table.spec .y { background: #FDF8EF; } table.spec .m { width: 48px; text-align: center; color: #0a7a8f; font-weight: 800; }
+  table.spec td.a { color: var(--muted); width: 230px; } table.spec .na { color: #A5ADBA; font-weight: 400; }
+  table.spec tr.hd th { border-bottom: 2px solid var(--sep); padding: 18px 16px; } table.spec .hd .m small { font-size: 11px; color: #0a7a8f; font-weight: 700; }
+  .th { display: flex; gap: 14px; align-items: center; } .th span { display: block; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); } .th b { display: block; font-size: 17px; } .th small { color: var(--muted); font-weight: 400; font-size: 12.5px; }
+  table.spec tr.grp td { background: var(--fill); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 9px 16px; }
+  table.spec tr.hit:hover td { background: #EEF7F9; outline: none; } table.spec tr.hit:hover { outline: none; }
+</style>
+</head>
+<body>
+<noscript>This showcase needs JavaScript.</noscript>
+<script src="data/epi-data.js"></script>
+<script src="data/wonderdrug-suspension.js"></script>
+<script src="epi-types.js"></script>
+<script>
+(function () {
+  const esc = EP.esc, B = WDDATA.bundle, db = EP.db(B);
+  const one = (t) => db.all(t)[0];
+  const mpd = one("MedicinalProductDefinition"), mid = one("ManufacturedItemDefinition"), apd = one("AdministrableProductDefinition");
+  const ppd = one("PackagedProductDefinition"), org = one("Organization"), ra = one("RegulatedAuthorization"), dev = one("DeviceDefinition");
+  const ings = db.all("Ingredient");
+  const prop = (r, n) => { const p = (r.property || []).find((x) => EP.cc(x.type) === n); return p ? (p.valueCodeableConcept ? EP.cc(p.valueCodeableConcept) : p.valueQuantity ? EP.qty(p.valueQuantity) : p.valueMarkdown || "") : ""; };
+  const sub = (i) => db.get(i.substance.code.reference);
+  const sname = (i) => ((sub(i).name || [])[0] || {}).name;
+  const known = (i) => (i.extension || []).some((x) => /known-effect/.test(x.url) && x.valueBoolean);
+  const str = (i, kind) => { const s = (i.substance.strength || []).find((x) => x[kind]); return s ? s.textPresentation : "Amount not stated"; };
+  const bottle = ppd.packaging.packaging.find((p) => /bottle/i.test(EP.cc(p.type)));
+  const shelf = (t) => bottle.shelfLifeStorage.find((s) => EP.cc(s.type) === t);
+  const pname = mpd.name[0].productName;
+  const addr = () => { const a = org.contact[0].address; return [...a.line, a.postalCode, a.city, "Ireland"].join(", "); };
+  const dl = (rows) => `<dl>${rows.filter((r) => r[1]).map(([k, v]) => `<dt>${esc(k)}</dt><dd>${v}</dd>`).join("")}</dl>`;
+  const rcard = (r, title, body) => `<button type="button" class="rcard" data-ref="${esc(r.resourceType + "/" + r.id)}"><span class="rt">${esc(r.resourceType)}</span><h4>${title}</h4>${body}</button>`;
+  const bind = (root) => EP.$$("[data-ref]", root).forEach((c) => c.onclick = () => EP.inspectResource(c.dataset.ref, db));
+
+  // ---------- drawings (original, simple line art) ----------
+  const C = "#0a8fa8", INK = "#1d1d1f", POWDER = "#F4F1E8", SUSP = "#F6E7CF";
+  const BODY = "M-26 -98h52v16c18 6 30 18 30 36v136a10 10 0 0 1-10 10h-92a10 10 0 0 1-10-10V-46c0-18 12-30 30-36z";
+  const bottleShape = (fill, level, id) => `<g><rect x="-34" y="-128" width="68" height="30" rx="6" fill="#fff" stroke="${INK}" stroke-width="3"/>` +
+    (fill ? `<clipPath id="bc-${id}"><path d="${BODY}"/></clipPath><rect x="-60" y="${100 - level}" width="120" height="${level}" fill="${fill}" clip-path="url(#bc-${id})"/>` : "") +
+    `<path d="${BODY}" fill="none" stroke="${INK}" stroke-width="3"/><rect x="-46" y="-20" width="92" height="58" rx="4" fill="${C}" opacity=".92"/>` +
+    `<text x="0" y="6" text-anchor="middle" font-family="Inter,Arial" font-size="13" font-weight="800" fill="#fff">WonderDrug</text><text x="0" y="24" text-anchor="middle" font-family="Inter,Arial" font-size="10" fill="#fff">250 mg/5 mL</text></g>`;
+  const syringe = (fill) => `<g><rect x="-12" y="-122" width="24" height="10" rx="2" fill="${INK}"/><rect x="-4" y="-112" width="8" height="${fill ? 40 : 40}" fill="${INK}"/>` +
+    `<rect x="-16" y="-72" width="32" height="170" rx="5" fill="#fff" stroke="${INK}" stroke-width="3"/>${fill ? `<rect x="-13" y="-68" width="26" height="163" fill="${SUSP}"/>` : ""}` +
+    [0, 1, 2, 3, 4, 5].map((i) => `<path d="M-16 ${-62 + i * 31}h12" stroke="${INK}" stroke-width="2"/><text x="24" y="${-58 + i * 31}" font-family="Inter,Arial" font-size="11" fill="${INK}">${5 - i}</text>`).join("") +
+    `<path d="M-5 98h10v16h-10z" fill="${INK}"/></g>`;
+  const label = (x, y, t, o) => `<text x="${x}" y="${y}" text-anchor="${(o && o.a) || "middle"}" font-family="Inter,Arial" font-size="${(o && o.s) || 13}" font-weight="${(o && o.w) || 400}" fill="${(o && o.c) || "#6e6e73"}">${esc(t)}</text>`;
+
+  const carton = (open) => `<g>${open ? `<path d="M150 90 120 30 270 -20 300 40z" fill="#EEF7F9" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/><path d="M300 40 450 90 300 142 150 90z" fill="#C9E6EC" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/>` : `<path d="M150 90 300 40l150 50-150 52z" fill="#fff" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/>`}<path d="M450 90v170l-150 55V142z" fill="#fff" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/><path d="M150 90l150 52v173l-150-55z" fill="#E3F5F8" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/><g transform="matrix(1 .35 0 1 166 140)"><rect width="120" height="62" rx="6" fill="${C}"/><text x="10" y="25" font-family="Inter,Arial" font-size="15" font-weight="800" fill="#fff">WonderDrug</text><text x="10" y="45" font-family="Inter,Arial" font-size="11" fill="#fff">250 mg/5 mL</text></g><g transform="matrix(1 -.33 0 1 316 190)"><text x="0" y="12" font-family="Inter,Arial" font-size="11" fill="${INK}">powder for</text><text x="0" y="28" font-family="Inter,Arial" font-size="11" fill="${INK}">oral suspension</text></g></g>`;
+  const BT = (fill, lvl, id, w, h) => `<svg viewBox="-70 -140 140 260" width="${w}" height="${h}" aria-hidden="true">${bottleShape(fill, lvl, id)}</svg>`;
+  const SY = (fill, w, h) => `<svg viewBox="-22 -126 56 246" width="${w}" height="${h}" aria-hidden="true">${syringe(fill)}</svg>`;
+  const KFX = '<span class="kfx">known effect</span>';
+  const chip = (t) => `<span class="pchip">${esc(t)}</span>`;
+  const short = (t) => t.replace(/ per (5 mL|bottle)$/, "");
+  const ra0 = ra.identifier[0].value, tel = Object.fromEntries(org.contact[0].telecom.map((t) => [t.system, t.value]));
+
+  // ====================== 1. Product passport ======================
+  function passport(main) {
+    const ps = (t, body) => `<div class="ps"><div class="ps-h">${t}</div>${body}</div>`;
+    const phone = (n, cap, inner) => `<figure class="phone-wrap"><div class="phone" id="ph${n}"><div class="phone-in"><div class="phone-bar"><span>9:41</span><i></i><span>●●●</span></div><div class="phone-body">${inner}</div></div></div><figcaption>${cap}</figcaption></figure>`;
+    const s1 = `<div class="ok" data-ref="PackagedProductDefinition/${esc(ppd.id)}"><span class="dot"></span>Pack recognised · GTIN <span class="mono">${esc(ppd.identifier[0].value)}</span></div>
+      <div class="hero"><svg viewBox="120 -30 360 360" width="210" height="200" role="img" aria-label="Opened carton">${carton(true)}</svg></div>
+      <div data-ref="MedicinalProductDefinition/${esc(mpd.id)}" class="hit"><h3 class="pn">WonderDrug 250 mg/5 mL</h3><div class="psub">${esc(EP.cc(mpd.combinedPharmaceuticalDoseForm))} · paracetamol</div>
+      <div class="chips">${chip(EP.cc(mpd.route[0]))}${chip("No prescription")}${chip("Pain and fever · " + mpd.classification[0].coding[0].code)}</div></div>
+      ${ps("In the box", `<div class="box2"><div class="hit" data-ref="ManufacturedItemDefinition/${esc(mid.id)}">${BT(POWDER, 64, "p1", 30, 58)}<div><b>1 bottle</b><span>powder · ${esc((EP.cc(bottle.material[0]).match(/\(([^)]+)\)/) || [, EP.cc(bottle.material[0])])[1])}, child-resistant cap</span></div></div><div class="hit" data-ref="DeviceDefinition/${esc(dev.id)}">${SY(false, 18, 58)}<div><b>Oral syringe</b><span>${esc(prop(dev, "Capacity"))} · ${esc(prop(dev, "Graduation"))} steps</span></div></div></div>`)}
+      <button class="cta" type="button" id="toMix">How to make it up →</button>`;
+    const steps = [["Tap the bottle to loosen the powder", POWDER, 64], [`Add <b>90 mL</b> of water`, "#D9EEF7", 150], [`Close and shake for <b>1 minute</b>`, SUSP, 172]];
+    const s2 = `<h3 class="ph">Make it up</h3><div class="hit" data-ref="ManufacturedItemDefinition/${esc(mid.id)}">${steps.map(([t, f, l], k) => `<div class="step"><span class="n">${k + 1}</span><span class="t">${t}</span>${BT(f, l, "st" + k, 26, 48)}</div>`).join("")}</div>
+      <div class="now hit" data-ref="AdministrableProductDefinition/${esc(apd.id)}"><div class="k">You now have</div><div class="big">${esc(prop(apd, "Volume after reconstitution"))} ${esc(EP.cc(apd.administrableDoseForm).toLowerCase())}</div><div class="psub">${esc(prop(apd, "Appearance"))} · ${esc(prop(apd, "Handling").toLowerCase())}</div>
+        <div class="two"><div><span>Each 5 mL</span><b>${esc(short(str(ings[0], "concentrationRatio")))}</b> paracetamol</div><div><span>Use within</span><b>${esc(EP.qty(shelf("After reconstitution").periodDuration))}</b> · fridge</div></div></div>
+      ${ps("Storage", `<div class="two g hit" data-ref="PackagedProductDefinition/${esc(ppd.id)}"><div><b>${esc(EP.qty(shelf("Unopened").periodDuration))}</b>unopened, below 25 °C</div><div><b>${esc(EP.qty(shelf("After reconstitution").periodDuration))}</b>once made up, 2–8 °C</div></div>`)}`;
+    const kn = ings.filter(known).map((i) => sname(i).replace(/ \(.*/, "").toLowerCase());
+    const s3 = `<h3 class="ph">What's in it</h3>${ings.map((i) => `<div class="ing hit" data-ref="Ingredient/${esc(i.id)}"><div><b>${esc(sname(i))}</b> ${known(i) ? KFX : ""}<span>${esc(EP.cc(i.function[0]))}</span></div><div class="r">${(i.substance.strength || []).some((x) => x.concentrationRatio) ? esc(short(str(i, "concentrationRatio"))) : "–"}<span>per 5 mL</span></div></div>`).join("")}
+      <div class="warn">Contains <b>${kn.map(esc).join("</b> and <b>")}</b>. Read the leaflet if you have an intolerance to some sugars.</div>` +
+      ps("Who makes it", `<div class="org hit" data-ref="Organization/${esc(org.id)}"><b>${esc(org.name)}</b><span>${esc(addr())}</span><div class="chips">${chip("Call")}${chip("Email")}${chip("Website")}</div></div>`) +
+      ps("Authorisation", `<div class="psub hit" data-ref="RegulatedAuthorization/${esc(ra.id)}">${esc(EP.cc(ra.region[0]))} · <span class="mono">${esc(ra0)}</span> · since ${esc(ra.statusDate.slice(0, 4))}</div>`);
+    main.innerHTML = EP.head("Showcase 1 · Product passport", "The product, as a patient or pharmacist sees it",
+      `Scan the pack and the product data reads like an app: what is in the box, how to make it up, what you end up with, what is in it and who makes it. The powder in the bottle (manufactured item) and the suspension made from it (administrable product) appear as <b>before you mix</b> and <b>after you mix</b>. Tap any part of a screen to see the FHIR resource behind it.`,
+      "Every value on these screens comes from the product data, so <b>the pack, the leaflet and the app always agree</b>, and the same data drives any language or device.") +
+      `<div class="phones">${phone(1, "1 · Scan the pack: the carton and what is inside", s1)}${phone(2, "2 · Before you mix → after you mix", s2)}${phone(3, "3 · Ingredients, company and authorisation", s3)}</div>`;
+    bind(main);
+    EP.$("#toMix", main).onclick = () => { const p = EP.$("#ph2", main); p.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" }); p.classList.remove("flash"); void p.offsetWidth; p.classList.add("flash"); };
+  }
+
+  // ====================== 2. Spec sheet ======================
+  function spec(main) {
+    const na = (v) => (v === "–" || v === "Amount not stated" ? `<span class="na">${v === "–" ? "–" : "not stated"}</span>` : esc(v));
+    const row = (a, x, y, ref, ch) => `<tr class="hit" data-ref="${esc(ref)}"><td class="a">${a}</td><td class="x">${na(x)}</td><td class="m">${ch ? "→" : '<span class="na">=</span>'}</td><td class="y">${na(y)}</td></tr>`;
+    const grp = (t) => `<tr class="grp"><td colspan="4">${esc(t)}</td></tr>`;
+    const M = "ManufacturedItemDefinition/" + mid.id, P = "AdministrableProductDefinition/" + apd.id, K = "PackagedProductDefinition/" + ppd.id;
+    main.innerHTML = EP.head("Showcase 2 · Spec sheet", "As supplied and as taken, side by side",
+      `One row per attribute and two columns: the product <b>as supplied</b>, the powder in the bottle (manufactured item), and <b>as taken</b>, the suspension made from it (administrable product). Arrows mark what making it up changes. Select any row to see the FHIR resource behind it.`,
+      "Product facts spread over sections 1, 2, 3, 6 and 8 of the SmPC <b>become one precise, checkable record</b> that regulators, manufacturers and pharmacy systems can all use.") +
+      `<div class="grid">
+        <div class="card spec-head hit" data-ref="MedicinalProductDefinition/${esc(mpd.id)}"><div><div class="muted small">Medicinal product</div><h3 style="margin:2px 0 8px;font-size:21px">${esc(pname)}</h3><div class="chips">${chip(EP.cc(mpd.route[0]))}${chip(EP.cc(mpd.legalStatusOfSupply).replace("Medicinal product not subject to medical prescription", "Not subject to prescription"))}${chip("ATC " + mpd.classification[0].coding[0].code)}${chip("Paracetamol")}</div></div>
+          <dl class="kv2 hit" data-ref="RegulatedAuthorization/${esc(ra.id)}"><dt>Authorisation</dt><dd class="mono">${esc(ra0)} · ${esc(EP.cc(ra.region[0]))}</dd><dt>Holder</dt><dd>${esc(org.name)}</dd><dt>Since</dt><dd>${esc(ra.statusDate)}</dd></dl></div>
+        <div class="card" style="padding:0;overflow:hidden"><div style="overflow-x:auto"><table class="spec">
+          <tr class="hd"><th></th><th class="x"><div class="th">${BT(POWDER, 64, "h1", 38, 70)}<div><span>As supplied</span><b>Manufactured item</b><small>the powder in the bottle</small></div></div></th><th class="m"><small>+90 mL<br>water</small></th><th class="y"><div class="th">${BT(SUSP, 172, "h2", 38, 70)}<div><span>As taken</span><b>Administrable product</b><small>the suspension made from it</small></div></div></th></tr>
+          ${grp("Form")}
+          ${row("Dose form", EP.cc(mid.manufacturedDoseForm), EP.cc(apd.administrableDoseForm), P, true)}
+          ${row("Unit of presentation", EP.cc(mid.unitOfPresentation), EP.cc(apd.unitOfPresentation), P, true)}
+          ${row("Appearance", prop(mid, "Colour") + " powder", prop(apd, "Appearance"), P, true)}
+          ${row("Amount", "Powder in one bottle", prop(apd, "Volume after reconstitution"), P, true)}
+          ${row("Route", "–", EP.cc(apd.routeOfAdministration[0].code), P, true)}
+          ${row("Measured with", "–", dev.deviceName[0].name, "DeviceDefinition/" + dev.id, true)}
+          ${grp("Composition · strength in each form")}
+          ${ings.map((i) => { const b = str(i, "presentationRatio"), d = str(i, "concentrationRatio"); return row(esc(sname(i)) + (known(i) ? " " + KFX : ""), b, d, "Ingredient/" + i.id, b !== d); }).join("")}
+          ${grp("Stability")}
+          ${row("Shelf life", EP.qty(shelf("Unopened").periodDuration) + " unopened", EP.qty(shelf("After reconstitution").periodDuration) + " once made up", K, true)}
+          ${row("Storage", EP.cc(shelf("Unopened").specialPrecautionsForStorage[0]), EP.cc(shelf("After reconstitution").specialPrecautionsForStorage[0]), K, true)}
+        </table></div></div>
+        <div class="grid g2" style="align-items:stretch">
+          <div class="card hit" data-ref="${esc(K)}"><div class="muted small" style="text-transform:uppercase;letter-spacing:.08em;font-weight:700">Pack</div><h3 style="margin:4px 0 8px">Carton · GTIN <span class="mono">${esc(ppd.identifier[0].value)}</span></h3><p class="muted" style="margin:0">1 ${esc((EP.cc(bottle.material[0]).match(/\(([^)]+)\)/) || [, EP.cc(bottle.material[0])])[1])} bottle with ${esc(prop(bottle, "Closure").toLowerCase())} (${esc(prop(bottle, "Volume after reconstitution"))} after reconstitution) + 1 ${esc(dev.deviceName[0].name.toLowerCase())}, graduated every ${esc(prop(dev, "Graduation"))}.</p></div>
+          <div class="card hit" data-ref="Organization/${esc(org.id)}"><div class="muted small" style="text-transform:uppercase;letter-spacing:.08em;font-weight:700">Company</div><h3 style="margin:4px 0 8px">${esc(org.name)}</h3><p class="muted" style="margin:0">${esc(addr())}<br>${esc(tel.phone)} · ${esc(tel.email)}</p></div>
+        </div>
+        <p class="muted small" style="margin:0">Per-bottle amounts of sucrose and sodium benzoate are derived from the concentration × 100 mL.</p>
+      </div>`;
+    bind(main);
+  }
+
+  EP.shell({
+    type: 2,
+    subtitle: "HL7 FHIR ePI · WonderDrug powder for oral suspension (illustrative example)",
+    downloads: `<a href="${WDDATA.file}" download>wonderdrug-suspension-product.json</a>`,
+    foot: "Product data adapted from the WonderDrug suspension example in the HL7 ePI IG. Illustrative, not an authorised medicine.",
+    views: [
+      { id: "passport", title: "Product passport", sub: "Before you mix, after you mix", render: passport },
+      { id: "spec", title: "Spec sheet", sub: "As supplied and as taken", render: spec },
+    ],
+  });
+})();
+</script>
+</body>
+</html>

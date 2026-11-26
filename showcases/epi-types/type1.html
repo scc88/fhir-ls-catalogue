@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ePI Type 1 · Digital label | FHIR for Global Regulatory Affairs</title>
+<meta name="description" content="ePI Type 1 showcases: the approved SmPC, package leaflet and instructions for use as FHIR documents, read as one continuous page. Synthetic data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../pqi-types/pqi-types.css">
+<link rel="stylesheet" href="epi-types.css">
+<style>
+  .reader1 { display: grid; grid-template-columns: minmax(220px, 280px) minmax(0, 1fr); gap: 16px; align-items: start; }
+  .r-side { position: sticky; top: 0; max-height: calc(100vh - 140px); display: flex; flex-direction: column; }
+  .r-doc { padding: 28px 36px 40px; font-size: 14.5px; line-height: 1.65; max-width: 860px; }
+  .r-doc .r-kicker { margin: 0 0 6px; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .r-doc h2 { font-size: 18px; margin: 26px 0 8px; padding-top: 14px; border-top: 1px solid var(--sep); scroll-margin-top: 12px; }
+  .r-doc h3 { font-size: 15.5px; margin: 18px 0 6px; scroll-margin-top: 12px; }
+  .r-doc p { margin: 0 0 8px; } .r-doc ul { margin: 0 0 8px; padding-left: 22px; }
+  .r-doc table { border-collapse: collapse; font-size: 13px; margin: 6px 0 10px; width: 100%; }
+  .r-doc td, .r-doc th { border: 1px solid var(--sep); padding: 6px 8px; text-align: left; vertical-align: top; } .r-doc th { background: var(--fill); }
+  .r-doc img { max-width: 220px; height: auto; display: block; margin: 6px 0; }
+  .r-doc mark { background: #ffe58f; border-radius: 3px; }
+  .tree button[aria-current] { background: var(--accent-soft); color: var(--accent); }
+  @container (max-width: 760px) { .reader1 { grid-template-columns: 1fr; } .r-side { position: static; max-height: 320px; } }
+</style>
+</head>
+<body>
+<noscript>This showcase needs JavaScript.</noscript>
+<script src="data/epi-data.js"></script>
+<script src="epi-types.js"></script>
+<script>
+(function () {
+  const esc = EP.esc, docs = EP.load(1);
+  const doc = (k) => docs.find((d) => d.key === k) || docs[0];
+
+  // ====================== 1. Reader ======================
+  let q = "";
+  function read(main, param) {
+    if (param && !docs.some((x) => x.key === param)) { history.replaceState(null, "", "#read/smpc-en"); param = "smpc-en"; }
+    const d = doc(param || "smpc-en");
+    const root = d.comp.section[0];
+    const flat = [];
+    const sec = (s, depth) => { flat.push({ s, depth }); (s.section || []).forEach((c) => sec(c, depth + 1)); };
+    root.section.forEach((s) => sec(s, 0));
+    const body = (s) => EP.narrative(s.text.div, { images: d.images });
+    const html = `<p class="r-kicker">${esc({ smpc: "Summary of Product Characteristics", pil: "Package leaflet: information for the patient", ifu: "Instructions for use" }[d.kind])}</p>` + body(root) +
+      flat.map(({ s, depth }) => `<${depth ? "h3" : "h2"} id="r-${esc(s.id)}">${esc(s.title)}</${depth ? "h3" : "h2"}>` + (depth === 0 && (s.section || []).length ? "" : `<div class="r-body">${body(s)}</div>`)).join("");
+    main.innerHTML = EP.head("Reader", "The approved documents as one continuous page",
+      `In Type 1 the SmPC, the package leaflet and the instructions for use become FHIR documents. The approved wording does not change: each heading of the regulator's template becomes a structured section, and the text and images travel with it. A reader app can show the whole document, jump to any heading, and search it.`,
+      "The label is <b>readable on any screen, searchable, and always the current approved version</b>, instead of a PDF or a folded paper leaflet.") +
+      `<div style="margin-bottom:14px">${EP.docSwitch(docs, d.key)}</div>
+      <div class="reader1">
+        <div class="card flat r-side"><div style="padding:12px;border-bottom:1px solid var(--sep)"><input class="input" id="q" placeholder="Search this document…" value="${esc(q)}" aria-label="Search this document"></div>
+          <div class="tree scroll" id="toc" style="padding:6px"></div></div>
+        <article class="card r-doc" id="rdoc" lang="${esc(d.lang)}">${html}</article>
+      </div>`;
+    EP.$$("[data-doc]", main).forEach((b) => b.onclick = () => { location.hash = "read/" + b.dataset.doc; });
+    const toc = EP.$("#toc", main), art = EP.$("#rdoc", main);
+    const go = (id) => { const el = document.getElementById(id); if (el) el.scrollIntoView({ behavior: "smooth", block: "start" }); };
+    const draw = () => {
+      const t = q.trim();
+      EP.$$("mark", art).forEach((m) => m.replaceWith(document.createTextNode(m.textContent)));
+      art.normalize();
+      if (t.length > 1) {
+        const re = new RegExp(t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "gi");
+        const walker = document.createTreeWalker(art, NodeFilter.SHOW_TEXT), nodes = [];
+        while (walker.nextNode()) if (re.test(walker.currentNode.nodeValue)) nodes.push(walker.currentNode), (re.lastIndex = 0);
+        nodes.forEach((n) => { const span = document.createElement("span"); span.innerHTML = esc(n.nodeValue).replace(re, (m) => `<mark>${m}</mark>`); n.replaceWith(...span.childNodes); });
+        const hits = EP.$$("mark", art);
+        const bySec = new Map();
+        hits.forEach((m, i) => { m.id = "hit-" + i; let h = m; while (h && !/^H[23]$/.test(h.tagName)) h = h.previousElementSibling || h.parentElement; const prev = [...art.querySelectorAll("h2,h3")].filter((x) => x.compareDocumentPosition(m) & Node.DOCUMENT_POSITION_FOLLOWING).pop(); const k = prev ? prev.textContent : "Introduction"; if (!bySec.has(k)) bySec.set(k, m.id); });
+        toc.innerHTML = `<div class="doc">${hits.length} match${hits.length === 1 ? "" : "es"}</div>` + [...bySec].map(([k, id]) => `<button data-go="${id}"><span class="ttl">${esc(k)}</span></button>`).join("");
+      } else {
+        toc.innerHTML = `<div class="doc">Contents</div>` + flat.map(({ s, depth }) => `<button data-go="r-${esc(s.id)}" style="padding-left:${10 + depth * 14}px"><span class="ttl">${esc(s.title)}</span></button>`).join("");
+      }
+      toc.querySelectorAll("button").forEach((b) => b.onclick = () => go(b.dataset.go));
+    };
+    EP.$("#q", main).oninput = (e) => { q = e.target.value; draw(); };
+    draw();
+    const heads = EP.$$("h2, h3", art), mainEl = EP.$("#main");
+    mainEl.onscroll = () => { if (q.trim().length > 1) return; let cur = heads[0]; heads.forEach((h) => { if (h.getBoundingClientRect().top < 140) cur = h; }); toc.querySelectorAll("button").forEach((b) => b.toggleAttribute("aria-current", b.dataset.go === (cur && cur.id))); };
+    mainEl.onscroll();
+  }
+
+  // ====================== 3. Intake validation ======================
+  const TEMPLATE = {
+    smpc: docs.find((d) => d.kind === "smpc").secs.map((x) => x.code),
+    pil: ["pil-0", "pil-1", "pil-2", "pil-3", "pil-4", "pil-5", "pil-6"],
+    ifu: ["ifu-0", "ifu-1", "ifu-2", "ifu-3", "ifu-4", "ifu-5", "ifu-6", "ifu-7"],
+  };
+  const MISTAKES = [
+    { id: "drop43", label: "Section 4.3 Contraindications was lost in conversion", kinds: ["smpc"], apply: (b) => { const r = b.entry[0].resource.section[0]; const s4 = r.section.find((s) => s.code.coding[0].code === "200000029798"); s4.section = s4.section.filter((s) => s.code.coding[0].code !== "200000029805"); } },
+    { id: "dupcode", label: "Heading 4.4 tagged as 4.3 (copy-paste)", kinds: ["smpc"], apply: (b) => { const s4 = b.entry[0].resource.section[0].section.find((s) => s.code.coding[0].code === "200000029798"); const w = s4.section.find((s) => s.code.coding[0].code === "200000029806"); w.code = JSON.parse(JSON.stringify(s4.section.find((s) => s.code.coding[0].code === "200000029805").code)); } },
+    { id: "style", label: "Word formatting pasted into the narrative (inline style, font tag)", kinds: ["smpc", "pil", "ifu"], apply: (b) => { const s = b.entry[0].resource.section[0].section[1]; s.text.div = s.text.div.replace("<p>", '<p style="font-family:Calibri;color:#1F3864"><font size="2">').replace("</p>", "</font></p>"); } },
+    { id: "img", label: "Tablet image left out of the Composition", kinds: ["smpc", "pil", "ifu"], apply: (b) => { b.entry[0].resource.contained = []; } },
+    { id: "typedisp", label: "Composition.type without its display", kinds: ["smpc", "pil", "ifu"], apply: (b) => { delete b.entry[0].resource.type.coding[0].display; } },
+    { id: "lang", label: "A paragraph in another language marked with lang=\"de\"", kinds: ["smpc", "pil", "ifu"], apply: (b) => { const s = b.entry[0].resource.section[0].section[0]; s.text.div = s.text.div.replace("</div>", '<p lang="de">Filmtabletten</p></div>'); } },
+    { id: "coll", label: "Bundle sent as a collection, not a document", kinds: ["smpc", "pil", "ifu"], apply: (b) => { b.type = "collection"; } },
+    { id: "author", label: "Author (marketing authorisation holder) not included in the Bundle", kinds: ["smpc", "pil", "ifu"], apply: (b) => { b.entry = b.entry.filter((e) => e.resource.resourceType !== "Organization"); } },
+  ];
+  const on = new Set();
+  function rules(b, kind) {
+    const comp = (b.entry[0] || {}).resource || {};
+    const secs = EP.walk(comp.section);
+    const keys = new Set(b.entry.map((e) => e.resource.resourceType + "/" + e.resource.id));
+    const fail = (cond, msg) => (cond ? [] : [msg]);
+    const out = [];
+    const add = (name, desc, rule, bad) => out.push({ name, desc, rule, bad });
+    add("Bundle is a FHIR document", "Bundle.type = document.", "Type 1 · Bundle", fail(b.type === "document", `Bundle.type is "${b.type}"`));
+    add("Document identity", "Bundle.identifier and Bundle.timestamp are present.", "Type 1 · Bundle", [...fail(b.identifier && b.identifier.value, "no Bundle.identifier"), ...fail(b.timestamp, "no Bundle.timestamp")]);
+    add("Composition comes first", "The first entry is the Composition.", "bdl-9", fail(comp.resourceType === "Composition", "entry[0] is not a Composition"));
+    const tc = ((comp.type || {}).coding || [])[0] || {};
+    add("Composition header complete", "status, type (system, code and display), date, title, language and version.", "Composition-uv-epi",
+      ["status", "date", "title", "language", "version"].filter((k) => !comp[k]).map((k) => `missing ${k}`).concat(["system", "code", "display"].filter((k) => !tc[k]).map((k) => `type.coding.${k} missing`)));
+    add("Subject and author travel with the document", "Composition.subject (the product) and Composition.author (the MAH) resolve inside the Bundle.", "document rules",
+      [...(comp.subject || []).filter((r) => !keys.has(r.reference)).map((r) => `subject ${r.reference} not in Bundle`), ...(comp.author || []).filter((r) => !keys.has(r.reference)).map((r) => `author ${r.reference} not in Bundle`)]);
+    add("Every section is complete", "Each section has a title, its template heading and its text.", "Composition-uv-epi",
+      secs.filter((x) => !x.s.id || !x.s.title || !x.code || !x.s.text || !x.s.text.status || !/^<div xmlns="http:\/\/www\.w3\.org\/1999\/xhtml"/.test(x.s.text.div || "")).map((x) => x.s.title || x.s.id));
+    const codes = secs.map((x) => x.code), dup = codes.filter((c, i) => codes.indexOf(c) !== i);
+    add("Headings are unique", "No heading appears twice.", "template", dup.map((c) => { const s = docs.flatMap((d) => d.secs).find((x) => x.code === c); return `${s ? s.s.title : "A heading"} appears twice`; }));
+    const missing = TEMPLATE[kind].filter((c) => !codes.includes(c));
+    add("All template headings present", kind === "smpc" ? "All 28 headings of the SmPC template." : kind === "pil" ? "All 7 headings of the package leaflet template." : "All 8 headings of the instructions for use.", "template", missing.map((c) => { const s = docs.find((d) => d.kind === kind).secs.find((x) => x.code === c); return s ? s.s.title : "a template heading"; }));
+    add("Structural HTML only", "No style attributes, font tags or scripts in the narrative. Rendering is left to the reader's app.", "style guide",
+      secs.filter((x) => /\sstyle=|<font|<script/i.test(x.s.text.div || "")).map((x) => x.s.title));
+    const ids = new Set((comp.contained || []).map((c) => "#" + c.id));
+    add("Images resolve to a contained Binary", "Every <img src=\"#id\"> points to a Binary in Composition.contained.", "Type 1 · images",
+      secs.flatMap((x) => [...(x.s.text.div || "").matchAll(/<img[^>]+src="([^"]+)"/g)].map((m) => m[1]).filter((u) => !ids.has(u)).map((u) => `${x.s.title}: ${u}`)));
+    add("One language per document", `Composition.language is "${comp.language}" and no narrative is marked as another language.`, "Type 1 · language",
+      secs.flatMap((x) => [...(x.s.text.div || "").matchAll(/\slang="([^"]+)"/g)].map((m) => m[1]).filter((l) => l !== comp.language).map((l) => `${x.s.title}: lang="${l}"`)));
+    return out;
+  }
+  function validate(main, param) {
+    const d = doc(param || "smpc-en");
+    const b = JSON.parse(JSON.stringify(d.bundle));
+    const applicable = MISTAKES.filter((m) => m.kinds.includes(d.kind));
+    applicable.filter((m) => on.has(m.id)).forEach((m) => m.apply(b));
+    const res = rules(b, d.kind), nb = res.filter((r) => r.bad.length).length;
+    main.innerHTML = EP.head("Showcase 2 · Intake validation", "Type 1 validation rules",
+      `The checks a regulator or a publishing platform can run on any Type 1 ePI before it is accepted: document structure, header, template headings, narrative and images. They run here in the browser. Switch on a typical conversion mistake to see which rule catches it.`,
+      "Conversion errors are <b>caught at submission, not by a reader</b>, and the same rules apply to every company's ePI.") +
+      `<div style="margin-bottom:14px">${EP.docSwitch(docs, d.key)}</div>
+      <div class="grid" style="grid-template-columns:minmax(260px,340px) minmax(0,1fr);align-items:start">
+        <div class="card mutations"><h3>Simulate a mistake</h3><p class="sub">Applied to a copy of the ${esc(d.name)} Bundle.</p>
+          ${applicable.map((m) => `<label class="toggle"><input type="checkbox" data-m="${m.id}" ${on.has(m.id) ? "checked" : ""}><span>${esc(m.label)}</span></label>`).join("")}
+          <button class="btn" id="reset" style="margin-top:8px">Clear all</button></div>
+        <div class="card"><div class="chips" style="margin-bottom:10px"><span class="status ${nb ? "bad" : "ok"}">${nb ? nb + " of " + res.length + " checks fail" : "All " + res.length + " checks pass"}</span><span class="chip rt">${esc(b.id)}</span></div>
+          ${res.map((r) => `<div class="check"><span class="ic ${r.bad.length ? "fail" : "pass"}">${r.bad.length ? "✕" : "✓"}</span><div><b>${esc(r.name)}</b> <span class="rule">${esc(r.rule)}</span><p>${esc(r.desc)}</p>${r.bad.length ? `<p style="color:var(--bad)">${r.bad.map(esc).join("<br>")}</p>` : ""}</div></div>`).join("")}
+          <p class="small muted" style="margin:10px 0 0">These checks follow the Type 1 guidance and the Composition profile of the ePI IG. They are a browser-side illustration; formal conformance is checked with the HL7 FHIR validator.</p></div>
+      </div>`;
+    EP.$$("[data-doc]", main).forEach((x) => x.onclick = () => { location.hash = "validate/" + x.dataset.doc; });
+    EP.$$("[data-m]", main).forEach((i) => i.onchange = () => { i.checked ? on.add(i.dataset.m) : on.delete(i.dataset.m); validate(main, d.key); });
+    EP.$("#reset", main).onclick = () => { on.clear(); validate(main, d.key); };
+  }
+
+  EP.shell({
+    type: 1,
+    foot: "Data: <span class='mono'>showcases/epi-types/fhir</span>. Fictitious product; clinical text invented for this showcase.",
+    views: [
+      { id: "read", title: "Reader", sub: "The whole document, one page", render: read },
+      { id: "validate", title: "Intake validation", sub: "Type 1 rules and simulated errors", render: validate },
+    ],
+  });
+})();
+</script>
+</body>
+</html>

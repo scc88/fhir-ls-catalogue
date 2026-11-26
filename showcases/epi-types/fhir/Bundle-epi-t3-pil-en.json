@@ -1,0 +1,5832 @@
+{
+  "resourceType": "Bundle",
+  "id": "epi-t3-pil-en",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/emedicinal-product-info/StructureDefinition/Bundle-uv-epi",
+      "http://hl7.org/fhir/uv/emedicinal-product-info/StructureDefinition/bundle-epi-type3"
+    ],
+    "security": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ],
+    "tag": [
+      {
+        "system": "http://example.org/fhir-gra/CodeSystem/epi-type",
+        "code": "type-3",
+        "display": "ePI Type 3: Clinical information"
+      }
+    ]
+  },
+  "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:uuid:89ba4625-114a-5c15-9be0-68e6601da3f5"
+  },
+  "type": "document",
+  "timestamp": "2026-11-02T09:00:00Z",
+  "entry": [
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/Composition/comp-pil-en-t3",
+      "resource": {
+        "resourceType": "Composition",
+        "id": "comp-pil-en-t3",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/emedicinal-product-info/StructureDefinition/Composition-uv-epi"
+          ],
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        },
+        "contained": [
+          {
+            "resourceType": "Binary",
+            "id": "tablet-image",
+            "meta": {
+              "profile": [
+                "http://hl7.org/fhir/uv/emedicinal-product-info/StructureDefinition/binary-epi"
+              ]
+            },
+            "contentType": "image/svg+xml",
+            "data": "PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNDAgMTIwIiB3aWR0aD0iMjQwIiBoZWlnaHQ9IjEyMCI+PHRpdGxlPlNha3VyYSBCbG9vbSAyMCBtZyB0YWJsZXQsIGJvdGggZmFjZXM8L3RpdGxlPgo8ZGVmcz48cmFkaWFsR3JhZGllbnQgaWQ9ImciIGN4PSI0MCUiIGN5PSIzNSUiIHI9IjcwJSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZjZjOWM0Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZDk4Zjg4Ii8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+CjxjaXJjbGUgY3g9IjYwIiBjeT0iNjAiIHI9IjQ4IiBmaWxsPSJ1cmwoI2cpIiBzdHJva2U9IiNiODZkNjYiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjYwIiB5PSI3MCIgZm9udC1mYW1pbHk9IkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmIiBmb250LXNpemU9IjMwIiBmb250LXdlaWdodD0iNzAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjYTg1ZDU3Ij5TQjwvdGV4dD4KPGNpcmNsZSBjeD0iMTgwIiBjeT0iNjAiIHI9IjQ4IiBmaWxsPSJ1cmwoI2cpIiBzdHJva2U9IiNiODZkNjYiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjE4MCIgeT0iNzAiIGZvbnQtZmFtaWx5PSJBcmlhbCxIZWx2ZXRpY2Esc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzMCIgZm9udC13ZWlnaHQ9IjcwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2E4NWQ1NyI+MjA8L3RleHQ+PC9zdmc+"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Sakura Bloom 20 mg film-coated tablets - Package leaflet. ePI Type 3 (Clinical information). Synthetic example.</p></div>"
+        },
+        "identifier": [
+          {
+            "system": "urn:ietf:rfc:3986",
+            "value": "urn:uuid:31f3c212-e6e1-5f13-8730-a39a6af3290f"
+          }
+        ],
+        "version": "1",
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "https://spor.ema.europa.eu/rmswi",
+              "code": "100000155538",
+              "display": "Package Leaflet"
+            }
+          ],
+          "text": "Package Leaflet"
+        },
+        "language": "en",
+        "subject": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          }
+        ],
+        "date": "2026-11-02",
+        "author": [
+          {
+            "reference": "Organization/sakura-pharma-eu"
+          }
+        ],
+        "title": "Sakura Bloom 20 mg film-coated tablets - Package leaflet",
+        "section": [
+          {
+            "id": "p-pil-0",
+            "title": "Package leaflet: information for the patient",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir-gra/CodeSystem/pil-section",
+                  "code": "pil-0",
+                  "display": "PACKAGE LEAFLET: INFORMATION FOR THE PATIENT"
+                }
+              ],
+              "text": "PACKAGE LEAFLET: INFORMATION FOR THE PATIENT"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><i>Synthetic example. Sakura Bloom and Sakuramil are fictitious. This text was written for a FHIR ePI demonstration and must not be used for any clinical purpose.</i></p><p><b>Sakura Bloom 20 mg film-coated tablets</b><br/>Sakuramil</p><p>Read all of this leaflet carefully before you start taking this medicine because it contains important information for you.</p><ul><li>Keep this leaflet. You may need to read it again.</li><li>If you have any further questions, ask your doctor or pharmacist.</li><li>This medicine has been prescribed for you only. Do not pass it on to others.</li><li>If you get any side effects, talk to your doctor or pharmacist. See section 4.</li></ul></div>"
+            },
+            "section": [
+              {
+                "id": "p-pil-1",
+                "title": "1. What Sakura Bloom is and what it is used for",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://example.org/fhir-gra/CodeSystem/pil-section",
+                      "code": "pil-1",
+                      "display": "1. What Sakura Bloom is and what it is used for"
+                    }
+                  ],
+                  "text": "1. What Sakura Bloom is and what it is used for"
+                },
+                "text": {
+                  "status": "additional",
+                  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Sakura Bloom contains the active substance Sakuramil. It lowers the amount of LDL-cholesterol, sometimes called bad cholesterol, in your blood.</p><p>Sakura Bloom is used together with a cholesterol-lowering diet in adults whose cholesterol is too high when diet and exercise alone have not been enough.</p></div>"
+                },
+                "entry": [
+                  {
+                    "reference": "SubstanceDefinition/sakuramil"
+                  },
+                  {
+                    "reference": "ClinicalUseDefinition/ind-hypercholesterolaemia"
+                  }
+                ]
+              },
+              {
+                "id": "p-pil-2",
+                "title": "2. What you need to know before you take Sakura Bloom",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://example.org/fhir-gra/CodeSystem/pil-section",
+                      "code": "pil-2",
+                      "display": "2. What you need to know before you take Sakura Bloom"
+                    }
+                  ],
+                  "text": "2. What you need to know before you take Sakura Bloom"
+                },
+                "text": {
+                  "status": "additional",
+                  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Do not take Sakura Bloom</b></p><ul><li>if you are allergic to Sakuramil or any of the other ingredients of this medicine (listed in section 6)</li><li>if you have liver disease</li><li>if you take ketoconazole or itraconazole (for fungal infections) or clarithromycin (for bacterial infections)</li><li>if you are pregnant or breast-feeding</li></ul><p><b>Warnings and precautions</b></p><p>Talk to your doctor or pharmacist before taking Sakura Bloom:</p><ul><li>Your doctor will do a blood test to check your liver before you start and during treatment.</li><li>if you have high blood pressure. Your doctor will check your blood pressure regularly.</li><li>if you have severe kidney problems. You should not take more than 20 mg a day.</li></ul><p><b>Children and adolescents</b></p><p>Do not give this medicine to children and adolescents under 18 years, because it has not been studied in this age group.</p><p><b>Other medicines and Sakura Bloom</b></p><p>Tell your doctor or pharmacist if you are taking, have recently taken or might take any other medicines, in particular:</p><ul><li>diltiazem or verapamil (for high blood pressure or heart problems). You should not take more than 20 mg of Sakura Bloom a day</li><li>rifampicin (for tuberculosis), which can stop Sakura Bloom working well</li><li>warfarin (to prevent blood clots). Your doctor may check your blood more often</li></ul><p><b>Sakura Bloom with food and drink</b></p><p>Do not drink more than 1 litre of grapefruit juice a day.</p><p><b>Pregnancy and breast-feeding</b></p><p>Do not take Sakura Bloom if you are pregnant or breast-feeding. If you could become pregnant, use effective contraception while taking this medicine.</p><p><b>Driving and using machines</b></p><p>Sakura Bloom can make some people feel dizzy. If this happens to you, do not drive or use machines.</p><p><b>Sakura Bloom contains lactose and sodium</b></p><p>If you have been told by your doctor that you have an intolerance to some sugars, contact your doctor before taking this medicine. This medicine contains less than 1 mmol sodium (23 mg) per tablet, that is to say essentially sodium-free.</p></div>"
+                },
+                "entry": [
+                  {
+                    "reference": "ClinicalUseDefinition/ci-hypersensitivity"
+                  },
+                  {
+                    "reference": "ClinicalUseDefinition/ci-liver"
+                  },
+                  {
+                    "reference": "ClinicalUseDefinition/ci-strong-cyp3a4"
+                  },
+                  {
+                    "reference": "ClinicalUseDefinition/ci-pregnancy"
+                  },
+                  {
+                    "reference": "ClinicalUseDefinition/ci-breastfeeding"
+                  },
+                  {
+                    "reference": "ClinicalUseDefinition/warn-liver-enzymes"
+                  },
+                  {
+                    "reference": "ClinicalUseDefinition/warn-blood-pressure"
+                  },
+                  {
+                    "reference": "ClinicalUseDefinition/warn-renal-severe"
+                  },
+                  {
+                    "reference": "Group/grp-adults"
+                  },
+                  {
+                    "reference": "ClinicalUseDefinition/int-cyp3a4-moderate"
+                  },
+                  {
+                    "reference": "ClinicalUseDefinition/int-rifampicin"
+                  },
+                  {
+                    "reference": "ClinicalUseDefinition/int-warfarin"
+                  },
+                  {
+                    "reference": "ClinicalUseDefinition/int-grapefruit"
+                  },
+                  {
+                    "reference": "ClinicalUseDefinition/ue-dizziness"
+                  },
+                  {
+                    "reference": "ClinicalUseDefinition/warn-lactose"
+                  }
+                ]
+              },
+              {
+                "id": "p-pil-3",
+                "title": "3. How to take Sakura Bloom",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://example.org/fhir-gra/CodeSystem/pil-section",
+                      "code": "pil-3",
+                      "display": "3. How to take Sakura Bloom"
+                    }
+                  ],
+                  "text": "3. How to take Sakura Bloom"
+                },
+                "text": {
+                  "status": "additional",
+                  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Always take this medicine exactly as your doctor or pharmacist has told you. Check with your doctor or pharmacist if you are not sure.</p><p>The recommended dose is one 20 mg tablet once a day. Your doctor may increase it to 40 mg once a day after at least 4 weeks. Do not take more than 40 mg a day.</p><p>Swallow the tablet whole with a glass of water, with or without food, at about the same time each day.</p><p><b>If you take more Sakura Bloom than you should</b></p><p>Contact your doctor or the nearest hospital emergency department.</p><p><b>If you forget to take Sakura Bloom</b></p><p>Take the next dose at the usual time. Do not take a double dose to make up for a forgotten tablet.</p><p><b>If you stop taking Sakura Bloom</b></p><p>Talk to your doctor first, because your cholesterol may rise again.</p></div>"
+                },
+                "entry": [
+                  {
+                    "reference": "ClinicalUseDefinition/ind-hypercholesterolaemia"
+                  },
+                  {
+                    "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+                  },
+                  {
+                    "reference": "AdministrableProductDefinition/apd-sakura-bloom-20mg"
+                  }
+                ]
+              },
+              {
+                "id": "p-pil-4",
+                "title": "4. Possible side effects",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://example.org/fhir-gra/CodeSystem/pil-section",
+                      "code": "pil-4",
+                      "display": "4. Possible side effects"
+                    }
+                  ],
+                  "text": "4. Possible side effects"
+                },
+                "text": {
+                  "status": "additional",
+                  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Like all medicines, this medicine can cause side effects, although not everybody gets them.</p><p><b>Stop taking Sakura Bloom and see a doctor straight away if you get</b> swelling of the face, lips, tongue or throat.</p><div id=\"gen-pil-se\"><p><b>Common (may affect up to 1 in 10 people)</b></p><ul><li>headache</li><li>feeling sick (nausea)</li><li>muscle pain</li></ul><p><b>Uncommon (may affect up to 1 in 100 people)</b></p><ul><li>dizziness</li><li>high blood pressure</li><li>raised liver enzymes in blood tests</li></ul><p><b>Rare (may affect up to 1 in 1,000 people)</b></p><ul><li>swelling of the face, lips, tongue or throat (angioedema)</li><li>skin rash</li></ul></div><p><b>Reporting of side effects</b></p><p>If you get any side effects, talk to your doctor or pharmacist. You can also report side effects directly via the national reporting system.</p></div>"
+                },
+                "entry": [
+                  {
+                    "reference": "ClinicalUseDefinition/ue-angioedema"
+                  },
+                  {
+                    "reference": "ClinicalUseDefinition/ue-headache"
+                  },
+                  {
+                    "reference": "ClinicalUseDefinition/ue-nausea"
+                  },
+                  {
+                    "reference": "ClinicalUseDefinition/ue-myalgia"
+                  },
+                  {
+                    "reference": "ClinicalUseDefinition/ue-dizziness"
+                  },
+                  {
+                    "reference": "ClinicalUseDefinition/ue-hypertension"
+                  },
+                  {
+                    "reference": "ClinicalUseDefinition/ue-alt-increased"
+                  },
+                  {
+                    "reference": "ClinicalUseDefinition/ue-rash"
+                  }
+                ]
+              },
+              {
+                "id": "p-pil-5",
+                "title": "5. How to store Sakura Bloom",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://example.org/fhir-gra/CodeSystem/pil-section",
+                      "code": "pil-5",
+                      "display": "5. How to store Sakura Bloom"
+                    }
+                  ],
+                  "text": "5. How to store Sakura Bloom"
+                },
+                "text": {
+                  "status": "additional",
+                  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Keep this medicine out of the sight and reach of children.</p><p>Do not use this medicine after the expiry date which is stated on the carton and the blister or bottle after EXP.</p><p>This medicine does not require any special storage conditions.</p><p>Do not throw away any medicines via wastewater or household waste. Ask your pharmacist how to throw away medicines you no longer use.</p></div>"
+                },
+                "entry": [
+                  {
+                    "reference": "PackagedProductDefinition/ppd-blister-28"
+                  }
+                ]
+              },
+              {
+                "id": "p-pil-6",
+                "title": "6. Contents of the pack and other information",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://example.org/fhir-gra/CodeSystem/pil-section",
+                      "code": "pil-6",
+                      "display": "6. Contents of the pack and other information"
+                    }
+                  ],
+                  "text": "6. Contents of the pack and other information"
+                },
+                "text": {
+                  "status": "additional",
+                  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>What Sakura Bloom contains</b></p><ul><li>The active substance is Sakuramil. Each film-coated tablet contains 20 mg Sakuramil.</li><li>The other ingredients are: tablet core: lactose monohydrate, microcrystalline cellulose, croscarmellose sodium, hydroxypropyl cellulose, magnesium stearate; film-coating: hypromellose, macrogol 6000, titanium dioxide (E171), iron oxide red (E172).</li></ul><p><b>What Sakura Bloom looks like and contents of the pack</b></p><p>Sakura Bloom tablets are pale red, round film-coated tablets marked SB on one side and 20 on the other.</p><p><img src=\"#tablet-image\" alt=\"Pale red round film-coated tablet debossed SB and 20\"/></p><p>They come in cartons of 28 tablets in blisters and bottles of 30 tablets. Not all pack sizes may be marketed.</p><p><b>Marketing Authorisation Holder</b></p><p>Sakura Pharmaceuticals Europe B.V., Bloesemlaan 1, 1000 AA Amsterdam, Netherlands</p><p><b>Manufacturer</b></p><p>Aparna Pharmaceutical Manufacturing Pte. Ltd., 10 Green Road, Gulshan, Bangladesh</p><p>This leaflet was last revised in 11/2026.</p></div>"
+                },
+                "entry": [
+                  {
+                    "reference": "Ingredient/ing-sakuramil"
+                  },
+                  {
+                    "reference": "Ingredient/ing-lactose-monohydrate"
+                  },
+                  {
+                    "reference": "Ingredient/ing-microcrystalline-cellulose"
+                  },
+                  {
+                    "reference": "Ingredient/ing-croscarmellose-sodium"
+                  },
+                  {
+                    "reference": "Ingredient/ing-hydroxypropyl-cellulose"
+                  },
+                  {
+                    "reference": "Ingredient/ing-magnesium-stearate"
+                  },
+                  {
+                    "reference": "Ingredient/ing-hypromellose"
+                  },
+                  {
+                    "reference": "Ingredient/ing-macrogol-6000"
+                  },
+                  {
+                    "reference": "Ingredient/ing-titanium-dioxide"
+                  },
+                  {
+                    "reference": "Ingredient/ing-iron-oxide-red"
+                  },
+                  {
+                    "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+                  },
+                  {
+                    "reference": "PackagedProductDefinition/ppd-blister-28"
+                  },
+                  {
+                    "reference": "PackagedProductDefinition/ppd-bottle-30"
+                  },
+                  {
+                    "reference": "Organization/sakura-pharma-eu"
+                  },
+                  {
+                    "reference": "Organization/aparna-pharm"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/AdministrableProductDefinition/apd-sakura-bloom-20mg",
+      "resource": {
+        "resourceType": "AdministrableProductDefinition",
+        "id": "apd-sakura-bloom-20mg",
+        "status": "active",
+        "formOf": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          }
+        ],
+        "administrableDoseForm": {
+          "coding": [
+            {
+              "system": "http://standardterms.edqm.eu",
+              "code": "10221000",
+              "display": "Film-coated tablet"
+            }
+          ],
+          "text": "Film-coated tablet"
+        },
+        "unitOfPresentation": {
+          "coding": [
+            {
+              "system": "http://standardterms.edqm.eu",
+              "code": "15054000",
+              "display": "Tablet"
+            }
+          ],
+          "text": "Tablet"
+        },
+        "producedFrom": [
+          {
+            "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+          }
+        ],
+        "routeOfAdministration": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://standardterms.edqm.eu",
+                  "code": "20053000",
+                  "display": "Oral use"
+                }
+              ],
+              "text": "Oral use"
+            }
+          }
+        ],
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/ClinicalUseDefinition/ci-breastfeeding",
+      "resource": {
+        "resourceType": "ClinicalUseDefinition",
+        "id": "ci-breastfeeding",
+        "type": "contraindication",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/emedicinal-product-info/CodeSystem/epi-ig",
+                "code": "contraindication",
+                "display": "Contraindication"
+              }
+            ],
+            "text": "Contraindication"
+          }
+        ],
+        "subject": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          }
+        ],
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "contraindication": {
+          "diseaseSymptomProcedure": {
+            "concept": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir-gra/CodeSystem/synthetic-concept",
+                  "code": "breastfeeding",
+                  "display": "Breast-feeding"
+                }
+              ],
+              "text": "Breast-feeding"
+            }
+          }
+        },
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/ClinicalUseDefinition/ci-hypersensitivity",
+      "resource": {
+        "resourceType": "ClinicalUseDefinition",
+        "id": "ci-hypersensitivity",
+        "type": "contraindication",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/emedicinal-product-info/CodeSystem/epi-ig",
+                "code": "contraindication",
+                "display": "Contraindication"
+              }
+            ],
+            "text": "Contraindication"
+          }
+        ],
+        "subject": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          }
+        ],
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "contraindication": {
+          "diseaseSymptomProcedure": {
+            "concept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "421961002",
+                  "display": "Hypersensitivity reaction"
+                }
+              ],
+              "text": "Hypersensitivity to Sakuramil or to any of the excipients"
+            }
+          }
+        },
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/ClinicalUseDefinition/ci-liver",
+      "resource": {
+        "resourceType": "ClinicalUseDefinition",
+        "id": "ci-liver",
+        "type": "contraindication",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/emedicinal-product-info/CodeSystem/epi-ig",
+                "code": "contraindication",
+                "display": "Contraindication"
+              }
+            ],
+            "text": "Contraindication"
+          }
+        ],
+        "subject": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          }
+        ],
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "contraindication": {
+          "diseaseSymptomProcedure": {
+            "concept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "235856003",
+                  "display": "Disorder of liver"
+                }
+              ],
+              "text": "Active liver disease or unexplained persistent elevation of serum transaminases"
+            }
+          }
+        },
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/ClinicalUseDefinition/ci-pregnancy",
+      "resource": {
+        "resourceType": "ClinicalUseDefinition",
+        "id": "ci-pregnancy",
+        "type": "contraindication",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/emedicinal-product-info/CodeSystem/epi-ig",
+                "code": "contraindication",
+                "display": "Contraindication"
+              }
+            ],
+            "text": "Contraindication"
+          }
+        ],
+        "subject": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          }
+        ],
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "contraindication": {
+          "diseaseSymptomProcedure": {
+            "concept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "77386006",
+                  "display": "Pregnancy"
+                }
+              ],
+              "text": "Pregnancy"
+            }
+          }
+        },
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/ClinicalUseDefinition/ci-strong-cyp3a4",
+      "resource": {
+        "resourceType": "ClinicalUseDefinition",
+        "id": "ci-strong-cyp3a4",
+        "type": "contraindication",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/emedicinal-product-info/CodeSystem/epi-ig",
+                "code": "contraindication",
+                "display": "Contraindication"
+              }
+            ],
+            "text": "Contraindication"
+          }
+        ],
+        "subject": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          }
+        ],
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "contraindication": {
+          "diseaseSymptomProcedure": {
+            "concept": {
+              "text": "Concomitant treatment with a strong CYP3A4 inhibitor"
+            }
+          },
+          "otherTherapy": [
+            {
+              "relationshipType": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/therapy-relationship-type",
+                    "code": "contraindicated-only-with",
+                    "display": "Contraindicated only with"
+                  }
+                ],
+                "text": "Contraindicated only with"
+              },
+              "treatment": {
+                "concept": {
+                  "coding": [
+                    {
+                      "system": "http://www.whocc.no/atc",
+                      "code": "J02AB02",
+                      "display": "ketoconazole"
+                    }
+                  ],
+                  "text": "ketoconazole"
+                }
+              }
+            },
+            {
+              "relationshipType": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/therapy-relationship-type",
+                    "code": "contraindicated-only-with",
+                    "display": "Contraindicated only with"
+                  }
+                ],
+                "text": "Contraindicated only with"
+              },
+              "treatment": {
+                "concept": {
+                  "coding": [
+                    {
+                      "system": "http://www.whocc.no/atc",
+                      "code": "J02AC02",
+                      "display": "itraconazole"
+                    }
+                  ],
+                  "text": "itraconazole"
+                }
+              }
+            },
+            {
+              "relationshipType": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/therapy-relationship-type",
+                    "code": "contraindicated-only-with",
+                    "display": "Contraindicated only with"
+                  }
+                ],
+                "text": "Contraindicated only with"
+              },
+              "treatment": {
+                "concept": {
+                  "coding": [
+                    {
+                      "system": "http://www.whocc.no/atc",
+                      "code": "J01FA09",
+                      "display": "clarithromycin"
+                    }
+                  ],
+                  "text": "clarithromycin"
+                }
+              }
+            }
+          ]
+        },
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/ClinicalUseDefinition/ind-hypercholesterolaemia",
+      "resource": {
+        "resourceType": "ClinicalUseDefinition",
+        "id": "ind-hypercholesterolaemia",
+        "type": "indication",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/emedicinal-product-info/CodeSystem/epi-ig",
+                "code": "indication",
+                "display": "Indication"
+              }
+            ],
+            "text": "Indication"
+          }
+        ],
+        "subject": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          }
+        ],
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "indication": {
+          "diseaseSymptomProcedure": {
+            "concept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "13644009",
+                  "display": "Hypercholesterolaemia"
+                }
+              ],
+              "text": "Primary hypercholesterolaemia"
+            }
+          },
+          "intendedEffect": {
+            "concept": {
+              "text": "Reduction of LDL-cholesterol, as an adjunct to diet"
+            }
+          }
+        },
+        "population": [
+          {
+            "reference": "Group/grp-adults"
+          }
+        ],
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/emedicinal-product-info/StructureDefinition/ext-epi-dosing-guideline",
+            "valueDosage": {
+              "text": "20 mg once daily; may be increased to 40 mg once daily after at least 4 weeks. Maximum 40 mg a day.",
+              "timing": {
+                "repeat": {
+                  "frequency": 1,
+                  "period": 1,
+                  "periodUnit": "d"
+                }
+              },
+              "route": {
+                "coding": [
+                  {
+                    "system": "http://standardterms.edqm.eu",
+                    "code": "20053000",
+                    "display": "Oral use"
+                  }
+                ],
+                "text": "Oral use"
+              },
+              "doseAndRate": [
+                {
+                  "doseQuantity": {
+                    "value": 20,
+                    "unit": "mg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mg"
+                  }
+                }
+              ],
+              "maxDosePerPeriod": [
+                {
+                  "numerator": {
+                    "value": 40,
+                    "unit": "mg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mg"
+                  },
+                  "denominator": {
+                    "value": 1,
+                    "unit": "day",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "d"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/ClinicalUseDefinition/int-cyp3a4-moderate",
+      "resource": {
+        "resourceType": "ClinicalUseDefinition",
+        "id": "int-cyp3a4-moderate",
+        "type": "interaction",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/emedicinal-product-info/CodeSystem/epi-ig",
+                "code": "interaction",
+                "display": "Interaction"
+              }
+            ],
+            "text": "Interaction"
+          }
+        ],
+        "subject": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          }
+        ],
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "interaction": {
+          "interactant": [
+            {
+              "itemCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://www.whocc.no/atc",
+                    "code": "C08DB01",
+                    "display": "diltiazem"
+                  }
+                ],
+                "text": "diltiazem"
+              }
+            },
+            {
+              "itemCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://www.whocc.no/atc",
+                    "code": "C08DA01",
+                    "display": "verapamil"
+                  }
+                ],
+                "text": "verapamil"
+              }
+            }
+          ],
+          "type": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/interaction-type",
+                "code": "drug-drug",
+                "display": "Drug-drug interaction"
+              }
+            ],
+            "text": "Drug-drug interaction"
+          },
+          "effect": {
+            "concept": {
+              "text": "Sakuramil exposure increased about 2-fold"
+            }
+          },
+          "management": [
+            {
+              "text": "Do not exceed 20 mg once daily"
+            }
+          ]
+        },
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/ClinicalUseDefinition/int-cyp3a4-strong",
+      "resource": {
+        "resourceType": "ClinicalUseDefinition",
+        "id": "int-cyp3a4-strong",
+        "type": "interaction",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/emedicinal-product-info/CodeSystem/epi-ig",
+                "code": "interaction",
+                "display": "Interaction"
+              }
+            ],
+            "text": "Interaction"
+          }
+        ],
+        "subject": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          }
+        ],
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "interaction": {
+          "interactant": [
+            {
+              "itemCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://www.whocc.no/atc",
+                    "code": "J02AB02",
+                    "display": "ketoconazole"
+                  }
+                ],
+                "text": "ketoconazole"
+              }
+            },
+            {
+              "itemCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://www.whocc.no/atc",
+                    "code": "J02AC02",
+                    "display": "itraconazole"
+                  }
+                ],
+                "text": "itraconazole"
+              }
+            },
+            {
+              "itemCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://www.whocc.no/atc",
+                    "code": "J01FA09",
+                    "display": "clarithromycin"
+                  }
+                ],
+                "text": "clarithromycin"
+              }
+            }
+          ],
+          "type": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/interaction-type",
+                "code": "drug-drug",
+                "display": "Drug-drug interaction"
+              }
+            ],
+            "text": "Drug-drug interaction"
+          },
+          "effect": {
+            "concept": {
+              "text": "Sakuramil exposure (AUC) increased about 4-fold"
+            }
+          },
+          "management": [
+            {
+              "text": "Contraindicated (see section 4.3)"
+            }
+          ]
+        },
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/ClinicalUseDefinition/int-grapefruit",
+      "resource": {
+        "resourceType": "ClinicalUseDefinition",
+        "id": "int-grapefruit",
+        "type": "interaction",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/emedicinal-product-info/CodeSystem/epi-ig",
+                "code": "interaction",
+                "display": "Interaction"
+              }
+            ],
+            "text": "Interaction"
+          }
+        ],
+        "subject": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          }
+        ],
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "interaction": {
+          "interactant": [
+            {
+              "itemCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://example.org/fhir-gra/CodeSystem/synthetic-concept",
+                    "code": "grapefruit-juice",
+                    "display": "Grapefruit juice"
+                  }
+                ],
+                "text": "Grapefruit juice"
+              }
+            }
+          ],
+          "type": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/interaction-type",
+                "code": "drug-food",
+                "display": "Drug-food interaction"
+              }
+            ],
+            "text": "Drug-food interaction"
+          },
+          "effect": {
+            "concept": {
+              "text": "Increased Sakuramil exposure with large quantities"
+            }
+          },
+          "management": [
+            {
+              "text": "Avoid more than 1 litre a day"
+            }
+          ]
+        },
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/ClinicalUseDefinition/int-rifampicin",
+      "resource": {
+        "resourceType": "ClinicalUseDefinition",
+        "id": "int-rifampicin",
+        "type": "interaction",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/emedicinal-product-info/CodeSystem/epi-ig",
+                "code": "interaction",
+                "display": "Interaction"
+              }
+            ],
+            "text": "Interaction"
+          }
+        ],
+        "subject": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          }
+        ],
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "interaction": {
+          "interactant": [
+            {
+              "itemCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://www.whocc.no/atc",
+                    "code": "J04AB02",
+                    "display": "rifampicin"
+                  }
+                ],
+                "text": "rifampicin"
+              }
+            }
+          ],
+          "type": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/interaction-type",
+                "code": "drug-drug",
+                "display": "Drug-drug interaction"
+              }
+            ],
+            "text": "Drug-drug interaction"
+          },
+          "effect": {
+            "concept": {
+              "text": "Sakuramil exposure reduced by about 70%"
+            }
+          },
+          "management": [
+            {
+              "text": "Avoid concomitant use"
+            }
+          ]
+        },
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/ClinicalUseDefinition/int-warfarin",
+      "resource": {
+        "resourceType": "ClinicalUseDefinition",
+        "id": "int-warfarin",
+        "type": "interaction",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/emedicinal-product-info/CodeSystem/epi-ig",
+                "code": "interaction",
+                "display": "Interaction"
+              }
+            ],
+            "text": "Interaction"
+          }
+        ],
+        "subject": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          }
+        ],
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "interaction": {
+          "interactant": [
+            {
+              "itemCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://www.whocc.no/atc",
+                    "code": "B01AA03",
+                    "display": "warfarin"
+                  }
+                ],
+                "text": "warfarin"
+              }
+            }
+          ],
+          "type": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/interaction-type",
+                "code": "drug-drug",
+                "display": "Drug-drug interaction"
+              }
+            ],
+            "text": "Drug-drug interaction"
+          },
+          "effect": {
+            "concept": {
+              "text": "Small increase in INR"
+            }
+          },
+          "management": [
+            {
+              "text": "Monitor INR when Sakura Bloom is started, stopped or its dose changed"
+            }
+          ]
+        },
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/ClinicalUseDefinition/ue-alt-increased",
+      "resource": {
+        "resourceType": "ClinicalUseDefinition",
+        "id": "ue-alt-increased",
+        "type": "undesirable-effect",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/emedicinal-product-info/CodeSystem/epi-ig",
+                "code": "undesirable-effect",
+                "display": "Undesirable effect"
+              }
+            ],
+            "text": "Undesirable effect"
+          }
+        ],
+        "subject": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          }
+        ],
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "undesirableEffect": {
+          "symptomConditionEffect": {
+            "concept": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir-gra/CodeSystem/synthetic-concept",
+                  "code": "alt-increased",
+                  "display": "Alanine aminotransferase increased"
+                }
+              ],
+              "text": "raised liver enzymes in blood tests"
+            }
+          },
+          "classification": {
+            "text": "Investigations"
+          },
+          "frequencyOfOccurrence": {
+            "coding": [
+              {
+                "system": "http://example.org/fhir-gra/CodeSystem/frequency",
+                "code": "uncommon",
+                "display": "Uncommon"
+              }
+            ],
+            "text": "Uncommon"
+          }
+        },
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/ClinicalUseDefinition/ue-angioedema",
+      "resource": {
+        "resourceType": "ClinicalUseDefinition",
+        "id": "ue-angioedema",
+        "type": "undesirable-effect",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/emedicinal-product-info/CodeSystem/epi-ig",
+                "code": "undesirable-effect",
+                "display": "Undesirable effect"
+              }
+            ],
+            "text": "Undesirable effect"
+          }
+        ],
+        "subject": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          }
+        ],
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "undesirableEffect": {
+          "symptomConditionEffect": {
+            "concept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "41291007",
+                  "display": "Angioedema"
+                }
+              ],
+              "text": "swelling of the face, lips, tongue or throat (angioedema)"
+            }
+          },
+          "classification": {
+            "text": "Skin and subcutaneous tissue disorders"
+          },
+          "frequencyOfOccurrence": {
+            "coding": [
+              {
+                "system": "http://example.org/fhir-gra/CodeSystem/frequency",
+                "code": "rare",
+                "display": "Rare"
+              }
+            ],
+            "text": "Rare"
+          }
+        },
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/ClinicalUseDefinition/ue-dizziness",
+      "resource": {
+        "resourceType": "ClinicalUseDefinition",
+        "id": "ue-dizziness",
+        "type": "undesirable-effect",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/emedicinal-product-info/CodeSystem/epi-ig",
+                "code": "undesirable-effect",
+                "display": "Undesirable effect"
+              }
+            ],
+            "text": "Undesirable effect"
+          }
+        ],
+        "subject": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          }
+        ],
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "undesirableEffect": {
+          "symptomConditionEffect": {
+            "concept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "404640003",
+                  "display": "Dizziness"
+                }
+              ],
+              "text": "dizziness"
+            }
+          },
+          "classification": {
+            "text": "Nervous system disorders"
+          },
+          "frequencyOfOccurrence": {
+            "coding": [
+              {
+                "system": "http://example.org/fhir-gra/CodeSystem/frequency",
+                "code": "uncommon",
+                "display": "Uncommon"
+              }
+            ],
+            "text": "Uncommon"
+          }
+        },
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/ClinicalUseDefinition/ue-headache",
+      "resource": {
+        "resourceType": "ClinicalUseDefinition",
+        "id": "ue-headache",
+        "type": "undesirable-effect",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/emedicinal-product-info/CodeSystem/epi-ig",
+                "code": "undesirable-effect",
+                "display": "Undesirable effect"
+              }
+            ],
+            "text": "Undesirable effect"
+          }
+        ],
+        "subject": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          }
+        ],
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "undesirableEffect": {
+          "symptomConditionEffect": {
+            "concept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "25064002",
+                  "display": "Headache"
+                }
+              ],
+              "text": "headache"
+            }
+          },
+          "classification": {
+            "text": "Nervous system disorders"
+          },
+          "frequencyOfOccurrence": {
+            "coding": [
+              {
+                "system": "http://example.org/fhir-gra/CodeSystem/frequency",
+                "code": "common",
+                "display": "Common"
+              }
+            ],
+            "text": "Common"
+          }
+        },
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/ClinicalUseDefinition/ue-hypertension",
+      "resource": {
+        "resourceType": "ClinicalUseDefinition",
+        "id": "ue-hypertension",
+        "type": "undesirable-effect",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/emedicinal-product-info/CodeSystem/epi-ig",
+                "code": "undesirable-effect",
+                "display": "Undesirable effect"
+              }
+            ],
+            "text": "Undesirable effect"
+          }
+        ],
+        "subject": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          }
+        ],
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "undesirableEffect": {
+          "symptomConditionEffect": {
+            "concept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "38341003",
+                  "display": "Hypertension"
+                }
+              ],
+              "text": "high blood pressure"
+            }
+          },
+          "classification": {
+            "text": "Vascular disorders"
+          },
+          "frequencyOfOccurrence": {
+            "coding": [
+              {
+                "system": "http://example.org/fhir-gra/CodeSystem/frequency",
+                "code": "uncommon",
+                "display": "Uncommon"
+              }
+            ],
+            "text": "Uncommon"
+          }
+        },
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/ClinicalUseDefinition/ue-myalgia",
+      "resource": {
+        "resourceType": "ClinicalUseDefinition",
+        "id": "ue-myalgia",
+        "type": "undesirable-effect",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/emedicinal-product-info/CodeSystem/epi-ig",
+                "code": "undesirable-effect",
+                "display": "Undesirable effect"
+              }
+            ],
+            "text": "Undesirable effect"
+          }
+        ],
+        "subject": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          }
+        ],
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "undesirableEffect": {
+          "symptomConditionEffect": {
+            "concept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "68962001",
+                  "display": "Myalgia"
+                }
+              ],
+              "text": "muscle pain"
+            }
+          },
+          "classification": {
+            "text": "Musculoskeletal and connective tissue disorders"
+          },
+          "frequencyOfOccurrence": {
+            "coding": [
+              {
+                "system": "http://example.org/fhir-gra/CodeSystem/frequency",
+                "code": "common",
+                "display": "Common"
+              }
+            ],
+            "text": "Common"
+          }
+        },
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/ClinicalUseDefinition/ue-nausea",
+      "resource": {
+        "resourceType": "ClinicalUseDefinition",
+        "id": "ue-nausea",
+        "type": "undesirable-effect",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/emedicinal-product-info/CodeSystem/epi-ig",
+                "code": "undesirable-effect",
+                "display": "Undesirable effect"
+              }
+            ],
+            "text": "Undesirable effect"
+          }
+        ],
+        "subject": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          }
+        ],
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "undesirableEffect": {
+          "symptomConditionEffect": {
+            "concept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "422587007",
+                  "display": "Nausea"
+                }
+              ],
+              "text": "feeling sick (nausea)"
+            }
+          },
+          "classification": {
+            "text": "Gastrointestinal disorders"
+          },
+          "frequencyOfOccurrence": {
+            "coding": [
+              {
+                "system": "http://example.org/fhir-gra/CodeSystem/frequency",
+                "code": "common",
+                "display": "Common"
+              }
+            ],
+            "text": "Common"
+          }
+        },
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/ClinicalUseDefinition/ue-rash",
+      "resource": {
+        "resourceType": "ClinicalUseDefinition",
+        "id": "ue-rash",
+        "type": "undesirable-effect",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/emedicinal-product-info/CodeSystem/epi-ig",
+                "code": "undesirable-effect",
+                "display": "Undesirable effect"
+              }
+            ],
+            "text": "Undesirable effect"
+          }
+        ],
+        "subject": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          }
+        ],
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "undesirableEffect": {
+          "symptomConditionEffect": {
+            "concept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "271807003",
+                  "display": "Rash"
+                }
+              ],
+              "text": "skin rash"
+            }
+          },
+          "classification": {
+            "text": "Skin and subcutaneous tissue disorders"
+          },
+          "frequencyOfOccurrence": {
+            "coding": [
+              {
+                "system": "http://example.org/fhir-gra/CodeSystem/frequency",
+                "code": "rare",
+                "display": "Rare"
+              }
+            ],
+            "text": "Rare"
+          }
+        },
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/ClinicalUseDefinition/warn-blood-pressure",
+      "resource": {
+        "resourceType": "ClinicalUseDefinition",
+        "id": "warn-blood-pressure",
+        "type": "warning",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/emedicinal-product-info/CodeSystem/epi-ig",
+                "code": "warning",
+                "display": "Warning"
+              }
+            ],
+            "text": "Warning"
+          }
+        ],
+        "subject": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          }
+        ],
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "warning": {
+          "description": "Check blood pressure before treatment and at each follow-up visit, particularly in patients with hypertension.",
+          "code": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "38341003",
+                "display": "Hypertension"
+              }
+            ],
+            "text": "Hypertension"
+          }
+        },
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/ClinicalUseDefinition/warn-lactose",
+      "resource": {
+        "resourceType": "ClinicalUseDefinition",
+        "id": "warn-lactose",
+        "type": "warning",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/emedicinal-product-info/CodeSystem/epi-ig",
+                "code": "warning",
+                "display": "Warning"
+              }
+            ],
+            "text": "Warning"
+          }
+        ],
+        "subject": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          }
+        ],
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "warning": {
+          "description": "Contains lactose. Patients with hereditary galactose intolerance, total lactase deficiency or glucose-galactose malabsorption should not take this medicine.",
+          "code": {
+            "coding": [
+              {
+                "system": "http://example.org/fhir-gra/CodeSystem/synthetic-concept",
+                "code": "galactose-intolerance",
+                "display": "Hereditary galactose intolerance, lactase deficiency or glucose-galactose malabsorption"
+              }
+            ],
+            "text": "Hereditary galactose intolerance, lactase deficiency or glucose-galactose malabsorption"
+          }
+        },
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/ClinicalUseDefinition/warn-liver-enzymes",
+      "resource": {
+        "resourceType": "ClinicalUseDefinition",
+        "id": "warn-liver-enzymes",
+        "type": "warning",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/emedicinal-product-info/CodeSystem/epi-ig",
+                "code": "warning",
+                "display": "Warning"
+              }
+            ],
+            "text": "Warning"
+          }
+        ],
+        "subject": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          }
+        ],
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "warning": {
+          "description": "Perform liver function tests before treatment, at 12 weeks and periodically thereafter. Stop treatment if transaminases rise persistently above 3 x ULN.",
+          "code": {
+            "coding": [
+              {
+                "system": "http://example.org/fhir-gra/CodeSystem/synthetic-concept",
+                "code": "liver-function-monitoring",
+                "display": "Liver function monitoring"
+              }
+            ],
+            "text": "Liver function monitoring"
+          }
+        },
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/ClinicalUseDefinition/warn-renal-severe",
+      "resource": {
+        "resourceType": "ClinicalUseDefinition",
+        "id": "warn-renal-severe",
+        "type": "warning",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/emedicinal-product-info/CodeSystem/epi-ig",
+                "code": "warning",
+                "display": "Warning"
+              }
+            ],
+            "text": "Warning"
+          }
+        ],
+        "subject": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          }
+        ],
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "warning": {
+          "description": "Severe renal impairment (eGFR below 30 mL/min/1.73 m2): do not exceed 20 mg once daily.",
+          "code": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "709044004",
+                "display": "Chronic kidney disease"
+              }
+            ],
+            "text": "Chronic kidney disease"
+          }
+        },
+        "population": [
+          {
+            "reference": "Group/grp-severe-renal"
+          }
+        ],
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/Group/grp-adults",
+      "resource": {
+        "resourceType": "Group",
+        "id": "grp-adults",
+        "name": "Adults (18 years and over)",
+        "type": "person",
+        "membership": "definitional",
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir-gra/CodeSystem/synthetic-concept",
+                  "code": "age",
+                  "display": "Age"
+                }
+              ],
+              "text": "Age"
+            },
+            "valueRange": {
+              "low": {
+                "value": 18,
+                "unit": "years",
+                "system": "http://unitsofmeasure.org",
+                "code": "a"
+              }
+            },
+            "exclude": false
+          }
+        ],
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/Group/grp-severe-renal",
+      "resource": {
+        "resourceType": "Group",
+        "id": "grp-severe-renal",
+        "name": "Severe renal impairment (eGFR below 30 mL/min/1.73 m2)",
+        "type": "person",
+        "membership": "definitional",
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir-gra/CodeSystem/synthetic-concept",
+                  "code": "egfr",
+                  "display": "Estimated glomerular filtration rate"
+                }
+              ],
+              "text": "Estimated glomerular filtration rate"
+            },
+            "valueRange": {
+              "high": {
+                "value": 30,
+                "unit": "mL/min/1.73 m2",
+                "system": "http://unitsofmeasure.org",
+                "code": "mL/min/{1.73_m2}"
+              }
+            },
+            "exclude": false
+          }
+        ],
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/Ingredient/ing-coating-premix-red",
+      "resource": {
+        "resourceType": "Ingredient",
+        "id": "ing-coating-premix-red",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"
+          ],
+          "source": "https://ichm4q.notion.site/2a317984c9fc8144b81ce7e58885d190",
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir-gra/CodeSystem/provenance",
+              "code": "reused-from-pqi",
+              "display": "Same resource as the Sakura Bloom PQI dataset"
+            }
+          ]
+        },
+        "status": "active",
+        "for": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          },
+          {
+            "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+          }
+        ],
+        "role": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/ingredient-role",
+              "code": "100000072082",
+              "display": "Excipient"
+            }
+          ],
+          "text": "Excipient"
+        },
+        "function": [
+          {
+            "text": "Coating agent"
+          }
+        ],
+        "substance": {
+          "code": {
+            "reference": {
+              "reference": "SubstanceDefinition/coating-premix-red"
+            }
+          },
+          "strength": [
+            {
+              "presentationRatio": {
+                "numerator": {
+                  "value": 6.0,
+                  "unit": "mg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "mg"
+                },
+                "denominator": {
+                  "value": 1,
+                  "unit": "tablet",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "{tablet}"
+                }
+              },
+              "textPresentation": "6.00 mg per film-coated tablet"
+            },
+            {
+              "presentationRatio": {
+                "numerator": {
+                  "value": 15.6,
+                  "unit": "kg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "kg"
+                },
+                "denominator": {
+                  "value": 520.0,
+                  "unit": "kg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "kg"
+                }
+              },
+              "textPresentation": "15.600 kg per commercial batch (520.000 kg, approx. 2,600,000 tablets)",
+              "basis": {
+                "text": "Batch formula"
+              }
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-novel-excipient-pq",
+            "valueBoolean": false
+          },
+          {
+            "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-suitability-for-use-pq",
+            "valueString": "Complies with In-house"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/Ingredient/ing-croscarmellose-sodium",
+      "resource": {
+        "resourceType": "Ingredient",
+        "id": "ing-croscarmellose-sodium",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"
+          ],
+          "source": "https://ichm4q.notion.site/2a317984c9fc8144b81ce7e58885d190",
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir-gra/CodeSystem/provenance",
+              "code": "reused-from-pqi",
+              "display": "Same resource as the Sakura Bloom PQI dataset"
+            }
+          ]
+        },
+        "status": "active",
+        "for": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          },
+          {
+            "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+          }
+        ],
+        "role": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/ingredient-role",
+              "code": "100000072082",
+              "display": "Excipient"
+            }
+          ],
+          "text": "Excipient"
+        },
+        "function": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/ingredient-function",
+                "code": "disintegrant",
+                "display": "Disintegrant"
+              }
+            ],
+            "text": "Disintegrant"
+          }
+        ],
+        "substance": {
+          "code": {
+            "reference": {
+              "reference": "SubstanceDefinition/croscarmellose-sodium"
+            }
+          },
+          "strength": [
+            {
+              "presentationRatio": {
+                "numerator": {
+                  "value": 10.0,
+                  "unit": "mg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "mg"
+                },
+                "denominator": {
+                  "value": 1,
+                  "unit": "tablet",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "{tablet}"
+                }
+              },
+              "textPresentation": "10.00 mg per film-coated tablet"
+            },
+            {
+              "presentationRatio": {
+                "numerator": {
+                  "value": 26.0,
+                  "unit": "kg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "kg"
+                },
+                "denominator": {
+                  "value": 520.0,
+                  "unit": "kg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "kg"
+                }
+              },
+              "textPresentation": "26.000 kg per commercial batch (520.000 kg, approx. 2,600,000 tablets)",
+              "basis": {
+                "text": "Batch formula"
+              }
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-novel-excipient-pq",
+            "valueBoolean": false
+          },
+          {
+            "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-suitability-for-use-pq",
+            "valueString": "Complies with Ph. Eur., USP/NF, JP"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/Ingredient/ing-hydroxypropyl-cellulose",
+      "resource": {
+        "resourceType": "Ingredient",
+        "id": "ing-hydroxypropyl-cellulose",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"
+          ],
+          "source": "https://ichm4q.notion.site/2a317984c9fc8144b81ce7e58885d190",
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir-gra/CodeSystem/provenance",
+              "code": "reused-from-pqi",
+              "display": "Same resource as the Sakura Bloom PQI dataset"
+            }
+          ]
+        },
+        "status": "active",
+        "for": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          },
+          {
+            "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+          }
+        ],
+        "role": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/ingredient-role",
+              "code": "100000072082",
+              "display": "Excipient"
+            }
+          ],
+          "text": "Excipient"
+        },
+        "function": [
+          {
+            "text": "Binder"
+          }
+        ],
+        "substance": {
+          "code": {
+            "reference": {
+              "reference": "SubstanceDefinition/hydroxypropyl-cellulose"
+            }
+          },
+          "strength": [
+            {
+              "presentationRatio": {
+                "numerator": {
+                  "value": 6.0,
+                  "unit": "mg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "mg"
+                },
+                "denominator": {
+                  "value": 1,
+                  "unit": "tablet",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "{tablet}"
+                }
+              },
+              "textPresentation": "6.00 mg per film-coated tablet"
+            },
+            {
+              "presentationRatio": {
+                "numerator": {
+                  "value": 15.6,
+                  "unit": "kg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "kg"
+                },
+                "denominator": {
+                  "value": 520.0,
+                  "unit": "kg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "kg"
+                }
+              },
+              "textPresentation": "15.600 kg per commercial batch (520.000 kg, approx. 2,600,000 tablets)",
+              "basis": {
+                "text": "Batch formula"
+              }
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-novel-excipient-pq",
+            "valueBoolean": false
+          },
+          {
+            "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-suitability-for-use-pq",
+            "valueString": "Complies with Ph. Eur., USP/NF, JP"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/Ingredient/ing-hypromellose",
+      "resource": {
+        "resourceType": "Ingredient",
+        "id": "ing-hypromellose",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"
+          ],
+          "source": "https://ichm4q.notion.site/2a317984c9fc8144b81ce7e58885d190",
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir-gra/CodeSystem/provenance",
+              "code": "reused-from-pqi",
+              "display": "Same resource as the Sakura Bloom PQI dataset"
+            }
+          ]
+        },
+        "status": "active",
+        "for": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          },
+          {
+            "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+          }
+        ],
+        "role": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/ingredient-role",
+              "code": "100000072082",
+              "display": "Excipient"
+            }
+          ],
+          "text": "Excipient"
+        },
+        "function": [
+          {
+            "text": "Film-forming agent (component of coating premix)"
+          }
+        ],
+        "substance": {
+          "code": {
+            "reference": {
+              "reference": "SubstanceDefinition/hypromellose"
+            }
+          },
+          "strength": [
+            {
+              "presentationRatio": {
+                "numerator": {
+                  "value": 4.8,
+                  "unit": "mg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "mg"
+                },
+                "denominator": {
+                  "value": 1,
+                  "unit": "tablet",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "{tablet}"
+                }
+              },
+              "textPresentation": "4.80 mg per film-coated tablet"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-novel-excipient-pq",
+            "valueBoolean": false
+          },
+          {
+            "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-suitability-for-use-pq",
+            "valueString": "Complies with Ph. Eur., USP, JP"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/Ingredient/ing-iron-oxide-red",
+      "resource": {
+        "resourceType": "Ingredient",
+        "id": "ing-iron-oxide-red",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"
+          ],
+          "source": "https://ichm4q.notion.site/2a317984c9fc8144b81ce7e58885d190",
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir-gra/CodeSystem/provenance",
+              "code": "reused-from-pqi",
+              "display": "Same resource as the Sakura Bloom PQI dataset"
+            }
+          ]
+        },
+        "status": "active",
+        "for": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          },
+          {
+            "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+          }
+        ],
+        "role": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/ingredient-role",
+              "code": "100000072082",
+              "display": "Excipient"
+            }
+          ],
+          "text": "Excipient"
+        },
+        "function": [
+          {
+            "text": "Colorant (component of coating premix)"
+          }
+        ],
+        "substance": {
+          "code": {
+            "reference": {
+              "reference": "SubstanceDefinition/iron-oxide-red"
+            }
+          },
+          "strength": [
+            {
+              "textPresentation": "q.s."
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-novel-excipient-pq",
+            "valueBoolean": false
+          },
+          {
+            "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-suitability-for-use-pq",
+            "valueString": "Complies with Ph. Eur., Regulation (EU) 231/2012, USP/NF, JP"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/Ingredient/ing-lactose-monohydrate",
+      "resource": {
+        "resourceType": "Ingredient",
+        "id": "ing-lactose-monohydrate",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"
+          ],
+          "source": "https://ichm4q.notion.site/2a317984c9fc8144b81ce7e58885d190",
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir-gra/CodeSystem/provenance",
+              "code": "reused-from-pqi",
+              "display": "Same resource as the Sakura Bloom PQI dataset"
+            }
+          ]
+        },
+        "status": "active",
+        "for": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          },
+          {
+            "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+          }
+        ],
+        "role": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/ingredient-role",
+              "code": "100000072082",
+              "display": "Excipient"
+            }
+          ],
+          "text": "Excipient"
+        },
+        "function": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/ingredient-function",
+                "code": "diluent",
+                "display": "Diluent"
+              }
+            ],
+            "text": "Diluent"
+          }
+        ],
+        "substance": {
+          "code": {
+            "reference": {
+              "reference": "SubstanceDefinition/lactose-monohydrate"
+            }
+          },
+          "strength": [
+            {
+              "presentationRatio": {
+                "numerator": {
+                  "value": 136.0,
+                  "unit": "mg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "mg"
+                },
+                "denominator": {
+                  "value": 1,
+                  "unit": "tablet",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "{tablet}"
+                }
+              },
+              "textPresentation": "136.00 mg per film-coated tablet"
+            },
+            {
+              "presentationRatio": {
+                "numerator": {
+                  "value": 353.6,
+                  "unit": "kg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "kg"
+                },
+                "denominator": {
+                  "value": 520.0,
+                  "unit": "kg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "kg"
+                }
+              },
+              "textPresentation": "353.600 kg per commercial batch (520.000 kg, approx. 2,600,000 tablets)",
+              "basis": {
+                "text": "Batch formula"
+              }
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-novel-excipient-pq",
+            "valueBoolean": false
+          },
+          {
+            "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-suitability-for-use-pq",
+            "valueString": "Complies with Ph. Eur., USP/NF, JP"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/Ingredient/ing-macrogol-6000",
+      "resource": {
+        "resourceType": "Ingredient",
+        "id": "ing-macrogol-6000",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"
+          ],
+          "source": "https://ichm4q.notion.site/2a317984c9fc8144b81ce7e58885d190",
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir-gra/CodeSystem/provenance",
+              "code": "reused-from-pqi",
+              "display": "Same resource as the Sakura Bloom PQI dataset"
+            }
+          ]
+        },
+        "status": "active",
+        "for": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          },
+          {
+            "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+          }
+        ],
+        "role": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/ingredient-role",
+              "code": "100000072082",
+              "display": "Excipient"
+            }
+          ],
+          "text": "Excipient"
+        },
+        "function": [
+          {
+            "text": "Polishing agent (component of coating premix)"
+          }
+        ],
+        "substance": {
+          "code": {
+            "reference": {
+              "reference": "SubstanceDefinition/macrogol-6000"
+            }
+          },
+          "strength": [
+            {
+              "presentationRatio": {
+                "numerator": {
+                  "value": 0.6,
+                  "unit": "mg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "mg"
+                },
+                "denominator": {
+                  "value": 1,
+                  "unit": "tablet",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "{tablet}"
+                }
+              },
+              "textPresentation": "0.60 mg per film-coated tablet"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-novel-excipient-pq",
+            "valueBoolean": false
+          },
+          {
+            "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-suitability-for-use-pq",
+            "valueString": "Complies with Ph. Eur., USP/NF, JP"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/Ingredient/ing-magnesium-stearate",
+      "resource": {
+        "resourceType": "Ingredient",
+        "id": "ing-magnesium-stearate",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"
+          ],
+          "source": "https://ichm4q.notion.site/2a317984c9fc8144b81ce7e58885d190",
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir-gra/CodeSystem/provenance",
+              "code": "reused-from-pqi",
+              "display": "Same resource as the Sakura Bloom PQI dataset"
+            }
+          ]
+        },
+        "status": "active",
+        "for": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          },
+          {
+            "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+          }
+        ],
+        "role": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/ingredient-role",
+              "code": "100000072082",
+              "display": "Excipient"
+            }
+          ],
+          "text": "Excipient"
+        },
+        "function": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/ingredient-function",
+                "code": "lubricant",
+                "display": "Lubricant"
+              }
+            ],
+            "text": "Lubricant"
+          }
+        ],
+        "substance": {
+          "code": {
+            "reference": {
+              "reference": "SubstanceDefinition/magnesium-stearate"
+            }
+          },
+          "strength": [
+            {
+              "presentationRatio": {
+                "numerator": {
+                  "value": 2.0,
+                  "unit": "mg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "mg"
+                },
+                "denominator": {
+                  "value": 1,
+                  "unit": "tablet",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "{tablet}"
+                }
+              },
+              "textPresentation": "2.00 mg per film-coated tablet"
+            },
+            {
+              "presentationRatio": {
+                "numerator": {
+                  "value": 5.2,
+                  "unit": "kg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "kg"
+                },
+                "denominator": {
+                  "value": 520.0,
+                  "unit": "kg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "kg"
+                }
+              },
+              "textPresentation": "5.200 kg per commercial batch (520.000 kg, approx. 2,600,000 tablets)",
+              "basis": {
+                "text": "Batch formula"
+              }
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-novel-excipient-pq",
+            "valueBoolean": false
+          },
+          {
+            "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-suitability-for-use-pq",
+            "valueString": "Complies with Ph. Eur., USP/NF, JP"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/Ingredient/ing-microcrystalline-cellulose",
+      "resource": {
+        "resourceType": "Ingredient",
+        "id": "ing-microcrystalline-cellulose",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"
+          ],
+          "source": "https://ichm4q.notion.site/2a317984c9fc8144b81ce7e58885d190",
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir-gra/CodeSystem/provenance",
+              "code": "reused-from-pqi",
+              "display": "Same resource as the Sakura Bloom PQI dataset"
+            }
+          ]
+        },
+        "status": "active",
+        "for": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          },
+          {
+            "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+          }
+        ],
+        "role": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/ingredient-role",
+              "code": "100000072082",
+              "display": "Excipient"
+            }
+          ],
+          "text": "Excipient"
+        },
+        "function": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/ingredient-function",
+                "code": "diluent",
+                "display": "Diluent"
+              }
+            ],
+            "text": "Diluent"
+          }
+        ],
+        "substance": {
+          "code": {
+            "reference": {
+              "reference": "SubstanceDefinition/microcrystalline-cellulose"
+            }
+          },
+          "strength": [
+            {
+              "presentationRatio": {
+                "numerator": {
+                  "value": 20.0,
+                  "unit": "mg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "mg"
+                },
+                "denominator": {
+                  "value": 1,
+                  "unit": "tablet",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "{tablet}"
+                }
+              },
+              "textPresentation": "20.00 mg per film-coated tablet"
+            },
+            {
+              "presentationRatio": {
+                "numerator": {
+                  "value": 52.0,
+                  "unit": "kg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "kg"
+                },
+                "denominator": {
+                  "value": 520.0,
+                  "unit": "kg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "kg"
+                }
+              },
+              "textPresentation": "52.000 kg per commercial batch (520.000 kg, approx. 2,600,000 tablets)",
+              "basis": {
+                "text": "Batch formula"
+              }
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-novel-excipient-pq",
+            "valueBoolean": false
+          },
+          {
+            "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-suitability-for-use-pq",
+            "valueString": "Complies with Ph. Eur., USP/NF, JP"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/Ingredient/ing-purified-water",
+      "resource": {
+        "resourceType": "Ingredient",
+        "id": "ing-purified-water",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"
+          ],
+          "source": "https://ichm4q.notion.site/2a317984c9fc8144b81ce7e58885d190",
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir-gra/CodeSystem/provenance",
+              "code": "reused-from-pqi",
+              "display": "Same resource as the Sakura Bloom PQI dataset"
+            }
+          ]
+        },
+        "status": "active",
+        "for": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          },
+          {
+            "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+          }
+        ],
+        "role": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/ingredient-role",
+              "code": "100000072082",
+              "display": "Excipient"
+            }
+          ],
+          "text": "Excipient"
+        },
+        "function": [
+          {
+            "text": "Solvent for coating suspension (removed during processing)"
+          }
+        ],
+        "substance": {
+          "code": {
+            "reference": {
+              "reference": "SubstanceDefinition/purified-water"
+            }
+          },
+          "strength": [
+            {
+              "textPresentation": "q.s."
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-novel-excipient-pq",
+            "valueBoolean": false
+          },
+          {
+            "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-suitability-for-use-pq",
+            "valueString": "Complies with Ph. Eur., USP/NF, JP"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/Ingredient/ing-sakuramil",
+      "resource": {
+        "resourceType": "Ingredient",
+        "id": "ing-sakuramil",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"
+          ],
+          "source": "https://ichm4q.notion.site/2a317984c9fc8144b81ce7e58885d190",
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir-gra/CodeSystem/provenance",
+              "code": "reused-from-pqi",
+              "display": "Same resource as the Sakura Bloom PQI dataset"
+            }
+          ]
+        },
+        "status": "active",
+        "for": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          },
+          {
+            "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+          }
+        ],
+        "role": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/ingredient-role",
+              "code": "100000072072",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "function": [
+          {
+            "text": "Active ingredient"
+          }
+        ],
+        "substance": {
+          "code": {
+            "reference": {
+              "reference": "SubstanceDefinition/sakuramil"
+            }
+          },
+          "strength": [
+            {
+              "presentationRatio": {
+                "numerator": {
+                  "value": 20.0,
+                  "unit": "mg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "mg"
+                },
+                "denominator": {
+                  "value": 1,
+                  "unit": "tablet",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "{tablet}"
+                }
+              },
+              "textPresentation": "20.00 mg per film-coated tablet",
+              "basis": {
+                "text": "Neutral, anhydrous base form"
+              },
+              "referenceStrength": [
+                {
+                  "substance": {
+                    "reference": {
+                      "reference": "SubstanceDefinition/sakuramil"
+                    }
+                  },
+                  "strengthRatio": {
+                    "numerator": {
+                      "value": 20,
+                      "unit": "mg",
+                      "system": "http://unitsofmeasure.org",
+                      "code": "mg"
+                    },
+                    "denominator": {
+                      "value": 1,
+                      "unit": "tablet",
+                      "system": "http://unitsofmeasure.org",
+                      "code": "{tablet}"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "presentationRatio": {
+                "numerator": {
+                  "value": 52.0,
+                  "unit": "kg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "kg"
+                },
+                "denominator": {
+                  "value": 520.0,
+                  "unit": "kg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "kg"
+                }
+              },
+              "textPresentation": "52.000 kg per commercial batch (520.000 kg, approx. 2,600,000 tablets)",
+              "basis": {
+                "text": "Batch formula"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/Ingredient/ing-titanium-dioxide",
+      "resource": {
+        "resourceType": "Ingredient",
+        "id": "ing-titanium-dioxide",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"
+          ],
+          "source": "https://ichm4q.notion.site/2a317984c9fc8144b81ce7e58885d190",
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir-gra/CodeSystem/provenance",
+              "code": "reused-from-pqi",
+              "display": "Same resource as the Sakura Bloom PQI dataset"
+            }
+          ]
+        },
+        "status": "active",
+        "for": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          },
+          {
+            "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+          }
+        ],
+        "role": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/ingredient-role",
+              "code": "100000072082",
+              "display": "Excipient"
+            }
+          ],
+          "text": "Excipient"
+        },
+        "function": [
+          {
+            "text": "Opacifier (component of coating premix)"
+          }
+        ],
+        "substance": {
+          "code": {
+            "reference": {
+              "reference": "SubstanceDefinition/titanium-dioxide"
+            }
+          },
+          "strength": [
+            {
+              "presentationRatio": {
+                "numerator": {
+                  "value": 0.6,
+                  "unit": "mg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "mg"
+                },
+                "denominator": {
+                  "value": 1,
+                  "unit": "tablet",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "{tablet}"
+                }
+              },
+              "textPresentation": "0.60 mg per film-coated tablet"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-novel-excipient-pq",
+            "valueBoolean": false
+          },
+          {
+            "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-suitability-for-use-pq",
+            "valueString": "Complies with Ph. Eur., Regulation (EU) 231/2012, USP/NF, JP"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/ManufacturedItemDefinition/sakura-bloom-20mg-tablet",
+      "resource": {
+        "resourceType": "ManufacturedItemDefinition",
+        "id": "sakura-bloom-20mg-tablet",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ManufacturedItemDefinition-drug-pq"
+          ],
+          "source": "https://ichm4q.notion.site/2a317984c9fc8144b81ce7e58885d190",
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir-gra/CodeSystem/provenance",
+              "code": "reused-from-pqi",
+              "display": "Same resource as the Sakura Bloom PQI dataset"
+            }
+          ]
+        },
+        "status": "active",
+        "name": "Sakura Bloom 20 mg film-coated tablet",
+        "manufacturedDoseForm": {
+          "coding": [
+            {
+              "system": "http://standardterms.edqm.eu",
+              "code": "10221000",
+              "display": "Film-coated tablet"
+            }
+          ],
+          "text": "Film-coated tablet"
+        },
+        "unitOfPresentation": {
+          "coding": [
+            {
+              "system": "http://standardterms.edqm.eu",
+              "code": "15054000",
+              "display": "Tablet"
+            }
+          ],
+          "text": "Tablet"
+        },
+        "manufacturer": [
+          {
+            "reference": "Organization/aparna-pharm"
+          }
+        ],
+        "property": [
+          {
+            "type": {
+              "text": "Colour"
+            },
+            "valueCodeableConcept": {
+              "text": "Pale red"
+            }
+          },
+          {
+            "type": {
+              "text": "Shape"
+            },
+            "valueCodeableConcept": {
+              "text": "Round, biconvex"
+            }
+          },
+          {
+            "type": {
+              "text": "Imprint / debossing"
+            },
+            "valueCodeableConcept": {
+              "text": "'SB' on one side and '20' on the other side"
+            }
+          },
+          {
+            "type": {
+              "text": "Total weight of film-coated tablet"
+            },
+            "valueQuantity": {
+              "value": 200.0,
+              "unit": "mg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg"
+            }
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-manufactured-item-property-pq-example",
+                  "code": "overage-by-mass",
+                  "display": "Overage by mass (%)"
+                }
+              ],
+              "text": "Overage by mass (%)"
+            },
+            "valueQuantity": {
+              "value": 0,
+              "unit": "%",
+              "system": "http://unitsofmeasure.org",
+              "code": "%"
+            }
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/uv/emedicinal-product-info/CodeSystem/epi-ig",
+                  "code": "image",
+                  "display": "Image"
+                }
+              ],
+              "text": "Image"
+            },
+            "valueAttachment": {
+              "contentType": "image/svg+xml",
+              "url": "#tablet-image",
+              "title": "Tablet image"
+            }
+          }
+        ],
+        "component": [
+          {
+            "type": {
+              "text": "Tablet core"
+            },
+            "amount": [
+              {
+                "value": 194.0,
+                "unit": "mg",
+                "system": "http://unitsofmeasure.org",
+                "code": "mg"
+              }
+            ],
+            "constituent": [
+              {
+                "amount": [
+                  {
+                    "value": 20.0,
+                    "unit": "mg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mg"
+                  }
+                ],
+                "function": [
+                  {
+                    "text": "Active ingredient"
+                  }
+                ],
+                "hasIngredient": [
+                  {
+                    "reference": {
+                      "reference": "Ingredient/ing-sakuramil"
+                    }
+                  }
+                ]
+              },
+              {
+                "amount": [
+                  {
+                    "value": 136.0,
+                    "unit": "mg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mg"
+                  }
+                ],
+                "function": [
+                  {
+                    "text": "Diluent"
+                  }
+                ],
+                "hasIngredient": [
+                  {
+                    "reference": {
+                      "reference": "Ingredient/ing-lactose-monohydrate"
+                    }
+                  }
+                ]
+              },
+              {
+                "amount": [
+                  {
+                    "value": 20.0,
+                    "unit": "mg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mg"
+                  }
+                ],
+                "function": [
+                  {
+                    "text": "Diluent"
+                  }
+                ],
+                "hasIngredient": [
+                  {
+                    "reference": {
+                      "reference": "Ingredient/ing-microcrystalline-cellulose"
+                    }
+                  }
+                ]
+              },
+              {
+                "amount": [
+                  {
+                    "value": 10.0,
+                    "unit": "mg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mg"
+                  }
+                ],
+                "function": [
+                  {
+                    "text": "Disintegrant"
+                  }
+                ],
+                "hasIngredient": [
+                  {
+                    "reference": {
+                      "reference": "Ingredient/ing-croscarmellose-sodium"
+                    }
+                  }
+                ]
+              },
+              {
+                "amount": [
+                  {
+                    "value": 6.0,
+                    "unit": "mg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mg"
+                  }
+                ],
+                "function": [
+                  {
+                    "text": "Binder"
+                  }
+                ],
+                "hasIngredient": [
+                  {
+                    "reference": {
+                      "reference": "Ingredient/ing-hydroxypropyl-cellulose"
+                    }
+                  }
+                ]
+              },
+              {
+                "amount": [
+                  {
+                    "value": 2.0,
+                    "unit": "mg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mg"
+                  }
+                ],
+                "function": [
+                  {
+                    "text": "Lubricant"
+                  }
+                ],
+                "hasIngredient": [
+                  {
+                    "reference": {
+                      "reference": "Ingredient/ing-magnesium-stearate"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": {
+              "text": "Film-coating"
+            },
+            "amount": [
+              {
+                "value": 6.0,
+                "unit": "mg",
+                "system": "http://unitsofmeasure.org",
+                "code": "mg"
+              }
+            ],
+            "constituent": [
+              {
+                "amount": [
+                  {
+                    "value": 6.0,
+                    "unit": "mg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mg"
+                  }
+                ],
+                "function": [
+                  {
+                    "text": "Coating agent"
+                  }
+                ],
+                "hasIngredient": [
+                  {
+                    "reference": {
+                      "reference": "Ingredient/ing-coating-premix-red"
+                    }
+                  }
+                ]
+              }
+            ],
+            "component": [
+              {
+                "type": {
+                  "text": "Basic coating premix, red"
+                },
+                "constituent": [
+                  {
+                    "amount": [
+                      {
+                        "value": 4.8,
+                        "unit": "mg",
+                        "system": "http://unitsofmeasure.org",
+                        "code": "mg"
+                      }
+                    ],
+                    "function": [
+                      {
+                        "text": "Film-forming agent"
+                      }
+                    ],
+                    "hasIngredient": [
+                      {
+                        "reference": {
+                          "reference": "Ingredient/ing-hypromellose"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "amount": [
+                      {
+                        "value": 0.6,
+                        "unit": "mg",
+                        "system": "http://unitsofmeasure.org",
+                        "code": "mg"
+                      }
+                    ],
+                    "function": [
+                      {
+                        "text": "Polishing agent"
+                      }
+                    ],
+                    "hasIngredient": [
+                      {
+                        "reference": {
+                          "reference": "Ingredient/ing-macrogol-6000"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "amount": [
+                      {
+                        "value": 0.6,
+                        "unit": "mg",
+                        "system": "http://unitsofmeasure.org",
+                        "code": "mg"
+                      }
+                    ],
+                    "function": [
+                      {
+                        "text": "Opacifier"
+                      }
+                    ],
+                    "hasIngredient": [
+                      {
+                        "reference": {
+                          "reference": "Ingredient/ing-titanium-dioxide"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "function": [
+                      {
+                        "text": "Colorant"
+                      }
+                    ],
+                    "hasIngredient": [
+                      {
+                        "reference": {
+                          "reference": "Ingredient/ing-iron-oxide-red"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/MedicinalProductDefinition/sakura-bloom-20mg",
+      "resource": {
+        "resourceType": "MedicinalProductDefinition",
+        "id": "sakura-bloom-20mg",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq"
+          ],
+          "source": "https://ichm4q.notion.site/2a317984c9fc8139acafcbef7ae81c6f",
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir-gra/CodeSystem/provenance",
+              "code": "reused-from-pqi",
+              "display": "Same resource as the Sakura Bloom PQI dataset (manufacturing operations removed)"
+            }
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://example.org/sakura-bloom-r2/fhir/product-id",
+            "value": "SB-20MG-FCT"
+          }
+        ],
+        "type": {
+          "text": "Medicinal product (small molecule)"
+        },
+        "domain": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/medicinal-product-domain",
+              "code": "Human",
+              "display": "Human use"
+            }
+          ],
+          "text": "Human use"
+        },
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "description": "Sakura Bloom 20 mg film-coated tablet: immediate-release film-coated tablet for oral administration, to be swallowed whole. Strength expressed as Sakuramil neutral, anhydrous base. Fictitious ICH M4Q(R2) mock-up product 'SakuraBloom R2'.",
+        "combinedPharmaceuticalDoseForm": {
+          "coding": [
+            {
+              "system": "http://standardterms.edqm.eu",
+              "code": "10221000",
+              "display": "Film-coated tablet"
+            }
+          ],
+          "text": "Film-coated tablet"
+        },
+        "route": [
+          {
+            "coding": [
+              {
+                "system": "http://standardterms.edqm.eu",
+                "code": "20053000",
+                "display": "Oral use"
+              }
+            ],
+            "text": "Oral use"
+          }
+        ],
+        "name": [
+          {
+            "productName": "Sakura Bloom 20 mg film-coated tablets",
+            "type": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-productNameType-pq-example",
+                  "code": "Proprietary",
+                  "display": "Proprietary"
+                }
+              ],
+              "text": "Proprietary"
+            },
+            "part": [
+              {
+                "part": "Sakura Bloom",
+                "type": {
+                  "text": "Invented name part"
+                }
+              },
+              {
+                "part": "20 mg",
+                "type": {
+                  "text": "Strength part"
+                }
+              },
+              {
+                "part": "film-coated tablets",
+                "type": {
+                  "text": "Pharmaceutical dose form part"
+                }
+              }
+            ]
+          }
+        ],
+        "characteristic": [
+          {
+            "type": {
+              "text": "Maximum daily dose"
+            },
+            "valueQuantity": {
+              "value": 40,
+              "unit": "mg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg"
+            }
+          },
+          {
+            "type": {
+              "text": "Method of administration"
+            },
+            "valueCodeableConcept": {
+              "text": "To be swallowed whole"
+            }
+          }
+        ],
+        "legalStatusOfSupply": {
+          "text": "Medicinal product subject to medical prescription"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/Organization/aparna-pharm",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "aparna-pharm",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
+          ],
+          "source": "https://ichm4q.notion.site/2a317984c9fc8199b90deb4c0456477b",
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir-gra/CodeSystem/provenance",
+              "code": "reused-from-pqi",
+              "display": "Same resource as the Sakura Bloom PQI dataset"
+            }
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:oid:1.3.6.1.4.1.519.1",
+            "value": "489236805"
+          },
+          {
+            "system": "urn:oid:2.16.840.1.113883.4.82",
+            "value": "489236805"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+                "code": "drug-product-manufacture",
+                "display": "Drug Product Manufacture"
+              }
+            ],
+            "text": "Drug Product Manufacture"
+          },
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+                "code": "analytical-testing-release",
+                "display": "Analytical Testing - Release"
+              }
+            ],
+            "text": "Analytical Testing - Release"
+          },
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+                "code": "analytical-testing-stability",
+                "display": "Analytical Testing - Stability"
+              }
+            ],
+            "text": "Analytical Testing - Stability"
+          },
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+                "code": "packaging",
+                "display": "Packaging"
+              }
+            ],
+            "text": "Packaging"
+          }
+        ],
+        "name": "Aparna Pharmaceutical Manufacturing Pte. Ltd.",
+        "description": "Manufacture of the drug product; in-process control testing; analytical testing of drug product and excipients; stability testing; primary and secondary packaging.",
+        "contact": [
+          {
+            "address": {
+              "use": "work",
+              "type": "physical",
+              "line": [
+                "10 Green Road"
+              ],
+              "city": "Gulshan",
+              "country": "BD"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/Organization/cocopharma",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "cocopharma",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
+          ],
+          "source": "https://ichm4q.notion.site/2a317984c9fc8199b90deb4c0456477b",
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir-gra/CodeSystem/provenance",
+              "code": "reused-from-pqi",
+              "display": "Same resource as the Sakura Bloom PQI dataset"
+            }
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:oid:1.3.6.1.4.1.519.1",
+            "value": "494124732"
+          },
+          {
+            "system": "urn:oid:2.16.840.1.113883.4.82",
+            "value": "494124732"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+                "code": "primary-packaging",
+                "display": "Primary Packaging"
+              }
+            ],
+            "text": "Primary Packaging"
+          }
+        ],
+        "name": "Cocopharma AG",
+        "description": "Primary packaging of the drug product.",
+        "contact": [
+          {
+            "address": {
+              "use": "work",
+              "type": "physical",
+              "line": [
+                "Strasse 3"
+              ],
+              "city": "Pratteln",
+              "country": "CH",
+              "postalCode": "4133"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/Organization/pack-alpha",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "pack-alpha",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
+          ],
+          "source": "https://ichm4q.notion.site/2a317984c9fc8199b90deb4c0456477b",
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir-gra/CodeSystem/provenance",
+              "code": "reused-from-pqi",
+              "display": "Same resource as the Sakura Bloom PQI dataset"
+            }
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:oid:1.3.6.1.4.1.519.1",
+            "value": "484672803"
+          },
+          {
+            "system": "urn:oid:2.16.840.1.113883.4.82",
+            "value": "484672803"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+                "code": "primary-packaging",
+                "display": "Primary Packaging"
+              }
+            ],
+            "text": "Primary Packaging"
+          },
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+                "code": "secondary-packaging",
+                "display": "Secondary Packaging"
+              }
+            ],
+            "text": "Secondary Packaging"
+          },
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type",
+                "code": "analytical-testing-stability",
+                "display": "Analytical Testing - Stability"
+              }
+            ],
+            "text": "Analytical Testing - Stability"
+          }
+        ],
+        "name": "Pack Alpha Group",
+        "description": "Primary and secondary packaging of the drug product; stability (per 2.3.3.FA Table 1-2).",
+        "contact": [
+          {
+            "address": {
+              "use": "work",
+              "type": "physical",
+              "line": [
+                "Pfeffingerstrasse 42"
+              ],
+              "city": "Reinach BL",
+              "country": "CH",
+              "postalCode": "4153"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/Organization/sakura-pharma",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "sakura-pharma",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
+          ],
+          "source": "https://ichm4q.notion.site/2a317984c9fc8199b90deb4c0456477b",
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir-gra/CodeSystem/provenance",
+              "code": "reused-from-pqi",
+              "display": "Same resource as the Sakura Bloom PQI dataset"
+            }
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://example.org/sakura-bloom-r2/fhir/organization-id",
+            "value": "sakura-pharma"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "text": "Applicant / owner of the drug substance technology (from 2.3.2.2)"
+          }
+        ],
+        "name": "Sakura Pharmaceuticals Company, LTD"
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/Organization/sakura-pharma-eu",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "sakura-pharma-eu",
+        "identifier": [
+          {
+            "system": "http://example.org/fhir-gra/organization-id",
+            "value": "SAKURA-EU-0001"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/emedicinal-product-info/CodeSystem/epi-ig",
+                "code": "marketing-authorization-holder",
+                "display": "Marketing authorization holder"
+              }
+            ],
+            "text": "Marketing authorization holder"
+          }
+        ],
+        "name": "Sakura Pharmaceuticals Europe B.V.",
+        "contact": [
+          {
+            "address": {
+              "use": "work",
+              "type": "physical",
+              "line": [
+                "Bloesemlaan 1"
+              ],
+              "city": "Amsterdam",
+              "postalCode": "1000 AA",
+              "country": "NL"
+            }
+          }
+        ],
+        "partOf": {
+          "reference": "Organization/sakura-pharma"
+        },
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/PackagedProductDefinition/ppd-blister-28",
+      "resource": {
+        "resourceType": "PackagedProductDefinition",
+        "id": "ppd-blister-28",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PackagedProductDefinition-drug-pq"
+          ],
+          "source": "https://ichm4q.notion.site/2a317984c9fc81d18aa0cd2f24d28718",
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir-gra/CodeSystem/provenance",
+              "code": "reused-from-pqi",
+              "display": "Packaging reused from PQI PackagedProductDefinition/pack-pa-al-pvc-blister"
+            }
+          ]
+        },
+        "name": "Sakura Bloom 20 mg film-coated tablets - 28 tablets (4 blisters of 7)",
+        "type": {
+          "text": "Blister pack"
+        },
+        "packageFor": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          }
+        ],
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "description": "PA/Al/PVC cold-form blisters of 7 film-coated tablets, 4 blisters in a carton. Derived from the PQI PackagedProductDefinition/pack-pa-al-pvc-blister; pack size and GTIN invented for this example.",
+        "packaging": {
+          "type": {
+            "coding": [
+              {
+                "system": "http://standardterms.edqm.eu",
+                "code": "30009000",
+                "display": "Box"
+              }
+            ],
+            "text": "Box (secondary, non-functional)"
+          },
+          "packaging": [
+            {
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://standardterms.edqm.eu",
+                    "code": "30007000",
+                    "display": "Blister"
+                  }
+                ],
+                "text": "Blister"
+              },
+              "material": [
+                {
+                  "text": "Polyamide (PA)"
+                },
+                {
+                  "text": "Aluminium"
+                },
+                {
+                  "text": "Polyvinyl chloride (PVC)"
+                }
+              ],
+              "shelfLifeStorage": [
+                {
+                  "type": {
+                    "text": "Shelf life of the medicinal product as packaged for sale - Climatic zones I & II (EU)"
+                  },
+                  "periodDuration": {
+                    "value": 36,
+                    "unit": "months",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mo"
+                  },
+                  "specialPrecautionsForStorage": [
+                    {
+                      "text": "This medicinal product does not require any special storage requirement."
+                    }
+                  ]
+                },
+                {
+                  "type": {
+                    "text": "Shelf life of the medicinal product as packaged for sale - Climatic zones I & II (non-EU)"
+                  },
+                  "periodDuration": {
+                    "value": 36,
+                    "unit": "months",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mo"
+                  },
+                  "specialPrecautionsForStorage": [
+                    {
+                      "text": "Do not store above 30°C"
+                    }
+                  ]
+                },
+                {
+                  "type": {
+                    "text": "Shelf life of the medicinal product as packaged for sale - Climatic zones III & IVA"
+                  },
+                  "periodDuration": {
+                    "value": 36,
+                    "unit": "months",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mo"
+                  },
+                  "specialPrecautionsForStorage": [
+                    {
+                      "text": "Do not store above 30°C"
+                    }
+                  ]
+                },
+                {
+                  "type": {
+                    "text": "Shelf life of the medicinal product as packaged for sale - Climatic zone IVB"
+                  },
+                  "periodDuration": {
+                    "value": 36,
+                    "unit": "months",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mo"
+                  },
+                  "specialPrecautionsForStorage": [
+                    {
+                      "text": "Do not store above 30°C"
+                    }
+                  ]
+                }
+              ],
+              "manufacturer": [
+                {
+                  "reference": "Organization/pack-alpha"
+                },
+                {
+                  "reference": "Organization/cocopharma"
+                },
+                {
+                  "reference": "Organization/aparna-pharm"
+                }
+              ],
+              "containedItem": [
+                {
+                  "item": {
+                    "reference": {
+                      "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+                    }
+                  },
+                  "amount": {
+                    "value": 7,
+                    "unit": "tablet",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "{tablet}"
+                  }
+                }
+              ],
+              "packaging": [
+                {
+                  "type": {
+                    "text": "Forming component: PA/AL/PVC foil"
+                  },
+                  "material": [
+                    {
+                      "text": "Polyamide (PA) film (not in contact with product)"
+                    },
+                    {
+                      "text": "Aluminium foil (not in contact with product)"
+                    },
+                    {
+                      "text": "PVC film (product contact layer)"
+                    }
+                  ],
+                  "property": [
+                    {
+                      "type": {
+                        "coding": [
+                          {
+                            "system": "http://terminology.hl7.org/CodeSystem/package-property",
+                            "code": "Thickness",
+                            "display": "Thickness"
+                          }
+                        ],
+                        "text": "Thickness"
+                      },
+                      "valueCodeableConcept": {
+                        "text": "≥ 150 µm (total)"
+                      }
+                    },
+                    {
+                      "type": {
+                        "coding": [
+                          {
+                            "system": "http://terminology.hl7.org/CodeSystem/package-property",
+                            "code": "Quality Standard",
+                            "display": "Quality Standard"
+                          }
+                        ],
+                        "text": "Quality Standard"
+                      },
+                      "valueCodeableConcept": {
+                        "text": "Complies with foodstuff legislation"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": {
+                    "text": "Backing component: aluminium lidding foil"
+                  },
+                  "material": [
+                    {
+                      "text": "Heat seal lacquer (vinyl acryl resin) (product contact layer)"
+                    },
+                    {
+                      "text": "Aluminium foil 20 µm"
+                    },
+                    {
+                      "text": "Nitrocellulose-free printing primer"
+                    }
+                  ],
+                  "property": [
+                    {
+                      "type": {
+                        "coding": [
+                          {
+                            "system": "http://terminology.hl7.org/CodeSystem/package-property",
+                            "code": "Thickness",
+                            "display": "Thickness"
+                          }
+                        ],
+                        "text": "Thickness"
+                      },
+                      "valueCodeableConcept": {
+                        "text": "≥ 20 µm (total)"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "quantity": 4
+            }
+          ],
+          "quantity": 1
+        },
+        "identifier": [
+          {
+            "system": "https://www.gs1.org/gtin",
+            "value": "02000001028025"
+          }
+        ],
+        "containedItemQuantity": [
+          {
+            "value": 28,
+            "unit": "tablet",
+            "system": "http://unitsofmeasure.org",
+            "code": "{tablet}"
+          }
+        ],
+        "legalStatusOfSupply": [
+          {
+            "code": {
+              "text": "Medicinal product subject to medical prescription"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/PackagedProductDefinition/ppd-bottle-30",
+      "resource": {
+        "resourceType": "PackagedProductDefinition",
+        "id": "ppd-bottle-30",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PackagedProductDefinition-drug-pq"
+          ],
+          "source": "https://ichm4q.notion.site/2a317984c9fc8172acd6d7e4b3f69475",
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir-gra/CodeSystem/provenance",
+              "code": "reused-from-pqi",
+              "display": "Packaging reused from PQI PackagedProductDefinition/pack-hdpe-bottle"
+            }
+          ]
+        },
+        "name": "Sakura Bloom 20 mg film-coated tablets - 30 tablets (bottle)",
+        "type": {
+          "text": "HDPE bottle pack"
+        },
+        "packageFor": [
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          }
+        ],
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "description": "White HDPE bottle with child-resistant polypropylene closure and induction seal, 30 film-coated tablets, in a carton. Derived from the PQI PackagedProductDefinition/pack-hdpe-bottle; pack size and GTIN invented for this example.",
+        "packaging": {
+          "type": {
+            "coding": [
+              {
+                "system": "http://standardterms.edqm.eu",
+                "code": "30009000",
+                "display": "Box"
+              }
+            ],
+            "text": "Box (secondary, non-functional)"
+          },
+          "manufacturer": [
+            {
+              "reference": "Organization/pack-alpha"
+            },
+            {
+              "reference": "Organization/aparna-pharm"
+            }
+          ],
+          "packaging": [
+            {
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://standardterms.edqm.eu",
+                    "code": "30008000",
+                    "display": "Bottle"
+                  }
+                ],
+                "text": "Bottle"
+              },
+              "material": [
+                {
+                  "text": "High-density polyethylene (HDPE Purell)"
+                },
+                {
+                  "text": "Titanium dioxide colorant"
+                }
+              ],
+              "property": [
+                {
+                  "type": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/package-property",
+                        "code": "Container Size",
+                        "display": "Container Size"
+                      }
+                    ],
+                    "text": "Container Size"
+                  },
+                  "valueQuantity": {
+                    "value": 90,
+                    "unit": "cc",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "cm3"
+                  }
+                },
+                {
+                  "type": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/package-property",
+                        "code": "Color",
+                        "display": "Color"
+                      }
+                    ],
+                    "text": "Color"
+                  },
+                  "valueCodeableConcept": {
+                    "text": "White"
+                  }
+                },
+                {
+                  "type": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/package-property",
+                        "code": "Quality Standard",
+                        "display": "Quality Standard"
+                      }
+                    ],
+                    "text": "Quality Standard"
+                  },
+                  "valueCodeableConcept": {
+                    "text": "Complies with 21 CFR, Indirect Food Additives"
+                  }
+                }
+              ],
+              "shelfLifeStorage": [
+                {
+                  "type": {
+                    "text": "Shelf life of the medicinal product as packaged for sale - Climatic zones I & II (EU)"
+                  },
+                  "periodDuration": {
+                    "value": 36,
+                    "unit": "months",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mo"
+                  },
+                  "specialPrecautionsForStorage": [
+                    {
+                      "text": "This medicinal product does not require any special storage requirement."
+                    }
+                  ]
+                },
+                {
+                  "type": {
+                    "text": "Shelf life of the medicinal product as packaged for sale - Climatic zones I & II (non-EU)"
+                  },
+                  "periodDuration": {
+                    "value": 36,
+                    "unit": "months",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mo"
+                  },
+                  "specialPrecautionsForStorage": [
+                    {
+                      "text": "Do not store above 30°C"
+                    }
+                  ]
+                },
+                {
+                  "type": {
+                    "text": "Shelf life of the medicinal product as packaged for sale - Climatic zones III & IVA"
+                  },
+                  "periodDuration": {
+                    "value": 36,
+                    "unit": "months",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mo"
+                  },
+                  "specialPrecautionsForStorage": [
+                    {
+                      "text": "Do not store above 30°C"
+                    }
+                  ]
+                },
+                {
+                  "type": {
+                    "text": "Shelf life of the medicinal product as packaged for sale - Climatic zone IVB"
+                  },
+                  "periodDuration": {
+                    "value": 36,
+                    "unit": "months",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mo"
+                  },
+                  "specialPrecautionsForStorage": [
+                    {
+                      "text": "Do not store above 30°C"
+                    }
+                  ]
+                }
+              ],
+              "manufacturer": [
+                {
+                  "reference": "Organization/pack-alpha"
+                },
+                {
+                  "reference": "Organization/cocopharma"
+                },
+                {
+                  "reference": "Organization/aparna-pharm"
+                }
+              ],
+              "containedItem": [
+                {
+                  "item": {
+                    "reference": {
+                      "reference": "ManufacturedItemDefinition/sakura-bloom-20mg-tablet"
+                    }
+                  },
+                  "amount": {
+                    "value": 30,
+                    "unit": "tablet",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "{tablet}"
+                  }
+                }
+              ],
+              "packaging": [
+                {
+                  "type": {
+                    "text": "38 mm child-resistant induction seal closure"
+                  },
+                  "material": [
+                    {
+                      "text": "Polypropylene (inner cap, natural)"
+                    },
+                    {
+                      "text": "Polypropylene (outer cap, white)"
+                    },
+                    {
+                      "text": "White lined pulpboard liner"
+                    },
+                    {
+                      "text": "Polyethylene inner seal"
+                    }
+                  ],
+                  "property": [
+                    {
+                      "type": {
+                        "coding": [
+                          {
+                            "system": "http://terminology.hl7.org/CodeSystem/package-property",
+                            "code": "Quality Standard",
+                            "display": "Quality Standard"
+                          }
+                        ],
+                        "text": "Quality Standard"
+                      },
+                      "valueCodeableConcept": {
+                        "text": "Complies with 21 CFR, Indirect Food Additives"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "quantity": 1
+            }
+          ],
+          "quantity": 1
+        },
+        "identifier": [
+          {
+            "system": "https://www.gs1.org/gtin",
+            "value": "02000001030028"
+          }
+        ],
+        "containedItemQuantity": [
+          {
+            "value": 30,
+            "unit": "tablet",
+            "system": "http://unitsofmeasure.org",
+            "code": "{tablet}"
+          }
+        ],
+        "legalStatusOfSupply": [
+          {
+            "code": {
+              "text": "Medicinal product subject to medical prescription"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/RegulatedAuthorization/ra-sakura-bloom-001",
+      "resource": {
+        "resourceType": "RegulatedAuthorization",
+        "id": "ra-sakura-bloom-001",
+        "identifier": [
+          {
+            "system": "http://example.org/fhir-gra/marketing-authorisation-number",
+            "value": "EU/1/00/0000/001"
+          }
+        ],
+        "subject": [
+          {
+            "reference": "PackagedProductDefinition/ppd-blister-28"
+          },
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          }
+        ],
+        "type": {
+          "text": "Marketing authorisation"
+        },
+        "description": "Synthetic marketing authorisation (28 tablets, blister).",
+        "region": [
+          {
+            "text": "European Union (synthetic)"
+          }
+        ],
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "statusDate": "2026-03-02",
+        "validityPeriod": {
+          "start": "2026-03-02"
+        },
+        "holder": {
+          "reference": "Organization/sakura-pharma-eu"
+        },
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/RegulatedAuthorization/ra-sakura-bloom-002",
+      "resource": {
+        "resourceType": "RegulatedAuthorization",
+        "id": "ra-sakura-bloom-002",
+        "identifier": [
+          {
+            "system": "http://example.org/fhir-gra/marketing-authorisation-number",
+            "value": "EU/1/00/0000/002"
+          }
+        ],
+        "subject": [
+          {
+            "reference": "PackagedProductDefinition/ppd-bottle-30"
+          },
+          {
+            "reference": "MedicinalProductDefinition/sakura-bloom-20mg"
+          }
+        ],
+        "type": {
+          "text": "Marketing authorisation"
+        },
+        "description": "Synthetic marketing authorisation (30 tablets, bottle).",
+        "region": [
+          {
+            "text": "European Union (synthetic)"
+          }
+        ],
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "statusDate": "2026-03-02",
+        "validityPeriod": {
+          "start": "2026-03-02"
+        },
+        "holder": {
+          "reference": "Organization/sakura-pharma-eu"
+        },
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/SubstanceDefinition/coating-premix-red",
+      "resource": {
+        "resourceType": "SubstanceDefinition",
+        "id": "coating-premix-red",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+          ],
+          "source": "https://ichm4q.notion.site/2a317984c9fc8101bbdfeab0c7f1d2ed",
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir-gra/CodeSystem/provenance",
+              "code": "reused-from-pqi",
+              "display": "Same resource as the Sakura Bloom PQI dataset (CMC detail removed)"
+            }
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://example.org/sakura-bloom-r2/fhir/material-code",
+            "value": "KIRSCH2358"
+          }
+        ],
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "classification": [
+          {
+            "text": "Excipient (non-compendial mixture, commercially available)"
+          }
+        ],
+        "grade": [
+          {
+            "text": "In-house"
+          }
+        ],
+        "description": "Basic coating premix, red. Commercially available film-coating premix; minor adaptations of the quantitative composition may be needed to match the colour reference. None of the components are of animal origin.",
+        "name": [
+          {
+            "name": "Basic coating premix, red",
+            "preferred": true,
+            "synonym": [
+              {
+                "name": "Coating premix red"
+              },
+              {
+                "name": "Coating Premix Red KIRSCH2358"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/SubstanceDefinition/croscarmellose-sodium",
+      "resource": {
+        "resourceType": "SubstanceDefinition",
+        "id": "croscarmellose-sodium",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+          ],
+          "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd",
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir-gra/CodeSystem/provenance",
+              "code": "reused-from-pqi",
+              "display": "Same resource as the Sakura Bloom PQI dataset (CMC detail removed)"
+            }
+          ]
+        },
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "classification": [
+          {
+            "text": "Excipient (compendial)"
+          }
+        ],
+        "grade": [
+          {
+            "text": "Ph. Eur."
+          },
+          {
+            "text": "USP/NF"
+          },
+          {
+            "text": "JP"
+          }
+        ],
+        "name": [
+          {
+            "name": "Croscarmellose sodium",
+            "preferred": true
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/SubstanceDefinition/hydroxypropyl-cellulose",
+      "resource": {
+        "resourceType": "SubstanceDefinition",
+        "id": "hydroxypropyl-cellulose",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+          ],
+          "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd",
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir-gra/CodeSystem/provenance",
+              "code": "reused-from-pqi",
+              "display": "Same resource as the Sakura Bloom PQI dataset (CMC detail removed)"
+            }
+          ]
+        },
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "classification": [
+          {
+            "text": "Excipient (compendial)"
+          }
+        ],
+        "grade": [
+          {
+            "text": "Ph. Eur."
+          },
+          {
+            "text": "USP/NF"
+          },
+          {
+            "text": "JP"
+          }
+        ],
+        "name": [
+          {
+            "name": "Hydroxypropyl cellulose",
+            "preferred": true
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/SubstanceDefinition/hypromellose",
+      "resource": {
+        "resourceType": "SubstanceDefinition",
+        "id": "hypromellose",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+          ],
+          "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd",
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir-gra/CodeSystem/provenance",
+              "code": "reused-from-pqi",
+              "display": "Same resource as the Sakura Bloom PQI dataset (CMC detail removed)"
+            }
+          ]
+        },
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "classification": [
+          {
+            "text": "Excipient (compendial)"
+          }
+        ],
+        "grade": [
+          {
+            "text": "Ph. Eur."
+          },
+          {
+            "text": "USP"
+          },
+          {
+            "text": "JP"
+          }
+        ],
+        "name": [
+          {
+            "name": "Hypromellose",
+            "preferred": true
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/SubstanceDefinition/iron-oxide-red",
+      "resource": {
+        "resourceType": "SubstanceDefinition",
+        "id": "iron-oxide-red",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+          ],
+          "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd",
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir-gra/CodeSystem/provenance",
+              "code": "reused-from-pqi",
+              "display": "Same resource as the Sakura Bloom PQI dataset (CMC detail removed)"
+            }
+          ]
+        },
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "classification": [
+          {
+            "text": "Excipient (compendial)"
+          }
+        ],
+        "grade": [
+          {
+            "text": "Ph. Eur."
+          },
+          {
+            "text": "Regulation (EU) 231/2012"
+          },
+          {
+            "text": "USP/NF"
+          },
+          {
+            "text": "JP"
+          }
+        ],
+        "name": [
+          {
+            "name": "Iron oxide, red (E 172)",
+            "preferred": true,
+            "synonym": [
+              {
+                "name": "Ferric oxide"
+              },
+              {
+                "name": "Red Ferric oxide"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/SubstanceDefinition/lactose-monohydrate",
+      "resource": {
+        "resourceType": "SubstanceDefinition",
+        "id": "lactose-monohydrate",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+          ],
+          "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd",
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir-gra/CodeSystem/provenance",
+              "code": "reused-from-pqi",
+              "display": "Same resource as the Sakura Bloom PQI dataset (CMC detail removed)"
+            }
+          ]
+        },
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "classification": [
+          {
+            "text": "Excipient (compendial)"
+          }
+        ],
+        "grade": [
+          {
+            "text": "Ph. Eur."
+          },
+          {
+            "text": "USP/NF"
+          },
+          {
+            "text": "JP"
+          }
+        ],
+        "name": [
+          {
+            "name": "Lactose monohydrate",
+            "preferred": true,
+            "synonym": [
+              {
+                "name": "Lactose hydrate"
+              }
+            ]
+          }
+        ],
+        "sourceMaterial": {
+          "type": {
+            "text": "Animal origin (milk); TSE declarations per EMA/410/01 rev.3"
+          }
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/SubstanceDefinition/macrogol-6000",
+      "resource": {
+        "resourceType": "SubstanceDefinition",
+        "id": "macrogol-6000",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+          ],
+          "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd",
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir-gra/CodeSystem/provenance",
+              "code": "reused-from-pqi",
+              "display": "Same resource as the Sakura Bloom PQI dataset (CMC detail removed)"
+            }
+          ]
+        },
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "classification": [
+          {
+            "text": "Excipient (compendial)"
+          }
+        ],
+        "grade": [
+          {
+            "text": "Ph. Eur."
+          },
+          {
+            "text": "USP/NF"
+          },
+          {
+            "text": "JP"
+          }
+        ],
+        "name": [
+          {
+            "name": "Macrogol (type 6000)",
+            "preferred": true,
+            "synonym": [
+              {
+                "name": "Polyethylene glycol (6000)"
+              },
+              {
+                "name": "Macrogol 6000"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/SubstanceDefinition/magnesium-stearate",
+      "resource": {
+        "resourceType": "SubstanceDefinition",
+        "id": "magnesium-stearate",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+          ],
+          "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd",
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir-gra/CodeSystem/provenance",
+              "code": "reused-from-pqi",
+              "display": "Same resource as the Sakura Bloom PQI dataset (CMC detail removed)"
+            }
+          ]
+        },
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "classification": [
+          {
+            "text": "Excipient (compendial)"
+          }
+        ],
+        "grade": [
+          {
+            "text": "Ph. Eur."
+          },
+          {
+            "text": "USP/NF"
+          },
+          {
+            "text": "JP"
+          }
+        ],
+        "name": [
+          {
+            "name": "Magnesium stearate",
+            "preferred": true
+          }
+        ],
+        "sourceMaterial": {
+          "type": {
+            "text": "Vegetable origin"
+          }
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/SubstanceDefinition/microcrystalline-cellulose",
+      "resource": {
+        "resourceType": "SubstanceDefinition",
+        "id": "microcrystalline-cellulose",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+          ],
+          "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd",
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir-gra/CodeSystem/provenance",
+              "code": "reused-from-pqi",
+              "display": "Same resource as the Sakura Bloom PQI dataset (CMC detail removed)"
+            }
+          ]
+        },
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "classification": [
+          {
+            "text": "Excipient (compendial)"
+          }
+        ],
+        "grade": [
+          {
+            "text": "Ph. Eur."
+          },
+          {
+            "text": "USP/NF"
+          },
+          {
+            "text": "JP"
+          }
+        ],
+        "name": [
+          {
+            "name": "Cellulose, microcrystalline",
+            "preferred": true,
+            "synonym": [
+              {
+                "name": "Microcrystalline cellulose"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/SubstanceDefinition/purified-water",
+      "resource": {
+        "resourceType": "SubstanceDefinition",
+        "id": "purified-water",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+          ],
+          "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd",
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir-gra/CodeSystem/provenance",
+              "code": "reused-from-pqi",
+              "display": "Same resource as the Sakura Bloom PQI dataset (CMC detail removed)"
+            }
+          ]
+        },
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "classification": [
+          {
+            "text": "Excipient (compendial)"
+          }
+        ],
+        "grade": [
+          {
+            "text": "Ph. Eur."
+          },
+          {
+            "text": "USP/NF"
+          },
+          {
+            "text": "JP"
+          }
+        ],
+        "name": [
+          {
+            "name": "Water, purified",
+            "preferred": true,
+            "synonym": [
+              {
+                "name": "Purified water"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/SubstanceDefinition/sakuramil",
+      "resource": {
+        "resourceType": "SubstanceDefinition",
+        "id": "sakuramil",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+          ],
+          "source": "https://ichm4q.notion.site/2a317984c9fc81f89f56d478fe7ac949",
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir-gra/CodeSystem/provenance",
+              "code": "reused-from-pqi",
+              "display": "Same resource as the Sakura Bloom PQI dataset (CMC detail removed)"
+            }
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://cas.org",
+            "value": "262352-13-6"
+          }
+        ],
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "classification": [
+          {
+            "text": "Chemical (small molecule)"
+          }
+        ],
+        "grade": [
+          {
+            "text": "In-house"
+          }
+        ],
+        "description": "Sakuramil (company code CP-9), the drug substance of Sakura Bloom 20 mg film-coated tablets.",
+        "molecularWeight": [
+          {
+            "type": {
+              "text": "Exact/average (free base)"
+            },
+            "amount": {
+              "value": 614.5,
+              "unit": "g/mol",
+              "system": "http://unitsofmeasure.org",
+              "code": "g/mol"
+            }
+          }
+        ],
+        "structure": {
+          "stereochemistry": {
+            "text": "(2S,4S)"
+          },
+          "molecularFormula": "C27H27F9N2O4",
+          "representation": [
+            {
+              "type": {
+                "text": "IUPAC name"
+              },
+              "representation": "Propan-2-yl (2S,4S)-4-[acetyl-[[3,5-bis(trifluoromethyl)phenyl]methyl]amino]-2-methoxy-2-methyl-6-(trifluoromethyl)-3,4-dihydroquinoline-1-carboxylate"
+            }
+          ]
+        },
+        "code": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://cas.org",
+                  "code": "262352-13-6"
+                }
+              ],
+              "text": "262352-13-6"
+            }
+          },
+          {
+            "code": {
+              "text": "CP-9"
+            }
+          }
+        ],
+        "name": [
+          {
+            "name": "Sakuramil",
+            "type": {
+              "text": "INN"
+            },
+            "preferred": true
+          },
+          {
+            "name": "Sakuramil",
+            "type": {
+              "text": "USAN"
+            }
+          },
+          {
+            "name": "Propan-2-yl (2S,4S)-4-[acetyl-[[3,5-bis(trifluoromethyl)phenyl]methyl]amino]-2-methoxy-2-methyl-6-(trifluoromethyl)-3,4-dihydroquinoline-1-carboxylate",
+            "type": {
+              "text": "IUPAC chemical name"
+            }
+          },
+          {
+            "name": "CP-9",
+            "type": {
+              "text": "Company code"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir-gra/epi/SubstanceDefinition/titanium-dioxide",
+      "resource": {
+        "resourceType": "SubstanceDefinition",
+        "id": "titanium-dioxide",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+          ],
+          "source": "https://ichm4q.notion.site/2a317984c9fc8140bf85d7b775af66dd",
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ],
+          "tag": [
+            {
+              "system": "http://example.org/fhir-gra/CodeSystem/provenance",
+              "code": "reused-from-pqi",
+              "display": "Same resource as the Sakura Bloom PQI dataset (CMC detail removed)"
+            }
+          ]
+        },
+        "status": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/publication-status",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "classification": [
+          {
+            "text": "Excipient (compendial)"
+          }
+        ],
+        "grade": [
+          {
+            "text": "Ph. Eur."
+          },
+          {
+            "text": "Regulation (EU) 231/2012"
+          },
+          {
+            "text": "USP/NF"
+          },
+          {
+            "text": "JP"
+          }
+        ],
+        "name": [
+          {
+            "name": "Titanium dioxide (E 171)",
+            "preferred": true,
+            "synonym": [
+              {
+                "name": "Titanium oxide"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
